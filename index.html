@@ -19,22 +19,20 @@
 
 <div id="main">
 
-<div id="navbar">
+<div id="navbar" class="rounded">
     <a class="thispage" href="index.html">Home</a> </br>
-    <a href="download.html">Download</a> </br>
     <a href="learn.html">Learn</a> </br>
     <a href="contribute.html">Contribute</a>
 </div>
-<script type="text/javascript">$(function() {$('#navbar').corner("7px");});</script>
 
 
 <div id="banner">
-<img src="ITensor.png" width="470px"/></br>
+<img src="ITensor.png"/></br>
 </div>
 
-<div class="full section"> <h2>Introduction</h2> </div>
+<div class="full section rounded"> <h2>Introduction</h2> </div>
 
-<div class="full">
+<div class="three-quarter">
 <p>
 ITensor is a C++ library for creating efficient and flexible physics simulations using tensor product wavefunctions.
 </p>
@@ -44,15 +42,16 @@ and contract. This makes it easy to transcribe tensor network diagrams into corr
 </p>
 </div>
 
-<!--
-<div id="download-box" class="quarter">
-<p>
-Download
-</p>
+<div id="download" class="rounded">
+<h4>Download:</h4>
+<ul>
+<li><a href="https://github.com/ITensor/library/tarball/master">.tar.gz</a></br>
+<li><a href="https://github.com/ITensor/library/zipball/master">.zip</a></br>
+</ul>
+Or track via <a target="new" href="https://github.com/ITensor/library">github</a>
 </div>
--->
 
-<div class="full section"> <h2>Examples</h2> </div>
+<div class="full section rounded"> <h2>Examples</h2> </div>
 
 <div class="full screenshot">
 <h3>Perform a DMRG Calculation</h3>
@@ -76,7 +75,7 @@ ITensor R = Z * X;
 
 </div> <!--class="main"-->
 
-<script type="text/javascript">$(function() {$('.section').corner("7px");});</script>
+<script type="text/javascript">$(function() {$('.rounded').corner("7px");});</script>
 
 </body>
 </html>

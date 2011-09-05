@@ -1,3 +1,4 @@
+/* This resets all elements */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
 body {line-height:1.5;}
 table {border-collapse:separate;border-spacing:0;}
@@ -7,13 +8,18 @@ blockquote:before, blockquote:after, q:before, q:after {content:"";}
 blockquote, q {quotes:"" "";}
 a img {border:none;}
 
+/* Actual stylesheet begins here */
 
 a { color: #fff; font-family: sans-serif; text-decoration: none; }
 
+p { font-size: 120%; font-family: sans-serif; padding-bottom: 20px; }
+
 #main { width:800px; margin:0 auto; padding: 0;}
 
+.rounded { }
+
 .full { width:800px; float:left; }
-.three-quarter { width:600px; float:left; }
+.three-quarter { width:550px; float:left; }
 .half { width:400px; float:left; }
 .quarter { width:200px; float:left; }
 .spacer { width:50px; float:left; }
@@ -27,14 +33,28 @@ text-align: left;
 background: #5081AA; 
 padding:10px 5px 10px 20px; 
 margin-top: 10px; margin-bottom: 10px; 
-font-size: 120%;  
+font-size: 140%;  
 }
 #navbar a { color: #000055; }
 #navbar a.thispage { color: #fff; }
 
 #banner { width:200px; float:left; margin:0px; margin-left: 20px; padding-top:20px; }
+#banner img { width:460px; }
 
-#download-box { background: white;}
+#download 
+{ 
+    width: 160px;
+    float:left;
+    font-size: 120%; 
+    font-family: sans-serif; 
+    background: #FFDC75;
+    padding: 10px 25px 20px 20px;
+    margin-left: 15px;
+}
+#download h4 { color: black; }
+#download a { color: #CD2626; }
+#download ul { display: inline; color: #CD2626; }
+#download ul li { display: inline; padding-left: 20px; color: #CD2626; }
 
 .section 
 { 
@@ -48,7 +68,6 @@ font-size: 120%;
 }
 .section h2 { color: #fff; }
  
-p { font-size: 120%; font-family: sans-serif; padding-bottom: 20px; }
 .screenshot
 {
 float:left;
