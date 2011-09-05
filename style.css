@@ -37,24 +37,26 @@ font-size: 140%;
 }
 #navbar a { color: #000055; }
 #navbar a.thispage { color: #fff; }
+#navbar ul { display: table; }
+#navbar ul li { display: table; }
 
 #banner { width:200px; float:left; margin:0px; margin-left: 20px; padding-top:20px; }
 #banner img { width:460px; }
 
 #download 
 { 
-    width: 160px;
-    float:left;
+    float:right;
     font-size: 120%; 
     font-family: sans-serif; 
     background: #FFDC75;
     padding: 10px 25px 20px 20px;
     margin-left: 15px;
+    margin-right: 0px;
 }
 #download h4 { color: black; }
 #download a { color: #CD2626; }
-#download ul { display: inline; color: #CD2626; }
-#download ul li { display: inline; padding-left: 20px; color: #CD2626; }
+#download ul { display: table; color: #CD2626; }
+#download ul li { display: table; padding-left: 20px; color: #CD2626; }
 
 .section 
 { 

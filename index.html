@@ -20,9 +20,11 @@
 <div id="main">
 
 <div id="navbar" class="rounded">
-    <a class="thispage" href="index.html">Home</a> </br>
-    <a href="learn.html">Learn</a> </br>
-    <a href="contribute.html">Contribute</a>
+    <ul>
+    <li><a class="thispage" href="index.html">Home</a> </li>
+    <li><a href="learn.html">Learn</a> </li>
+    <li><a href="contribute.html">Contribute</a></li>
+    </ul>
 </div>
 
 
@@ -32,48 +34,50 @@
 
 <div class="full section rounded"> <h2>Introduction</h2> </div>
 
-<div class="three-quarter">
-<p>
-ITensor is a C++ library for creating efficient and flexible physics simulations using tensor product wavefunctions.
-</p>
-<p>
-Multiplying two ITensors is no harder than multiplying scalars; matching indices automatically find each other 
-and contract. This makes it easy to transcribe tensor network diagrams into correct, efficient code.
-</p>
+<div class="full">
+
+    <div id="download" class="rounded">
+        <h4>Download:</h4>
+        <ul>
+        <li><a href="https://github.com/ITensor/library/tarball/master">tar.gz</a></br>
+        <li><a href="https://github.com/ITensor/library/zipball/master">zip</a></br>
+        </ul>
+        Or track via <a target="new" href="https://github.com/ITensor/library">github</a>
+    </div>
+
+    <p>
+    ITensor is a C++ library for creating efficient and flexible physics simulations using tensor product wavefunctions.
+    </p>
+    <p>
+    Multiplying two ITensors is no harder than multiplying scalars; matching indices automatically find each other 
+    and contract. This makes it easy to transcribe tensor network diagrams into correct, efficient code.
+    </p>
 </div>
 
-<div id="download" class="rounded">
-<h4>Download:</h4>
-<ul>
-<li><a href="https://github.com/ITensor/library/tarball/master">.tar.gz</a></br>
-<li><a href="https://github.com/ITensor/library/zipball/master">.zip</a></br>
-</ul>
-Or track via <a target="new" href="https://github.com/ITensor/library">github</a>
-</div>
 
 <div class="full section rounded"> <h2>Examples</h2> </div>
 
 <div class="full screenshot">
-<h3>Perform a DMRG Calculation</h3>
-int N = 100; </br>
-SpinOne::Model model(N); </br>
-MPO H = SpinOne::Heisenberg(model)(); </br>
-MPS psi(model); </br>
-Real energy = dmrg(psi,H);
+    <h3>Perform a DMRG Calculation</h3>
+    int N = 100; </br>
+    SpinOne::Model model(N); </br>
+    MPO H = SpinOne::Heisenberg(model)(); </br>
+    MPS psi(model); </br>
+    Real energy = dmrg(psi,H);
 </div>
 
 <div class="full screenshot">
-<h3>Multiply Two ITensors</h3>
-Index a("a",2), b("b",2), c("c",2); </br>
-ITensor Z(a,b), X(b,c); </br>
-Z(a(1),b(1)) = 1; Z(a(2),b(2)) = -1;  </br>
-X(b(1),c(2)) = 1; X(b(2),c(1)) =  1;  </br>
-ITensor R = Z * X;
-</br>
+    <h3>Multiply Two ITensors</h3>
+    Index a("a",2), b("b",2), c("c",2); </br>
+    ITensor Z(a,b), X(b,c); </br>
+    Z(a(1),b(1)) = 1; Z(a(2),b(2)) = -1;  </br>
+    X(b(1),c(2)) = 1; X(b(2),c(1)) =  1;  </br>
+    ITensor R = Z * X;
+    </br>
 </div>
 
 
-</div> <!--class="main"-->
+</div> <!--id="main"-->
 
 <script type="text/javascript">$(function() {$('.rounded').corner("7px");});</script>
 
