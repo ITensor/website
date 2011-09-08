@@ -23,7 +23,7 @@
 <div id="navbar" class="rounded">
     <ul>
     <li><a class="thispage" href="index.html">Home</a> </li>
-    <li><a href="learn.html">Learn</a> </li>
+    <li><a href="learn.php">Learn</a> </li>
     <li><a href="contribute.html">Contribute</a></li>
     </ul>
 </div>
@@ -60,23 +60,29 @@
 
 <div class="full screenshot">
     <h3>Perform a DMRG Calculation</h3>
-    int N = 100; </br>
-    SpinOne::Model model(N); </br>
-    MPO H = SpinOne::Heisenberg(model)(); </br>
-    MPS psi(model); </br>
-    Real energy = dmrg(psi,H);
+    <ul>
+    <li> int N = 100; </li>
+    <li> SpinOne::Model model(N); </li>
+    <li> MPO H = SpinOne::Heisenberg(model)(); </li>
+    <li> MPS psi(model); </li>
+    <li> Real energy = dmrg(psi,H); </li>
+    </ul>
 </div>
 
 <div class="full screenshot">
     <h3>Multiply Two ITensors</h3>
-    Index a("a",2), b("b",2), c("c",2); </br>
-    ITensor Z(a,b), X(b,c); </br>
-    Z(a(1),b(1)) = 1; Z(a(2),b(2)) = -1;  </br>
-    X(b(1),c(2)) = 1; X(b(2),c(1)) =  1;  </br>
-    ITensor R = Z * X;
-    </br>
+    <ul>
+    <li>Index a("a",2), b("b",2), c("c",2); </li>
+    <li>ITensor Z(a,b), X(b,c); </li>
+    <li>Z(a(1),b(1)) = 1; </li>
+    <li>Z(a(2),b(2)) = -1; </li>
+    <li>X(b(1),c(2)) = 1; </li>
+    <li>X(b(2),c(1)) =  1; </li>
+    <li>ITensor R = Z * X; </li>
+    </ul>
 </div>
 
+<div id="footer"></div>
 
 </div> <!--id="main"-->
 

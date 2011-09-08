@@ -24,7 +24,7 @@
 <div id="navbar" class="rounded">
     <ul>
     <li><a href="index.html">Home</a> </li>
-    <li><a class="thispage" href="learn.html">Learn</a> </li>
+    <li><a class="thispage" href="learn.php">Learn</a> </li>
     <li><a href="contribute.html">Contribute</a></li>
     </ul>
 </div>
@@ -40,6 +40,30 @@
 <p>
 </p>
 </div>
+
+<div class="full edit docs" id="input">
+<?php 
+include_once "markdown.php";
+$mdcontent = file_get_contents("/var/www/html/itensor/body.md"); 
+echo Markdown($mdcontent);
+?>
+</div>
+
+<div id="footer"></div>
+
+<script type="text/javascript">
+ $(document).ready(function() {
+     $('.edit').editable('send.php', {
+        type : "textarea",
+        event : "dblclick",
+        onblur : "submit",
+        cancel : "Cancel",
+        loadurl : "body.md",
+        indicator : 'Saving...'
+     });
+ });
+</script>
+
 
 </div> <!--class="main"-->
 

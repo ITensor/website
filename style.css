@@ -10,9 +10,9 @@ a img {border:none;}
 
 /* Actual stylesheet begins here */
 
-a { color: #fff; font-family: sans-serif; text-decoration: none; }
+a { color: #000055; font-family: sans-serif; text-decoration: none; }
 
-p { font-size: 120%; font-family: sans-serif; padding-bottom: 20px; }
+p { font-size: 120%; font-family: sans-serif; padding-bottom: 20px; text-indent: 0px;}
 
 #main { width:800px; margin:0 auto; padding: 0;}
 
@@ -81,3 +81,18 @@ margin: 0px 10px 10px 0px;
 border: 0px;
 }
 .screenshot h3 { font-family: sans-serif; padding: 0px 0px 10px 0px; }
+.screenshot ul { display: table; }
+.screenshot ul li { display: table; }
+
+.docs h2 { font-size: 150%; font-weight: bold; }
+.docs h3 { font-size: 120%; font-weight: bold; }
+.docs h4 { font-weight: bold; }
+.docs a { color: blue; }
+.docs em { font-style: italic; }
+.docs em { font-style: italic; }
+.docs p { text-indent: 1px;  }
+.docs code { font-family: monospace; background: #fff; padding: 10px; }
+.docs code p { font-family: monospace; background: #fff; padding: 10px; }
+
+
+#footer { width: 800px; margin-bottom: 200px; float: left; }
