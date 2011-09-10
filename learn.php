@@ -11,8 +11,11 @@
     <script type="text/javascript">$(document).ready(function(){});</script>
     <script type="text/javascript" src="scripts/jquery.corner.js"></script>
     <script type="text/javascript" src="scripts/jquery.jeditable.mini.js"></script>
+    <script type="text/javascript" src="scripts/jquery.autogrow.js"></script>
+    <script type="text/javascript" src="scripts/jquery.jeditable.autogrow.js"></script>
 
     <style type="text/css">
+
     </style>
 
 </head>
@@ -43,23 +46,29 @@
 
 <div class="full edit docs" id="input">
 <?php 
-include_once "markdown.php";
-$mdcontent = file_get_contents("/var/www/html/itensor/body.md"); 
-echo Markdown($mdcontent);
+$mdhtml = file_get_contents("/var/www/html/itensor/docs/main_body.html"); 
+echo $mdhtml
 ?>
 </div>
 
 <div id="footer"></div>
 
+
+
 <script type="text/javascript">
  $(document).ready(function() {
-     $('.edit').editable('send.php', {
-        type : "textarea",
+     $('.edit').editable('send.cgi', {
+        type : "autogrow",
         event : "dblclick",
-        onblur : "submit",
+        onblur : "ignore",
         cancel : "Cancel",
-        loadurl : "body.md",
-        indicator : 'Saving...'
+        submit : "OK",
+        indicator : 'Saving...',
+        loadurl : "docs/main.md",
+        autogrow : {
+           lineHeight : 10,
+           minHeight  : 32
+        }
      });
  });
 </script>
