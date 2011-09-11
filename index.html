@@ -78,10 +78,8 @@
     <ul>
     <li>Index a("a",2), b("b",2), c("c",2); </li>
     <li>ITensor Z(a,b), X(b,c); </li>
-    <li>Z(a(1),b(1)) = 1; </li>
-    <li>Z(a(2),b(2)) = -1; </li>
-    <li>X(b(1),c(2)) = 1; </li>
-    <li>X(b(2),c(1)) =  1; </li>
+    <li>Z &lt;&lt; 1, 0, 0, -1;
+    <li>X &lt;&lt; 0, 1, 1, 0;
     <li>ITensor R = Z * X; </li>
     </ul>
 </div>
