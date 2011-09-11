@@ -23,6 +23,7 @@
 <div id="navbar" class="rounded">
     <ul>
     <li><a class="thispage" href="index.html">Home</a> </li>
+    <li><a href="news.html">News</a> </li>
     <li><a href="learn.php">Learn</a> </li>
     <li><a href="contribute.html">Contribute</a></li>
     </ul>
@@ -43,7 +44,7 @@
         <li><a href="https://github.com/ITensor/library/tarball/master">tar.gz</a></br>
         <li><a href="https://github.com/ITensor/library/zipball/master">zip</a></br>
         </ul>
-        Or track via <a target="new" href="https://github.com/ITensor/library">github</a>
+        Or track development via <a target="new" href="https://github.com/ITensor/library">github</a>
     </div>
 
     <p>
@@ -54,7 +55,7 @@
     and contract, making it simple to convert tensor network diagrams into correct, efficient code.
     </p>
     <p>
-    For example, the diagram on the left becomes the code on the right
+    For example, the diagram below can be converted to code as
     </p>
     <img id="diagram" src="Diagram.png"/></br>
 </div>
@@ -81,6 +82,8 @@
     <li>Z &lt;&lt; 1, 0, 0, -1;
     <li>X &lt;&lt; 0, 1, 1, 0;
     <li>ITensor R = Z * X; </li>
+    <li>assert(R(a(1),c(2)) == &nbsp;1);</li>
+    <li>assert(R(a(2),c(1)) == -1);</li>
     </ul>
 </div>
 

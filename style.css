@@ -40,11 +40,12 @@ font-size: 140%;
 #navbar ul { display: table; }
 #navbar ul li { display: table; }
 
-#banner { width:200px; float:left; margin:0px; margin-left: 20px; padding-top:20px; }
+#banner { width:200px; float:left; margin:0px; margin-left: 20px; padding-top:30px; }
 #banner img { width:460px; }
 
 #download 
 { 
+    width: 190px;
     float:right;
     font-size: 120%; 
     font-family: sans-serif; 
@@ -73,7 +74,7 @@ font-size: 140%;
 #diagram 
 { 
     width: 450px; 
-    margin-left: 50px;
+    margin-left: 100px;
     margin-right: auto;
     margin-bottom: 10px;
     display: block;

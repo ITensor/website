@@ -27,6 +27,7 @@
 <div id="navbar" class="rounded">
     <ul>
     <li><a href="index.html">Home</a> </li>
+    <li><a href="news.html">News</a> </li>
     <li><a class="thispage" href="learn.php">Learn</a> </li>
     <li><a href="contribute.html">Contribute</a></li>
     </ul>
