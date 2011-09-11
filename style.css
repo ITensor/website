@@ -69,6 +69,14 @@ font-size: 140%;
     font-family: sans-serif;
 }
 .section h2 { color: #fff; }
+
+#diagram 
+{ 
+    width: 450px; 
+    margin-left: 50px;
+    margin-right: auto;
+    display: block;
+}
  
 .screenshot
 {
