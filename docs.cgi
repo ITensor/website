@@ -1,3 +1,55 @@
+#!/usr/bin/python
+
+#################################
+
+docpath = "/var/www/html/itensor/docs/"
+
+#################################
+
+import sys
+
+from markdown2 import Markdown
+markdowner = Markdown()
+
+import cgitb
+cgitb.enable()
+
+import cgi
+form = cgi.FieldStorage()
+
+def printheader():
+    print "Content-Type: text/html\n\n"
+
+md = form.getvalue("value")
+page = form.getvalue("page")
+
+if page == None: page = "main"
+
+mdfname = page + ".md"
+htfname = page + ".html"
+
+bodyhtml = ""
+
+if md:
+    mdfile = open(docpath + mdfname,'w')
+    mdfile.write(md)
+    mdfile.close()
+
+    bodyhtml = markdowner.convert(md)
+    htfile = open(docpath + htfname,'w')
+    htfile.write(bodyhtml)
+    htfile.close()
+
+    print bodyhtml
+    sys.exit(0)
+
+else:
+    htfile = open(docpath + htfname,'r')
+    bodyhtml = "".join(htfile.readlines())
+    htfile.close()
+
+header = \
+"""
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -46,10 +98,10 @@
 </div>
 
 <div class="full edit docs" id="input">
-<?php 
-$mdhtml = file_get_contents("/var/www/html/itensor/docs/main_body.html"); 
-echo $mdhtml
-?>
+"""
+
+footer = \
+"""
 </div>
 
 <div id="footer"></div>
@@ -58,7 +110,7 @@ echo $mdhtml
 
 <script type="text/javascript">
  $(document).ready(function() {
-     $('.edit').editable('send.cgi', {
+     $('.edit').editable("docs.cgi?page=%s", {
         type : "textarea",
         event : "dblclick",
         onblur : "ignore",
@@ -77,3 +129,9 @@ echo $mdhtml
 
 </body>
 </html>
+""" \
+% (page,)
+
+print header
+print bodyhtml
+print footer

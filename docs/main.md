@@ -32,8 +32,4 @@ To perform a contraction, just multiply M and X and store the result
 Matching indices are automatically summed. Because an ITensor has no index order, we could have also written `X * M.`
 
 
-
-
-
-
-
+Another new change

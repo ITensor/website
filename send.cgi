@@ -5,13 +5,14 @@ docpath = "/var/www/html/itensor/docs/"
 from markdown2 import Markdown
 markdowner = Markdown()
 
-#import cgitb
-#cgitb.enable()
+import cgitb
+cgitb.enable()
 
 import cgi
 form = cgi.FieldStorage()
 
-md = form["value"].value
+md = form.getvalue("value")
+#page = form.getvalue("page")
 
 mdfile = open(docpath + "main.md",'w')
 mdfile.write(md)
@@ -25,3 +26,4 @@ htmlfile.close()
 print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
 print html
+#print "Page was ",page
