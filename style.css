@@ -106,3 +106,21 @@ border: 0px;
 
 
 #footer { width: 800px; margin-bottom: 200px; float: left; }
+
+.newsitem
+{
+float:left;
+background: #ddd; 
+padding: 10px 10px;
+font-family: sans-serif;
+font-size: 100%;
+margin: 0px 10px 10px 0px;
+border: 0px;
+}
+.newsitem h3 { font-size: 140%; font-family: sans-serif; padding: 0px; margin: 0px; }
+.newsitem h2 { font-family: sans-serif; padding: 0px 0px 0px 0px; margin: 0px;}
+.newsitem img { float: left; padding: 10px; }
+.newsitem ul { display: table; }
+.newsitem ul li { display: table; }
+.newsitem p { padding: 10px; }
+.newsitem a { color: #900; }
