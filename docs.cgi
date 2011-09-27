@@ -3,22 +3,47 @@
 #################################
 
 docpath = "/var/www/html/itensor/docs/"
+reldocpath = "docs/"
 
 #################################
 
-import sys
+from sys import exit
+import re
 
-from markdown2 import Markdown
-markdowner = Markdown()
+int_link_re = re.compile("\[\[.+\]\]")
 
 import cgitb
 cgitb.enable()
 
-import cgi
-form = cgi.FieldStorage()
+from cgi import FieldStorage
+form = FieldStorage()
 
-def printheader():
+def fileExists(fname):
+    try:
+        open(reldocpath + fname)
+        return True
+    except IOError:
+        return False
+
+def printContentType():
     print "Content-Type: text/html\n\n"
+
+def convert(string):
+    slist = re.split("\[\[(.+?)\]\]",string)
+    mdstring = slist[0]
+    for j in range(1,len(slist)):
+        chunk = slist[j]
+        if j%2 == 0:
+            mdstring += chunk
+        else:
+            fname = reldocpath + chunk
+            if not fileExists(fname+'.md'):
+                open(fname+'.md','w')
+                open(fname+'.html','w')
+            mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
+
+    import markdown2
+    return markdown2.markdown(mdstring)
 
 md = form.getvalue("value")
 page = form.getvalue("page")
@@ -35,13 +60,14 @@ if md:
     mdfile.write(md)
     mdfile.close()
 
-    bodyhtml = markdowner.convert(md)
+    bodyhtml = convert(md)
     htfile = open(docpath + htfname,'w')
     htfile.write(bodyhtml)
     htfile.close()
 
+    printContentType()
     print bodyhtml
-    sys.exit(0)
+    exit(0)
 
 else:
     htfile = open(docpath + htfname,'r')
@@ -80,7 +106,7 @@ header = \
     <ul>
     <li><a href="index.html">Home</a> </li>
     <li><a href="news.html">News</a> </li>
-    <li><a class="thispage" href="learn.php">Learn</a> </li>
+    <li><a class="thispage" href="docs.cgi">Learn</a> </li>
     <li><a href="contribute.html">Contribute</a></li>
     </ul>
 </div>
@@ -117,7 +143,8 @@ footer = \
         cancel : "Cancel",
         submit : "OK",
         indicator : 'Saving...',
-        loadurl : "docs/main.md"
+        loadurl : "docs/%s.md",
+        loadtype : 'POST'
      });
  });
 </script>
@@ -130,8 +157,9 @@ footer = \
 </body>
 </html>
 """ \
-% (page,)
+% (page,page)
 
+printContentType()
 print header
 print bodyhtml
 print footer
