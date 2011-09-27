@@ -11,6 +11,7 @@ footer_fname = "docs_footer.html"
 
 import re
 named_link_re = re.compile("(.+?)\|(.+)")
+arxiv_link_re = re.compile("(.+?)\|(.+)")
 
 import cgitb
 cgitb.enable()
@@ -28,6 +29,7 @@ def printContentType():
     print "Content-Type: text/html\n\n"
 
 def convert(string):
+    #string = re.sub("(\d\d\d\d\.\d\d\d\d)","<a href=\"http://arxiv.org/abs/\1 \">\1</a>",string)
     slist = re.split("\[\[(.+?)\]\]",string)
     mdstring = slist[0]
     for j in range(1,len(slist)):

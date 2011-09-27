@@ -94,12 +94,13 @@ border: 0px;
 .screenshot ul { display: table; }
 .screenshot ul li { display: table; }
 
+.docs { font-family: sans-serif; }
+.docs h1 { font-size: 160%; font-weight: bold; margin-bottom: 20px; }
 .docs h2 { font-size: 150%; font-weight: bold; }
 .docs h3 { font-size: 120%; font-weight: bold; }
 .docs h4 { font-weight: bold; }
-.docs a { color: blue; }
-.docs em { font-style: italic; }
-.docs em { font-style: italic; }
+.docs a { color: #336699; }
+.docs em { font-weight: bold; }
 .docs p { text-indent: 1px; }
 .docs code { font-family: monospace; background: #fff; padding: 10px; }
 .docs code p { font-family: monospace; background: #fff; padding: 10px; }
