@@ -4,13 +4,13 @@
 
 docpath = "/var/www/html/itensor/docs/"
 reldocpath = "docs/"
+header_fname = "docs_header.html"
+footer_fname = "docs_footer.html"
 
 #################################
 
-from sys import exit
 import re
-
-int_link_re = re.compile("\[\[.+\]\]")
+named_link_re = re.compile("(.+?)\|(.+)")
 
 import cgitb
 cgitb.enable()
@@ -20,10 +20,9 @@ form = FieldStorage()
 
 def fileExists(fname):
     try:
-        open(reldocpath + fname)
-        return True
+        return open(fname)
     except IOError:
-        return False
+        return None
 
 def printContentType():
     print "Content-Type: text/html\n\n"
@@ -36,130 +35,36 @@ def convert(string):
         if j%2 == 0:
             mdstring += chunk
         else:
-            fname = reldocpath + chunk
-            if not fileExists(fname+'.md'):
-                open(fname+'.md','w')
-                open(fname+'.html','w')
-            mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
+            nlmatch = named_link_re.match(chunk)
+            if nlmatch:
+                name = nlmatch.group(1)
+                link = nlmatch.group(2)
+                mdstring += "[%s](docs.cgi?page=%s)"%(name,link)
+            else:
+                mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
     import markdown2
     return markdown2.markdown(mdstring)
 
-md = form.getvalue("value")
 page = form.getvalue("page")
 
 if page == None: page = "main"
 
-mdfname = page + ".md"
-htfname = page + ".html"
+mdfname = reldocpath + page + ".md"
+mdfile = fileExists(mdfname)
 
 bodyhtml = ""
-
-if md:
-    mdfile = open(docpath + mdfname,'w')
-    mdfile.write(md)
+if mdfile:
+    bodyhtml = convert("".join(mdfile.readlines()))
     mdfile.close()
-
-    bodyhtml = convert(md)
-    htfile = open(docpath + htfname,'w')
-    htfile.write(bodyhtml)
-    htfile.close()
-
-    printContentType()
-    print bodyhtml
-    exit(0)
-
 else:
-    htfile = open(docpath + htfname,'r')
-    bodyhtml = "".join(htfile.readlines())
-    htfile.close()
-
-header = \
-"""
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-    <title>ITensor - Intelligent Tensor Library</title>
-    <meta http-equiv="content-language" content="en" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="icon" href="favicon.ico"/>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">$(document).ready(function(){});</script>
-    <script type="text/javascript" src="scripts/jquery.corner.js"></script>
-    <script type="text/javascript" src="scripts/jquery.jeditable.mini.js"></script>
-    <script type="text/javascript" src="scripts/jquery.autogrow.js"></script>
-    <script type="text/javascript" src="scripts/jquery.jeditable.autogrow.js"></script>
-
-    <style type="text/css">
-
-    </style>
-
-</head>
-
-<body>
-
-<div id="main">
-
-<div id="navbar" class="rounded">
-    <ul>
-    <li><a href="index.html">Home</a> </li>
-    <li><a href="news.html">News</a> </li>
-    <li><a class="thispage" href="docs.cgi">Learn</a> </li>
-    <li><a href="contribute.html">Contribute</a></li>
-    </ul>
-</div>
-
-
-<div id="banner">
-<img src="ITensor.png" /></br>
-</div>
-
-<div class="full section rounded"> <h2>Documentation</h2> </div>
-
-<div class="full">
-<p>
-</p>
-</div>
-
-<div class="full edit docs" id="input">
-"""
-
-footer = \
-"""
-</div>
-
-<div id="footer"></div>
-
-
-
-<script type="text/javascript">
- $(document).ready(function() {
-     $('.edit').editable("docs.cgi?page=%s", {
-        type : "textarea",
-        event : "dblclick",
-        onblur : "ignore",
-        cancel : "Cancel",
-        submit : "OK",
-        indicator : 'Saving...',
-        loadurl : "docs/%s.md",
-        loadtype : 'POST'
-     });
- });
-</script>
-
-
-</div> <!--class="main"-->
-
-<script type="text/javascript">$(function() {$('.rounded').corner("7px");});</script>
-
-</body>
-</html>
-""" \
-% (page,page)
+    bodyhtml = "<p>(Documentation file not found)</p>"
 
 printContentType()
-print header
+header_file = open(header_fname)
+footer_file = open(footer_fname)
+print "".join(header_file.readlines())
 print bodyhtml
-print footer
+print "".join(footer_file.readlines())
+footer_file.close()
+header_file.close()
