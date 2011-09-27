@@ -2,8 +2,7 @@
 
 #################################
 
-docpath = "/var/www/html/itensor/docs/"
-reldocpath = "docs/"
+reldocpath = "doc_wiki/"
 thisfile = "docwiki.cgi"
 
 #################################
@@ -21,7 +20,7 @@ form = FieldStorage()
 
 def fileExists(fname):
     try:
-        open(reldocpath + fname)
+        open(fname)
         return True
     except IOError:
         return False
@@ -57,12 +56,12 @@ htfname = page + ".html"
 bodyhtml = ""
 
 if md:
-    mdfile = open(docpath + mdfname,'w')
+    mdfile = open(reldocpath + mdfname,'w')
     mdfile.write(md)
     mdfile.close()
 
     bodyhtml = convert(md)
-    htfile = open(docpath + htfname,'w')
+    htfile = open(reldocpath + htfname,'w')
     htfile.write(bodyhtml)
     htfile.close()
 
@@ -71,7 +70,7 @@ if md:
     exit(0)
 
 else:
-    htfile = open(docpath + htfname,'r')
+    htfile = open(reldocpath + htfname,'r')
     bodyhtml = "".join(htfile.readlines())
     htfile.close()
 
