@@ -39,6 +39,9 @@ background: #5081AA;
 padding:10px 5px 10px 20px; 
 margin-top: 10px; margin-bottom: 10px; 
 font-size: 140%;  
+    -moz-box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
 }
 #navbar a { color: #000055; }
 #navbar a.thispage { color: #fff; }
@@ -58,6 +61,9 @@ font-size: 140%;
     padding: 10px 25px 20px 20px;
     margin-left: 15px;
     margin-right: 0px;
+    -moz-box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
 }
 #download h4 { color: black; }
 #download a { color: #CD2626; }
@@ -73,6 +79,9 @@ font-size: 140%;
     margin: 0px 10px 10px 0px;
     font-size: 150%;
     font-family: sans-serif;
+    -moz-box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
 }
 .section h2 { color: #fff; }
 

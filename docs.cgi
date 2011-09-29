@@ -29,7 +29,8 @@ def printContentType():
     print "Content-Type: text/html\n\n"
 
 def convert(string):
-    #string = re.sub("(\d\d\d\d\.\d\d\d\d)","<a href=\"http://arxiv.org/abs/\1 \">\1</a>",string)
+    #Convert arxiv:####.#### links
+    string = re.sub(r"arxiv:(\d\d\d\d\.\d\d\d\d)",r"arxiv:<a href='http://arxiv.org/abs/\1'>\1</a>",string)
     slist = re.split("\[\[(.+?)\]\]",string)
     mdstring = slist[0]
     for j in range(1,len(slist)):
