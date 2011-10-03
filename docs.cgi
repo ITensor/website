@@ -13,8 +13,8 @@ import re
 named_link_re = re.compile("(.+?)\|(.+)")
 arxiv_link_re = re.compile("(.+?)\|(.+)")
 
-import cgitb
-cgitb.enable()
+#import cgitb
+#cgitb.enable()
 
 from cgi import FieldStorage
 form = FieldStorage()
@@ -31,6 +31,7 @@ def printContentType():
 def convert(string):
     #Convert arxiv:####.#### links
     string = re.sub(r"arxiv:(\d\d\d\d\.\d\d\d\d)",r"arxiv:<a href='http://arxiv.org/abs/\1'>\1</a>",string)
+    #Convert wiki links to markdownl link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
     mdstring = slist[0]
     for j in range(1,len(slist)):
@@ -38,14 +39,16 @@ def convert(string):
         if j%2 == 0:
             mdstring += chunk
         else:
+            #Check if a name is provided for this link
             nlmatch = named_link_re.match(chunk)
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
                 mdstring += "[%s](docs.cgi?page=%s)"%(name,link)
             else:
+                #Otherwise use the raw link name (file -> file.md)
                 mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
-
+    #Convert markdown to html
     import markdown2
     return markdown2.markdown(mdstring)
 
