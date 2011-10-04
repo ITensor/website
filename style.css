@@ -103,6 +103,9 @@ font-family: monospace;
 font-size: 140%;
 margin: 0px 10px 10px 0px;
 border: 0px;
+-moz-box-shadow: 1px 1px 1px #999;
+-webkit-box-shadow: 1px 1px 1px #999;
+box-shadow: 1px 1px 1px #999;
 }
 .screenshot h3 { font-family: sans-serif; padding: 0px 0px 10px 0px; }
 .screenshot ul { display: table; }
