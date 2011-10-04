@@ -120,6 +120,17 @@ width: 90%;
 .docs em { font-weight: bold; }
 .docs p { text-indent: 1px; }
 .docs code { font-family: monospace; font-size: 14pt; }
+.docs .codeblock 
+{ 
+    font-family: monospace; 
+    font-size: 14pt; 
+    background: #ddd;
+    padding: 5px;
+    padding-left: 10px;
+    -moz-box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
+}
 .docs ul { display: table; list-style: square; }
 .docs ul li { margin-left: 30px; }
 

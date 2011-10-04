@@ -18,13 +18,12 @@ Before beginning the calculation, we need to specify how many DMRG sweeps to do 
 what schedule we would like to follow as we change the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
-`Sweeps sweeps(Sweeps::ramp_m);`
-
-`sweeps.setNsweep(5);`
-
-`sweeps.setMaxm(100);`
-
-`sweeps.setCutoff(1E-5);`
+<code>
+Sweeps sweeps(Sweeps::ramp_m);
+sweeps.setNsweep(5);
+sweeps.setMaxm(100);
+sweeps.setCutoff(1E-5);
+</code>
 
 The argument `Sweeps::ramp_m` in the first line tells the sweeps object to gradually
 increase the maximum number of states kept in each sweep until it reaches the Maxm (=100).
