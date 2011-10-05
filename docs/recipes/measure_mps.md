@@ -56,7 +56,7 @@ Real szj = Dot(bra, szj_op*ket);
 
 Let's do another, more complicated measurement that will require our kets to be representing information
 on two sites `j` and `j+1`.  The vector product S(j) dot S(j+1) will do just fine.  In terms of the 
-z-component and raising and lowering operators, S(j) dot S(j+1) = sz(j)*sz(j+1) + 0.5*( sp(j)*sm(j+1) + sp(j+1)*sm(j) ).
+z-component and raising and lowering operators, S(j) dot S(j+1) = `sz(j)*sz(j+1) + 0.5*( sp(j)*sm(j+1) + sp(j+1)*sm(j) )`.
 For example, one of the operators we'll need is
 
 <code>
@@ -69,7 +69,7 @@ To represent the wavefunction for two sites, we simply call the `bondTensor` met
 ITensor bondket = psi.bondTensor(j); 
 </code>
 
-`psi.bondTensor(j)` is analogous to `psi.AA(j)`, except that 
+The method `psi.bondTensor(j)` is analogous to `psi.AA(j)`, except that 
 `bondTensor` encodes bond information between `j` and `j+1`, so long as `psi.position(j)` has been called previously.
 The `bondbra` is made the same as the `bra` from earlier:
 
