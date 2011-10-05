@@ -58,10 +58,14 @@ def convert(string):
         chunk = slist[j]
         if j%2 == 0: mdstring += chunk
         else: 
-            #Convert newlines to <br>
-            chunk = re.sub(r"\n",r"<br>\n",chunk)
             #Convert whitespace to &nbsp; (html for non-breaking space)
             chunk = re.sub(r"[ \t]",r"&nbsp;",chunk)
+            #Convert < and > signs
+            chunk = re.sub(r"<",r"&lt;",chunk)
+            chunk = re.sub(r">",r"&gt;",chunk)
+            #Convert newlines to <br>
+            chunk = re.sub(r"\n",r"<br>\n",chunk)
+
             mdstring += "<code>\n"+chunk+"</code>\n"
 
     #Convert markdown to html

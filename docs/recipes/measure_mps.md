@@ -1,6 +1,6 @@
 #Measure the properties of an MPS wavefunction#
 
-Here we'll learn how to measure some properties of the
+Here we will learn how to measure some properties of the
 Heisenberg model wavefunction by adding to the code from the [[previous example|recipes/basic_dmrg]].
 Essentially we need three pieces to take an expectation value of some property:  
 the operator corresponding to that property, the wavefunction, and a way to do the inner
@@ -47,7 +47,7 @@ ITensor bra = conj(primesite(ket));
 </code>
 
 The `primesite` function is what turns the ket into a row vector, and `conj` does the conjugation.
-(For the Heisenberg model, there isn't a need for the conjugation, though.)
+(For the Heisenberg model, there is no need for the conjugation, though.)
 Now we are ready to measure the expectation value of `sz(j)` by using the inner product function `Dot`:
 
 <code>
@@ -80,23 +80,23 @@ ITensor bondbra = conj(primesite(bondket));
 And expectation values are realized in the same way:
 
 <code>
-Real spm = 0.5*Dot(bondbra, spm_op*bondket);
+Real spm = 0.5\*Dot(bondbra, spm_op\*bondket);
 </code>
 
-Below you'll find a complete code for measuring properties of the MPS wavefunction.  
+Below is a complete code for measuring properties of the MPS wavefunction.  
 The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
 
 
 <code>
-#define THIS_IS_MAIN
-#include "core.h"
-#include "hams.h"
+\#define THIS\_IS\_MAIN
+\#include "core.h"
+\#include "hams.h"
 using boost::format;
 using std::cout;
 using std::cerr;
 using std::endl;
 
-int main(int argc, char* argv[])
+int main(int argc, char\* argv[])
 {
     int N = 100;
     int nsweep = 5;
@@ -109,13 +109,14 @@ int main(int argc, char* argv[])
     MPO H = SpinOne::Heisenberg(model)();
 
     InitState initState(N);
-    for(int i = 1; i <= N; ++i) initState(i) = (i%2==1 ? model.Up(i) : model.Dn(i));
+    for(int i = 1; i <= N; ++i) 
+        initState(i) = (i%2==1 ? model.Up(i) : model.Dn(i));
 
     MPS psi(model,initState);
 
     cout << format("Initial energy = %.5f\n")%psiHphi(psi,H,psi);
 
-    Sweeps sweeps(Sweeps::ramp_m,nsweep,minm,maxm,cutoff);
+    Sweeps sweeps(Sweeps::ramp\_m,nsweep,minm,maxm,cutoff);
     Real En = dmrg(psi,H,sweeps);
 
     cout << format("\nGround State Energy = %.10f\n")%En;
@@ -124,48 +125,71 @@ int main(int argc, char* argv[])
     //MEASURING SPIN
     //
 
-    Vector Sz(N); //vector of z-components of spin for each site
-    Sz = 0.0; //initialize
+    //vector of z-components of spin for each site
+    Vector Sz(N);
+    Sz = 0.0;
     std::ofstream szf("Sz"); //file to write Szj info to
 
-    Vector SdotS(N-1); //Sj dot Sj+1 by means of Splus and Sminus
+    //Sj dot Sj+1 by means of Splus and Sminus
+    Vector SdotS(N-1); 
     SdotS = 0.0;
-    std::ofstream sdots("SdotS"); //file to write SdotS information to
 
-    Real sumSdotS = 0.0; //also sum up the SdotS and see if it's equal to our ground state energy
+    //file to write SdotS information to
+    std::ofstream sdots("SdotS"); 
+
+    //also sum up the SdotS and see if it is 
+    //equal to our ground state energy
+    Real sumSdotS = 0.0;
 
     for(int j=1; j<=N; j++) {
-        psi.position(j); //move psi to get ready to measure at position j
-        //after calling psi.position(j), psi.AA(j) returns a local representation of the wavefunction,
-        //which is the proper way to make measurements / take expectation values with local operators.
 
-        ITensor ket = psi.AA(j); //Dirac "ket" for wavefunction
-        ITensor bra = conj(primesite(ket)); //Dirac "bra" for wavefunction
+        //move psi to get ready to measure at position j
+        psi.position(j);
+        //after calling psi.position(j), psi.AA(j) returns a 
+        //local representation of the wavefunction,
+        //which is the proper way to make measurements / take 
+        //expectation values with local operators.
 
-        ITensor szj_op = model.sz(j); //operator for sz at site j
+        //Dirac "ket" for wavefunction
+        ITensor ket = psi.AA(j);
+        //Dirac "bra" for wavefunction
+        ITensor bra = conj(primesite(ket));
 
-        Sz(j) = Dot(bra, szj_op*ket); //take an inner product 
+        //operator for sz at site j
+        ITensor szj\_op = model.sz(j);
+
+         //take an inner product 
+        Sz(j) = Dot(bra, szj\_op\*ket);
         szf << Sz(j) << endl; //print to file
 
         if (j<N) { 
-            //make a bond ket/bra based on wavefunction representing sites j and j+1:
+
+            //make a bond ket/bra based on wavefunction 
+            //representing sites j and j+1:
+            //psi.bondTensor(j) is analogous to psi.AA(j), 
+            //except that bondTensor encodes bond information 
+            //between j and j+1, so long as 
+            //psi.position(j) has been called
             ITensor bondket = psi.bondTensor(j); 
-            //psi.bondTensor(j) is analogous to psi.AA(j), except that 
-	    //bondTensor encodes bond information between j and j+1, so long as psi.position(j) has been called
             ITensor bondbra = conj(primesite(bondket)); 
 
-            ITensor szz_op = model.sz(j)*model.sz(j+1); 
-            SdotS(j) = Dot(bondbra, szz_op*bondket); //start with z components
+            ITensor szz\_op = model.sz(j)\*model.sz(j+1); 
+            //start with z components
+            SdotS(j) = Dot(bondbra, szz\_op\*bondket);
 
-            // add in S+ and S- components:
-            // use sp(j)*sm(j) and its conjugate, also note the one-half out front:
-            ITensor spm_op = model.sp(j)*model.sm(j+1);
-            SdotS(j) += 0.5*Dot(bondbra, spm_op*bondket);
-            ITensor smp_op = model.sm(j)*model.sp(j+1);
-            SdotS(j) += 0.5*Dot(bondbra, smp_op*bondket);
+            //add in S+ and S- components:
+            //use sp(j)\*sm(j) and its conjugate, 
+            //also note the one-half out front:
+            ITensor spm\_op = model.sp(j)\*model.sm(j+1);
+            SdotS(j) += 0.5\*Dot(bondbra, spm\_op\*bondket);
+            ITensor smp\_op = model.sm(j)\*model.sp(j+1);
+            SdotS(j) += 0.5\*Dot(bondbra, smp\_op\*bondket);
 
             sdots << SdotS(j) << endl; //print to file
-            sumSdotS += SdotS(j); //figure out the sum of SdotS.  should be the same as the Heisenberg energy
+
+            //figure out the sum of SdotS.  
+            //should be the same as the Heisenberg energy
+            sumSdotS += SdotS(j); 
         }
     }
 
