@@ -26,7 +26,7 @@ sweeps.setCutoff(1E-5);
 </code>
 
 The argument `Sweeps::ramp_m` in the first line tells the sweeps object to gradually
-increase the maximum number of states kept in each sweep until it reaches the Maxm (=100).
+increase the maximum number of states kept in each sweep until it reaches the `Maxm` (=100).
 
 The wavefunction must have the same number of sites
 as the Hamiltonian, so we can declare it as
