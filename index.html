@@ -67,8 +67,8 @@
     <h3>Perform a DMRG Calculation</h3>
     <ul>
     <li> int N = 100; </li>
-    <li> SpinOne::Model model(N); </li>
-    <li> MPO H = SpinOne::Heisenberg(model)(); </li>
+    <li> SpinOne model(N); </li>
+    <li> MPO H = Heisenberg(model); </li>
     <li> MPS psi(model); </li>
     <li> Real energy = dmrg(psi,H); </li>
     </ul>
@@ -79,11 +79,15 @@
     <ul>
     <li>Index a("a",2), b("b",2), c("c",2); </li>
     <li>ITensor Z(a,b), X(b,c); </li>
-    <li>Z &lt;&lt; 1, 0, 0, -1;
-    <li>X &lt;&lt; 0, 1, 1, 0;
+    <li>commaInit(Z) &lt;&lt; 1, 0,
+    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    0,-1;
+    <li>commaInit(X) &lt;&lt; 0, 1,
+    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    1, 0;
     <li>ITensor R = Z * X; </li>
-    <li>assert(R(a(1),c(2)) == &nbsp;1);</li>
-    <li>assert(R(a(2),c(1)) == -1);</li>
+    <li>Print( R(a(1),c(2)) ); &nbsp; //Prints R(a(1),c(2)) = 1</li>
+    <li>Print( R(a(2),c(1)) ); &nbsp; //Prints R(a(1),c(2)) = -1</li>
     </ul>
 </div>
 
