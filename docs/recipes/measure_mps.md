@@ -2,13 +2,12 @@
 
 Here we will learn how to measure some properties of the
 Heisenberg model wavefunction by adding to the code from the [[previous example|recipes/basic_dmrg]].
-Essentially we need three pieces to take an expectation value of some property:  
-the operator corresponding to that property, the wavefunction, and a way to do the inner
+Essentially we need three pieces to take an expectation value of some property: the operator 
+corresponding to that property, the wavefunction, and a way to do the inner
 product of the operator with the wavefunction.
 
 For example, consider trying to measure the z-component of
-the spin on some site `j` in the Heisenberg chain.  
-This operator is a method of the `SpinOne::Model model(N);` class
+the spin on some site `j` in the Heisenberg chain. This operator is a method of the `SpinOne model(N);` class
 that we defined last time, and can be represented by an ITensor:
 
 <code>
@@ -26,17 +25,18 @@ psi.position(j);
 
 _This step is absolutely vital_.  It tells the MPS wavefunction to put all the information
 about the amplitudes of the various spin occupations into the site at `j`.
-Without which, measuring `sz(j)` would give errors.  Getting these amplitudes is
-then very simple, and they will form the ket part of our Dirac "bra-ket" inner product:
+Without this step, we would not be measuring `sz(j)` in an orthonormal environment and would
+get the wrong answer.  Getting the needed amplitudes is very simple, 
+and they will form the ket part of our Dirac "bra-ket" inner product:
 
 <code>
 ITensor ket = psi.AA(j);
 </code>
 
-After calling `psi.position(j)`, all the `psi.AA(j+n)` for `n != 0` are basis functions
-for the sites `j+n`.  As basis functions, these `psi.AA(j+n)` do
-not have amplitude information; only the `psi.AA(j)` does.  That is why it is vital to call 
-`psi.position(j)` before doing a measurement at site `j`.
+After calling `psi.position(j)`, all the `psi.AA(j+n)` tensors for `n != 0` form
+the basis weighted by the wavefunction amplitudes.
+As basis tensors, these `psi.AA(j+n)` do not have amplitude information; only the `psi.AA(j)` does. 
+That is why it is vital to call `psi.position(j)` before doing a measurement at site `j`.
 
 To get the bra part of the Dirac bra-ket, think about the ket as a column vector, the operator
 as a matrix, and the bra as a row vector.  We get the bra by turning the ket into a row vector and conjugating
@@ -46,8 +46,8 @@ any imaginary parts.  The way we do this is simple:
 ITensor bra = conj(primesite(ket));
 </code>
 
-The `primesite` function is what turns the ket into a row vector, and `conj` does the conjugation.
-(For the Heisenberg model, there is no need for the conjugation, though.)
+The `primesite` function is what turns the ket into a row vector (because it will contract with the 
+row index of our operator), and `conj` does the conjugation.
 Now we are ready to measure the expectation value of `sz(j)` by using the inner product function `Dot`:
 
 <code>
@@ -90,11 +90,10 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
 <code>
 \#define THIS\_IS\_MAIN
 \#include "core.h"
-\#include "hams.h"
+\#include "model/spinone.h"
+\#include "hams/heisenberg.h"
 using boost::format;
-using std::cout;
-using std::cerr;
-using std::endl;
+using namespace std;
 
 int main(int argc, char\* argv[])
 {
@@ -104,9 +103,9 @@ int main(int argc, char\* argv[])
     int maxm = 100;
     Real cutoff = 1E-5;
 
-    SpinOne::Model model(N);
+    SpinOne model(N);
 
-    MPO H = SpinOne::Heisenberg(model)();
+    MPO H = Heisenberg(model);
 
     InitState initState(N);
     for(int i = 1; i <= N; ++i) 

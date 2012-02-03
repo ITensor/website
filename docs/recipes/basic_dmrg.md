@@ -3,38 +3,36 @@
 To do any DMRG calculation you first need a Hamiltonian. 
 The simplest way to obtain one is to 
 use a pre-defined Hamiltonian provided with the library. 
-The sites used by the Hamiltonian are provided by a model object:
+The site indices used by the Hamiltonian are provided by a model object:
 
-`SpinOne::Model model(N);`
+`SpinOne model(N);`
 
 Here we have chosen to use spin 1 sites and our lattice size is `N`.
-Now instantiate the Hamiltonian, which is a matrix product operator (MPO):
+Next we instantiate the Hamiltonian, which is a matrix product operator (MPO):
 
-`MPO H = SpinOne::Heisenberg(model)();`
-
-(Note the second set of () at the end of the line.)
+`MPO H = Heisenberg(model);`
 
 Before beginning the calculation, we need to specify how many DMRG sweeps to do and
-what schedule we would like to follow as we change the parameters controlling the accuracy.
+what schedule we would like for the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
 <code>
-Sweeps sweeps(Sweeps::ramp_m);
+Sweeps sweeps(Sweeps::exp_m);
 sweeps.setNsweep(5);
 sweeps.setMaxm(100);
 sweeps.setCutoff(1E-5);
 </code>
 
-The argument `Sweeps::ramp_m` in the first line tells the sweeps object to gradually
-increase the maximum number of states kept in each sweep until it reaches the `Maxm` (=100).
+The argument `Sweeps::exp_m` in the first line tells the sweeps object to exponentially
+increase the maximum number of states kept in each sweep until it reaches the `Maxm` (which is 100 here).
 
-The wavefunction must have the same number of sites
-as the Hamiltonian, so we can declare it as
+The wavefunction must use the same sites
+as the Hamiltonian, so we construct it using the same model object as before
 
 `MPS psi(model);`
 
-By default the components of an MPS are set to random values; we could also set `psi`
-to some initial state in order to accelerate the DMRG convergence time.
+By default an MPS is initialized to a random product state; we could also set `psi`
+to some specific initial state in order to accelerate the DMRG convergence time.
 
 Finally, we are ready to call DMRG:
 
