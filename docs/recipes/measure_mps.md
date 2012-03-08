@@ -88,7 +88,6 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
 
 
 <code>
-\#define THIS\_IS\_MAIN
 \#include "core.h"
 \#include "model/spinone.h"
 \#include "hams/heisenberg.h"
