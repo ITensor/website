@@ -17,13 +17,15 @@ what schedule we would like for the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
 <code>
-Sweeps sweeps(Sweeps::exp_m);
-sweeps.setNsweep(5);
-sweeps.setMaxm(100);
-sweeps.setCutoff(1E-5);
+int nsweep = 5;
+int minm = 1;
+int maxm = 100;
+Real cutoff = 1E-5;
+
+Sweeps sweeps(Sweeps::exp_m,nsweep,minm,maxm,cutoff);
 </code>
 
-The argument `Sweeps::exp_m` in the first line tells the sweeps object to exponentially
+The argument `Sweeps::exp_m` in the last line tells the sweeps object to exponentially
 increase the maximum number of states kept in each sweep until it reaches the `Maxm` (which is 100 here).
 
 The wavefunction must use the same sites
@@ -41,7 +43,40 @@ Finally, we are ready to call DMRG:
 When the algorithm is done, it returns the ground state energy. The optimized ground state
 wavefunction is stored back into `psi` on return.
 
+Below you can find a complete working code that includes all of these steps.
 
+
+<code>
+\#include "core.h"
+\#include "model/spinone.h"
+\#include "hams/heisenberg.h"
+using boost::format;
+using namespace std;
+
+int main(int argc, char\* argv[])
+{
+    int N = 100;
+    int nsweep = 5;
+    int minm = 1;
+    int maxm = 100;
+    Real cutoff = 1E-5;
+
+    SpinOne model(N);
+
+    MPO H = Heisenberg(model);
+
+    Sweeps sweeps(Sweeps::exp_m,nsweep,minm,maxm,cutoff);
+
+    MPS psi(model);
+
+    Real energy = dmrg(psi,H,sweeps);
+
+    cout << format("Ground State Energy = %.10f") % energy << endl;
+
+    return 0;
+}
+
+</code>
 
 <br>
 [[Back to Recipes|recipes]]
