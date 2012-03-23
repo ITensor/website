@@ -14,7 +14,10 @@ to our tensor network.
 
 Now we can create a single-site wavefunction as a rank 1 ITensor:
 
+<img src="docs/tutorial/ket.png" style=""/>
+
 `ITensor ket(s);`
+
 
 Let us choose the initial state to be at a 45-degree angle between the +z and +x axes:
 
@@ -58,15 +61,20 @@ commaInit(Sx) << 0, 0.5
 
 Now, for our measurements we would like to take
 the expectation value of `Sz` and `Sx`. 
-
 First make the Dirac "bra" conjugate of the wavefunction:
 
+<img src="docs/tutorial/bra.png" style=""/>
+
 `ITensor bra = conj(primed(ket));`
+
+
 
 The `primed` method increases the prime level of all indices
 by 1.
 
 Finally, we can compute the expectation values as
+
+<img src="docs/tutorial/expect.png" style=""/>
 
 <code>
 Real zz = (bra \* Sz \* ket).toReal();
@@ -75,6 +83,7 @@ Real xx = (bra \* Sx \* ket).toReal();
 cout << format("<Sz> = %.5f") % zz << endl;
 cout << format("<Sx> = %.5f") % xx << endl;
 </code>
+
 
 The `toReal()` method is needed to convert the
 rank 0 ITensors resulting from the contraction
