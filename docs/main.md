@@ -1,11 +1,12 @@
-Welcome to the ITensor Library documentation pages. If you are using the library
-for the first time, the best place to begin is the [[tutorial introduction|tutorial]].
+Welcome - if you are using the library
+for the first time, see the [[Tutorial Introduction|tutorial]].
 
-As you begin to use the library for your own projects, take a look at
-our collection of [[code recipes|recipes]] which illustrate how to perform common tasks.
+Once you learn the basics, 
+browse our collection of [[Code Recipes|recipes]] for performing common tasks.
 
 
-* [[Tutorial Introduction|tutorial]]
-* [[Code Recipes|recipes]]
+Finally, you may find the following references helpful:
+
+
 * [[Papers Using ITensor|papers]]
 * [[Helpful Reading|reading]]
