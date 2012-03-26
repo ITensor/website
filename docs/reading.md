@@ -38,7 +38,7 @@ Here are a few papers we have found to be helpful introductions to tensor produc
 * [Infinite size density matrix renormalization group, revisited](http://arxiv.org/abs/0804.2509), I.P.&nbsp;McCulloch,
   arxiv:0804.2509 (2008)
 
-  *Comments*: Solution of the wavefunction acceleration problem plauging infinite DMRG. This paper really demonstrates
+  *Comments*: Solution of the wavefunction acceleration problem plaguing infinite DMRG. This paper really demonstrates
   the power of the MPS formalism.
 
 
