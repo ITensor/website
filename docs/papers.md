@@ -1,6 +1,6 @@
 #Papers Using the ITensor Library#
 
-* [Chemistry in 1d via DMRG: Benchmarks for small atoms, ions, and molecules](http://arxiv.org/abs/1202.4788), Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke and Steven&nbsp;R.&nbsp;White (2012) arxiv:1202.4788
+* [Reference Electronic Structure Calculations in One Dimension](http://arxiv.org/abs/1202.4788), Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke and Steven&nbsp;R.&nbsp;White (2012) arxiv:1202.4788
 
 * [One-dimensional Continuum Electronic Structure Calculations With the Density Matrix Renormalization Group](http://arxiv.org/abs/1107.2394), E.M.&nbsp;Stoudenmire, Lucas&nbsp;O.&nbsp;Wagner, Steven&nbsp;R.&nbsp;White and Kieron&nbsp;Burke (2011) arxiv:1107.2394
 
