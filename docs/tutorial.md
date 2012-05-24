@@ -1,12 +1,12 @@
 #Tutorial: Table of Contents#
 
-[[Introduction|tutorial]]
+[[0. Introduction: the ITensor|tutorial]]
 
 [[1. A Simple Measurement|tutorial/simple_measurement]]
 
 </br>
 
-#Tutorial Introduction#
+#Introduction: the ITensor#
 
 Before diving into the tutorial, let us introduce the object at the heart of the 
 library: the intelligent tensor or ITensor.
@@ -19,18 +19,19 @@ In traditional index notation we would write (summation over `j` implied)
 
 To use ITensors, first define three Index objects, `i`, `j` and `k`
 
-`Index i("i",10), j("j",20),k("k",30);`
+`Index i("i",10), j("j",20), k("k",30);`
 
 The first argument to each constructor is a string saying how that Index is to be printed.
-The second argument is the dimension of the Index.
+The second argument is the dimension of the Index, that is, the number of values it can take.
 
 Now declare the actual ITensors:
 
-`ITensor A(i,j),B(j,k),C;`
+`ITensor A(i,j), B(j,k), C;`
+
+So far we have only specified the indices of each ITensor; all of their components are set to zero by default.
 
 An ITensor has no ordering of its indices, so `A(2,1)` is not defined;
-instead, to set a value of 0.5 for the (2,1) element of `A`, for example,
-we write
+instead, for example, to set a the (2,1) element of `A` to the value 0.5 we write
 
 `A(i(2),j(1)) = 0.5`
 
@@ -38,17 +39,19 @@ which has the same effect as
 
 `A(j(1),i(2)) = 0.5`
 
-Now the multiplication is simply
+We can set all remaining components of `A` and `B` likewise.
+
+Now the matrix multiplication discussed earlier becomes
 
 `C = A * B`
 
-which gives the same result as
+We can get the same result by computing
 
 `C = B * A`
 
-The index `j` is automatically contracted over, so the 
-result `C` has indices `i` and `k`, with no ordering associated
-with them. We see that multiplication with ITensors commutes!
+In either case index `j` is automatically contracted over, so the 
+result `C` will have indices `i` and `k`, with no ordering associated
+to them. We see that multiplication with ITensors commutes!
 
 Next section, [[a simple measurement|tutorial/simple_measurement]].
 

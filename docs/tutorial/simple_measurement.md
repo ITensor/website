@@ -12,7 +12,7 @@ to our tensor network.
 
 ## Wavefunction ##
 
-Now we can create a single-site wavefunction as a rank 1 ITensor:
+We can represent a single-site wavefunction as a rank 1 ITensor:
 
 <img src="docs/tutorial/ket.png" style=""/>
 
@@ -27,7 +27,7 @@ ket(s(1)) = cos(theta/2);
 ket(s(2)) = sin(theta/2);
 </code>
 
-The factors of 2 in the `cos` and `sin` are present because this is an S=1/2 spin.
+(The factors of 2 in the `cos` and `sin` are present because our wavefunction represents a spin 1/2.)
 
 ## Operators ##
 
@@ -38,12 +38,12 @@ ITensor Sz(s,primed(s)),
         Sx(s,primed(s));
 </code>
 
-Here `primed(s)` makes an Index s' which is identical to the Index s but
-has a prime level of 1. This means the library will treat it
-as a distinct Index, but which can be converted back
-to `s` by removing the prime later.
+Here `primed(s)` makes an Index &nbsp;`s'` which is identical to the Index &nbsp;`s` but
+has a prime level of 1. The library treats indices with different prime levels
+as distinct, even if they match otherwise.
+We can convert a primed Index to its original form later by just setting its prime level back to zero.
 
-This is in fact the convention we use throughout the library:
+This is the convention we use throughout the library:
 single-site operators are rank 2 tensors with indices S and S',
 where S is a `Site` Index.
 
@@ -69,12 +69,14 @@ First make the Dirac "bra" conjugate of the wavefunction:
 
 
 
-The `primed` method increases the prime level of all indices
+The `primed` function increases the prime level of all indices
 by 1.
 
-Finally, we can compute the expectation values as
+Finally, we compute the expectation value as the diagram
 
 <img src="docs/tutorial/expect.png" style=""/>
+
+which becomes in code:
 
 <code>
 Real zz = (bra \* Sz \* ket).toReal();
@@ -96,7 +98,7 @@ If all goes well, we should see the printout
 <Sx> = 0.35355
 </code>
 
-which are the correct components of a magnitude
+which are indeed the components of a magnitude
 1/2 vector at a 45 degree angle between +z and +x.
 
 </br>
