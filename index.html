@@ -70,7 +70,9 @@
     <li> SpinOne model(N); </li>
     <li> MPO H = Heisenberg(model); </li>
     <li> MPS psi(model); </li>
-    <li> Real energy = dmrg(psi,H); </li>
+    <li> Sweeps sweeps(5); //perform 5 sweeps of DMRG </li>
+    <li> sweeps.maxm() = 50, 50, 100, 100, 200; //set accuracy parameters </li>
+    <li> Real energy = dmrg(psi,H,sweeps); </li>
     </ul>
 </div>
 
