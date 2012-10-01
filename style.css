@@ -19,6 +19,7 @@ ol li { margin-left: 30px; }
 
 code { font-family: monospace; font-size: 12pt; }
 
+
 #main { width:800px; margin:0 auto; padding: 0px 0px 0px 0px;}
 
 .rounded { }
@@ -141,6 +142,7 @@ code { font-family: monospace; font-size: 12pt; }
 .screenshot h3 { font-family: sans-serif; padding: 0px 0px 10px 0px; }
 .screenshot ul { display: table; }
 .screenshot ul li { display: table; }
+.screenshot a { font-family: monospace; }
 
 .docs 
 { 

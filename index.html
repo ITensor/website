@@ -48,7 +48,7 @@
     </div>
 
     <p>
-    ITensor is a C++ library for creating efficient and flexible physics simulations based on tensor product wavefunctions.
+    ITensor (Intelligent Tensor) is a C++ library for creating efficient and flexible physics simulations based on tensor product wavefunctions.
     </p>
     <p>
     Multiplying ITensors is just as easy as multiplying scalars: matching indices automatically find each other 
@@ -67,12 +67,13 @@
     <h3>Perform a DMRG Calculation</h3>
     <ul>
     <li> int N = 100; </li>
-    <li> SpinOne model(N); </li>
-    <li> MPO H = Heisenberg(model); </li>
+    <li> SpinOne model(N); //object containing all the lattice sites (indices)</li>
+    <li> MPO H = Heisenberg(model); //pre-defined Hamiltonian; easy to write your own</li>
     <li> MPS psi(model); </li>
     <li> Sweeps sweeps(5); //perform 5 sweeps of DMRG </li>
     <li> sweeps.maxm() = 50, 50, 100, 100, 200; //set accuracy parameters </li>
-    <li> Real energy = dmrg(psi,H,sweeps); </li>
+    <li> dmrg(psi,H,sweeps); //run DMRG algorithm </li>
+    <li> Real energy = psiHphi(psi,H,psi); //can <a href="http://itensor.org/docs.cgi?page=recipes/measure_mps">measure wavefunction</a> *after* DMRG</li>
     </ul>
 </div>
 
