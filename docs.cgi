@@ -48,10 +48,10 @@ def convert(string):
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
-                mdstring += "[%s](docs.cgi?page=%s)"%(name,link)
+                mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(name,link)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
+                mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
     #Format code blocks, preserving newlines and indentation
     slist = code_block_re.split(mdstring)

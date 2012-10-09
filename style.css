@@ -169,7 +169,10 @@ width: 90%;
     }
 .docs ul { display: table; list-style: square; }
 .docs ul li { margin-left: 30px; }
-
+.docs img.arrow 
+    {
+    width: 12px;
+    }
 
 #footer { width: 800px; margin-bottom: 50px; float: left; }
 
