@@ -66,13 +66,14 @@
 <div class="full screenshot">
     <h3>Perform a DMRG Calculation</h3>
     <ul>
-    <li> int N = 100; </li>
-    <li> SpinOne model(N); //object containing all the lattice sites (indices)</li>
+    <li> SpinOne model(100); //define Hilbert space of 100 spin-lattice sites</li>
     <li> MPO H = Heisenberg(model); //pre-defined Hamiltonian; easy to write your own</li>
     <li> MPS psi(model); </li>
+    <li>&nbsp;</li>
     <li> Sweeps sweeps(5); //perform 5 sweeps of DMRG </li>
-    <li> sweeps.maxm() = 50, 50, 100, 100, 200; //set accuracy parameters </li>
-    <li> dmrg(psi,H,sweeps); //run DMRG algorithm </li>
+    <li> sweeps.maxm() = 50, 50, 100, 100, 200; //max number of states kept each sweep</li>
+    <li>&nbsp;</li>
+    <li> dmrg(psi,H,sweeps); //run the DMRG algorithm</li>
     <li> Real energy = psiHphi(psi,H,psi); //can <a href="http://itensor.org/docs.cgi?page=recipes/measure_mps">measure wavefunction</a> *after* DMRG</li>
     </ul>
 </div>
