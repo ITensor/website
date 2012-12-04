@@ -5,8 +5,10 @@ Once you learn the basics,
 browse our [[Code Recipes|recipes]] for performing common tasks.
 
 
-Finally, you may find the following references helpful:
+Additional documentation:
 
+ [[ITensor Code Conventions|conventions]]
 
-* [[Papers Using ITensor|papers]]
-* [[Helpful Reading|reading]]
+ [[Papers Using ITensor|papers]]
+
+ [[Helpful Reading|reading]]

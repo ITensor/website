@@ -1,12 +1,12 @@
 #Tutorial: A Simple Measurement
 
-Let us consider a single spin 1/2 degree of freedom. 
-First we will need an Index to define the Hilbert space of the spin:
+First let's model a single spin 1/2 degree of freedom. 
+We will need an Index to define the Hilbert space of the spin:
 
 `Index s("s",2,Site);`
 
-Index objects come in two varieties, `Site` or `Link`. It is convenient to use 
-`Site` indices for lattice degrees of freedom and `Link` for indices internal
+Index objects come in two varieties, `Site` or `Link`. It is helpful to use 
+`Site` indices for lattice site, or physical, degrees of freedom and `Link` for indices internal
 to our tensor network.
 
 

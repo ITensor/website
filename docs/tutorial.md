@@ -17,7 +17,7 @@ In traditional index notation we would write (summation over `j` implied)
 
 `Cik = Aij Bjk`
 
-To use ITensors, first define three Index objects, `i`, `j` and `k`
+To do this using ITensors, first define three Index instances, `i`, `j` and `k`
 
 `Index i("i",10), j("j",20), k("k",30);`
 
