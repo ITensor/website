@@ -86,11 +86,11 @@
     <ul>
     <li>Index a("a",2), b("b",2), c("c",2); </li>
     <li>ITensor Z(a,b), X(b,c); </li>
-    <li>commaInit(Z) &lt;&lt; 1, 0,
-    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li>commaInit(Z,a,b) &lt;&lt; 1, 0,
+    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     0,-1;
-    <li>commaInit(X) &lt;&lt; 0, 1,
-    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li>commaInit(X,b,c) &lt;&lt; 0, 1,
+    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     1, 0;
     <li>ITensor R = Z * X; </li>
     <li>Print( R(a(1),c(2)) );</li>
