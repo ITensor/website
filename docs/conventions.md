@@ -1,13 +1,24 @@
 #ITensor Code Conventions#
 
+None of these conventions are hard and fast, and there exist exceptions throughout the library.
+However, the conventions below should be followed whenever possible and sensible.
+
 
 ##Classes and Structs##
 
-* Class methods modifying objects do not return a copy (although they may return a reference). 
-  Free methods modifying objects return a copy. For example, `I.doprime()` increases the primeLevel of `Index I` in place
-  whereas `primed(I)` returns a copy of `I` with increased primeLevel.
+* Class names are capitalized.
 
-* The first letter of a class name is always capitalized.
+* Class methods are camel-cased e.g. `obj.doThing(...)` not `obj.do_thing(...)`.
+
+* Private class data members are underscore spaced and end in an underscore.
+  For example, `last_energy_` or `curr_index_`.
+
+* Class methods modifying objects do not return a copy (but may return a reference). 
+  For example, `I.doprime()` increases the prime level of `Index I` in place.
+
+* Free methods modifying objects return a copy. For example, 
+  `primed(I)` returns a copy of `I` with increased prime level.
+
 
 ##Formatting##
 
@@ -26,25 +37,28 @@
           return sqrt(-x);
       }</code>
 
-##Functions##
-
-* Non-const reference or pointer arguments to a function always come after const reference or regular (copying) function arguments.
-  The only exception is for arguments with default values which must come last.
-
-* The return type of a function appears at the beginning of the line preceding the function name:
+* The return type of functions and class methods appears at the beginning of the line preceding the function name:
 
   <code>
   Real
   calculateSomething(const ITensor& A, const ITensor& B); </code> 
-  Other keywords such as `friend` or `inline` should come after the return type unless disallowed by the compiler.
+  Other keywords such as `friend` or `inline` should come after the return type unless disallowed by the compiler
+  (such as when the return type is a reference).
+
+##Functions##
+
+* The preferred order of function arguments is:
+    * Regular (copying, such as `int j`) and const reference (such as `const MPO& H`) arguments.
+    * Non-const reference or pointer arguments.
+    * Arguments with defaults (which must come last anyway).
 
 
 ##Operators##
 
-* Single-site operators are tensors with one unprimed Site index `S` and one primed Site Index `S'`.
-  For the case of IQIndices, IQIndex `S` has an In Arrow and `S'` an Out Arrow.
+* Single-site operator tensors have one unprimed Site index `S` and one primed Site Index `S'`.
+  For IQTensor operators, IQIndex `S` has an In Arrow and `S'` an Out Arrow.
 
-* Each site tensor of an matrix product operators (MPO) follows the same Site-index convention as single-site operators.
+* Each tensor of a matrix product operator (MPO) follows the same conventions as single-site operators.
 
 
 </br>
