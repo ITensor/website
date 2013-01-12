@@ -1,7 +1,7 @@
 #ITensor Code Conventions#
 
 None of these conventions are hard and fast, and there exist exceptions throughout the library.
-However, the conventions below should be followed whenever possible and sensible.
+However, the conventions below should be followed whenever reasonable.
 
 
 ##Classes and Structs##
@@ -13,16 +13,28 @@ However, the conventions below should be followed whenever possible and sensible
 * Private class data members are underscore spaced and end in an underscore.
   For example, `last_energy_` or `curr_index_`.
 
-* Class methods modifying objects do not return a copy (but may return a reference). 
+* Class methods modifying objects do not return a copy (though may return a reference). 
   For example, `I.doprime()` increases the prime level of `Index I` in place.
 
 * Free methods modifying objects return a copy. For example, 
   `primed(I)` returns a copy of `I` with increased prime level.
 
+##File Layout##
+
+* Each header file should primarily contain one class definition, although other
+closely related helper classes may be included (such as the commaInit class for 
+initializing ITensors, defined in itensor.h).
+
+* Except for class definitions, function declarations, and very short inline functions (i.e. one, perhaps
+two line), all other code goes either at the end of a header
+file or in a separate .cc file.
+
+
 
 ##Formatting##
 
-* All code should be idented using 4 spaces for each indent level ("soft tabs").
+* Code should be idented using 4 spaces for each indent level ("soft tabs"). This guarantees
+the code looks consistent in text editors regardless of tab stop settings.
 
 * Braces following function or class declarations, etc., should be on their own line and 
   be indented to the same level as the enclosed code. For example:
@@ -47,7 +59,7 @@ However, the conventions below should be followed whenever possible and sensible
 
 ##Functions##
 
-* The preferred order of function arguments is:
+* The preferred order for function arguments is:
     * Regular (copying, such as `int j`) and const reference (such as `const MPO& H`) arguments.
     * Non-const reference or pointer arguments.
     * Arguments with defaults (which must come last anyway).
