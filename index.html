@@ -48,12 +48,18 @@
     </div>
 
     <p>
-    ITensor (Intelligent Tensor) is a C++ library for creating efficient and flexible physics simulations based on tensor product wavefunctions.
-    It features powerful algorithms including a complete DMRG code and methods for manipulating matrix product states.
+    ITensor (Intelligent Tensor) is a C++ library for efficient and flexible calculations based on tensor product wavefunctions.
+    <br/>Features include:
+    <ul id="features">
+    <li>Complete DMRG code</li>
+    <li>Abelian quantum numbers</li>
+    <li>Efficient matrix product state types</li>
+    <li>Complex numbers (supported lazily i.e. no efficiency loss if real)</li>
+    </ul>
     </p>
     <p>
-    Multiplying ITensors is just as easy as multiplying scalars: matching indices automatically find each other 
-    and contract, making it simple to transcribe tensor network diagrams into correct, efficient code.
+    Multiplying ITensors is as easy as multiplying scalars: matching indices automatically 
+    contract, making it simple to transcribe tensor network diagrams into correct, efficient code.
     </p>
     <p>
     For example, the diagram below can be converted to code as
@@ -75,7 +81,7 @@
     <li> sweeps.maxm() = 50, 50, 100, 100, 200; //max number of states kept each sweep</li>
     <li>&nbsp;</li>
     <li> dmrg(psi,H,sweeps); //run the DMRG algorithm</li>
-    <li> Real energy = psiHphi(psi,H,psi); //can <a href="http://itensor.org/docs.cgi?page=recipes/measure_mps">measure wavefunction</a> *after* DMRG</li>
+    <li> Real energy = psiHphi(psi,H,psi); //can <a href="http://itensor.org/docs.cgi?page=recipes/measure_mps">analyze wavefunction</a> *after* DMRG</li>
     </ul>
 </div>
 
@@ -94,9 +100,9 @@
     1, 0;
     <li>ITensor R = Z * X; </li>
     <li>Print( R(a(1),c(2)) );</li>
-    <li> &nbsp; //Prints R(a(1),c(2)) = 1</li>
+    <li> &nbsp; //Prints: R(a(1),c(2)) = 1</li>
     <li>Print( R(a(2),c(1)) );</li>
-    <li> &nbsp; //Prints R(a(1),c(2)) = -1</li>
+    <li> &nbsp; //Prints: R(a(1),c(2)) = -1</li>
     </ul>
     </div>
 </div>
