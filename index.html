@@ -39,7 +39,7 @@
 <div class="full">
 
     <div id="download" class="rounded">
-        <h4>Download:</h4>
+        <h4>Download latest</h4>
         <ul>
         <li><a href="https://github.com/ITensor/library/tarball/master">tar.gz</a></br>
         <li><a href="https://github.com/ITensor/library/zipball/master">zip</a></br>
@@ -48,13 +48,13 @@
     </div>
 
     <p>
-    ITensor (Intelligent Tensor) is a C++ library for efficient and flexible calculations based on tensor product wavefunctions.
+    ITensor&mdash;Intelligent Tensor&mdash;is an efficient and flexible C++ library for implementing tensor product wavefunction calculations.
     <br/>Features include:
     <ul id="features">
-    <li>Complete DMRG code</li>
-    <li>Abelian quantum numbers</li>
+    <li>A complete DMRG code</li>
+    <li>Quantum number conserving tensors</li>
     <li>Efficient matrix product state types</li>
-    <li>Complex numbers (supported lazily i.e. no efficiency loss if real)</li>
+    <li>Complex numbers (handled lazily: no efficiency loss if real)</li>
     </ul>
     </p>
     <p>
@@ -87,24 +87,22 @@
 
 <div class="full screenshot">
     <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
-    <div>
     <h3>Multiply Two ITensors</h3>
     <ul>
     <li>Index a("a",2), b("b",2), c("c",2); </li>
     <li>ITensor Z(a,b), X(b,c); </li>
     <li>commaInit(Z,a,b) &lt;&lt; 1, 0,
     </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    0,-1;
+    0,-1;</li>
     <li>commaInit(X,b,c) &lt;&lt; 0, 1,
     </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    1, 0;
+    1, 0;</li>
     <li>ITensor R = Z * X; </li>
     <li>Print( R(a(1),c(2)) );</li>
     <li> &nbsp; //Prints: R(a(1),c(2)) = 1</li>
     <li>Print( R(a(2),c(1)) );</li>
     <li> &nbsp; //Prints: R(a(1),c(2)) = -1</li>
     </ul>
-    </div>
 </div>
 
 <div id="footer"></div>

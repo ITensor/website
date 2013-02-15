@@ -1,4 +1,4 @@
-Welcome - if you are using the library
+Welcome&mdash;if you are using the library
 for the first time, see the [[Tutorial Introduction|tutorial]].
 
 Once you learn the basics, 

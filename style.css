@@ -134,12 +134,10 @@ code { font-family: monospace; font-size: 12pt; }
 
 .screenshot
     {
-    float:left;
+    float: left;
     width:780px;
     background: #ddd; 
     padding: 10px 10px;
-    font-family: monospace;
-    font-size: 120%;
     margin: 0px 10px 10px 0px;
     border: 0px;
     -moz-box-shadow: 1px 1px 1px #999;
