@@ -1,4 +1,4 @@
-#Papers Written Using the ITensor Library#
+#Papers Using the ITensor Library#
 
 * [Topological phases in ultracold polar-molecule quantum magnets](http://link.aps.org/doi/10.1103/PhysRevB.87.081106), Salvatore&nbsp;R.&nbsp;Manmana, E.M.&nbsp;Stoudenmire, Kaden&nbsp;R.A.&nbsp;Hazzard, Ana&nbsp;Maria&nbsp;Rey, and Alexey&nbsp;Gorshkov, </br> <i>Phys. Rev. B</i> <b>87</b>, [081106(R)](http://link.aps.org/doi/10.1103/PhysRevB.87.081106) (2013) [arxiv:1210.5518]
 

@@ -82,8 +82,8 @@ which becomes in code:
 Real zz = (bra \* Sz \* ket).toReal();
 Real xx = (bra \* Sx \* ket).toReal();
 
-cout << format("<Sz> = %.5f") % zz << endl;
-cout << format("<Sx> = %.5f") % xx << endl;
+cout << "<Sz> = " << zz << endl;
+cout << "<Sx> = " << xx << endl;
 </code>
 
 

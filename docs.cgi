@@ -48,16 +48,20 @@ def convert(string):
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
-                mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(name,link)
+                #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(name,link)
+                mdstring += "[%s](docs.cgi?page=%s)"%(name,link)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
+                mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
+                #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
     #Format code blocks, preserving newlines and indentation
     slist = code_block_re.split(mdstring)
     mdstring = slist[0]
     for j in range(1,len(slist)):
         chunk = slist[j]
+        last = False
+        if j == (len(slist)-1): last = True
         if j%2 == 0: mdstring += chunk
         else: 
             #Convert whitespace to &nbsp; (html for non-breaking space)
@@ -65,14 +69,15 @@ def convert(string):
             #Convert < and > signs
             chunk = re.sub(r"<",r"&lt;",chunk)
             chunk = re.sub(r">",r"&gt;",chunk)
-            #Convert newlines to <br>
-            chunk = re.sub(r"\n",r"<br>\n",chunk)
+            #Convert newlines to </br>
+            if not last:
+                chunk = re.sub(r"\n",r"</br>\n",chunk)
 
             mdstring += "<code>\n"+chunk+"</code>\n"
 
     #Convert markdown to html
     import markdown2
-    htmlstring = markdown2.markdown(mdstring)
+    htmlstring = markdown2.markdown(mdstring,extras=["fenced-code-blocks"])
 
     #Put in a special class for paragraphs that consist entirely of code
     htmlstring = paragraph_code_re.sub(r"<p><div class='codeblock'>\1</div></p>",htmlstring)
