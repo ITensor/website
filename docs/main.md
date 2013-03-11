@@ -1,4 +1,6 @@
-Welcome&mdash;if you are using the library
+[[Detailed Documentation|classes]] is available for the core classes used throughout the library.
+
+If you are using the library
 for the first time, see the [[Tutorial Introduction|tutorial]].
 
 Once you learn the basics, 
@@ -7,8 +9,10 @@ browse our [[Code Recipes|recipes]] for performing common tasks.
 
 Additional documentation:
 
- [[ITensor Code Conventions|conventions]]
+* [[Tensor and Index Conventions|itensor_conventions]]
 
- [[Papers Using ITensor|papers]]
+* [[C++ Code Conventions|code_conventions]]
 
- [[Helpful Reading|reading]]
+* [[Papers Using ITensor|papers]]
+
+* [[Helpful Reading|reading]]

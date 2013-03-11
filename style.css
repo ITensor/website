@@ -10,7 +10,13 @@ a img {border:none;}
 
 /* Actual stylesheet begins here */
 
-a { color: #336699; font-size: 12pt; font-family: sans-serif; text-decoration: none; }
+a 
+    { 
+    color: #336699; 
+    font-size: 12pt; 
+    font-family: sans-serif; 
+    text-decoration: none; 
+    }
 
 p { font-size: 12pt; font-family: sans-serif; padding-bottom: 10px; text-indent: 0px;}
 
@@ -51,7 +57,7 @@ code { font-family: monospace; font-size: 12pt; }
         -webkit-box-shadow: 1px 1px 1px #999;
         box-shadow: 1px 1px 1px #999;
     }
-#navbar a { font-size: 14pt; color: #000055; }
+#navbar a { font-size: 14pt; color: #000055; text-decoration: none; }
 #navbar a.thispage { color: #fff; }
 #navbar ul { display: table; }
 #navbar ul li { display: table; }
@@ -74,7 +80,7 @@ code { font-family: monospace; font-size: 12pt; }
     box-shadow: 1px 1px 1px #999;
     }
 #download h4 { color: black; }
-#download a { color: #CD2626; }
+#download a { color: #CD2626; text-decoration: none;}
 #download ul { display: table; color: #CD2626; }
 #download ul li { display: table; padding-left: 20px; color: #CD2626; }
 
@@ -176,8 +182,9 @@ width: 90%;
 .docs ul li { margin-left: 30px; }
 .docs img.arrow 
     {
-    width: 12px;
+    width: 8px;
     margin-right: 2px;
+    margin-bottom: 2px;
     }
 
 #footer { width: 800px; margin-bottom: 50px; float: left; }

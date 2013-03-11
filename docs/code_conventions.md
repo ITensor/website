@@ -1,4 +1,4 @@
-#ITensor Code Conventions#
+#ITensor Library C++ Conventions#
 
 None of these conventions are hard and fast, and there exist exceptions throughout the library.
 However, the conventions below should be followed whenever reasonable.
@@ -14,10 +14,10 @@ However, the conventions below should be followed whenever reasonable.
   For example, `last_energy_` or `curr_index_`.
 
 * Class methods modifying objects do not return a copy (though may return a reference). 
-  For example, `I.doprime()` increases the prime level of `Index I` in place.
+  For example, `I.prime()` increments the prime level of `Index I` in place.
 
 * Free methods modifying objects return a copy. For example, 
-  `primed(I)` returns a copy of `I` with increased prime level.
+  `primed(I)` returns a copy of `I` with its prime level incremented.
 
 ##File Layout##
 
@@ -26,7 +26,7 @@ closely related helper classes may be included (such as the commaInit class for
 initializing ITensors, defined in itensor.h).
 
 * Except for class definitions, function declarations, and very short inline functions (i.e. one, perhaps
-two line), all other code goes either at the end of a header
+two lines), all other code goes either at the end of a header
 file or in a separate .cc file.
 
 
@@ -34,7 +34,10 @@ file or in a separate .cc file.
 ##Formatting##
 
 * Code should be idented using 4 spaces for each indent level ("soft tabs"). This guarantees
-the code looks consistent in text editors regardless of tab stop settings.
+the code will look consistent in text editors regardless of tab stop settings.
+
+* Code should be no more than 80 characters wide. Possible exceptions include long string literals or
+if breaking over two lines makes code hard to reason about/debug.
 
 * Braces following function or class declarations, etc., should be on their own line and 
   be indented to the same level as the enclosed code. For example:
@@ -63,14 +66,6 @@ the code looks consistent in text editors regardless of tab stop settings.
     * Regular (copying, such as `int j`) and const reference (such as `const MPO& H`) arguments.
     * Non-const reference or pointer arguments.
     * Arguments with defaults (which must come last anyway).
-
-
-##Operators##
-
-* Single-site operator tensors have one unprimed Site index `S` and one primed Site Index `S'`.
-  For IQTensor operators, IQIndex `S` has an In Arrow and `S'` an Out Arrow.
-
-* Each tensor of a matrix product operator (MPO) follows the same conventions as single-site operators.
 
 
 </br>
