@@ -35,7 +35,7 @@ instead, for example, to set a the (2,1) element of `A` to the value 0.5 we writ
 
 `A(i(2),j(1)) = 0.5`
 
-which has the same effect as
+This has the same effect as
 
 `A(j(1),i(2)) = 0.5`
 
@@ -52,6 +52,9 @@ We can get the same result by computing
 In either case index `j` is automatically contracted over, so the 
 result `C` will have indices `i` and `k`, with no ordering associated
 to them. We see that multiplication with ITensors commutes!
+
+(Of course not all operators commute in quantum mechanics, but an ITensor Index carries no
+quantum numbers itself. To use quantum numbers, see the documentation on [[IQTensor|classes/iqtensor]].)
 
 Next section, [[a simple measurement|tutorial/simple_measurement]].
 

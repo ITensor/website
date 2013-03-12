@@ -1,10 +1,8 @@
-[[Detailed Documentation|classes]] is available for the core classes used throughout the library.
+<img src='link_arrow.png' class='arrow'/>[[Detailed Documentation|classes]] is available for the core classes used throughout the library.
 
-If you are using the library
-for the first time, see the [[Tutorial Introduction|tutorial]].
+<img src='link_arrow.png' class='arrow'/>[[Tutorial|tutorial]]. Start here if you are using the library for the first time.
 
-Once you learn the basics, 
-browse our [[Code Recipes|recipes]] for performing common tasks.
+<img src='link_arrow.png' class='arrow'/>[[Code Recipes|recipes]]. Sample code for performing common tasks
 
 
 Additional documentation:

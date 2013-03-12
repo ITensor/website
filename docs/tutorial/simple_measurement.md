@@ -50,11 +50,11 @@ where S is a `Site` Index.
 Now set the elements of `Sz` and `Sx`:
 
 <code>
-commaInit(Sz) << 0.5, 0
-                 0, -0.5;
+commaInit(Sz,s,primed(s)) << 0.5, 0
+                             0, -0.5;
 
-commaInit(Sx) << 0, 0.5
-                 0.5, 0;
+commaInit(Sx,s,primed(s)) << 0, 0.5
+                             0.5, 0;
 </code>
 
 ## Measurements ##
