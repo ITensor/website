@@ -43,21 +43,22 @@ as a matrix, and the bra as a row vector.  We get the bra by turning the ket int
 any imaginary parts.  The way we do this is simple:
 
 <code>
-ITensor bra = conj(primesite(ket));
+ITensor bra = conj(primed(ket,Site));
 </code>
 
-The `primesite` function is what turns the ket into a row vector (because it will contract with the 
-row index of our operator), and `conj` does the conjugation.
+The `primed` function is what turns the ket into a row vector (because it will contract with the 
+row index of our operator), and `conj` does the conjugation. The argument `Site` passed to primed tells it
+to prime Site-type indices only.
 Now we are ready to measure the expectation value of `sz(j)` by using the inner product function `Dot`:
 
 <code>
 Real szj = Dot(bra, szj_op*ket);
 </code> 
 
-Let's do another, more complicated measurement that will require our kets to be representing information
+Let's do another, more complicated measurement that will require our kets to be representing information <!--'-->
 on two sites `j` and `j+1`.  The vector product S(j) dot S(j+1) will do just fine.  In terms of the 
 z-component and raising and lowering operators, S(j) dot S(j+1) = `sz(j)*sz(j+1) + 0.5*( sp(j)*sm(j+1) + sp(j+1)*sm(j) )`.
-For example, one of the operators we'll need is
+For example, one of the operators we'll need is <!--'-->
 
 <code>
 ITensor spm_op = model.sp(j)*model.sm(j+1);
@@ -90,31 +91,29 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
 <code>
 \#include "core.h"
 \#include "model/spinone.h"
-\#include "hams/heisenberg.h"
+\#include "hams/Heisenberg.h"
 using boost::format;
 using namespace std;
 
 int main(int argc, char\* argv[])
-{
+    {
     int N = 100;
-    int nsweep = 5;
-    int minm = 1;
-    int maxm = 100;
-    Real cutoff = 1E-5;
 
     SpinOne model(N);
 
     MPO H = Heisenberg(model);
 
-    InitState initState(N);
+    InitState initState(model);
     for(int i = 1; i <= N; ++i) 
-        initState(i) = (i%2==1 ? model.Up(i) : model.Dn(i));
+        initState(i,i%2==1 ? &SpinOne::Up : &SpinOne::Dn);
 
     MPS psi(model,initState);
 
-    cout << format("Initial energy = %.5f\n")%psiHphi(psi,H,psi);
+    cout << format("Initial energy = %.5f")%psiHphi(psi,H,psi) << endl;
 
-    Sweeps sweeps(Sweeps::ramp\_m,nsweep,minm,maxm,cutoff);
+    Sweeps sweeps(5);
+    sweeps.maxm() = 20,40,80,120,200;
+
     Real En = dmrg(psi,H,sweeps);
 
     cout << format("\nGround State Energy = %.10f\n")%En;
@@ -139,29 +138,31 @@ int main(int argc, char\* argv[])
     //equal to our ground state energy
     Real sumSdotS = 0.0;
 
-    for(int j=1; j<=N; j++) {
-
+    for(int j=1; j<=N; j++) 
+        {
         //move psi to get ready to measure at position j
         psi.position(j);
+
         //after calling psi.position(j), psi.AA(j) returns a 
         //local representation of the wavefunction,
-        //which is the proper way to make measurements / take 
-        //expectation values with local operators.
+        //which is the proper way to make measurements
+        //i.e. take expectation values with local operators.
 
         //Dirac "ket" for wavefunction
         ITensor ket = psi.AA(j);
+
         //Dirac "bra" for wavefunction
         ITensor bra = conj(primesite(ket));
 
         //operator for sz at site j
         ITensor szj\_op = model.sz(j);
 
-         //take an inner product 
+        //take an inner product 
         Sz(j) = Dot(bra, szj\_op\*ket);
         szf << Sz(j) << endl; //print to file
 
-        if (j<N) { 
-
+        if(j<N) 
+            { 
             //make a bond ket/bra based on wavefunction 
             //representing sites j and j+1:
             //psi.bondTensor(j) is analogous to psi.AA(j), 
@@ -172,6 +173,7 @@ int main(int argc, char\* argv[])
             ITensor bondbra = conj(primesite(bondket)); 
 
             ITensor szz\_op = model.sz(j)\*model.sz(j+1); 
+
             //start with z components
             SdotS(j) = Dot(bondbra, szz\_op\*bondket);
 
@@ -188,13 +190,13 @@ int main(int argc, char\* argv[])
             //figure out the sum of SdotS.  
             //should be the same as the Heisenberg energy
             sumSdotS += SdotS(j); 
+            }
         }
-    }
 
     cout << format("\nSum of SdotS is %f\n")%sumSdotS;
 
     return 0;
-}
+    }
 
 
 </code>

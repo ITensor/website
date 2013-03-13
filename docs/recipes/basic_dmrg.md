@@ -1,8 +1,7 @@
 #Perform a basic DMRG calculation#
 
 To do any DMRG calculation you first need a Hamiltonian. 
-The simplest way to obtain one is to 
-use a pre-defined Hamiltonian provided with the library. 
+The library provides some common Hamiltonians for convenience.
 The site indices used by the Hamiltonian are provided by a model object:
 
 `SpinOne model(N);`
@@ -17,16 +16,10 @@ what schedule we would like for the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
 <code>
-int nsweep = 5;
-int minm = 1;
-int maxm = 100;
-Real cutoff = 1E-5;
-
-Sweeps sweeps(Sweeps::exp_m,nsweep,minm,maxm,cutoff);
+Sweeps sweeps(5); //number of sweeps is 5
+sweeps.maxm() = 10,20,100,100,200; //gradually increase states kept
+sweeps.cutoff() = 1E-10; //desired truncation error
 </code>
-
-The argument `Sweeps::exp_m` in the last line tells the sweeps object to exponentially
-increase the maximum number of states kept in each sweep until it reaches the `Maxm` (which is 100 here).
 
 The wavefunction must use the same sites
 as the Hamiltonian, so we construct it using the same model object as before
@@ -34,7 +27,7 @@ as the Hamiltonian, so we construct it using the same model object as before
 `MPS psi(model);`
 
 By default an MPS is initialized to a random product state; we could also set `psi`
-to some specific initial state in order to accelerate the DMRG convergence time.
+to some specific initial state using an [[InitState|classes/initstate]] object.
 
 Finally, we are ready to call DMRG:
 
@@ -49,23 +42,22 @@ Below you can find a complete working code that includes all of these steps.
 <code>
 \#include "core.h"
 \#include "model/spinone.h"
-\#include "hams/heisenberg.h"
+\#include "hams/Heisenberg.h"
 using boost::format;
 using namespace std;
 
-int main(int argc, char\* argv[])
-{
+int 
+main(int argc, char\* argv[])
+    {
     int N = 100;
-    int nsweep = 5;
-    int minm = 1;
-    int maxm = 100;
-    Real cutoff = 1E-5;
 
     SpinOne model(N);
 
     MPO H = Heisenberg(model);
 
-    Sweeps sweeps(Sweeps::exp_m,nsweep,minm,maxm,cutoff);
+    Sweeps sweeps(5); //number of sweeps is 5
+    sweeps.maxm() = 10,20,100,100,200;
+    sweeps.cutoff() = 1E-10;
 
     MPS psi(model);
 
@@ -74,7 +66,7 @@ int main(int argc, char\* argv[])
     cout << format("Ground State Energy = %.10f") % energy << endl;
 
     return 0;
-}
+    }
 
 </code>
 
