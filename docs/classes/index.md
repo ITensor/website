@@ -20,12 +20,9 @@ Indices compare equal if they have the same primelevel and are copies of the sam
 
   Construct an Index with specified fields described above.
 
-  <p>
   <div class="example_clicker">Show Example</div>
-  <pre class="example">
-  Index s1("Site 1",2,Site);
-  </pre>
-  </p>
+
+        Index s1("Site 1",2,Site);
 
 ##Accessor Methods##
 
@@ -90,19 +87,18 @@ Indices compare equal if they have the same primelevel and are copies of the sam
 
   Return an [[IndexVal|classes/indexval]] representing this Index set to value `i`.
 
-  <p>
   <div class="example_clicker">Show Example</div>
-  <pre class="example">
-  Index mi("My Index",10);
 
-  IndexVal iv = mi(2);
+        Index mi("My Index",10);
 
-  cout <<< (iv.ind == mi ? "true" : "false"); //Prints true
-  Print(iv.i); //Prints 2
-  </pre>
-  </p>
+        IndexVal iv = mi(2); //call Index mi's operator() method
 
-* `bool operator==(Index other)`  `bool operator!=(Index other)`  
+        cout <<< (iv.ind == mi ? "true" : "false") << endl; //Prints true
+        cout << mi.i << endl; //Prints 2
+
+* `bool operator==(Index other)`  
+
+  `bool operator!=(Index other)`  
 
   Return `true` (for ==, `false` for !=) if this Index and other are copies of the same original Index and have the same prime level. (Internally uses unique real for efficient comparison.)
 

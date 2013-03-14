@@ -172,6 +172,7 @@ width: 90%;
     font-weight: bold;
     }
 
+/*
 .docs pre code
     { 
     display:block;
@@ -185,6 +186,18 @@ width: 90%;
     -moz-box-shadow: 1px 1px 1px #999;
     -webkit-box-shadow: 1px 1px 1px #999;
     box-shadow: 1px 1px 1px #999;
+    }
+    */
+
+.docs pre code
+    { 
+    font-weight: normal;
+    font-family: monospace;
+    background-color:#ddd;
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 4px;
     }
 
 .docs ul { display: table; list-style: square; }
@@ -205,15 +218,6 @@ width: 90%;
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 12px;
-    }
-
-.docs .example
-    {
-    font-family: monospace;
-    background-color:#ddd;
-    display: block;
-    border: 1px solid black;
-    padding: 10px;
     }
 
 #footer { width: 800px; margin-bottom: 50px; float: left; }
