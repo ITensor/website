@@ -20,6 +20,12 @@ Indices compare equal if they have the same primelevel and are copies of the sam
 
   Construct an Index with specified fields described above.
 
+  <p>
+  <div class="example_clicker">Show Example</div>
+  <pre class="example">
+  Index s1("Site 1",2,Site);
+  </pre>
+  </p>
 
 ##Accessor Methods##
 
@@ -83,6 +89,18 @@ Indices compare equal if they have the same primelevel and are copies of the sam
 * `IndexVal operator()(int i)`  
 
   Return an [[IndexVal|classes/indexval]] representing this Index set to value `i`.
+
+  <p>
+  <div class="example_clicker">Show Example</div>
+  <pre class="example">
+  Index mi("My Index",10);
+
+  IndexVal iv = mi(2);
+
+  cout <<< (iv.ind == mi ? "true" : "false"); //Prints true
+  Print(iv.i); //Prints 2
+  </pre>
+  </p>
 
 * `bool operator==(Index other)`  `bool operator!=(Index other)`  
 

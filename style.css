@@ -196,6 +196,26 @@ width: 90%;
     margin-bottom: 0px;
     }
 
+.docs .example_clicker
+    {
+    color: #336699; 
+    cursor: pointer;
+    padding-left: 14px;
+    background-image: url('link_arrow.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 12px;
+    }
+
+.docs .example
+    {
+    font-family: monospace;
+    background-color:#ddd;
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    }
+
 #footer { width: 800px; margin-bottom: 50px; float: left; }
 
 .newsitem
