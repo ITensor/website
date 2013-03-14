@@ -15,7 +15,7 @@ As a first example, consider multiplying a 10 x 20 matrix _A_ by a 20 x 30 matri
 to get a 10 x 30 matrix _C_. 
 In traditional index notation we would write (summation over `j` implied)
 
-    Cik = Aij Bjk
+C<sup>i</sup><sub>k</sub> = A<sup>i</sup><sub>j</sub> B<sup>j</sup><sub>k</sub>
 
 To do this using ITensors, first define three Index instances, `i`, `j` and `k`
 
