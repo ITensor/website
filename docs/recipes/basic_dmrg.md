@@ -4,34 +4,32 @@ To do any DMRG calculation you first need a Hamiltonian.
 The library provides some common Hamiltonians for convenience.
 The site indices used by the Hamiltonian are provided by a model object:
 
-`SpinOne model(N);`
+    SpinOne model(N);
 
-Here we have chosen to use spin 1 sites and our lattice size is `N`.
+Here we have chosen to use spin 1 sites and our lattice size is N.
 Next we instantiate the Hamiltonian, which is a matrix product operator (MPO):
 
-`MPO H = Heisenberg(model);`
+    MPO H = Heisenberg(model);
 
 Before beginning the calculation, we need to specify how many DMRG sweeps to do and
 what schedule we would like for the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
-<code>
-Sweeps sweeps(5); //number of sweeps is 5
-sweeps.maxm() = 10,20,100,100,200; //gradually increase states kept
-sweeps.cutoff() = 1E-10; //desired truncation error
-</code>
+    Sweeps sweeps(5); //number of sweeps is 5
+    sweeps.maxm() = 10,20,100,100,200; //gradually increase states kept
+    sweeps.cutoff() = 1E-10; //desired truncation error
 
 The wavefunction must use the same sites
 as the Hamiltonian, so we construct it using the same model object as before
 
-`MPS psi(model);`
+    MPS psi(model);
 
-By default an MPS is initialized to a random product state; we could also set `psi`
+By default an MPS is initialized to a random product state; we could also set psi
 to some specific initial state using an [[InitState|classes/initstate]] object.
 
 Finally, we are ready to call DMRG:
 
-`Real energy = dmrg(psi,H,sweeps);`
+    Real energy = dmrg(psi,H,sweeps);
 
 When the algorithm is done, it returns the ground state energy. The optimized ground state
 wavefunction is stored back into `psi` on return.
@@ -39,36 +37,33 @@ wavefunction is stored back into `psi` on return.
 Below you can find a complete working code that includes all of these steps.
 
 
-<code>
-\#include "core.h"
-\#include "model/spinone.h"
-\#include "hams/Heisenberg.h"
-using boost::format;
-using namespace std;
+    #include "core.h"
+    #include "model/spinone.h"
+    #include "hams/Heisenberg.h"
+    using boost::format;
+    using namespace std;
 
-int 
-main(int argc, char\* argv[])
-    {
-    int N = 100;
+    int 
+    main(int argc, char* argv[])
+        {
+        int N = 100;
 
-    SpinOne model(N);
+        SpinOne model(N);
 
-    MPO H = Heisenberg(model);
+        MPO H = Heisenberg(model);
 
-    Sweeps sweeps(5); //number of sweeps is 5
-    sweeps.maxm() = 10,20,100,100,200;
-    sweeps.cutoff() = 1E-10;
+        Sweeps sweeps(5); //number of sweeps is 5
+        sweeps.maxm() = 10,20,100,100,200;
+        sweeps.cutoff() = 1E-10;
 
-    MPS psi(model);
+        MPS psi(model);
 
-    Real energy = dmrg(psi,H,sweeps);
+        Real energy = dmrg(psi,H,sweeps);
 
-    cout << format("Ground State Energy = %.10f") % energy << endl;
+        cout << format("Ground State Energy = %.10f") % energy << endl;
 
-    return 0;
-    }
-
-</code>
+        return 0;
+        }
 
 <br>
 [[Back to Recipes|recipes]]

@@ -11,8 +11,8 @@ footer_fname = "docs_footer.html"
 
 import re
 named_link_re = re.compile("(.+?)\|(.+)")
-code_block_re = re.compile(r"<code>\n+(.+?)</code>",flags=re.DOTALL)
-paragraph_code_re = re.compile(r"<p><code>(.+?)</code></p>",flags=re.DOTALL)
+#code_block_re = re.compile(r"<code>\n+(.+?)</code>",flags=re.DOTALL)
+#paragraph_code_re = re.compile(r"<p><code>(.+?)</code></p>",flags=re.DOTALL)
 
 #import cgitb
 #cgitb.enable()
@@ -55,32 +55,35 @@ def convert(string):
                 mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
                 #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
+    #Code below not needed: just indent 4 spaces and Markdown
+    #will apply the <pre> tag which preserves formatting.
+    #
     #Format code blocks, preserving newlines and indentation
-    slist = code_block_re.split(mdstring)
-    mdstring = slist[0]
-    for j in range(1,len(slist)):
-        chunk = slist[j]
-        last = False
-        if j == (len(slist)-1): last = True
-        if j%2 == 0: mdstring += chunk
-        else: 
-            #Convert whitespace to &nbsp; (html for non-breaking space)
-            chunk = re.sub(r"[ \t]",r"&nbsp;",chunk)
-            #Convert < and > signs
-            chunk = re.sub(r"<",r"&lt;",chunk)
-            chunk = re.sub(r">",r"&gt;",chunk)
-            #Convert newlines to </br>
-            if not last:
-                chunk = re.sub(r"\n",r"</br>\n",chunk)
-
-            mdstring += "<code>\n"+chunk+"</code>\n"
+    #slist = code_block_re.split(mdstring)
+    #mdstring = slist[0]
+    #for j in range(1,len(slist)):
+    #    chunk = slist[j]
+    #    last = False
+    #    if j == (len(slist)-1): last = True
+    #    if j%2 == 0: mdstring += chunk
+    #    else: 
+    #        #Convert whitespace to &nbsp; (html for non-breaking space)
+    #        #chunk = re.sub(r"[ \t]",r"&nbsp;",chunk)
+    #        #Convert < and > signs
+    #        #chunk = re.sub(r"<",r"&lt;",chunk)
+    #        #chunk = re.sub(r">",r"&gt;",chunk)
+    #        #Convert newlines to </br>
+    #        if not last:
+    #            chunk = re.sub(r"\n",r"</br>\n",chunk)
+    #
+    #        mdstring += "<code>\n"+chunk+"</code>\n"
 
     #Convert markdown to html
     import markdown2
     htmlstring = markdown2.markdown(mdstring,extras=["fenced-code-blocks"])
 
     #Put in a special class for paragraphs that consist entirely of code
-    htmlstring = paragraph_code_re.sub(r"<p><div class='codeblock'>\1</div></p>",htmlstring)
+    #htmlstring = paragraph_code_re.sub(r"<p><div class='codeblock'>\1</div></p>",htmlstring)
 
     return htmlstring
 

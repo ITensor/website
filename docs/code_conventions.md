@@ -42,21 +42,20 @@ if breaking over two lines makes code hard to reason about/debug.
 * Braces following function or class declarations, etc., should be on their own line and 
   be indented to the same level as the enclosed code. For example:
 
-  <code>
-  Real
-  absSqrt(Real x)
-      {
-      if(x >= 0)
-          return sqrt(x);
-      else
-          return sqrt(-x);
-      }</code>
+        Real
+        absSqrt(Real x)
+          {
+          if(x >= 0)
+              return sqrt(x);
+          else
+              return sqrt(-x);
+          }
 
 * The return type of functions and class methods appears at the beginning of the line preceding the function name:
 
-  <code>
-  Real
-  calculateSomething(const ITensor& A, const ITensor& B); </code> 
+        Real
+        calculateSomething(const ITensor& A, const ITensor& B);
+
   Other keywords such as `friend` or `inline` should come after the return type unless disallowed by the compiler
   (such as when the return type is a reference).
 

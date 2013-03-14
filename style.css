@@ -18,7 +18,7 @@ a
     text-decoration: none; 
     }
 
-p { font-size: 12pt; font-family: sans-serif; padding-bottom: 10px; text-indent: 0px;}
+p { font-size: 12pt; font-family: sans-serif; text-indent: 0px; padding: 2px;}
 
 ul { font-size: 12pt; font-family: sans-serif; padding-bottom: 10px; text-indent: 0px;  }
 
@@ -166,18 +166,27 @@ width: 90%;
 .docs a { color: #336699; }
 .docs em { font-weight: bold; }
 .docs p { text-indent: 1px; }
-.docs code { font-family: monospace; font-size: 12pt; }
-.docs .codeblock 
+.docs code 
     { 
-    font-family: monospace; 
-    font-size: 12pt; 
-    background: #ddd;
-    padding: 5px;
-    padding-left: 10px;
+    font-family: monospace;  
+    font-weight: bold;
+    }
+
+.docs pre code
+    { 
+    display:block;
+    font-family: monospace,monospace; 
+    font-weight: normal;
+    background-color:#ddd;
+    overflow:auto;
+    padding-left: 5px;
+    margin: 10px;
+    width:auto;
     -moz-box-shadow: 1px 1px 1px #999;
     -webkit-box-shadow: 1px 1px 1px #999;
     box-shadow: 1px 1px 1px #999;
     }
+
 .docs ul { display: table; list-style: square; }
 .docs ul li { margin-left: 30px; }
 .docs img.arrow 
@@ -207,3 +216,4 @@ width: 90%;
 .newsitem ul li { display: table; }
 .newsitem p { padding: 10px; }
 .newsitem a { color: #900; }
+

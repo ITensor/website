@@ -6,7 +6,7 @@
 * [[InitState|classes/initstate]]. Class for initializing matrix product states.
 
 Note that class documentation may omit minor details that do not change method semantics, 
-for instance describing a function signature as `f(ITensor T)` even though
+for example, notating a function signature as `f(ITensor T)` even though
 its actual signature is `f(const ITensor& T)` for reasons of efficiency.
 
 
