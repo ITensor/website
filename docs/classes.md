@@ -2,6 +2,7 @@
 
 * [[Index|classes/index]]. Single tensor index.
 * [[Index functions|classes/index_functions]] for manipulating [[Index|classes/index]] instances.
+* [[IndexVal|classes/indexval]]. Index set to a particular value.
 * [[ITensor|classes/itensor]]. The elementary tensor type.
 * [[InitState|classes/initstate]]. Class for initializing matrix product states.
 

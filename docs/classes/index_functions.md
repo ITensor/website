@@ -1,22 +1,35 @@
 #Index Functions#
 
-Standalone methods for manipulating objects of type `Index`.
+Standalone methods for manipulating objects implementing the [[Index|classes/index]] interface. 
 
-* `Index primed(Index I, int inc = 1)` 
+The following methods are templates, so they work not only for [[Index|classes/index]] objects
+but for any object supporting the relevant methods, such as [[IndexVal|classes/indexval]], [[IQIndex|iqindex]],
+[[ITensor|classes/itensor]], [[IQTensor|classes/iqtensor]], etc.
 
-   Return a copy of `Index` I with prime level increased by 1 (or optional amount `inc`).
+* `T primed(T I, int inc = 1)` 
 
-* `Index primed(Index I, IndexType type, int inc = 1)` 
+   Return a copy of  `I`, calling `I.prime(inc)` first.
 
-   If `I.type() == type` or `type==All`, return a copy of Index I with prime level increased by 1 (or optional amount `inc`).
+   Works for any type `T` implementing `T::prime(int inc)`.
 
-* `Index deprimed(Index I)` 
+* `T primed(T I, IndexType type, int inc = 1)` 
 
-   Return a copy of Index I with prime level set to zero.
+   Return a copy of  `I`, calling `I.prime(type,inc)` first.
 
-* `Index mapPrime(Index I, int plevold, int plevnew, IndexType type = All)` 
+   Works for any type `T` implementing `T::prime(IndexType type, int inc)`.
 
-   Return a copy of I with new prime level plevnew if `I.primeLevel()==plevold`. (Optionally if `I.type()==type` or `type==All`.)
+* `T deprimed(T I, IndexType type = All)` 
+
+   Return a copy of `I`, calling `I.noprime(type)` first.
+
+   Works for any type `T` implementing `T::noprime(IndexType type)`.
+
+* `T mapPrime(T I, int plevold, int plevnew, ` <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;`IndexType type = All)` 
+
+   Return a copy of `I`, calling `I.mapprime(plevold,plevnew,type)` first.
+
+   Works for any type `T` implementing <br/> `T::mapprime(int plevold, inv plevnew, IndexType type)`.
 
 
 [[Back to Classes|classes]]

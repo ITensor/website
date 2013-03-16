@@ -91,10 +91,10 @@ Indices compare equal if they have the same primelevel and are copies of the sam
 
         Index mi("My Index",10);
 
-        IndexVal iv = mi(2); //call Index mi's operator() method
+        IndexVal iv = mi(2); //call Index mi's operator() method <!--'-->
 
-        cout <<< (iv.ind == mi ? "true" : "false") << endl; //Prints true
-        cout << mi.i << endl; //Prints 2
+        cout <<< (iv == mi ? "true" : "false") << endl; //Prints true
+        cout << iv.i << endl; //Prints 2
 
 * `bool operator==(Index other)`  
 
