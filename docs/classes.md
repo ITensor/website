@@ -5,6 +5,8 @@
 * [[IndexVal|classes/indexval]]. Index set to a particular value.
 * [[ITensor|classes/itensor]]. The elementary tensor type.
 * [[InitState|classes/initstate]]. Class for initializing matrix product states.
+* [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
+* [[SVDWorker|classes/svdworker]]. Class for performing tensor decompositions.
 
 Note that class documentation may omit minor details that do not change method semantics, 
 for example, notating a function signature as `f(ITensor T)` even though
