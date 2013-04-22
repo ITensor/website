@@ -38,9 +38,42 @@
 <div class="full section rounded"> <h2>Latest News</h2> </div>
 
 <div class="full newsitem">
+<h3>Parallelizing DMRG Across Real Space</h3>
+<h2> (Apr. 22, 2013) </h2>
+<img src="timing.png" style="padding: 0px; border: 1px solid gray; background: white; float:right; margin:10px;" width="406px" />
+<p>
+Although DMRG is a one-dimensional method, its power and efficiency have made it surprisingly effective for studying two-dimensional
+lattice models. Recent DMRG results for the <a href="http://www.sciencemag.org/content/332/6034/1173.abstract" target="_blank">kagome lattice antiferromagnet</a> have reinvigorated the 
+search for realistic quantum spin liquids. DMRG was also the workhorse behind new sophisticated <a href="http://link.aps.org/doi/10.1103/PhysRevLett.110.067208" target="_blank">measurements</a> of <a href="http://dx.doi.org/10.1038/nphys2465" target="_blank">topological order</a>.
+But two-dimensional DMRG calculations are computationally very demanding.
+</p>
+<p>
+DMRG's success in 1d and 2d can be attributed to its ideal characteristics including robust convergence and exponential scaling of accuracy with 
+computational cost.
+Yet one feature it lacked was parallelism, where a single DMRG calculation could be split across multiple computers.
+</p>
+<p>
+Now this problem has been solved using insights based on matrix product states. Performing a 
+matrix product state gauge transformation at the real-space boundary between two blocks provides an orthonormal
+basis for independent DMRG calculations within each block, then a way to merge the results afterward.
+Repeating this procedure across N blocks enables a single DMRG calculation to run almost N times 
+faster! (See figure above.) Using the ITensor Library made it possible to rapidly develop and test the algorithm;  
+all of the very demanding benchmark calculations used ITensor as well.
+</p>
+<p>
+Read the full paper <a href="http://link.aps.org/doi/10.1103/PhysRevB.87.155137">here</a>.
+</p>
+<p>
+Note: although the method was developed explicitly using tensors and matrix product states, we emphasize that it 
+should be straightforward to implement in conventional DMRG codes and only requires modifying the DMRG algorithm at block boundaries.
+</p>
+</div>
+
+<div class="full newsitem">
 <h3>Studying Density Functional Theory in a 1D Laboratory</h3>
 <h2> (Aug. 22, 2012) </h2>
-<img src="dft_plot.png" width="450px" style="float:right;"/>
+<!--<img src="dft_plot.png" width="450px" style="float:right;"/>-->
+<img src="dft_plot.png" style="padding: 0px; border: 1px solid gray; background: white; float:right; margin:10px;" width="450px" />
 <p>
 At the heart of the enormously successful density functional theory (DFT) method lies a functional that gives the ground state energy of any system provided only its density. Can this exact energy functional be written down? What are its key properties?
 </p>
