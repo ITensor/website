@@ -7,6 +7,34 @@ number of Index objects specifying its indices. Because each Index has a unique 
 ITensor interface does not depend on a specific Index order. For example, 
 given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5),a(2))` refer to the same component.
 
+##Synopsis##
+
+    Index b1("bond 1",5), b3("bond 3",8),
+          s2("Site 2",2,Site), s3("Site 3",2,Site);
+
+    ITensor phi(b1,s2,s3,b3);
+
+    phi(b1(2),s2(1),s3(2),b3(2)) = -0.5;
+    phi(b1(3),s2(2),s3(1),b3(6)) = 1.4;
+    ...
+
+    phi /= phi.norm();
+    Print(phi.norm()); //Prints 1.0
+
+    //The * operator automatically contracts over 
+    //matching indices b1, s2, and s3.
+    //The primed method primes the b3 Index of the second
+    //ITensor in the product so it is not summed over 
+
+    ITensor rho = phi * conj(primed(phi,b3));
+
+    Print(rho.r()); //prints 2
+    Print(hasindex(rho,b3) ? "true" : "false"); //prints "true"
+    Print(hasindex(rho,primed(b3)) ? "true" : "false"); //prints "true"
+    Print(hasindex(rho,b2) ? "true" : "false"); //prints "false"
+
+    Print(trace(rho,b3,primed(b3))); //Prints 1.0
+
 ##Constructors##
 
 * `ITensor()` 
@@ -21,7 +49,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
    ... etc. up to 8 indices 
 
-   Construct an ITensor with the given indices. All components initialized to zero.
+   Construct an ITensor with the given indices. All components are initialized to zero.
 
    <div class="example_clicker">Show Example</div>
 
@@ -42,7 +70,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
    ... etc. up to 8 IndexVals 
 
-   Construct an ITensor with indices `iv1.ind`, `iv2.ind`, etc., such that the component corresponding to `iv1.i`, `iv2.i`, etc. is equal to 1 and all other components equal to zero. For example, constructing an ITensor `T` by calling `ITensor T(a(1),b(2),c(3));` makes all components of T zero except for `T(a(1),b(2),c(3))==1`.
+   Construct an ITensor with indices `iv1.ind`, `iv2.ind`, etc., such that the component corresponding to `iv1.i`, `iv2.i`, etc. is equal to 1 and all other components are equal to zero. For example, constructing an ITensor `T` by calling `ITensor T(a(1),b(2),c(3));` makes all components of T zero except for `T(a(1),b(2),c(3))==1`.
 
    <div class="example_clicker">Show Example</div>
 
@@ -144,18 +172,18 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
 ##Prime Level Methods##
 
-* `void prime(int inc = 1)`
+* `ITensor& prime(int inc = 1)`
 
-  Increment prime level of all indices by 1. (Optionally by amount `inc`.)
+  Increment prime level of all indices by 1. (Optionally by amount `inc`.) Returns a reference to the modified ITensor.
 
-* `void prime(Index I, int inc = 1)`
+* `ITensor& prime(Index I, int inc = 1)`
 
   Increment prime level of only Index `I` by 1. (Optionally by amount `inc`.)
-  Throws an exception of ITensor does not have Index `I`.
+  Throws an exception of ITensor does not have Index `I`. Returns a reference to the modified ITensor.
 
-* `void prime(IndexType t, int inc = 1)`
+* `ITensor& prime(IndexType t, int inc = 1)`
 
-  Increment prime level of every Index of type `t`. (Optionally by amount `inc`.)
+  Increment prime level of every Index of type `t`. (Optionally by amount `inc`.) Returns a reference to the modified ITensor.
 
   <div class="example_clicker">Show Example</div>
 
@@ -172,17 +200,18 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         Print(hasindex(A,primed(s3))); //Prints 1 (true)
         Print(hasindex(A,l1));         //Prints 1 (true)
 
-* `void noprime(IndexType t = All)`
+* `ITensor& noprime(IndexType t = All)`
 
-  Set prime level of all indices to 0. (Optionally only indices of type `t`.)
+  Set prime level of all indices to 0. (Optionally only indices of type `t`.) Returns a reference to the modified ITensor.
 
-* `void noprime(Index I)`
+* `ITensor& noprime(Index I)`
 
-  Set prime level of Index `I` to 0. Throws an exception if ITensor does not have Index `I`.
+  Set prime level of Index `I` to 0. Throws an exception if ITensor does not have Index `I`. Returns a reference to the modified ITensor.
 
-* `void mapprime(int plevold, int plevnew, IndexType t = All)`
+* `ITensor& mapprime(int plevold, int plevnew, IndexType t = All)`
 
-  Change prime level of all indices having prime level `plevold` to `plevnew`. (Optionally only if their type matches `t`.)
+  Change prime level of all indices having prime level `plevold` to `plevnew`. (Optionally only if their type matches `t`.) 
+  Returns a reference to the modified ITensor.
 
 ##Miscellaneous Methods##
 
@@ -193,7 +222,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 * `Real norm()`
 
   Return the norm of this ITensor, that is, the Euclidean norm when treating the ITensor as a vector.
-  Equivalent to, but much more efficient than, `sqrt((T * T).toReal())` for some real ITensor `T`.
+  Equivalent to, but much more efficient than, `sqrt((T*T).toReal())` for some real ITensor `T`.
 
 [[Back to Classes|classes]]
 
