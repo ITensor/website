@@ -84,6 +84,43 @@ code { font-family: monospace; font-size: 12pt; }
 #download ul { display: table; color: #CD2626; }
 #download ul li { display: table; padding-left: 20px; color: #CD2626; }
 
+#latest 
+    { 
+    width: 230px;
+    float:right;
+    font-size: 12pt; 
+    font-family: sans-serif; 
+    background: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    margin-left: 15px;
+    margin-right: 0px;
+    }
+#latest h2 
+    { 
+    width: 100%;
+    color: white; 
+    background: #5081AA; 
+    padding:2px 0px 2px 0px;
+    text-align: center; 
+    margin: 2px 0px 10px 0px;
+    font-size: 120%;
+    font-family: sans-serif;
+    -moz-box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    box-shadow: 1px 1px 1px #999;
+    }
+#latest h4 { color: black; }
+#latest ul 
+    { 
+    list-style-type: disc;
+    margin-left: 15px;
+    }
+#latest ul li 
+    { 
+    list-style-type: disc;
+    margin-bottom: 4px;
+    }
+
 .section 
     { 
     width: 782px;
