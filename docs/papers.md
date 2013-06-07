@@ -1,5 +1,7 @@
 #Papers Using the ITensor Library#
 
+* [Guaranteed Convergence of the Kohn-Sham Equations](http://arxiv.org/abs/1305.2967), <br/>Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, </br> (2013) [arxiv:1301.3494]
+
 * [Real-space parallel density matrix renormalization group](http://link.aps.org/doi/10.1103/PhysRevB.87.155137), <br/>E.M.&nbsp;Stoudenmire and Steven&nbsp;R.&nbsp;White, </br> <i>Phys. Rev. B</i>&nbsp; <b>87</b>, [155137](http://link.aps.org/doi/10.1103/PhysRevB.87.155137) (2013) [arxiv:1301.3494]
 
 * [Topological phases in ultracold polar-molecule quantum magnets](http://link.aps.org/doi/10.1103/PhysRevB.87.081106), Salvatore&nbsp;R.&nbsp;Manmana, E.M.&nbsp;Stoudenmire, Kaden&nbsp;R.A.&nbsp;Hazzard, Ana&nbsp;Maria&nbsp;Rey, and Alexey&nbsp;Gorshkov, </br> <i>Phys. Rev. B</i>&nbsp; <b>87</b>, [081106(R)](http://link.aps.org/doi/10.1103/PhysRevB.87.081106) (2013) [arxiv:1210.5518]

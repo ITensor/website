@@ -1,6 +1,6 @@
 #ITensor#
 
-Tensor class providing automatic contraction over matching indices. 
+The foundational tensor type of the ITensor Library; the key feature of ITensors is automatic contraction over all matching indices. 
 
 An ITensor is created with a fixed
 number of Index objects specifying its indices. Because each Index has a unique id, the
@@ -18,7 +18,8 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
     phi(b1(3),s2(2),s3(1),b3(6)) = 1.4;
     ...
 
-    phi /= phi.norm();
+    Real nrm = phi.norm(); //save the original norm of phi
+    phi /= phi.norm(); //division by a scalar
     Print(phi.norm()); //Prints 1.0
 
     //The * operator automatically contracts over 

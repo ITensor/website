@@ -62,9 +62,9 @@ if breaking over two lines makes code hard to reason about/debug.
 ##Functions##
 
 * The preferred order for function arguments is:
-    * Regular (copying, such as `int j`) and const reference (such as `const MPO& H`) arguments.
-    * Non-const reference or pointer arguments.
-    * Arguments with defaults (which must come last anyway).
+    1. Regular (pass-by-value, such as `int j`) and const reference (such as `const MPO& H`) arguments.
+    2. Non-const reference or pointer arguments.
+    3. Arguments with defaults (required to come last anyway).
 
 
 </br>

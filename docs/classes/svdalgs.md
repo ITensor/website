@@ -1,6 +1,7 @@
-#SVDWorker#
+#SVD and Related Algorithms#
 
-Class for performing tensor decompositions, primarily the SVD and eigenvalue decomposition.
+Methods for performing tensor decompositions such as the singular value decomposition (SVD), density matrix
+diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h and svdalgs.cc.
 
 ##Synopsis##
 
@@ -9,10 +10,12 @@ Class for performing tensor decompositions, primarily the SVD and eigenvalue dec
           l1("link 1",10),
           l2("link 2",8);
 
-    SVDWorker W;
-
     //
     //Eigenvalue decomposition
+    //of Hermitian tensors
+    //
+    //Assumes matching pairs of indices with
+    //prime level 0 and 1
     //
 
     //Create a density-matrix-like tensor
@@ -22,7 +25,7 @@ Class for performing tensor decompositions, primarily the SVD and eigenvalue dec
     //Compute eigenvalue decomposition
     ITensor U;
     ITSparse D;
-    W.diagonalize(rho,U,D);
+    diagHermitian(rho,U,D);
 
     PrintDat(D); //look at the eigenvalues of rho
 
@@ -35,22 +38,26 @@ Class for performing tensor decompositions, primarily the SVD and eigenvalue dec
     //Singular value decomposition (SVD)
     //
 
-    //Set accuracy parameters
-    //for truncation
-    W.cutoff(1E-10);
-    W.maxm(200);
-
     //Create a wavefunction-like tensor
     ITensor psi(l1,s1,s2,l2);
     //...set elems of psi...
+
+    //Set accuracy parameters
+    //for truncation by creating an instance
+    //of the 'Spectrum' class
+    //(after an SVD, spec will store the squares of the singular values)
+    Spectrum spec;
+    spec.cutoff(1E-10);
+    spec.maxm(200);
 
     //Compute SVD
     //Providing indices of A tells the svd
     //method which indices should end up on A,
     //other indices of psi will end up on B
+    //(Spectrum argument is optional, omitting it means "do not truncate")
     ITensor A(l1,s1),
             B;
-    W.svd(psi,A,D,B);
+    svd(psi,A,D,B,spec);
 
     PrintDat(D); //look at singular values of psi
 

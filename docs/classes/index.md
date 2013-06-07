@@ -9,6 +9,22 @@ All copies of an Index have the same dimension and type, but their prime levels 
 (and are automatically reflected in their unique real).
 Indices compare equal if they have the same primelevel and are copies of the same original Index (equivalently, if they have the same unique real).
 
+##Synopsis##
+
+    Index s1("Site 1",2,Site);
+    Print(s1.m()); //prints 2
+
+    Index i(s1); //i is a copy of s1
+    Print(i == s1 ? "true" : "false"); //prints "true"
+
+    Print(i.primeLevel()); //prints 0
+    i.prime(2);
+    Print(i.primeLevel()); //prints 2
+
+    Print(i == s1 ? "true" : "false"); //prints "false"
+    i.noprime();
+    Print(i == s1 ? "true" : "false"); //prints "true"
+
 
 ##Constructors##
 
@@ -91,7 +107,7 @@ Indices compare equal if they have the same primelevel and are copies of the sam
 
         Index mi("My Index",10);
 
-        IndexVal iv = mi(2); //call Index mi's operator() method <!--'-->
+        IndexVal iv = mi(2); //call Index mi's operator() method
 
         cout <<< (iv == mi ? "true" : "false") << endl; //Prints true
         cout << iv.i << endl; //Prints 2
