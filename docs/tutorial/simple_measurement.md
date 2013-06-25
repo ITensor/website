@@ -63,8 +63,8 @@ First make the Dirac "bra" conjugate of the wavefunction:
 
 
 
-The `primed` function increases the prime level of all indices
-by 1.
+The `conj` function takes the complex conjugate and
+`primed` increments the prime level of all the indices.
 
 Finally, we compute the expectation value as the diagram
 

@@ -104,7 +104,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
 * `Real toReal()` 
 
-  Return only component of a rank zero, scalar ITensor. If the ITensor has rank greater than zero, throws an exception.
+  Return value of a rank zero, scalar ITensor. If the ITensor has rank greater than zero or if ITensor is complex (see below), throws an exception.
 
   <div class="example_clicker">Show Example</div>
 
@@ -121,9 +121,9 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         Print(T2.toReal()); //Prints 0.058565, the squared norm of T
 
 
-* `void toComplex(Real& re, Real& im)` 
+* `Complex toComplex()`
 
-  Return real and imaginary parts of a complex scalar ITensor by reference. If the ITensor has any extra Index besides IndReIm, throws an exception.
+  Return value of a complex, scalar (rank zero) ITensor. If the ITensor has rank greater than zero, throws an exception.
 
 ##Operators##
 
@@ -139,7 +139,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
               l3("link 3",4);
 
         ITensor A(l1,s2,s3,l3);
-        //set components of T ...
+        //set components of A ...
 
         ITensor B(l1,s2,primed(s3),primed(l3));
         //set components of B ...
@@ -157,19 +157,59 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   `ITensor& operator-=(const ITensor& other)`
 
+  (and related free methods)
+
   ITensor addition and subtraction. Adds ITensors element-wise. Both ITensors must have the same set of indices.
 
-* `ITensor& operator*=(ITensor A, Real fac)`
+  <div class="example_clicker">Show Example</div>
 
-  `ITensor& operator/=(ITensor A, Real fac)`
+        Index l1("link 1",4),
+              s2("Site 2",2,Site), 
+              s3("Site 3",2,Site),
+              l3("link 3",4);
 
-  `ITensor operator-(ITensor A)`
+        ITensor A(l1,s2,s3,l3),
+                B(l1,s2,s3,l3);
+        //set components of A and B...
+
+        ITensor S = A + B; //sum A and B
+        ITensor D = A - B; //subtract B from A
+
+* `ITensor& operator*=(Real fac)`
+
+  `ITensor& operator/=(Real fac)`
+
+  `ITensor operator-()`
 
   (and related free methods)
 
-  Multiplication by a scalar, division by a scalar, and negation. Factor is applied to all elements of the ITensor
+  Multiplication by a real scalar, division by a real scalar, and negation. Factor is applied to all elements of the ITensor
   (handled lazily internally).
 
+* `ITensor& operator*=(Complex z)`
+
+  Multiplication by a Complex scalar (where Complex is a typedef for std::complex<Real>). Useful for creating complex ITensors
+  by using the idiom `ITensor T = A + B*Complex_i` where A and B are real ITensors and Complex_i is a constant equal to
+  Complex(0,1).
+
+  <div class="example_clicker">Show Example</div>
+
+        //Create a random complex ITensor T
+
+        Index l1("link 1",4),
+              s2("Site 2",2,Site), 
+              s3("Site 3",2,Site),
+              l3("link 3",4);
+
+        ITensor A(l1,s2,s3,l3),
+                B(l1,s2,s3,l3);
+        A.randomize();
+        B.randomize();
+
+        ITensor T = A+B*Complex_i;
+
+        Print((realPart(T)-A).norm()); //prints zero
+        Print((imagPart(T)-B).norm()); //prints zero
 
 ##Prime Level Methods##
 
@@ -177,10 +217,44 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   Increment prime level of all indices by 1. (Optionally by amount `inc`.) Returns a reference to the modified ITensor.
 
+  <div class="example_clicker">Show Example</div>
+
+        Index l1("link 1",4),
+              s2("Site 2",2,Site), 
+              s3("Site 3",2,Site),
+              l3("link 3",4);
+
+        ITensor A(l1,s2,s3,l3);
+
+        A.prime();
+        Print(hasindex(A,primed(s2))); //Prints 1 (true)
+        Print(hasindex(A,s2));         //Prints 0 (false)
+        Print(hasindex(A,primed(s3))); //Prints 1 (true)
+        Print(hasindex(A,primed(l1))); //Prints 1 (true)
+        Print(hasindex(A,primed(l3))); //Prints 1 (true)
+
 * `ITensor& prime(Index I, int inc = 1)`
 
   Increment prime level of only Index `I` by 1. (Optionally by amount `inc`.)
   Throws an exception of ITensor does not have Index `I`. Returns a reference to the modified ITensor.
+
+  <div class="example_clicker">Show Example</div>
+
+        Index l1("link 1",4),
+              s2("Site 2",2,Site), 
+              s3("Site 3",2,Site),
+              l3("link 3",4);
+
+        ITensor A(l1,s2,s3,l3);
+
+        A.prime(s3);
+        Print(hasindex(A,primed(s3))); //Prints 1 (true)
+        Print(hasindex(A,s3));         //Prints 0 (false)
+        Print(hasindex(A,primed(s2))); //Prints 0 (false)
+        Print(hasindex(A,primed(l1))); //Prints 0 (false)
+        Print(hasindex(A,primed(l3))); //Prints 0 (false)
+        Print(hasindex(A,s2));         //Prints 1 (true)
+        //etc.
 
 * `ITensor& prime(IndexType t, int inc = 1)`
 
@@ -224,6 +298,14 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   Return the norm of this ITensor, that is, the Euclidean norm when treating the ITensor as a vector.
   Equivalent to, but much more efficient than, `sqrt((T*T).toReal())` for some real ITensor `T`.
+
+* `ITensor& takeRealPart()`
+    
+  Set an ITensor in-place to just its real part, dropping its imaginary part. Returns a reference to the resulting ITensor.
+
+* `ITensor& takeImagPart()`
+    
+  Set an ITensor in-place to just its imaginary part, dropping its real part. Returns a reference to the resulting ITensor.
 
 [[Back to Classes|classes]]
 

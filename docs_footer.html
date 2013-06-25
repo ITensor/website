@@ -15,6 +15,13 @@ $(document).ready(function()
     $('.example_clicker').click(
     function(e)
         {
+
+        /*
+        $(e.target).toggle(
+        function(e) { $(e.target).text("Show Example").stop(); },
+        function(e) { $(e.target).text("Hide Example").stop(); });
+        */
+
         $(e.target).next().slideToggle(100);
         });
 
