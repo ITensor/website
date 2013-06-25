@@ -3,11 +3,11 @@
 An Index represents a single tensor index with fixed dimension m.
 
 In addition an Index has an IndexType (typically `Site` or `Link`&mdash;see [[index conventions|itensor_conventions]]),
-a name for printing purposes (of type `std::string`), a unique id (or unique real, of type `Real`), and a prime level (of type `int`).
+a name for printing purposes, a unique id (of type `Real`), and an integer prime level.
 
-All copies of an Index have the same dimension and type, but their prime levels can be adjusted 
-(and are automatically reflected in their unique real).
-Indices compare equal if they have the same primelevel and are copies of the same original Index (equivalently, if they have the same unique real).
+All copies of an Index instance retain the same dimension and IndexType, but their prime levels can be adjusted to make them
+temporarily distinct.
+Indices compare equal if and only if they have the same primelevel and are copies of the same original Index.
 
 ##Synopsis##
 

@@ -9,7 +9,7 @@
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
 
 Note that class documentation may omit minor details that do not change method semantics, 
-for example, notating a function signature as `f(ITensor T)` even though
+for example, describing a particular function signature as `f(ITensor T)` even though
 its actual signature is `f(const ITensor& T)` for reasons of efficiency.
 
 

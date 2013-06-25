@@ -1,6 +1,6 @@
 #ITensor#
 
-The foundational tensor type of the ITensor Library; the key feature of ITensors is automatic contraction over all matching indices. 
+The foundational tensor type of the ITensor Library; the key feature of the ITensor is automatic contraction over all matching indices. 
 
 An ITensor is created with a fixed
 number of Index objects specifying its indices. Because each Index has a unique id, the
@@ -301,11 +301,11 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
 * `ITensor& takeRealPart()`
     
-  Set an ITensor in-place to just its real part, dropping its imaginary part. Returns a reference to the resulting ITensor.
+  Set an ITensor to its real part, dropping its imaginary part. Returns a reference to the resulting ITensor.
 
 * `ITensor& takeImagPart()`
     
-  Set an ITensor in-place to just its imaginary part, dropping its real part. Returns a reference to the resulting ITensor.
+  Set an ITensor to its imaginary part, dropping its real part. Returns a reference to the resulting ITensor.
 
 [[Back to Classes|classes]]
 

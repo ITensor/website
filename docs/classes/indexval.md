@@ -21,9 +21,11 @@ IndexVals carry an integer `i` representing a particular value the Index can tak
 
   <div class="example_clicker">Show Example</div>
 
-        Index s1("Site 1",2,Site);
-        IndexVal iv(s1,2);
-        Print(iv.i); //Prints 2
+        Index s1("Site 1",4,Site);
+        IndexVal iva(s1,3),
+                 ivb(s1,1);
+        Print(iva.i); //Prints 3
+        Print(ivb.i); //Prints 1
 
 ##Public Data Members##
 
