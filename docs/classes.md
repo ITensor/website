@@ -1,4 +1,4 @@
-#ITensor Library Classes and Methods#
+# ITensor Library Classes and Methods #
 
 * [[Index|classes/index]]. Single tensor index.
 * [[Index functions|classes/index_functions]] for manipulating [[Index|classes/index]] instances.

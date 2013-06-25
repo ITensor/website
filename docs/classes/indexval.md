@@ -1,6 +1,6 @@
-#IndexVal#
+# IndexVal #
 
-##(subclass of [[Index|classes/index]])##
+## (subclass of [[Index|classes/index]]) ##
 
 An IndexVal represents an Index set to a specific value.
 
@@ -8,7 +8,7 @@ IndexVal is a subclass of [[Index|classes/index]] offering the same methods, but
 IndexVals carry an integer `i` representing a particular value the Index can take.
 
 
-##Constructors##
+## Constructors ##
 
 * `IndexVal()`
 
@@ -27,13 +27,13 @@ IndexVals carry an integer `i` representing a particular value the Index can tak
         Print(iva.i); //Prints 3
         Print(ivb.i); //Prints 1
 
-##Public Data Members##
+## Public Data Members ##
 
 * `int i`
 
   The value of this IndexVal. For an IndexVal `iv`, `iv.i` must be >= 1 and <= `iv.m()`.
 
-##Operators##
+## Operators ##
 
 * `bool operator==(IndexVal other)`  
 

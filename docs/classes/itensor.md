@@ -1,4 +1,4 @@
-#ITensor#
+# ITensor #
 
 The foundational tensor type of the ITensor Library; the key feature of the ITensor is automatic contraction over all matching indices. 
 
@@ -7,7 +7,7 @@ number of Index objects specifying its indices. Because each Index has a unique 
 ITensor interface does not depend on a specific Index order. For example, 
 given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5),a(2))` refer to the same component.
 
-##Synopsis##
+## Synopsis ##
 
     Index b1("bond 1",5), b3("bond 3",8),
           s2("Site 2",2,Site), s3("Site 3",2,Site);
@@ -36,7 +36,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
     Print(trace(rho,b3,primed(b3))); //Prints 1.0
 
-##Constructors##
+## Constructors ##
 
 * `ITensor()` 
 
@@ -83,7 +83,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         Print(T(s1(1),s2(2)); // Prints 0, similarly for other components
 
 
-##Element Access Methods##
+## Element Access Methods ##
 
 * `Real& operator()(IndexVal iv1, IndexVal iv2, ...)` 
 
@@ -125,7 +125,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   Return value of a complex, scalar (rank zero) ITensor. If the ITensor has rank greater than zero, throws an exception.
 
-##Operators##
+## Operators ##
 
 * `ITensor& operator*=(const ITensor& other)`
 
@@ -211,7 +211,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         Print((realPart(T)-A).norm()); //prints zero
         Print((imagPart(T)-B).norm()); //prints zero
 
-##Prime Level Methods##
+## Prime Level Methods ##
 
 * `ITensor& prime(int inc = 1)`
 
@@ -288,7 +288,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
   Change prime level of all indices having prime level `plevold` to `plevnew`. (Optionally only if their type matches `t`.) 
   Returns a reference to the modified ITensor.
 
-##Miscellaneous Methods##
+## Miscellaneous Methods ##
 
 * `void randomize()`
 

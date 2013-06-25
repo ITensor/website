@@ -1,4 +1,4 @@
-#Index#
+# Index #
 
 An Index represents a single tensor index with fixed dimension m.
 
@@ -9,7 +9,7 @@ All copies of an Index instance retain the same dimension and IndexType, but the
 temporarily distinct.
 Indices compare equal if and only if they have the same primelevel and are copies of the same original Index.
 
-##Synopsis##
+## Synopsis ##
 
     Index s1("Site 1",2,Site);
     Print(s1.m()); //prints 2
@@ -26,7 +26,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
     Print(i == s1 ? "true" : "false"); //prints "true"
 
 
-##Constructors##
+## Constructors ##
 
 * `Index()`
 
@@ -40,7 +40,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
         Index s1("Site 1",2,Site);
 
-##Accessor Methods##
+## Accessor Methods ##
 
 * `int m()` 
 
@@ -79,7 +79,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
   Return the `Arrow` direction of this Index. Always returns `Out`. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
 
-##Prime Level Methods##
+## Prime Level Methods ##
 
 * `void prime(int inc = 1)`  
 
@@ -97,7 +97,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   If Index has prime level plevold, change to plevnew. Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
-##Operators##
+## Operators ##
 
 * `IndexVal operator()(int i)`  
 
@@ -126,7 +126,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   Return `true` if this Index and other are copies of the same original Index, regardless of prime level.
 
-##Other Class Methods##
+## Other Class Methods ##
 
 * `void write(std::ostream s)`  
 

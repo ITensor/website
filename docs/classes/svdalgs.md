@@ -1,9 +1,9 @@
-#SVD and Related Algorithms#
+# SVD and Related Algorithms #
 
 Methods for performing tensor decompositions such as the singular value decomposition (SVD), density matrix
 diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h and svdalgs.cc.
 
-##Synopsis##
+## Synopsis ##
 
     Index s1("site 1",2,Site),
           s2("site 2",2,Site),

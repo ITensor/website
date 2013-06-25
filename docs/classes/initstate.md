@@ -1,4 +1,4 @@
-#InitState#
+# InitState #
 
 A class for initializing matrix product states.
 
@@ -9,7 +9,7 @@ For example, if the Model object provided is of type `SpinHalf`, the available M
 `&SpinHalf::Up` and `&SpinHalf::Dn` (in general, any method of the Model-type object that takes an int and returns an 
 IQIndexVal).
 
-##Constructors##
+## Constructors ##
 
 * `InitState(Model model)` 
 
@@ -24,7 +24,7 @@ IQIndexVal).
         SpinOne model(100);
         InitState init(model,&SpinOne::Up);
 
-##Accessor Methods##
+## Accessor Methods ##
 
 * `InitState& set(int i, MethodPtr mp)` 
 

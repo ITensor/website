@@ -1,4 +1,4 @@
-#Index Functions#
+# Index Functions #
 
 Standalone methods for manipulating objects implementing the [[Index|classes/index]] interface. 
 

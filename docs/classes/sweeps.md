@@ -1,8 +1,8 @@
-#Sweeps#
+# Sweeps #
 
 Class for specifying DMRG sweeps and accuracy parameters.
 
-##Synopsis##
+## Synopsis ##
 
 
 [[Back to Classes|classes]]
