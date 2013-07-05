@@ -1,4 +1,4 @@
-#Perform a basic DMRG calculation#
+# Perform a basic DMRG calculation #
 
 To do any DMRG calculation you first need a Hamiltonian. 
 The library provides some common Hamiltonians for convenience.

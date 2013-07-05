@@ -1,4 +1,4 @@
-#Tutorial: A Simple Measurement
+# Tutorial: A Simple Measurement #
 
 First let's <!--'--> model a single spin 1/2 degree of freedom. 
 We will need an Index to define the Hilbert space of the spin:

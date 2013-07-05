@@ -1,4 +1,4 @@
-#Code Recipes#
+# Code Recipes #
 
 Below we have collected 'recipes' for common tasks and code patterns 
 that come up often when using the ITensor Library.

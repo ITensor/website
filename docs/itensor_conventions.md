@@ -1,6 +1,6 @@
-#Tensor and Index Conventions#
+# Tensor and Index Conventions #
 
-##Arrows##
+## Arrows ##
 
 * IQIndex Arrows (represented by the Arrow enum) have the values In or Out and should not be thought of
 as pointing in an absolute direction such as up/down/left/right.
@@ -13,7 +13,7 @@ or a bra (a covector, dual vector, or lowered index).
 
 * Conjugating a tensor (applying conj(T)) reverses Arrow directions in addition to taking the complex conjugate.
 
-##Index Types##
+## Index Types ##
 
 * The two primary index types (represented by the IndexType enum) are `Site` and `Link`.
 
@@ -28,7 +28,7 @@ of type `ReIm`.
 * There is a special IndexType `All` which can be used to specify that a certain function or transformation 
 should be applied to all indices regardless of type.
 
-##Matrix Product States##
+## Matrix Product States ##
 
 * An orthogonality center of a matrix product state or MPS is any tensor whose indices all label 
 orthonormal states. For example, every site tensor of a canonical MPS is an orthogonality center.
@@ -39,7 +39,7 @@ only one tensor (the left or right of the two "center" sites depending on sweep 
 For a normalized MPS in a well-defined gauge, therefore, a tensor is an ortho. center if and only if 
 all its indices point Out.
 
-##Operators##
+## Operators ##
 
 * Single-site operator tensors have one unprimed Site index `S` and one primed Site Index `S'`.
   For IQTensor operators, IQIndex `S` has an In Arrow and `S'` an Out Arrow.

@@ -1,4 +1,4 @@
-#Measure the properties of an MPS wavefunction#
+# Measure the properties of an MPS wavefunction #
 
 Here we will learn how to measure some properties of the
 Heisenberg model wavefunction by adding to the code from the [[previous example|recipes/basic_dmrg]].

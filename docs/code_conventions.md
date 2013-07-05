@@ -1,10 +1,10 @@
-#ITensor Library C++ Conventions#
+# ITensor Library C++ Conventions #
 
 None of these conventions are hard and fast, and there exist exceptions throughout the library.
 However, the conventions below should be followed whenever reasonable.
 
 
-##Classes and Structs##
+## Classes and Structs ##
 
 * Class names are capitalized.
 
@@ -19,7 +19,7 @@ However, the conventions below should be followed whenever reasonable.
 * Free methods modifying objects return a copy. For example, 
   `primed(I)` returns a copy of `I` with its prime level incremented.
 
-##File Layout##
+## File Layout ##
 
 * Each header file should primarily contain one class definition, although other
 closely related helper classes may be included (such as the commaInit class for 
@@ -31,7 +31,7 @@ file or in a separate .cc file.
 
 
 
-##Formatting##
+## Formatting ##
 
 * Code should be idented using 4 spaces for each indent level ("soft tabs"). This guarantees
 the code will look consistent in text editors regardless of tab stop settings.
@@ -59,7 +59,7 @@ if breaking over two lines makes code hard to reason about/debug.
   Other keywords such as `friend` or `inline` should come after the return type unless disallowed by the compiler
   (such as when the return type is a reference).
 
-##Functions##
+## Functions ##
 
 * The preferred order for function arguments is:
     1. Regular (pass-by-value, such as `int j`) and const reference (such as `const MPO& H`) arguments.

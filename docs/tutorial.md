@@ -1,4 +1,4 @@
-#Tutorial: Table of Contents#
+# Tutorial: Table of Contents #
 
 [[0. Introduction: the ITensor|tutorial]]
 
@@ -6,7 +6,7 @@
 
 </br>
 
-#Introduction: the ITensor#
+# Introduction: the ITensor #
 
 Before diving into the tutorial, let us introduce the object at the heart of the 
 library: the intelligent tensor or ITensor.

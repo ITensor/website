@@ -1,4 +1,4 @@
-#Papers Using the ITensor Library#
+# Papers Using the ITensor Library #
 
 * [Guaranteed Convergence of the Kohn-Sham Equations](http://arxiv.org/abs/1305.2967), <br/>Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, </br> (2013) [arxiv:1301.3494]
 

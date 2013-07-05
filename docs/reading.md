@@ -1,7 +1,7 @@
-#Helpful Reading#
+# Helpful Reading #
 Here are a few papers we have found to be helpful introductions to tensor product or DMRG methods.
 
-##Tensor Product State Algorithms##
+## Tensor Product State Algorithms ##
 
 * [The density-matrix renormalization group in the age of matrix product states](http://dx.doi.org/10.1016/j.aop.2010.09.012), U.&nbsp;Schollw&ouml;ck, <i>Annals of Physics</i> *326*, p. 96-192 (2011) arxiv:1008.3477
 
@@ -17,7 +17,7 @@ Here are a few papers we have found to be helpful introductions to tensor produc
 
   *Comments*: This paper is essential for gaining a better understanding of why MPS and MPOs work and how to construct them.
 
-##The Density Matrix Renormalization Group##
+## The Density Matrix Renormalization Group ##
 
 * [The density matrix renormalization group](http://link.aps.org/doi/10.1103/RevModPhys.77.259), U.&nbsp;Schollw&ouml;ck,
   <i>Rev.&nbsp;Mod.&nbsp;Phys.</i> *77*, 259-315 (2005) cond-mat/0409292
