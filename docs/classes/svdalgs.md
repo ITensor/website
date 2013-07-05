@@ -38,7 +38,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
     PrintDat(D); //look at singular values of psi
 
     //Check
-    diff = psi - A*D*B;
+    ITensor diff = psi - A*D*B;
     Print(diff.norm()); //prints something < 1E-14
 
     //
@@ -61,7 +61,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
     PrintDat(D); //look at the eigenvalues of rho
 
     //Check
-    ITensor diff = rho - primed(U)*D*conj(U);
+    diff = rho - primed(U)*D*conj(U);
     Print(diff.norm()); //prints something < 1E-14
 
 
