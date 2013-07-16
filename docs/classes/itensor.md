@@ -48,7 +48,9 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   `ITensor(Index i1, Index i2, Index i3)` 
 
-   ... etc. up to 8 indices 
+   ... 
+   
+   (etc. up to 8 Indices)
 
    Construct an ITensor with the given indices. All components are initialized to zero.
 
@@ -69,9 +71,9 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   `ITensor(IndexVal iv1, IndexVal iv2, IndexVal iv3)` 
 
-   ... etc. up to 8 IndexVals 
+   ... etc. up to 8 [[IndexVals|classes/indexval]]
 
-   Construct an ITensor with indices `iv1.ind`, `iv2.ind`, etc., such that the component corresponding to `iv1.i`, `iv2.i`, etc. is equal to 1 and all other components are equal to zero. For example, constructing an ITensor `T` by calling `ITensor T(a(1),b(2),c(3));` makes all components of T zero except for `T(a(1),b(2),c(3))==1`.
+   Construct an ITensor with indices `iv1`, `iv2`, etc. ([[IndexVals|classes/indexval]] interpreted as objects of type [[Index|classes/index]]), such that the component corresponding to `iv1.i`, `iv2.i`, etc. is set equal to 1 and all other components are set equal to zero. For example, constructing an ITensor `T` by calling `ITensor T(a(1),b(2),c(3));` makes all components of T zero except for `T(a(1),b(2),c(3))==1`.
 
    <div class="example_clicker">Show Example</div>
 
@@ -199,9 +201,11 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
 ## Operators ##
 
-* `ITensor& operator*=(const ITensor& other)`
+* `ITensor& operator*=(ITensor other)`
 
-  ITensor contracting product. A*B contracts over all Index pairs in common between A and B. 
+  `ITensor operator*(ITensor A, ITensor B)`
+
+  Contracting product. A*B contracts (sums) over all Index pairs in common between A and B. 
 
   <div class="example_clicker">Show Example</div>
 
@@ -225,9 +229,9 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         Print(hasindex(R,primed(l3))); //Prints 1 (true)
         Print(hasindex(R,l1)); //Prints 0 (false)
 
-* `ITensor& operator+=(const ITensor& other)`
+* `ITensor& operator+=(ITensor other)`
 
-  `ITensor& operator-=(const ITensor& other)`
+  `ITensor& operator-=(ITensor other)`
 
   (and related free methods)
 
@@ -282,6 +286,33 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
         Print((realPart(T)-A).norm()); //prints zero
         Print((imagPart(T)-B).norm()); //prints zero
+
+* `ITensor& operator/=(ITensor other)`
+
+  `ITensor operator/(ITensor A, ITensor B)`
+
+  Non-contracting product. A/B creates a new tensor out of A and B by "merging" any common indices
+  according to the rule R<sub>ijk</sub> = A<sub>ik</sub> B<sub>jk</sub> (no sum over k). Here i, j, and k
+  could be individual indices or groups of indices. 
+
+  <div class="example_clicker">Show Example</div>
+
+        Index s2("Site 2",2,Site), 
+              s3("Site 3",2,Site),
+              l3("link 3",4);
+
+        ITensor A(s2,s3,l3);
+        //set components of A ...
+
+        ITensor B(s3,l3);
+        //set components of B ...
+
+        ITensor R = A * B; //merge indices s3 and l3
+
+        Print(R.r()); //Prints 3, rank of R
+        Print(hasindex(R,s2)); //Prints 1 (true)
+        Print(hasindex(R,s3)); //Prints 1 (true)
+        Print(hasindex(R,l3)); //Prints 1 (true)
 
 ## Prime Level Methods ##
 

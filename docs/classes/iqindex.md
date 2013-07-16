@@ -42,11 +42,11 @@ An IQIndex also has an Arrow direction associated with it. For more information 
 
    ... etc. up to 6 Index, QN pairs 
 
-   Construct an IQIndex with the given name, Index and QN pairs, and optional Arrow direction.
+   Construct an IQIndex with the given name, Index and QN pairs, and Arrow direction.
 
 * `IQIndex(std::string name, std::vector<IndexQN> indqn, Arrow dir = Out, int plev = 0)`
 
-   Construct an IQIndex with the given name and optional Arrow direction and prime level. The Index and QN pairs are provided as a std::vector (of any size) of [[IndexQN|classes/indexqn]] objects.
+   Construct an IQIndex with the given name, Arrow direction, and prime level. The Index and QN pairs are provided as a std::vector (of any size) of [[IndexQN|classes/indexqn]] objects.
 
 
 ## Accessor Methods ##
