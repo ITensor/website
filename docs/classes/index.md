@@ -128,7 +128,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Other Class Methods ##
 
-* `void write(std::ostream s)`  
+* `void write(std::ostream& s)`  
 
   Write Index to stream in binary form.
 
