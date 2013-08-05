@@ -1,5 +1,7 @@
 # Papers Using the ITensor Library #
 
+* [Computation of extreme eigenvalues in higher dimensions using block tensor train format](http://arxiv.org/abs/1306.2269), <br/>Sergey&nbsp;V.&nbsp;Dolgov, Boris&nbsp;N.&nbsp;Khoromskij, Ivan&nbsp;V.&nbsp;Oseledets, Dmitry&nbsp;V.&nbsp;Savostyanov</br> (2013) [arxiv:1306.2269]
+
 * [Guaranteed Convergence of the Kohn-Sham Equations](http://arxiv.org/abs/1305.2967), <br/>Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, </br> (2013) [arxiv:1301.3494]
 
 * [Real-space parallel density matrix renormalization group](http://link.aps.org/doi/10.1103/PhysRevB.87.155137), <br/>E.M.&nbsp;Stoudenmire and Steven&nbsp;R.&nbsp;White, </br> <i>Phys. Rev. B</i>&nbsp; <b>87</b>, [155137](http://link.aps.org/doi/10.1103/PhysRevB.87.155137) (2013) [arxiv:1301.3494]
