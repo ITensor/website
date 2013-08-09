@@ -2,21 +2,21 @@
 
 Tutorial on applications of matrix product states using ITensor. 
 
-* [Introduction - Tensors](talks/jan_2013_northeastern/00_Tensors.pdf)
+* Introduction. Tensors. &nbsp;  [\[video\]](docs/tutorial/00_Intro_Tensors.mov) &nbsp; [\[slides\]](docs/tutorial/00_Intro_Tensors.pdf)
 
-* [One](talks/jan_2013_northeastern/01_One.pdf). Working with a single-site wavefunction.
+* One. Working with a single-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/01_One.pdf)
 
-* [Two](talks/jan_2013_northeastern/02_Two.pdf). Working with a two-site wavefunction.
+* Two. Working with a two-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/02_Two.pdf)
 
-* [SVD](talks/jan_2013_northeastern/03_SVD.pdf). The singular value decomposition.
+* SVD. The singular value decomposition.  &nbsp;  [\[slides\]](talks/jan_2013_northeastern/03_SVD.pdf)
 
-* [Four](talks/jan_2013_northeastern/04_Four.pdf). Introducing matrix product states using a four-site wavefunction.
+* Four. Introducing matrix product states using a four-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/04_Four.pdf)
 
-* [Trotter](talks/jan_2013_northeastern/05_Trotter.pdf). Time evolution with Trotter gates.
+* Trotter. Time evolution with Trotter gates.  &nbsp;  [\[slides\]](talks/jan_2013_northeastern/05_Trotter.pdf)
 
-* [MPO](talks/jan_2013_northeastern/06_MPO.pdf). Constructing matrix product operators.
+* MPO. Constructing matrix product operators. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/06_MPO.pdf)
 
-* [DMRG](talks/jan_2013_northeastern/07_DMRG.pdf). Introduction to DMRG using ITensor.
+* DMRG. Introduction to DMRG using ITensor.  &nbsp;  [\[slides\]](talks/jan_2013_northeastern/07_DMRG.pdf)
 
 
 [[Back to Main|main]]
