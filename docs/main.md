@@ -7,6 +7,8 @@
 
 Additional documentation:
 
+* [[Change Log|changelog]]
+
 * [[Tensor and Index Conventions|itensor_conventions]]
 
 * [[C++ Code Conventions|code_conventions]]
