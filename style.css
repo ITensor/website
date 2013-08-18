@@ -72,7 +72,7 @@ code { font-family: monospace; font-size: 12pt; }
     font-size: 12pt; 
     font-family: sans-serif; 
     background: #FFDC75;
-    padding: 10px 25px 20px 20px;
+    padding: 10px 20px 20px 20px;
     margin-left: 15px;
     margin-right: 0px;
     -moz-box-shadow: 1px 1px 1px #999;
@@ -81,7 +81,7 @@ code { font-family: monospace; font-size: 12pt; }
     }
 #download h4 { color: black; }
 #download a { color: #CD2626; text-decoration: none;}
-#download ul { display: table; color: #CD2626; }
+#download ul { display: table; color: #CD2626; margin-bottom:0px; padding-bottom:0px; }
 #download ul li { display: table; padding-left: 20px; color: #CD2626; }
 
 #latest 
@@ -198,9 +198,11 @@ font-family: sans-serif;
 font-size: 100%; 
 width: 90%; 
 }
-.docs h1 { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
-.docs h2 { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
 .docs a { color: #336699; }
+.docs h1 { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
+.docs h1 a { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
+.docs h2 { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
+.docs h2 a { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
 .docs em { font-weight: bold; }
 .docs p 
     { 
@@ -255,9 +257,10 @@ width: 90%;
     color: #336699; 
     cursor: pointer;
     padding-left: 14px;
+    padding-bottom: 10px;
     background-image: url('link_arrow.png');
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: 0% 25%;
     background-size: 12px;
     }
 
