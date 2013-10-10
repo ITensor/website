@@ -4,8 +4,11 @@
 
 docpath = "/var/www/html/itensor/docs/"
 reldocpath = "docs/"
-header_fname = "docs_header.html"
+prenav_header_fname = "docs_header_prenav.html"
+postnav_header_fname = "docs_header_postnav.html"
 footer_fname = "docs_footer.html"
+this_fname = "docs.cgi"
+nav_delimiter = "&nbsp;/&nbsp;"
 
 #################################
 
@@ -49,10 +52,10 @@ def convert(string):
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
                 #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(name,link)
-                mdstring += "[%s](docs.cgi?page=%s)"%(name,link)
+                mdstring += ("[%s]("+this_fname+"?page=%s)")%(name,link)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += "[%s](docs.cgi?page=%s)"%(chunk,chunk)
+                mdstring += ("[%s]("+this_fname+"?page=%s)")%(chunk,chunk)
                 #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
     #Code below not needed: just indent 4 spaces and Markdown
@@ -94,6 +97,12 @@ if page == None: page = "main"
 mdfname = reldocpath + page + ".md"
 mdfile = fileExists(mdfname)
 
+# "page.md" file doesn't exist, reinterpret "page" as a
+# directory name and look for a main.md file there
+if not mdfile:
+    mdfname = reldocpath + page + "/main.md"
+    mdfile = fileExists(mdfname)
+
 printContentType()
 
 bodyhtml = ""
@@ -103,9 +112,28 @@ if mdfile:
 else:
     bodyhtml = "<p>(Documentation file not found)</p>"
 
-header_file = open(header_fname)
+# Generate directory tree hyperlinks
+dirlist = page.split('/')
+page_name = dirlist.pop(-1)
+
+nav = ""
+
+for dirname in dirlist:
+    nav += (nav_delimiter+"<a href=\""+this_fname+"?page=%s\">%s</a>") % (dirname,dirname)
+if page_name != "main":
+    nav += nav_delimiter+page_name
+
+if not (len(dirlist) == 0 and page_name == "main"):
+    nav = ("<a href=\""+this_fname+"?page=%s\">%s</a>") % ("main","main") + nav
+    nav += "</br>"
+
+
+prenav_header_file = open(prenav_header_fname)
+postnav_header_file = open(postnav_header_fname)
 footer_file = open(footer_fname)
-print "".join(header_file.readlines())
+print "".join(prenav_header_file.readlines())
+print nav
+print "".join(postnav_header_file.readlines())
 print bodyhtml
 print "".join(footer_file.readlines())
 footer_file.close()

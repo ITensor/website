@@ -135,6 +135,16 @@ code { font-family: monospace; font-size: 12pt; }
     box-shadow: 1px 1px 1px #999;
     }
 .section h2 { color: #fff; }
+.section #nav  
+{ 
+font-size: 72%;
+color: #fff;
+}
+.section #nav a 
+{ 
+color: #fff; 
+text-decoration: underline;
+}
 
 #diagram 
     { 
@@ -187,6 +197,7 @@ code { font-family: monospace; font-size: 12pt; }
     -webkit-box-shadow: 1px 1px 1px #999;
     box-shadow: 1px 1px 1px #999;
     }
+.screenshot h2 { font-family: sans-serif; font-weight: bold; padding: 0px 0px 10px 0px; }
 .screenshot h3 { font-family: sans-serif; padding: 0px 0px 10px 0px; }
 .screenshot ul { font-family: monospace; display: table; }
 .screenshot ul li { display: table; }
