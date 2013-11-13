@@ -39,13 +39,13 @@
 <div class="full">
 
     <div id="download" class="rounded">
-        <h4>Download latest <br/> version <a href="https://github.com/ITensor/library/tree/v0.1.1" target="_blank">v0.1.1</a> 
-        (<a href="docs.cgi?page=changelog#v0.1.1">changelog</a>)</h4>
+        <h4>Download latest <br/> version <a href="https://github.com/ITensor/ITensor/tree/v0.2.2" target="_blank">v0.2.2</a> 
+        (<a href="docs.cgi?page=changelog#v0.2.2">changelog</a>)</h4>
         <ul>
-        <li><a href="https://github.com/ITensor/library/tarball/v0.1.1">tar.gz</a></br>
-        <li><a href="https://github.com/ITensor/library/zipball/v0.1.1">zip</a></br>
+        <li><a href="https://github.com/ITensor/ITensor/tarball/v0.2.2">tar.gz</a></br>
+        <li><a href="https://github.com/ITensor/ITensor/zipball/v0.2.2">zip</a></br>
         </ul>
-        Or track our latest<br/> code via <a target="_blank" href="https://github.com/ITensor/library">github</a>
+        Or track our latest<br/> code via <a target="_blank" href="https://github.com/ITensor/ITensor">github</a>
     </div>
 
     <p>
@@ -81,7 +81,7 @@
 <div class="full section rounded"> <h2>Code Samples</h2> </div>
 
 <div class="full screenshot">
-    <h3>Perform a DMRG Calculation</h3>
+    <h2>Perform a DMRG Calculation</h2>
     <ul>
     <li> SpinOne model(100); //define Hilbert space of 100 spin-lattice sites</li>
     <li> MPO H = Heisenberg(model); //pre-defined Hamiltonian; easy to write your own</li>
@@ -97,16 +97,19 @@
 
 <div class="full screenshot">
     <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
-    <h3>Multiply Two ITensors</h3>
+    <h2>Multiply Two ITensors</h2>
     <ul>
     <li>Index a("a",2), b("b",2), c("c",2); </li>
-    <li>ITensor Z(a,b), X(b,c); </li>
+    <li>ITensor Z(a,b), X(c,b); </li>
     <li>commaInit(Z,a,b) &lt;&lt; 1, 0,
     </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     0,-1;</li>
     <li>commaInit(X,b,c) &lt;&lt; 0, 1,
     </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     1, 0;</li>
+    <li>//'*' operator finds and contracts </li>
+    <li>//common index 'b' regardless </li>
+    <li>//of index order:</li>
     <li>ITensor R = Z * X; </li>
     <li>Print( R(a(1),c(2)) );</li>
     <li> &nbsp; //Prints: R(a(1),c(2)) = 1</li>
