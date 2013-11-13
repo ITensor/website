@@ -4,11 +4,12 @@ The classes and methods below are ordered starting from most fundamental. (For e
 IndexSet containing Index objects.)
 
 * [[Index|classes/index]]. Single tensor index. <br/>
-  [[Index functions|classes/index_functions]] for working with Index objects <br/>
+  [[Index functions|classes/index_functions]] for working with Index and similar classes. <br/>
   [[IndexVal|classes/indexval]]. Index set to a particular value. 
 * [[IndexSet|classes/indexset]]. Container for storing indices. <br/>
   [[IndexSet functions|classes/indexset_functions]].
-* [[ITensor|classes/itensor]]. The elementary tensor type.
+* [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
+  [[ITensor functions|classes/itensor_functions]] for working with ITensor and similar classes. <br/>
 * [[QN|classes/qn]]. Abelian quantum number class.
 * [[IQIndex|classes/iqindex]]. Index split into quantum number blocks. <br/>
   [[IQIndexVal|classes/iqindexval]]. IQIndex set to a particular value.
