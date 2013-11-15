@@ -7,13 +7,14 @@ corresponding to that property, the wavefunction, and a way to do the inner
 product of the operator with the wavefunction.
 
 For example, consider trying to measure the z-component of
-the spin on some site `j` in the Heisenberg chain. This operator is a method of the `SpinOne model(N);` class
-that we defined last time, and can be represented by an ITensor:
+the spin on some site `j` in the Heisenberg chain. 
+This operator can be retrieved from the `SpinOne sites(N);` class
+that we defined last time, and can be saved as an ITensor:
 
-    ITensor szj_op = model.sz(j);
+    ITensor szj_op = sites.op("Sz",j);
 
-Likewise there are operators for the site `j` spin raising (S+) and lowering operators (S-),
-methods `sp(j)` and `sm(j)`, respectively.
+Likewise we can obtain operators for the site `j` spin raising (S+) and lowering operators (S-),
+by calling `sites.op("Sp",j)` and `sites.op("Sm",j)` respectively.
 Now there is an efficient way to take the inner product of these local operators with the MPS
 wavefunction. To do this, we must first call the function
 
@@ -21,15 +22,15 @@ wavefunction. To do this, we must first call the function
 
 _This step is absolutely vital_.  It tells the MPS wavefunction to put all the information
 about the amplitudes of the various spin occupations into the site at `j`.
-Without this step, we would not be measuring `sz(j)` in an orthonormal environment and would
+Without this step, we would not be measuring Sz in an orthonormal environment and would
 get the wrong answer.  Getting the needed amplitudes is very simple, 
 and they will form the ket part of our Dirac "bra-ket" inner product:
 
-    ITensor ket = psi.AA(j);
+    ITensor ket = psi.A(j);
 
-After calling `psi.position(j)`, all the `psi.AA(j+n)` tensors for `n != 0` form
+After calling `psi.position(j)`, all the `psi.A(j+n)` tensors for `n != 0` form
 the basis weighted by the wavefunction amplitudes.
-As basis tensors, these `psi.AA(j+n)` do not have amplitude information; only the `psi.AA(j)` does. 
+As basis tensors, these `psi.A(j+n)` do not have amplitude information; only the `psi.A(j)` does. 
 That is why it is vital to call `psi.position(j)` before doing a measurement at site `j`.
 
 To get the bra part of the Dirac bra-ket, think about the ket as a column vector, the operator
@@ -41,7 +42,7 @@ any imaginary parts.  The way we do this is simple:
 The `primed` function is what turns the ket into a row vector (because it will contract with the 
 row index of our operator), and `conj` does the conjugation. The argument `Site` passed to primed tells it
 to prime Site-type indices only.
-Now we are ready to measure the expectation value of `sz(j)` by using the inner product function `Dot`:
+Now we are ready to measure the expectation value of Sz by using the inner product function `Dot`:
 
     Real szj = Dot(bra, szj_op*ket);
 
@@ -50,17 +51,17 @@ on two sites `j` and `j+1`.  The vector product S(j) dot S(j+1) will do just fin
 z-component and raising and lowering operators, S(j) dot S(j+1) = `sz(j)*sz(j+1) + 0.5*( sp(j)*sm(j+1) + sp(j+1)*sm(j) )`.
 For example, one of the operators we'll need is <!--'-->
 
-    ITensor spm_op = model.sp(j)*model.sm(j+1);
+    ITensor spm_op = sites.op("Sp",j)*sites.op("Sm",j+1);
 
 To represent the wavefunction for two sites, we simply call the `bondTensor` method of the wavefunction:
 
     ITensor bondket = psi.bondTensor(j); 
 
-The method `psi.bondTensor(j)` is analogous to `psi.AA(j)`, except that 
+The method `psi.bondTensor(j)` is analogous to `psi.A(j)`, except that 
 `bondTensor` encodes bond information between `j` and `j+1`, so long as `psi.position(j)` has been called previously.
 The `bondbra` is made the same as the `bra` from earlier:
 
-    ITensor bondbra = conj(primesite(bondket));
+    ITensor bondbra = conj(primed(bondket,Site));
 
 And expectation values are realized in the same way:
 
@@ -80,15 +81,15 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
         {
         int N = 100;
 
-        SpinOne model(N);
+        SpinOne sites(N);
 
-        MPO H = Heisenberg(model);
+        MPO H = Heisenberg(sites);
 
-        InitState initState(model);
+        InitState initState(sites);
         for(int i = 1; i <= N; ++i) 
-            initState(i,i%2==1 ? &SpinOne::Up : &SpinOne::Dn);
+            initState(i,i%2==1 ? "Up" : "Dn");
 
-        MPS psi(model,initState);
+        MPS psi(initState);
 
         cout << format("Initial energy = %.5f")%psiHphi(psi,H,psi) << endl;
 
@@ -124,19 +125,19 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
             //move psi to get ready to measure at position j
             psi.position(j);
 
-            //after calling psi.position(j), psi.AA(j) returns a 
+            //after calling psi.position(j), psi.A(j) returns a 
             //local representation of the wavefunction,
             //which is the proper way to make measurements
             //i.e. take expectation values with local operators.
 
             //Dirac "ket" for wavefunction
-            ITensor ket = psi.AA(j);
+            ITensor ket = psi.A(j);
 
             //Dirac "bra" for wavefunction
-            ITensor bra = conj(primesite(ket));
+            ITensor bra = conj(primed(ket,Site));
 
             //operator for sz at site j
-            ITensor szj_op = model.sz(j);
+            ITensor szj_op = sites.sz(j);
 
             //take an inner product 
             Sz(j) = Dot(bra, szj_op*ket);
@@ -146,14 +147,14 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
                 { 
                 //make a bond ket/bra based on wavefunction 
                 //representing sites j and j+1:
-                //psi.bondTensor(j) is analogous to psi.AA(j), 
+                //psi.bondTensor(j) is analogous to psi.A(j), 
                 //except that bondTensor encodes bond information 
                 //between j and j+1, so long as 
                 //psi.position(j) has been called
                 ITensor bondket = psi.bondTensor(j); 
-                ITensor bondbra = conj(primesite(bondket)); 
+                ITensor bondbra = conj(primed(bondket,Site)); 
 
-                ITensor szz_op = model.sz(j)*model.sz(j+1); 
+                ITensor szz_op = sites.op("Sz",j)*sites.op("Sz",j+1); 
 
                 //start with z components
                 SdotS(j) = Dot(bondbra, szz_op*bondket);
@@ -161,9 +162,9 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
                 //add in S+ and S- components:
                 //use sp(j)*sm(j) and its conjugate, 
                 //also note the one-half out front:
-                ITensor spm_op = model.sp(j)*model.sm(j+1);
+                ITensor spm_op = sites.op("Sp",j)*sites.op("Sm",j+1);
                 SdotS(j) += 0.5*Dot(bondbra, spm_op*bondket);
-                ITensor smp_op = model.sm(j)*model.sp(j+1);
+                ITensor smp_op = sites.op("Sm",j)*sites.op("Sp",j+1);
                 SdotS(j) += 0.5*Dot(bondbra, smp_op*bondket);
 
                 sdots << SdotS(j) << endl; //print to file

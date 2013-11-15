@@ -2,14 +2,14 @@
 
 To do any DMRG calculation you first need a Hamiltonian. 
 The library provides some common Hamiltonians for convenience.
-The site indices used by the Hamiltonian are provided by a model object:
+The site indices used by the Hamiltonian are provided by an instance of the SpinOne class:
 
-    SpinOne model(N);
+    SpinOne sites(N);
 
 Here we have chosen to use spin 1 sites and our lattice size is N.
 Next we instantiate the Hamiltonian, which is a matrix product operator (MPO):
 
-    MPO H = Heisenberg(model);
+    MPO H = Heisenberg(sites);
 
 Before beginning the calculation, we need to specify how many DMRG sweeps to do and
 what schedule we would like for the parameters controlling the accuracy.
@@ -20,9 +20,9 @@ These parameters are stored within a sweeps object:
     sweeps.cutoff() = 1E-10; //desired truncation error
 
 The wavefunction must use the same sites
-as the Hamiltonian, so we construct it using the same model object as before
+as the Hamiltonian, so we construct it using the same sites object as before
 
-    MPS psi(model);
+    MPS psi(sites);
 
 By default an MPS is initialized to a random product state; we could also set psi
 to some specific initial state using an [[InitState|classes/initstate]] object.
@@ -48,15 +48,15 @@ Below you can find a complete working code that includes all of these steps.
         {
         int N = 100;
 
-        SpinOne model(N);
+        SpinOne sites(N);
 
-        MPO H = Heisenberg(model);
+        MPO H = Heisenberg(sites);
 
         Sweeps sweeps(5); //number of sweeps is 5
         sweeps.maxm() = 10,20,100,100,200;
         sweeps.cutoff() = 1E-10;
 
-        MPS psi(model);
+        MPS psi(sites);
 
         Real energy = dmrg(psi,H,sweeps);
 

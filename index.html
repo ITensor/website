@@ -83,9 +83,9 @@
 <div class="full screenshot">
     <h2>Perform a DMRG Calculation</h2>
     <ul>
-    <li> SpinOne model(100); //define Hilbert space of 100 spin-lattice sites</li>
-    <li> MPO H = Heisenberg(model); //pre-defined Hamiltonian; easy to write your own</li>
-    <li> MPS psi(model); </li>
+    <li> SpinOne sites(100); //define Hilbert space of 100 spin-lattice sites</li>
+    <li> MPO H = Heisenberg(sites); //pre-defined Hamiltonian; easy to write your own</li>
+    <li> MPS psi(sites); </li>
     <li>&nbsp;</li>
     <li> Sweeps sweeps(5); //perform 5 sweeps of DMRG </li>
     <li> sweeps.maxm() = 50, 50, 100, 100, 200; //max number of states kept each sweep</li>
@@ -107,9 +107,9 @@
     <li>commaInit(X,b,c) &lt;&lt; 0, 1,
     </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     1, 0;</li>
-    <li>//'*' operator finds and contracts </li>
-    <li>//common index 'b' regardless </li>
-    <li>//of index order:</li>
+    <li>//star '*' operator finds and </li>
+    <li>//contracts common index 'b' </li>
+    <li>//regardless of index order:</li>
     <li>ITensor R = Z * X; </li>
     <li>Print( R(a(1),c(2)) );</li>
     <li> &nbsp; //Prints: R(a(1),c(2)) = 1</li>
