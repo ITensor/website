@@ -1,11 +1,16 @@
 # Helpful Reading #
 Here are a few papers we have found to be helpful introductions to tensor product or DMRG methods.
 
-## Tensor Product State Algorithms ##
+## Matrix / Tensor Product State Algorithms ##
 
 * [The density-matrix renormalization group in the age of matrix product states](http://dx.doi.org/10.1016/j.aop.2010.09.012), U.&nbsp;Schollw&ouml;ck, <i>Annals of Physics</i> *326*, p. 96-192 (2011) arxiv:1008.3477
 
   *Comments*: This paper is currently the most thorough and up-to-date discussion of tensor product state methods, especially DMRG. The concepts described in the paper align closely with the features of the ITensor Library.
+
+* [Algorithms for Entanglement Renormalization](http://prb.aps.org/abstract/PRB/v79/i14/e144108),
+  G.&nbsp;Evenbly and G.&nbsp;Vidal, <i>Phys.&nbsp;Rev.&nbsp;B</i> *79*, 144108 (2009) arxiv:0707.1454
+
+  *Comments*: Good introduction to MERA wavefunctions which are a promising post-DMRG application of tensor network ideas.
 
 * [From density-matrix renormalization group to matrix product states](http://iopscience.iop.org/1742-5468/2007/10/P10014/), I.P.&nbsp;McCulloch,  <i>J. Stat. Mech.</i> P10014 (2007) cond-mat/0701428
 
@@ -41,5 +46,9 @@ Here are a few papers we have found to be helpful introductions to tensor produc
   *Comments*: Solution of the wavefunction acceleration problem plaguing infinite DMRG. This paper really demonstrates
   the power of the MPS formalism.
 
+* [Studying Two Dimensional Systems With the Density Matrix Renormalization Group](http://www.annualreviews.org/doi/abs/10.1146/annurev-conmatphys-020911-125018), E.M.&nbsp;Stoudenmire and S.R.&nbsp;White,
+  arxiv:1105.1374 (2011)
+
+  *Comments*: Lots of useful advice about the best practices for applying DMRG to 2d systems.
 
 [[Back to Main|main]]
