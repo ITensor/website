@@ -1,8 +1,77 @@
 # Change Log #
 
+<a name="master"></a>
+## [Current Working Version](https://github.com/ITensor/library/tree/master) (in progress) ##
+
+<b>Bug fixes and maintenance:</b>
+
+- Fixed some cases where local includes were using angle brackets <...> instead of quotes "..."
+
+- Removed .ih files from MatrixRef library. Non-standard extension was causing issues with certain compiler.
+
+- Fixed some friend declarations that were declaring default arguments (causing breakage under cerain compilers).
+
+- Removed deprecated 'register' keyword from MatrixRef code.
+
+- Fixed a typo: S+ and S- were swapped in the SpinHalf class
+
+- Added missing inline declaration to BondGate<IQTensor>::makeSwapGate.
+
+
+<a name="v0.2.3"></a>
+## [Version 0.2.3](https://github.com/ITensor/library/tree/v0.2.3) (January 21, 2014) ##
+
+<b>New features:</b>
+
+- Model class "op" method now allows operator strings of the form "Op1*Op2" where "Op1" and "Op2" are
+  valid operators. The method returns the on-site product of these two operators, similar to calling multSiteOps.
+
+- Can now combine two OptSets using the & operator.
+
+<b>Bug fixes and maintenance:</b>
+
+- Updated tutorial codes to compile with latest library.
+
+- Fixed some namespace/naming conflicts with boost and the std lib (especially involving std::array).
+
+- Updated sample and sandbox codes to use newer interface conventions.
+
+- Fixed BondGate swap operator for the IQTensor case.
+
+- Cleanup of unit tests.
+
+- Added acml lapack wrapper for zgeev.
+
+
+<a name="v0.2.2"></a>
+## [Version 0.2.2](https://github.com/ITensor/library/tree/v0.2.2) (November 11, 2013) ##
+
+- Changed gateTEvol function to be templated over the gate container type.
+
+- Added typedefs Gate and IQGate for BondGate<ITensor> and BondGate<IQTensor>, respectively.
+
+<a name="v0.2.1"></a>
+## [Version 0.2.1](https://github.com/ITensor/library/tree/v0.2.1) (November 6, 2013) ##
+
+<b>New features:</b>
+
+- ITensor::randomize and IQTensor::randomize can now generate a random complex tensor if passed the "Complex" Opt.
+
+<b>Internal improvements:</b>
+
+- New simplified implementation of Condenser.
+
+
+<b>Bug fixes:</b>
+
+- Fixed possible compiler errors when using C++11 standard libraries.
+
+- Fixed error where svd (ITensor case) could sometimes return incorrect singular values (by not including scale factor).
+
+- MPSt::applygate now correctly passes opts to svdBond.
 
 <a name="v0.2.0"></a>
-## [Version 0.2.0](https://github.com/ITensor/library/tree/master) (In progress) ##
+## [Version 0.2.0](https://github.com/ITensor/library/tree/v0.2.0) (October 22, 2013) ##
 
 <b>Interface improvements:</b>
 
@@ -61,6 +130,10 @@
 
 <b>Bug fixes:</b>
 
+- Fixed major bug (#45) where ITensor addition was incorrect when adding certain complex ITensors.
+
+- Fixed major bug (#46) where tieIndices was failing for complex tensors.
+
 - Fixed lapack_wrap.h to compile with ACML library.
 
 - Fixed Combiner to automatically init when copied to avoid confusing situations where copies could have a different right() Index.
@@ -68,6 +141,9 @@
 - Fixed bug in IndexSet constructor when 8 indices provided.
 
 - Updated sample codes.
+
+- Fixed MPO constructor taking a Model class and ifstream to read from disk.
+
 
 
 <a name="v0.1.1"></a>
@@ -100,7 +176,7 @@ imaginary part. The imaginary part is allocated only if it is non-zero.
 
 </br>
 
-## Development Version ([in progress](https://github.com/ITensor/library/tree/develop)) ##
+## [Development Version](https://github.com/ITensor/library/tree/develop) (in progress) ##
 
 - Removed ITSparse and IQTSparse classes. Now ITensor class carries an internal flag specifying whether it is
   diagonal (type()==ITensor::Diag) or dense (type()==ITensor::Dense). Diagonal ITensors are created by using
