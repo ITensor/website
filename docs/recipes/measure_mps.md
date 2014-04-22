@@ -42,9 +42,14 @@ any imaginary parts.  The way we do this is simple:
 The `primed` function is what turns the ket into a row vector (because it will contract with the 
 row index of our operator), and `conj` does the conjugation. The argument `Site` passed to primed tells it
 to prime Site-type indices only.
-Now we are ready to measure the expectation value of Sz by using the inner product function `Dot`:
+Now we are ready to measure the expectation value of Sz by contracting the bra, operator, and ket. The 
+call to `.toReal()` below converts the resulting scalar (rank zero) tensor into a real number:
 
-    Real szj = Dot(bra, szj_op*ket);
+    Real szj = (bra*szj_op*ket).toReal();
+
+<br/>
+<br/>
+<br/>
 
 Let's do another, more complicated measurement that will require our kets to be representing information <!--'-->
 on two sites `j` and `j+1`.  The vector product S(j) dot S(j+1) will do just fine.  In terms of the 
@@ -65,7 +70,7 @@ The `bondbra` is made the same as the `bra` from earlier:
 
 And expectation values are realized in the same way:
 
-    Real spm = 0.5*Dot(bondbra, spm_op*bondket);
+    Real spm = 0.5*(bondbra*spm_op*bondket).toReal();
 
 Below is a complete code for measuring properties of the MPS wavefunction.  
 The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
@@ -74,7 +79,6 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
     #include "core.h"
     #include "model/spinone.h"
     #include "hams/Heisenberg.h"
-    using boost::format;
     using namespace std;
 
     int main(int argc, char* argv[])
@@ -91,14 +95,14 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
 
         MPS psi(initState);
 
-        cout << format("Initial energy = %.5f")%psiHphi(psi,H,psi) << endl;
+        cout << "Initial energy = " << psiHphi(psi,H,psi) << endl;
 
         Sweeps sweeps(5);
         sweeps.maxm() = 20,40,80,120,200;
 
         Real En = dmrg(psi,H,sweeps);
 
-        cout << format("\nGround State Energy = %.10f\n")%En;
+        cout << "\nGround State Energy = " << En << endl;
 
         //
         //MEASURING SPIN
@@ -137,10 +141,10 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
             ITensor bra = conj(primed(ket,Site));
 
             //operator for sz at site j
-            ITensor szj_op = sites.sz(j);
+            ITensor szj_op = sites.op("Sz",j);
 
             //take an inner product 
-            Sz(j) = Dot(bra, szj_op*ket);
+            Sz(j) = (bra*szj_op*ket).toReal();
             szf << Sz(j) << endl; //print to file
 
             if(j<N) 
@@ -157,15 +161,15 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
                 ITensor szz_op = sites.op("Sz",j)*sites.op("Sz",j+1); 
 
                 //start with z components
-                SdotS(j) = Dot(bondbra, szz_op*bondket);
+                SdotS(j) = (bondbra*szz_op*bondket).toReal();
 
                 //add in S+ and S- components:
                 //use sp(j)*sm(j) and its conjugate, 
                 //also note the one-half out front:
                 ITensor spm_op = sites.op("Sp",j)*sites.op("Sm",j+1);
-                SdotS(j) += 0.5*Dot(bondbra, spm_op*bondket);
+                SdotS(j) += 0.5*(bondbra*spm_op*bondket).toReal();
                 ITensor smp_op = sites.op("Sm",j)*sites.op("Sp",j+1);
-                SdotS(j) += 0.5*Dot(bondbra, smp_op*bondket);
+                SdotS(j) += 0.5*(bondbra*smp_op*bondket).toReal();
 
                 sdots << SdotS(j) << endl; //print to file
 
@@ -175,7 +179,7 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
                 }
             }
 
-        cout << format("\nSum of SdotS is %f\n")%sumSdotS;
+        cout << "\nSum of SdotS is " << sumSdotS << endl;
 
         return 0;
         }

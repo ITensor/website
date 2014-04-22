@@ -40,7 +40,6 @@ Below you can find a complete working code that includes all of these steps.
     #include "core.h"
     #include "model/spinone.h"
     #include "hams/Heisenberg.h"
-    using boost::format;
     using namespace std;
 
     int 
@@ -60,7 +59,7 @@ Below you can find a complete working code that includes all of these steps.
 
         Real energy = dmrg(psi,H,sweeps);
 
-        cout << format("Ground State Energy = %.10f") % energy << endl;
+        cout << "Ground State Energy = " << energy << endl;
 
         return 0;
         }
