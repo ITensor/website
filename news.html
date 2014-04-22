@@ -26,7 +26,7 @@
     <li><a href="index.html">Home</a> </li>
     <li><a class="thispage" href="news.html">News</a> </li>
     <li><a href="docs.cgi">Learn</a> </li>
-    <li><a href="collaboration.html">Collaboration</a></li>
+    <li><a href="collaboration.html">Contributors</a></li>
     </ul>
 </div>
 
@@ -37,11 +37,20 @@
 
 <div class="full section rounded"> <h2>Latest News</h2> </div>
 
+<a name="sherbrooke"></a>
+<div class="full newsitem">
+<h3>Hands-On With ITensor at Sherbrooke Summer School</h3>
+<h2>(Dec. 17, 2013) </h2>
+<p>
+The ITensor Library will be featured as part of the Sherbrooke <a href="http://pitp.physics.ubc.ca/confs/sherbrooke2014/index.html" target="_blank">International Summer School on Computational Methods for Quantum Materials</a> taking place May 26 to June 6, 2014. Following Uli Schollw&ouml;ck's tutorials on modern DMRG theory and practice, Miles Stoudenmire will give two talks on the practical implementation of DMRG and matrix product states using ITensor. This will include hands-on tutorials on getting started with ITensor and applying ITensor to real research problems.
+</p>
+</div>
+
 <a name="parallelizing"></a>
 <div class="full newsitem">
 <h3>Parallelizing DMRG Across Real Space</h3>
 <h2> (Apr. 22, 2013) </h2>
-<img src="timing.png" style="padding: 0px; border: 1px solid gray; background: white; float:right; margin:10px;" width="406px" />
+<img src="timing.png" style="padding: 0px; border: 1px solid gray; background: white; float:right; margin:10px;" width="350px" />
 <p>
 Although DMRG is a one-dimensional method, its power and efficiency have made it surprisingly effective for studying two-dimensional
 lattice models. Recent DMRG results for the <a href="http://www.sciencemag.org/content/332/6034/1173.abstract" target="_blank">kagome lattice antiferromagnet</a> have reinvigorated the 
@@ -58,8 +67,8 @@ Now this problem has been solved using insights based on matrix product states. 
 matrix product state gauge transformation at the real-space boundary between two blocks provides an orthonormal
 basis for independent DMRG calculations within each block, then a way to merge the results afterward.
 Repeating this procedure across N blocks enables a single DMRG calculation to run almost N times 
-faster! (See figure above.) Using the ITensor Library made it possible to rapidly develop and test the algorithm;  
-all of the very demanding benchmark calculations used ITensor as well.
+faster. (See figure above.) Using the ITensor Library made it possible to rapidly develop and test the algorithm;  
+all of the demanding benchmark calculations used ITensor as well.
 </p>
 <p>
 Read the full paper <a href="http://link.aps.org/doi/10.1103/PhysRevB.87.155137">here</a>.

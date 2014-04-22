@@ -20,6 +20,8 @@ a
 
 p { font-size: 12pt; font-family: sans-serif; text-indent: 0px; padding: 2px;}
 
+table { font-size: 12pt; font-family: sans-serif; text-indent: 0px; padding: 2px;}
+
 ul { font-size: 12pt; font-family: sans-serif; padding-bottom: 10px; text-indent: 0px;  }
 
 #features
@@ -212,8 +214,10 @@ width: 90%;
 .docs a { color: #336699; }
 .docs h1 { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
 .docs h1 a { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
-.docs h2 { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
+.docs h2 { font-size: 110%; font-weight: bold; margin-bottom: 10px; margin-top: 10px; }
 .docs h2 a { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
+.docs h3 { font-weight: bold; margin-bottom: 8px; margin-top: 6px; }
+.docs h3 a { font-weight: bold; margin-bottom: 8px; margin-top: 6px; }
 .docs em { font-weight: bold; }
 .docs p 
     { 

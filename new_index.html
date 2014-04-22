@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ITensor - Intelligent Tensor Library</title>
+    <meta http-equiv="content-language" content="en" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">$(document).ready(function(){});</script>
+    <script type="text/javascript" src="scripts/jquery.corner.js"></script>
+
+    <style type="text/css">
+    </style>
+
+</head>
+
+<body>
+
+<div id="main">
+
+<div id="navbar" class="rounded">
+    <ul>
+    <li><a class="thispage" href="index.html">Home</a> </li>
+    <li><a href="news.html">News</a> </li>
+    <li><a href="docs.cgi">Learn</a> </li>
+    <li><a href="collaboration.html">Collaboration</a></li>
+    </ul>
+</div>
+
+
+<div id="banner">
+    <img src="ITensor.png"/></br>
+</div>
+
+<div class="full section rounded"> 
+    <h2>Introduction</h2> 
+</div>
+
+<div class="full">
+
+    <div id="download" class="rounded">
+        <h4>Download:</h4>
+        <ul>
+        <li><a href="https://github.com/ITensor/library/tarball/master">tar.gz</a></br>
+        <li><a href="https://github.com/ITensor/library/zipball/master">zip</a></br>
+        </ul>
+        Or track development via <a target="new" href="https://github.com/ITensor/library">github</a>
+    </div>
+
+    <p>
+    ITensor is a C++ library for creating efficient and flexible physics simulations based on tensor product wavefunctions.
+    </p>
+    <p>
+    Multiplying ITensors is just as easy as multiplying scalars: matching indices automatically find each other 
+    and contract, making it simple to convert tensor network diagrams into correct, efficient code.
+    </p>
+    <p>
+    For example, the diagram below can be converted to code as
+    </p>
+    <img id="diagram" src="Diagram.png"/></br>
+    <p>
+    The ITensor library is useful on 3 levels: as a black box for performing algorithms such as DMRG,
+    as a platform for working with existing concepts such as matrix product states,
+    and as a toolkit for creating new kinds of tensor networks from scratch.
+    </p>
+    <img id="levels" src="levels.png"/></br>
+</div>
+
+
+<div class="full section rounded"> 
+    <h2>Applications</h2> 
+</div>
+
+<div class="module lmodule">
+    <p>
+    <center>
+    <img width="280px" src="http://physics.aps.org/files/image_uploads/4777/thumb_e1.png">
+    </center>
+    </p>
+</div>
+
+<div class="module rmodule">
+    <p>
+    <center>
+    <img width="280px" src="http://physics.aps.org/files/image_uploads/4777/thumb_e1.png">
+    </center>
+    </p>
+</div>
+
+<div class="full section rounded"> 
+    <h2>Code Samples</h2> 
+</div>
+
+<div class="full screenshot">
+    <h3>Perform a DMRG Calculation</h3>
+    <ul>
+    <li> int N = 100; </li>
+    <li> SpinOne model(N); </li>
+    <li> MPO H = Heisenberg(model); </li>
+    <li> MPS psi(model); </li>
+    <li> Real energy = dmrg(psi,H); </li>
+    </ul>
+</div>
+
+<div class="full screenshot">
+    <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+    <div>
+    <h3>Multiply Two ITensors</h3>
+    <ul>
+    <li>Index a("a",2), b("b",2), c("c",2); </li>
+    <li>ITensor Z(a,b), X(b,c); </li>
+    <li>commaInit(Z) &lt;&lt; 1, 0,
+    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    0,-1;
+    <li>commaInit(X) &lt;&lt; 0, 1,
+    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    1, 0;
+    <li>ITensor R = Z * X; </li>
+    <li>Print( R(a(1),c(2)) );</li>
+    <li> &nbsp; //Prints R(a(1),c(2)) = 1</li>
+    <li>Print( R(a(2),c(1)) );</li>
+    <li> &nbsp; //Prints R(a(1),c(2)) = -1</li>
+    </ul>
+    </div>
+</div>
+
+<div id="footer"></div>
+
+</div> <!--id="main"-->
+
+<script type="text/javascript">$(function() {$('.rounded').corner("7px");});</script>
+
+</body>
+</html>
