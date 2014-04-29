@@ -17,7 +17,7 @@ some compelling alternatives to PBC:
 
 * Use smooth boundary conditions. The basic idea is to use OBC but 
   send the Hamiltonian parameters smoothly to zero at the boundary so that the system can not "feel"
-  the boundary. For certain systems this can drastically reduce edge effects [<a href="#sbc">2</a>].
+  the boundary. For certain systems this can significantly reduce edge effects [<a href="#sbc">2</a>].
 
 * Use "infinite boundary conditions," that is, use infinite DMRG. This has a cost that can 
   be even less than with OBC yet is completely free of finite-size effects.
@@ -45,14 +45,16 @@ necessary even though there are better alternatives.
 
 ## Drawbacks of Periodic Boundary Conditions
 
-Periodic boundary conditions are straightforward to implement in DMRG. The simplest approach is 
+Periodic boundary conditions are straightforward to implement in conventional DMRG. The simplest approach is 
 to include a "long bond" directly connecting site 1 to site N in the Hamiltonian. However this 
 naive approach has a major drawback: if open-boundary DMRG achieves a given accuracy when keeping _m_ states,
 then to reach the same accuracy with PBC one must keep _m<sup>2</sup>_ states! The reason is that now every
 bond of the MPS not only carries local entanglement as with OBC, but also the entanglement between the first
-and last sites.
+and last sites. (There is an alternative DMRG algorithm for periodic systems which may have better scaling than
+the above approach but has not been widely applied and tested, as far as I am aware, especially for
+ 2D or critical systems [<a href="#pippan">3</a>].)
 
-This change in scaling from  _m_ to _m<sup>2</sup>_  is a severe problem.
+The change in scaling from  _m_ to _m<sup>2</sup>_  is a severe problem.
 For example, many gapped one-dimensional systems only require about m=100 to reach good accuracy
 (truncation errors of less than 1E-9 or so). To reach the same accuracy with naive PBC would then
 require using 10,000 states, which can easily fill the RAM of a typical desktop computer for a large enough
@@ -66,7 +68,7 @@ order parameters straightforward. Similarly one can use infinite DMRG to directl
 But under PBC, order parameters remain equal to zero and can only be accessed through correlation functions.
 Though using correlation functions is often presented as the "standard" or "correct" approach, such reasoning pre-supposes that PBC is
 the best choice. However, recent work in the quantum Monte Carlo community demonstrates 
-that open boundaries with pinning fields can be a superior approach [<a href="#pinning">3</a>].
+that open boundaries with pinning fields can be a superior approach [<a href="#pinning">4</a>].
 
 
 ## Cases Where Periodic BC Seems Necessary, But Open/Infinite BC Can be Better
@@ -78,22 +80,23 @@ can even be the better choice.
 * _Measuring asymptotic properties of correlation functions_: much of our understanding
 of gapless one-dimensional systems comes from field-theoretic approaches which make specific predictions
 about asymptotic decays of various correlators. To test these predictions numerically, one must 
-work with very large systems and avoid edge effects, so researchers often turn to using
-fully periodic boundary conditions on very large systems. However, a superior choice is to use
+work with large, translationally invariant systems with minimal edge effects.
+Using fully periodic boundary conditions satisfies these criteria.
+However, a superior choice is to use
 infinite DMRG, which combines the much better scaling of open-boundary DMRG with the ability to 
 measure correlators at _arbitrarily long_ distances by repeating the unit cell of the MPS wavefunction.
 Although truncating to a finite number of states imposes an effective correlation length on the system,
-this correlation length can reach many thousands of sites for quite reasonable MPS bond dimensions.
+this correlation length can reach many thousands of sites for quite moderate MPS bond dimensions.
 Karrasch and Moore took advantage of this fact to convincingly check the predictions of Luttinger liquid
-theory for one-dimensional systems of gapless fermions [<a href="#karrasch">4</a>].
+theory for one-dimensional systems of gapless fermions [<a href="#karrasch">5</a>].
 
 * _Studying two-dimensional topological order_: a hallmark of intrinsic topological order is the presence
 of a robust ground state degeneracy when the system is put on a torus. Also many topological phases 
 have gapless edge states which can cause problems for numerical calculations. Thus one might think that
 fully periodic BC are the best choice for studying topological phases. However, 
 topological phases have the same ground-state degeneracy on an infinite cylinder
-as they do on a torus [<a href="#zhang">5</a>]. Cincio and Vidal exploited this fact to use infinite DMRG
-to study a variety of topological phases [<a href="#cincio">6</a>]. One part of their calculation did actually require
+as they do on a torus [<a href="#zhang">6</a>]. Cincio and Vidal exploited this fact to use infinite DMRG
+to study a variety of topological phases [<a href="#cincio">7</a>]. One part of their calculation did actually require
 obtaining ground states on a torus, but they accomplished this by taking a finite segment of an infinite MPS 
 and connecting its ends. This approach does not give the true ground state of the torus but was sufficient 
 for their calculation and was arguably closer to the true two-dimensional physics.
@@ -111,7 +114,7 @@ describes the ground state outside the restricted sweeping region.
 
   Within infinite DMRG, boundary effects are rigorously absent if the calculation has converged. To compute bulk 
 gaps one again uses a type of restricted sweeping known in the literature as "infinite boundary conditions". For
-more see the work by Phien, Vidal, and McCulloch [<a href="#phien">7</a>].
+more see the work by Phien, Vidal, and McCulloch [<a href="#phien">8</a>].
 
 
 In conclusion, consider carefully whether you really need to use periodic boundary conditions, as they impose
@@ -133,14 +136,16 @@ block decimation TEBD) or really any other algorithm that works with open-bounda
 
 * [Grand canonical finite-size numerical approaches: A route to measuring bulk properties in an applied field](http://link.aps.org/doi/10.1103/PhysRevB.86.041108), Chisa&nbsp;Hotta and Naokazu&nbsp;Shibata, <i>Phys. Rev. B</i> <b>86</b>, [041108](http://link.aps.org/doi/10.1103/PhysRevB.86.041108) (2012) 
 
-<a name="pinning"></a>\[3\] [Pinning the Order: The Nature of Quantum Criticality in the Hubbard Model on Honeycomb Lattice
+<a name="pippan"></a>\[3\] [Efficient matrix-product state method for periodic boundary conditions](http://link.aps.org/doi/10.1103/PhysRevB.81.081103), P.&nbsp;Pippan, Steven&nbsp;R.&nbsp;White, and H.G.&nbsp;Evertz, <i>Phys. Rev. B</i> <b>81</b>, [081103](http://link.aps.org/doi/10.1103/PhysRevB.81.081103)
+
+<a name="pinning"></a>\[4\] [Pinning the Order: The Nature of Quantum Criticality in the Hubbard Model on Honeycomb Lattice
 ](http://dx.doi.org/10.1103/PhysRevX.3.031010), Fakher&nbsp;F.&nbsp;Assaad and Igor&nbsp;F.&nbsp;Herbut, <i>Phys. Rev. X</i> <b>3</b>, [031010](http://dx.doi.org/10.1103/PhysRevX.3.031010)
 
-<a name="karrasch"></a>\[4\] [Luttinger liquid physics from the infinite-system density matrix renormalization group](http://dx.doi.org/10.1103/PhysRevB.86.155156), C.&nbsp;Karrasch and J.E.&nbsp;Moore, <i>Phys. Rev. B</i> <b>86</b>, [155156](http://dx.doi.org/10.1103/PhysRevB.86.155156)
+<a name="karrasch"></a>\[5\] [Luttinger liquid physics from the infinite-system density matrix renormalization group](http://dx.doi.org/10.1103/PhysRevB.86.155156), C.&nbsp;Karrasch and J.E.&nbsp;Moore, <i>Phys. Rev. B</i> <b>86</b>, [155156](http://dx.doi.org/10.1103/PhysRevB.86.155156)
 
-<a name="zhang"></a>\[5\] [Quasiparticle statistics and braiding from ground-state entanglement](http://dx.doi.org/10.1103/PhysRevB.85.235151), Yi&nbsp;Zhang, Tarun&nbsp;Grover, Ari&nbsp;Turner, Masaki&nbsp;Oshkawa, and Ashvin&nbsp;Vishwanath, <i>Phys. Rev. B</i> <b>85</b>, [235151](http://dx.doi.org/10.1103/PhysRevB.85.235151)
+<a name="zhang"></a>\[6\] [Quasiparticle statistics and braiding from ground-state entanglement](http://dx.doi.org/10.1103/PhysRevB.85.235151), Yi&nbsp;Zhang, Tarun&nbsp;Grover, Ari&nbsp;Turner, Masaki&nbsp;Oshkawa, and Ashvin&nbsp;Vishwanath, <i>Phys. Rev. B</i> <b>85</b>, [235151](http://dx.doi.org/10.1103/PhysRevB.85.235151)
 
-<a name="cincio"></a>\[6\] [Characterizing Topological Order by Studying the Ground States on an Infinite Cylinder](http://link.aps.org/doi/10.1103/PhysRevLett.110.067208), L.&nbsp;Cincio and G.&nbsp;Vidal, <i>Phys. Rev. Lett.</i> <b>110</b>, [067208](http://link.aps.org/doi/10.1103/PhysRevLett.110.067208)
+<a name="cincio"></a>\[7\] [Characterizing Topological Order by Studying the Ground States on an Infinite Cylinder](http://link.aps.org/doi/10.1103/PhysRevLett.110.067208), L.&nbsp;Cincio and G.&nbsp;Vidal, <i>Phys. Rev. Lett.</i> <b>110</b>, [067208](http://link.aps.org/doi/10.1103/PhysRevLett.110.067208)
 
 <a name="phien"></a>\[7\] [Infinite boundary conditions for matrix product state calculations](http://link.aps.org/doi/10.1103/PhysRevB.86.245107), Ho&nbsp:N.&nbsp;Phien, G.&nbsp;Vidal, and Ian&nbsp;P.&nbsp;McCulloch <i>Phys. Rev. B</i> <b>86</b>, [245107](http://link.aps.org/doi/10.1103/PhysRevB.86.245107)
 
