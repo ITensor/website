@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import sys
+sys.path.append("/opt/itensor.org/")
+
 #################################
 
 docpath = "/var/www/html/itensor/docs/"
@@ -37,6 +40,8 @@ def convert(string):
     string = re.sub(r"arxiv:(\d\d\d\d\.\d\d\d\d)",r"arxiv:<a href='http://arxiv.org/abs/\1'>\1</a>",string)
     #Convert cond-mat/####### links
     string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"cond-mat/<a href='http://arxiv.org/abs/cond-mat/\1'>\1</a>",string)
+    #Convert github:<sha> links
+    string = re.sub(r"github:(\w{8,8})\w*",r"github:<a href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
 
     #Convert wiki links to markdownl link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
@@ -82,8 +87,9 @@ def convert(string):
     #        mdstring += "<code>\n"+chunk+"</code>\n"
 
     #Convert markdown to html
-    import markdown2
-    htmlstring = markdown2.markdown(mdstring,extras=["fenced-code-blocks"])
+    from markdown2 import markdown
+    #htmlstring = markdown(mdstring,extras=["fenced-code-blocks"])
+    htmlstring = markdown(mdstring)
 
     #Put in a special class for paragraphs that consist entirely of code
     #htmlstring = paragraph_code_re.sub(r"<p><div class='codeblock'>\1</div></p>",htmlstring)

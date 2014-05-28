@@ -59,6 +59,26 @@ if breaking over two lines makes code hard to reason about/debug.
   Other keywords such as `friend` or `inline` should come after the return type unless disallowed by the compiler
   (such as when the return type is a reference).
 
+* Braces can be omitted in if..else, for, or while statements containing a single expression, for example:
+
+          if(i == 0)
+              return 0;
+          else
+              return 2*i;
+  
+  However, if any branch of an if..else contains more than one line, all of the branches should be enclosed by braces:
+
+          if(i == 0)
+              {
+              cout << "Encountered i==0 case" << endl;
+              return 0;
+              }
+          else
+              {
+              return 2*i;
+              }
+
+
 ## Functions ##
 
 * The preferred order for function arguments is:

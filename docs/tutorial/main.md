@@ -2,9 +2,17 @@
 
 Tutorial on applications of matrix product states using ITensor. 
 
-* Introduction. Tensors. &nbsp;  [\[video\]](docs/tutorial/00_Intro_Tensors.mov) &nbsp; [\[slides\]](docs/tutorial/00_Intro_Tensors.pdf)
+* Introduction. Tensors. &nbsp;  [\[slides\]](docs/tutorial/00_Intro_Tensors.pdf)
 
-* One. Working with a single-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/01_One.pdf)
+  <div class="example_clicker">Watch Video</div>
+
+  <iframe width="640" height="480" src="//www.youtube.com/embed/YBdiWnSaXy0?rel=0" frameborder="0" allowfullscreen></iframe>
+
+* One. Working with a single-site wavefunction. &nbsp;  [\[slides\]](docs/tutorial/01_One.pdf)
+
+  <div class="example_clicker">Watch Video</div>
+
+  <iframe width="640" height="480" src="//www.youtube.com/embed/48iB4z5Llks?rel=0" frameborder="0" allowfullscreen></iframe>
 
 * Two. Working with a two-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/02_Two.pdf)
 

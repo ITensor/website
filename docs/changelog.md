@@ -1,7 +1,122 @@
 # Change Log #
 
-<a name="master"></a>
-## [Current Working Version](https://github.com/ITensor/library/tree/master) (in progress) ##
+<a name="v1.0.0"></a>
+## [Version 1.0.0](https://github.com/ITensor/library/tree/v1.0.0) (May 27, 2014) ##
+
+<span style="color:red;">Warning:</span> this version contains many breaking changes.
+
+<b>Major breaking changes:</b>
+
+- Put all code into `namespace itensor`. In your code, put `using namespace itensor;` at the top
+  or explicitly qualify types with the itensor:: prefix. (Or wrap header code in `namespace itensor {...};`.)
+
+- Removed ITSparse and IQTSparse classes. Now ITensor class carries an internal flag specifying whether it is
+  diagonal (type()==ITensor::Diag) or dense (type()==ITensor::Dense). Diagonal ITensors are created by using
+  certain constructors such as the constructor taking a Vector of components.
+
+- Removed minm,maxm,cutoff parameters from MPS. Instead these are passed to various methods which work with MPS
+  using the OptSet named argument system.
+
+- MPS class no longer stores a vector of Spectrum objects.
+
+- Addition + operator and += operator no longer defined for MPS/MPO. Instead use the `sum` and `plusEq` functions.
+
+- Spectrum class no longer used to pass accuracy parameters to `svd` and related methods. Instead use the OptSet system.
+
+- Renamed "model" folder to "sites". Renamed `Model` class to `SiteSet`.
+
+- New design for HamBuilder class. Now models an MPO initialized to the identity after which one can modify any 
+  number of site operators using the `set` method. Supports multiplication by Real scalars as well. 
+  After one sets all desired site operators, a HamBuilder instance can be automatically converted to an MPO or IQMPO.
+
+  <div class="example_clicker">Show Example</div>
+
+        SpinHalf model(100);
+
+        vector<MPO> terms;
+
+        //Can set operators using "set" method
+        HamBuilder pm23(model);
+        pm23.set("Sp",2,"Sm",3);
+        pm23 *= 0.5;
+        terms.push_back(pm23);
+
+        //Or using constructor
+        terms.push_back(0.5*HamBuilder(model,"Sp",2,"Sm",3));
+
+- Replaced automatic MPO to IQMPO conversion with a named method toIQMPO().
+
+- Made certain MPS/MPO methods external (linkInd, applyGate, averageM, checkOrtho, etc).
+
+<b>Major new features:</b>
+
+- Removed all dependence on boost C++ library when compiling with USE_CPP11=yes in options.mk.
+
+- Included `boost_minimal` folder so that downloading boost is not required when using C++98 (USE_CPP11=no).
+
+- Can now construct OptSet objects from a string such as 
+
+   `"UseSVD=false,Cutoff=1E-8,IndexName=newind"`.
+
+  Writing only the name of an 
+  Opt such as "Quiet" is equivalent to "Quiet=true". Can also combine Opts and strings with '&' operator, for example:
+
+  `Opt("Cutoff",1E-8) & Opt("Quiet") & "UseSVD=false,IndexName=newind"`.
+
+- If ITensor is compiled with USE_CPP11, can initialize OptSet arguments using a bracketed list of Opt names and values.
+
+  `some_function(arg1,arg2,{"UseSVD",false,"Cutoff",1E-8});`
+
+  where some_function is a function accepting an OptSet as its last argument.
+
+- Improved printing methods based on the Tinyformat library. Defined print, println, printf, and printfln. These are
+  type safe methods with an interface similar to the std C library printf function. The printf methods take a formatting
+  string as their first argument. The functions ending in "ln" print a newline at the end.
+
+- Added improved idmrg functions.
+
+- MPS/MPO A(int) and Anc(int) accessors now take negative arguments. For i < 0, A(i) = A(N-i+1).
+  For example, use psi.A(-1) to access last site tensor of an MPS psi.
+
+<b>Other major changes:</b>
+
+- Deprecated the functions `primed` and `deprimed` in favor of just `prime` and `noprime` for consistency with Index and
+  ITensor class interface.
+
+- Opt names limited to 20 characters for efficiency (this limit can be modified by editing `utilities/options.h` and recompiling).
+
+- Unit test library now based on [Catch](https://github.com/philsquared/Catch) unit test framework.
+
+- Removed sandbox folder.
+
+- Added idmrg sample code.
+
+<b>Other breaking changes:</b>
+
+- Removed deprecated Model named virtual function interface.
+
+- Removed deprecated InitState class method pointer interface.
+
+- Simplified InputFile, InputGroup interface.
+
+- Removed IQTensor::iten_size() method. For an IQTensor T, just use T.blocks().size() instead.
+
+- Renamed IQTensor::iten_empty() to just IQTensor::empty().
+
+- Changed behavior of commonIndex when no common index found: used to throw an exception, now returns a default-constructed ("Null")
+  index.
+
+<a name="v0.2.4"></a>
+## [Version 0.2.4](https://github.com/ITensor/library/tree/v0.2.4) (April 24, 2014) ##
+
+- Updated license to v1.1, adding suggested wording for citing ITensor and clarifying when it should be cited.
+
+<b>New features:</b>
+
+- More convenient interface to InputGroup class defined in utilities/input.h. Returns parameters instead of pass-by-reference, allowing
+  single-line syntax. Also allows specifying default arguments; parameters without defaults are mandatory. [github:58dfc538]
+
+- Can store edge tensors in MPS or MPO classes by assigning to Anc(0) or Anc(N+1). Useful for infinite DMRG, for example.
 
 <b>Bug fixes and maintenance:</b>
 
@@ -176,48 +291,7 @@ imaginary part. The imaginary part is allocated only if it is non-zero.
 
 </br>
 
-## [Development Version](https://github.com/ITensor/library/tree/develop) (in progress) ##
-
-- Removed ITSparse and IQTSparse classes. Now ITensor class carries an internal flag specifying whether it is
-  diagonal (type()==ITensor::Diag) or dense (type()==ITensor::Dense). Diagonal ITensors are created by using
-  certain constructors such as the constructor taking a Vector of components.
-
-- Infinite DMRG (iDMRG) algorithm, see idmrg.h.
-
-- New design for HamBuilder class. Now models an MPO initialized to the identity after which one can modify any 
-  number of site operators using the `set` method. Supports multiplication by Real scalars as well. 
-  After one sets all desired site operators, a HamBuilder instance can be automatically converted to an MPO or IQMPO.
-
-  <div class="example_clicker">Show Example</div>
-
-        SpinHalf model(100);
-
-        vector<MPO> terms;
-
-        //Can set operators using "set" method
-        HamBuilder pm23(model);
-        pm23.set("Sp",2,"Sm",3);
-        pm23 *= 0.5;
-        terms.push_back(pm23);
-
-        //Or using constructor
-        terms.push_back(0.5*HamBuilder(model,"Sp",2,"Sm",3));
-
-- Can now construct OptSet objects from a string such as 
-
-  "UseSVD=false,Cutoff=1E-8,IndexName=newind". 
-
-  Writing only the name of an 
-  Opt such as "Quiet" is equivalent to "Quiet=true". Can also combine Opts and strings with '&' operator, for example:
-
-  Opt("Cutoff",1E-8) & Opt("Quiet") & "UseSVD=false,IndexName=newind".
-
-- Renamed IQTensor::iten_empty() to just IQTensor::empty().
-
-- Removed IQTensor::iten_size() method. For an IQTensor T, just use T.blocks().size() instead.
-
-- Changed behavior of commonIndex when no common index found: used to throw an exception, now returns a default-constructed ("Null")
-  index.
+<!--## [Development Version](https://github.com/ITensor/library/tree/develop) (in progress) ##-->
 
 [[Back to Main|main]]
 

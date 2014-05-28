@@ -37,15 +37,28 @@
 
 <div class="full section rounded"> <h2>Latest News</h2> </div>
 
+<a name="version1.0"></a>
+<div class="full newsitem">
+<h3>ITensor Gets a Spring Clean</h3>
+<h2>(May 27, 2014) </h2>
+<p>
+ITensor version 1.0 has just been released (<a href="https://github.com/ITensor/ITensor" target="_blank">Github link</a>) with
+many improvements, such as automatic sparsity for ITensors and IQTensors; no more boost dependence when compiling with C++11;
+a more consistent interface for MPS methods; a new infinite DMRG code; new facilities for printing; and much more. For more details, take a look at the
+<a href="docs.cgi?page=changelog#v1.0.0">changelog</a>.
+</p>
+</div>
+
 <a name="periodic"></a>
 <div class="full newsitem">
 <h3>Should you use periodic boundary conditions with DMRG?</h3>
 <h2>(Apr. 28, 2014) </h2>
 <p>
 Are periodic boundary conditions the best way to eliminate edge effects? Aren't correlation function measurements the "standard" and best
-approach to detecting symmetry breaking? The answers may surprise you. Using open or infinite boundary conditions is often a better choice, and
-using fully periodic boundaries imposes a steep cost in DMRG. Open boundaries can even be a superior choice for methods such as quantum
-Monte Carlo. For more, see the <a href="http://itensor.org/docs.cgi?page=periodic">full article</a>.
+approach to detecting symmetry breaking? The answer may surprise you. Fully periodic boundary conditions impose a steep cost within DMRG,
+and one can make the case that they are needed only in rare circumstances.
+Open boundaries can even be a superior choice for other numerical methods such as quantum Monte Carlo. 
+For more, see the <a href="http://itensor.org/docs.cgi?page=periodic">full article</a>.
 </p>
 </div>
 

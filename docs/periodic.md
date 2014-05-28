@@ -4,10 +4,10 @@
 
 One of the weaknesses of the density matrix renormalization group (DMRG) [<a href="#dmrg">1</a>] is that it works
 poorly with periodic boundary conditions. This stems from the fact
-that conventional DMRG works with open-boundary matrix product state (MPS)
-wavefunctions, even if the Hamiltonian itself physically imposes periodic boundary conditions (PBC).
+that conventional DMRG optimizes over open-boundary matrix product state (MPS)
+wavefunctions whether or not the Hamiltonian includes periodic interactions.
 
-But this begs the question, when are periodic boundary conditions really needed? DMRG offers
+But this begs the question, when are periodic boundary conditions (PBC) really needed? DMRG offers
 some compelling alternatives to PBC:
 
 * Use open boundary conditions (OBC). Though this introduces edge effects, the number of states needed
@@ -22,7 +22,7 @@ some compelling alternatives to PBC:
 * Use "infinite boundary conditions," that is, use infinite DMRG. This has a cost that can 
   be even less than with OBC yet is completely free of finite-size effects.
 
-However, there are cases where PBC can be preferable. Here are a few such cases:
+However, there are cases where PBC remains preferable despite the extra overhead. A few such cases are:
 
 * Benchmarking DMRG against another code that uses PBC, such as a Monte Carlo or exact diagonalization code.
 
@@ -67,8 +67,8 @@ order parameters straightforward. Similarly one can use infinite DMRG to directl
 
 But under PBC, order parameters remain equal to zero and can only be accessed through correlation functions.
 Though using correlation functions is often presented as the "standard" or "correct" approach, such reasoning pre-supposes that PBC is
-the best choice. However, recent work in the quantum Monte Carlo community demonstrates 
-that open boundaries with pinning fields can be a superior approach [<a href="#pinning">4</a>].
+the best choice. Recent work in the quantum Monte Carlo community demonstrates 
+that open boundaries with pinning fields can actually be a superior approach [<a href="#pinning">4</a>].
 
 
 ## Cases Where Periodic BC Seems Necessary, But Open/Infinite BC Can be Better
