@@ -1,7 +1,7 @@
 # Change Log #
 
 <a name="v1.0.0"></a>
-## [Version 1.0.0](https://github.com/ITensor/library/tree/v1.0.0) (May 27, 2014) ##
+## [Version 1.0.0](https://github.com/ITensor/library/tree/v1.0.0) (May 28, 2014) ##
 
 <span style="color:red;">Warning:</span> this version contains many breaking changes.
 
@@ -13,6 +13,9 @@
 - Removed ITSparse and IQTSparse classes. Now ITensor class carries an internal flag specifying whether it is
   diagonal (type()==ITensor::Diag) or dense (type()==ITensor::Dense). Diagonal ITensors are created by using
   certain constructors such as the constructor taking a Vector of components.
+
+- Changed name of Hermitian conjugate method `conj` to `dag` (for "dagger"). Added `conj` methods for ITensor and IQTensor
+  which take complex conjugate only, without reversing any index arrows.
 
 - Removed minm,maxm,cutoff parameters from MPS. Instead these are passed to various methods which work with MPS
   using the OptSet named argument system.
