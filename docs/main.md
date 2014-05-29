@@ -18,6 +18,8 @@
 
 * [[Release Versioning|versioning]]
 
+* [[Git Quick Start|git]]
+
 * [[Tensor and Index Conventions|itensor_conventions]]
 
 * [[C++ Code Conventions|code_conventions]]
