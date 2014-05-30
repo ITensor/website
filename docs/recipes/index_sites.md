@@ -1,7 +1,7 @@
 # Creating a set of Site indices to use as a lattice #
 
 To begin most calculations you need a set of lattice sites to define your Hilbert space.
-Although the ITensor Library defines a set of [[Model|classes/model]] classes which automate
+Although the ITensor Library defines a set of [[SiteSet|classes/siteset]] classes which automate
 this for you, there could be a lot of reasons why you would want to do it yourself.
 Below is a simple pattern you can use to create a set of site Indices and save them in a vector.
 

@@ -50,7 +50,7 @@ We can even get fancy and create a 'factory' function which takes our site and a
         }
 
 
-Finally, note that this 'opearator factory' feature is actually built into the [[Model|classes/model]] classes which automate the creation
+Finally, note that this 'operator factory' feature is actually built into the [[SiteSet|classes/siteset]] classes which automate the creation
 of sites and operators for you. But of course there are always reasons you may want to get your hands dirty and create these operators yourself.
 
 

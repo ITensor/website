@@ -15,8 +15,11 @@ IndexSet containing Index objects.)
   [[IQIndexVal|classes/iqindexval]]. IQIndex set to a particular value.
 * [[IQTensor|classes/iqtensor]]. Tensor with quantum number block structure.
 * [[SVD Algorithms|classes/svdalgs]]. Singular value decomposition, density matrix diagonalization, etc.
+* [[Spectrum|classes/spectrum]]. Density matrix eigenvalue spectrum returned by svd, denmatDecomp.
 * [[InitState|classes/initstate]]. Class for initializing matrix product states.
+* [[SiteSet|classes/siteset]]. Class handling the site space.
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
+* [[Options|classes/options]]. Class for specifying various options.
 
 Certain commonly occurring methods are not explicitly documented. For instance, nearly all classes in the ITensor Library
 support printing using the stream (`<<`) operator. Also, nearly all major classes provide the methods `void read(std::istream& s)`
