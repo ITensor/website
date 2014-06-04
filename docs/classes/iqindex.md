@@ -14,19 +14,20 @@ An IQIndex also has an Arrow direction associated with it. For more information 
 
 ## Synopsis ##
 
-    Index lp2("l+2",3),
-          lp1("l+1",5),
-          l0("l0",3),
-          lm1("l-1",8);
+    Index ip2("i+2",3),
+          ip1("i+1",5),
+           i0("i 0",3),
+          im1("i-1",8);
 
     IQIndex L("L",
-              lp2,QN(+2),
-              lp1,QN(+1),
-              l0, QN(0),
-              lm1,QN(-1),
+              ip2,QN(+2),
+              ip1,QN(+1),
+              i0, QN(0),
+              im1,QN(-1),
               Out);
 
-    Print(L.m() == 19 ? "true" : "false"); //prints "true", 19 == 3+5+3+8
+    printfln("L.m() == 19 is %s",L.m()==19);
+    //above command prints "L.m() == 19 is true"
 
     Print(L.index(3)); //prints l0
     Print(L.qn(3));    //prints QN(0)
