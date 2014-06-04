@@ -6,6 +6,7 @@ block belongs to exactly one IQIndex of the IQTensor.
 Every block of an IQTensor must have the same [[QN|classes/qn]] flux, defined as the sum of the QNs of each Index of that block times the Arrow direction
 of the IQIndex each Index belongs to. For example, a zero flux (QN conserving) IQTensor could have a block with a +1 Sz QN flowing In and a
 -1 Sz QN flowing In. Another block of the same IQTensor might have two Indices both flowing In with 0 Sz QN.
+The direction of the flow can be reversed with the `dag` function.
 
 In addition to explicitly conserving quantum numbers, computing products of IQTensors is more efficient than for comparably sized ITensors (in the limit of large index dimensions). This is because IQTensors have an explicit sparse structure and only the non-zero elements (the ITensor blocks) need to be summed over.
 
@@ -25,11 +26,11 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
             S2("Site 2",s2u,QN(+1),
                         s2d,QN(-1));
 
-    //A is constructed with conj(L1),which
+    //A is constructed with dag(L1),which
     //has an In Arrow.
     //S2 and L2 have Out Arrow directions.
     //Initially an IQTensor has no non-zero blocks.
-    IQTensor A(conj(L1),S2,L2);
+    IQTensor A(dag(L1),S2,L2);
 
     //Setting elements explicitly causes the necessary blocks
     //to automatically be created...
@@ -60,7 +61,7 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
     //contracting ITensors
 
     //Create a second IQTensor
-    IQTensor B(conj(L2),S3);
+    IQTensor B(dag(L2),S3);
     //...set its elements...
 
     IQTensor R = A * B; //contract over common IQIndex L2
@@ -171,7 +172,7 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
 
 
         IQTensor A(S1,S2,L),
-                 B(conj(L),conj(S2));
+                 B(dag(L),dag(S2));
 
         A.randomize();
         B.randomize();
@@ -339,10 +340,13 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
     
   Set an IQTensor to its imaginary part, dropping its real part. Returns a reference to the resulting IQTensor.
 
-* `IQTensor& conj()`
+* `IQTensor& dag()`
 
   Hermitian conjugate. Reverses the Arrow directions of all IQIndices of this IQTensor and takes the complex conjugate
   of every component.
+
+* `IQTensor& conj()`
+  Complex conjugate. Only takes the complex conjugate of this IQTensor without reversing the arrow direction.
 
 [[Back to Classes|classes]]
 

@@ -11,7 +11,7 @@ or a bra (a covector, dual vector, or lowered index).
 
 * An Out Arrow means the index transforms as a ket (for example, a site of an MPS), an In Arrow means an index transforms as a bra.
 
-* Conjugating a tensor (applying conj(T)) reverses Arrow directions in addition to taking the complex conjugate.
+* Conjugating a tensor (applying dag(T)) reverses Arrow directions in addition to taking the complex conjugate.
 
 ## Index Types ##
 

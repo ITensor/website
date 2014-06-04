@@ -59,7 +59,7 @@ First make the Dirac "bra" conjugate of the wavefunction:
 
 <img src="docs/tutorial/bra.png" style=""/>
 
-    ITensor bra = conj(primed(ket));
+    ITensor bra = dag(primed(ket));
 
 
 

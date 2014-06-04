@@ -136,7 +136,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   Read Index from stream in binary form.
 
-* `void conj()`  
+* `void dag()`  
 
   Has no effect. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 

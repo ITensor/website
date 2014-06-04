@@ -27,7 +27,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
     //The primed method primes the b3 Index of the second
     //ITensor in the product so it is not summed over 
 
-    ITensor rho = phi * conj(primed(phi,b3));
+    ITensor rho = phi * dag(primed(phi,b3));
 
     Print(rho.r()); //prints 2
     Print(hasindex(rho,b3) ? "true" : "false"); //prints "true"

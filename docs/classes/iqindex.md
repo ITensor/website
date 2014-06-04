@@ -85,7 +85,7 @@ An IQIndex also has an Arrow direction associated with it. For more information 
 
 ## Other Methods ##
 
-* `void conj()`
+* `void dag()`
 
   Reverse the arrow of this IQIndex.
 

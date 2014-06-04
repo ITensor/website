@@ -17,11 +17,11 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
     //Print all the indices
     Foreach(const Index& I, inds)
         {
-        cout << I << endl;
+        println(I);
         }
 
     //Or just print the whole set at once
-    cout << "inds = \n" << inds << endl;
+    println("inds = ",inds);
 
     Print(inds.r()); //prints 5
     Print(inds.rn()); //prints 4, only 4 m!=1 indices

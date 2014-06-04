@@ -50,7 +50,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
     //
 
     //Create a density-matrix-like tensor
-    ITensor rho(primed(s1),primed(s2),conj(s1),conj(s2));
+    ITensor rho(primed(s1),primed(s2),dag(s1),dag(s2));
     //...set elems of rho, must be Hermitian
 
     //Compute eigenvalue decomposition
@@ -61,7 +61,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
     PrintDat(D); //look at the eigenvalues of rho
 
     //Check
-    diff = rho - primed(U)*D*conj(U);
+    diff = rho - primed(U)*D*dag(U);
     Print(diff.norm()); //prints something < 1E-14
 
 
@@ -216,9 +216,9 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
 * `Spectrum diagHermitian(Tensor T, Tensor& U, SparseT& D, OptSet opts = Global::opts())`
 
-   Diagonalize a Hermitian Tensor T such that `T==conj(U)*D*primed(U)`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor (and SparseT would be ITSparse or IQTSparse, respectively). U and D are passed by reference and overwritten on return.
+   Diagonalize a Hermitian Tensor T such that `T==dag(U)*D*primed(U)`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor (and SparseT would be ITSparse or IQTSparse, respectively). U and D are passed by reference and overwritten on return.
 
-   The method assumes that the indices of T come in pairs, one index with prime level 0 and a matching index with prime level 1 (reflecting the Hermitian nature of T). For example, T could have indices i,i',j, and j'. Saying that T is Hermitian means that `T == conj(swapPrime(T,0,1))`.
+   The method assumes that the indices of T come in pairs, one index with prime level 0 and a matching index with prime level 1 (reflecting the Hermitian nature of T). For example, T could have indices i,i',j, and j'. Saying that T is Hermitian means that `T == dag(swapPrime(T,0,1))`.
 
    <div class="example_clicker">Show Example</div>
 
@@ -235,7 +235,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
         diagHermitian(T,U,D); 
 
-        Print((T-conj(U)*D*primed(U)).norm()); //prints 0
+        Print((T-dag(U)*D*primed(U)).norm()); //prints 0
 
 ## Orthogonal (Real) Factorization ##
 
