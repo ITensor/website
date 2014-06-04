@@ -87,7 +87,7 @@ def convert(string):
     #        mdstring += "<code>\n"+chunk+"</code>\n"
 
     #Convert markdown to html
-    from markdown2 import markdown
+    from mistune import markdown
     #htmlstring = markdown(mdstring,extras=["fenced-code-blocks"])
     htmlstring = markdown(mdstring)
 
