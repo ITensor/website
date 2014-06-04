@@ -219,7 +219,11 @@ width: 90%;
 .docs h2 a { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
 .docs h3 { font-weight: bold; margin-bottom: 8px; margin-top: 6px; }
 .docs h3 a { font-weight: bold; margin-bottom: 8px; margin-top: 6px; }
-.docs em { font-weight: bold; }
+.docs em 
+    { 
+    font-weight: normal; 
+    text-decoration: underline;
+    }
 .docs p 
     { 
     padding-bottom: 8px;
