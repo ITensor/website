@@ -50,7 +50,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   Return the prime level.
 
-* `void primeLevel(int n)`  
+* `primeLevel(int n)`  
 
   Set prime level to n.
 
@@ -81,19 +81,19 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Prime Level Methods ##
 
-* `void prime(int inc = 1)`  
+* `prime(int inc = 1)`  
 
   Increment prime level of this Index instance. (Optionally, increment by amount `inc`.)
 
-* `void prime(IndexType type, int inc = 1)`  
+* `prime(IndexType type, int inc = 1)`  
 
   Increment prime level if Index type() matches type. (Optionally, increment by amount `inc`.)
 
-* `void noprime(IndexType type = All)`  
+* `noprime(IndexType type = All)`  
 
   Reset prime level to zero. (Optionally, only if `type()==type` or `type` is `All`.)
 
-* `void mapprime(int plevold, int plevnew, IndexType type = All)`  
+* `mapprime(int plevold, int plevnew, IndexType type = All)`  
 
   If Index has prime level plevold, change to plevnew. Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
@@ -128,15 +128,15 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Other Class Methods ##
 
-* `void write(std::ostream& s)`  
+* `write(std::ostream& s)`  
 
   Write Index to stream in binary form.
 
-* `void read(std::istream s)`  
+* `read(std::istream s)`  
 
   Read Index from stream in binary form.
 
-* `void dag()`  
+* `dag()`  
 
   Has no effect. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
