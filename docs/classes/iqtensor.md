@@ -300,7 +300,7 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
 
 ## Other Methods ##
 
-* `void randomize()`
+* `randomize()`
 
   Randomize the elements of this IQTensor. Optimized more for speed than for true randomness.
   If the IQTensor has no blocks, throws an ITError exception since the IQTensor does not have a well defined
@@ -321,7 +321,7 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
    Apply the function f to each element of this IQTensor, where f is a function, or function object, mapping Real to Real.
    Returns a reference to this IQTensor on return.
 
-* `void insert(ITensor block)`
+* `insert(ITensor block)`
 
   Insert an ITensor block into the set of blocks of this IQTensor. If a block with the same Index structure already exists, throws an
   ITError exception. For a method which does not throw if the block already exists, see `operator+=(ITensor block)` above.

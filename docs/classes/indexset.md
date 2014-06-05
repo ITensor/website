@@ -1,6 +1,6 @@
 # IndexSet<IndexT> #
 
-Container for storing indices, templated over the index type IndexT. For example, IndexT coud be [[Index|classes/index]] or [[IQIndex|classes/iqindex]].
+Container for storing indices, templated over the index type `IndexT`. For example, `IndexT` coud be [[`Index`|classes/index]] or [[`IQIndex`|classes/iqindex]].
 
 Internally, indices are stored as a partially ordered array, with `m!=1` indices preceding `m==1` indices (where `m` is the bond dimension).
 
@@ -158,7 +158,7 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
 
 ## Prime Level Methods ##
 
-* `void prime(int inc = 1)`
+* ` prime(int inc = 1)`
 
   Increment prime level of all indices by 1. (Optionally by amount `inc`.)
 
@@ -178,7 +178,7 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
         Print(hasindex(inds,primed(l1))); //Prints 1 (true)
         Print(hasindex(inds,primed(l3))); //Prints 1 (true)
 
-* `void prime(IndexT I, int inc = 1)`
+* ` prime(IndexT I, int inc = 1)`
 
   Increment prime level of only index `I` by 1. (Optionally by amount `inc`.)
   Throws an exception of the IndexSet does not have index `I`.
@@ -201,7 +201,7 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
         Print(hasindex(inds,s2));         //Prints 1 (true)
         //etc.
 
-* `void prime(IndexType t, int inc = 1)`
+* ` prime(IndexType t, int inc = 1)`
 
   Increment prime level of every index of type `t`. (Optionally by amount `inc`.)
 
@@ -220,29 +220,29 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
         Print(hasindex(inds,primed(s3))); //Prints 1 (true)
         Print(hasindex(inds,l1));         //Prints 1 (true)
 
-* `void noprime(IndexType t = All)`
+* ` noprime(IndexType t = All)`
 
   Set prime level of all indices to 0. (Optionally only indices of type `t`.)
 
-* `void noprime(IndexT I)`
+* ` noprime(IndexT I)`
 
   Set prime level of index `I` to 0. Throws an exception if the set does not have index `I`.
 
-* `void mapprime(int plevold, int plevnew, IndexType t = All)`
+* ` mapprime(int plevold, int plevnew, IndexType t = All)`
 
   Change prime level of all indices having prime level `plevold` to `plevnew`. (Optionally only if their type matches `t`.) 
 
 ## Other Methods ##
 
-* `void addindex(IndexT I)`
+* ` addindex(IndexT I)`
 
   Add index I to the set. Depending on whether `I.m()==1` or not, will add I to the end of the set or to the end of the `m!=1` indices.
 
-* `void swap(IndexSet& other)`
+* ` swap(IndexSet& other)`
 
   Efficiently swap contents of this IndexSet with a different IndexSet `other`.
 
-* `void clear()`
+* ` clear()`
 
   Reset this IndexSet to the empty set.
 

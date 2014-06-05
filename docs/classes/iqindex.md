@@ -72,7 +72,7 @@ An IQIndex also has an Arrow direction associated with it. For more information 
 
   Return the Arrow direction of this IQIndex. Can be `In` or `Out`. For more information see the [[index conventions|itensor_conventions]] page.
 
-* `void primeLevel(int val)`
+* `primeLevel(int val)`
 
   Set the prime level of this IQIndex. Also sets the prime level of each block Index contained in this IQIndex.
 
@@ -86,7 +86,7 @@ An IQIndex also has an Arrow direction associated with it. For more information 
 
 ## Other Methods ##
 
-* `void dag()`
+* `dag()`
 
   Reverse the arrow of this IQIndex.
 
