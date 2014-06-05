@@ -24,17 +24,17 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
     //The * operator automatically contracts over 
     //matching indices b1, s2, and s3.
-    //The primed method primes the b3 Index of the second
+    //The prime(phi,b3) method primes the b3 Index of the second
     //ITensor in the product so it is not summed over 
 
-    ITensor rho = phi * dag(primed(phi,b3));
+    ITensor rho = phi * dag(prime(phi,b3));
 
     Print(rho.r()); //prints 2
     Print(hasindex(rho,b3) ? "true" : "false"); //prints "true"
-    Print(hasindex(rho,primed(b3)) ? "true" : "false"); //prints "true"
+    Print(hasindex(rho,prime(b3)) ? "true" : "false"); //prints "true"
     Print(hasindex(rho,b2) ? "true" : "false"); //prints "false"
 
-    Print(trace(rho,b3,primed(b3))); //Prints 1.0
+    Print(trace(rho,b3,prime(b3))); //Prints 1.0
 
 ## Constructors ##
 
@@ -217,7 +217,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         ITensor A(l1,s2,s3,l3);
         //set components of A ...
 
-        ITensor B(l1,s2,primed(s3),primed(l3));
+        ITensor B(l1,s2,prime(s3),prime(l3));
         //set components of B ...
 
         ITensor R = A * B; //Contracts over l1 and s2
@@ -225,8 +225,8 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         Print(R.r()); //Prints 4, rank of R
         Print(hasindex(R,s3)); //Prints 1 (true)
         Print(hasindex(R,l3)); //Prints 1 (true)
-        Print(hasindex(R,primed(s3))); //Prints 1 (true)
-        Print(hasindex(R,primed(l3))); //Prints 1 (true)
+        Print(hasindex(R,prime(s3))); //Prints 1 (true)
+        Print(hasindex(R,prime(l3))); //Prints 1 (true)
         Print(hasindex(R,l1)); //Prints 0 (false)
 
 * `ITensor& operator+=(ITensor other)`
@@ -330,11 +330,11 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         ITensor A(l1,s2,s3,l3);
 
         A.prime();
-        Print(hasindex(A,primed(s2))); //Prints 1 (true)
+        Print(hasindex(A,prime(s2))); //Prints 1 (true)
         Print(hasindex(A,s2));         //Prints 0 (false)
-        Print(hasindex(A,primed(s3))); //Prints 1 (true)
-        Print(hasindex(A,primed(l1))); //Prints 1 (true)
-        Print(hasindex(A,primed(l3))); //Prints 1 (true)
+        Print(hasindex(A,prime(s3))); //Prints 1 (true)
+        Print(hasindex(A,prime(l1))); //Prints 1 (true)
+        Print(hasindex(A,prime(l3))); //Prints 1 (true)
 
 * `ITensor& prime(Index I, int inc = 1)`
 
@@ -351,11 +351,11 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         ITensor A(l1,s2,s3,l3);
 
         A.prime(s3);
-        Print(hasindex(A,primed(s3))); //Prints 1 (true)
+        Print(hasindex(A,prime(s3))); //Prints 1 (true)
         Print(hasindex(A,s3));         //Prints 0 (false)
-        Print(hasindex(A,primed(s2))); //Prints 0 (false)
-        Print(hasindex(A,primed(l1))); //Prints 0 (false)
-        Print(hasindex(A,primed(l3))); //Prints 0 (false)
+        Print(hasindex(A,prime(s2))); //Prints 0 (false)
+        Print(hasindex(A,prime(l1))); //Prints 0 (false)
+        Print(hasindex(A,prime(l3))); //Prints 0 (false)
         Print(hasindex(A,s2));         //Prints 1 (true)
         //etc.
 
@@ -373,9 +373,9 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         ITensor A(l1,s2,s3,l3);
 
         A.prime(Site);
-        Print(hasindex(A,primed(s2))); //Prints 1 (true)
+        Print(hasindex(A,prime(s2))); //Prints 1 (true)
         Print(hasindex(A,s2));         //Prints 0 (false)
-        Print(hasindex(A,primed(s3))); //Prints 1 (true)
+        Print(hasindex(A,prime(s3))); //Prints 1 (true)
         Print(hasindex(A,l1));         //Prints 1 (true)
 
 * `ITensor& noprime(IndexType t = All)`
@@ -393,7 +393,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
 ## Miscellaneous Methods ##
 
-* `void randomize()`
+* `randomize()`
 
   Randomize all elements of this ITensor. Optimized more for speed than for true randomness.
 
@@ -450,7 +450,7 @@ These are methods that either require some knowledge of the internals of an ITen
    The actual value of an ITensor element is its internally stored value times the scale factor. This facilitates dealing with ITensors whose typical
    non-zero elements differ by orders of magnitude and allows certain optimizations such as handling scalar multiplication lazily.
 
-* `void scaleTo(const LogNumber& newscale)`
+* `scaleTo(const LogNumber& newscale)`
 
    Set the scale factor of this ITensor to be newscale. This is a logically const operator on an ITensor and does not change the value of its elements, only
    internally stored values relative to the (changed) scale factor.
