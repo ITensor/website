@@ -13,9 +13,9 @@ constructor to initialize that wavefunction to a specific product state.
 ## Synopsis ##
 
     const int N = 100;
-    SpinHalf model(N);
+    SpinHalf sites(N);
     //First set all spins to be Up
-    InitState state(model,"Up");
+    InitState state(sites,"Up");
     //Now set every other spin to be Dn
     for(int j = 2; j <= N; j += 2)
         {

@@ -16,7 +16,8 @@ IndexSet containing Index objects.)
 * [[IQTensor|classes/iqtensor]]. Tensor with quantum number block structure.
 * [[SVD Algorithms|classes/svdalgs]]. Singular value decomposition, density matrix diagonalization, etc.
 * [[Spectrum|classes/spectrum]]. Density matrix eigenvalue spectrum returned by svd, denmatDecomp.
-* [[InitState|classes/initstate]]. Class for initializing matrix product states.
+* [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
+  [[InitState|classes/initstate]]. Class for initializing matrix product states.
 * [[SiteSet|classes/siteset]]. Class handling the site space.
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
 * [[Options|classes/options]]. Class for specifying various options.
