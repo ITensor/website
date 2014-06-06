@@ -122,7 +122,9 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
 * `denmatDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, LocalOpT PH, OptSet opts = Global::opts())`
 
-   Factorize a Tensor T, truncating the density matrix eigenvalues (equivalent to the squares of the singular values) according to the parameters contained in the [[Spectrum|classes/spectrum]] instance `spec`. Also add a noise term constructed out of the projected ("local") Hamiltonian `PH` with strength given by `spec.noise()`. For more information on the noise term see [Density matrix renormalization group algorithms with a single center site](http://prb.aps.org/abstract/PRB/v72/i18/e180403), S.R.&nbsp;White, <i>Phys.&nbsp;Rev.&nbsp;B</i> *72*, 180403(R) (2005).
+   *Returns*: `Spectrum` object containing density matrix eigenvalues.
+
+   Factorize a Tensor T, truncating the density matrix eigenvalues (equivalent to the squares of the singular values) according to the parameters contained in the [[Spectrum|classes/spectrum]] instance `spec`. Also add a noise term constructed out of the projected Hamiltonian `PH` with strength given by `spec.noise()`. For more information on the noise term see [Density matrix renormalization group algorithms with a single center site](http://prb.aps.org/abstract/PRB/v72/i18/e180403), S.R.&nbsp;White, <i>Phys.&nbsp;Rev.&nbsp;B</i> *72*, 180403(R) (2005).
 
    <div class="example_clicker">Show Example</div>
 
@@ -154,7 +156,9 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
 ## Hermitian Diagonalization ##
 
-* `Spectrum diagHermitian(Tensor T, Tensor& U, Tensor& D, OptSet opts = Global::opts())`
+* `diagHermitian(Tensor T, Tensor& U, Tensor& D, OptSet opts = Global::opts())`
+
+   *Returns*: `Spectrum` object containing eigenvalues of T.
 
    Diagonalize a Hermitian Tensor T such that `T==dag(U)*D*primed(U)`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. U and D are passed by reference and overwritten on return.
 
@@ -178,7 +182,9 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
 ## Orthogonal (Real) Factorization ##
 
-* `Spectrum orthoDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, OptSet opts = Global::opts())`
+* `orthoDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, OptSet opts = Global::opts())`
+
+   *Returns*: `Spectrum` object containing density matrix eigenvalues.
 
    Factorize a Tensor T such that `T==A*B`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. A and B are passed by reference and overwritten on return.
 
@@ -204,36 +210,14 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
         Print(A.isComplex()); //prints 0 (false)
         Print((T-A*B).norm()); //prints 0
 
-* `void orthoDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, Spectrum& spec, OptSet opts = Global::opts())`
-
-   Factorize a Tensor T such that `T==A*B` as above but with truncation controlled by the parameters of the Spectrum object spec.
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              l1("Link 1",4,Link),
-              l2("Link 1",4,Link);
-
-        ITensor T(l1,s1,s2,l2);
-        T.randomize();
-
-        //Create a Spectrum object to control the truncation
-        Spectrum spec;
-        spec.cutoff(1E-8);
-
-        ITensor A(l1,s1), //want l1, s1 to end up on A
-                B;
-
-        orthoDecomp(T,A,B,Fromleft,spec); //factorize T such that A is real orthogonal
-
-        Print((T-A*B).norm()); //prints a small number since we truncated
 
 ## Inverse Singular Value Decomposition ##
 
-* `Spectrum csvd(Tensor T, Tensor& L, Tensor& V, Tensor& R, OptSet opts = Global::opts())`
+* `csvd(Tensor T, Tensor& L, Tensor& V, Tensor& R, OptSet opts = Global::opts())`
 
-   Compute the "inverse" singular value decomposition of a Tensor T without truncation (for truncating version see below). "Tensor" is a templated type and could be e.g. ITensor or IQTensor. On return, the arguments L, V, and R are overwritten to hold the resulting factors such that `T==L*V*R`.
+   *Returns*: `Spectrum` object containing density matrix eigenvalues.
+
+   Compute the "inverse" singular value decomposition of a Tensor T. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. On return, the arguments L, V, and R are overwritten to hold the resulting factors such that `T==L*V*R`.
 
    The inverse SVD works similarly to the normal SVD method defined above (and uses the same implementation), but on return the factor V is set to the inverse of the singular value matrix D. The tensors L and R are constructed from the unitaries computed by the SVD times an extra factor of D.
 
@@ -254,30 +238,6 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
         Print((T-L*V*R).norm()); //prints 0
 
-* `void csvd(Tensor T, Tensor& L, Tensor& V, Tensor& R, Spectrum& spec, OptSet opts = Global::opts())`
-
-   Compute the "inverse" singular value decomposition of a tensor T, truncating the singular values according to the parameters contained in the [[Spectrum|classes/spectrum]] instance `spec`. For instance, if `spec.cutoff() == 1E-8`, only singular values whose squares are greater than 1E-8 will be kept. (The cutoff is applied to the squares of the singular values for consistency with the `denmatDecomp` method defined above.)
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              l1("Link 1",4,Link),
-              l2("Link 1",4,Link);
-
-        ITensor T(l1,s1,s2,l2);
-        T.randomize();
-
-        ITensor L(l1,s1), //want l1, s1 to end up on U
-                V,R;
-
-        //Create a Spectrum object to control the truncation
-        Spectrum spec;
-        spec.cutoff(1E-8);
-
-        csvd(T,L,V,R,spec); //compute SVD and truncate
-
-        Print((T-L*V*R).norm()); //prints a small number since we truncated
 
 
 [[Back to Classes|classes]]
