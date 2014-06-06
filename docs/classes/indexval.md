@@ -4,6 +4,7 @@ An IndexVal represents an Index fixed to a specific value.
 
 IndexVal holds both an Index in a field called "`index`" and 
 an integer "`i`" representing a particular value the Index can take.
+This value is 1-indexed and must be >= 1 and <= `index.m()`.
 
 
 ## Constructors ##
