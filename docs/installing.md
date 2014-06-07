@@ -2,7 +2,11 @@
 
 ## Building the Libraries
 
-1. Edit the user configurable options. Start by making a copy 
+1. Check that you have a C++ compiler and Lapack libraries installed on your system.
+   On Mac OSX, this typically requires installing the free XCode package available 
+   from the App Store. On Linux, the `g++` program is typically available.
+
+2. Edit the user configurable options. Start by making a copy 
    of the sample Makefile options file: 
 
    `cp options.mk.sample options.mk`
@@ -10,31 +14,30 @@
    Then begin editing options.mk in your favorite text editor
    and follow the remaining instructions.
 
-2. Determine if your compiler supports C++11, the latest version of the
+3. Determine if your compiler supports C++11, the latest version of the
    C++ standard (this is true for Clang v3.0; G++ v4.7 or so; Intel C++ v13.0).
 
-   Set `USE_CPP11=yes` if your compiler supports C++11.
+   Set `USE_CPP11=yes` if your compiler supports C++11 and provides the C++11 standard libraries.
 
-3. Set which compiler to use (the `CCCOM` variable). 
+4. Set which compiler to use (the `CCCOM` variable). 
    Make sure to include the flag -std=c++11 or similar 
    to enable C++11 if available.
    
-4. If you are using a system other than a Mac, edit `PLATFORM`,
-   `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
+5. Edit `PLATFORM`, `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
    type and location of your BLAS/LAPACK libraries. The list of currently
    available platforms is: macos, mkl, acml, lapack
    (for details see matrix/lapack_wrap.h). The `PLATFORM` variable 
    selects which function signature definitions will be used to wrap 
    vendor-specific BLAS/LAPACK fortran calls into C.
 
-5. Finally, at the top level of the library (same directory as this file),
+6. Finally, at the top level of the library (same directory as this file),
    run the commmand "make" on the command line.
    If all goes well, the built library files should appear in the LIBDIR
    folder specified in options.mk.
 
-Note: sometimes the library has issues compiling if the make "-j" flag is used 
+Note: sometimes ITensor has issues compiling if the make "-j" flag is used 
 (this flag enables parallel compilation on multi-core machines). Try 
-disabling it (e.g. explicitly type "make -j 1") if you have compilation 
+disabling it (e.g. explicitly type `make -j 1`) if you have compilation 
 errors.
 
 
