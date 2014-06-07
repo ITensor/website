@@ -1,7 +1,7 @@
 # Git Quick Start Guide
 
-[Git](http://git-scm.com) is a version control system useful for syncing source code across multiple machines.
-Although it has many powerful features, you only need to know a few commands to get started.
+[Git](http://git-scm.com) is a version control system useful for synchronizing source code across multiple machines.
+Although it has many powerful features, you only need a few commands to get started.
 
 ## Cloning Git Repositories
 
@@ -27,7 +27,7 @@ the folder containing your copy of the repo and issue the command:
 
 Assuming you have not modified the code, this command should successfully pull down the latest version from Github.
 
-To confirm that you have the version you want, you can use the `git log` command or obtain a [Git GUI program](http://git-scm.com/downloads/guis)
+To confirm that you have the version you want, you can use the `git log` command or use a [Git GUI program](http://git-scm.com/downloads/guis)
 to view the local state of your repo.
 
 If you have modified the code and are ok with undoing your changes in order to obtain the latest version, issue 
@@ -35,7 +35,7 @@ the command:
 
     git reset --hard
 
-<span style="color:red;">Caution</span>: the above command will undo all unsaved (uncommitted) changes to tracked files in your local copy of the repo.
+<span style="color:red;">Warning</span>: the above command will undo all unsaved (uncommitted) changes to tracked files in your local copy of the repo.
 
 
 ## Forking a Repo
