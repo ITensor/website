@@ -81,14 +81,15 @@
     </p>
     <img id="diagram" src="Diagram.png"/></br>
     <p>
-    Getting started with ITensor:
+    <b>Getting started with ITensor:</b>
     <ol>
-    <li><a href="https://github.com/ITensor/ITensor" target="_blank">Download or clone</a> the latest version.
-        (Cloning using the "git" program allows you to easily track changes to ITensor; for more see our <a href="docs.cgi?page=git">git quickstart</a> guide.) 
+    <li>Clone the latest version: <pre><code>git clone https://github.com/ITensor/ITensor</code></pre>
+        Or <a href="https://github.com/ITensor/ITensor/zipball/master" target="_blank">download</a> if you do not have git.<br/>
+        (Cloning with the "git" program allows tracking changes to ITensor; for more see our <a href="docs.cgi?page=git">git quickstart</a> guide.) 
 
     </li>
     <li>Read the <a href="docs.cgi?page=installing">installation</a> instructions.</li>
-    <li>Learn more from the <a href="docs.cgi">documentation and tutorial</a>.</li>
+    <li>Learn more from the <a href="docs.cgi">documentation</a>.</li>
     </ol>
     </p>
     <br/>
@@ -100,40 +101,39 @@
 
 <div class="full screenshot">
     <h2>Perform a DMRG Calculation</h2>
-    <ul>
-    <li> SpinOne sites(100); //define Hilbert space of 100 spin-lattice sites</li>
-    <li> MPO H = Heisenberg(sites); //pre-defined Hamiltonian; easy to write your own</li>
-    <li> MPS psi(sites); </li>
-    <li>&nbsp;</li>
-    <li> Sweeps sweeps(5); //perform 5 sweeps of DMRG </li>
-    <li> sweeps.maxm() = 50, 50, 100, 100, 200; //max number of states kept each sweep</li>
-    <li>&nbsp;</li>
-    <li> dmrg(psi,H,sweeps); //run the DMRG algorithm</li>
-    <li> Real energy = psiHphi(psi,H,psi); //can <a href="http://itensor.org/docs.cgi?page=recipes/measure_mps">analyze wavefunction</a> *after* DMRG</li>
-    </ul>
+    <pre>
+SpinOne sites(100); //define Hilbert space of 100 spin-lattice sites
+MPO H = Heisenberg(sites); //pre-defined Hamiltonian; easy to write your own
+MPS psi(sites);
+
+Sweeps sweeps(5); //perform 5 sweeps of DMRG
+sweeps.maxm() = 50, 50, 100, 100, 200; //max number of states kept each sweep
+
+dmrg(psi,H,sweeps); //run the DMRG algorithm
+Real energy = psiHphi(psi,H,psi); //can analyze wavefunction afterwards 
+    </pre>
 </div>
 
 <div class="full screenshot">
     <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
     <h2>Multiply Two ITensors</h2>
-    <ul>
-    <li>Index a("a",2), b("b",2), c("c",2); </li>
-    <li>ITensor Z(a,b), X(c,b); </li>
-    <li>commaInit(Z,a,b) &lt;&lt; 1, 0,
-    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    0,-1;</li>
-    <li>commaInit(X,b,c) &lt;&lt; 0, 1,
-    </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    1, 0;</li>
-    <li>//star '*' operator finds and </li>
-    <li>//contracts common index 'b' </li>
-    <li>//regardless of index order:</li>
-    <li>ITensor R = Z * X; </li>
-    <li>Print( R(a(1),c(2)) );</li>
-    <li> &nbsp; //Prints: R(a(1),c(2)) = 1</li>
-    <li>Print( R(a(2),c(1)) );</li>
-    <li> &nbsp; //Prints: R(a(1),c(2)) = -1</li>
-    </ul>
+    <pre>
+Index a("a",2), b("b",2), c("c",2);
+ITensor Z(a,b), X(c,b);
+commaInit(Z,a,b) = 1, 0,
+                   0,-1;
+commaInit(X,b,c) = 0, 1, 
+                   1, 0;
+
+//the * operator finds and
+//contracts common index 'b'
+//regardless of index order:
+
+ITensor R = Z * X;
+
+Print( R(a(1),c(2)) ); //Prints: R(a(1),c(2)) = 1
+Print( R(a(2),c(1)) ); //Prints: R(a(1),c(2)) = -1
+    </pre>
 </div>
 
 <div class="full section rounded"> <h2>ITensor Collaboration</h2> </div>
