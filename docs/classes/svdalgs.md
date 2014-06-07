@@ -58,7 +58,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
     PrintDat(D); //look at eigenvalues of rho
 
     //Check
-    diff = rho - primed(U)*D*dag(U);
+    diff = rho - prime(U)*D*dag(U);
     Print(diff.norm()); //prints something < 1E-14
 
 
@@ -160,7 +160,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
    *Returns*: `Spectrum` object containing eigenvalues of T.
 
-   Diagonalize a Hermitian Tensor T such that `T==dag(U)*D*primed(U)`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. U and D are passed by reference and overwritten on return.
+   Diagonalize a Hermitian Tensor T such that `T==dag(U)*D*prime(U)`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. U and D are passed by reference and overwritten on return.
 
    The method assumes that the indices of T come in pairs, one index with prime level 0 and a matching index with prime level 1 (reflecting the Hermitian nature of T). For example, T could have indices i,i',j, and j'. Saying that T is Hermitian means that `T == dag(swapPrime(T,0,1))`.
 
@@ -169,7 +169,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
         Index s1("Site 1",2,Site), 
               s2("Site 2",2,Site);
 
-        ITensor T(s1,s2,primed(s1),primed(s2));
+        ITensor T(s1,s2,prime(s1),prime(s2));
         T.randomize();
 
         T = T + swapPrime(T,0,1);
@@ -178,7 +178,7 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
 
         diagHermitian(T,U,D); 
 
-        Print((T-dag(U)*D*primed(U)).norm()); //prints 0
+        Print((T-dag(U)*D*prime(U)).norm()); //prints 0
 
 ## Orthogonal (Real) Factorization ##
 

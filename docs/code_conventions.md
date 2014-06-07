@@ -17,7 +17,7 @@ However, the conventions below should be followed whenever reasonable.
   For example, `I.prime()` increments the prime level of `Index I` in place.
 
 * Free methods modifying objects return a copy. For example, 
-  `primed(I)` returns a copy of `I` with its prime level incremented.
+  `prime(I)` returns a copy of `I` with its prime level incremented.
 
 ## File Layout ##
 

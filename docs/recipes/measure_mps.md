@@ -37,10 +37,10 @@ To get the bra part of the Dirac bra-ket, think about the ket as a column vector
 as a matrix, and the bra as a row vector.  We get the bra by turning the ket into a row vector and conjugating
 any imaginary parts.  The way we do this is simple:
 
-    ITensor bra = dag(primed(ket,Site));
+    ITensor bra = dag(prime(ket,Site));
 
-The `primed` function is what turns the ket into a row vector (because it will contract with the 
-row index of our operator), and `dag` does the hermitian conjugation. The argument `Site` passed to primed tells it
+The `prime` function is what turns the ket into a row vector (because it will contract with the 
+row index of our operator), and `dag` does the hermitian conjugation. The argument `Site` passed to prime tells it
 to prime Site-type indices only.
 Now we are ready to measure the expectation value of Sz by contracting the bra, operator, and ket. The 
 call to `.toReal()` below converts the resulting scalar (rank zero) tensor into a real number:
@@ -66,7 +66,7 @@ The method `psi.bondTensor(j)` is analogous to `psi.A(j)`, except that
 `bondTensor` encodes bond information between `j` and `j+1`, so long as `psi.position(j)` has been called previously.
 The `bondbra` is made the same as the `bra` from earlier:
 
-    ITensor bondbra = dag(primed(bondket,Site));
+    ITensor bondbra = dag(prime(bondket,Site));
 
 And expectation values are realized in the same way:
 
@@ -138,7 +138,7 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
             ITensor ket = psi.A(j);
 
             //Dirac "bra" for wavefunction
-            ITensor bra = dag(primed(ket,Site));
+            ITensor bra = dag(prime(ket,Site));
 
             //operator for sz at site j
             ITensor szj_op = sites.op("Sz",j);
@@ -156,7 +156,7 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
                 //between j and j+1, so long as 
                 //psi.position(j) has been called
                 ITensor bondket = psi.bondTensor(j); 
-                ITensor bondbra = dag(primed(bondket,Site)); 
+                ITensor bondbra = dag(prime(bondket,Site)); 
 
                 ITensor szz_op = sites.op("Sz",j)*sites.op("Sz",j+1); 
 

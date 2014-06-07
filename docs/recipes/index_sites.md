@@ -16,9 +16,9 @@ Below is a simple pattern you can use to create a set of site Indices and save t
     //Now we can use these sites, for example, to make tensors
     //such as operators
 
-    ITensor sz3(site[3],primed(site[3]));
-    sz(site[3](1),primed(site[3])(1)) =  0.5;
-    sz(site[3](2),primed(site[3])(2)) = -0.5;
+    ITensor sz3(site[3],prime(site[3]));
+    sz(site[3](1),prime(site[3])(1)) =  0.5;
+    sz(site[3](2),prime(site[3])(2)) = -0.5;
 
 A few comments on the above code are in order. The function `nameint` is convenience function we provide
 which simply takes a string and an integer and makes a string with the integer appended. So for example:
@@ -52,9 +52,9 @@ Complete sample code:
         //Now we can use these sites, for example, to make tensors
         //such as operators
 
-        ITensor sz3(site[3],primed(site[3]));
-        sz(site[3](1),primed(site[3])(1)) =  0.5;
-        sz(site[3](2),primed(site[3])(2)) = -0.5;
+        ITensor sz3(site[3],prime(site[3]));
+        sz(site[3](1),prime(site[3])(1)) =  0.5;
+        sz(site[3](2),prime(site[3])(2)) = -0.5;
 
         return 0;
         }

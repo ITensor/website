@@ -172,11 +172,11 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
         IndexSet<Index> inds(l1,s2,s3,l3);
 
         inds.prime();
-        Print(hasindex(inds,primed(s2))); //Prints 1 (true)
+        Print(hasindex(inds,prime(s2))); //Prints 1 (true)
         Print(hasindex(inds,s2));         //Prints 0 (false)
-        Print(hasindex(inds,primed(s3))); //Prints 1 (true)
-        Print(hasindex(inds,primed(l1))); //Prints 1 (true)
-        Print(hasindex(inds,primed(l3))); //Prints 1 (true)
+        Print(hasindex(inds,prime(s3))); //Prints 1 (true)
+        Print(hasindex(inds,prime(l1))); //Prints 1 (true)
+        Print(hasindex(inds,prime(l3))); //Prints 1 (true)
 
 * ` prime(IndexT I, int inc = 1)`
 
@@ -193,11 +193,11 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
         IndexSet<Index> inds(l1,s2,s3,l3);
 
         inds.prime(s3);
-        Print(hasindex(inds,primed(s3))); //Prints 1 (true)
+        Print(hasindex(inds,prime(s3))); //Prints 1 (true)
         Print(hasindex(inds,s3));         //Prints 0 (false)
-        Print(hasindex(inds,primed(s2))); //Prints 0 (false)
-        Print(hasindex(inds,primed(l1))); //Prints 0 (false)
-        Print(hasindex(inds,primed(l3))); //Prints 0 (false)
+        Print(hasindex(inds,prime(s2))); //Prints 0 (false)
+        Print(hasindex(inds,prime(l1))); //Prints 0 (false)
+        Print(hasindex(inds,prime(l3))); //Prints 0 (false)
         Print(hasindex(inds,s2));         //Prints 1 (true)
         //etc.
 
@@ -215,9 +215,9 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
         IndexSet<Index> inds(l1,s2,s3,l3);
 
         inds.prime(Site);
-        Print(hasindex(inds,primed(s2))); //Prints 1 (true)
+        Print(hasindex(inds,prime(s2))); //Prints 1 (true)
         Print(hasindex(inds,s2));         //Prints 0 (false)
-        Print(hasindex(inds,primed(s3))); //Prints 1 (true)
+        Print(hasindex(inds,prime(s3))); //Prints 1 (true)
         Print(hasindex(inds,l1));         //Prints 1 (true)
 
 * ` noprime(IndexType t = All)`

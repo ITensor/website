@@ -11,7 +11,7 @@ Or we could obtain s from a set of Site indices already created earlier (see the
 
 Once we have this site index, we can make various operators as follows:
 
-    Index sP = primed(s); //convenient to save this as a different variable
+    Index sP = prime(s); //convenient to save this as a different variable
 
     ITensor sz(s,sP);
     sz(s(1),sP(1)) = 0.5;
@@ -26,7 +26,7 @@ We can even get fancy and create a 'factory' function which takes our site and a
     ITensor
     op(Index s, string name)
         {
-        Index sP = primed(s);
+        Index sP = prime(s);
         ITensor res(s,sP); //res is short for result
 
         if(name == "Sz")
@@ -65,7 +65,7 @@ Complete sample code:
     ITensor
     op(Index s, string name)
         {
-        Index sP = primed(s);
+        Index sP = prime(s);
         ITensor res(s,sP); //res is short for result
 
         if(name == "Sz")
