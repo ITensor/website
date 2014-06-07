@@ -1,14 +1,14 @@
 # Creating Your Own Driver Code
 
-By driver code one means code containing a `main` function that is meant to be compiled into a specific program.
-For a program called "`myappname`", typically the `main` function appears in a file called `myappname.cc`.
+Driver code means code containing a `main` function that is meant to be compiled into a specific program.
+Typically for a program called "`myappname`" the `main` function appears in a file called `myappname.cc`.
 (ITensor uses the convention that C++ source code files have the extension `.cc`, but other common conventions include
 `.cpp` or `.C`.)
 
 For convenience, ITensor includes a project template folder ready for you to use. To use it, follow these steps:
 
 1. Assuming the ITensor source code is located in `/home/username/itensor` (where `username` is your actual username), and
-you want to create your new project under `/home/username/software`, issue the commands:
+assuming you want to create your new project under `/home/username/software`, issue the commands:
 
        mkdir -p /home/username/software 
        cp -r /home/username/itensor/tutorial/project_template \
