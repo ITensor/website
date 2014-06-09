@@ -248,7 +248,7 @@ width: 90%;
     { 
     font-family: monospace;  
     font-weight: normal;
-    background-color: #eee;
+    background-color: #ddd;
     padding-left:2px;
     padding-right:2px;
     }
@@ -288,7 +288,7 @@ width: 90%;
     { 
     font-weight: normal;
     font-family: monospace;
-    background-color:#eee;
+    background-color:#ddd;
     display: block;
     border: 1px solid black;
     padding: 10px;
@@ -297,6 +297,7 @@ width: 90%;
 
 .docs ul { display: table; list-style: square; }
 .docs ul li { margin-left: 30px; }
+.docs ul ul { display: table; list-style: circle; }
 .docs img.arrow 
     {
     width: 11px;
