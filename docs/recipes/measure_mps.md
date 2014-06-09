@@ -58,12 +58,10 @@ For example, one of the operators we'll need is <!--'-->
 
     ITensor spm_op = sites.op("Sp",j)*sites.op("Sm",j+1);
 
-To represent the wavefunction for two sites, we simply call the `bondTensor` method of the wavefunction:
+To represent the wavefunction for two sites, we simply contract together two site tensors:
 
-    ITensor bondket = psi.bondTensor(j); 
+    ITensor bondket = psi.A(j)*psi.A(j+1);
 
-The method `psi.bondTensor(j)` is analogous to `psi.A(j)`, except that 
-`bondTensor` encodes bond information between `j` and `j+1`, so long as `psi.position(j)` has been called previously.
 The `bondbra` is made the same as the `bra` from earlier:
 
     ITensor bondbra = dag(prime(bondket,Site));
@@ -126,7 +124,7 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
 
         for(int j=1; j<=N; j++) 
             {
-            //move psi to get ready to measure at position j
+            //re-gauge psi to get ready to measure at position j
             psi.position(j);
 
             //after calling psi.position(j), psi.A(j) returns a 
@@ -151,11 +149,7 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
                 { 
                 //make a bond ket/bra based on wavefunction 
                 //representing sites j and j+1:
-                //psi.bondTensor(j) is analogous to psi.A(j), 
-                //except that bondTensor encodes bond information 
-                //between j and j+1, so long as 
-                //psi.position(j) has been called
-                ITensor bondket = psi.bondTensor(j); 
+                ITensor bondket = psi.A(j)*psi.A(j+1);
                 ITensor bondbra = dag(prime(bondket,Site)); 
 
                 ITensor szz_op = sites.op("Sz",j)*sites.op("Sz",j+1); 
