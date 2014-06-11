@@ -30,7 +30,12 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 * `Index()`
 
-  Default constructor. For a default-constructed Index `J`, `J.isNull() == true`.
+  Default constructor. A default-constructed Index evaluates to false in a boolean context.
+
+  <div class="example_clicker">Show Example</div>
+
+        Index i;
+        if(!i) println("Index i is default constructed.");
 
 * `Index(string name, int m, IndexType it, int primelevel = 0)` 
 
@@ -69,10 +74,6 @@ Indices compare equal if and only if they have the same primelevel and are copie
 * `string rawname()`  
 
   Return the name of this Index without prime level information.
-
-* `bool isNull()`  
-
-  Return true if Index is default-constructed.
 
 * `Arrow dir()`  
 

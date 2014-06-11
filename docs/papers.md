@@ -13,7 +13,7 @@
 
 * [Computation of extreme eigenvalues in higher dimensions using block tensor train format](http://www.sciencedirect.com/science/article/pii/S0010465513004293), <br/>Sergey&nbsp;V.&nbsp;Dolgov, Boris&nbsp;N.&nbsp;Khoromskij, Ivan&nbsp;V.&nbsp;Oseledets, Dmitry&nbsp;V.&nbsp;Savostyanov, <br/> <i>Comp. Phys. Comm.</i> (2013) [arxiv:1306.2269]
 
-* [Guaranteed Convergence of the Kohn-Sham Equations](http://prl.aps.org/abstract/PRL/v111/i9/e093003), <br/>Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, <br/> <i>Phys. Rev. Lett.</i> <b>111</b>, [093003](http://prl.aps.org/abstract/PRL/v111/i9/e093003) (2013) [arxiv:1301.3494]
+* [Guaranteed Convergence of the Kohn-Sham Equations](http://prl.aps.org/abstract/PRL/v111/i9/e093003), <br/>Lucas&nbsp;O.&nbsp;Wagner, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, <br/> <i>Phys. Rev. Lett.</i> <b>111</b>,  [093003](http://prl.aps.org/abstract/PRL/v111/i9/e093003/) (2013) [arxiv:1301.3494]
 
 * [Real-space parallel density matrix renormalization group](http://link.aps.org/doi/10.1103/PhysRevB.87.155137), <br/>E.M.&nbsp;Stoudenmire and Steven&nbsp;R.&nbsp;White, </br> <i>Phys. Rev. B</i>&nbsp; <b>87</b>, [155137](http://link.aps.org/doi/10.1103/PhysRevB.87.155137) (2013) [arxiv:1301.3494]
 

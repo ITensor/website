@@ -11,7 +11,7 @@ This value is 1-indexed and must be >= 1 and <= `index.m()`.
 
 * `IndexVal()`
 
-  Default constructor. For a default-constructed IndexVal `iv`, `iv.isNull() == true`.
+  Default constructor. A default-constructed IndexVal evaluates to false in a boolean context.
 
 * `IndexVal(Index I, int i)`
 

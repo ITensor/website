@@ -75,7 +75,13 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
 
 * `IQTensor()` 
 
-   Default constructor. For a default-constructed IQTensor `T`, `T.isNull() == true`. 
+   Default constructor. A default-constructed IQTensor evaluates to false in a boolean context.
+
+   <div class="example_clicker">Show Example</div>
+
+        IQTensor T;
+        if(!T) println("IQTensor T is default constructed.");
+
 
 * `IQTensor(Real val)` 
 
@@ -111,14 +117,6 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
 * `int r()`
 
    Return rank (number of IQIndices) of this IQTensor.
-
-* `bool isNull()`
-
-   Return `true` if this IQTensor is default-constructed. Otherwise `false`.
-
-* `bool isNull()`
-
-   Return `true` if this IQTensor is default-constructed. Otherwise `false`.
 
 * `bool isComplex()`
 

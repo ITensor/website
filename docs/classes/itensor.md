@@ -40,7 +40,7 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
 * `ITensor()` 
 
-   Default constructor. For a default-constructed ITensor `T`, `T.isNull() == true`. To construct a rank zero ITensor use the `ITensor(Real val)` constructor below.
+   Default constructor. A default-constructed ITensor evaluates to false in a boolean context. To construct a rank zero ITensor use the `ITensor(Real val)` constructor below.
 
 * `ITensor(Index i1)` 
 
@@ -99,22 +99,6 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
         ITensor T(s1,l);
         Print(T.r()); //prints 2 since T has two indices
 
-
-* `bool isNull()`
-
-   Return `true` if this ITensor is default-constructed. Otherwise `false`.
-
-   <div class="example_clicker">Show Example</div>
-
-        ITensor T1;
-
-        Print(T1.isNull()); //prints 1 (true)
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site);
-
-        ITensor T2(s1,s2);
-        Print(T2.isNull()); //prints 0 (false)
 
 * `bool isComplex()`
 

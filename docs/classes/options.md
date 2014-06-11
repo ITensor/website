@@ -58,7 +58,9 @@ Some of these options have some sensible global default value.
 * `Verbose`
 * `Weight`
 * `WriteDir`
+  Sets the target directory for swap-to-disk operations. Defaults to ./
 * `WriteM`
+  The number of states above which the MPS/MPO will be swapped to disk.
 * `Quiet`
 
 [[Back to Classes|classes]]

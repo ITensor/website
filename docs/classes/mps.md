@@ -113,10 +113,6 @@ An MPS can be constructed from either a [[SiteSet|classes/siteset]] or an [[Init
 
   Returns a const reference to the `SiteSet` associated with the lattice sites of this MPS.
 
-* `bool valid()`
-
-  Returns `false` if the MPS is default constructed; otherwise returns `true`.
-
 # Modifying and Re-gauging MPS
 
 * `position(int j)`
