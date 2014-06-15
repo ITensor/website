@@ -15,7 +15,7 @@ the following command on your computer:
     git clone git@github.com:ITensor/ITensor.git itensor
 
 The last argument is the name of the folder you want git to put the ITensor source code into.
-You can choose any name you like for this folder, or rename it later without causing any problems.
+You can choose any name you like for this folder.
 
 
 ## Updating Code Which is Linked to a Git Repository
