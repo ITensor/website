@@ -3,7 +3,7 @@
 
 <img src='link_arrow.png' class='arrow'/>[[Installing ITensor|installing]]
 
-<!--<img src='link_arrow.png' class='arrow'/>[[Tutorial|tutorial]]. Introduction to ITensor focused on matrix product states.-->
+<img src='link_arrow.png' class='arrow'/>[[Tutorial|tutorial]]. Introduction to ITensor focused on matrix product states.
 
 <img src='link_arrow.png' class='arrow'/>[[Documentation|classes]] of ITensor classes and functions.
 

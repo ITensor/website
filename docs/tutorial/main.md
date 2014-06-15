@@ -1,30 +1,35 @@
 # ITensor Tutorial #
 
-Tutorial on applications of matrix product states using ITensor. 
+Tutorial slides on the basics of ITensor and working with matrix product states.
+Each tutorial has accompanying code in the `tutorial/` subdirectory of the ITensor distribution.
 
-* Introduction. Tensors. &nbsp;  [\[slides\]](docs/tutorial/00_Intro_Tensors.pdf)
+<!-- * Introduction. Tensors. &nbsp;  [\[slides\]](docs/tutorial/00_Intro_Tensors.pdf) -->
 
+<!--
   <div class="example_clicker">Watch Video</div>
 
   <iframe width="640" height="480" src="//www.youtube.com/embed/YBdiWnSaXy0?rel=0" frameborder="0" allowfullscreen></iframe>
+  -->
 
-* One. Working with a single-site wavefunction. &nbsp;  [\[slides\]](docs/tutorial/01_One.pdf)
+* [One Site](docs/tutorial/01_one_site.pdf). Working with a single-site wavefunction. Creating ITensors and priming indices. Creating single-site operators.
 
+<!--
   <div class="example_clicker">Watch Video</div>
 
   <iframe width="640" height="480" src="//www.youtube.com/embed/48iB4z5Llks?rel=0" frameborder="0" allowfullscreen></iframe>
+  -->
 
-* Two. Working with a two-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/02_Two.pdf)
+* [Two Sites](docs/tutorial/02_two_sites.pdf). Working with more complex wavefunctions and operators. Introduces Index types.
 
-* SVD. The singular value decomposition.  &nbsp;  [\[slides\]](talks/jan_2013_northeastern/03_SVD.pdf)
+* [SVD](docs/tutorial/03_svd.pdf). The singular value decomposition. Concept of matrix product state gauges.
 
-* Four. Introducing matrix product states using a four-site wavefunction. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/04_Four.pdf)
+* [Four](docs/tutorial/04_four.pdf). Introducing matrix product states using a four-site wavefunction. Measuring properties of an MPS.
 
-* Trotter. Time evolution with Trotter gates.  &nbsp;  [\[slides\]](talks/jan_2013_northeastern/05_Trotter.pdf)
+* [Trotter](docs/tutorial/05_trotter.pdf). Time evolution with Trotter gates.
 
-* MPO. Constructing matrix product operators. &nbsp;  [\[slides\]](talks/jan_2013_northeastern/06_MPO.pdf)
+* [MPO](docs/tutorial/06_mpo.pdf). Constructing matrix product operators.
 
-* DMRG. Introduction to DMRG using ITensor.  &nbsp;  [\[slides\]](talks/jan_2013_northeastern/07_DMRG.pdf)
+* [DMRG](docs/tutorial/07_dmrg.pdf). Introduction to DMRG using ITensor.
 
 
 [[Back to Main|main]]
