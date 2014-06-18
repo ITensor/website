@@ -6,12 +6,12 @@ IndexSet containing Index objects.)
 ## ITensor: dense tensor class
 
 * [[Index|classes/index]]. Single tensor index. <br/>
-  [[Index functions|classes/index_functions]] for working with Index and similar classes. <br/>
+  [[Index Functions|classes/index_functions]] for working with Index and similar classes. <br/>
   [[IndexVal|classes/indexval]]. Index set to a particular value. 
 * [[IndexSet|classes/indexset]]. Container for storing indices. <br/>
   [[IndexSet functions|classes/indexset_functions]].
 * [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
-  [[ITensor functions|classes/itensor_functions]] for working with ITensor and similar classes. <br/>
+  [[ITensor Functions|classes/itensor_functions]] for working with ITensor and similar classes. <br/>
 
 ## IQTensor: quantum number block-sparse tensors
 
@@ -28,9 +28,14 @@ IndexSet containing Index objects.)
 ## Matrix product states and DMRG
 
 * [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
+  [[MPS Functions|classes/mps_functions]]. Functions for working with MPS. <br/>
   [[InitState|classes/initstate]]. Class for initializing matrix product states.
 * [[SiteSet|classes/siteset]]. Class handling the site space.
+    * [[SpinHalf|classes/spinhalf]]. Set of S=1/2 degrees of freedom.
+    * [[SpinOne|classes/spinone]]. Set of S=1 degrees of freedom.
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
+
+
 * [[Options|classes/options]]. Class for specifying various options.
 
 The above documentation may omit minor details that do not change method semantics, 
