@@ -5,8 +5,8 @@ A SiteSet does not store any information about the topology of the lattice, just
 and the type of each site.
 
 The class `SiteSet` is an abstract base class, and its features are to be used through a class derived from it
-such as `SpinHalf` or `Hubbard`. It is useful, however, to define functions taking a `const SiteSet&` argument
-whose functionality does not depend on the particular type of SiteSet being passed to it.
+such as `SpinHalf` or `Hubbard`. However, functions to take a `const SiteSet&` argument
+when their functionality does not depend on the specific type of SiteSet being passed to it.
 
 ## Accessing Site Information
 
