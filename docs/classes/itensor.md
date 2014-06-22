@@ -221,8 +221,6 @@ given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5
 
   ITensor addition and subtraction. Adds ITensors element-wise. Both ITensors must have the same set of indices.
 
-  If an ITensor is default constructed, `operator+=(other)` will overwrite it with `other`.
-
   <div class="example_clicker">Show Example</div>
 
         Index l1("link 1",4),
