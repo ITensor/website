@@ -2,12 +2,14 @@
 
 ## 2014 ##
 
+* [Kohn-Sham calculations with the exact functional](http://link.aps.org/doi/10.1103/PhysRevB.90.045109), Lucas&nbsp;O.&nbsp;Wagner, Thomas&nbsp;E.&nbsp;Baker, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, <br/> <i>Phys. Rev. B</i> <b>90</b>, [045109](http://link.aps.org/doi/10.1103/PhysRevB.90.045109)
+
 * [Chiral spin density wave, spin-charge-Chern liquid and d+id superconductivity in 1/4-doped correlated electronic systems on the honeycomb lattice](http://arxiv.org/abs/1404.3452), Shenghan&nbsp;Jiang, Andrej&nbsp;Mesaros, and Ying&nbsp;Ran, (2014) [arxiv:1404.3452]
 
 * [Stochastically Projecting Tensor Networks](http://arxiv.org/abs/1404.2296), Bryan&nbsp;K.&nbsp;Clark and Hitesh&nbsp;J.&nbsp;Changlani, (2014) [arxiv:1404.2296]
 
 
-* [Corner contribution to the entanglement entropy of an O(3) quantum critical point in 2+1 dimensions](http://arxiv.org/abs/1401.3504), Ann&nbsp;Kallin, E.M.&nbsp;Stoudenmire, Paul&nbsp;Fendley, Rajiv&nbsp;R.P.&nbsp;Singh, <br/> and Roger&nbsp;G.&nbsp;Melko, (2014) [arxiv:1401.3504]
+* [Corner contribution to the entanglement entropy of an O(3) quantum critical point in 2+1 dimensions](http://stacks.iop.org/1742-5468/2014/i=6/a=P06009), Ann&nbsp;Kallin, E.M.&nbsp;Stoudenmire, Paul&nbsp;Fendley, Rajiv&nbsp;R.P.&nbsp;Singh, <br/> and Roger&nbsp;G.&nbsp;Melko, <i>J. Stat. Mech.</i> P06009 [arxiv:1401.3504]
 
 ## 2013 ##
 
