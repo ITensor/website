@@ -37,7 +37,7 @@ def printContentType():
 
 def convert(string):
     #Convert arxiv:####.#### links
-    string = re.sub(r"arxiv:(\d\d\d\d\.\d\d\d\d)",r"arxiv:<a href='http://arxiv.org/abs/\1'>\1</a>",string)
+    string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a href='http://arxiv.org/abs/\1'>\1</a>",string)
     #Convert cond-mat/####### links
     string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"cond-mat/<a href='http://arxiv.org/abs/cond-mat/\1'>\1</a>",string)
     #Convert github:<sha> links
