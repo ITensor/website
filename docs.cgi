@@ -1,6 +1,12 @@
 #!/usr/bin/python
 
 import sys
+import mistune #Markdown renderer
+from pygments import highlight
+#from pygments.lexers import get_lexer_by_name
+from pygments.lexers import CppLexer
+from pygments.formatters import HtmlFormatter
+#import cgitb; cgitb.enable()
 sys.path.append("/opt/itensor.org/")
 
 #################################
@@ -14,6 +20,13 @@ this_fname = "docs.cgi"
 nav_delimiter = "&nbsp;/&nbsp;"
 
 #################################
+
+
+class MyRenderer(mistune.Renderer):
+    def block_code(self, code, lang):
+        lexer = CppLexer()
+        formatter = HtmlFormatter()
+        return highlight(code, lexer, formatter)
 
 import re
 named_link_re = re.compile("(.+?)\|(.+)")
@@ -87,9 +100,11 @@ def convert(string):
     #        mdstring += "<code>\n"+chunk+"</code>\n"
 
     #Convert markdown to html
-    from mistune import markdown
     #htmlstring = markdown(mdstring,extras=["fenced-code-blocks"])
-    htmlstring = markdown(mdstring)
+
+    renderer = MyRenderer()
+    md = mistune.Markdown(renderer=renderer)
+    htmlstring = md.render(mdstring)
 
     #Put in a special class for paragraphs that consist entirely of code
     #htmlstring = paragraph_code_re.sub(r"<p><div class='codeblock'>\1</div></p>",htmlstring)
