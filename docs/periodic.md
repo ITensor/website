@@ -147,5 +147,5 @@ block decimation TEBD) or really any other algorithm that works with open-bounda
 
 <a name="cincio"></a>\[7\] [Characterizing Topological Order by Studying the Ground States on an Infinite Cylinder](http://link.aps.org/doi/10.1103/PhysRevLett.110.067208), L.&nbsp;Cincio and G.&nbsp;Vidal, <i>Phys. Rev. Lett.</i> <b>110</b>, [067208](http://link.aps.org/doi/10.1103/PhysRevLett.110.067208)
 
-<a name="phien"></a>\[7\] [Infinite boundary conditions for matrix product state calculations](http://link.aps.org/doi/10.1103/PhysRevB.86.245107), Ho&nbsp:N.&nbsp;Phien, G.&nbsp;Vidal, and Ian&nbsp;P.&nbsp;McCulloch <i>Phys. Rev. B</i> <b>86</b>, [245107](http://link.aps.org/doi/10.1103/PhysRevB.86.245107)
+<a name="phien"></a>\[7\] [Infinite boundary conditions for matrix product state calculations](http://link.aps.org/doi/10.1103/PhysRevB.86.245107), Ho&nbsp;N.&nbsp;Phien, G.&nbsp;Vidal, and Ian&nbsp;P.&nbsp;McCulloch <i>Phys. Rev. B</i> <b>86</b>, [245107](http://link.aps.org/doi/10.1103/PhysRevB.86.245107)
 
