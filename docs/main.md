@@ -1,13 +1,14 @@
 
 ### Using ITensor
 
-<img src='link_arrow.png' class='arrow'/>[[Installing ITensor|installing]]
+💽  [[Installing ITensor|installing]]
 
-<img src='link_arrow.png' class='arrow'/>[[Tutorial|tutorial]]. Introduction to ITensor focused on matrix product states.
+📚   [[Tutorial|tutorial]]. Basic introduction to ITensor focused on matrix product states.
 
-<img src='link_arrow.png' class='arrow'/>[[Documentation|classes]] of ITensor classes and functions.
+🍴  [[Code Recipes|recipes]]. Code snippets for performing common tasks
 
-<img src='link_arrow.png' class='arrow'/>[[Code Recipes|recipes]]. Sample code for performing common tasks
+📖   [[In-depth Documentation|classes]] of ITensor classes and functions.
+
 
 ### Articles
 
