@@ -69,11 +69,11 @@ def convert(string):
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
+                mdstring += "[%s](%s?page=%s)"%(name,this_fname,link)
                 #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(name,link)
-                mdstring += ("[%s]("+this_fname+"?page=%s)")%(name,link)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += ("[%s]("+this_fname+"?page=%s)")%(chunk,chunk)
+                mdstring += "[%s](%s?page=%s)"%(chunk,this_fname,chunk)
                 #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
     #Code below not needed: just indent 4 spaces and Markdown
@@ -140,13 +140,11 @@ page_name = dirlist.pop(-1)
 nav = ""
 
 for dirname in dirlist:
-    nav += (nav_delimiter+"<a href=\""+this_fname+"?page=%s\">%s</a>") % (dirname,dirname)
+    nav += "%s<a href=\"%s?page=%s\">%s</a>"%(nav_delimiter,this_fname,dirname,dirname)
 if page_name != "main":
     nav += nav_delimiter+page_name
-
 if not (len(dirlist) == 0 and page_name == "main"):
-    nav = ("<a href=\""+this_fname+"?page=%s\">%s</a>") % ("main","main") + nav
-    nav += "</br>"
+    nav = "<a href=\"%s?page=main\">main</a>%s</br>"%(this_fname,nav)
 
 
 prenav_header_file = open(prenav_header_fname)
