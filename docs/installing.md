@@ -14,14 +14,10 @@
    Then begin editing options.mk in your favorite text editor
    and follow the remaining instructions.
 
-3. Determine if your compiler supports C++11, the latest version of the
-   C++ standard (this is true for Clang v3.0; G++ v4.7 or so; Intel C++ v13.0).
-
-   Set `USE_CPP11=yes` if your compiler supports C++11 and provides the C++11 standard libraries.
-
-4. Set which compiler to use (the `CCCOM` variable). 
-   Make sure to include the flag -std=c++11 or similar 
-   to enable C++11 if available.
+3. Set which compiler to use (the `CCCOM` variable). 
+   Determine if your compiler supports C++11, the latest version of the
+   C++ standard (this is true for Clang v3.0; G++ v4.7 or so; Intel C++ v13.0),
+   and make sure to set the flag -std=c++11 or similar to enable C++11.
    
 5. Edit `PLATFORM`, `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
    type and location of your BLAS/LAPACK libraries. The list of currently
