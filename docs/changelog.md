@@ -1,5 +1,62 @@
 # Change Log #
 
+<a name="v1.1.1"></a>
+## [Version 1.1.1](https://github.com/ITensor/library/tree/v1.1.1) (May 18, 2015) ##
+
+<b>Bug fixes:</b>
+
+- Fixed a compilation error due to a typo in lapack_wrap.h (thanks user lukyluket)
+- Fixed a compilation error due to missing include in error.h
+- Removed use of non-standard variable sized array in utility.cc (thanks user kyungminlee)
+
+<a name="v1.1.0"></a>
+## [Version 1.1.0](https://github.com/ITensor/library/tree/v1.1.0) (May 16, 2015) ##
+
+
+<b>Major design changes:</b>
+- Requires C++11. No more boost dependence.
+- Removed uniqueReal system from Index due to occasional comparison failures. Now Index comparisons are exact integer comparisons.
+- Changed ITensor storage from ref-counted Vector to just std::vector
+- Major redesign of IQTensor storage to store ITensor blocks in an ordered array
+
+<b>Major new features:</b>
+- AutoMPO: helper class for constructing MPOs with a pencil-and-paper type interface
+
+<b>Bug fixes:</b>
+- Fixed invalid memory access in matrix/storelink.h (contributed by Steve White)
+- New version of lapack_wrap.h. Previous version had been mistakenly using C99 variable-sized arrays which are not standard C++ (thanks Kyungmin Lee)
+- Fixed improper handling of negative scale factors in svd algorithm (thanks to Hitesh Changlani and Bryan Clark)
+- Fixes to MatrixRef: moved unsafe iterators from VectorRef to Vector and updated usage of these in ITensor
+- Fixed bug in Args::add where const char* was converting to bool
+- Removed incorrect usage of delete in Index::read. Replaced with std::unique_ptr.
+- Fixed bug in psiHKphi where conj should be replaced by dag (thanks to Ori Alberton).
+
+<b>Other improvements:</b>
+- Index no longer uses ref-counted heap storage. Data is directly stored in Index object.
+- Improvements to input.h utility library for reading input files
+- Added explicit bool conversions to many objects to check if default constructed or not
+- Reimplemented ITensor contraction using lightweight SimpleMatrixRef wrapper
+- Renamed Opt and OptSet to Args and folded Opt class into private class Args::Val to simplify interface
+
+<a name="v1.0.5"></a>
+## [Version 1.0.5](https://github.com/ITensor/library/tree/v1.0.5) (Oct 7, 2014) ##
+
+<b>Bug fixes:</b>
+
+- Fixed incorrect use of `delete` (should have been `delete[]`) in `Index::read`.
+
+<a name="v1.0.4"></a>
+## [Version 1.0.4](https://github.com/ITensor/library/tree/v1.0.4) (Oct 2, 2014) ##
+
+<b>Bug fixes:</b>
+
+- Fixed off-by-one memory bug in `MatrixRef::Last()` function.
+
+- Fixed bug where if ITensor scale was negative, ordering of eigenvalues in svd methods could get reversed.
+
+- Fixed bug where ITensor scale not included in eigenvalues returned from diag_hermitian.
+
+
 <a name="v1.0.0"></a>
 ## [Version 1.0.0](https://github.com/ITensor/library/tree/v1.0.0) (May 28, 2014) ##
 
