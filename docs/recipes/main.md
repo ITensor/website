@@ -24,7 +24,10 @@ Recipes involving quantum number tensors and indices (objects such as IQIndex, I
 Recipes involving matrix product states and DMRG.
 
 * [[Perform a basic DMRG calculation|recipes/basic_dmrg]]
-* [[Measure the properties of an MPS wavefunction|recipes/measure_mps]]
+* [[Measure local properties of an MPS wavefunction|recipes/measure_mps]]
+* [[Measure two-point correlator from an MPS wavefunction|recipes/correlator_mps]]
+* [[Compute excited states using DMRG|recipes/excited_dmrg]]
+* [[Compute entanglement entropy|recipes/entanglement_mps]]
 * [[Reading and writing MPS, MPO to and from disk|recipes/readwrite_mps]]
 
 <br>
