@@ -149,6 +149,7 @@ color: #fff;
 text-decoration: underline;
 }
 
+
 #diagram 
     { 
     width: 400px; 
@@ -228,12 +229,32 @@ font-size: 100%;
 width: 90%; 
 }
 .docs a { color: #336699; }
-.docs h1 { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
+.docs h1 
+{ 
+font-size: 140%; 
+font-weight: bold; 
+margin-top: 20px; 
+margin-bottom: 8px; 
+}
 .docs h1 a { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
-.docs h2 { font-size: 110%; font-weight: bold; margin-bottom: 10px; margin-top: 10px; }
+
+.docs h2 
+{ 
+font-size: 110%; 
+font-weight: bold; 
+margin-top: 10px; 
+margin-bottom: 8px; 
+}
 .docs h2 a { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
-.docs h3 { font-weight: bold; margin-bottom: 8px; margin-top: 6px; }
+  
+.docs h3 
+{ 
+font-weight: bold; 
+margin-top: 30px; 
+margin-bottom: 8px; 
+}
 .docs h3 a { font-weight: bold; margin-bottom: 8px; margin-top: 6px; }
+
 .docs em 
     { 
     font-weight: normal; 
@@ -241,8 +262,16 @@ width: 90%;
     }
 .docs p 
     { 
-    padding-bottom: 8px;
     text-indent: 0px; 
+    margin-bottom: 15px;
+    }
+.docs ul p
+    {
+    margin-bottom: 2px;
+    }
+.docs ol p
+    {
+    margin-bottom: 2px;
     }
 .docs code 
     { 
@@ -266,6 +295,14 @@ width: 90%;
     font-size: 90%;
     font-style: italic;
     }
+
+.docs .highlight
+{
+margin-bottom: 15px;
+padding-top: 8px;
+padding-left: 4px;
+padding-bottom: 8px;
+}
 
 /*
 .docs pre code

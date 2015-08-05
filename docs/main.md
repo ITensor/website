@@ -1,21 +1,23 @@
 
-### Using ITensor
+## Using ITensor
 
 💽  [[Installing ITensor|installing]]
 
-📚   [[Tutorial|tutorial]]. Basic introduction to ITensor focused on matrix product states.
+📚  [[Tutorial|tutorial]]. Basic introduction to ITensor focused on matrix product states.
 
-🍴  [[Code Recipes|recipes]]. Code snippets for performing common tasks
+⚡️  [[Quickstart Guides|guides]]. Enhance your knowledge of essential ITensor features.
 
-📖   [[In-depth Documentation|classes]] of ITensor classes and functions.
+🍴  [[Code Recipes|recipes]]. Sample codes for performing common tasks
+
+📖  [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
 
 
-### Articles
+## Articles
 
 * [[Periodic vs Open or Infinite Boundary Conditions for DMRG, Which Should You Choose?|periodic]]
 
 
-### Additional documentation
+## Additional documentation
 
 * [[Change Log|changelog]]
 
