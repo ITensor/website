@@ -37,10 +37,11 @@ To allow a function to take an Args object, first make sure the Args class is av
     #include "args.h"
 
 <!--v1-->
-Next declare your function to have the following signature
+Next define the last argument of your function to be
 
     void func(..., Args const& args = Args::global());
-where ... means all the regular arguments the function "func" accepts
+
+where the "..." means all the usual arguments the function "func" accepts
 (the return type is void here for simplicity but could be any type).
 For example, the truncateMPS function above could be declared as
 
