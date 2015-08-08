@@ -1,8 +1,7 @@
-# Code Recipes #
+# 🍴  Code Recipes #
 
-Below we have collected "recipes" for common tasks and code patterns 
-that come up often when using the ITensor Library. Please send an email
-to Miles Stoudenmire (emiles -at- pitp.ca) if you have an idea for a recipe you would
+Below are code "recipes" (code segments) for common tasks that come up when using ITensor. 
+Please email Miles (emiles -at- pitp.ca) to suggest a recipe you would
 like to see.
 
 ## General Recipes 
@@ -22,13 +21,18 @@ Recipes involving quantum number tensors and indices (objects such as IQIndex, I
 
 ## MPS and DMRG Recipes
 Recipes involving matrix product states and DMRG.
-
+<div style="margin-left:30px;margin-top:-50px;"> <!--Begin Indent-->
+### Running DMRG
 * [[Perform a basic DMRG calculation|recipes/basic_dmrg]]
+* [[Compute excited states using DMRG|recipes/excited_dmrg]]
+
+### Measuring MPS
 * [[Measure local properties of an MPS wavefunction|recipes/measure_mps]]
 * [[Measure two-point correlator from an MPS wavefunction|recipes/correlator_mps]]
-* [[Compute excited states using DMRG|recipes/excited_dmrg]]
 * [[Compute entanglement entropy|recipes/entanglement_mps]]
 * [[Reading and writing MPS, MPO to and from disk|recipes/readwrite_mps]]
+
+</div> <!--End Indent-->
 
 <br>
 [[Back to Main|main]]

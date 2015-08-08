@@ -3,11 +3,11 @@
 
 💽  [[Installing ITensor|installing]]
 
-📚  [[Tutorial|tutorial]]. Basic introduction to ITensor focused on matrix product states.
-
-⚡️  [[Quickstart Guides|guides]]. Enhance your knowledge of essential ITensor features.
+📚  [[Tutorials|tutorials]]. Enhance your knowledge of essential ITensor features.
 
 🍴  [[Code Recipes|recipes]]. Sample codes for performing common tasks
+
+📝  [[Mini-course|course]]. Summer school lectures focused on matrix product states.
 
 📖  [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
 

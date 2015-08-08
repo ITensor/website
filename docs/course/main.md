@@ -1,7 +1,7 @@
-# ITensor Tutorial #
+# 📝  ITensor Mini-Course #
 
-Tutorial slides on the basics of ITensor and working with matrix product states.
-Each tutorial has accompanying code in the `tutorial/` subdirectory of the ITensor distribution.
+Slides on the basics of ITensor and working with matrix product states.
+Each lecture has accompanying code in the `tutorial/` subdirectory of the ITensor distribution.
 
 <!-- * Introduction. Tensors. &nbsp;  [\[slides\]](docs/tutorial/00_Intro_Tensors.pdf) -->
 

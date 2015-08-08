@@ -32,6 +32,7 @@ We can also pass the named arguments in any order we like
 
     truncateMPS(psi,{"ShowSizes",false,"Maxm",500,"Cutoff",1E-9});
 
+<br/>
 ### Setting a Function to Accept Args
 
 To allow a function to take an Args object, first make sure the Args class is available
@@ -60,6 +61,7 @@ For such cases it is better to accept args by value
 
     void func(..., Args args = Args::global());
 
+<br/>
 ### Accessing Named Arguments Within a Function
 
 Using the fictitious truncateMPS function as an example, recall that it 
@@ -103,6 +105,7 @@ leave out the default value when calling getInt, getReal, getBool, or getString:
         }
 
 
+<br/>
 ### Lookup Order and Global Args
 
 When calling one of the "get..." methods (such as getInt or getString) on an Args instance,
@@ -130,6 +133,7 @@ Here is an example:
        // ^ maxm == 5000, not found in args or Args::global() so default used
     
 
+<br/>
 ### Creating Args Objects
 
 There are a few different ways to construct args objects. The simplest is the Args constructor,
@@ -162,6 +166,7 @@ Adding an argument that is already defined overwrites the previously defined val
 
 
 <br/>
-[[Back to Quickstart Guides|guides]]
+<br/>
+[[Back to Tutorials|tutorials]]
 
 [[Back to Main|main]]
