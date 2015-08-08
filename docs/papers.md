@@ -6,7 +6,7 @@
 * [A criterion for many-body localization-delocalization phase transition](http://arxiv.org/abs/1507.01635), Maksym&nbsp;Serbyn, Z.&nbsp;Papic, Dmitry&nbsp;A.&nbsp;Abanin, arxiv:1507.01635
 
 
-* [Criticality at the Haldane insulator charge-density-wave quantum phase transition](http://arxiv.org/abs/1506.04003), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, arxiv:1506.04003
+* [Criticality at the Haldane insulator charge-density-wave quantum phase transition](http://dx.doi.org/10.1103/PhysRevB.92.041120), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.041120">041120(R)</a> (2015) [arxiv:1506.04003]
 
 * [Two iridates, two models, two approaches: a comparative study on magnetism in 3D honeycomb materials](http://arxiv.org/abs/1506.06746), Eric&nbsp;Kin-Ho&nbsp;Lee, Jeffrey&nbsp;G.&nbsp;Rau, and Yong&nbsp;Baek&nbsp;Kim, arxiv:1506.06746
 
@@ -17,7 +17,7 @@
 * [Absence of Diffusion in an Interacting System of Spinless Fermions on a One-Dimensional Disordered Lattice](http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.100601), Yevgeny&nbsp;Bar&nbsp;Lev, Guy&nbsp;Cohen, and David&nbsp;R.&nbsp;Reichman, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i>&nbsp;<b>114</b>&nbsp;<a href="http://dx.doi.org/10.1103/PhysRevLett.114.100601">100601</a> (2015)
 
 
-* [One hole in the two-leg t-J ladder and adiabatic continuity to the non-interacting limit](http://arxiv.org/abs/1502.04403), S.&nbsp;R.&nbsp;White, D.&nbsp;J.&nbsp;Scalapino, S.&nbsp;A.&nbsp;Kivelson, arxiv:1502.04403
+* [One hole in the two-leg t-J ladder and adiabatic continuity to the non-interacting limit](http://dx.doi.org/10.1103/PhysRevLett.115.056401), S.&nbsp;R.&nbsp;White, D.&nbsp;J.&nbsp;Scalapino, S.&nbsp;A.&nbsp;Kivelson, <i style="color:#CC0000">Phys. Rev. Lett.</i>&nbsp;<b>115</b> <a ghref="http://dx.doi.org/10.1103/PhysRevLett.115.056401">056401</a> (2015) [arxiv:1502.04403]
 
 * [Gapless Symmetry-Protected Topological Phase of Fermions in One Dimension](http://link.aps.org/doi/10.1103/PhysRevB.91.235309), Anna&nbsp;Keselman and Erez&nbsp;Berg, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>91</b> <a href="http://link.aps.org/doi/10.1103/PhysRevB.91.235309">235309</a> (2015)  [arxiv:1502.02037]
 
