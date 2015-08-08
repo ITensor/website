@@ -1,6 +1,8 @@
 
 # The Args Named Argument System
 
+<span class='article_sig'>Miles Stoudenmire&mdash;August 7, 2015</span>
+
 ### The Problem
 
 A unfortunate fact about C++ functions is that arguments must be passed in a fixed order.
@@ -158,10 +160,6 @@ Adding an argument that is already defined overwrites the previously defined val
 
 
 
-
-<br/>
-<br/>
-<i style="color:#aaa;font-size:10pt">Contributed by Miles Stoudenmire</i>
 
 <br/>
 [[Back to Quickstart Guides|guides]]
