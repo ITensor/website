@@ -276,6 +276,10 @@ margin-bottom: 8px;
    padding-bottom: 4px;
    margin-bottom: 0px;
    }
+.docs ul li
+   {
+   margin-top: 4px;
+   }
 .docs ul p
     {
     margin-bottom: 2px;

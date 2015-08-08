@@ -18,14 +18,19 @@
   ITensor includes a full-featured matrix product state class that can be used
   with or without quantum number conservation.
 
-### C++ Utilities and Code Tutorials
+### C++ Tutorials
 
 * [[The Args Named Arguments System|tutorials/args]]
 
-  Args is a class used in ITensor to pass named parameters to functions,
+  Args is a system used in ITensor to pass named parameters to functions,
   and can be a useful addition to your own code.
   Examples of named arguments include SVD accuracy parameters ("Maxm", "Cutoff")
   and parameters controlling the amount of information printed by an algorithm. 
+
+* [[Git Quickstart Guide|tutorials/git]]
+
+  Git is the version control system used to maintain ITensor.
+  Learn the basic git workflow and how to contribute to the ITensor code base.
 
 
 

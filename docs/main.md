@@ -5,7 +5,7 @@
 
 📚  [[Tutorials|tutorials]]. Enhance your knowledge of essential ITensor features.
 
-🍴  [[Code Recipes|recipes]]. Sample codes for performing common tasks
+🍴  [[Code Recipes|recipes]]. Sample codes for common tasks.
 
 📝  [[Mini-course|course]]. Summer school lectures focused on matrix product states.
 
@@ -17,18 +17,17 @@
 * [[Periodic vs Open or Infinite Boundary Conditions for DMRG, Which Should You Choose?|periodic]]
 
 
-## Additional documentation
+## Additional information
 
 * [[Change Log|changelog]]
 
-* [[Release Versioning|versioning]]
+* [[Papers Using ITensor|papers]]
 
-* [[Git Quick Start|git]]
+* [[Helpful Reading|reading]]
+
+* [[Release Versioning|versioning]]
 
 * [[Tensor and Index Conventions|itensor_conventions]]
 
 * [[C++ Code Conventions|code_conventions]]
 
-* [[Papers Using ITensor|papers]]
-
-* [[Helpful Reading|reading]]
