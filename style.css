@@ -34,7 +34,11 @@ margin-left: 30px;
 ol { display: table; font-size: 12pt; }
 ol li { margin-left: 30px; }
 
-code { font-family: monospace; font-size: 12pt; }
+code 
+{ 
+font-family: monospace; 
+font-size: 12pt; 
+}
 
 
 #main { width:800px; margin:0 auto; padding: 0px 0px 0px 0px;}
@@ -199,22 +203,22 @@ img.arrow
 
 code 
     { 
-    background: #eee; 
-    padding-left: 2px;
-    padding-right: 2px;
+    padding: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
     }
 
 .screenshot
     {
     float: left;
     width:780px;
-    background: #ddd; 
+    background: #eee;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ddd;
     padding: 10px 10px;
     margin: 0px 10px 10px 0px;
-    border: 0px;
-    -moz-box-shadow: 1px 1px 1px #999;
-    -webkit-box-shadow: 1px 1px 1px #999;
-    box-shadow: 1px 1px 1px #999;
     }
 .screenshot h2 { font-family: sans-serif; font-weight: bold; padding: 0px 0px 10px 0px; }
 .screenshot h3 { font-family: sans-serif; padding: 0px 0px 10px 0px; }
@@ -292,7 +296,10 @@ margin-bottom: 8px;
     { 
     font-family: monospace;  
     font-weight: normal;
-    background-color: #ddd;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
+    background-color: #fff;
     padding-left:2px;
     padding-right:2px;
     }

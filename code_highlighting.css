@@ -3,14 +3,17 @@ div .highlight
 {
 font-family: monospace;
 font-size: 12pt;
-background: #ddd;
+border-style: solid;
+border-width: 1px;
+border-color: #ddd;
+background: #fff;
 padding-left: 2px;
 padding-right: 2px;
 }
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
+/*.highlight .err { border: 1px solid #FF0000 }*/ /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
@@ -43,7 +46,7 @@ padding-right: 2px;
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
 .highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
+/*.highlight .nl { color: #A0A000 }*/ /* Name.Label */
 .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */

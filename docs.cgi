@@ -2,6 +2,7 @@
 
 import sys
 import mistune #Markdown renderer
+from highlight import HighlightMixin
 from pygments import highlight
 #from pygments.lexers import get_lexer_by_name
 from pygments.lexers import CppLexer
@@ -27,6 +28,7 @@ class MyRenderer(mistune.Renderer):
         lexer = CppLexer()
         formatter = HtmlFormatter()
         return highlight(code, lexer, formatter)
+
 
 import re
 named_link_re = re.compile("(.+?)\|(.+)")
