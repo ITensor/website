@@ -12,7 +12,7 @@ like to see.
 Recipes about working with individual tensors and indices (objects like Index, ITensor).
 
 * [[Create a set of Site indices to use as a lattice|recipes/index_sites]]
-* [[Making a single-site operator (no quantum numbers)|recipes/itensor_single_site_op]]
+* [[Make a single-site operator (no quantum numbers)|recipes/itensor_single_site_op]]
 
 ## IQTensor Recipes
 Recipes involving quantum number tensors and indices (objects such as IQIndex, IQTensor).
@@ -21,16 +21,18 @@ Recipes involving quantum number tensors and indices (objects such as IQIndex, I
 
 ## MPS and DMRG Recipes
 Recipes involving matrix product states and DMRG.
+
 <div style="margin-left:30px;margin-top:-50px;"> <!--Begin Indent-->
 ### Running DMRG
 * [[Perform a basic DMRG calculation|recipes/basic_dmrg]]
 * [[Compute excited states using DMRG|recipes/excited_dmrg]]
+* [[Read and write an MPS or MPO to and from disk|recipes/readwrite_mps]]
 
 ### Measuring MPS
 * [[Measure local properties of an MPS wavefunction|recipes/measure_mps]]
 * [[Measure two-point correlator from an MPS wavefunction|recipes/correlator_mps]]
 * [[Compute entanglement entropy|recipes/entanglement_mps]]
-* [[Reading and writing MPS, MPO to and from disk|recipes/readwrite_mps]]
+
 
 </div> <!--End Indent-->
 

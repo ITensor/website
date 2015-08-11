@@ -1,7 +1,7 @@
 # Creating Your Own Driver Code
 
 Driver code means code containing a `main` function that is meant to be compiled into a specific program.
-Typically for a program called "`myappname`" the `main` function appears in a file called `myappname.cc`.
+Typically for a program called `myappname` the `main` function appears in a file called `myappname.cc`.
 (ITensor uses the convention that C++ source code files have the extension `.cc`, but other common conventions include
 `.cpp` or `.C`.)
 

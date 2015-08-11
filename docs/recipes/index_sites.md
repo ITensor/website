@@ -5,8 +5,8 @@ Although the ITensor Library defines a set of [[SiteSet|classes/siteset]] classe
 this for you, there could be a lot of reasons why you would want to do it yourself.
 Below is a simple pattern you can use to create a set of site Indices and save them in a vector.
 
-    const int N = 100; //number of sites
-    const int d = 2; //dimension of local Hilbert space of each site
+    int N = 100; //number of sites
+    int d = 2; //dimension of local Hilbert space of each site
     vector<Index> site(N+1); //convenient for these to be 1-indexed
     for(int j = 1; j <= N; ++j)
         {
@@ -34,15 +34,15 @@ but not of the Link indices, etc. (For more info see the docs on class [[Index|c
 
 Complete sample code:
 
-    #include "core.h"
+    #include "itensor.h"
 
-    using namespace std;
+    using namespace itensor;
+    using std::vector;
 
-    int 
-    main(int argc, char* argv[])
+    int main()
         {
-        const int N = 100; //number of sites
-        const int d = 2; //dimension of local Hilbert space of each site
+        int N = 100; //number of sites
+        int d = 2; //dimension of local Hilbert space of each site
         vector<Index> site(N+1); //convenient for these to be 1-indexed
         for(int j = 1; j <= N; ++j)
             {
