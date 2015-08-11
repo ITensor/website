@@ -95,9 +95,9 @@ order in which these functions are called is not important.
 Occasionally a named argument should be mandatory. To make it so, just
 leave out the default value when calling getInt, getReal, getBool, or getString:
 
-        void
-        func(...
-             Args const& args)
+    void
+    func(...
+         Args const& args)
         {
         //Mandatory named argument
         auto result_name = args.getString("ResultName");
