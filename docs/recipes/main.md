@@ -27,6 +27,7 @@ Recipes involving matrix product states and DMRG.
 * [[Perform a basic DMRG calculation|recipes/basic_dmrg]]
 * [[Compute excited states using DMRG|recipes/excited_dmrg]]
 * [[Read and write an MPS or MPO to and from disk|recipes/readwrite_mps]]
+* [[Stopping a DMRG Run "Gracefully"|recipes/stopping_dmrg]]
 
 ### Measuring MPS
 * [[Measure local properties of an MPS wavefunction|recipes/measure_mps]]
