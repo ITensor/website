@@ -155,9 +155,15 @@ print nav
 print "".join(postnav_header_file.readlines())
 print bodyhtml
 
+backlinks = []
+full_dirname = ""
 for dirname in dirlist:
     text = "Back to " + dirname.capitalize()
-    print "<br/><a href=\"%s?page=%s\">%s</a>"%(this_fname,dirname,text)
+    full_dirname += dirname
+    backlinks.append( "<br/><a href=\"%s?page=%s\">%s</a>"%(this_fname,full_dirname,text) )
+    full_dirname += "/"
+backlinks.reverse()
+for bl in backlinks: print bl
 
 if not (len(dirlist)==0 and page_name == "main"):
     print "<br/><a href=\"%s\">Back to Main</a>"%(this_fname)
