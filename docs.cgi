@@ -54,7 +54,7 @@ def convert(string):
     #Convert cond-mat/####### links
     string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"cond-mat/<a href='http://arxiv.org/abs/cond-mat/\1'>\1</a>",string)
     #Convert github:<sha> links
-    string = re.sub(r"github:(\w{8,8})\w*",r"github:<a href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
+    string = re.sub(r"github:(\w{5})\w*",r"<a class='github' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
 
     #Convert wiki links to markdownl link syntax
     slist = re.split("\[\[(.+?)\]\]",string)

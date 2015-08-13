@@ -234,6 +234,13 @@ font-size: 100%;
 width: 90%; 
 }
 .docs a { color: #336699; }
+.docs .github 
+{ 
+outline: solid 1px;
+outline-color: #ddd;
+color: #336699; 
+padding: 1px;
+}
 .docs h1 
 { 
 font-size: 140%; 
