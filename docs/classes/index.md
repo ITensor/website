@@ -12,14 +12,14 @@ Indices compare equal if and only if they have the same primelevel and are copie
 ## Synopsis ##
 
     Index s1("Site 1",2,Site);
-    Print(s1.m()); //prints 2
+    Print(s1.m()); //prints s1.m() = 2
 
     Index i(s1); //i is a copy of s1
     Print(i == s1 ? "true" : "false"); //prints "true"
 
-    Print(i.primeLevel()); //prints 0
+    Print(i.primeLevel()); //prints i.primeLevel() = 0
     i.prime(2);
-    Print(i.primeLevel()); //prints 2
+    Print(i.primeLevel()); //prints i.primeLevel() = 2
 
     Print(i == s1 ? "true" : "false"); //prints "false"
     i.noprime();
@@ -47,11 +47,11 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Accessor Methods ##
 
-* `int m()` 
+* `m() -> int` 
 
   Return the bond dimension.
 
-* `int primeLevel()` 
+* `primeLevel() -> int` 
 
   Return the prime level.
 
@@ -59,25 +59,22 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   Set prime level to n.
 
-* `Real uniqueReal()`  
-
-  Return the Real id number of this Index (same value for all copies of an Index having the same prime level).
-
-* `IndexType type()`  
+* `type() -> IndexType`  
 
   Return the `IndexType` of this Index. Can be `Site`, `Link`, or `ReIm`.
 
-* `string name()`  
+* `name() -> string` 
 
   Return the name of this Index, including prime level information.
 
-* `string rawname()`  
+* `rawname() -> string`  
 
   Return the name of this Index without prime level information.
 
-* `Arrow dir()`  
+* `id() -> string`
 
-  Return the `Arrow` direction of this Index. Always returns `Out`. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
+  The unique id number of this Index (returned as a string)
+
 
 
 ## Prime Level Methods ##
@@ -100,7 +97,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Operators ##
 
-* `IndexVal operator()(int i)`  
+* `operator()(int i) -> IndexVal`  
 
   Return an [[IndexVal|classes/indexval]] representing this Index set to value `i`.
 
@@ -113,17 +110,21 @@ Indices compare equal if and only if they have the same primelevel and are copie
         cout <<< (iv == mi ? "true" : "false") << endl; //Prints true
         cout << iv.i << endl; //Prints 2
 
-* `bool operator==(Index other)`  
+* `operator bool()`
 
-  `bool operator!=(Index other)`  
+  An Index evaluates to `true` in a boolean context if it is constructed (a default constructed Index evalues to `false`).
 
-  Return `true` (for ==, `false` for !=) if this Index and other are copies of the same original Index and have the same prime level. (Internally uses unique real for efficient comparison.)
+* `operator==(Index other) -> bool`  
 
-* `bool operator<(Index other)`  
+  `operator!=(Index other) -> bool`  
 
-  Return `true` if `this->uniqueReal()` is less than `other.uniqueReal()`. Useful for sorting and finding Index instances in collections.
+  Two Index objects are equal if they are copies of the same original Index (have the same id) and have the same prime level.
 
-* `bool noprimeEquals(Index other)`  
+* `operator<(Index other) -> bool`  
+
+  Defines an ordering of Index objects &mdash; useful for sorting and finding Index instances in collections.
+
+* `noprimeEquals(Index other) -> bool`  
 
   Return `true` if this Index and other are copies of the same original Index, regardless of prime level.
 
@@ -140,4 +141,8 @@ Indices compare equal if and only if they have the same primelevel and are copie
 * `dag()`  
 
   Has no effect. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
+
+* `dir() -> Arrow` 
+
+  Return the `Arrow` direction of this Index. Always returns `Out`. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 

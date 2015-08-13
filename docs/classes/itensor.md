@@ -438,7 +438,3 @@ These are methods that either require some knowledge of the internals of an ITen
 
    Set the scale factor of this ITensor to be newscale. This is a logically const operator on an ITensor and does not change the value of its elements, only
    internally stored values relative to the (changed) scale factor.
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
