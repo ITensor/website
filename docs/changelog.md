@@ -1,5 +1,29 @@
 # Change Log #
 
+<a name="v1.2.0"></a>
+## [Version 1.2.0](https://github.com/ITensor/library/tree/v1.2.0) (Aug 13, 2015) ##
+
+IndexType now a class instead of an enum; this makes IndexType's user extensible, see commit github:a92c17a
+
+  <div class="example_clicker">Show Example</div>
+
+    auto MyType = IndexType("MyType");
+    auto i = Index("i",10,MyType);
+    auto j = Index("j",10,Link);
+
+    auto T = ITensor(i,j);
+
+    Print(prime(T,MyType)); //only i will be primed
+
+Makefiles now hide most compiler output for a nicer installation experience
+
+<b>Bug fixes:</b>
+
+- AutoMPO now works correctly independently of order of operators passed
+- Updates to CMakeLists.txt files for cmake users (thanks Andrey Antipov)
+- Added MSVC version of mkdtemp for Windows users (thanks Kyungmin Lee)
+- Fixed bug in hams/TriHeisenberg.h (thanks Hitesh Changlani)
+
 <a name="v1.1.1"></a>
 ## [Version 1.1.1](https://github.com/ITensor/library/tree/v1.1.1) (May 18, 2015) ##
 
@@ -174,7 +198,7 @@
 <b>New features:</b>
 
 - More convenient interface to InputGroup class defined in utilities/input.h. Returns parameters instead of pass-by-reference, allowing
-  single-line syntax. Also allows specifying default arguments; parameters without defaults are mandatory. [github:58dfc538]
+  single-line syntax. Also allows specifying default arguments; parameters without defaults are mandatory. github:58dfc538
 
 - Can store edge tensors in MPS or MPO classes by assigning to Anc(0) or Anc(N+1). Useful for infinite DMRG, for example.
 
