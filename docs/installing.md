@@ -1,17 +1,33 @@
 # Installation Instructions
 
-## Building the Libraries
+## Downloading the Library
 
-1. Check that you have a C++ compiler and Lapack libraries installed on your system.
+The preferred method is to "clone" the latest version of the library using the following command
+<div class="commandline"><pre>
+git clone https://github.com/ITensor/ITensor itensor
+</pre></div>
+
+This allows you to track any updates to ITensor by just doing `git pull` in the ITensor folder.
+If you do not have git on your computer, you can obtain it through your package manager or from the
+<a href="http://git-scm.com/" target="blank_">git website</a>.
+
+You can also download a zip file of the latest code by clicking <a href="https://github.com/ITensor/ITensor/zipball/master">this link</a>.
+
+## Building the Library
+
+1. Check that you have a C++ compiler and LAPACK libraries installed on your system.
    On Mac OSX, this typically requires installing the free XCode package available 
-   from the App Store. On Linux, the `g++` program is typically available.
+   from the App Store. On Linux, the `g++` program is typically available. On Windows
+   a good option is to install <a href="https://www.cygwin.com" target="blank_">Cygwin</a>,
+   which lets you run Unix programs inside a terminal. If you use Cygwin, make sure to install
+   the C++ compiler (gcc) and LAPACK packages.
 
 2. Edit the user configurable options. Start by making a copy 
    of the sample Makefile options file: 
 
    `cp options.mk.sample options.mk`
 
-   Then begin editing options.mk in your favorite text editor
+   Then begin editing options.mk in a text editor
    and follow the remaining instructions.
 
 3. Set which compiler to use (the `CCCOM` variable). 
