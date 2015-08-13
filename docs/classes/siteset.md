@@ -72,8 +72,3 @@ when their functionality does not depend on the specific type of SiteSet being p
 
 &#8224; Until version 1.0 this class was called `Model`.
 
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

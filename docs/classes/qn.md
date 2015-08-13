@@ -60,8 +60,3 @@ zero throughout a simulation indicates that it is not to be tracked.
   Multiplication by an In Arrow flips the sign of the QN whereas an Out Arrow preserves the sign. Used in computing the quantum number
   flux of a collection of [[IQIndex|classes/iqindex]] objects.
 
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

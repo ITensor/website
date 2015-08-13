@@ -31,8 +31,3 @@ but for any object supporting the relevant methods, such as [[IndexVal|classes/i
 
    Works for any type `T` implementing <br/> `T::mapprime(int plevold, inv plevnew, IndexType type)`.
 
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

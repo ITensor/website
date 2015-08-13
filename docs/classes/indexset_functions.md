@@ -34,6 +34,3 @@ Free functions for working with [[IndexSet|classes/indexset]] objects. All metho
 
    Return the largest bond dimension of the indices contained in IndexSet `is`.
 
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]

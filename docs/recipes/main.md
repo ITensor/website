@@ -36,6 +36,3 @@ Recipes involving matrix product states and DMRG.
 
 
 </div> <!--End Indent-->
-
-<br>
-[[Back to Main|main]]

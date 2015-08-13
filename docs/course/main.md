@@ -31,5 +31,3 @@ Each lecture has accompanying code in the `tutorial/` subdirectory of the ITenso
 
 * [DMRG](docs/tutorial/07_dmrg.pdf). Introduction to DMRG using ITensor.
 
-
-[[Back to Main|main]]

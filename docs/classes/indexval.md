@@ -68,7 +68,3 @@ This value is 1-indexed and must be >= 1 and <= `index.m()`.
 
   Return `true` (for ==, `false` for !=) if this IndexVal equals other as an Index and this->i == other.i.
 
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

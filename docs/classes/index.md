@@ -141,7 +141,3 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   Has no effect. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

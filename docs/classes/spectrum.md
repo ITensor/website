@@ -26,9 +26,3 @@ singular-value tensor computed by the `svd` function.
 
   Default constructor, object will contain no eigenvalue information.
   -->
-
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

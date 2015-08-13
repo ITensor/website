@@ -239,7 +239,3 @@ diagonalization, and Hermitian eigenvalue decomposition are defined in svdalgs.h
         Print((T-L*V*R).norm()); //prints 0
 
 
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]

@@ -107,5 +107,3 @@ Complete sample code:
         return 0;
         }
 
-<br>
-[[Back to Recipes|recipes]]

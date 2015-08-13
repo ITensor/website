@@ -63,7 +63,3 @@ Some of these options have some sensible global default value.
   The number of states above which the MPS/MPO will be swapped to disk.
 * `Quiet`
 
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

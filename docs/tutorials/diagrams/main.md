@@ -69,8 +69,4 @@ $$=\sum_{\gamma\delta\eta\mu} A^{\alpha\beta\gamma\delta\eta\mu}B^{\gamma\delta\
 
 To keep things simple, we've left off arrows in our diagrams.  We'll discuss the role of these when we discuss the quantum block structure for [[MPS|articles/MPS]].
 
-[[Back to tutorials|tutorials]]
-
-[[Back to main|main]]
-
 

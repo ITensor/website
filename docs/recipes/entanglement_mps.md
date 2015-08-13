@@ -31,6 +31,3 @@
         }
     printfln("Across bond b=%d, SvN = %.10f",b,SvN);
 
-
-<br>
-[[Back to Recipes|recipes]]

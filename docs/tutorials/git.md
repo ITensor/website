@@ -89,5 +89,3 @@ to send all commits not already on the remote server.
 
 For help with more advanced Git features, there are numerous articles online which can be found through your favorite search engine.
 
-
-[[Back to Main|main]]

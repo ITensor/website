@@ -44,5 +44,3 @@ Of course, make sure to use the same file names when you read the objects back f
     int N = 100;
     readFromFile(format("sites_%d",N),sites);
 
-<br>
-[[Back to Recipes|recipes]]

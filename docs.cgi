@@ -2,9 +2,7 @@
 
 import sys
 import mistune #Markdown renderer
-from highlight import HighlightMixin
 from pygments import highlight
-#from pygments.lexers import get_lexer_by_name
 from pygments.lexers import CppLexer
 from pygments.formatters import HtmlFormatter
 #import cgitb; cgitb.enable()
@@ -156,6 +154,14 @@ print "".join(prenav_header_file.readlines())
 print nav
 print "".join(postnav_header_file.readlines())
 print bodyhtml
+
+for dirname in dirlist:
+    text = "Back to " + dirname.capitalize()
+    print "<br/><a href=\"%s?page=%s\">%s</a>"%(this_fname,dirname,text)
+
+if not (len(dirlist)==0 and page_name == "main"):
+    print "<br/><a href=\"%s\">Back to Main</a>"%(this_fname)
+
 print "".join(footer_file.readlines())
 footer_file.close()
 header_file.close()

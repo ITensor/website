@@ -163,10 +163,3 @@ Adding an argument that is already defined overwrites the previously defined val
     if(args.defined("Threshold")) println("args contains Threshold");
 
 
-
-
-<br/>
-<br/>
-[[Back to Tutorials|tutorials]]
-
-[[Back to Main|main]]

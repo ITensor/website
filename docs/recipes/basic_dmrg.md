@@ -64,5 +64,3 @@ Below you can find a complete working code that includes all of these steps.
         return 0;
         }
 
-<br>
-[[Back to Recipes|recipes]]

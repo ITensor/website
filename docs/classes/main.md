@@ -43,5 +43,3 @@ for example, describing a particular function signature as `f(ITensor T)` even t
 for efficiency reasons its actual signature is `f(const ITensor& T)`. 
 Also the return type is often omitted for functions returning `void`.
 
-
-[[Back to Main|main]]

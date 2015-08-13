@@ -33,9 +33,4 @@
   Learn the basic git workflow and how to contribute to the ITensor code base.
 
 
-
-
-</br>
-</br>
-
-[[Back to main|main]]
+<br/>

@@ -144,9 +144,3 @@ An MPS can be constructed from either a [[SiteSet|classes/siteset]] or an [[Init
   is used to compute the "noise term" which will be added to the density matrix used to decompose `AA`.
 
 
-
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

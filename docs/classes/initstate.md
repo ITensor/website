@@ -77,8 +77,3 @@ constructor to initialize that wavefunction to a specific product state.
         cout << "iv5.i = " << iv5.i << endl; //Prints "iv5.i == 2", since Z0 is the 2nd state
         cout << (iv5.iqind == sites.si(5) ? "true" : "false") << endl; //Prints "true"
 
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

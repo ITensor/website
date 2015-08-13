@@ -39,6 +39,3 @@
 * The for loop builds into C the MPS tensors making up the MPS "transfer matrices" which carry correlations from i to j
 
 
-
-<br>
-[[Back to Recipes|recipes]]

@@ -345,7 +345,3 @@ In addition to explicitly conserving quantum numbers, computing products of IQTe
 
 * `IQTensor& conj()`
   Complex conjugate. Only takes the complex conjugate of this IQTensor without reversing the arrow direction.
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]

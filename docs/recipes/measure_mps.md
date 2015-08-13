@@ -179,6 +179,3 @@ The code writes to file a list of Sz(j) and S(j) dot S(j+1) for plotting.
         }
 
 
-
-<br>
-[[Back to Recipes|recipes]]

@@ -60,4 +60,3 @@ Complete sample code:
         }
 
 <br>
-[[Back to Recipes|recipes]]

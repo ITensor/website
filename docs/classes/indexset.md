@@ -245,8 +245,3 @@ Internally, indices are stored as a partially ordered array, with `m!=1` indices
 * ` clear()`
 
   Reset this IndexSet to the empty set.
-
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]

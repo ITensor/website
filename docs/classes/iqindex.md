@@ -90,8 +90,3 @@ An IQIndex also has an Arrow direction associated with it. For more information 
 
   Reverse the arrow of this IQIndex.
 
-
-[[Back to Classes|classes]]
-
-[[Back to Main|main]]
-

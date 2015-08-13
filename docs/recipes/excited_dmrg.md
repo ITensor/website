@@ -104,6 +104,3 @@
         }
     
 
-
-<br>
-[[Back to Recipes|recipes]]
