@@ -1,5 +1,8 @@
 # Change Log #
 
+<a name="v1.2.1"></a>
+## [Version 1.2.0](https://github.com/ITensor/library/tree/v1.2.0) (Aug 13, 2015) ##
+
 <a name="v1.2.0"></a>
 ## [Version 1.2.0](https://github.com/ITensor/library/tree/v1.2.0) (Aug 13, 2015) ##
 
