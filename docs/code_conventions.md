@@ -87,6 +87,3 @@ if breaking over two lines makes code hard to reason about/debug.
     3. Arguments with defaults (required to come last anyway).
 
 
-</br>
-
-[[Back to Main|main]]
