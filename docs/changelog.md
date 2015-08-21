@@ -1,12 +1,65 @@
 # Change Log #
 
 <a name="v1.2.1"></a>
-## [Version 1.2.0](https://github.com/ITensor/library/tree/v1.2.0) (Aug 13, 2015) ##
+## [Version 1.2.1](https://github.com/ITensor/library/tree/v1.2.1) (Aug 20, 2015) ##
+
+- Created `setA` method for MPS/IQMPS. More self-documenting name and usage than 
+  current `Anc` method.
+
+  <div class="example_clicker">Show Example</div>
+
+      auto psi = MPS(sites);
+      auto T = ITensor(sites(j));
+      T(j(1)) = 1./sqrt(2.);
+      T(j(2)) = 1./sqrt(2.);
+      psi.setA(j,T);
+
+- `svd` functions now support setting `IndexType` and names of left and right 
+  indices of singular value tensor.
+
+  <div class="example_clicker">Show Example</div>
+
+      auto T = ITensor(s1,s2,j);
+      ITensor U(s1),D,V;
+      svd(T,U,D,V,{"LeftIndexName","L",
+                   "RightIndexName","R",
+                   "IndexType",Xtype});
+      //can also specify "LeftIndexType" and "RightIndexType" separately
+
+- Added `count.h` mini-library. Allows range based iteration over integer ranges.
+
+  <div class="example_clicker">Show Example</div>
+
+      #include "count.h"
+
+      auto v = std::vector<int>(10);
+      for(auto n : count(v.size()))
+          v[n] = n+n;
+
+      //go from 2,...,v.size()-1
+      for(auto n : count(2,v.size()))
+          v[n] = n+n;
+
+      //index(v) does count(v.size())
+      for(auto n : index(v))
+          v[n] = n+n;
+
+      //count1 does 1-indexed counting
+      auto T = ITensor(J);
+      for(auto j : count1(J.m()))
+          T(J(j)) = sqr(j);
+
+- Added external `norm(T)` functions for ITensor and IQTensor.
+
+- Fixed bug where truncation error was not properly reported by ITensor svd function.
+
 
 <a name="v1.2.0"></a>
 ## [Version 1.2.0](https://github.com/ITensor/library/tree/v1.2.0) (Aug 13, 2015) ##
 
-IndexType now a class instead of an enum; this makes IndexType's user extensible, see commit github:a92c17a
+<b>New features:</b>
+
+- IndexType now a class instead of an enum; this makes IndexType's user extensible, see commit github:a92c17a
 
   <div class="example_clicker">Show Example</div>
 
@@ -18,7 +71,7 @@ IndexType now a class instead of an enum; this makes IndexType's user extensible
 
     Print(prime(T,MyType)); //only i will be primed
 
-Makefiles now hide most compiler output for a nicer installation experience
+- Makefiles now hide most compiler output for a nicer installation experience
 
 <b>Bug fixes:</b>
 
