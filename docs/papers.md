@@ -5,12 +5,11 @@
 
 * [A criterion for many-body localization-delocalization phase transition](http://arxiv.org/abs/1507.01635), Maksym&nbsp;Serbyn, Z.&nbsp;Papic, Dmitry&nbsp;A.&nbsp;Abanin, arxiv:1507.01635
 
-
 * [Criticality at the Haldane insulator charge-density-wave quantum phase transition](http://dx.doi.org/10.1103/PhysRevB.92.041120), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.041120">041120(R)</a> (2015) [arxiv:1506.04003]
 
 * [Two iridates, two models, two approaches: a comparative study on magnetism in 3D honeycomb materials](http://arxiv.org/abs/1506.06746), Eric&nbsp;Kin-Ho&nbsp;Lee, Jeffrey&nbsp;G.&nbsp;Rau, and Yong&nbsp;Baek&nbsp;Kim, arxiv:1506.06746
 
-* [Using entanglement to discern phases in the disordered one- dimensional Bose-Hubbard model](http://arxiv.org/abs/1503.02973), Andrew&nbsp;M.&nbsp;Goldsborough and Rudolf&nbsp;A.&nbsp;Roemer, arxiv:1503.02973
+* [Using entanglement to discern phases in the disordered one- dimensional Bose-Hubbard model](http://iopscience.iop.org/0295-5075/111/2/26004/), Andrew&nbsp;M.&nbsp;Goldsborough and Rudolf&nbsp;A.&nbsp;Roemer, <i style="color:#CC0000">EPL</i>&nbsp;&nbsp;<b>111</b> <a target="_blank"  href="http://iopscience.iop.org/0295-5075/111/2/26004/">26004</a> (2015) [arxiv:1503.02973]
 
 * [One Dimensional Mimicking of Electronic Structure: The Case for Exponentials](http://link.aps.org/doi/10.1103/PhysRevB.91.235141), Thomas&nbsp;E.&nbsp;Baker, E.&nbsp;M.&nbsp;Stoudenmire, Lucas&nbsp;O.&nbsp;Wagner, Kieron&nbsp;Burke, Steven&nbsp;R.&nbsp;White, <br/> <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>91</b> <a href="http://link.aps.org/doi/10.1103/PhysRevB.91.235141">235141</a> (2015)  [arxiv:1504.05620]
 
@@ -68,5 +67,3 @@
 
 * [Minimally Entangled Typical Quantum States at Finite Temperature](http://link.aps.org/doi/10.1103/PhysRevLett.102.190601), Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i> <b>102</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevLett.102.190601" target="_blank">190601</a> (2009) [arxiv:0902.4475]
 
-
-[[Back to Main|main]]
