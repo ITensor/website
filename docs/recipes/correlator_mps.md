@@ -1,5 +1,7 @@
 # Measure a correlator from an MPS wavefunction #
 
+See this in a diagrammatic form [[here|tutorials/correlations]].
+
 ### Sample code:
 
     //Given an MPS or IQMPS called "psi",
@@ -15,6 +17,8 @@
     //'gauge' the MPS to site i
     //any 'position' between i and j, inclusive, would work here
     psi.position(i); 
+
+    //psi.Anc(1) *= psi.A(0)//Uncomment if using iDMRG calculation
 
     //index linking i to i+1:
     auto ir = commonIndex(psi.A(i),psi.A(i+1),Link);
