@@ -52,5 +52,3 @@ Here are a few papers we have found to be helpful introductions to tensor produc
   arxiv:1105.1374 (2011)
 
   *Comments*: Lots of useful advice about the best practices for applying DMRG to 2d systems.
-
-[[Back to Main|main]]

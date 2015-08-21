@@ -376,6 +376,3 @@ imaginary part. The imaginary part is allocated only if it is non-zero.
 </br>
 
 <!--## [Development Version](https://github.com/ITensor/library/tree/develop) (in progress) ##-->
-
-[[Back to Main|main]]
-

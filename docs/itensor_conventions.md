@@ -49,7 +49,3 @@ all its indices point Out.
 * Unless an MPO is in a definite gauge (typically not the case), Link arrows should flow out from the first site tensor.
 
 
-
-</br>
-
-[[Back to Main|main]]
