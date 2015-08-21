@@ -61,7 +61,8 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 * `type() -> IndexType`  
 
-  Return the `IndexType` of this Index. Can be `Site`, `Link`, or `ReIm`.
+  Return the `IndexType` of this Index. The IndexType is a tag used to distinguish 
+  different types of indices to make adjusting their prime levels more convenient.
 
 * `name() -> string` 
 
@@ -99,16 +100,17 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 * `operator()(int i) -> IndexVal`  
 
-  Return an [[IndexVal|classes/indexval]] representing this Index set to value `i`.
+  Return an [[IndexVal|classes/indexval]] representing this Index set to value i.
+  This method is one-indexed, meaning i can run from 1 to m().
 
   <div class="example_clicker">Show Example</div>
 
-        Index mi("My Index",10);
+        Index I("My Index",10);
 
-        IndexVal iv = mi(2); //call Index mi's operator() method
+        IndexVal iv = I(2); //call Index mi's operator() method
 
-        cout <<< (iv == mi ? "true" : "false") << endl; //Prints true
-        cout << iv.i << endl; //Prints 2
+        Print(iv.i); //prints 2
+        Print(iv == I); //prints true
 
 * `operator bool()`
 
@@ -118,7 +120,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   `operator!=(Index other) -> bool`  
 
-  Two Index objects are equal if they are copies of the same original Index (have the same id) and have the same prime level.
+  Comparison operators: two Index objects are equal if they are copies of the same original Index (have the same id) and have the same prime level.
 
 * `operator<(Index other) -> bool`  
 
