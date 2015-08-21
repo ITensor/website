@@ -18,9 +18,14 @@
   ITensor includes a full-featured matrix product state class that can be used
   with or without quantum number conservation.
 
+* [[Calculating a Two-Site Correlation Function|tutorials/correlations]]
+
+  Contracting a tensor network to measure a two-operator correlation
+  function from an MPS is shown in diagrammatic form with ITensor code.
+
 ### C++ Tutorials
 
-* [[The Args Named Arguments System|tutorials/args]]
+* [[The "Args" Named Arguments System|tutorials/args]]
 
   Args is a system used in ITensor to pass named parameters to functions,
   and can be a useful addition to your own code.
