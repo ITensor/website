@@ -16,7 +16,6 @@
 
 * [[Periodic vs Open or Infinite Boundary Conditions for DMRG, Which Should You Choose?|periodic]]
 
-
 ## Additional information
 
 * [[Change Log|changelog]]
