@@ -1,17 +1,16 @@
 # Introduction to ITensor
 
 Matrix methods have been a major success in the applied sciences.
-Methods based on *tensors* could be even more powerful and
-are quickly gaining importance for understanding
-complex systems and high dimensional data.
+*Tensor* methods could be even more powerful
+for understanding complex systems and high dimensional data.
 Exciting developments in physics and chemistry have come from
 expressing quantum wavefunctions as *tensor networks*.
-Data scientists are discovering tensor-based optimization algorithms which 
-decisively outperform more common techniques.
+Data scientists are discovering tensor-based optimization algorithms
+which decisively outperform more common techniques.
 
-In real-world applications of tensors, each tensor index has
+In real-world tensor applications, each index of a tensor has
 a semantic, or physical meaning. 
-Likewise in ITensor, tensor indices are a specific type of object with
+In ITensor, tensor indices are likewise a specific type of object with
 a unique identity. Constructing an index in ITensor looks like:
 
     Index s1("site 1",2);
@@ -21,18 +20,18 @@ stamped indelibly with a unique internal ID number and all copies of s1
 will carry this same ID number. (The string "site 1" is for
 printing purposes.)
 
-Because matching indices can be recognized by their ID, tensor contraction in ITensor
+Since matching indices can be recognized by their ID, tensor contraction in ITensor
 looks like
 
     A = B * C * D;
 
 The ITensor contraction
-engine automatically recognizes repeated indices and sums 
+engine recognizes repeated indices and sums 
 over them, much like the Einstein summation convention used
 in physics. Instead of worrying about the order of tensor indices,
-the ITensor approach lets users focus on the topology of
+ITensor lets users focus on the topology of
 tensor contraction diagrams.
-Certain classes of bugs can no longer happen, such as mixing up two indices of
+Certain classes of bugs can no longer happen, such as confusing two indices of
 the same size.
 
 Consider the following example involving two matrix-like ITensors 
@@ -41,15 +40,17 @@ Consider the following example involving two matrix-like ITensors
             B(k,j);
     ITensor C = A*B;
 
-In a traditional matrix library, we would have to remember that j is
+which computes the matrix multiplication @@ C = A B^\mathsf{T} @@.
+
+In a traditional matrix library, we would need to remember that j is
 the second index of B and write something like 
 
     C = A * transpose(B) //not actual ITensor code
 
 to get the correct result.
 
-ITensor offers many other conveniences allowing users to focus on
-solving problems rather than programming details:
+ITensor has many other features to let you solve problems
+rather than worry about programming details:
 * Adding ITensors with identical index structure always succeeds without 
 having to permute the index order. 
 * ITensor storage automatically switches from real to complex as needed.
