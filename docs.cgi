@@ -1,12 +1,15 @@
 #!/usr/bin/python
 
 import sys
+import re #regular expressions
+from cgi import FieldStorage
 import mistune #Markdown renderer
 from pygments import highlight
 from pygments.lexers import CppLexer
 from pygments.formatters import HtmlFormatter
+# Turn on cgitb to get nice debugging output.
+# Remember to turn off when done debugging, otherwise not secure.
 #import cgitb; cgitb.enable()
-sys.path.append("/opt/itensor.org/")
 
 #################################
 
@@ -20,6 +23,7 @@ nav_delimiter = "&nbsp;/&nbsp;"
 
 #################################
 
+sys.path.append("/opt/itensor.org/")
 
 class MyRenderer(mistune.Renderer):
     def block_code(self, code, lang):
@@ -27,16 +31,10 @@ class MyRenderer(mistune.Renderer):
         formatter = HtmlFormatter()
         return highlight(code, lexer, formatter)
 
-
-import re
 named_link_re = re.compile("(.+?)\|(.+)")
 #code_block_re = re.compile(r"<code>\n+(.+?)</code>",flags=re.DOTALL)
 #paragraph_code_re = re.compile(r"<p><code>(.+?)</code></p>",flags=re.DOTALL)
 
-#import cgitb
-#cgitb.enable()
-
-from cgi import FieldStorage
 form = FieldStorage()
 
 def fileExists(fname):
@@ -70,11 +68,9 @@ def convert(string):
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
                 mdstring += "[%s](%s?page=%s)"%(name,this_fname,link)
-                #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(name,link)
             else:
                 #Otherwise use the raw link name (file -> file.md)
                 mdstring += "[%s](%s?page=%s)"%(chunk,this_fname,chunk)
-                #mdstring += "<img src='link_arrow.png' class='arrow'/>[%s](docs.cgi?page=%s)"%(chunk,chunk)
 
     #Code below not needed: just indent 4 spaces and Markdown
     #will apply the <pre> tag which preserves formatting.
@@ -99,15 +95,12 @@ def convert(string):
     #
     #        mdstring += "<code>\n"+chunk+"</code>\n"
 
-    #Convert markdown to html
-    #htmlstring = markdown(mdstring,extras=["fenced-code-blocks"])
-
     renderer = MyRenderer()
     md = mistune.Markdown(renderer=renderer)
     htmlstring = md.render(mdstring)
 
-    #Put in a special class for paragraphs that consist entirely of code
-    #htmlstring = paragraph_code_re.sub(r"<p><div class='codeblock'>\1</div></p>",htmlstring)
+    #Convert TeX \sub commands to underscores
+    htmlstring = re.sub(r"\\sub",r"_",htmlstring)
 
     return htmlstring
 
