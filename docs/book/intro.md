@@ -15,9 +15,9 @@ unique identities. Constructing an index in ITensor looks like:
 
     Index s1("site 1",2);
 
-The resulting Index s1 has a bond dimension or extent of 2; internally it gets
-indelibly stamped with a unique internal ID number and all copies of s1
-carry the same ID number. (The string "site 1" is only the name of this Index for
+The resulting Index s1 has a size, or bond dimension of 2. Upon creation it gets
+indelibly stamped with a unique internal ID number; all copies of s1
+carry this same ID number. (The string "site 1" is only the name of this Index for
 printing purposes.)
 
 Since matching indices can be recognized by their ID, tensor contraction in ITensor
@@ -47,12 +47,12 @@ the second index of B and write something like
     C = A * transpose(B) //not actual ITensor code
 
 to get the correct result. ITensor handles this transposition automatically
-and efficiently, making user code simple and robust. If B were to be redefined
+and efficiently, keeping user code simple and robust. If B were to be redefined
 with transposed index order, the line `C=A*B` would continue to give the correct result.
 
 ITensor has many other features emphasizing productivity
 over programming details:
-* Adding ITensors with identical index structure succeeds without 
+* Adding ITensors with the same indices always works without 
 having to explicitly permute the index order. 
 * ITensor storage automatically switches from real to complex as needed,
 such as when setting an element or multiplying by a complex number.
