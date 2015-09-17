@@ -274,8 +274,8 @@ margin-bottom: 8px;
 
 .docs em 
     { 
-    font-weight: normal; 
-    text-decoration: underline;
+    font-style: italic; 
+    text-decoration: none;
     }
 .docs p 
     { 
