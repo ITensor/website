@@ -50,11 +50,11 @@ def printContentType():
 
 def convert(string):
     #Convert arxiv:####.#### links
-    string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a href='http://arxiv.org/abs/\1'>\1</a>",string)
+    string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a target='_blank' href='http://arxiv.org/abs/\1'>\1</a>",string)
     #Convert cond-mat/####### links
-    string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"cond-mat/<a href='http://arxiv.org/abs/cond-mat/\1'>\1</a>",string)
+    string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"cond-mat/<a target='_blank' href='http://arxiv.org/abs/cond-mat/\1'>\1</a>",string)
     #Convert github:<sha> links
-    string = re.sub(r"github:(\w{5})\w*",r"<a class='github' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
+    string = re.sub(r"github:(\w{5})\w*",r"<a class='github' target='_blank' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
 
     #Convert wiki links to markdownl link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
