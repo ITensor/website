@@ -1,7 +1,16 @@
 # Change Log #
 
+<a name="v1.2.2"></a>
+## [Version 1.2.2](https://github.com/ITensor/library/tree/v1.2.2) (Sep 17, 2015) ##
+
+- Fixed a bug in IQTensor const element access, thanks Shenghan Jiang
+
+- Added stdx utility library which adds convenient extensions to the std library
+
+- Added timers utility for profiling
+
 <a name="v1.2.1"></a>
-## [Version 1.2.1](https://github.com/ITensor/library/tree/v1.2.1) (Aug 20, 2015) ##
+## [Version 1.2.1](https://github.com/ITensor/library/tree/1.2.1) (Aug 20, 2015) ##
 
 - Created `setA` method for MPS/IQMPS. More self-documenting name and usage than 
   current `Anc` method.
