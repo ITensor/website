@@ -1,11 +1,11 @@
 # The ITensor Book
 
-ITensor is a library designed to lessen the complexity of tensor
-calculations through an Einstein summation like interface for contracting tensors.
+ITensor is a library that reduces the complexity of tensor
+calculations through an Einstein summation interface for contracting tensors.
 
-The early chapters of this book are designed to quickly familiarize users with the 
-main features of ITensor. Later chapters deal with advanced features and
-with customizing higher-level parts of the library.
+The goal of this book is to quickly familiarize users with the 
+main features of ITensor. Later chapters turn to advanced features and
+customizing higher-level parts of the library.
 
 ## Table of Contents
 
