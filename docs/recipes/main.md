@@ -34,5 +34,8 @@ Recipes involving matrix product states and DMRG.
 * [[Measure two-point correlator from an MPS wavefunction|recipes/correlator_mps]]
 * [[Compute entanglement entropy|recipes/entanglement_mps]]
 
+### Time Evolution
+* [[Time-evolving an MPS with an MPO (matrix product operator)|recipes/tevol_mps_mpo]]
+
 
 </div> <!--End Indent-->

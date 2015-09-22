@@ -4,11 +4,11 @@
 
 ITensor uses an `Index` for each argument in an `ITensor`. This `Index` describes the local degrees of freedom on each site; it contains the 'physics' of each site.  For example, an index on an @@S_z@@ operator corresponds to the spin up and spin down quantum number degrees of freedom.
 
-If the physics ever changes on that site (we give an example next), then we should change that index.  But what about sites that retain the physics but whose lines we don't want to contract?  For example, consider the @@S_z@@ operator.  The two physical indices attached to the operator:
+If the physics ever changes on that site (we give an example next), then we should use a different index.  But what about sites that retain the physics but whose lines we don't want to contract?  For example, consider the @@S_z@@ operator.  The two physical indices attached to the operator:
 
 <p align="center"><img src="docs/tutorials/primes/Sz.png" alt="MPS" style="height: 150px;"/></p>
 
-should definitely should never contract.  We want them to connect with wavefunction indices.  The prime indices (in this case, the vertical line) are only used as a way to prevent contraction.
+should definitely never contract.  We want them to connect with wavefunction indices.  The prime indices (in this case, the vertical line) are only used as a way to prevent contraction.
 
 We will detail in this article how to use primes on indices and best practices.
 
@@ -22,20 +22,22 @@ The physics of the `Index` is changing on the coarser level.  We're describing a
 
 ## Functions that Prime Indices
 
- * `prime(ITensor)` - Updates prime level of an `ITensor` (`IQTensor`) by one
- * `prime(ITensor,int)` - Updates the prime level of an `ITensor` by `int` (can also be negative)
- * `prime(ITensor,Type)` - Updates all indices of type `Type` on `ITensor`
+In the following, we use "ITensor" to refer to either ITensors or IQTensors.
 
-For example, `prime(psi,Site)` raises the prime leve of all indices labeled as `Site`.  Custom types can be defined on indices.
+ * `prime(ITensor)` - Updates prime level of an ITensor by one
+ * `prime(ITensor,int)` - Updates the prime level of an ITensor by "int" (can also be negative)
+ * `prime(ITensor,Type)` - Updates all indices of type Type on an ITensor
 
- * `prime(ITensor,Index,int)` - Changes the prime level of an `Index` on an `ITensor` (or `IQTensor`) by `int` value
- * `prime(ITensor,Type,int)` - Updates the prime level of an `ITensor` (or `IQTensor`) by `int` value.  `Type` is an optional name given to an `Index`.
+For example, `prime(psi,Site)` raises the prime level of all indices labeled as Site.  Indices can be given custom IndexTypes such as Link, Site, etc.
 
-ITensor can not currently handle negative prime levels
+ * `prime(ITensor,Index,int)` - Changes the prime level of the specific index "Index" on an ITensor by value "int"
+ * `prime(ITensor,Type,int)` - Increment the prime level of all indices having type "Type" by "int". 
 
- * `noprime(ITensor)` - sets prime level of `ITensor` (or `IQTensor`) to zero
+ITensor does not currently allow negative prime levels.
 
- * `mapPrime(ITensor, inta, intb)` - changes prime level on all indices of an `ITensor` (or `IQTensor`) from `inta` to `intb`
+ * `noprime(ITensor)` - sets prime level of an ITensor to zero
+
+ * `mapPrime(ITensor, inta, intb)` - changes prime level on all indices of an ITensor having level inta to level intb.
 
 ## An Exercise in Priming
 
@@ -80,7 +82,7 @@ Now we get serious.  Let's remove all primes from `S4`:
 
 <p align="center"><img src="docs/tutorials/primes/trg2.png" alt="MPS" style="height: 200px;"/></p>
 
-This is a proimising step considering the contractions we eventually want.  We then ocntract with `S3`:
+This is a promising step considering the contractions we eventually want.  We then contract with `S3`:
 
     A *= S3;
 

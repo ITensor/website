@@ -87,4 +87,6 @@ One tensor in a [[matrix product operator|tutorials/MPO]] (gray boxes) has two p
 
 To keep things simple, we've left off arrows in our diagrams.  We'll discuss the role of these when we discuss the quantum block structure for [[IQTensors|articles/IQTensor]].
 
+### @@\Lambda\Gamma@@ notation
 
+We have used here the AB notation of left and right normalized tensors.  There is also a notation with @@\Lambda@@ and @@\Gamma@@ matrices that is useful for discussing [[iDMRG|]].

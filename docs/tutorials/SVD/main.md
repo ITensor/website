@@ -96,7 +96,7 @@ $$
 \end{bmatrix}
 $$
 
-Even though the values of the modified matrix have changed, the determinant of the difference, @@||M-\tilde M||^2=0.04=(0.2)^2@@.  Note that the value is not large and does a good job of approximating the original matrix, and we get to leave off the rows and columns corresponding to the truncated values. 
+Even though the values of the modified matrix have changed, the norm of the difference, @@||M-\tilde M||^2=0.04=(0.2)^2@@.  Note that the value is not large and does a good job of approximating the original matrix, and we get to leave off the rows and columns corresponding to the truncated values. 
 
 The error we calculated above is related to the truncation error in a DMRG calculation, defined as the sum of the squares of the singular values that we neglect when compressing the wavefunction. In the DMRG case, these singular values can go very low, very nearly zero, and leaving them out of the SVD produces almost no change in the wavefunction.
 

@@ -3,6 +3,10 @@
 
 ## 2015 ##
 
+* [Unusual Corrections to Scaling and Convergence of Universal Renyi Properties at Quantum Critical Points](http://arxiv.org/abs/1509.00468), Sharmistha&nbsp;Sahoo, E.&nbsp;Miles&nbsp;Stoudenmire, Jean-Marie&nbsp;Stéphan, Trithep&nbsp;Devakul, Rajiv&nbsp;R.&nbsp;P.&nbsp;Singh, Roger&nbsp;G.&nbsp;Melko, arxiv:1509.00468
+
+* [Entanglement structure of the Hubbard model in momentum space](http://arxiv.org/abs/1508.07477), G.&nbsp;Ehlers, J.&nbsp;Solyom, O.&nbsp;Legeza, R.&nbsp;M.&nbsp;Noack, arxiv:1508.07477
+
 * [A criterion for many-body localization-delocalization phase transition](http://arxiv.org/abs/1507.01635), Maksym&nbsp;Serbyn, Z.&nbsp;Papic, Dmitry&nbsp;A.&nbsp;Abanin, arxiv:1507.01635
 
 * [Criticality at the Haldane insulator charge-density-wave quantum phase transition](http://dx.doi.org/10.1103/PhysRevB.92.041120), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.041120">041120(R)</a> (2015) [arxiv:1506.04003]
@@ -20,7 +24,7 @@
 
 * [Gapless Symmetry-Protected Topological Phase of Fermions in One Dimension](http://link.aps.org/doi/10.1103/PhysRevB.91.235309), Anna&nbsp;Keselman and Erez&nbsp;Berg, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>91</b> <a href="http://link.aps.org/doi/10.1103/PhysRevB.91.235309">235309</a> (2015)  [arxiv:1502.02037]
 
-* [Observation of many-body localization of interacting fermions in a quasi-random optical lattice](http://arxiv.org/abs/1501.05661), Michael&nbsp;Schreiber, Sean&nbsp;S.&nbsp;Hodgman, Pranjal&nbsp;Bordia, Henrik&nbsp;P.&nbsp;Lüschen, Mark&nbsp;H.&nbsp;Fischer, Ronen&nbsp;Vosk, Ehud&nbsp;Altman, Ulrich&nbsp;Schneider, and Immanuel&nbsp;Bloch, arxiv:1501.05661
+* [Observation of many-body localization of interacting fermions in a quasirandom optical lattice](http://www.sciencemag.org/content/349/6250/842), Michael&nbsp;Schreiber, Sean&nbsp;S.&nbsp;Hodgman, Pranjal&nbsp;Bordia, Henrik&nbsp;P.&nbsp;Lüschen, Mark&nbsp;H.&nbsp;Fischer, Ronen&nbsp;Vosk, Ehud&nbsp;Altman, Ulrich&nbsp;Schneider, and Immanuel&nbsp;Bloch, <i style="color:#CC0000">Science</i>&nbsp;<b>349</b>, <a href="http://www.sciencemag.org/content/349/6250/842" target="_blank">842</a> (2015) [arxiv:1501.05661]
 
 * [Assembling Fibonacci Anyons From a ℤ<sub>3</sub> Parafermion Lattice Model](http://dx.doi.org/10.1103/PhysRevB.91.235112), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Clarke, Roger&nbsp;S.&nbsp;K.&nbsp;Mong, and Jason&nbsp;Alicea,  <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>91</b> <a href="http://link.aps.org/doi/10.1103/PhysRevB.91.235112">235112</a> (2015)  [arxiv:1501.05305]
 

@@ -4,19 +4,20 @@
 
 Your computer only has a certain number of operations it can perform per second. Making a program that uses the least amount of steps to get the answer means that less of your computer time is used.  More calculations can be done.  And wouldn't your advisor like that (and you might too)! 
 
-The difference between providing an algorithm that scales like @@m^4@@ operations and @@m^{12}@@ operations could mean that one can study a larger system in a shorter amount of time.  Some systems might not be accessible at all with the @@m^{12}@@ scaling relation.  This could be the difference between a few minutes of calculation and a few hours.
+The difference between providing an algorithm that scales like @@m^4@@ operations and @@m^{12}@@ operations could mean that one can study a larger system in a shorter amount of time.  Some systems might not be accessible at all with the @@m^{12}@@ scaling relation.  This could be the difference between a few minutes of calculation time versus many hours or even days.
 
 In this article, we will discuss how to estimate the cost of contracting a tensor network and the best algorithm for doing so.  We also demonstrate how to measure a correlation function with the least number of operations.
 
 ### Cost of Contractions
 
-Each line represents a variable in a sum.  In the MPS language, the legs often have different numbers of terms that must be summed.  
+Each line represents a variable in a sum.  For the case of a typical tensor occurring in a matrix product state, 
+the legs often have different numbers of terms that must be summed.  
 
 <p align="center"><img src="docs/tutorials/cost/cost.png" alt="Index Labels" style="width: 350px;"/></p>
 
 The horizontal lines contain @@m@@ terms (although in general, the left and right legs do not need to have the same number of terms).  This number is called the bond dimension and can be thought of as the size of the wavefunction on each site in an MPS (meaning, the size of the local MPS matrix for that site).  Specifically for DMRG, this number corresponds to the number of many body states kept in the Schmidt decomposition.
 
-The vertical leg corresponds to the physical index, @@d@@, and has typically only a few values.  The bond dimension may have many thousand. 
+The vertical leg corresponds to the physical index, @@d@@, and typically ranges over only a few values. The bond dimension may range over thousands of values.
 
 Note that if we carry out the sum of the following diagram on the bond marked with a pale green box, we would perform @@m^3@@ operations to perform the sum on that single bond.
 

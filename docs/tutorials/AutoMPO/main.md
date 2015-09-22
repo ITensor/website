@@ -46,6 +46,6 @@ A neat trick allows us to produce exponentials of Hamiltonians quickly and easil
 
     MPO toExpH<ITensor>( MPO, [Complex number])
 
-This function also accepts `IQTensors`.  This method is based on [1] and gives us @@\exp(\tau\mathcal{H})@@.
+This function also accepts `IQTensors`.  This method is based on [1] and gives us @@\exp(-\tau\mathcal{H})@@.
 
 

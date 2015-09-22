@@ -2,17 +2,17 @@
 
 <span class='article_sig'>Thomas E. Baker&mdash;August 17, 2015</span>
 
-The Hilbert space is large.  Scanning through the entire space would be take longer than is reasonable.  Writing down a good guess for the wavefunction can be a great way to get close enough to the right ground state. Finding the answer with MPSs can be comparatively much easier than searching the whole Hilbert space.
+The Hilbert space is large.  Scanning through the entire space would be take longer than is reasonable.  Writing down a good guess for the wavefunction can be a great way to get close enough to the right ground state. 
+A very good guess for strongly correlated, gapped systems in one dimension is the matrix product state (MPS). 
+DMRG and many tensor network methods rely on this ansatz to quickly and efficiently calculate the ground state.
 
-A very good guess for the strongly correlated, gapped systems in one dimension is the matrix product state (MPS).  DMRG and many tensor network methods rely on this ansatz to quickly and efficiently calculate the ground state.
-
-A single element of an MPS is a tensor with three indices, @@A^{\sigma\_i}\_{a\_i a\_{i+1}}@@.  The subscripts  convey that different sites may have different links to each other.  These indices catalog the bond dimension (e.g., number of Schmidt states kept in a DMRG calculation).   The index @@\sigma_i@@ corresponds to the physical index.  This has two values for a spin@@-1/2@@ chain.
+Each bulk tensor of an MPS has three indices, @@A^{\sigma\_i}\_{a\_i a\_{i+1}}@@.  The subscripts convey that indices connecting different bonds may vary in size. The size of a typical index @@a\_i@@ is known as the bond dimension of the MPS, and corresponds to the number of states kept in a DMRG calculation. The index @@\sigma_i@@ is the physical index.  This has two values for a spin@@-1/2@@ chain.
 
 An MPS diagram for a five site system looks like
 
 <p align="center"><img src="docs/tutorials/MPS/MPS.png" alt="MPS" style="height: 150px;"/></p>
 
-We will discuss some characteristics of MPSs and introduce some concepts that are necessary to design and implement your tensor networks into ITensor.
+We will discuss some characteristics of MPSs and introduce some concepts that are essential for working with MPS in ITensor.
 
 ### ITensor Methods
 
@@ -24,13 +24,16 @@ To make an MPS, we can use the constructor
     auto psi = MPS(sites);//construct a random product state with indices
                           //based on the SiteSet used (here SpinHalf)
 
-which automatically makes a random MPS.
+which automatically makes a random product-state MPS.
 
-MPSs have a property that allows for quick manipulation of each tensor.  The orthogonality center can be chosen to be on any site.  If we call
+The gauge of an MPS can be chosen to make computing local properties very efficient. The gauge used in standard DMRG calculations chooses
+a certain site to be the <i>orthogonality center</i>. All sites to the left and right of the orthogonality center will be left and right orthogonal, respectively.
+
+To set site 4 of the 5-site MPS above to be the orthogonality center, call
 
     psi.position(4);
 
-ITensor will take a series of [[SVDs|tutorials/SVD]] (in this case, only one) until we have placed the orthogonality center of the MPS on site 4.  The diagram looks like
+ITensor will compute a series of [[singular value decompositions|tutorials/SVD]] (in this case, only one) until the orthogonality center reaches site 4. The MPS diagram now looks like:
 
 <p align="center"><img src="docs/tutorials/MPS/MPS_site2.png" alt="Regauged MPS" style="height: 150px;"/></p>
 
@@ -79,3 +82,7 @@ This is a singlet @@(|\uparrow\downarrow\rangle-|\downarrow\uparrow\rangle)/\sqr
 To normalize our wavefunction, we can call
 
     psi.norm();
+
+### A note on bond dimension
+
+

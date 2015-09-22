@@ -11,35 +11,40 @@
   Learn to understand tensor diagrams and translate them 
   into ITensor code.
 
-* [[The Matrix Product State (MPS)|tutorials/MPS]]
+* [[Estimating the Cost of Evaluating a Tensor Network|tutorials/cost]]
 
-  ITensor includes a full-featured matrix product state class that can be used
-  with or without quantum number conservation.
-
-* [[Matrix Product Operators (MPO)|tutorials/MPO]]
-
-  The Hamiltonian may be rewritten in terms of a site by site operator.  This 
-  article provides an overview
-
-### Numerical Methods and ITensor Features
+  We discuss how to determine the cost of evaluating a tensor network and best practices for 
+  computing properties of matrix product states.
 
 * [[Singular Value Decomposition|tutorials/SVD]]
   
   The singular value decomposition (SVD) provides a way to separate large degrees 
   of freedom from irrelevant ones.  ITensors allows for the easy SVD of tensors.
 
+
+### ITensor Library Features
+
 * [[Priming Indices in ITensor|tutorials/primes]]
 
   ITensor uses a flexible priming system to prevent indices from automatically 
   contracting.  We discuss best practices and give examples.
 
+<!-- Commented out for the time being
+* [[The Matrix Product State (MPS)|tutorials/MPS]]
+
+  ITensor includes a full-featured matrix product state class that can be used
+  with or without quantum number conservation.
+  -->
+
+* [[Matrix Product Operators (MPO)|tutorials/MPO]]
+
+  The Hamiltonian may be rewritten in terms of a site by site operator.  This 
+  article provides an overview
+
 * [[AutoMPO|tutorials/AutoMPO]]
 
   Instead of making MPOs by hand, ITensor allows for the automatic creation of MPOs in only a few lines of code.
 
-* [[Estimating the Cost of Evaluating a Tensor Network|tutorials/cost]]
-
-  We discuss how to determine the cost of evaluating a tensor network and the best method for calculating MPSs.
 
 * [[Calculating a Two-Site Correlation Function|tutorials/correlations]]
 

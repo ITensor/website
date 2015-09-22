@@ -54,6 +54,8 @@ Now we must call the `.cplx` method to retrieve this element; calling
     println("z = ",z);
     //prints: z = (7,8)
 
+Calling `.cplx` always succeeds even if the ITensor is real.
+
 ### Printing ITensors 
 
 A convenient way to print and ITensor is to use the `Print` macro:
@@ -74,7 +76,7 @@ this can lead to very large output.
 
 To see the result of our earlier calls to `.set`, we can print this ITensor
 using the `PrintData` macro, which prints both the indices and the
-data inside an ITensor:
+non-zero elements of an ITensor:
 
     PrintData(T);
     //prints: 
