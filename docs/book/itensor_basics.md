@@ -141,6 +141,8 @@ This constructor is very handy for creating ITensors which
 <span style="float:left;"><img src="../../left_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[Index Objects|book/index]]
 </span>
+<!--
 <span style="float:right;"><img src="../../right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[Contracting ITensors|book/contracting_itensors]]
+-->
 </span>

@@ -64,7 +64,8 @@ ITensors.
 
 Finally, ITensor includes many routines for standard tensor decompositions
 and a rich, high-level interface for
-matrix product state and density matrix renormalization group (DMRG) algorithms.
+matrix product state and density matrix renormalization group (DMRG) algorithms
+used in physics applications.
 <br/>
 <br/>
 

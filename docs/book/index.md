@@ -14,7 +14,7 @@ By convention, physical indices are assigned the type `Site`. Indices can have c
 
 * A name used to display the Index.
 
-The most basic way to construct an Index is to give its name and size:
+The simplest way to construct an Index is to give its name and size:
 
     auto i = Index("index i",3);
 

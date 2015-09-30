@@ -2,7 +2,8 @@
 
 ITensor simplifies tensor
 calculations through an Einstein summation interface for contracting tensors.
-ITensor indices have a distinct identity, making user code correct and robust.
+Because ITensor indices have distinct identities, nothing about the interface
+depends on index order, making user code easy to write and maintain.
 Even with these higher level features, ITensor is extremely efficient.
 
 The goal of this book is to quickly familiarize users with the 
