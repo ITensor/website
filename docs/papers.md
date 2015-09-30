@@ -3,6 +3,8 @@
 
 ## 2015 ##
 
+* [On the entanglement structure of the two-channel Kondo model](http://arxiv.org/abs/1509.02949), Bedoor&nbsp;Alkurtass, Abolfazl&nbsp;Bayat, Ian&nbsp;Affleck, Sougato&nbsp;Bose, Henrik&nbsp;Johannesson, Pasquale&nbsp;Sodano, Erik&nbsp;S.&nbsp;Sørensen, Karyn&nbsp;Le&nbsp;Hur, arxiv:1509.02949
+
 * [Unusual Corrections to Scaling and Convergence of Universal Renyi Properties at Quantum Critical Points](http://arxiv.org/abs/1509.00468), Sharmistha&nbsp;Sahoo, E.&nbsp;Miles&nbsp;Stoudenmire, Jean-Marie&nbsp;Stéphan, Trithep&nbsp;Devakul, Rajiv&nbsp;R.&nbsp;P.&nbsp;Singh, Roger&nbsp;G.&nbsp;Melko, arxiv:1509.00468
 
 * [Entanglement structure of the Hubbard model in momentum space](http://arxiv.org/abs/1508.07477), G.&nbsp;Ehlers, J.&nbsp;Solyom, O.&nbsp;Legeza, R.&nbsp;M.&nbsp;Noack, arxiv:1508.07477
