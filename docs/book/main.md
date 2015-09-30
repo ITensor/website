@@ -1,4 +1,4 @@
-# The ITensor Book
+# 📚  The ITensor Book
 
 ITensor simplifies tensor
 calculations through an Einstein summation interface for contracting tensors.

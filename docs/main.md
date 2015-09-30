@@ -3,7 +3,9 @@
 
 💽  [[Installing ITensor|installing]]
 
-📚  [[Tutorials|tutorials]]. Enhance your knowledge of essential ITensor features.
+📚   [[The ITensor Book|book]]. Start here for a comprehensive introduction to ITensor.
+
+🎓  [[Tutorials|tutorials]]. Enhance your knowledge of essential ITensor features.
 
 🍴  [[Code Recipes|recipes]]. Sample codes for common tasks.
 
