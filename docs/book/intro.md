@@ -1,7 +1,7 @@
 # ITensor Overview
 
 Matrix methods have been a major success in the applied sciences.
-*Tensor* methods promise even greater insight
+*Tensor* methods could offer even greater insight
 into complex systems and high dimensional data.
 Major developments in physics and chemistry have come from
 viewing quantum wavefunctions as tensor networks.

@@ -1,8 +1,10 @@
 # Index Objects
 
-ITensors are "intelligent tensors" because they "know" what indices they have. This is possible since
-indices in the ITensor library are objects with a semantic/physical meaning. In addition to having a fixed
-size, or dimension, an Index has:
+The most basic element of ITensor is not actually a tensor: it is a tensor index, 
+an object of type&nbsp;`Index`.
+ITensors are "intelligent tensors" because they "know" what indices they have. 
+This is possible since each Index carries extra information.
+In addition to having a fixed size, or dimension, an Index has:
 
 * An internal id number for checking whether two Index objects are equal.
 
@@ -18,7 +20,7 @@ The simplest way to construct an Index is to give its name and size:
 
     auto i = Index("index i",3);
 
-The size can be accessed later using the `.m()` method
+To access the size, use the `.m()` method
 
     println("The size of ",i.name()," is ",i.m());
     //prints: The size of index i is 3
@@ -35,18 +37,18 @@ itself cannot be changed.
 Two copies of the same Index with the same prime level compare equal:
 
     auto i = Index("index i",3);
-    auto j = i;
-    printfln("i==j is %s",i==j);
-    //prints: i==j is true
+    auto ic = i;
+    printfln("ic==i is %s",ic==i);
+    //prints: ic==i is true
 
-To put a prime on an Index, we can call `prime(i)` which returns a copy of i with prime level raised by 1.
-Because it has a different prime level, it will no longer compare equal to i.
+Calling `prime(i)` will produce a copy of i with prime level raised by 1.
+Because this copy has a different prime level, it will no longer compare equal to i.
 
     auto ip = prime(i);
     println("The prime level of ip is ",ip.primeLevel());
     //prints: The prime level of ip is 1
-    printfln("i==ip is %s",i==ip);
-    //prints: i==ip is false
+    printfln("ip==i is %s",ip==i);
+    //prints: ip==i is false
 
 ### Priming Indices
 
@@ -64,29 +66,35 @@ Calling `noprime` resets the prime level to zero.
     //prints: 0
 
 We will see more ways to manipulate primes as we 
-begin to work with ITensors with multiple indices.
+work with ITensors that have multiple indices.
 
 ### Printing Indices
 
 Printing an Index shows useful information about it:
 
     println(i);
-    //prints: (index i,3,Link){573}
+    //prints: (index i,3,Link)
 
-The output shows the name, size, and IndexType of i. The number in braces at the end
-is part of the internal number used to identify i, and may vary from run to run.
+The output shows the name, size, and IndexType of i (the default is Link).
 
+Non-zero prime levels are displayed at the end:
+
+    println(prime(i,2));
+    //prints: (index i,3,Link)''
+
+    println(prime(i,10));
+    //prints: (index i,3,Link)'10
 
 ### Index Types
 
 The Index constructor optionally accepts an `IndexType` argument:
 
-    auto s2 = Index("site 2",2,Site);
+    auto s2 = Index("site 2",2,Site); //IndexType set to Site
 
-Giving indices different IndexTypes becomes useful when working with multiple indices
+Giving indices different IndexTypes becomes useful when working with many indices
 because it allows us to change the prime level of all indices of a certain type.
 
-It is possible to define custom IndexTypes:
+It is possible to define a custom IndexType:
 
     auto MyType = IndexType("MyType");
     auto m1 = Index("m1",5,MyType);
