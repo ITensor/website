@@ -32,7 +32,7 @@ In a more standard tensor interface, the above operation would have looked like:
 
     T(2,1,3) = 4.56; //not actual ITensor code!!
 
-The reason one gives the indices along with their values in ITensor
+The reason the indices are passed along with their values in ITensor
 is that nothing about the ITensor interface requires knowing the index order.
 
 If we gave the Index-value pairs such as `j(2)` in a different order,
@@ -62,7 +62,7 @@ Now we must call the `.cplx` method to retrieve this element; calling
     println("z = ",z);
     //prints: z = (7,8)
 
-Calling `.cplx` always succeeds even if the ITensor is real.
+Calling `.cplx` always succeeds whether an element is real or not.
 
 ### Printing ITensors 
 
@@ -73,17 +73,15 @@ A convenient way to print and ITensor is to use the `Print` macro:
     // T = 
     // ITensor r = 3: (index i,2,Link) (index j,3,Link) (index k,4,Link)
 
-Calling `Print(expr)` literally produces the code `println("expr = ",expr);`
+Calling `Print(expr)` essentially rewrites the code to be `println("expr = ",expr)`,
+which is why there is a "T = " at the beginning of the output.
 
-    Print(prime(i));
-    //prints: prime(i) = (index i,2,Link)'
+The output shows the rank and all the indices, but not the ITensor elements
+because this could lead to a very large output.
 
-By default an ITensor does not show its data when printed, because 
-this can lead to very large output.
-
-To see the result of our earlier calls to `.set`, we can print this ITensor
-using the `PrintData` macro, which prints both the indices and the
-non-zero elements of an ITensor:
+To see the non-zero elements resulting from our earlier calls to `.set`, 
+we can print this ITensor using the `PrintData` macro, which prints both 
+the indices and the non-zero elements:
 
     PrintData(T);
     //prints: 
