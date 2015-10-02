@@ -12,10 +12,12 @@ The simplest way to construct an ITensor is to provide its indices:
 
 This makes an ITensor with all elements set to zero.
 
-To confirm this is a rank 3 tensor (a tensor with 3 indices), call the `.r()` method:
+To confirm this is a rank 3 tensor (a tensor with 3 indices), call `rank(T)`:
     
-    println("The rank of T is ",T.r());
+    println("The rank of T is ",rank(T));
     //prints: The rank of T is 3
+
+Alternatively you can use `T.r()`.
 
 ### Accessing ITensor Elements
 
