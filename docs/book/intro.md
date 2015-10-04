@@ -13,12 +13,20 @@ a semantic, or physical meaning.
 Similarly in ITensor, tensor indices are objects with
 unique identities. Constructing an index in ITensor looks like:
 
-    Index s1("site 1",2);
+    Index i("index i",3);
 
-The resulting Index <code style="border:none;">s1</code> has a size, or bond dimension of 2. Upon creation it gets
-indelibly stamped with an internal ID number; all copies of <code style="border:none;">s1</code>
-carry this same ID number. (The string "site 1" is the name of this Index only for
+The resulting Index has a size, or bond dimension of 3. Upon creation it gets
+indelibly stamped with an internal ID number; all copies of this Index
+carry this same ID number. (The string "index i" is the name of this Index only for
 printing purposes.)
+
+Having made a few Index objects i, j, k, one can construct ITensors
+
+    ITensor B(i);
+    ITensor C(j,i);
+    ITensor D(i,j,k);
+
+and set their elements (as shown in [[this chapter|book/itensor_basics]]).
 
 Since matching indices can be recognized by their ID, tensor contraction in ITensor
 is simply
@@ -45,7 +53,7 @@ The Index <code style="border:none;">j</code> appears on both A and B so is auto
 In a traditional matrix library, one would need to remember that <code style="border:none;">j</code> is
 the second index of B and write something like 
 
-    C = A * transpose(B) //not actual ITensor code
+    C = A * transpose(B) //not actual ITensor code!!
 
 to get the correct result. ITensor handles this transposition automatically, 
 making user code simple and robust. If B were to be redefined
@@ -53,7 +61,7 @@ with transposed index order, the ITensor code `C=A*B` would continue to give the
 
 ITensor has many other features emphasizing productivity
 over programming details:
-* Adding ITensors with the same indices automatically works without 
+* Adding ITensors automatically works without the user
 needing to permute the index order. 
 * ITensor storage automatically switches from real to complex as needed,
 such as when setting an element to or multiplying by a complex number.
@@ -62,17 +70,16 @@ ITensors.
 <br/>
 <br/>
 
-Finally, ITensor includes many routines for standard tensor decompositions
-and a rich, high-level interface for
-matrix product state and density matrix renormalization group (DMRG) algorithms
-used in physics applications.
+Last but not least, ITensor includes many routines for tensor decompositions
+and a rich, high-level interface for matrix product state and density matrix 
+renormalization group (DMRG) algorithms used in physics applications.
 <br/>
 <br/>
 
-<span style="float:left;"><img src="../../left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[Table of Contents|book]]
 </span>
-<span style="float:right;"><img src="../../right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[Index Objects|book/index]]
 </span>
 

@@ -77,7 +77,7 @@ Printing an Index shows useful information about it:
 
 The output shows the name, size, and IndexType of i (the default is Link).
 
-Non-zero prime levels are displayed at the end:
+The prime level is displayed at the end:
 
     println(prime(i,2));
     //prints: (index i,3,Link)''
@@ -111,9 +111,9 @@ The type of an Index can be obtained by calling the `.type()` method.
 [[detailed documentation|classes/index]].</i>
 
 
-<span style="float:left;"><img src="../../left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[ITensor Overview|book/intro]]
 </span>
-<span style="float:right;"><img src="../../right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[ITensor Basics|book/itensor_basics]]
 </span>

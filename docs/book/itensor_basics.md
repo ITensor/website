@@ -10,29 +10,28 @@ The simplest way to construct an ITensor is to provide its indices:
 
     auto T = ITensor(i,j,k);
 
-This makes an ITensor with all elements set to zero.
+This creates an ITensor T with all elements set to zero.
 
 To confirm this is a rank 3 tensor (a tensor with 3 indices), call `rank(T)`:
     
     println("The rank of T is ",rank(T));
     //prints: The rank of T is 3
 
-Alternatively you can use `T.r()`.
+Alternatively you can call `T.r()`.
 
 ### Accessing ITensor Elements
 
-To access the element of T where i is set to 2; j is set to 1; and k is set to 3
-we call
+To set a particular element, or component, of an ITensor call its `.set` method:
 
     T.set(i(2),j(1),k(3),4.56);
 
 This element now has the value 4.56.
 
-In a more standard tensor interface, the above operation would have looked like:
+In a more conventional tensor interface, the above operation would look like:
 
     T(2,1,3) = 4.56; //not actual ITensor code!!
 
-The reason the indices are passed along with their values in ITensor
+The reason the indices are passed along with their values in the ITensor `.set` method
 is that nothing about the ITensor interface requires knowing the index order.
 
 If we gave the Index-value pairs such as `j(2)` in a different order,
@@ -48,21 +47,21 @@ We can retrieve this element by calling the `.real` method:
     println("el = ",el);
     //prints: el = 4.56
 
-This method is named "real" because it returns the requested 
-element as a real number.
+This method is named "real" because it says we want the element to be
+returned as a real number.
 
 We can also set elements of ITensors to be complex numbers:
 
     T.set(i(2),k(3),j(1),7+8_i);
 
-Now we must call the `.cplx` method to retrieve this element; calling
-`.real` would throw an exception:
+Now we must call the `.cplx` method to retrieve this element as a 
+complex data type; calling `.real` would throw an exception:
 
     auto z = T.cplx(i(2),k(3),j(1));
     println("z = ",z);
     //prints: z = (7,8)
 
-Calling `.cplx` always succeeds whether an element is real or not.
+Calling `.cplx` always succeeds even if the tensor has only real elements.
 
 ### Printing ITensors 
 
@@ -80,7 +79,7 @@ The output shows the rank and all the indices, but not the ITensor elements
 because this could lead to a very large output.
 
 To see the non-zero elements resulting from our earlier calls to `.set`, 
-we can print this ITensor using the `PrintData` macro, which prints both 
+we can use the `PrintData` macro, which prints both 
 the indices and the non-zero elements:
 
     PrintData(T);
@@ -90,25 +89,25 @@ the indices and the non-zero elements:
     // (2,2,1) 7.00+8.00i
     // (1,2,3) 4.56+0.00i
 
-### Basic Tensor Operations
+### Basic Mathematical Operations
 
 ITensors can be added, subtracted, and multiplied by scalars in the usual way:
 
     auto Q = 2*T;
     auto R = Q/3 + T*4_i;
     auto S = R - T;
+    S *= 5;
     //etc.
 
 Two ITensors can be added and subtracted if they have the same 
-set of indices, regardless of index order.
+set of indices, regardless of index order. Internally, the tensor data
+will be permuted if the index order is different, guaranteeing the correct 
+result.
 
 The norm of an ITensor (square root of sum of squared elements) can be computed
 using the `norm` function
 
     println("The norm of T is ",norm(T));
-
-
-
 
 
 <br/>
@@ -142,11 +141,11 @@ This constructor is very handy for creating ITensors which
 -->
 
 
-<span style="float:left;"><img src="../../left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[Index Objects|book/index]]
 </span>
 <!--
-<span style="float:right;"><img src="../../right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[Contracting ITensors|book/contracting_itensors]]
 -->
 </span>

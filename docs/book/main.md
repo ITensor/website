@@ -19,6 +19,6 @@ customizing higher-level parts of the library.
 3. [[ITensor Basics|book/itensor_basics]]
 
 <br/>
-<span style="float:right;"><img src="../../right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[ITensor Overview|book/intro]]
 </span>
