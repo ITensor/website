@@ -5,16 +5,18 @@
 
 Both ITensor and IQTensor now support the following element access methods, where I1, I2, ... are Index objects (or IQIndex objects in the case of IQTensor):
 
-    T.set(I1(n1),I2(n2),..., x); //x is a Real or Cplx scalar
+    T.set(I1(n1),I2(n2),..., x); //set element to x,
+                                 //can be a Real or Cplx scalar
 
-    T.real(I1(n1),I2(n2),...) //returns x, assuming x is real, throws if x is complex
+    T.real(I1(n1),I2(n2),...) //return element as real number
+                              //throws if non-zero imag part
 
-    T.cplx(I1(n1),I2(n2),...) //returns x as a complex number
+    T.cplx(I1(n1),I2(n2),...) //return element as complex number
 
 <a name="v1.2.3"></a>
 ## [Version 1.2.3](https://github.com/ITensor/library/tree/v1.2.3) (Sep 23, 2015) ##
 
-- Fixed major bug where svd of a complex ITensor with a negative scale could fail because the sign of the scale was only being included in the real part of the result. Thanks to Benoit Vermersch for catching this bug.
+- Fixed major bug where svd of a complex ITensor with a negative scale could fail because the sign of the scale was only being included in the real part of the result. Thanks to Benoit Vermersch for pointing out this bug.
 
 - Introduced fabs(LogNumber) function.
 
