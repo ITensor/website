@@ -36,7 +36,7 @@ is simply
 The ITensor contraction
 engine recognizes repeated indices and sums 
 over them, much like the Einstein summation convention used
-in physics. Instead of worrying about the order of tensor indices,
+in physics. Instead of thinking about the ordering of tensor indices,
 users can focus on the structure of tensor networks.
 Certain classes of bugs are completely ruled out, such as confusing
 different indices of the same size.

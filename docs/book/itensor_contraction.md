@@ -15,27 +15,29 @@ using the `*` operator, which sums over all matching indices.
 
 ### A Simple Example
 
-Given Index objects i,j,k and ITensors
+Given three distinct Index objects i,j, and k, say 
+we make the following ITensors:
 
     auto A = ITensor(i,j);
     auto B = ITensor(k,j);
 
-the code
+Then the following code contracts over the index j
 
     auto C = A * B;
 
-computes the elementwise operation
+In traditional notation this is the elementwise operation
 $$
 C\_{i k} = \sum\_j A\_{i j} B\_{k j} \ .
 $$
-In other words, C is the result of contracting of A and B
-over the index j. If there had been other matching indices
-besides j, the `*` operator would have contracted them too.
-Indices i and k did not match, so they appear on the result C.
+If there had been other matching indices
+between A and B other than j, the `*` operator would have contracted 
+them too. Indices i and k did not match (they could be copies of the 
+same Index but we are assuming this is not the case) so they remain 
+uncontracted and become the indices of C. 
 
-Interestingly, because of the way ITensor contraction is defined
+Interestingly, because of the way ITensor contraction is defined,
 `B*A` gives the same result as `A*B`.
-Contraction in ITensor is a commutative operation.
+ITensor contraction is a commutative operation.
 
 ### A More Complex Example
 
@@ -49,11 +51,12 @@ Say we have an ITensor with indices i,s, and j
 and want to contract W with itself, summing over indices i and j,
 but leaving s uncontracted.
 
-In "classical" tensor notation, we want to compute
+In traditional tensor notation, we want to compute
 $$
 D\_{s s^\prime} = \sum\_{i,j} W\_{i s j} W\_{i s^\prime j} \ .
 $$
-But this notation can be difficult to read for complicated contractions.
+But this notation can become difficult to read as contractions 
+become more complex.
 
 A nicer way to visualize this tensor contraction is 
 to use the following diagram
@@ -66,13 +69,13 @@ The remaining unpaired lines are the indices of the resulting tensor.
 
 Both notations indicate our contraction strategy should be to 
 prime the Index s on one copy of W. Calling `prime(W,s)` returns
-a copy of W with s replaced by s'. Then doing
+a copy of W with s replaced by s'. Then multiplying
 
     auto D = W * prime(W,s);
 
-automatically contracts over i and j, but not s and s' since these
+automatically contracts i and j, but not s and s' since these
 no longer compare equal. Printing the result D confirms that it
-has only i and j as indices.
+has only s and s' as indices.
 
 
 
