@@ -26,9 +26,9 @@ Having made a few Index objects i, j, k, one can construct ITensors
     ITensor C(j,i);
     ITensor D(i,j,k);
 
-and set their elements (as shown in [[this chapter|book/itensor_basics]]).
+and set their elements (as shown in the [[ITensor Basics|book/itensor_basics#elements]] chapter).
 
-Since matching indices can be recognized by their ID, tensor contraction in ITensor
+Since matching indices can be recognized by their ID, ITensor contraction
 is simply
 
     A = B * C * D;
@@ -48,7 +48,8 @@ Consider the following example involving two matrix-like ITensors
     ITensor C = A*B;
 
 which computes the matrix product @@ C = A B^\mathsf{T} @@.
-The Index <code style="border:none;">j</code> appears on both A and B so is automatically summed over.
+The Index <code style="border:none;">j</code> appears on both A and B so is automatically summed over,
+leaving C to have indices i and k.
 
 In a traditional matrix library, one would need to remember that <code style="border:none;">j</code> is
 the second index of B and write something like 

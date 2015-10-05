@@ -19,6 +19,7 @@ To confirm this is a rank 3 tensor (a tensor with 3 indices), call `rank(T)`:
 
 Alternatively you can call `T.r()`.
 
+<a name="elements"></a>
 ### Accessing ITensor Elements
 
 To set a particular element, or component, of an ITensor call its `.set` method:
