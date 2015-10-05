@@ -155,10 +155,16 @@ text-decoration: underline;
 }
 
 
-#diagram 
+img.centered
+    {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    }
+
+img.diagram 
     { 
-    width: 400px; 
-    margin-left: 100px;
+    margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
     display: block;

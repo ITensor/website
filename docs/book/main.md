@@ -18,6 +18,8 @@ customizing higher-level parts of the library.
 
 3. [[ITensor Basics|book/itensor_basics]]
 
+4. [[ITensor Contraction|book/itensor_contraction]]
+
 <br/>
 <span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[ITensor Overview|book/intro]]
