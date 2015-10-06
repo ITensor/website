@@ -62,9 +62,9 @@ with transposed index order, the ITensor code `C=A*B` would continue to give the
 
 ITensor has many other features emphasizing productivity
 over programming details:
-* Adding ITensors automatically works without the user
+* Adding ITensors works automatically without 
 needing to permute the index order. 
-* ITensor storage automatically switches from real to complex as needed,
+* ITensors automatically switch from real to complex storage as needed,
 such as when setting an element to or multiplying by a complex number.
 * ITensors with sparse storage seamlessly interoperate with regular, dense
 ITensors.
