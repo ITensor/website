@@ -51,7 +51,12 @@
   Contracting a tensor network to measure a two-operator correlation
   function from an MPS is shown in diagrammatic form with ITensor code.
 
-### C++ Tutorials
+### C++ Utilities
+
+* [[ITensor Input Parameter System|tutorials/input]]
+
+  ITensor comes with an optional input parameter system you can
+  use to read simulation parameters from an external file.
 
 * [[The "Args" Named Arguments System|tutorials/args]]
 
