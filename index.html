@@ -58,7 +58,7 @@
     <li>Efficient matrix product state class</li>
     <li>Quantum number conserving (block-sparse) tensors</li>
     <li>Complex numbers (handled lazily: no efficiency loss if real)</li>
-    <li>Easy to install; only dependencies are BLAS/LAPACK and C++11
+    <li>Easy to <a href="docs.cgi?page=installing">install</a>; only dependencies are BLAS/LAPACK and C++11
     </ul>
     </p>
     <div id="latest" class="rounded">
@@ -75,8 +75,8 @@
 
     <p>
     ITensors have an "Einstein summation" interface making them nearly as easy to multiply as 
-    scalars: all tensors indices are stamped with a unique internal
-    id number and matching indices automatically contract when two ITensors are multiplied. 
+    scalars: tensors indices have unique identities
+    and matching indices automatically contract when two ITensors are multiplied. 
     This type of interface makes it simple to transcribe tensor network diagrams into correct, efficient code.
     </p>
     <p>
@@ -87,9 +87,11 @@
     <p>
     <b>Installing ITensor:</b>
     <ol>
-    <li>Clone the latest version: <pre><code>git clone https://github.com/ITensor/ITensor itensor</code></pre>
-        Or <a href="https://github.com/ITensor/ITensor/zipball/master" target="_blank">download</a> zip file if you do not have git.<br/>
-        (Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide.) 
+    <li>Make sure you have an up-to-date C++11 compiler and LAPACK installed. On UNIX systems, use your
+    package manager to install these; on Mac OS install the free Xcode app from the app store.</li>
+    <li>Clone the latest version of ITensor: <pre><code>git clone https://github.com/ITensor/ITensor itensor</code></pre>
+        (Or <a href="https://github.com/ITensor/ITensor/zipball/master" target="_blank">download</a> zip file if you do not have git.)<br/>
+        Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide.
 
     </li>
     <li>Read the <a href="docs.cgi?page=installing">installation</a> instructions.</li>
@@ -106,8 +108,8 @@
 <div class="full screenshot">
     <h2>Perform a DMRG Calculation</h2>
 <div style="white-space: pre; font-family:monospace; font-size: 120%;">
-<span style="color:green">int</span> N = 100;
 <span style="color:#5081AA">//Define Hilbert space of N spin-one sites</span>
+<span style="color:green">int</span> N = 100;
 <span style="color:green">auto</span> sites = SpinOne(N);
 
 <span style="color:#5081AA">//Create 1d Heisenberg Hamiltonian</span>
@@ -138,9 +140,9 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
     <span style="color:#5081AA">//Make site j the MPS "orthogonality center"</span>
     psi.position(j);
     <span style="color:#5081AA">//Measure magnetization</span>
-    Real Szj = toReal(psi.A(j)
+    Real Szj = (psi.A(j)
                * sites.op("Sz",j)
-               * dag(prime(psi.A(j),Site)));
+               * dag(prime(psi.A(j),Site))).real();
     println("Sz_",j," = ",Szj);
     }
 </div>
