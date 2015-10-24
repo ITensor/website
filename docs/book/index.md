@@ -112,7 +112,7 @@ The type of an Index can be obtained by calling the `.type()` method.
 
 
 <span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
-[[ITensor Overview|book/intro]]
+[[ITensor Library Overview|book/intro]]
 </span>
 <span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[ITensor Basics|book/itensor_basics]]

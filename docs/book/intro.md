@@ -1,4 +1,4 @@
-# ITensor Overview
+# ITensor Library Overview
 
 Matrix methods have been a major success in the applied sciences.
 *Tensor* methods could offer even greater insight
