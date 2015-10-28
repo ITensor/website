@@ -27,6 +27,21 @@ To access the size, use the `.m()` method
 
 The convention of calling the size "m" comes from the DMRG literature.
 
+<div class="example_clicker">Click here to view a full working example</div>
+
+    #include "itensor/index.h"
+    using namespace itensor;
+
+    int main() 
+    {
+
+    auto i = Index("index i",3);
+    println("The size of ",i.name()," is ",i.m());
+
+    return 0;
+    }
+
+
 After creating an Index, its properties are permanently fixed. The philosophy
 of ITensor is that indices have a meaning at the time they are created.
 One ITensor can be replaced by another with different indices, but an Index 
