@@ -1,8 +1,8 @@
 # Factorizing ITensors
 
 The real power of tensor algorithms comes from tensor factorization,
-which can achieve a huge compression of high-dimensional data.
-For example, matrix product states (tensor trains) can be viewed as
+which can achieve huge compression of high-dimensional data.
+For example, a matrix product state (tensor train) can be viewed as
 the successive factorization of a very high rank tensor.
 
 The ITensor approach to tensor factorizations emphasizes the structure
@@ -13,7 +13,7 @@ of the factorization, and does not require knowing the index ordering.
 The singular value decomposition (SVD) is a matrix factorization
 that is also extremely useful for general tensors.
 
-As a quick review, the SVD is a factorization of a matrix M into the product
+As a brief review, the SVD is a factorization of a matrix M into the product
 $$
 M = U S V^\dagger
 $$
