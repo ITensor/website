@@ -88,15 +88,24 @@
     <b>Installing ITensor:</b>
     <ol>
     <li>Make sure you have an up-to-date C++11 compiler and LAPACK installed. On UNIX systems, use your
-    package manager to install these; on Mac OS install the free Xcode app from the app store.</li>
+    package manager; on Mac OS install the free Xcode app from the app store;
+    for Windows install <a href="https://www.cygwin.com" target="_blank">cygwin</a>.</li>
     <li>Clone the latest version of ITensor: <pre><code>git clone https://github.com/ITensor/ITensor itensor</code></pre>
-        (Or <a href="https://github.com/ITensor/ITensor/zipball/master" target="_blank">download</a> zip file if you do not have git.)<br/>
+        (Or <a href="https://github.com/ITensor/ITensor/zipball/master" target="_blank">download</a> the zip file if you do not have git.)<br/>
         Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide.
 
     </li>
-    <li>Read the <a href="docs.cgi?page=installing">installation</a> instructions.</li>
-    <li>Learn more from the <a href="docs.cgi">documentation</a>.</li>
+    <li>Create the options.mk file: <code>cp options.mk.sample options.mk</code>.
+        Follow the instructions in this file to customize for your machine.
+    </li>
+    <li>Type <code>make</code> to build ITensor.
     </ol>
+    <p>
+    For more details, read the full <a href="docs.cgi?page=installing">installation</a> instructions.</br>
+    Browse the <a href="docs.cgi">documentation</a> to learn more about ITensor.
+    </p>
+    
+
     </p>
     <br/>
     <br/>
