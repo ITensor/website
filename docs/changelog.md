@@ -94,13 +94,13 @@ Both ITensor and IQTensor now support the following element access methods, wher
 
   <div class="example_clicker">Show Example</div>
 
-    auto MyType = IndexType("MyType");
-    auto i = Index("i",10,MyType);
-    auto j = Index("j",10,Link);
+      auto MyType = IndexType("MyType");
+      auto i = Index("i",10,MyType);
+      auto j = Index("j",10,Link);
 
-    auto T = ITensor(i,j);
+      auto T = ITensor(i,j);
 
-    Print(prime(T,MyType)); //only i will be primed
+      Print(prime(T,MyType)); //only i will be primed
 
 - Makefiles now hide most compiler output for a nicer installation experience
 
