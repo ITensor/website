@@ -1,9 +1,9 @@
-# ITensor Contraction
+# Contracting ITensors
 
 Tensor contraction is often the most expensive
-part of a tensor algorithm. 
+step of a tensor algorithm. 
 In tensor libraries where the interface depends on index order,
-tensor contraction code can also be quite fragile
+tensor contraction code can also be fragile
 and error-prone.
 ITensor makes it possible to transcribe tensor
 contraction diagrams directly to robust high-level code,
@@ -45,7 +45,7 @@ ITensor contraction is a commutative operation.
 
 ### A More Complex Example
 
-Of course, the real usefulness of a tensor library is in handling
+Of course, the real usefulness of a tensor library is handling
 cases where tensors have three or more indices.
 
 Say we have an ITensor with indices i,s, and j
@@ -62,10 +62,10 @@ $$
 But this notation can become difficult to read as contractions 
 become more complex.
 
-A nicer way to visualize this tensor contraction is 
-to use the following diagram
+A nicer way to write this tensor contraction is 
+by using a diagram
 
-<img class="diagram" width="300px" src="docs/book/images/WW_contraction.png"/>
+<img class="diagram" width="40%" src="docs/book/images/WW_contraction.png"/>
 
 In diagram notation a tensor is a blob and each line denotes an index. 
 Connecting two lines implies those indices are summed over.
@@ -85,4 +85,7 @@ has only s and s' as indices.
 
 <span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
 [[ITensor Basics|book/itensor_basics]]
+</span>
+<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+[[Factorizing ITensors (SVD, diagonalization,...)|book/itensor_factorizing]]
 </span>
