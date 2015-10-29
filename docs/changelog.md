@@ -1,5 +1,20 @@
 # Change Log #
 
+<a name="v1.3.0"></a>
+## [Version 1.3.0](https://github.com/ITensor/ITensor/tree/v1.3.0) (Oct 29, 2015) ##
+
+For better compatibility with the upcoming version 2.0 release, this version introduces a new file layout so that users have the option of including header files such as dmrg.h using the code:
+`#include "itensor/mps/dmrg.h"`
+The itensor/mps/ prefix in this include will become mandatory in version 2.0. This new layout improves readability, and moves away from a more complex build system where header files were copied to the include/ folder (which is still done but only for backwards compatibility).
+
+Other changes:
+* Introduced randomTensor(Index...) function for better compatibility with upcoming version 2.0.
+* Fixed #89 bug: missing scale_.real() reported by @BapRoyer
+* Added external rank(T) methods as alternative to T.r()
+* Added experimental operator[] to Index which returns a copy with primelevel set to specified value.
+* Updated Index printing format to `(name,size,type)'plev`
+
+
 <a name="v1.2.4"></a>
 ## [Version 1.2.4](https://github.com/ITensor/library/tree/v1.2.4) (Sep 30, 2015) ##
 
