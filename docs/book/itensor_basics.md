@@ -19,6 +19,24 @@ To confirm this is a rank 3 tensor (a tensor with 3 indices), call `rank(T)`:
 
 Alternatively you can call `T.r()`.
 
+<div class="example_clicker">Click here to view a full working example</div>
+
+    #include "itensor/itensor.h"
+    using namespace itensor;
+
+    int main()
+    {
+    auto i = Index("index i",2),
+         j = Index("index j",3),
+         k = Index("index k",4);
+    
+    auto T = ITensor(i,j,k);
+    
+    println("The rank of T is ",rank(T));
+
+    return 0;
+    }
+
 <a name="elements"></a>
 ### Accessing ITensor Elements
 
@@ -146,5 +164,5 @@ This constructor is very handy for creating ITensors which
 [[Index Objects|book/index]]
 </span>
 <span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
-[[ITensor Contraction|book/itensor_contraction]]
+[[Contracting ITensors|book/itensor_contraction]]
 </span>

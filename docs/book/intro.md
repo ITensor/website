@@ -1,41 +1,40 @@
-# ITensor Overview
+# ITensor Library Overview
 
 Matrix methods have been a major success in the applied sciences.
-*Tensor* methods could offer even greater insight
-into complex systems and high dimensional data.
-Major developments in physics and chemistry have come from
-viewing quantum wavefunctions as tensor networks.
-Data scientists are discovering tensor optimization algorithms
+*Tensor* methods promise even greater insights
+into complex systems and data sets.
+Major advances in physics and chemistry have come from
+tensor network wavefunctions.
+Data scientists are discovering tensor algorithms
 which decisively outperform standard techniques.
 
-In real tensor applications, each index of a tensor has
+In real tensor applications, each tensor index has
 a semantic, or physical meaning. 
 Similarly in ITensor, tensor indices are objects with
 unique identities. Constructing an index in ITensor looks like:
 
     Index i("index i",3);
 
-The resulting Index has a size, or bond dimension of 3. Upon creation it gets
+The resulting Index has a size, or bond dimension of 3. Upon creation it is 
 indelibly stamped with an internal ID number; all copies of this Index
-carry this same ID number. (The string "index i" is the name of this Index only for
-printing purposes.)
+carry this same ID number.
 
 Having made a few Index objects i, j, k, one can construct ITensors
 
-    ITensor B(i);
-    ITensor C(j,i);
-    ITensor D(i,j,k);
+    ITensor A(i);
+    ITensor B(j,i);
+    ITensor C(i,j,k);
 
 and set their elements (as shown in the [[ITensor Basics|book/itensor_basics#elements]] chapter).
 
 Since matching indices can be recognized by their ID, ITensor contraction
 is simply
 
-    A = B * C * D;
+    D = A * B * C;
 
 The ITensor contraction
 engine recognizes repeated indices and sums 
-over them, much like the Einstein summation convention used
+over them, like the Einstein summation convention used
 in physics. Instead of thinking about the ordering of tensor indices,
 users can focus on the structure of tensor networks.
 Certain classes of bugs are completely ruled out, such as confusing
@@ -60,7 +59,7 @@ to get the correct result. ITensor handles this transposition automatically,
 making user code simple and robust. If B were to be redefined
 with transposed index order, the ITensor code `C=A*B` would continue to give the correct result.
 
-ITensor has many other features emphasizing productivity
+ITensor has many features emphasizing productivity
 over programming details:
 * Adding ITensors works automatically without 
 needing to permute the index order. 
