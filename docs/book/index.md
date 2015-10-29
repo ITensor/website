@@ -1,26 +1,24 @@
 # Index Objects
 
 The most basic element of ITensor is not actually a tensor: it is a tensor index, 
-an object of type&nbsp;`Index`.
+an object of type&nbsp;`Index` (by tensor index we mean i,j,k in an expression
+like @@T\_{ijk}@@). 
+
 ITensors are "intelligent tensors" because they "know" what indices they have. 
 This is possible since each Index carries extra information.
-In addition to having a fixed size, or dimension, an Index has:
-
-* An internal id number for checking whether two Index objects are equal.
-
-* A prime level starting at zero which can be raised or lowered to make an Index distinct
-from others with the same id.
-
-* An IndexType tag saying what kind of index it is. By default an Index has type `Link`. 
-By convention, physical indices are assigned the type `Site`. Indices can have custom user-defined IndexTypes.
-
-* A name used to display the Index.
 
 The simplest way to construct an Index is to give its name and size:
 
     auto i = Index("index i",3);
 
-To access the size, use the `.m()` method
+Upon creation, an Index gets "stamped" with a hidden id number that allows copies 
+of this Index to recognize each other:
+
+    auto j = i; //make a copy of i
+    Print(j==i);
+    //prints: j==i = true
+
+To access the size of an Index, use its `.m()` method
 
     println("The size of ",i.name()," is ",i.m());
     //prints: The size of index i is 3
@@ -34,7 +32,6 @@ The convention of calling the size "m" comes from the DMRG literature.
 
     int main() 
     {
-
     auto i = Index("index i",3);
     println("The size of ",i.name()," is ",i.m());
 
@@ -42,13 +39,16 @@ The convention of calling the size "m" comes from the DMRG literature.
     }
 
 
-After creating an Index, its properties are permanently fixed. The philosophy
-of ITensor is that indices have a meaning at the time they are created.
-One ITensor can be replaced by another with different indices, but an Index 
-itself cannot be changed. 
+After creating an Index, most of its properties are permanently fixed. 
+The philosophy of ITensor is that indices have a meaning at the time they are created.
+A new Index can be created to take the place of an old one, but the semantic
+meaning of a given Index object cannot be modified.
 
-### Index Comparison
+### Priming Indices
 
+One property of an Index you can change is its prime level.
+
+An Index starts out with prime level zero.
 Two copies of the same Index with the same prime level compare equal:
 
     auto i = Index("index i",3);
@@ -64,8 +64,6 @@ Because this copy has a different prime level, it will no longer compare equal t
     //prints: The prime level of ip is 1
     printfln("ip==i is %s",ip==i);
     //prints: ip==i is false
-
-### Priming Indices
 
 There are many convenient ways to manipulate Index prime levels.
 The `prime` function accepts an optional increment amount:
@@ -102,7 +100,7 @@ The prime level is displayed at the end:
 
 ### Index Types
 
-The Index constructor optionally accepts an `IndexType` argument:
+The Index constructor accepts an optional `IndexType` argument:
 
     auto s2 = Index("site 2",2,Site); //IndexType set to Site
 
