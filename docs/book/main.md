@@ -10,15 +10,41 @@ The goal of this book is to quickly familiarize users with the
 main features of ITensor. Later chapters turn to advanced features and
 customizing higher-level parts of the library.
 
-## Table of Contents
+# Table of Contents
 
-1. [[ITensor Overview|book/intro]]
+- [[ITensor Library Overview|book/intro]]
 
-2. [[Index Objects|book/index]]
+### ITensor Fundamentals
 
-3. [[ITensor Basics|book/itensor_basics]]
+- [[Index Objects|book/index]]
 
-4. [[ITensor Contraction|book/itensor_contraction]]
+- [[ITensor Basics|book/itensor_basics]]
+
+- [[Contracting ITensors|book/itensor_contraction]]
+
+- [[Factorizing ITensors (SVD, diagonalization,...)|book/itensor_factorizing]]
+
+<!--
+- [[Sparse ITensors (combiners, diagonal,...)|book/itensor_sparse]]
+-->
+
+### IQTensor - Symmetry Preserving (Block Sparse) Tensors
+
+<!--
+- [[IQTensor Overview|book/iqtensor_overview]]
+- [[IQIndex Objects|book/iqindex]]
+- [[IQTensor Basics|book/iqtensor_basics]]
+-->
+
+### Matrix Product States and DMRG
+
+### Design of ITensor Library and Internals
+
+<!--
+- [[Dynamic Storage System|book/dynamic_storage]]
+- [[Scale Factors (LogNum)|book/scale_factors]]
+- [[TensorRef Layer|book/tensorref]]
+-->
 
 <br/>
 <span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
