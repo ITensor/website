@@ -6,29 +6,29 @@
 ### The Problem
 
 A unfortunate fact about C++ functions is that arguments must be passed in a fixed order.
-This is a nuisance when you are happy with the default value of, say, the third argument,
+This is frustrating when you are happy with the default value of, say, the third argument,
 but have to provide it anyway to reach the fourth and fifth arguments.
 
-To make matters worse, the values passed to a function can be opaque and hard to interpret.
+To make matters worse, function arguments can be opaque and hard to interpret.
 <br/>In the following code
 
     truncateMPS(psi,500,1E-5,false);
 
-it is fairly clear that psi is some matrix product state to be truncated, but what do
+it is clear that psi is some matrix product state to be truncated, but what do
 the other parameters mean?
 
-In the above example, if the truncateMPS function accepted an Args object instead, we
+If the truncateMPS function accepted an Args object instead, we
 could call it like this
 
     truncateMPS(psi,{"Maxm",500,"Cutoff",1E-9,"ShowSizes",false});
 
-This much easier to read and lets us specify only those parameters we care about,
+This is easier to read and lets us specify the parameters we care about,
 leaving the rest to have default values. For example, if we are happy with the default
-value for "Maxm" and "ShowSizes", we could just call truncateMPS as
+value for "Maxm" and "ShowSizes", we could call truncateMPS as
 
     truncateMPS(psi,{"Cutoff",1E-9});
 
-We can also pass the named arguments in any order we like
+The named arguments can be passed in any order we like
 
     truncateMPS(psi,{"ShowSizes",false,"Maxm",500,"Cutoff",1E-9});
 
@@ -37,9 +37,8 @@ We can also pass the named arguments in any order we like
 
 To allow a function to take an Args object, first make sure the Args class is available
 
-    #include "args.h"
+    #include "itensor/util/args.h"
 
-<!--v1-->
 Next define the last argument of your function to be
 
     void func(..., Args const& args = Args::global());
