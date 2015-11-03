@@ -1,8 +1,11 @@
-<span class='article_title'>Density Matrix Renormalization Group</span>
+# The Density Matrix Renormalization Group
 
 <span class='article_sig'>Thomas E. Baker and Benedikt Bruognolo&mdash;September 15, 2015</span>
 
-One of the most successful methods to calculate low dimensional systems is known as the density matrix renormalization group (DMRG).  DMRG uses the [[MPS|tutorials/MPS]] and [[MPO|tutorials/MPO]] representation to calculate the ground state of a low dimensional quantum system.  The algorithm DMRG is the combination of three other methods that we covered elsewhere:  
+One of the most successful methods to calculate low-energy properties of one-dimensional and two-dimensional quantum systems 
+is the density matrix renormalization group (DMRG).  
+DMRG uses the [[MPS|tutorials/MPS]] and [[MPO|tutorials/MPO]] representation to calculate the 
+ground state of a low dimensional quantum system. The algorithm DMRG is the combination of three other methods that we covered elsewhere:  
 
   1.  The optimization problem is constructed as a two-site object from the full tensor network
   2.  This reduced operator is solved by an eigensolver such as the [[Lanczos||tutorials/Lanczos]] or [[Davidson algorithm|tutorials/davidson]]
