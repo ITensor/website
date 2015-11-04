@@ -2,7 +2,7 @@
 
 <span class='article_sig'>Thomas E. Baker and Benedikt Bruognolo&mdash;September 23, 2015</span>
 
-Diagonalizing an entire matrix can be a costly operation.  Since diagonalizing matrices makes up a large part of solving quantum systems, using a fast algorithm to do this is desirable.  One such algorithm is the Lanczos algorithm.
+Using a random guess for solving any problem is highly desirable since it avoids the need for any guess work or first order insight. The particular problem of interest for this problem is diagonalizing an entire matrix which can be a costly operation depending on which method we use.  Since diagonalizing matrices makes up a large part of solving quantum systems, using a fast algorithm to do this is desirable.  One such algorithm is the Lanczos algorithm.
 
 This article covers what the Lanczos algorithm is and why it finds the ground state, @@\psi_0@@.  Doing this algorithm avoids the full diagonalization of a matrix @@Q@@ since we are only interested in a very specific eigenvalue in a localized region of the Hilbert space.
 
@@ -27,7 +27,7 @@ This algorithm will target the extremal eigenvalues (not all of them), so the me
 
 ### Making sure you actually get the ground state 
 
-The above procedure gives you an extreme eigenvalue but not necessarilly the ground state depending on the random guess, @@\psi@@.  To make sure we obtain the ground state, we use the ground state of the diagonalization as a new initial @@\psi@@ and restart the algorithm.
+The above procedure gives you an extreme eigenvalue but not necessarily the ground state depending on the random guess, @@\psi@@.  To make sure we obtain the ground state, we use the ground state of the diagonalization as a new initial @@\psi@@ and restart the algorithm.
 
 We also use a Gram-Schmidt orthonormalization procedure to ensure the eigenvectors, @@\\{\phi_N\\}@@ are orthogonal and that the algorithm is more stable.
 
