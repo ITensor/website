@@ -18,7 +18,7 @@ An example where we might want to give a new name to a site is during coarse gra
 
 <p align="center"><img src="docs/tutorials/primes/primingpractice.png" alt="MPS" style="height: 250px;"/></p>
 
-The physics of the `Index` is changing on the coarser level.  We're describing a new lattice site with a different [[MPO|tutorials/MPO]] at this next level.  We don't want to call this new site `s1'` even though we are still never going to contract `s1'` with `s1`. But in light of the new physics, we should just rename the `Index` (left) instead of priming the `Index` (right).
+The physics of the `Index` is changing on the coarser level.  We're describing a new lattice site with a different [[MPO|tutorials/MPO]] at this next level, so we introduce a new `Index` `t1`.  We don't want to call this new site `s1'` even though we are still never going to contract `s1'` with `s1`. But in light of the new physics, we should just rename the `Index` (left) instead of priming the `Index` (right).
 
 ## Functions that Prime Indices
 

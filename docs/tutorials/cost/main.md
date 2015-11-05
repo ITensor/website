@@ -26,16 +26,16 @@ Note that if we carry out the sum of the following diagram on the bond marked wi
 $$=\sum_{\ldots\sigma\mu\nu\rho\omega\ldots}\ldots A^{\sigma \mu}A^{\mu\nu}A^{\nu
 \rho}A^{\rho\omega}\ldots$$
 
-Highlighting the bond in green means we are interested in summing over the index corresponding to that bond.  We can think of the cost of summing @@\mu@@ as being propotional too the number of terms involving a @@\mu@@ in them.  Counting these terms up, we see that there are two tensors and they have three unique indices between them.  To evaluate the sum, we need to perform @@3\times3\times3=27@@ operations (for performing operations on @@\sigma@@, @@\mu@@, and @@\nu@@). We can also find this number quickly and visually by counting the number of legs touching the tensors that a chosen line touches.
+Highlighting the bond in green means we are interested in summing over the index corresponding to that bond.  We can think of the cost of summing @@\mu@@ as being propotional too the number of terms involving a @@\mu@@ in them.  Counting these terms up, we see that there are two tensors and they have three unique indices between them.  To evaluate the sum, we need to perform @@m\times m\times m=m^3@@ operations (for performing operations on @@\sigma@@, @@\mu@@, and @@\nu@@). We can also find this number quickly and visually by counting the number of legs touching the tensors that a chosen line touches.
 
 For another example, 
 
 <p align="center"><img src="docs/tutorials/cost/complex.png" alt="Complex contraction" style="width: 350px;"/></p>
 
-is of order @@\mathcal{O}(m^8)@@ since the internal lines touch two tensors and these touch eight lines collectively.  This is not to say that each tensor requires this cost to contract, but to evaluate the whole network, we need to pay attention to the largest cost.
+is of order @@\mathcal{O}(m^8)@@ since the internal lines touch two tensors and these touch eight lines collectively.  To see this explicitly, consider one of the lines in between the two tensors (one that touches both blocks).  Each of the blocks is connected to 7 other lines.  In total, that is eight lines and if each line (corresponding to an index) has @@m@@ components, then the cost is of @@m^8@@. This is not to say that each line requires this cost to contract, but to evaluate the whole network, we need to pay attention to the largest cost of all the pairwise sums.
 
 
-For a chain of @@L@@ tensors, the cost of calculation is @@\mathcal{O}(Lm^3)@@.  When reporting the cost of a computation, we often do not report the @@L@@ variable since this is considered fixed in the computational cost.  We can only change the exponent of @@m@@ with any algorithm we choose.
+For a chain of @@L@@ tensors (we discuss specifically tensors in an MPS here) the cost of calculation is @@\mathcal{O}(Ldm^3)@@.  When reporting the cost of a computation, we often do not report the @@L@@ variable since this is considered fixed in the computational cost.  We can only change the exponent of @@m@@ with any algorithm we choose.
 
 ### Contraction Example @@\mathcal{O}(dm^4)@@
 
@@ -43,7 +43,7 @@ Let's take a look first at an inefficient way to calculate the contracted tensor
 
 <p align="center"><img src="docs/tutorials/cost/m4.png" alt="Index Labels" style="width: 350px;"/></p>
 
-The cost to evaluate this is @@\mathcal{O}(dm^4)@@. 
+The cost to evaluate this is @@\mathcal{O}(dm^4)@@.  So, starting from one of the bonds on the inside of the chain is not as efficient as we can make the algorithm. 
 
 ## The most efficient algorithm @@\mathcal{O}(dm^3)@@
 
