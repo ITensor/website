@@ -17,7 +17,7 @@ unique identities. Constructing an index in ITensor looks like:
 
 The resulting Index has a size, or bond dimension of 3. Upon creation it is 
 indelibly stamped with an internal ID number; all copies of this Index
-carry this same ID number.
+carry this same ID number, allowing them to recognize each other.
 
 Having made a few Index objects i, j, k, one can construct ITensors
 

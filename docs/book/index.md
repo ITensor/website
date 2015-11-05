@@ -5,7 +5,7 @@ an object of type&nbsp;`Index` (by tensor index we mean i,j,k in an expression
 like @@T\_{ijk}@@). 
 
 ITensors are "intelligent tensors" because they "know" what indices they have. 
-This is possible since each Index carries extra information.
+This is possible since each Index carries extra information beyond its size.
 
 The simplest way to construct an Index is to give its name and size:
 
@@ -14,9 +14,8 @@ The simplest way to construct an Index is to give its name and size:
 Upon creation, an Index gets "stamped" with a hidden id number that allows copies 
 of this Index to recognize each other:
 
-    auto j = i; //make a copy of i
-    Print(j==i);
-    //prints: j==i = true
+    auto j = i;  //make a copy of i
+    Print(j==i); //prints: j==i = true
 
 To access the size of an Index, use its `.m()` method
 
@@ -49,12 +48,7 @@ meaning of a given Index object cannot be modified.
 One property of an Index you can change is its prime level.
 
 An Index starts out with prime level zero.
-Two copies of the same Index with the same prime level compare equal:
-
-    auto i = Index("index i",3);
-    auto ic = i;
-    printfln("ic==i is %s",ic==i);
-    //prints: ic==i is true
+Two copies of the same Index with the same prime level compare equal.
 
 Calling `prime(i)` will produce a copy of i with prime level raised by 1.
 Because this copy has a different prime level, it will no longer compare equal to i.
