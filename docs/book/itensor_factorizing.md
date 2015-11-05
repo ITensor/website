@@ -1,4 +1,4 @@
-# Factorizing ITensors
+# Introduction to Factorizing ITensors
 
 The real power of tensor algorithms comes from tensor factorization,
 which can achieve huge compression of high-dimensional data.
@@ -7,6 +7,10 @@ the successive factorization of a very high rank tensor.
 
 The ITensor approach to tensor factorizations emphasizes the structure
 of the factorization, and does not require knowing the index ordering.
+
+ITensor offers various tensor factorizations, but in this chapter we
+focus on the example of the SVD, which is used frequently in physics
+applications.
 
 ### Singular Value Decomposition
 
@@ -82,7 +86,69 @@ However, if needed one can obtain these indices by calling `commonIndex`:
     auto ui = commonIndex(S,U); //get the index S shares with U
     auto vi = commonIndex(S,V); //get the index S shares with V
 
+### Truncating the SVD spectrum
 
+An important use of the SVD is approximating a higher-rank tensor
+by a product of lower-rank tensors whose indices range over only
+a modest set of values.
+
+To obtain an approximate SVD in ITensor, pass one or more of
+the following accuracy parameters:
+* "Cutoff" &mdash; real number <span>@@\epsilon@@</span>. Discard all "small" singular values
+<span>@@\lambda\_n@@</span> such that the <i>truncation error</i> is less than <span>@@\epsilon@@</span>:
+<div>
+$$
+\frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon
+$$
+</div>
+
+* "Maxm" &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained
+
+* "Minm" &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
+
+Let us revisit the example above, but also provide some of these accuracy parameters
+
+    //make an ITensor with indices i,j,k and random elements
+    auto T = randomTensor(i,j,k);
+    ITensor U(i,k),S,V;
+    svd(T,U,S,V,{"Cutoff",1E-2,"Maxm",50});
+
+In the code above, we specified that a cutoff of <span>@@\epsilon=10^{-2}@@</span> be used and that at
+most 50 singular values should be kept. We can check that the resulting factorization is now approximate
+by computing the squared relative error:
+
+    auto truncerr = sqr(norm(U*S*V-T)/norm(T));
+    Print(truncerr);
+    //typical output: truncerr = 9.24E-03
+
+Note how the error computed this way is less than our <span>@@\epsilon@@</span> as promised.
+
+<div class="example_clicker">Click here to view a full working example</div>
+
+    #include "itensor/svdalgs.h"
+    using namespace itensor;
+
+    int main() 
+    {
+    auto i = Index("index i",30),
+         j = Index("index j",40),
+         k = Index("index k",50);
+
+    //Make a random ITensor with indices i,j,k
+    auto T = randomTensor(i,j,k);
+
+    ITensor U(i,k),S,V;
+    svd(T,U,S,V,{"Cutoff",1E-2,"Maxm",500});
+
+    auto truncerr = sqr(norm(U*S*V-T)/norm(T));
+    Print(truncerr);
+
+    return 0;
+    }
+
+<br/>
+<br/>
+<br/>
 
 
 <span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
