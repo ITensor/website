@@ -115,8 +115,8 @@
 <div class="full section rounded"> <h2>Code Samples</h2> </div>
 
 <div class="full screenshot">
-    <h2>Perform a DMRG Calculation</h2>
-<div style="white-space: pre; font-family:monospace; font-size: 120%;">
+<h2>Perform a DMRG Calculation</h2>
+<pre>
 <span style="color:#5081AA">//Define Hilbert space of N spin-one sites</span>
 <span style="color:green">int</span> N = 100;
 <span style="color:green">auto</span> sites = SpinOne(N);
@@ -154,29 +154,34 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
                * dag(prime(psi.A(j),Site))).real();
     println("Sz_",j," = ",Szj);
     }
-</div>
+</pre>
 </div>
 
 <div class="full screenshot">
-    <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
-    <h2>Multiply Two ITensors</h2>
-    <pre>
-Index a("a",2), b("b",2), c("c",2);
-ITensor Z(a,b), X(c,b);
-commaInit(Z,a,b) = 1, 0,
-                   0,-1;
-commaInit(X,b,c) = 0, 1, 
-                   1, 0;
+<img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Multiply Two ITensors</h2>
+<pre>
+Index a("a",2), 
+      b("b",2), 
+      c("c",2);
+ITensor Z(a,b), 
+        X(c,b);
 
+Z.set(a(1),b(1),+1.0);
+Z.set(a(2),b(2),-1.0);
+
+X.set(b(1),c(2),+1.0);
+X.set(b(2),c(1),+1.0);
+<div style="color:#5081AA">
 //the * operator finds and
 //contracts common index 'b'
 //regardless of index order:
-
+</div>
 ITensor R = Z * X;
 
-Print( R(a(1),c(2)) ); //Prints: R(a(1),c(2)) = 1
-Print( R(a(2),c(1)) ); //Prints: R(a(1),c(2)) = -1
-    </pre>
+Print( R.real(a(2),c(1)) ); 
+//output: R.real(a(1),c(2)) = -1
+</pre>
 </div>
 
 <div class="full section rounded"> <h2>ITensor Collaboration</h2> </div>
