@@ -22,7 +22,7 @@ customizing higher-level parts of the library.
 
 - [[Contracting ITensors|book/itensor_contraction]]
 
-- [[Factorizing ITensors (SVD, diagonalization,...)|book/itensor_factorizing]]
+- [[Factorizing ITensors (SVD Example)|book/itensor_factorizing]]
 
 <!--
 - [[Sparse ITensors (combiners, diagonal,...)|book/itensor_sparse]]

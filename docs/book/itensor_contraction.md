@@ -87,5 +87,5 @@ has only s and s' as indices.
 [[ITensor Basics|book/itensor_basics]]
 </span>
 <span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
-[[Factorizing ITensors (SVD, diagonalization,...)|book/itensor_factorizing]]
+[[Factorizing ITensors|book/itensor_factorizing]]
 </span>
