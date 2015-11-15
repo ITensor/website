@@ -63,10 +63,10 @@ def convert(string):
 
     #Convert MathJax @@...@@ -> <span>@@...@@</span> to protect
     #from Markdown formatter
-    string = re.sub(r"@@(.+?)@@",r"<span>@@\1@@</span>",string)
+    string = re.sub(r"@@(.+?)@@",r"<span> @@\1@@ </span>",string)
     #Convert MathJax $$...$$ -> <div>$$...$$</div> to protect
     #from Markdown formatter
-    string = re.sub(r"\$\$(.*?)\$\$",r"\n<div>$$\1$$</div>\n",string,flags=re.DOTALL|re.MULTILINE)
+    string = re.sub(r"\$\$(.*?)\$\$",r"\n<div> $$\1$$ </div>\n",string,flags=re.DOTALL|re.MULTILINE)
 
     #Convert wiki links to markdownl link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
