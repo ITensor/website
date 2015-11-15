@@ -56,7 +56,7 @@ We begin by defining four tensors:
     ITensor S3(x1,x0,prime(y0,2));
     ITensor S4(y1,prime(x0,2),prime(y0,2));
 
-This pattern of tensors appears in a [[TRG|]] calculation and this represents the final operation before updating the tensor for the next renormalization group step. In order to get a better idea of what these tensors look like, we should draw a picture:
+This pattern of tensors appears in a [[TRG|book/trg]] calculation and this represents the final operation before updating the tensor for the next renormalization group step. In order to get a better idea of what these tensors look like, we should draw a picture:
 
 <p align="center"><img src="docs/tutorials/primes/trg_tensors.png" alt="MPS" style="height: 350px;"/></p>
 
