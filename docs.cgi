@@ -7,6 +7,7 @@ import mistune #Markdown renderer
 from pygments import highlight
 from pygments.lexers import CppLexer
 from pygments.formatters import HtmlFormatter
+from functools import partial
 # Turn on cgitb to get nice debugging output.
 # Remember to turn off when done debugging, otherwise not secure.
 #import cgitb; cgitb.enable()
@@ -53,6 +54,15 @@ def openFile(fname):
 def printContentType():
     print "Content-Type: text/html\n\n"
 
+def processMathJax(matchobj,delimit=""):
+    math = re.sub(r"\\_","_",matchobj.group(0))
+    if delimit=="@@":
+        return "<span> " + math + " </span>"
+    elif delimit=="$$":
+        return "\n<div> " + math + " </div>"
+    return None
+    
+
 def convert(string):
     #Convert arxiv:####.#### links
     string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a target='_blank' href='http://arxiv.org/abs/\1'>\1</a>",string)
@@ -61,14 +71,14 @@ def convert(string):
     #Convert github:<sha> links
     string = re.sub(r"github:(\w{5})\w*",r"<a class='github' target='_blank' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
 
-    #Convert MathJax @@...@@ -> <span>@@...@@</span> to protect
-    #from Markdown formatter
-    string = re.sub(r"@@(.+?)@@",r"<span> @@\1@@ </span>",string)
-    #Convert MathJax $$...$$ -> <div>$$...$$</div> to protect
-    #from Markdown formatter
-    string = re.sub(r"\$\$(.*?)\$\$",r"\n<div> $$\1$$ </div>\n",string,flags=re.DOTALL|re.MULTILINE)
+    #Convert MathJax @@...@@ -> <span>@@...@@</span>
+    #and $$...$$ -> <div>$$..$$</div> to protect
+    #from Markdown formatter, also replace \_ -> _ in 
+    #Latex string
+    string = re.sub(r"(@@.+?@@)",partial(processMathJax,delimit="@@"),string)
+    string = re.sub(r"(\$\$.+?\$\$)",partial(processMathJax,delimit="$$"),string,flags=re.DOTALL|re.MULTILINE)
 
-    #Convert wiki links to markdownl link syntax
+    #Convert wiki links to markdown link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
     mdstring = slist[0]
     for j in range(1,len(slist)):

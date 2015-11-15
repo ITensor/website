@@ -94,8 +94,8 @@ a modest set of values.
 
 To obtain an approximate SVD in ITensor, pass one or more of
 the following accuracy parameters:
-* `"Cutoff"` &mdash; real number <span>@@\epsilon@@</span>. Discard the smallest singular values
-<span>@@\lambda\_n@@</span> such that the <i>truncation error</i> is less than <span>@@\epsilon@@</span>:
+* `"Cutoff"` &mdash; real number @@\epsilon@@. Discard the smallest singular values
+@@\lambda\_n@@ such that the <i>truncation error</i> is less than @@\epsilon@@:
 
 $$
 \frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
@@ -115,7 +115,7 @@ Let us revisit the example above, but also provide some of these accuracy parame
     ITensor U(i,k),S,V;
     svd(T,U,S,V,{"Cutoff",1E-2,"Maxm",50});
 
-In the code above, we specified that a cutoff of <span>@@\epsilon=10^{-2}@@</span> be used and that at
+In the code above, we specified that a cutoff of @@\epsilon=10^{-2}@@ be used and that at
 most 50 singular values should be kept. We can check that the resulting factorization is now approximate
 by computing the squared relative error:
 
@@ -123,7 +123,7 @@ by computing the squared relative error:
     Print(truncerr);
     //typical output: truncerr = 9.24E-03
 
-Note how the computed error is below the <span>@@\epsilon@@</span> we requested.
+Note how the computed error is below the @@\epsilon@@ we requested.
 
 <div class="example_clicker">Click here to view a full working example</div>
 

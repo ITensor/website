@@ -2,7 +2,7 @@
 
 The most basic element of ITensor is not actually a tensor: it is a tensor index, 
 an object of type&nbsp;`Index` (by tensor index we mean i,j,k in an expression
-like @@T\_{ijk}@@). 
+like @@T_{ijk}@@ ). 
 
 ITensors are "intelligent tensors" because they "know" what indices they have. 
 This is possible since each Index carries extra information beyond its size.
