@@ -1,22 +1,17 @@
 
-## Using ITensor
+<img src="docs/install.png" class="icon">  [[Installing ITensor|installing]]
 
-💽  [[Installing ITensor|installing]]
+<img src="docs/tutorials/icon.png" class="icon">  [[Tutorials|tutorials]]. Enhance your knowledge of essential ITensor features.
 
-📚   [[The ITensor Book|book]]. Start here for a comprehensive introduction to ITensor.
+<img src="docs/book/icon.png" class="icon">   [[The ITensor Book|book]]. Start here for a comprehensive introduction to ITensor.
 
-🎓  [[Tutorials|tutorials]]. Enhance your knowledge of essential ITensor features.
+<img src="docs/articles/icon.png" class="icon"> [[Articles|articles]]. Background reading on tensor networks and programming.
 
-🍴  [[Code Recipes|recipes]]. Sample codes for common tasks.
+<img src="docs/formulas/icon.png" class="icon"> [[Code Formulas|formulas]]. Sample codes for common tasks.
 
-📝  [[Mini-course|course]]. Summer school lectures focused on matrix product states.
+<img src="docs/course/icon.png" class="icon"> [[Mini-course|course]]. Summer school lectures focused on matrix product states.
 
-📖  [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
-
-
-## Articles
-
-* [[Periodic vs Open or Infinite Boundary Conditions for DMRG, Which Should You Choose?|periodic]]
+<img src="docs/classes/icon.png" class="icon">   [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
 
 ## Additional information
 

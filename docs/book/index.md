@@ -118,9 +118,9 @@ The type of an Index can be obtained by calling the `.type()` method.
 [[detailed documentation|classes/index]].</i>
 
 
-<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[ITensor Library Overview|book/intro]]
 </span>
-<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/arrowright.png" class="icon">
 [[ITensor Basics|book/itensor_basics]]
 </span>

@@ -39,6 +39,13 @@ form = FieldStorage()
 
 def fileExists(fname):
     try:
+        open(fname)
+        return True
+    except IOError:
+        return False
+
+def openFile(fname):
+    try:
         return open(fname)
     except IOError:
         return None
@@ -50,9 +57,16 @@ def convert(string):
     #Convert arxiv:####.#### links
     string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a target='_blank' href='http://arxiv.org/abs/\1'>\1</a>",string)
     #Convert cond-mat/####### links
-    string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"cond-mat/<a target='_blank' href='http://arxiv.org/abs/cond-mat/\1'>\1</a>",string)
+    string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"<a target='_blank' href='http://arxiv.org/abs/cond-mat/\1'>cond-mat/\1</a>",string)
     #Convert github:<sha> links
     string = re.sub(r"github:(\w{5})\w*",r"<a class='github' target='_blank' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
+
+    #Convert MathJax @@...@@ -> <span>@@...@@</span> to protect
+    #from Markdown formatter
+    string = re.sub(r"@@(.+?)@@",r"<span>@@\1@@</span>",string)
+    #Convert MathJax $$...$$ -> <div>$$...$$</div> to protect
+    #from Markdown formatter
+    string = re.sub(r"\$\$(.*?)\$\$",r"\n<div>$$\1$$</div>\n",string,flags=re.DOTALL|re.MULTILINE)
 
     #Convert wiki links to markdownl link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
@@ -109,13 +123,13 @@ page = form.getvalue("page")
 if page == None: page = "main"
 
 mdfname = reldocpath + page + ".md"
-mdfile = fileExists(mdfname)
+mdfile = openFile(mdfname)
 
 # "page.md" file doesn't exist, reinterpret "page" as a
 # directory name and look for a main.md file there
 if not mdfile:
     mdfname = reldocpath + page + "/main.md"
-    mdfile = fileExists(mdfname)
+    mdfile = openFile(mdfname)
 
 printContentType()
 
@@ -148,18 +162,24 @@ print nav
 print "".join(postnav_header_file.readlines())
 print bodyhtml
 
+#
+# Auto-generate back links
+#
 backlinks = []
 full_dirname = ""
 for dirname in dirlist:
     text = "Back to " + dirname.capitalize()
     full_dirname += dirname
-    backlinks.append( "<br/><a href=\"%s?page=%s\">%s</a>"%(this_fname,full_dirname,text) )
+    iconfname = "docs/"+full_dirname+"/icon.png"
+    iconimg = "<!-- " + iconfname + " -->"
+    if fileExists(iconfname): iconimg = "<img src=\"%s\" class=\"icon\">"%(iconfname,)
+    backlinks.append( "<br/>%s<a href=\"%s?page=%s\">%s</a>"%(iconimg,this_fname,full_dirname,text) )
     full_dirname += "/"
 backlinks.reverse()
 for bl in backlinks: print bl
 
 if not (len(dirlist)==0 and page_name == "main"):
-    print "<br/><a href=\"%s\">Back to Main</a>"%(this_fname)
+    print "<br/><img src=\"docs/icon.png\" class=\"icon\"><a href=\"%s\">Back to Main</a>"%(this_fname)
 
 print "".join(footer_file.readlines())
 footer_file.close()

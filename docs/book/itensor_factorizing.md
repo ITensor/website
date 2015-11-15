@@ -94,17 +94,19 @@ a modest set of values.
 
 To obtain an approximate SVD in ITensor, pass one or more of
 the following accuracy parameters:
-* "Cutoff" &mdash; real number <span>@@\epsilon@@</span>. Discard all "small" singular values
+* `"Cutoff"` &mdash; real number <span>@@\epsilon@@</span>. Discard the smallest singular values
 <span>@@\lambda\_n@@</span> such that the <i>truncation error</i> is less than <span>@@\epsilon@@</span>:
-<div>
-$$
-\frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon
-$$
-</div>
 
-* "Maxm" &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained
+$$
+\frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
+$$
 
-* "Minm" &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
+Using a cutoff allows the SVD algorithm to truncate as many states as possible while still
+ensuring a certain accuracy.
+
+* `"Maxm"` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
+
+* `"Minm"` &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
 
 Let us revisit the example above, but also provide some of these accuracy parameters
 
@@ -117,11 +119,11 @@ In the code above, we specified that a cutoff of <span>@@\epsilon=10^{-2}@@</spa
 most 50 singular values should be kept. We can check that the resulting factorization is now approximate
 by computing the squared relative error:
 
-    auto truncerr = sqr(norm(U*S*V-T)/norm(T));
+    auto truncerr = sqr(norm(U*S*V - T)/norm(T));
     Print(truncerr);
     //typical output: truncerr = 9.24E-03
 
-Note how the error computed this way is less than our <span>@@\epsilon@@</span> as promised.
+Note how the computed error is below the <span>@@\epsilon@@</span> we requested.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
@@ -147,12 +149,13 @@ Note how the error computed this way is less than our <span>@@\epsilon@@</span> 
     }
 
 <br/>
-<br/>
-<br/>
 
 
-<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[Contracting ITensors|book/itensor_contraction]]
 </span>
 
+<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+[[Case Study: TRG Algorithm|book/trg]]
+</span>
 

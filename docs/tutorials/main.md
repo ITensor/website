@@ -1,5 +1,5 @@
 
-# 🎓 Tutorials
+# <img src="docs/tutorials/icon.png" class="largeicon"> Tutorials
 
 
 ### Fundamentals

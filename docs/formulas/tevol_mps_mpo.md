@@ -1,6 +1,6 @@
 # Time Evolving an MPS with an MPO
 
-(Throughout this recipe I will use the ITensor, MPS, and MPO classes. To take advantage
+(Throughout this formula I will use the ITensor, MPS, and MPO classes. To take advantage
 of quantum numbers automatically for symmetric Hamiltonians, 
 use the IQTensor, IQMPS, and IQMPO classes instead but otherwise leave the code the same.)
 

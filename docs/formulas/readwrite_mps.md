@@ -1,6 +1,6 @@
 # Reading and Writing MPS or MPO To/From Disk #
 
-The following recipe is for an MPS, but works the same for an IQMPS, MPO, or IQMPO.
+The following formula is for an MPS, but works the same for an IQMPS, MPO, or IQMPO.
 
 ## Writing an MPS to a File ##
 
