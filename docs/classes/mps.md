@@ -120,7 +120,11 @@ An MPS can be constructed from either a [[SiteSet|classes/siteset]] or an [[Init
   Sets the orthogonality center to site `j` by performing singular value decompositions of tensors
   between `leftLim()` and `rightLim()`. After calling `position(j)`, tensors at sites `i < j` are
   guaranteed left-orthogonal and tensors at sites `i > j` are guaranteed right-orthogonal. Left
-  and right orthogonal site tensors can be omitted from expectation values for sites not in the support of the operator.
+  and right orthogonal site tensors can be omitted from operator expectation values for sites not 
+  in the support of the operator.
+
+  Note: calling `position(j)` may in general change the "virtual" indices between some or all of
+  the MPS tensors.
 
 * `orthogonalize(OptSet opts = Global::opts())`
 
