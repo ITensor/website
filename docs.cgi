@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/bin/python2.7
 
 import sys
 import re #regular expressions
@@ -81,10 +81,10 @@ def convert(string):
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
-                mdstring += "[%s](%s?page=%s)"%(name,this_fname,link)
+                mdstring += "<a href='%s?page=%s'>%s</a>"%(this_fname,link,name)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += "[%s](%s?page=%s)"%(chunk,this_fname,chunk)
+                mdstring += "<a href='%s?page=%s'>%s</a>"%(this_fname,chunk,chunk)
 
     #Code below not needed: just indent 4 spaces and Markdown
     #will apply the <pre> tag which preserves formatting.
@@ -183,4 +183,4 @@ if not (len(dirlist)==0 and page_name == "main"):
 
 print "".join(footer_file.readlines())
 footer_file.close()
-header_file.close()
+#header_file.close()
