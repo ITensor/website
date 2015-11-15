@@ -1,4 +1,4 @@
-# ITensor Library Classes and Methods #
+# <img src="docs/classes/icon.png" class="largeicon"> ITensor Library Classes and Methods #
 
 The classes and methods below are ordered starting from most fundamental. (For example, an ITensor stores its indices in an
 IndexSet containing Index objects.)

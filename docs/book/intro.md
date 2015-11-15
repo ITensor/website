@@ -8,7 +8,8 @@ tensor network wavefunctions.
 Data scientists are discovering tensor algorithms
 which decisively outperform standard techniques.
 
-In real tensor applications, each tensor index has
+When a problem is cast into the language of tensors,
+each tensor index can typically be assigned
 a semantic, or physical meaning. 
 Similarly in ITensor, tensor indices are objects with
 unique identities. Constructing an index in ITensor looks like:
@@ -16,8 +17,8 @@ unique identities. Constructing an index in ITensor looks like:
     Index i("index i",3);
 
 The resulting Index has a size, or bond dimension of 3. Upon creation it is 
-indelibly stamped with an internal ID number; all copies of this Index
-carry this same ID number.
+indelibly stamped with an internal ID number so all copies of this Index
+can recognize each other.
 
 Having made a few Index objects i, j, k, one can construct ITensors
 
@@ -35,9 +36,9 @@ is simply
 The ITensor contraction
 engine recognizes repeated indices and sums 
 over them, like the Einstein summation convention used
-in physics. Instead of thinking about the ordering of tensor indices,
+in physics. Instead of bookkeeping the order of tensor indices,
 users can focus on the structure of tensor networks.
-Certain classes of bugs are completely ruled out, such as confusing
+Certain bugs are ruled out, such as confusing
 different indices of the same size.
 
 Consider the following example involving two matrix-like ITensors 
@@ -59,27 +60,36 @@ to get the correct result. ITensor handles this transposition automatically,
 making user code simple and robust. If B were to be redefined
 with transposed index order, the ITensor code `C=A*B` would continue to give the correct result.
 
-ITensor has many features emphasizing productivity
+Say we didn't want to contract over the index j &mdash; we could do the following
+
+    ITensor D = prime(A,j) * B;
+
+The call to `prime(A,j)` puts a single, lightweight prime on A's copy of index j. It no longer
+matches the copy of j on B so these will not be contracted and D will end up with four indices i,j',j,k. 
+We have computed an outer product of two matrices with minimal effort.
+
+
+ITensor has many other features emphasizing productivity
 over programming details:
-* Adding ITensors works automatically without 
+* Adding ITensors just works without 
 needing to permute the index order. 
 * ITensors automatically switch from real to complex storage as needed,
 such as when setting an element to or multiplying by a complex number.
-* ITensors with sparse storage seamlessly interoperate with regular, dense
+* Sparse ITensors seamlessly interoperate with regular, dense
 ITensors.
-<br/>
-<br/>
+* Easy to work with block-sparse, symmetric tensors.
 
-Last but not least, ITensor includes many routines for tensor decompositions
+
+Last but not least, ITensor includes routines for tensor decompositions
 and a rich, high-level interface for matrix product state and density matrix 
 renormalization group (DMRG) algorithms used in physics applications.
 <br/>
 <br/>
 
-<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/arrowleft.png" class="icon"> 
 [[Table of Contents|book]]
 </span>
-<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/arrowright.png" class="icon"> 
 [[Index Objects|book/index]]
 </span>
 

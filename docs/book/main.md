@@ -1,4 +1,4 @@
-# 📚  The ITensor Book
+# <img src="docs/book/icon.png" class="largeicon">  The ITensor Book
 
 ITensor simplifies tensor
 calculations through an Einstein summation interface for contracting tensors.
@@ -49,6 +49,6 @@ customizing higher-level parts of the library.
 -->
 
 <br/>
-<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/arrowright.png" class="icon"> 
 [[ITensor Library Overview|book/intro]]
 </span>

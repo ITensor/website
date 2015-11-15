@@ -133,6 +133,6 @@ in the network with any other tensor as long as both tensors are equal.
 <br/>
 
 
-<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>

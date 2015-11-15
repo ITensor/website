@@ -389,6 +389,18 @@ border-color: #ddd;
     margin-right: 2px;
     margin-bottom: 0px;
     }
+.docs img.icon 
+    {
+    width: 18px;
+    padding-right: 4px;
+    vertical-align: middle;
+    }
+.docs img.largeicon 
+    {
+    width: 24px;
+    padding-right: 2px;
+    vertical-align: middle;
+    }
 
 .docs .example_clicker
     {

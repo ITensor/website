@@ -1,4 +1,4 @@
-# 📝  ITensor Mini-Course #
+# <img src="docs/course/icon.png" class="largeicon">  ITensor Mini-Course #
 
 Slides on the basics of ITensor and working with matrix product states.
 Each lecture has accompanying code in the `tutorial/` subdirectory of the ITensor distribution.

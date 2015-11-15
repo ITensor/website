@@ -83,9 +83,9 @@ has only s and s' as indices.
 
 
 
-<span style="float:left;"><img src="docs/book/images/left_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[ITensor Basics|book/itensor_basics]]
 </span>
-<span style="float:right;"><img src="docs/book/images/right_arrow.png" width="20px" style="vertical-align:middle;"/> 
+<span style="float:right;"><img src="docs/arrowright.png" class="icon">
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>
