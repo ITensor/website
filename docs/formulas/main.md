@@ -22,20 +22,16 @@ Formulas involving quantum number tensors and indices (objects such as IQIndex, 
 ## MPS and DMRG Formulas
 Formulas involving matrix product states and DMRG.
 
-<div style="margin-left:30px;margin-top:-50px;"> <!--Begin Indent-->
-### Running DMRG
-* [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
-* [[Compute excited states using DMRG|formulas/excited_dmrg]]
-* [[Read and write an MPS or MPO to and from disk|formulas/readwrite_mps]]
-* [[Stopping a DMRG Run "Gracefully"|formulas/stopping_dmrg]]
+* <h3>Running DMRG</h3>
+    - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
+    - [[Compute excited states using DMRG|formulas/excited_dmrg]]
+    - [[Read and write an MPS or MPO to and from disk|formulas/readwrite_mps]]
+    - [[Stopping a DMRG Run "Gracefully"|formulas/stopping_dmrg]]
 
-### Measuring MPS
-* [[Measure local properties of an MPS wavefunction|formulas/measure_mps]]
-* [[Measure two-point correlator from an MPS wavefunction|formulas/correlator_mps]]
-* [[Compute entanglement entropy|formulas/entanglement_mps]]
+* <h3>Measuring MPS</h3>
+    - [[Measure local properties of an MPS wavefunction|formulas/measure_mps]]
+    - [[Measure two-point correlator from an MPS wavefunction|formulas/correlator_mps]]
+    - [[Compute entanglement entropy|formulas/entanglement_mps]]
 
-### Time Evolution
-* [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
-
-
-</div> <!--End Indent-->
+* <h3>Time Evolution</h3>
+    - [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
