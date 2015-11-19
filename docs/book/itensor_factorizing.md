@@ -28,6 +28,7 @@ leads to a controlled approximation, where the error due to discarding columns o
 is small if the corresponding singular values are small.
 For more background reading on the SVD, see our [[SVD tutorial article|tutorials/svd]].
 
+
 To compute the SVD of an ITensor, you only need to think about which indices are the "row"
 indices (thinking of the ITensor as a matrix), with the rest assumed to be the "column" 
 indices.
