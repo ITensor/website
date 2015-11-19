@@ -51,7 +51,7 @@ which computes the matrix product @@ C = A B^\mathsf{T} @@.
 The Index <code style="border:none;">j</code> appears on both A and B so is automatically summed over,
 leaving C to have indices i and k.
 
-In a traditional matrix library, one would need to remember that <code style="border:none;">j</code> is
+In a standard matrix library, one would need to remember that <code style="border:none;">j</code> is
 the second index of B and write something like 
 
     C = A * transpose(B) //not actual ITensor code!!
@@ -66,7 +66,7 @@ Say we didn't want to contract over the index j &mdash; we could do the followin
 
 The call to `prime(A,j)` puts a single, lightweight prime on A's copy of index j. It no longer
 matches the copy of j on B so these will not be contracted and D will end up with four indices i,j',j,k. 
-We have computed an outer product of two matrices with minimal effort.
+We have computed an outer product of two matrices with very little effort.
 
 
 ITensor has many other features emphasizing productivity
