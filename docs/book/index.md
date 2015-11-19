@@ -1,7 +1,7 @@
 # Index Objects
 
 The most basic element of ITensor is not actually a tensor: it is a tensor index, 
-an object of type&nbsp;`Index` (by tensor index we mean i,j,k in an expression
+an object of type&nbsp;`Index`. (By tensor index we mean i,j,k in an expression
 like @@T_{ijk}@@ ). 
 
 ITensors are "intelligent tensors" because they "know" what indices they have. 
@@ -33,7 +33,6 @@ The convention of calling the size "m" comes from the DMRG literature.
     {
     auto i = Index("index i",3);
     println("The size of ",i.name()," is ",i.m());
-
     return 0;
     }
 
