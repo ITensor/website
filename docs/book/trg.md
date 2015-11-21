@@ -1,14 +1,13 @@
 # Case Study: TRG Algorithm
 
 The handful of techniques we have covered so far (ITensor contraction and SVD)
-are already enough to implement a very powerful algorithm: the _tensor renormalization group_
+are already enough to implement a powerful algorithm: the _tensor renormalization group_
 (TRG).
 
 First proposed by Levin and Nave (cond-mat/0611687), TRG is a strategy for contracting a network
 of tensors connected in a two-dimensional lattice pattern by decimating the network
 in a heirarchical fashion. The term ["renormalization group"](http://physics.ohio-state.edu/~jay/846/Wilson.pdf) 
-in the physics literature refers
-to any such process where less important information at small distance scales is 
+refers to any such process where less important information at small distance scales is 
 repeatedly removed until the most important information remains.
 
 ## The Problem
@@ -27,7 +26,7 @@ where each Ising "spin" @@\sigma@@ is just a variable taking the values @@\sigma
 @@E(\sigma\_1,\sigma\_2,\sigma\_3,\ldots)@@ is the sum of products @@\sigma\_i \sigma\_j@@ of 
 neighboring @@\sigma@@ variables.
 In the two-dimensional case described below, there is a "critical" temperature @@T\_c=2.269\ldots@@
-at which this Ising system develops an interesting hidden fractal structure.
+at which this Ising system develops an interesting hidden scale invariance.
 
 ### One dimension
 
@@ -41,8 +40,8 @@ $$
 
 The classic "transfer matrix" trick for computing @@Z@@ goes as follows:
 $$
-Z = \sum\_{[\sigma\]} \exp \left(\frac{-1}{T} \sum\_n \sigma\_n \sigma\_{n+1}\right)
- = \sum\_{[\sigma\]} \prod\_{n} e^{-(\sigma\_n \sigma\_{n+1})/ T}
+Z = \sum\_{\{\sigma\}} \exp \left(\frac{-1}{T} \sum\_n \sigma\_n \sigma\_{n+1}\right)
+ = \sum\_{\{\sigma\}} \prod\_{n} e^{-(\sigma\_n \sigma\_{n+1})/ T}
  = \text{Tr} \left(M^N \right)
 $$
 
@@ -105,9 +104,52 @@ fashion because the energy was defined to use periodic boundary conditions.
 
 ## The TRG Algorithm
 
-We can use TRG to compute the above network, which is actually just equal to a single number 
-(no uncontracted indices). The philosophy of TRG is that we can replace any tensor
-in the network with any other tensor as long as both tensors are equal. 
+We can use TRG to compute the above network, which is just equal to a single number @@Z@@
+(since there are no uncontracted external indices). The TRG approach is to locally replace 
+individual @@A@@ tensors with pairs of lower-rank tensors which guarantee the result of the contraction
+remains the same. These smaller tensors can be efficiently combined together, resulting in
+a more sparse network.
+
+The first "move" of TRG is to factorize the @@A@@ tensor making up the network in two different
+ways:
+
+<img class="diagram" width="85%" src="docs/book/images/TRG_factor2ways.png"/>
+
+Both factorizations can be computed using the [[singular value decomposition (SVD)|book/itensor_factorizing]].
+For example, to compute the first factorization, view @@A@@ as a matrix with "row"
+indices @@\sigma\_l@@ and @@\sigma\_t@@ and "column" indices @@\sigma\_b@@ and @@\sigma\_r@@. 
+After performing an SVD of @@A@@ in this way, the singular value matrix @@S@@ is factorized
+as @@S = \sqrt{S} \sqrt{S}@@ and these two factors are absorbed into the unitaries
+U and V to create the factors @@F\_1@@ and @@F\_2@@. Pictorially:
+
+<img class="diagram" width="100%" src="docs/book/images/TRG_factorizing.png"/>
+
+Importantly, the SVD is only done approximately by retaining just the @@\chi@@ largest singular
+values and discarding the columns of U and V corresponding to the smaller singular values.
+This truncation is crucial for keeping the costs of the TRG algorithm under control.
+
+Making the above substitutions, either
+@@A=F\_1 F\_3@@ or @@A=F\_2 F\_4@@ on alternating lattice sites, transforms the
+original tensor network into the following network:
+
+<img class="diagram" width="90%" src="docs/book/images/TRG_network1.png"/>
+
+Finally by contracting the four F tensors in the following way
+
+<img class="diagram" width="40%" src="docs/book/images/TRG_group.png"/>
+
+one obtains the tensor @@A^\prime@@ which has four indices just like @@A@@.
+Contracting the @@A^\prime@@ tensors in a square-lattice pattern gives the 
+same result (up to SVD truncation errors) as contracting the original @@A@@ tensors,
+only there are half as many @@A^\prime@@ tensors (each @@A@@ consists
+of two F's while each @@A^\prime@@ consists of four F's).
+
+To compute @@Z@@ defined by contracting a square lattice of @@2^N@@ tensors, one
+repeats the above two steps (factor and recombine) N times until only a single
+tensor remains. Calling this tensor @@A\_N@@, the result @@Z@@ of contracting
+the original network is equal to the following "double trace" of @@A\_N@@:
+
+<img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
 
 <br/>
 
