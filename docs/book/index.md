@@ -1,7 +1,7 @@
 # Index Objects
 
 The most basic element of ITensor is not actually a tensor: it is a tensor index, 
-an object of type&nbsp;`Index`. (By tensor index we mean i,j,k in an expression
+an object of type&nbsp;`Index`. (By tensor index we mean i,j, or k in an expression
 like @@T_{ijk}@@ ). 
 
 ITensors are "intelligent tensors" because they "know" what indices they have. 
@@ -44,7 +44,7 @@ meaning of a given Index object cannot be modified.
 
 ### Priming Indices
 
-One property of an Index you can change is its prime level.
+The one property of an Index you can change is its prime level.
 
 An Index starts out with prime level zero.
 Two copies of the same Index with the same prime level compare equal.
@@ -98,7 +98,7 @@ The Index constructor accepts an optional `IndexType` argument:
     auto s2 = Index("site 2",2,Site); //IndexType set to Site
 
 Giving indices different IndexTypes becomes useful when working with many indices
-because it allows us to change the prime level of all indices of a certain type.
+because it allows us to work only with indices of a certain type.
 
 It is possible to define a custom IndexType:
 
