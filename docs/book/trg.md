@@ -107,19 +107,19 @@ fashion because the energy was defined to use periodic boundary conditions.
 We can use TRG to compute the above network, which is just equal to a single number @@Z@@
 (since there are no uncontracted external indices). The TRG approach is to locally replace 
 individual @@A@@ tensors with pairs of lower-rank tensors which guarantee the result of the contraction
-remains the same. These smaller tensors can be efficiently combined together, resulting in
-a more sparse network.
+remains the same. These smaller tensors can then be recombined in a different way that results in
+a more sparse, yet equivalent network.
 
-The first "move" of TRG is to factorize the @@A@@ tensor making up the network in two different
-ways:
+Referring to the original @@A@@ tensor as @@A\_0@@, the first "move" of 
+TRG is to factorize the @@A\_0@@ tensor in two different ways:
 
 <img class="diagram" width="85%" src="docs/book/images/TRG_factor2ways.png"/>
 
 Both factorizations can be computed using the [[singular value decomposition (SVD)|book/itensor_factorizing]].
-For example, to compute the first factorization, view @@A@@ as a matrix with "row"
-indices @@\sigma\_l@@ and @@\sigma\_t@@ and "column" indices @@\sigma\_b@@ and @@\sigma\_r@@. 
-After performing an SVD of @@A@@ in this way, the singular value matrix @@S@@ is factorized
-as @@S = \sqrt{S} \sqrt{S}@@ and these two factors are absorbed into the unitaries
+For example, to compute the first factorization, view @@A\_0@@ as a matrix with a collective "row"
+index @@\sigma\_l@@ and @@\sigma\_t@@ and collective "column" index @@\sigma\_b@@ and @@\sigma\_r@@. 
+After performing an SVD of @@A\_0@@ in this way, further factorize the singular value matrix @@S@@ 
+as @@S = \sqrt{S} \sqrt{S}@@ and absorb each @@\sqrt{S}@@ factor into 
 U and V to create the factors @@F\_1@@ and @@F\_2@@. Pictorially:
 
 <img class="diagram" width="100%" src="docs/book/images/TRG_factorizing.png"/>
@@ -129,7 +129,7 @@ values and discarding the columns of U and V corresponding to the smaller singul
 This truncation is crucial for keeping the costs of the TRG algorithm under control.
 
 Making the above substitutions, either
-@@A=F\_1 F\_3@@ or @@A=F\_2 F\_4@@ on alternating lattice sites, transforms the
+@@A\_0=F\_1 F\_3@@ or @@A\_0=F\_2 F\_4@@ on alternating lattice sites, transforms the
 original tensor network into the following network:
 
 <img class="diagram" width="90%" src="docs/book/images/TRG_network1.png"/>
@@ -138,15 +138,17 @@ Finally by contracting the four F tensors in the following way
 
 <img class="diagram" width="40%" src="docs/book/images/TRG_group.png"/>
 
-one obtains the tensor @@A^\prime@@ which has four indices just like @@A@@.
-Contracting the @@A^\prime@@ tensors in a square-lattice pattern gives the 
-same result (up to SVD truncation errors) as contracting the original @@A@@ tensors,
-only there are half as many @@A^\prime@@ tensors (each @@A@@ consists
-of two F's while each @@A^\prime@@ consists of four F's).
+one obtains the tensor @@A\_1@@ which has four indices just like @@A\_0@@.
+Contracting the @@A\_1@@ tensors in a square-lattice pattern gives the 
+same result (up to SVD truncation errors) as contracting the original @@A\_0@@ tensors,
+only there are half as many @@A\_1@@ tensors (each @@A\_0@@ consists
+of two F's while each @@A\_1@@ consists of four F's).
+
+<img class="diagram" width="80%" src="docs/book/images/TRG_recombine.png"/>
 
 To compute @@Z@@ defined by contracting a square lattice of @@2^N@@ tensors, one
 repeats the above two steps (factor and recombine) N times until only a single
-tensor remains. Calling this tensor @@A\_N@@, the result @@Z@@ of contracting
+tensor remains. Calling this final tensor @@A\_N@@, the result @@Z@@ of contracting
 the original network is equal to the following "double trace" of @@A\_N@@:
 
 <img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
