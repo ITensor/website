@@ -109,6 +109,8 @@ The output from the `dmrg` function can be printed, sorted, put into another alg
 
     printfln("Energy = %.20f",psiHphi(psi,H,psi));
 
+    return 0;//return value for C++ program
+
     }
 
 

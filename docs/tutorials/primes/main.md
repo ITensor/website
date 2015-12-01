@@ -39,7 +39,91 @@ ITensor does not currently allow negative prime levels.
 
  * `mapPrime(ITensor, inta, intb)` - changes prime level on all indices of an ITensor having level inta to level intb.
 
-## An Exercise in Priming
+## An Exercise in Priming: Unitary Rotations
+
+To illustrate how the priming system may be used, we will show a matrix multiplication
+
+$$
+U \mathcal{H} U^\dagger
+$$
+
+and how this works with ITensor's priming system.  First, let's convert the expression into tensors all of rank two:
+
+$$
+\sum\_{\beta\gamma} U\_{\alpha\beta}\mathcal{H}\_{\beta\gamma}U\_{\gamma\delta}^dagger
+$$
+
+This form is perfectly acceptable on paper, but we need to convert it to something that ITensor can understand.  Handling the indices @@\alpha@@, @@\beta@@, @@\gamma@@, and @@\delta@@ are handled very simply in ITensor.  Note that we only include one index in ITensor to account for all four indices that appear above!  This is managed by using different priming levels appropriately.
+
+The first task is to initialize the necessary `Index` variables needed
+
+    auto i = Index("index i",2);//The number '2' for a rank two tensor (could be any size)
+
+The way in which we will allot the index with different primes can be seen by rewriting the above sum with only `i` and primes as
+
+$$
+\sum\_{i'i''} U\_{ii'}\mathcal{H}\_{i'i''}U\_{i'''i''}^*
+$$
+
+The next tasks is to initialize the ITensors themselves (here, @@\mathcal{H}@@ and @@U@@).
+
+    auto U = ITensor(i,prime(i)),
+         H = ITensor(prime(i),prime(i,2));
+
+In the full example below, we initialize numbers into these tensors making `U` a unitary matrix (for practical purposes, the @@\dagger@@ acts to switch the indices and take the complex conjugate, `conj`), but we are most concerned with the priming system for now.  Once we have set up our tensors, the entire matrix multiplication takes place in one step
+
+    auto ans = U*H*prime(swapPrime(conj(U),0,1),2);
+
+The command `swapPrime` takes a rank two tensor and interchanges the prime level for both indices.  This takes a matrix @@U\_{ii'}@@ and returns @@U\_{i'i}@@.  This returns a matrix with the first index at prime level 0 and the second index at prime level 3.  If we want to change the prime level of the second index, we can use the command
+
+    ans.mapprime(3,1);
+
+<div class="example_clicker">Click here to view a full working example</div>
+
+    #include "itensor/itensor.h"
+    using namespace itensor;
+
+    int main()
+    {
+
+    const auto PI_D = 3.1415926535897932384;
+    Real theta = PI_D/4;
+
+    auto i = Index("index i",2);
+
+    auto U = ITensor(i,prime(i)),//U with i and i'
+         H = ITensor(prime(i),prime(i,2));//H with i' and i''
+
+    U.set(i(1),prime(i(1)),cos(theta));//generates a unitary matrix
+    U.set(i(2),prime(i(1)),-sin(theta));
+    U.set(i(1),prime(i(2)),sin(theta));
+    U.set(i(2),prime(i(2)),cos(theta));
+
+    H.set(prime(i(1)),prime(i(1),2),0.);//The matrix H (Pauli matrix "x")
+    H.set(prime(i(2)),prime(i(1),2),1.);
+    H.set(prime(i(1)),prime(i(2),2),1.);
+    H.set(prime(i(2)),prime(i(2),2),0.);
+
+    println(U);//series of prints shows evolution of priming
+    println(swapPrime(U,0,1));
+    println(prime(swapPrime(U,0,1)));
+    println(prime(swapPrime(conj(U),0,1),2));
+
+    auto ans = U*H*prime(prime(swapPrime(U,0,1)));
+    println(ans);//shows ans with i and i''' indices
+    ans.mapprime(3,1);
+
+    println(ans);//shows action of mapprime
+
+    println(mat.real(i(1),prime(i(1))));//prints out the Pauli "z" matrix
+    println(mat.real(i(2),prime(i(1))));
+    println(mat.real(i(1),prime(i(2))));
+    println(mat.real(i(2),prime(i(2))));
+
+    return 0;
+    }
+
+## Another Exercise in Priming: TRG
 
 For educational purposes, this will not take the most direct path to the solution.  We will use all the functions listed above.
 
