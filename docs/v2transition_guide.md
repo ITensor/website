@@ -18,7 +18,7 @@ Following version 2.0 these changes are mandatory.
 
   The appropriate path to use is the actual location of the file under the ITensor source directory.
 
-* Use the `.real` and `.cplx` to access tensor elements.
+* Use the `.real` and `.cplx` methods to access tensor elements.
 
   Old-style version 1.x code
 
