@@ -15,6 +15,8 @@
 
 ## Additional information
 
+* [[Version 1.x to 2.0 Transition Guide|v2transition_guide]]
+
 * [[Change Log|changelog]]
 
 * [[Papers Using ITensor|papers]]
