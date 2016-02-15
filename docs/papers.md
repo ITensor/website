@@ -1,7 +1,12 @@
 # Papers Using the ITensor Library #
 <i style="font-size:90%; color:#999999">Please send any papers not listed here to emiles -at- pitp.ca</i>
 
-## 2015 ##
+## 2016
+
+* [Charge density waves in disordered media circumventing the Imry-Ma argument](http://arxiv.org/abs/1601.03041), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes arxiv:1601.03041
+
+
+## 2015
 
 * [Quantum Loop States in Spin-Orbital Models on the Honeycomb Lattice](http://arxiv.org/abs/1511.01505), Lucile&nbsp;Savary,
   arxiv:1511.01505
@@ -10,9 +15,9 @@
 
 * [Unusual Corrections to Scaling and Convergence of Universal Renyi Properties at Quantum Critical Points](http://arxiv.org/abs/1509.00468), Sharmistha&nbsp;Sahoo, E.&nbsp;Miles&nbsp;Stoudenmire, Jean-Marie&nbsp;Stéphan, Trithep&nbsp;Devakul, Rajiv&nbsp;R.&nbsp;P.&nbsp;Singh, Roger&nbsp;G.&nbsp;Melko, arxiv:1509.00468
 
-* [Entanglement structure of the Hubbard model in momentum space](http://arxiv.org/abs/1508.07477), G.&nbsp;Ehlers, J.&nbsp;Solyom, O.&nbsp;Legeza, R.&nbsp;M.&nbsp;Noack, arxiv:1508.07477
+* [Entanglement structure of the Hubbard model in momentum space](http://dx.doi.org/10.1103/PhysRevB.92.235116), G.&nbsp;Ehlers, J.&nbsp;Solyom, O.&nbsp;Legeza, R.&nbsp;M.&nbsp;Noack, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.235116">235116</a> (2015) [arxiv:1508.07477]
 
-* [A criterion for many-body localization-delocalization phase transition](http://arxiv.org/abs/1507.01635), Maksym&nbsp;Serbyn, Z.&nbsp;Papic, Dmitry&nbsp;A.&nbsp;Abanin, arxiv:1507.01635
+* [A criterion for many-body localization-delocalization phase transition](http://dx.doi.org/10.1103/PhysRevX.5.041047), Maksym&nbsp;Serbyn, Z.&nbsp;Papic, Dmitry&nbsp;A.&nbsp;Abanin, <i style="color:#CC0000">Phys. Rev. X</i>&nbsp;&nbsp;<b>5</b> <a href="http://dx.doi.org/10.1103/PhysRevX.5.041047">041047</a> (2015) [arxiv:1507.01635]
 
 * [Criticality at the Haldane insulator charge-density-wave quantum phase transition](http://dx.doi.org/10.1103/PhysRevB.92.041120), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.041120">041120(R)</a> (2015) [arxiv:1506.04003]
 
