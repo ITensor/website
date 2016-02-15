@@ -5,6 +5,8 @@ Below are the major interface changes in ITensor version 2.0 versus 1.x.
 Most of this interface is already supported, although optional, in the 1.x branch.
 Following version 2.0 these changes are mandatory.
 
+### Changes to Basic Interface
+
 
 * Include statements now include paths to header files.
 
@@ -17,6 +19,10 @@ Following version 2.0 these changes are mandatory.
       #include "itensor/iqtensor.h"
 
   The appropriate path to use is the actual location of the file under the ITensor source directory.
+
+  MPS and DMRG related codes are in the mps/ subfolder, for example
+
+      #include "itensor/mps/dmrg.h"
 
 * Use the `.real` and `.cplx` methods to access tensor elements.
 
@@ -56,4 +62,27 @@ Following version 2.0 these changes are mandatory.
 
   One advantage of the new `.set` approach is one can pass a real or complex number to `.set`,
   whereas it was more cumbersome to create a complex ITensor before.
+
+* Many previous ITensor and IQTensor class methods are now free functions.
+
+  - `T.norm()` is now `norm(T)`
+
+  - Prefer `rank(T)` to `T.r()`
+
+### Changes to Advanced Features
+
+* Combiner and IQCombiner are no longer distinct types, but just a type of sparse ITensor or IQTensor.
+  To create a combiner which combines indices i, j write the code
+
+      auto C = combiner(i,j);
+
+  To use the combiner just contract it with a tensor having indices i and j.
+
+      auto T = ITensor(i,k,j,l);
+      auto S = C*T;
+
+  Creating IQCombiners works the same way except i and j are of type IQIndex.
+
+
+
 
