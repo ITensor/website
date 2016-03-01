@@ -1,5 +1,5 @@
 # Papers Using the ITensor Library #
-<i style="font-size:90%; color:#999999">Please send any papers not listed here to emiles -at- pitp.ca</i>
+<i style="font-size:90%; color:#999999">Please send any papers not listed here to estouden -at- uci.edu</i>
 
 ## 2016
 
