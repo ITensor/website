@@ -3,6 +3,9 @@
 
 ## 2016
 
+* [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://arxiv.org/abs/1602.08172), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz arxiv:1602.08172
+
+
 * [Charge density waves in disordered media circumventing the Imry-Ma argument](http://arxiv.org/abs/1601.03041), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes arxiv:1601.03041
 
 
