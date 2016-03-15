@@ -72,11 +72,11 @@ Following version 2.0 these changes are mandatory.
 ### Changes to Advanced Features
 
 * The ITensor and IQTensor constructors taking a set of IndexVals (or IQIndexVals) and
-  setting the corresponding element to zero have been removed.
-  Instead use the `pick` constructor function to make such tensors.
-  For example
+  setting the corresponding element to 1.0 have been removed.
+  Instead use the `setElt` function to make such tensors.
+  For example if i and j are Index objects
 
-      auto P = pick(i(1),j(2));
+      auto P = setElt(i(1),j(2));
 
   makes an ITensor P with the `i(1),j(2)` element set to 1.0 and the rest set to zero.
 
