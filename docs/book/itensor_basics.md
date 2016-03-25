@@ -86,6 +86,8 @@ Calling `.cplx` always succeeds even if the tensor has only real elements.
 
 A convenient way to print and ITensor is to use the `Print` macro:
 
+    #include "itensor/util/print_macro.h"
+    
     Print(T);
     //prints: 
     // T = 

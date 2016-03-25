@@ -67,6 +67,8 @@ Following version 2.0 these changes are mandatory.
 
   - `T.norm()` is now `norm(T)`
 
+  - `T.randomize()` is now `randomize(T)`
+
   - Prefer `rank(T)` to `T.r()`
 
 ### Changes to Advanced Features
