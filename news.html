@@ -37,6 +37,30 @@
 
 <div class="full section rounded"> <h2>Latest News</h2> </div>
 
+<a name="version2"></a>
+<div class="full newsitem">
+<h3>ITensor Version 2.0 Released</h3>
+<h2>(Mar 25, 2016) </h2>
+<p>
+The latest release of ITensor comes with a major overhaul of ITensor and IQTensor internals.
+Tensor storage is now handled by a set of independent storage types, which can have completely
+arbitrary layouts and behaviors. This paves the way for future support for even more sparse
+tensor types, in addition to the currently support ones such as diagonal tensors. For example,
+"combiners" are no longer a separate type, but are now just a special case of an ITensor
+or IQTensor with "combiner storage".
+</p>
+
+<p>
+The new version also includes a new low-level linear algebra library as a foundation for ITensor.
+This library revolves around a simple tensor type with indices having a fixed order.
+Matrices and vectors are treated as special cases of tensors.
+</p>
+
+<p>
+For more details on the update, see the <a href="http://itensor.org/docs.cgi?page=changelog">changelog</a>.
+</p>
+</div>
+
 <a name="sherbrooke2016"></a>
 <div class="full newsitem">
 <h3>ITensor at 2016 Sherbrooke Summer School</h3>
