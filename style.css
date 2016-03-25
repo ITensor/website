@@ -287,6 +287,7 @@ margin-bottom: 8px;
     { 
     margin-bottom: 5px;
     margin-left: -1px;
+    text-indent: 0px;
     }
 .docs ul
    {
@@ -300,10 +301,12 @@ margin-bottom: 8px;
 .docs ul p
     {
     margin-bottom: 2px;
+    text-indent: 0px;
     }
 .docs ol p
     {
     margin-bottom: 2px;
+    text-indent: 0px;
     }
 .docs code 
     { 
@@ -432,6 +435,6 @@ border-color: #ddd;
 .newsitem img { float: left; padding: 10px; }
 .newsitem ul { display: table; }
 .newsitem ul li { display: table; }
-.newsitem p { padding: 10px; }
+.newsitem p { padding: 10px; text-indent: 0px; }
 .newsitem a { color: #900; }
 

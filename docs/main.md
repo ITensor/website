@@ -5,7 +5,7 @@
 
 <img src="docs/book/icon.png" class="icon">   [[The ITensor Book|book]]. Start here for a comprehensive introduction to ITensor.
 
-<img src="docs/articles/icon.png" class="icon"> [[Articles|articles]]. Background reading on tensor networks and programming.
+<img src="docs/articles/icon.png" class="icon"> [[Articles|articles]]. Long-form articles on tensor methods and aspects of ITensor.
 
 <img src="docs/formulas/icon.png" class="icon"> [[Code Formulas|formulas]]. Sample codes for common tasks.
 
