@@ -54,7 +54,7 @@ if breaking over two lines makes code hard to reason about/debug.
 * The return type of functions and class methods appears at the beginning of the line preceding the function name:
 
         Real
-        calculateSomething(const ITensor& A, const ITensor& B);
+        calculateSomething(ITensor const& A, ITensor const& B);
 
   Other keywords such as `friend` or `inline` should come after the return type unless disallowed by the compiler
   (such as when the return type is a reference).
@@ -77,6 +77,21 @@ if breaking over two lines makes code hard to reason about/debug.
               {
               return 2*i;
               }
+
+* Types are written in the order:
+  1. Typename (such as ITensor)
+  2. Modifiers (such as const, &, const&, etc.)
+  3. Variable name
+
+  <br/>
+  For example, in a function declaration
+
+
+      f(ITensor const& T, Real const* real_pointer);
+
+  Or in binding a variable to a const reference:
+
+      auto const& ref = x;
 
 
 ## Functions ##
