@@ -1,7 +1,7 @@
 
 # The Args Named Argument System
 
-<span class='article_sig'>Miles Stoudenmire&mdash;August 7, 2015</span>
+<span class='article_sig'>Miles Stoudenmire&mdash;Mar 26, 2016</span>
 
 ### The Problem
 
@@ -20,20 +20,25 @@ the other parameters mean?
 If the truncateMPS function accepted an Args object instead, we
 could call it like this
 
-    truncateMPS(psi,{"Maxm",500,"Cutoff",1E-9,"ShowSizes",false});
+    truncateMPS(psi,{"Maxm=",500,"Cutoff=",1E-9,"ShowSizes=",false});
 
 This is easier to read and lets us specify the parameters we care about,
 leaving the rest to have default values. For example, if we are happy with the default
 value for "Maxm" and "ShowSizes", we could call truncateMPS as
 
-    truncateMPS(psi,{"Cutoff",1E-9});
+    truncateMPS(psi,{"Cutoff=",1E-9});
 
 The named arguments can be passed in any order we like
+
+    truncateMPS(psi,{"ShowSizes=",false,"Maxm=",500,"Cutoff=",1E-9});
+
+Trailing equals signs "=" after each argument name are optional, and are ignored by the args
+system. So the following call would have identical results
 
     truncateMPS(psi,{"ShowSizes",false,"Maxm",500,"Cutoff",1E-9});
 
 <br/>
-### Setting a Function to Accept Args
+### Creating a Function that Accepts Args
 
 To allow a function to take an Args object, first make sure the Args class is available
 
@@ -41,10 +46,9 @@ To allow a function to take an Args object, first make sure the Args class is av
 
 Next define the last argument of your function to be
 
-    void func(..., Args const& args = Args::global());
+    func(..., Args const& args = Args::global());
 
-where the "..." means all the usual arguments the function "func" accepts
-(the return type is void here for simplicity but could be any type).
+where the "..." means all the usual arguments the function "func" accepts.
 For example, the truncateMPS function above could be declared as
 
     MPS truncateMPS(MPS const& psi, Args const& args = Args::global());
@@ -58,7 +62,7 @@ global defaults&mdash;for more details see the section on argument lookup order 
 Sometimes you may want to further modify the args object within your function.
 For such cases it is better to accept args by value
 
-    void func(..., Args args = Args::global());
+    func(..., Args args = Args::global());
 
 <br/>
 ### Accessing Named Arguments Within a Function
@@ -138,14 +142,14 @@ Here is an example:
 There are a few different ways to construct args objects. The simplest is the Args constructor,
 which accepts any number of name-value pairs:
 
-    auto args = Args("Name","some_string",
-                     "Size",100,
-                     "Threshold",1E-12,
-                     "DoThing",false);
+    auto args = Args("Name=","some_string",
+                     "Size=",100,
+                     "Threshold=",1E-12,
+                     "DoThing=",false);
 
 The above constructor is what is called when calling a function using the syntax
 
-    someFunc(...,{"Name","a_name","Size",40});
+    someFunc(...,{"Name=","some_string","Size=",100});
 
 Args objects can also be constructed from strings of the form `"Name1=value1,Name2=value2,..."`.
 So for example
@@ -155,9 +159,9 @@ So for example
 Finally, arguments can be added to an Args object that is already defined using the add method.
 Adding an argument that is already defined overwrites the previously defined value.
 
-    auto args = Args("Name","name1");
+    auto args = Args("Name=","name1");
 
-    args.add("Threshold",1E-8);
+    args.add("Threshold=",1E-8);
 
     if(args.defined("Threshold")) println("args contains Threshold");
 
