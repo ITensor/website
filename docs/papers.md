@@ -14,9 +14,9 @@
 * [Quantum Loop States in Spin-Orbital Models on the Honeycomb Lattice](http://arxiv.org/abs/1511.01505), Lucile&nbsp;Savary,
   arxiv:1511.01505
 
-* [On the entanglement structure of the two-channel Kondo model](http://arxiv.org/abs/1509.02949), Bedoor&nbsp;Alkurtass, Abolfazl&nbsp;Bayat, Ian&nbsp;Affleck, Sougato&nbsp;Bose, Henrik&nbsp;Johannesson, Pasquale&nbsp;Sodano, Erik&nbsp;S.&nbsp;Sørensen, Karyn&nbsp;Le&nbsp;Hur, arxiv:1509.02949
+* [Entanglement structure of the two-channel Kondo model](http://dx.doi.org/10.1103/PhysRevB.93.081106), Bedoor&nbsp;Alkurtass, Abolfazl&nbsp;Bayat, Ian&nbsp;Affleck, Sougato&nbsp;Bose, Henrik&nbsp;Johannesson, Pasquale&nbsp;Sodano, Erik&nbsp;S.&nbsp;Sørensen, Karyn&nbsp;Le&nbsp;Hur, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.081106">081106(R)</a> (2016) [arxiv:1509.02949]
 
-* [Unusual Corrections to Scaling and Convergence of Universal Renyi Properties at Quantum Critical Points](http://arxiv.org/abs/1509.00468), Sharmistha&nbsp;Sahoo, E.&nbsp;Miles&nbsp;Stoudenmire, Jean-Marie&nbsp;Stéphan, Trithep&nbsp;Devakul, Rajiv&nbsp;R.&nbsp;P.&nbsp;Singh, Roger&nbsp;G.&nbsp;Melko, arxiv:1509.00468
+* [Unusual Corrections to Scaling and Convergence of Universal Renyi Properties at Quantum Critical Points](http://dx.doi.org/10.1103/PhysRevB.93.085120), Sharmistha&nbsp;Sahoo, E.&nbsp;Miles&nbsp;Stoudenmire, Jean-Marie&nbsp;Stéphan, Trithep&nbsp;Devakul, Rajiv&nbsp;R.&nbsp;P.&nbsp;Singh, Roger&nbsp;G.&nbsp;Melko, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.085120">085120</a> (2016) [arxiv:1509.00468]
 
 * [Entanglement structure of the Hubbard model in momentum space](http://dx.doi.org/10.1103/PhysRevB.92.235116), G.&nbsp;Ehlers, J.&nbsp;Solyom, O.&nbsp;Legeza, R.&nbsp;M.&nbsp;Noack, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.235116">235116</a> (2015) [arxiv:1508.07477]
 
@@ -76,7 +76,7 @@
 
 ## 2009&ndash;2011 ##
 
-* [Interaction Effects in Topological Superconducting Wires Supporting Majorana Fermions](http://link.aps.org/doi/10.1103/PhysRevB.84.014503),  E.M.&nbsp;Stoudenmire, Jason&nbsp;Alicea, Oleg&nbsp;A.&nbsp;Starykh and Matthew&nbsp;P.A.&nbsp;Fisher, </br> <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>84</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevB.84.014503" target="_blank">014503</a> (2011) [arxiv:1104.5493]
+* [Interaction Effects in Topological Superconducting Wires Supporting Majorana Fermions](http://link.aps.org/doi/10.1103/PhysRevB.84.014503),  E.M.&nbsp;Stoudenmire, Jason&nbsp;Alicea, Oleg&nbsp;A.&nbsp;Starykh and Matthew&nbsp;P.A.&nbsp;Fisher, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>84</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevB.84.014503" target="_blank">014503</a> (2011) [arxiv:1104.5493]
 
 
 * [Minimally Entangled Typical Thermal State Algorithms](http://dx.doi.org/10.1088/1367-2630/12/5/055026), E.M.&nbsp;Stoudenmire and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">New&nbsp;J.&nbsp;Phys.</i>, <b>12</b>, <a href="http://dx.doi.org/10.1088/1367-2630/12/5/055026" target="_blank">055026</a> (2010) [arxiv:1002.1305]
