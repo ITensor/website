@@ -1,5 +1,70 @@
 # Change Log #
 
+<a name="v2.0.0"></a>
+## [Version 2.0.0](https://github.com/ITensor/ITensor/tree/v2.0.0) (Mar 25, 2016) ##
+
+<span style="color:red;">Warning:</span> this version contains many breaking changes.
+
+Version 2.0 of ITensor is a major update to the internals of the ITensor and IQTensor 
+classes. Tensors now store their data in "storage objects" which can have arbitrary
+data layouts. The code to manipulate tensor storage deals with the different storage
+types through a dynamic multiple dispatch design, revolving around overloads
+of the function doTask(TaskType,...) where TaskType is a "task object" saying
+which task should be carried out (contraction, addition, mutiplication by a scalar, etc.).
+
+Major changes:
+* New storage system for tensors with "dynamic overloading" a.k.a. multiple dispatch
+for doTask functions carrying out operations on storage types.
+
+* New "TensorRef" library for basic tensor operations, such as tensor slicing and 
+permutation. Matrix and vector operations are implemented as a special case of 
+tensor operations.
+
+* New QN (quantum number) system. To create a quantum number using the
+standard recognized fields (spin "Sz", boson number "Nb", fermion number "Nf",
+or fermion parity "Pf") call the QN constructor as
+
+
+    auto q = QN("Sz=",-1,"Nf=",1);
+
+  More advanced QNs can be created by provided a list of value-modfac pairs.
+  The modfac is an integer saying how addition is defined for that particular
+  "slot" of the QN. For example, a QN constructed as `QN({a,1},{b,3})`
+  will have the value "a" in slot one and "b" in slot two. When adding this
+  QN to a similarly constructed one, the first slot will obey regular integer
+  addition (@@Z_1@@ in an abuse of notation) while the second slot will obey
+  @@Z_3@@ addition rules.
+
+Other changes:
+* The Combiner and IQCombiner types no longer exist. Instead, a combiner is
+just a special type of ITensor or IQTensor. To obtain a combiner which
+combines the indices i,j,k, call the function
+
+
+     auto C = combiner(i,j,k);
+
+The tensor C will have a fourth index whose size is the product of the sizes
+of i,j, and k.
+
+* It is now mandatory to prefix header file names with their path inside
+the ITensor folder. For example, 
+
+
+    #include "itensor/iqtensor.h" 
+    #include "itensor/mps/dmrg.h"
+
+* User-created IndexTypes are now supported. Internally, an IndexType is now
+just a fixed-size string of up to 7 characters. To make an IndexType
+called "MyType" just do 
+
+    
+    auto MyType = IndexType("MyType");
+    auto i = Index("i",5,MyType);
+
+
+
+
+
 <a name="v1.3.0"></a>
 ## [Version 1.3.0](https://github.com/ITensor/ITensor/tree/v1.3.0) (Oct 29, 2015) ##
 
