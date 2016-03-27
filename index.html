@@ -144,7 +144,7 @@ sweeps.maxm() = 50, 50, 100, 100, 200;
 dmrg(psi,H,sweeps);
 
 <span style="color:#5081AA">//Continue to analyze wavefunction afterward </span>
-Real energy = psiHphi(psi,H,psi);
+Real energy = overlap(psi,H,psi); <span style="color:#5081AA">//&lt;psi|H|psi&gt;</span>
 for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
     {
     <span style="color:#5081AA">//Make site j the MPS "orthogonality center"</span>
@@ -160,7 +160,7 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
 
 <div class="full screenshot">
 <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
-<h2>Multiply Two ITensors</h2>
+<h2>Contract Two ITensors</h2>
 <pre>
 Index a("a",2), 
       b("b",2), 
