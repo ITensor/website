@@ -71,6 +71,10 @@ Following version 2.0 these changes are mandatory.
 
   - Prefer `rank(T)` to `T.r()`
 
+* The Vector and Matrix classes now have zero-indexed element access.
+If you prefer a 1-indexed interface you can use the Vector1 and Matrix1
+classes.
+
 ### Changes to Advanced Features
 
 * The ITensor and IQTensor constructors taking a set of IndexVals (or IQIndexVals) and
