@@ -1,65 +1,87 @@
 # Perform a basic DMRG calculation #
 
-To do any DMRG calculation you first need a Hamiltonian. 
-The library provides some common Hamiltonians for convenience.
-The site indices used by the Hamiltonian are provided by an instance of the SpinOne class:
+Because tensor indices in ITensor have unique identities, before we can make a Hamiltonian
+or a wavefunction we need to construct a "site set" which will hold the site indices defining
+the physical Hilbert space:
 
-    SpinOne sites(N);
+    auto sites = SpinOne(N);
 
-Here we have chosen to use spin 1 sites and our lattice size is N.
-Next we instantiate the Hamiltonian, which is a matrix product operator (MPO):
+Here we have chosen to use the SpinOne site set to create a Hilbert space of N 
+spin 1 sites.
 
-    MPO H = Heisenberg(sites);
+Next we'll make our Hamiltonian matrix product operator (MPO). A very 
+convenient way to do this is to use the AutoMPO helper class which lets 
+us input a Hamiltonian (or any sum of local operators) in similar notation
+to pencil-and-paper notation:
+
+    auto ampo = AutoMPO(sites);
+    for(int j = 1; j < N; ++j)
+        {
+        ampo += 0.5,"S+",j,"S-",j+1;
+        ampo += 0.5,"S-",j,"S+",j+1;
+        ampo +=     "Sz",j,"Sz",j+1;
+        }
+    auto H = MPO(ampo);
+
+In the last line above we convert the AutoMPO helper object to an actual MPO.
 
 Before beginning the calculation, we need to specify how many DMRG sweeps to do and
 what schedule we would like for the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
-    Sweeps sweeps(5); //number of sweeps is 5
+    auto sweeps = Sweeps(5); //number of sweeps is 5
     sweeps.maxm() = 10,20,100,100,200; //gradually increase states kept
     sweeps.cutoff() = 1E-10; //desired truncation error
 
-The wavefunction must use the same sites
-as the Hamiltonian, so we construct it using the same sites object as before
+The wavefunction must be defined in the same Hilbert space
+as the Hamiltonian, so we construct it using the same site set object as before
 
-    MPS psi(sites);
+    auto psi = MPS(sites);
 
-By default an MPS is initialized to a random product state; we could also set psi
+By default an MPS created this way is initialized to a random product state; we could also set psi
 to some specific initial state using an [[InitState|classes/initstate]] object.
 
 Finally, we are ready to call DMRG:
 
-    Real energy = dmrg(psi,H,sweeps);
+    auto energy = dmrg(psi,H,sweeps);
 
-When the algorithm is done, it returns the ground state energy. The optimized ground state
-wavefunction is stored back into `psi` on return.
+When the algorithm is done, it returns the ground state energy. The variable psi
+is overwritten with optimized ground state wavefunction on return.
 
-Below you can find a complete working code that includes all of these steps.
+Below you can find a complete working code that includes all of these steps,
+along with the headers you need to include to obtain all of the necessary library code.
 
+    #include "itensor/mps/dmrg.h"
+    #include "itensor/mps/sites/spinone.h"
+    #include "itensor/mps/autompo.h"
 
-    #include "core.h"
-    #include "model/spinone.h"
-    #include "hams/Heisenberg.h"
-    using namespace std;
+    using namespace itensor;
 
     int 
-    main(int argc, char* argv[])
+    main()
         {
         int N = 100;
 
-        SpinOne sites(N);
+        auto sites = SpinOne(N);
 
-        MPO H = Heisenberg(sites);
+        auto ampo = AutoMPO(sites);
+        for(int j = 1; j < N; ++j)
+            {
+            ampo += 0.5,"S+",j,"S-",j+1;
+            ampo += 0.5,"S-",j,"S+",j+1;
+            ampo +=     "Sz",j,"Sz",j+1;
+            }
+        auto H = MPO(ampo);
 
-        Sweeps sweeps(5); //number of sweeps is 5
+        auto sweeps = Sweeps(5); //number of sweeps is 5
         sweeps.maxm() = 10,20,100,100,200;
         sweeps.cutoff() = 1E-10;
 
-        MPS psi(sites);
+        auto psi = MPS(sites);
 
-        Real energy = dmrg(psi,H,sweeps);
+        auto energy = dmrg(psi,H,sweeps);
 
-        cout << "Ground State Energy = " << energy << endl;
+        println("Ground State Energy = ",energy);
 
         return 0;
         }
