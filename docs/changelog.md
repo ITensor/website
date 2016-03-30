@@ -1,5 +1,25 @@
 # Change Log #
 
+<a name="v2.0.1"></a>
+## [Version 2.0.1](https://github.com/ITensor/ITensor/tree/v2.0.1) (Mar 30, 2016) ##
+
+This version fixes a few bugs:
+
+* Fixed issue where AutoMPO was failing when operators were not provided in order. Also fixes issue with fermions and periodic boundary conditions. Thanks to Jordan Venderley for reporting this.
+
+* Fixed out-of-date interface of LocalMPO_MPS and LocalMPOSet which was preventing excited state DMRG code from compiling.
+
+* Fixed some places where a divide-by-zero error could occur.
+
+This version also includes a new mapprime function which takes an arbitrary number of arguments of the form Index,plevold,plevnew (meaning replace the Index with prime level plevold with prime level plevnew) or of the form IndexType,plevold,plevnew (same but for any Index of that IndexType).
+For example, 
+
+    auto T = ITensor(i,prime(j,2),k);
+    T.mapprime(i,0,3,j,2,1);
+
+Now T's index i will have prime level 3 and index j will have prime level 1.
+
+
 <a name="v2.0.0"></a>
 ## [Version 2.0.0](https://github.com/ITensor/ITensor/tree/v2.0.0) (Mar 25, 2016) ##
 
