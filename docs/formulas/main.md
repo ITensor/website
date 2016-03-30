@@ -24,6 +24,7 @@ Formulas involving matrix product states and DMRG.
 
 * <h3>Running DMRG</h3>
     - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
+    - [[Make a 2D Hamiltonian for DMRG|formulas/2d_dmrg]]
     - [[Compute excited states using DMRG|formulas/excited_dmrg]]
     - [[Read and write an MPS or MPO to and from disk|formulas/readwrite_mps]]
     - [[Stopping a DMRG Run "Gracefully"|formulas/stopping_dmrg]]
