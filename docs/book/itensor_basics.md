@@ -4,9 +4,9 @@ The ITensor, or intelligent tensor, is the basic tensor of the ITensor library.
 
 The simplest way to construct an ITensor is to provide its indices:
 
-    auto i = Index("index i",2),
-         j = Index("index j",3),
-         k = Index("index k",4);
+    auto i = Index("index i",2);
+    auto j = Index("index j",3);
+    auto k = Index("index k",4);
 
     auto T = ITensor(i,j,k);
 
@@ -37,6 +37,10 @@ Alternatively you can call `T.r()`.
     return 0;
     }
 
+In applied mathematics, the number of 
+indices is often called the "order" of a tensor. Therefore we also provide
+`order(T)` as an alternative to `rank(T)`.
+
 <a name="elements"></a>
 ### Accessing ITensor Elements
 
@@ -46,11 +50,14 @@ To set a particular element, or component, of an ITensor call its `.set` method:
 
 This element now has the value 4.56.
 
-In a more conventional tensor interface, the above operation would look like:
+In a more conventional tensor interface, the above operation would look like
 
     T(2,1,3) = 4.56; //not actual ITensor code!!
 
-The reason the indices are passed along with their values in the ITensor `.set` method
+where one would be expected to remember that the first entry corresponds to index
+i, the second to index j, and the third to index k.
+
+For an ITensor, the reason the indices are passed to the `.set` method along with their values
 is that nothing about the ITensor interface requires knowing the index order.
 
 If we gave the Index-value pairs such as `j(2)` in a different order,

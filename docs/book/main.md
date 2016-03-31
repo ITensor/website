@@ -1,12 +1,12 @@
 # <img src="docs/book/icon.png" class="largeicon">  The ITensor Book
 
-ITensor simplifies tensor
-calculations through an Einstein summation interface for contracting tensors.
-Because each ITensor index has a distinct identity, nothing about the interface
-depends on index order, making code easy to write and maintain.
-Even with these higher level features, ITensor is very efficient.
+ITensor is designed to simplify tensor
+calculations through an "Einstein summation" interface for tensor contractions.
+ITensor indices are objects which "remember" their identities, so that nothing about the interface
+depends on the index ordering; this makes ITensor code easy to write and maintain.
+Despite these higher level features, ITensor is very efficient.
 
-The goal of this book is to quickly familiarize users with the 
+The goal of this book is to first familiarize users with the 
 main features of ITensor. Later chapters turn to advanced features and
 customizing higher-level parts of the library.
 

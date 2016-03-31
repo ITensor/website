@@ -1,8 +1,8 @@
 # ITensor Library Overview
 
 Matrix methods have been a major success in the applied sciences.
-*Tensor* methods promise even greater insights
-into complex systems and data sets.
+*Tensor* methods promise even greater insights and more powerful
+algorithms.
 Major advances in physics and chemistry have come from
 tensor network wavefunctions.
 Data scientists are discovering tensor algorithms
@@ -14,7 +14,7 @@ a semantic, or physical meaning.
 Similarly in ITensor, tensor indices are objects with
 unique identities. Constructing an index in ITensor looks like:
 
-    Index i("index i",3);
+    auto i = Index("index i",3);
 
 The resulting Index has a size, or bond dimension of 3. Upon creation it is 
 indelibly stamped with an internal ID number so all copies of this Index
@@ -22,9 +22,9 @@ can recognize each other.
 
 Having made a few Index objects i, j, k, one can construct ITensors
 
-    ITensor A(i);
-    ITensor B(j,i);
-    ITensor C(i,j,k);
+    auto A = ITensor(i);
+    auto B = ITensor(j,i);
+    auto C = ITensor(i,j,k);
 
 and set their elements (as shown in the [[ITensor Basics|book/itensor_basics#elements]] chapter).
 
@@ -43,9 +43,9 @@ different indices of the same size.
 
 Consider the following example involving two matrix-like ITensors 
 
-    ITensor A(i,j),
-            B(k,j);
-    ITensor C = A*B;
+    auto A = ITensor(i,j);
+    auto B = ITensor(k,j);
+    auto C = A*B;
 
 which computes the matrix product @@ C = A B^\mathsf{T} @@.
 The Index <code style="border:none;">j</code> appears on both A and B so is automatically summed over,
@@ -62,7 +62,7 @@ with transposed index order, the ITensor code `C=A*B` would continue to give the
 
 Say we didn't want to contract over the index j &mdash; we could do the following
 
-    ITensor D = prime(A,j) * B;
+    auto D = prime(A,j) * B;
 
 The call to `prime(A,j)` puts a single, lightweight prime on A's copy of index j. It no longer
 matches the copy of j on B so these will not be contracted and D will end up with four indices i,j',j,k. 
@@ -73,11 +73,11 @@ ITensor has many other features emphasizing productivity
 over programming details:
 * Adding ITensors just works without 
 needing to permute the index order. 
-* ITensors automatically switch from real to complex storage as needed,
+* ITensor data storage automatically switches from real to complex as needed,
 such as when setting an element to or multiplying by a complex number.
 * Sparse ITensors seamlessly interoperate with regular, dense
 ITensors.
-* Easy to work with block-sparse, symmetric tensors.
+* Quantum-number conserving (block sparse) tensors with the same interface as dense tensors.
 
 
 Last but not least, ITensor includes routines for tensor decompositions
