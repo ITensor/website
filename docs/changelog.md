@@ -36,6 +36,10 @@ Major changes:
 * New storage system for tensors with "dynamic overloading" a.k.a. multiple dispatch
 for doTask functions carrying out operations on storage types.
 
+* ITensor and IQTensor now share exactly the same interface (they are instantiations
+of the same template class). ITensors and IQTensors are distinguished by what
+type of indices they have (Index versus IQIndex) and what storage types they have.
+
 * New "TensorRef" library for basic tensor operations, such as tensor slicing and 
 permutation. Matrix and vector operations are implemented as a special case of 
 tensor operations.
