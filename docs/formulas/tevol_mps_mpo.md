@@ -7,8 +7,8 @@ use the IQTensor, IQMPS, and IQMPO classes instead but otherwise leave the code 
 First set up the MPS you would like to time evolve. An easy way to do this is to make
 a product state using the InitState helper class:
 
-    #include "sites/spinhalf.h"
-    #include "autompo.h"
+    #include "itensor/mps/sites/spinhalf.h"
+    #include "itensor/mps/autompo.h"
     //...
     int N = 100;
     auto sites = SpinHalf(N);
@@ -56,7 +56,7 @@ To carry out the actual time evolution, repeatedly apply the MPO to the MPS usin
 Here is some sample code using one step of exactApplyMPO (since we started from a product state) followed by fitApplyMPO
 for the rest of the steps:
 
-    auto args = Args("Cutoff",1E-9,"Maxm",3000);
+    auto args = Args("Cutoff=",1E-9,"Maxm=",3000);
     auto ttotal = 3.0;
     auto nt = int(ttotal/tau+(1e-9*(ttotal/tau)));
 
