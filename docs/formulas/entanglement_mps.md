@@ -22,12 +22,12 @@
     psi.Anc(b) *= S;
 
     //Get density-matrix eigenvalues
-    Vector P = spectrum.eigsKept();
+    auto P = spectrum.eigsKept();
     //Apply von Neumann formula
     Real SvN = 0;
-    for(int n = 1; n <= P.Length(); ++n)
+    for(auto p : P)
         {
-        SvN += -P(n)*log(P(n));
+        SvN += -p*log(p);
         }
     printfln("Across bond b=%d, SvN = %.10f",b,SvN);
 

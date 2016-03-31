@@ -58,9 +58,11 @@ of sites and operators for you. But of course there are always reasons you may w
 Complete sample code:
 
 
-    #include "core.h"
+    #include "itensor/itensor.h"
+    #include "itensor/util/print_macro.h"
 
-    using namespace std;
+    using namespace itensor;
+    using std::string;
 
     ITensor
     op(Index s, string name)
@@ -70,14 +72,14 @@ Complete sample code:
 
         if(name == "Sz")
             {
-            res(s(1),sP(1)) = 0.5;
-            res(s(2),sP(2)) = -0.5;
+            res.set(s(1),sP(1),0.5);
+            res.set(s(2),sP(2),-0.5);
             }
         else
         if(name == "Sx")
             {
-            res(s(1),sP(2)) = 0.5;
-            res(s(2),sP(1)) = 0.5;
+            res.set(s(1),sP(2),0.5);
+            res.set(s(2),sP(1),0.5);
             }
         else
             {
@@ -93,17 +95,16 @@ Complete sample code:
         {
         const int d = 2;
 
-        Index s1("s1",d,Site),
-              s2("s2",d,Site);
+        auto s1 = Index("s1",d,Site);
+        auto s2 = Index("s2",d,Site);
 
         ITensor sz1 = op(s1,"Sz");
         ITensor sz2 = op(s2,"Sz");
         ITensor sx1 = op(s1,"Sx");
 
-        Print(sz1);
-        Print(sz2);
-        Print(sx1);
+        PrintData(sz1);
+        PrintData(sz2);
+        PrintData(sx1);
 
         return 0;
         }
-

@@ -7,7 +7,7 @@ Below is a simple pattern you can use to create a set of site Indices and save t
 
     int N = 100; //number of sites
     int d = 2; //dimension of local Hilbert space of each site
-    vector<Index> site(N+1); //convenient for these to be 1-indexed
+    auto site = vector<Index>(N+1); //convenient for these to be 1-indexed
     for(int j = 1; j <= N; ++j)
         {
         site.at(j) = Index(nameint("s",j),d,Site);
@@ -16,14 +16,14 @@ Below is a simple pattern you can use to create a set of site Indices and save t
     //Now we can use these sites, for example, to make tensors
     //such as operators
 
-    ITensor sz3(site[3],prime(site[3]));
-    sz(site[3](1),prime(site[3])(1)) =  0.5;
-    sz(site[3](2),prime(site[3])(2)) = -0.5;
+    auto sz3 = ITensor(site[3],prime(site[3]));
+    sz.set(site[3](1),prime(site[3])(1), 0.5);
+    sz.set(site[3](2),prime(site[3])(2),-0.5);
 
 A few comments on the above code are in order. The function `nameint` is convenience function we provide
 which simply takes a string and an integer and makes a string with the integer appended. So for example:
 
-    string myname = nameint("mysite_",7);
+    auto myname = nameint("mysite_",7);
     Print(myname); //prints "mysite_7"
 
 Also, in the Index constructor, after the name and dimension of each Index we passed the `Site` flag.
@@ -34,27 +34,30 @@ but not of the Link indices, etc. (For more info see the docs on class [[Index|c
 
 Complete sample code:
 
-    #include "itensor.h"
+    #include "itensor/itensor.h"
+    #include "itensor/util/print_macro.h"
 
     using namespace itensor;
     using std::vector;
+    using std::string;
 
     int main()
         {
         int N = 100; //number of sites
         int d = 2; //dimension of local Hilbert space of each site
-        vector<Index> site(N+1); //convenient for these to be 1-indexed
+        auto site = vector<Index>(N+1); //convenient for these to be 1-indexed
         for(int j = 1; j <= N; ++j)
             {
             site.at(j) = Index(nameint("s",j),d,Site);
             }
 
-        //Now we can use these sites, for example, to make tensors
-        //such as operators
+        auto sz3 = ITensor(site[3],prime(site[3]));
+        sz3.set(site[3](1),prime(site[3])(1), 0.5);
+        sz3.set(site[3](2),prime(site[3])(2),-0.5);
+        PrintData(sz3);
 
-        ITensor sz3(site[3],prime(site[3]));
-        sz(site[3](1),prime(site[3])(1)) =  0.5;
-        sz(site[3](2),prime(site[3])(2)) = -0.5;
+        auto myname = nameint("mysite_",7);
+        Print(myname); //prints "mysite_7"
 
         return 0;
         }
