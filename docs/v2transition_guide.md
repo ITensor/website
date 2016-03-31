@@ -75,6 +75,8 @@ Following version 2.0 these changes are mandatory.
 If you prefer a 1-indexed interface you can use the Vector1 and Matrix1
 classes.
 
+* The header `svdalgs.h` has been renamed to `decomp.h`
+
 ### Changes to Advanced Features
 
 * The ITensor and IQTensor constructors taking a set of IndexVals (or IQIndexVals) and
