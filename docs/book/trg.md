@@ -438,8 +438,6 @@ Click the link just below to view a complete, working sample code you can compil
   measures the magnetization of a single Ising spin, and compare your results
   at various temperatures to the [exact solution](https://en.wikipedia.org/wiki/Square-lattice_Ising_model).
 
-<br/>
-
 
 ### References
 
