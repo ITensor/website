@@ -146,12 +146,297 @@ of two F's while each @@A\_1@@ consists of four F's).
 
 <img class="diagram" width="80%" src="docs/book/images/TRG_recombine.png"/>
 
-To compute @@Z@@ defined by contracting a square lattice of @@2^N@@ tensors, one
+To compute @@Z@@ defined by contracting a square lattice of @@2^{1+N}@@ tensors, one
 repeats the above two steps (factor and recombine) N times until only a single
 tensor remains. Calling this final tensor @@A\_N@@, the result @@Z@@ of contracting
 the original network is equal to the following "double trace" of @@A\_N@@:
 
 <img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
+
+### Implementing TRG in ITensor
+
+Finally we are ready to implement the algorithm above using ITensor.
+At the end of this section we will arrive at a complete working code,
+but let's look at each piece step by step.
+
+To get started, start with the following empty application:
+
+    #include "itensor/decomp.h"
+
+    using namespace itensor;
+
+    int main() 
+    {
+
+    //Our code will go here
+
+    return 0;
+    }
+
+We could include additional header files, but "itensor/decomp.h" is sufficient because it will
+pull in "itensor/itensor.h" and other important headers.
+
+First define some basic parameters of the calculation, such as the temperature "T"; the
+maximum number  of singular values "maxm"; and the top-most scale we want to reach
+with TRG:
+
+    Real T = 3.0;
+    int maxm = 20;
+    int topscale = 6;
+
+Next define the indices which will go on the initial "A"
+tensor:
+
+    auto m0 = 2;
+    auto x = Index("x0",m0,Xtype);
+    auto y = Index("y0",m0,Ytype);
+    auto x2 = prime(x,2);
+    auto y2 = prime(y,2);
+
+Here it is good practice to save the index dimension @@m\_0=2@@ into its own variable
+to prevent "magic numbers" from appearing later in the code. The constants
+`XType` and `YType` are "IndexType" tags which let us conveniently manipulate only horizontal
+or only vertical indices later on. It is also convenient to save copies of x and 
+y with prime level raised to 2 as the variables x2 and y2.
+
+Now let's create the "A" tensor defining the partition function and set its values as discussed
+in the previous section:
+
+    auto A = ITensor(x,y2,x2,y);
+
+    auto Sig = [](int s) { return 1.-2.*(s-1); };
+
+	auto E0 = -4.0;
+
+    for(auto s1 : range1(m0))
+    for(auto s2 : range1(m0))
+    for(auto s3 : range1(m0))
+    for(auto s4 : range1(m0))
+        {
+        auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
+                +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
+        auto P = exp(-(E-E0)/T);
+        A.set(x(s1),y2(s2),x2(s3),y(s4),P);
+        }
+
+The first line creates the "A" tensor with indices x,y2,x2,y and all elements set to zero.
+The next line defines a "lambda" function bound to the variable name Sig which converts integers
+1 and 2 into Ising spin values +1.0 and -1.0. To set the elements of A, we loop over integers
+s1,s2,s3,s4. The function `range1(d)` returns an object which iterates over the integers 1,2,3,...,d.
+One slight difference with the convention of the previous section is that we've defined 
+the Boltzmann probability weight P with an energy shift of `E0 = -4.0` in the exponent. This 
+helps to keep the norm of the rescaled A tensors from growing too quickly later.
+
+Finally we are ready to dive into the main TRG algorithm loop. To reach scale @@N@@ we need to
+do @@N-1@@ steps, so lets write a loop that does this number of steps:
+
+    for(auto scale : range(topscale))
+        {
+        printfln("\n---------- Scale %d -> %d  ----------",scale,1+scale);
+
+        //...TRG algorithm code will go here...
+
+		}
+
+In the body of this loop let us first "grab" the x and y indices of the A tensor at the
+current scale. Although on the first pass these are just the same indices we defined before, 
+new indices will appear when we decompose the tensors at the previous scale.
+
+	auto y = noprime(findtype(A,Ytype));
+	auto y2 = prime(y,2);
+	auto x = noprime(findtype(A,Xtype));
+	auto x2 = prime(x,2);
+
+The function `findtype(T,IndexType)` searches through the indices of a tensor and returns
+the first index whose type matches the specified IndexType. Since we want the version of 
+this index with prime level 0, we call noprime to reset the prime level to zero. We 
+also create versions of these indices with prime level 2 for convenience.
+
+Now it's time to decompose the current A tensor as `A=F1*F3` or `A=F2*F41` as discussed
+in the previous section. First the `A=F1*F3` factorization:
+
+	auto F1 = ITensor(x2,y);
+	auto F3 = ITensor(x,y2);
+	auto xname = format("x%d",scale+1);
+	factor(A,F1,F3,{"Maxm",maxm,"ShowEigs",true,
+					"IndexType",Xtype,"IndexName",xname});
+
+We create the ITensors F1 and F3 with the indices of A we
+want them to have after the factorization. This tells the `factor` routine how
+to group the indices of A. Along with the tensors, we pass some [[named arguments|tutorials/args]].
+The argument "Maxm" puts a limit on how many singular values are kept in the SVD. Setting "ShowEigs"
+to `true` shows helpful information about the truncation of singular values (actually the squares
+of the singular values which are called "density matrix eigenvalues"). Also we pass an IndexType and 
+name for the new index which will be created to connect F1 and F3.
+The line `auto xname = format("x%d",scale+1);` is a string formatting operation; if for example `scale == 2`
+then xname will be "x3".
+
+We can write very similar code to do the `A=F2*F4` factorization, the main difference being
+which indices of A we request to end up on F2 versus F4:
+
+	auto F2 = ITensor(x,y);
+	auto F4 = ITensor(y2,x2);
+	auto yname = format("y%d",scale+1);
+	factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
+					"IndexType=",Ytype,"IndexName=",yname});
+
+For the last step of the TRG algorithm we combine the factors of the A tensor at the current
+scale to create a "renormalized" A tensor at the next scale:
+
+	auto l13 = commonIndex(F1,F3);
+	A = F1 * noprime(F4) * prime(F2,2) * prime(F3,l13,2);
+
+The first line grabs a copy of the index common to F1 and F3, which is convenient to
+have for the next line. The second line first contracts F1 with F4, then the result of this
+contraction with F2, and finally with F3 to produce the new A tensor. The functions
+wrapping the F tensors adjust the prime levels of various indices so that the indices we
+want contracted with match while the indices we don't want contracted will have unique
+prime levels.
+
+In more detail, `noprime(F4)` returns a copy of F4 (without copying F4's data) such that all
+indices have prime level 0. Calling `prime(F2,2)` increases the prime level of all of F2's indices
+by 2. And `prime(F3,l13,2)` raises the prime level of just the index `l13` by 2. Try drawing
+the tensor diagram showing the contraction of the F tensors to convince yourself that the 
+prime levels work out correctly.
+
+Last but not least, after we have proceeded through each scale, obtaining the A tensor
+for the next scale we want to take the A tensor at the "top scale" specified and 
+compute observables from it. Though this tensor contains a wealth of information,
+we will look at the simplest case of computing the partition function @@Z@@.
+
+To obtain @@Z@@ from the top tensor, all we have to do is trace the x indices with each
+other and trace the y indices with each other, which results in a scalar tensor having
+value @@Z@@:
+
+<img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
+
+In ITensor, you can compute a trace by creating a special type of sparse ITensor 
+called a `delta`: this is a tensor with only diagonal elements, all equal to 1.0.
+Let us grab the x and y indices of the top tensor:
+
+    auto xt = noprime(findtype(A,Xtype));
+    auto yt = noprime(findtype(A,Ytype));
+    auto xt2 = prime(xt,2);
+    auto yt2 = prime(yt,2);
+
+Then use these indices to create delta tensors:
+
+    auto Trx = delta(xt,xt2);
+    auto Try = delta(yt,yt2);
+
+Finally we contract these tensors with "A" and convert the result to a real
+number to obtain @@Z@@:
+
+    auto Z = (Trx*A*Try).real();
+
+An interesting quantity to print out is @@\ln(Z)/N\_s@@ where @@N\_s = 2^{1+N}@@ 
+is the number of sites "contained" in the top tensor at scale @@N@@:
+
+    Real Ns = pow(2,1+topscale);
+    printfln("log(Z)/Ns = %.12f",log(Z)/Ns);
+
+With the conventions for the probability weights we have chosen, we can check
+@@\ln(Z)/N\_s@@ against the following exact result (for an infinite-sized system):
+$$
+\ln(Z)/N\_s = -2\beta + \frac{1}{2} \ln(2) + \frac{1}{2\pi} \int\_0^\pi\, d\theta \ln{\Big[ \cosh(2\beta)^2 + \frac{1}{k} \sqrt{1+k^2-2k\cos(2\theta)}\,\Big]}
+$$
+where the constant @@k=1/\sinh(2\beta)^2@@.
+
+Click the link just below to view a complete, working sample code you can compile yourself. Compare the value of
+@@\ln(Z)/N\_s@@ you get to the exact result. How does adjusting `maxm` and `topscale` affect your result?
+
+<div class="example_clicker">Click here to view a full working example</div>
+
+	#include "itensor/decomp.h"
+
+	using namespace itensor;
+
+	int main()
+		{
+		Real T = 3.;
+		int maxm = 20;
+		int topscale = 6;
+
+		auto m0 = 2;
+		auto x = Index("x0",m0,Xtype);
+		auto y = Index("y0",m0,Ytype);
+		auto x2 = prime(x,2);
+		auto y2 = prime(y,2);
+
+		auto A = ITensor(x,y2,x2,y);
+
+		auto Sig = [](int s) { return 1.-2.*(s-1); };
+
+		auto E0 = -4.;
+
+		for(auto s1 : range1(m0))
+		for(auto s2 : range1(m0))
+		for(auto s3 : range1(m0))
+		for(auto s4 : range1(m0))
+			{
+			auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
+					+Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
+			auto val = exp(-(E-E0)/T);
+			A.set(x(s1),y2(s2),x2(s3),y(s4),val);
+			}
+
+		for(auto scale : range(topscale))
+			{
+			printfln("\n---------- Scale %d -> %d  ----------",scale,1+scale);
+
+			auto y = noprime(findtype(A,Ytype));
+			auto y2 = prime(y,2);
+			auto x = noprime(findtype(A,Xtype));
+			auto x2 = prime(x,2);
+
+			auto F1 = ITensor(x2,y);
+			auto F3 = ITensor(x,y2);
+			auto xname = format("x%d",scale+1);
+			factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
+							"IndexType=",Xtype,"IndexName=",xname});
+
+			auto F2 = ITensor(x,y);
+			auto F4 = ITensor(y2,x2);
+			auto yname = format("y%d",scale+1);
+			factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
+							"IndexType=",Ytype,"IndexName=",yname});
+
+			auto l13 = commonIndex(F1,F3);
+			A = F1 * noprime(F4) * prime(F2,2) * prime(F3,l13,2);
+			}
+
+		println("\n---------- Calculating at Scale ",topscale," ----------");
+
+		auto xt = noprime(findtype(A,Xtype));
+		auto yt = noprime(findtype(A,Ytype));
+		auto xt2 = prime(xt,2);
+		auto yt2 = prime(yt,2);
+
+		auto Trx = delta(xt,xt2);
+		auto Try = delta(yt,yt2);
+		auto Z = (Trx*A*Try).real();
+
+		Real Ns = pow(2,1+topscale);
+
+		printfln("log(Z)/Ns = %.12f",log(Z)/Ns);
+
+		return 0;
+		}
+
+### Next Steps for You to Try
+
+* Modify the sample application to read in parameters
+  from a file, using the ITensor [[input parameter system|tutorials/input]].
+
+* Following the details in the appendix of the "Tensor Network Renormalization"
+  paper arxiv:1412.0732, for the critical temperature @@T\_c=2/\ln(1+\sqrt{2})@@ trace 
+  the top-scale "A" tensor in the x direction, then
+  diagonalize the resulting matrix to obtain the leading scaling dimensions of
+  the critical 2 dimensional Ising model.
+
+* Following the paper arxiv:0903.1069, include an "impurity tensor" which
+  measures the magnetization of a single Ising spin, and compare your results
+  at various temperatures to the [exact solution](https://en.wikipedia.org/wiki/Square-lattice_Ising_model).
 
 <br/>
 
@@ -166,7 +451,7 @@ the original network is equal to the following "double trace" of @@A\_N@@:
 - _Paper on an improved TRG (TEFR) with very useful figures_:
 
   Gu and Wen, "Tensor-entanglement-filtering renormalization approach and symmetry-protected topological order"
-  [PRB 80, 155131](http://dx.doi.org/10.1103/PhysRevB.80.155131) (2009)  arXiv:0903.1069
+  [PRB 80, 155131](http://dx.doi.org/10.1103/PhysRevB.80.155131) (2009)  arxiv:0903.1069
 
 - _TNR is an extension of TRG which qualitatively improves TRG's fixed-point behavior
    and can be used to generate MERA tensor networks_:
