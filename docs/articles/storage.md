@@ -1,4 +1,4 @@
-<span class='article_title'>ITensor Storage and Code Design</span>
+<span class='article_title'>New ITensor Storage and Code Design</span>
 
 <span class='article_sig'>Miles Stoudenmire&mdash;March 25, 2016</span>
 

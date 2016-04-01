@@ -33,7 +33,7 @@ of the function doTask(TaskType,...) where TaskType is a "task object" saying
 which task should be carried out (contraction, addition, mutiplication by a scalar, etc.).
 
 Major changes:
-* New storage system for tensors with "dynamic overloading" a.k.a. multiple dispatch
+* [[New storage system|articles/storage]] for tensors with "dynamic overloading" a.k.a. multiple dispatch
 for doTask functions carrying out operations on storage types.
 
 * ITensor and IQTensor now share exactly the same interface (they are instantiations
