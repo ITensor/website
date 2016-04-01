@@ -40,6 +40,10 @@ for doTask functions carrying out operations on storage types.
 of the same template class). ITensors and IQTensors are distinguished by what
 type of indices they have (Index versus IQIndex) and what storage types they have.
 
+* No longer any limit on the number of indices ITensors can have.
+  This makes ITensor even more useful for two-dimensional
+  algorithms such as TRG, PEPS, MERA etc.
+
 * New "TensorRef" library for basic tensor operations, such as tensor slicing and 
 permutation. Matrix and vector operations are implemented as a special case of 
 tensor operations.
