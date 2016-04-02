@@ -56,11 +56,10 @@ permutation. Matrix and vector operations are implemented as a special case of
 tensor operations.
 
 * New QN (quantum number) system. To create a quantum number using the
-standard recognized fields (spin "Sz", boson number "Nb", fermion number "Nf",
-or fermion parity "Pf") call the QN constructor as
+  standard recognized fields (spin "Sz", boson number "Nb", fermion number "Nf",
+  or fermion parity "Pf") call the QN constructor as
 
-
-    auto q = QN("Sz=",-1,"Nf=",1);
+      auto q = QN("Sz=",-1,"Nf=",1);
 
   More advanced QNs can be created by provided a list of value-modfac pairs.
   The modfac is an integer saying how addition is defined for that particular
@@ -71,30 +70,28 @@ or fermion parity "Pf") call the QN constructor as
   @@Z_3@@ addition rules.
 
 Other changes:
+
 * The Combiner and IQCombiner types no longer exist. Instead, a combiner is
-just a special type of ITensor or IQTensor. To obtain a combiner which
-combines the indices i,j,k, call the function
+  just a special type of ITensor or IQTensor. To obtain a combiner which
+  combines the indices i,j,k, call the function
 
+      auto C = combiner(i,j,k);
 
-     auto C = combiner(i,j,k);
-
-The tensor C will have a fourth index whose size is the product of the sizes
-of i,j, and k.
+  The tensor C will have a fourth index whose size is the product of the sizes
+  of i,j, and k.
 
 * It is now mandatory to prefix header file names with their path inside
-the ITensor folder. For example, 
+  the ITensor folder. For example, 
 
-
-    #include "itensor/iqtensor.h" 
-    #include "itensor/mps/dmrg.h"
+      #include "itensor/iqtensor.h" 
+      #include "itensor/mps/dmrg.h"
 
 * User-created IndexTypes are now supported. Internally, an IndexType is now
-just a fixed-size string of up to 7 characters. To make an IndexType
-called "MyType" just do 
+  just a fixed-size string of up to 7 characters. To make an IndexType
+  called "MyType" just do 
 
-    
-    auto MyType = IndexType("MyType");
-    auto i = Index("i",5,MyType);
+      auto MyType = IndexType("MyType");
+      auto i = Index("i",5,MyType);
 
 
 

@@ -77,6 +77,11 @@ classes.
 
 * The header `svdalgs.h` has been renamed to `decomp.h`
 
+* Older codes may still be using the names "Opt" and "OptSet" for passing
+optional named arguments to functions. From version 2.0 on, these older names
+have been removed in favor of a single class called "Args". For more on 
+using the Args system view [[this Args tutorial|tutorials/args]].
+
 ### Changes to Advanced Features
 
 * The ITensor and IQTensor constructors taking a set of IndexVals (or IQIndexVals) and
