@@ -1,5 +1,12 @@
 # Change Log #
 
+<a name="v2.0.2"></a>
+## [Version 2.0.2](https://github.com/ITensor/ITensor/tree/v2.0.2) (Apr 2, 2016) ##
+
+* Added the factor decomposition, which uses the SVD to factorize a tensor into just two factors by multiplying the square root of the singular values into the U and V matrices.
+
+* Added helpful functions which return vectors of "bonds" for common two-dimensional lattices. These are extremely useful for making 2D Hamiltonians as MPOs using AutoMPO. See the [[code formula example|formulas/2d_dmrg]].
+
 <a name="v2.0.1"></a>
 ## [Version 2.0.1](https://github.com/ITensor/ITensor/tree/v2.0.1) (Mar 30, 2016) ##
 
