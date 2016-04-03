@@ -437,19 +437,27 @@ Click the link just below to view a complete, working sample code you can compil
 
 ### Next Steps for You to Try
 
-* Modify the sample application to read in parameters
+1. Modify the sample application to read in parameters
   from a file, using the ITensor [[input parameter system|tutorials/input]].
 
-* Following the details in the appendix of the "Tensor Network Renormalization"
-  paper arxiv:1412.0732, for the critical temperature @@T\_c=2/\ln(1+\sqrt{2})@@ trace 
-  the top-scale "A" tensor in the x direction, then
-  diagonalize the resulting matrix to obtain the leading scaling dimensions of
-  the critical 2 dimensional Ising model.
+2. Following the details in the appendix of the "Tensor Network Renormalization"
+   paper arxiv:1412.0732, for the critical temperature @@T\_c=2/\ln(1+\sqrt{2})@@ trace 
+   the top-scale "A" tensor in the x direction, then
+   diagonalize the resulting matrix to obtain the leading scaling dimensions of
+   the critical 2 dimensional Ising model.
 
-* Following the paper arxiv:0903.1069, include an "impurity tensor" which
-  measures the magnetization of a single Ising spin, and compare your results
-  at various temperatures to the [exact solution](https://en.wikipedia.org/wiki/Square-lattice_Ising_model).
+3. Following the paper arxiv:0903.1069, include an "impurity tensor" which
+   measures the magnetization of a single Ising spin, and compare your results
+   at various temperatures to the [exact solution](https://en.wikipedia.org/wiki/Square-lattice_Ising_model).
 
+
+*Pro Tip*: for tasks 2 and 3 above, it is a good idea to modify the TRG code such that A gets 
+normalized after each step, for example by adding a line `A /= norm(A);`. 
+The exact normalization is not so important (trace norm versus Frobenius norm); the idea is to 
+prevent A from getting too big, which will definitely occur after too many iterations.
+When computing observables such as the magnetization, it is sufficient to use the "effective" 
+partition function @@Z\_\text{eff}@@ obtained by double-tracing the top-scale A, however
+it might be normalized.
 
 ### References
 
