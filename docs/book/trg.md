@@ -56,7 +56,7 @@ circle:
 
 <img class="diagram" width="60%" src="docs/book/images/TRG_1dIsingZ.png"/>
 
-With each 2-index tensor in the above diagram defined to equal the matrix M, is an exact
+With each 2-index tensor in the above diagram defined to equal the matrix M, it is an exact
 rewriting of the partition function @@Z@@ as a tensor network.
 
 For this one-dimensional case, the trick to compute @@Z@@ is just to diagonalize @@M@@. 
@@ -104,11 +104,11 @@ fashion because the energy was defined to use periodic boundary conditions.
 
 ## The TRG Algorithm
 
-We can use TRG to compute the above network, which is just equal to a single number @@Z@@
+TRG is a strategy for computing the above 2d network, which is just equal to a single number @@Z@@
 (since there are no uncontracted external indices). The TRG approach is to locally replace 
 individual @@A@@ tensors with pairs of lower-rank tensors which guarantee the result of the contraction
-remains the same. These smaller tensors can then be recombined in a different way that results in
-a more sparse, yet equivalent network.
+remains the same to a good approximation. These smaller tensors can then be recombined in a different 
+way that results in a more sparse, yet equivalent network.
 
 Referring to the original @@A@@ tensor as @@A\_0@@, the first "move" of 
 TRG is to factorize the @@A\_0@@ tensor in two different ways:
@@ -126,7 +126,7 @@ U and V to create the factors @@F\_1@@ and @@F\_2@@. Pictorially:
 
 Importantly, the SVD is only done approximately by retaining just the @@\chi@@ largest singular
 values and discarding the columns of U and V corresponding to the smaller singular values.
-This truncation is crucial for keeping the costs of the TRG algorithm under control.
+This truncation is crucial for keeping the cost of the TRG algorithm under control.
 
 Making the above substitutions, either
 @@A\_0=F\_1 F\_3@@ or @@A\_0=F\_2 F\_4@@ on alternating lattice sites, transforms the
@@ -222,13 +222,16 @@ in the previous section:
 The first line creates the "A" tensor with indices x,y2,x2,y and all elements set to zero.
 The next line defines a "lambda" function bound to the variable name Sig which converts integers
 1 and 2 into Ising spin values +1.0 and -1.0. To set the elements of A, we loop over integers
-s1,s2,s3,s4. The function `range1(d)` returns an object which iterates over the integers 1,2,3,...,d.
-One slight difference with the convention of the previous section is that we've defined 
-the Boltzmann probability weight P with an energy shift of `E0 = -4.0` in the exponent. This 
-helps to keep the norm of the rescaled A tensors from growing too quickly later.
+s1,s2,s3,s4. The function `range1(d)` returns an object that can be used in a `for` loop to
+iterate over the integers 1,2,3,...,d.
+
+One slight difference with the convention of the previous section is that here 
+the Boltzmann probability weight P has an energy shift of `E0 = -4.0` in the exponent. This 
+will keep the norm of the rescaled A tensors from growing too quickly later. Though it changes
+@@Z@@, it does so in a way that is easy to account for.
 
 Finally we are ready to dive into the main TRG algorithm loop. To reach scale @@N@@ we need to
-do @@N-1@@ steps, so lets write a loop that does this number of steps:
+do @@N-1@@ steps, so we will write a loop that does this number of steps:
 
     for(auto scale : range(topscale))
         {
@@ -238,26 +241,32 @@ do @@N-1@@ steps, so lets write a loop that does this number of steps:
 
 		}
 
+In contrast to the earlier `range1` function which starts at 1, `range(topscale)` makes the `for` loop
+run over 0,1,...,topscale-1.
+
 In the body of this loop let us first "grab" the x and y indices of the A tensor at the
-current scale. Although on the first pass these are just the same indices we defined before, 
-new indices will appear when we decompose the tensors at the previous scale.
+current scale. 
 
 	auto y = noprime(findtype(A,Ytype));
 	auto y2 = prime(y,2);
 	auto x = noprime(findtype(A,Xtype));
 	auto x2 = prime(x,2);
 
+Although on the first pass these are just the same indices we defined before, 
+new indices will arise as A refers to tensors at higher scales.
+
 The function `findtype(T,IndexType)` searches through the indices of a tensor and returns
 the first index whose type matches the specified IndexType. Since we want the version of 
 this index with prime level 0, we call noprime to reset the prime level to zero. We 
 also create versions of these indices with prime level 2 for convenience.
 
-Now it's time to decompose the current A tensor as `A=F1*F3` or `A=F2*F41` as discussed
+Now it's time to decompose the current A tensor as discussed
 in the previous section. First the `A=F1*F3` factorization:
 
 	auto F1 = ITensor(x2,y);
 	auto F3 = ITensor(x,y2);
 	auto xname = format("x%d",scale+1);
+
 	factor(A,F1,F3,{"Maxm",maxm,"ShowEigs",true,
 					"IndexType",Xtype,"IndexName",xname});
 
@@ -277,6 +286,7 @@ which indices of A we request to end up on F2 versus F4:
 	auto F2 = ITensor(x,y);
 	auto F4 = ITensor(y2,x2);
 	auto yname = format("y%d",scale+1);
+
 	factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
 					"IndexType=",Ytype,"IndexName=",yname});
 
@@ -299,19 +309,21 @@ by 2. And `prime(F3,l13,2)` raises the prime level of just the index `l13` by 2.
 the tensor diagram showing the contraction of the F tensors to convince yourself that the 
 prime levels work out correctly.
 
-Last but not least, after we have proceeded through each scale, obtaining the A tensor
-for the next scale we want to take the A tensor at the "top scale" specified and 
+Last but not least, after we have proceeded through each scale
+we want to take the last A tensor at the "top scale" specified and 
 compute observables from it. Though this tensor contains a wealth of information,
 we will look at the simplest case of computing the partition function @@Z@@.
 
-To obtain @@Z@@ from the top tensor, all we have to do is trace the x indices with each
-other and trace the y indices with each other, which results in a scalar tensor having
-value @@Z@@:
+To obtain @@Z@@ from the top tensor, all we have to do is trace both the x indices with each
+other and trace the y indices with each other, which results in a scalar tensor whose
+value is @@Z@@:
 
 <img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
 
 In ITensor, you can compute a trace by creating a special type of sparse ITensor 
-called a `delta`: this is a tensor with only diagonal elements, all equal to 1.0.
+called a `delta`. A `delta` tensor has only diagonal elements, all equal to 1.0.
+Pictorially, you can view the delta tensors as the dashed lines in the above diagram.
+
 Let us grab the x and y indices of the top tensor:
 
     auto xt = noprime(findtype(A,Xtype));
@@ -340,7 +352,7 @@ With the conventions for the probability weights we have chosen, we can check
 $$
 \ln(Z)/N\_s = -2\beta + \frac{1}{2} \ln(2) + \frac{1}{2\pi} \int\_0^\pi\, d\theta \ln{\Big[ \cosh(2\beta)^2 + \frac{1}{k} \sqrt{1+k^2-2k\cos(2\theta)}\,\Big]}
 $$
-where the constant @@k=1/\sinh(2\beta)^2@@.
+where the constant @@k=1/\sinh(2\beta)^2@@ and recall @@\beta=1/T@@.
 
 Click the link just below to view a complete, working sample code you can compile yourself. Compare the value of
 @@\ln(Z)/N\_s@@ you get to the exact result. How does adjusting `maxm` and `topscale` affect your result?
