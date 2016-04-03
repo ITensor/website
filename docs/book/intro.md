@@ -76,7 +76,7 @@ needing to permute the index order.
 such as when setting an element to or multiplying by a complex number.
 * Sparse ITensors seamlessly interoperate with regular, dense
 ITensors.
-* Quantum-number conserving (block sparse) tensors with the same interface as dense tensors.
+* Quantum-number conserving (block sparse) tensors have the same interface as dense tensors.
 
 
 Last but not least, ITensor includes routines for tensor decompositions
