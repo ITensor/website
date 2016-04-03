@@ -28,26 +28,25 @@ Having made a few Index objects i, j, k, one can construct ITensors
 
 and set their elements (as shown in the [[ITensor Basics|book/itensor_basics#elements]] chapter).
 
-Since matching indices can be recognized by their ID, ITensor contraction
+Since matching indices can recognize each other, ITensor contraction
 is simply
 
     D = A * B * C;
 
-The ITensor contraction
-engine recognizes repeated indices and sums 
+The ITensor contraction engine recognizes repeated indices and sums 
 over them, like the Einstein summation convention used
 in physics. Instead of bookkeeping the order of tensor indices,
-users can focus on the structure of tensor networks.
-Certain bugs are ruled out, such as confusing
-different indices of the same size.
+users get to focus on the structure of tensor networks.
+Certain bugs are ruled out, such as mistaking one index for
+another index of the same size.
 
-Consider the following example involving two matrix-like ITensors 
+Let's take a closer look at an example involving two matrix-like ITensors 
 
     auto A = ITensor(i,j);
     auto B = ITensor(k,j);
     auto C = A*B;
 
-which computes the matrix product @@ C = A B^\mathsf{T} @@.
+Here the contraction `A*B` computes the matrix product @@ C = A B^\mathsf{T} @@.
 The Index <code style="border:none;">j</code> appears on both A and B so is automatically summed over,
 leaving C to have indices i and k.
 
@@ -58,7 +57,7 @@ the second index of B and write something like
 
 to get the correct result. ITensor handles this transposition automatically, 
 making user code simple and robust. If B were to be redefined
-with transposed index order, the ITensor code `C=A*B` would continue to give the correct result.
+with transposed index order, the ITensor operation `A*B` would continue to give the correct result.
 
 Say we didn't want to contract over the index j &mdash; we could do the following
 
