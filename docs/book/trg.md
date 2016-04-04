@@ -456,8 +456,8 @@ normalized after each step, for example by adding a line `A /= norm(A);`.
 The exact normalization is not so important (trace norm versus Frobenius norm); the idea is to 
 prevent A from getting too big, which will definitely occur after too many iterations.
 When computing observables such as the magnetization, it is sufficient to use the "effective" 
-partition function @@Z\_\text{eff}@@ obtained by double-tracing the top-scale A, however
-it might be normalized.
+partition function @@Z\_\text{eff}@@ obtained by double-tracing the top-scale A, regardless
+of how it is normalized.
 
 ### References
 
