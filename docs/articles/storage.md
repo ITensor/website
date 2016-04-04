@@ -15,19 +15,21 @@ is insufficient for handling arbitrary sparse tensor types. Though we were able 
 repurpose this storage to implement diagonal-sparse ITensors, this was just a workaround
 until we could find a better solution.
 
-For ITensor 2.0 we considered a few standard design choices, but most had severe drawbacks.
-Two examples:
-* Making the storage class of an ITensor a template parameter would require any
-function that takes an ITensor argument to be a template too. Not only would this severely
-increase compile times, but it would put an unnecessary burden on users, especially newer
-users unfamiliar with templates.
-* Storage types could be derived from an abstract parent 
-storage class, implementing their behavior by overloading a set of virtual 
-methods. But what is the minimal set of methods
-common to all tensor storage types? In practice, the number of virtual methods 
-ballooned out of control. Also, this design requires awkward choices, such as having to
-implement binary operations (addition, multiplication) between different types as 
-a class method bound to one of the two types. Which type should define such an operation?
+For ITensor 2.0 we considered a few standard solutions, 
+but most had serious drawbacks. Two examples:
+
+* We could template ITensors over their storage type. But this would require any
+  function taking an ITensor argument to be a template too. Not only would this severely
+  increase compile times, but it would put an unnecessary burden on users, especially newer
+  users unfamiliar with templates, and it would make the notation of many functions unwieldy.
+
+* We could derive all storage types from an abstract parent 
+  storage class and implement their behavior by overloading a set of virtual 
+  methods they all share. But what is the minimal set of methods
+  common to all tensor storage types? In practice, the number of virtual methods 
+  ballooned out of control. Also, this design requires awkward choices, such as having to
+  implement binary operations (addition, multiplication) between different types as 
+  a class method bound to one of the two types. Which type should define such an operation?
 
 ### The doTask system: "dynamic overloading"
 
@@ -43,7 +45,7 @@ they do not have to inherit from any base class. The only necessary step
 to use a new storage type is to register it in the ITensor storage system.
 3. Methods for manipulating tensor storage are free functions, all overloads
 of a function named doTask(...). These methods are distinguished by their first
-argument, which is a lightweight type called the "task". For example, to compute
+argument, which is a lightweight type called the "task object". For example, to compute
 the norm of a storage object, at the ITensor (interface) level one calls:
 
 
@@ -73,16 +75,19 @@ that is needed to define the meaningful behavior of each type, with minimal
 boilerplate or glue code.
 
 Other advantages and features of the doTask system:
+
 * The return type of doTask overloads for each task type are deduced automatically
-at compile type, and can be different for different task types.
+  at compile type, and can be different for different task types.
+
 * Storage types need not define any particular class methods. Most interaction
-with storage types is through external functions. This generally
-leads to better code design ("encapsulation") where only a minimal set of class
-methods deals with private class data.
+  with storage types is through external functions. This generally
+  leads to better code design ("encapsulation") where only a minimal set of class
+  methods deals with private class data.
+
 * "Design as research": when researching better storage designs, one only needs
-to implement a small minimal set of doTask overloads, such as defining tensor contraction. 
-Later, when preparing the new type for widespread use the remaining behaviors 
-(for example, tensor addition or write-to-disk) can be defined.
+  to implement a small minimal set of doTask overloads, such as defining tensor contraction. 
+  Later, when preparing the new type for widespread use the remaining behaviors 
+  (for example, tensor addition or write-to-disk) can be defined.
 
 
 
