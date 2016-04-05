@@ -1,5 +1,7 @@
 # IQIndex #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 ## (subclass of [[Index|classes/index]]) ##
 
 An IQIndex represents an [[Index|classes/index]] split into quantum number blocks. IQIndex is a subclass of [[Index|classes/index]], so

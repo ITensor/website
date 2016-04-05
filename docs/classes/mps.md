@@ -1,5 +1,7 @@
 # MPS and IQMPS #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 MPS and IQMPS are matrix product states consisting of ITensors and IQTensors respectively. Otherwise both
 classes have an identical interface. In the documentation below, MPS may refer to either an MPS or IQMPS 
 if used in a generic context. The type `Tensor` refers to `ITensor` for an MPS and `IQTensor` for an IQMPS.

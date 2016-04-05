@@ -1,5 +1,7 @@
 # IndexSet Functions #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Free functions for working with [[IndexSet|classes/indexset]] objects. All methods below are templated over the index type IndexT.
 
 * `bool hasindex(IndexSet<IndexT> is, IndexT I)`

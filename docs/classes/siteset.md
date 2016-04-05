@@ -1,5 +1,7 @@
 # SiteSet #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Class for specifying the local Hilbert space of each site of a lattice.<sup>&#8224;</sup>
 A SiteSet does not store any information about the topology of the lattice, just the number of sites
 and the type of each site.

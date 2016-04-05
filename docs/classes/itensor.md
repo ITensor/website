@@ -1,5 +1,7 @@
 # ITensor #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 The foundational tensor type of the ITensor Library; the key feature of the ITensor is automatic contraction over all matching indices. 
 
 An ITensor is created with a fixed

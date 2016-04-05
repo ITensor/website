@@ -1,5 +1,7 @@
 # MPS and IQMPS Functions
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Functions for working with matrix product states.
 
 * `int averageM(MPS psi)` <br/>

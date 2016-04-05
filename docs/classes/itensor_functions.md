@@ -1,5 +1,7 @@
 # ITensor Functions #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Standalone methods for manipulating objects implementing the [[ITensor|classes/itensor]] interface. 
 
 The following methods are templates, so they work not only for [[ITensor|classes/itensor]] objects

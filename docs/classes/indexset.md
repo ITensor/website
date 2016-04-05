@@ -1,5 +1,7 @@
 # IndexSet<IndexT> #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Container for storing indices, templated over the index type `IndexT`. For example, `IndexT` coud be [[`Index`|classes/index]] or [[`IQIndex`|classes/iqindex]].
 
 Internally, indices are stored as a partially ordered array, with `m!=1` indices preceding `m==1` indices (where `m` is the bond dimension).

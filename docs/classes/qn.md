@@ -1,5 +1,7 @@
 # QN #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Class for representing a set of Abelian quantum numbers. Currently QN supports three quantum numbers: `sz` representing the spin in the z direction,
 `Nf` representing the particle number, and `Nfp` representing the fermion parity (number of fermions mod 2). Setting a particular quantum number to 
 zero throughout a simulation indicates that it is not to be tracked.
