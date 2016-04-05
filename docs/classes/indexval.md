@@ -2,9 +2,9 @@
 
 An IndexVal represents an Index fixed to a specific value.
 
-IndexVal holds both an Index in a field called "`index`" and 
+IndexVal holds both an Index called "`index`" and 
 an integer "`i`" representing a particular value the Index can take.
-This value is 1-indexed and must be >= 1 and <= `index.m()`.
+This value is 1-indexed and must be between 1 and `index.m()`, inclusive.
 
 
 ## Constructors ##
@@ -16,31 +16,32 @@ This value is 1-indexed and must be >= 1 and <= `index.m()`.
 * `IndexVal(Index I, int i)`
 
   Construct an IndexVal from an Index `I` and integer value `i`.
-  The value `i` must be >= 1 and <= `I.m()`.
+  The value `i` must be between 1 and `I.m()`, inclusive
 
   <div class="example_clicker">Show Example</div>
 
-        Index s1("Site 1",4,Site);
-        IndexVal iva(s1,3),
-                 ivb(s1,1);
-        Print(iva.i); //Prints 3
-        Print(ivb.i); //Prints 1
+      auto s1 = Index("Site 1",4,Site);
+      auto iva = IndexVal(s1,3),
+      auto ivb = IndexVal(s1,1);
+      Print(iva.i); //Prints 3
+      Print(ivb.i); //Prints 1
 
 ## Public Data Members ##
 
 * `Index index`
 
-  The index referred to by this `IndexVal`. Conceptually and IndexVal represents fixing the `Index index` to the integer `i`.
+  The index referred to by this `IndexVal`. 
+  Conceptually and IndexVal represents fixing the `Index index` to the integer `i`.
 
-* `int i`
+* `long i`
 
-  The value of this IndexVal. For an IndexVal `iv`, `iv.i` must be >= 1 and <= `iv.m()`.
+  The value of this IndexVal. For an IndexVal `iv`, `iv.i` must range from 1 up to `iv.m()`.
 
 ## Accessor Methods ##
 
-* `int m()` 
+* `m() -> long` 
 
-  Return the bond dimension of the `Index` `index`.
+  Return the bond dimension of the `Index` "index".
 
 ## Prime Level Methods ##
 
@@ -58,13 +59,15 @@ This value is 1-indexed and must be >= 1 and <= `index.m()`.
 
 * `mapprime(int plevold, int plevnew, IndexType type = All)`  
 
-  If `index` has prime level plevold, change to plevnew. Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
+  If `index` has prime level plevold, change to plevnew. 
+  Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
-## Operators ##
+## Other Operations With IndexVals
 
-* `bool operator==(IndexVal other)`  
+* IndexVals can be compared to each other. They are equal if the have the same Index and value.
 
-  `bool operator!=(IndexVal other)`  
+* An IndexVal compares equal to an Index objects if its `.index` field matches the Index.
 
-  Return `true` (for ==, `false` for !=) if this IndexVal equals other as an Index and this->i == other.i.
+* IndexVals can be printed using the stream `<<` operator.
+
 
