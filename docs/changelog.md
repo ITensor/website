@@ -40,20 +40,24 @@ of the function doTask(TaskType,...) where TaskType is a "task object" saying
 which task should be carried out (contraction, addition, mutiplication by a scalar, etc.).
 
 Major changes:
+
 * [[New storage system|articles/storage]] for tensors with "dynamic overloading" a.k.a. multiple dispatch
-for doTask functions carrying out operations on storage types.
+  for doTask functions carrying out operations on storage types.
 
 * ITensor and IQTensor now share exactly the same interface (they are instantiations
-of the same template class). ITensors and IQTensors are distinguished by what
-type of indices they have (Index versus IQIndex) and what storage types they have.
+  of the same template class). ITensors and IQTensors are distinguished by what
+  type of indices they have (Index versus IQIndex) and what storage types they have.
+
+* New "TensorRef" library for basic tensor operations, such as tensor slicing and 
+  permutation. Matrix and vector operations are implemented as a special case of 
+  tensor operations.
+
+* Fixed "long run crash" bug that was plauging version 1.x. Most likely fixed
+  by better memory safety of TensorRef library.
 
 * No longer any limit on the number of indices ITensors can have.
   This makes ITensor even more useful for two-dimensional
   algorithms such as TRG, PEPS, MERA etc.
-
-* New "TensorRef" library for basic tensor operations, such as tensor slicing and 
-permutation. Matrix and vector operations are implemented as a special case of 
-tensor operations.
 
 * New QN (quantum number) system. To create a quantum number using the
   standard recognized fields (spin "Sz", boson number "Nb", fermion number "Nf",
