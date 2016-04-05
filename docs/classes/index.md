@@ -11,19 +11,19 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Synopsis ##
 
-    Index s1("Site 1",2,Site);
+    auto s1 = Index("Site 1",2,Site);
     Print(s1.m()); //prints s1.m() = 2
 
-    Index i(s1); //i is a copy of s1
-    Print(i == s1 ? "true" : "false"); //prints "true"
+    auto i = s1; //i is a copy of s1
+    Print(i == s1); //prints "true"
 
     Print(i.primeLevel()); //prints i.primeLevel() = 0
     i.prime(2);
     Print(i.primeLevel()); //prints i.primeLevel() = 2
 
-    Print(i == s1 ? "true" : "false"); //prints "false"
+    Print(i == s1); //prints "false"
     i.noprime();
-    Print(i == s1 ? "true" : "false"); //prints "true"
+    Print(i == s1); //prints "true"
 
 
 ## Constructors ##
@@ -34,22 +34,31 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   <div class="example_clicker">Show Example</div>
 
-        Index i;
+        auto i = Index();
         if(!i) println("Index i is default constructed.");
 
 * `Index(string name, int m, IndexType it, int primelevel = 0)` 
 
-  Construct an Index with specified fields described above.
+   Construct an Index with the following fields:
+   - The name is just for printing purposes. 
+   - The integer m is the size of the Index. 
+   - The IndexType defaults to `Link`
+     but can be set to other values to make it easier to manipulate
+     only certain types of indices. 
+   - The prime level is an integer
+     which can be used to distinguish different copies of 
+     the same original Index.
 
   <div class="example_clicker">Show Example</div>
 
-        Index s1("Site 1",2,Site);
+      auto s1 = Index("Site 1",2,Site);
+
 
 ## Accessor Methods ##
 
-* `m() -> int` 
+* `m() -> long` 
 
-  Return the bond dimension.
+  Return the index size.
 
 * `primeLevel() -> int` 
 
@@ -61,22 +70,20 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 * `type() -> IndexType`  
 
-  Return the `IndexType` of this Index. The IndexType is a tag used to distinguish 
+  Return the `IndexType` of this Index. The [[IndexType|classes/indextype]] is a tag used to distinguish 
   different types of indices to make adjusting their prime levels more convenient.
 
 * `name() -> string` 
 
-  Return the name of this Index, including prime level information.
+  Return the name of this Index, with prime level information included at the end.
 
 * `rawname() -> string`  
 
   Return the name of this Index without prime level information.
 
-* `id() -> string`
+* `id() -> id_type`
 
   The unique id number of this Index (returned as a string)
-
-
 
 ## Prime Level Methods ##
 
@@ -94,9 +101,10 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 * `mapprime(int plevold, int plevnew, IndexType type = All)`  
 
-  If Index has prime level plevold, change to plevnew. Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
+  If Index has prime level plevold, change to plevnew. Otherwise has no effect. 
+  (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
-## Operators ##
+## Operators and Conversions
 
 * `operator()(int i) -> IndexVal`  
 
@@ -105,22 +113,30 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   <div class="example_clicker">Show Example</div>
 
-        Index I("My Index",10);
+      auto I = Index("My Index",10);
 
-        IndexVal iv = I(2); //call Index mi's operator() method
+      IndexVal iv = I(2); //call Index mi's operator() method
 
-        Print(iv.i); //prints 2
-        Print(iv == I); //prints true
+      Print(iv.i); //prints 2
+      Print(iv == I); //prints true
 
 * `operator bool()`
 
-  An Index evaluates to `true` in a boolean context if it is constructed (a default constructed Index evalues to `false`).
+  An Index evaluates to `true` in a boolean context if it is 
+  constructed (a default constructed Index evalues to `false`).
 
 * `operator==(Index other) -> bool`  
 
   `operator!=(Index other) -> bool`  
 
-  Comparison operators: two Index objects are equal if they are copies of the same original Index (have the same id) and have the same prime level.
+  Comparison operators: two Index objects are equal if they are copies of the 
+  same original Index (have the same id) and have the same prime level.
+
+  The name, size, and IndexType of Index objects play no explicit role in comparing them. (Of course,
+  all Index objects which compare equal will have the same name, size, and IndexType since they 
+  are all copies of the same original Index.) Creating a new Index "i2" with the same name, size,
+  and IndexType as another Index "i1" does not mean that i2==i1, since i2 will have a different 
+  id number.
 
 * `operator<(Index other) -> bool`  
 
@@ -129,6 +145,16 @@ Indices compare equal if and only if they have the same primelevel and are copie
 * `noprimeEquals(Index other) -> bool`  
 
   Return `true` if this Index and other are copies of the same original Index, regardless of prime level.
+
+* `explicit operator int()`
+
+  `explicit operator long()`
+
+  `explicit operator size_t()`
+
+  Enables Index objects to be explicitly converting to various integer types.
+  The resulting integer is the size of the Index.
+
 
 ## Other Class Methods ##
 
@@ -146,5 +172,6 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 * `dir() -> Arrow` 
 
-  Return the `Arrow` direction of this Index. Always returns `Out`. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
+  Return the `Arrow` direction of this Index. Always returns `Out`. 
+  Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
