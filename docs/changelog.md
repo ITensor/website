@@ -1,5 +1,29 @@
 # Change Log #
 
+<a name="v2.0.3"></a>
+## [Version 2.0.3](https://github.com/ITensor/ITensor/tree/v2.0.3) (Apr 11, 2016) ##
+
+* Fixed LocalOp::diag method to correctly use new `delta` function to tie indices.
+  Thanks to Xiongjie Yu for the bug report (bug #96).
+
+* Merged pull request #94 (by Github user xich) which fixes incorrect definition of
+  operator+ for IndexSetIter.
+
+* Merged pull request from Kyungmin Lee which fixes cputime.cc when using MSVC compiler.
+
+* Changed how ITensor write-to-disk system works. Fixed some subtle compilation issues
+  where write methods weren't being called. Now each storage type implements a 
+      write(ostream& s, StorageType const& s) 
+  free function.
+
+* Better error messages when doTask overloads are not implemented.
+
+* Passing a complex number with exactly zero imaginary part to `.set` no longer switches storage to complex.
+
+* Fixed `.set` method when arguments include a mix of IndexVals and IQIndexVals.
+
+* Fixed out-of-date code in `tutorial/project_template` folder - thanks Mingru Yang.
+
 <a name="v2.0.2"></a>
 ## [Version 2.0.2](https://github.com/ITensor/ITensor/tree/v2.0.2) (Apr 2, 2016) ##
 
@@ -110,7 +134,7 @@ The itensor/mps/ prefix in this include will become mandatory in version 2.0. Th
 
 Other changes:
 * Introduced randomTensor(Index...) function for better compatibility with upcoming version 2.0.
-* Fixed #89 bug: missing scale_.real() reported by @BapRoyer
+* Fixed bug #89: missing scale_.real() reported by @BapRoyer
 * Added external rank(T) methods as alternative to T.r()
 * Added experimental operator[] to Index which returns a copy with primelevel set to specified value.
 * Updated Index printing format to `(name,size,type)'plev`
