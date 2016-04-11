@@ -9,7 +9,7 @@
 * Merged pull request #94 (by Github user xich) which fixes incorrect definition of
   operator+ for IndexSetIter.
 
-* Merged pull request from Kyungmin Lee which fixes cputime.cc when using MSVC compiler.
+* Merged pull request #83 from Kyungmin Lee which fixes cputime.cc when using MSVC compiler.
 
 * Changed how ITensor write-to-disk system works. Fixed some subtle compilation issues
   where write methods weren't being called. Now each storage type implements a 
@@ -22,7 +22,7 @@
 
 * Fixed `.set` method when arguments include a mix of IndexVals and IQIndexVals.
 
-* Fixed out-of-date code in `tutorial/project_template` folder - thanks Mingru Yang.
+* Merged pull request #93 from Mingru Yang which fixes out-of-date code in `tutorial/project_template` folder.
 
 <a name="v2.0.2"></a>
 ## [Version 2.0.2](https://github.com/ITensor/ITensor/tree/v2.0.2) (Apr 2, 2016) ##
