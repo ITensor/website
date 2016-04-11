@@ -61,6 +61,19 @@ def processMathJax(matchobj,delimit=""):
     elif delimit=="$$":
         return "\n<div> " + math + " </div>\n"
     return None
+
+def includeFile(matchobj):
+    spacing = len(matchobj.group(1))
+    fname = matchobj.group(2)
+    text = ""
+    try:
+        f = open(fname,'r')
+        white = " "*spacing
+        for line in f:
+            text += white+line
+        return text
+    except:
+        return "&lt;File {} not found&gt;".format(fname)
     
 
 def convert(string):
@@ -81,6 +94,8 @@ def convert(string):
     #Latex string
     string = re.sub(r"(@@.+?@@)",partial(processMathJax,delimit="@@"),string)
     string = re.sub(r"(\$\$.+?\$\$)",partial(processMathJax,delimit="$$"),string,flags=re.DOTALL|re.MULTILINE)
+
+    string = re.sub(r"([ ]*)include:(\S+)",partial(includeFile),string)
 
     #Convert wiki links to markdown link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
