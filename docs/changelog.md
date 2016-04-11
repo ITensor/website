@@ -54,7 +54,8 @@ Now T's index i will have prime level 3 and index j will have prime level 1.
 <a name="v2.0.0"></a>
 ## [Version 2.0.0](https://github.com/ITensor/ITensor/tree/v2.0.0) (Mar 25, 2016) ##
 
-<span style="color:red;">Warning:</span> this version contains many breaking changes.
+<span style="color:red;">Warning:</span> this version contains many breaking changes;
+see the [[version 2 transition guide|v2transition_guide]].
 
 Version 2.0 of ITensor is a major update to the internals of the ITensor and IQTensor 
 classes. Tensors now store their data in "storage objects" which can have arbitrary

@@ -28,13 +28,13 @@ Following version 2.0 these changes are mandatory.
 
   Old-style version 1.x code
 
-      ITensor A(i,j);
+      auto A = ITensor(i,j);
       ... //make changes to A
       Real val = A(i(2),j(3));
 
   should be replaced by 
 
-      ITensor A(i,j);
+      auto A = ITensor(i,j);
       ... //make changes to A
 
       //If A is known to be real
@@ -52,12 +52,12 @@ Following version 2.0 these changes are mandatory.
 
   Old-style version 1.x code
 
-      ITensor A(i,j);
+      auto A = ITensor(i,j);
       A(i(2),j(3)) = 4.56;
 
   should be replaced by 
 
-      ITensor A(i,j);
+      auto A = ITensor(i,j);
       A.set(i(2),j(3),4.56);
 
   One advantage of the new `.set` approach is one can pass a real or complex number to `.set`,
@@ -101,11 +101,8 @@ using the Args system view [[this Args tutorial|tutorials/args]].
   To use the combiner just contract it with a tensor having indices i and j.
 
       auto T = ITensor(i,k,j,l);
-      auto S = C*T;
+      auto S = C * T;
 
   Creating IQCombiners works the same way except i and j are of type IQIndex.
-
-
-
 
 
