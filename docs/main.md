@@ -1,9 +1,9 @@
 
 <img src="docs/install.png" class="icon">  [[Installing ITensor|installing]]
 
-<img src="docs/tutorials/icon.png" class="icon">  [[Tutorials|tutorials]]. Background reading and overviews of ITensor features.
-
 <img src="docs/book/icon.png" class="icon">   [[The ITensor Book|book]]. A comprehensive introduction to ITensor.
+
+<img src="docs/tutorials/icon.png" class="icon">  [[Tutorials|tutorials]]. Background reading on tensor networks and guides to ITensor features.
 
 <img src="docs/articles/icon.png" class="icon"> [[Articles|articles]]. Long-form articles on tensor methods and aspects of ITensor.
 

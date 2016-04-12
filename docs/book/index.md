@@ -5,20 +5,23 @@ an object of type&nbsp;`Index`. (By tensor index we mean i,j, or k in an express
 like @@T_{ijk}@@ ). 
 
 ITensors are "intelligent tensors" because they "know" what indices they have. 
-This is possible since each Index carries extra information beyond its size.
+This is possible since an Index carries extra information beyond its size.
 
 The simplest way to construct an Index is to give its name and size:
 
     auto i = Index("index i",3);
 
 Upon creation, an Index gets "stamped" with a hidden id number that allows copies 
-of this Index to recognize each other:
+of the Index to recognize each other.
+
+Two indices match if they are copies of the same original index
+(and have the same "prime level"; more on this below):
 
     auto j = i;  //make a copy of i
     Print(j==i); //prints: j==i = true
 
 Note that neither the name nor size are used to compare indices, only their
-internal id number (and prime level&mdash;see next section). So creating an Index with the same name and size
+internal id number (and prime level; see next section). So creating an Index with the same name and size
 as another Index does not make them compare equal!
 
 To access the size of an Index, use its `.m()` method
@@ -42,9 +45,9 @@ The convention of calling the size "m" comes from the DMRG literature.
 
 
 After creating an Index, most of its properties are permanently fixed. 
-The philosophy of ITensor is that indices have a meaning at the time they are created.
+The philosophy of ITensor is that indices have a meaning given at the time they are created.
 A new Index can be created to take the place of an old one, but the semantic
-meaning of a given Index object cannot be modified.
+meaning of a given Index object cannot be changed.
 
 ### Priming Indices
 
@@ -101,8 +104,10 @@ The Index constructor accepts an optional `IndexType` argument:
 
     auto s2 = Index("site 2",2,Site); //IndexType set to Site
 
-Giving indices different IndexTypes becomes useful when working with many indices
-because it allows us to work only with indices of a certain type.
+IndexTypes are useful because they allows us to manipulate or 
+retrieve only indices of a certain type. 
+IndexTypes can be thought of as labels that distinguish broad categories of indices, 
+such as "physical" versus "virtual" indices.
 
 It is possible to define a custom IndexType:
 
@@ -110,8 +115,8 @@ It is possible to define a custom IndexType:
     auto m1 = Index("m1",5,MyType);
     auto m2 = Index("m2",7,MyType);
 
-An IndexType is just a fixed-size string, and can be up to 7 characters long. 
-The type of an Index can be obtained by calling the `.type()` method.
+An IndexType is just a fixed-size, constant string, and can be up to 7 characters long. 
+The IndexType of an Index can be obtained by calling the `.type()` method.
 
     println("The type of m1 is ",m1.type());
     //prints: The type of m1 is MyType

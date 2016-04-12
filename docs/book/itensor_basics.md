@@ -54,7 +54,7 @@ In a more conventional tensor interface, the above operation would look like
 
     T(2,1,3) = 4.56; //not actual ITensor code!!
 
-where one would be expected to remember that the first entry corresponds to index
+where the user would have to remember that the first entry corresponds to index
 i, the second to index j, and the third to index k.
 
 For an ITensor, the reason the indices are passed to the `.set` method along with their values
@@ -65,7 +65,9 @@ the `.set` method still accesses the correct element. A call such as
 
     T.set(k(3),i(2),j(1),4.56);
 
-has exactly the same outcome as the one above.
+has exactly the same outcome as the call
+
+    T.set(i(2),j(1),k(3),4.56);
 
 We can retrieve this element by calling the `.real` method:
 
@@ -73,8 +75,8 @@ We can retrieve this element by calling the `.real` method:
     println("el = ",el);
     //prints: el = 4.56
 
-This method is named "real" because it says we want the element to be
-returned as a real number.
+This method is named "real" because it says the type of the element
+returned is a real number.
 
 We can also set elements of ITensors to be complex numbers:
 

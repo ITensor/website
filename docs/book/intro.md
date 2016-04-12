@@ -16,7 +16,7 @@ unique identities. Constructing an index in ITensor looks like:
 
     auto i = Index("index i",3);
 
-The resulting Index has a size, or bond dimension of 3. Upon creation it is 
+The resulting Index has a size, or dimension of 3. Upon creation it is 
 indelibly stamped with an internal ID number so all copies of this Index
 can recognize each other.
 
@@ -36,17 +36,17 @@ is simply
 The ITensor contraction engine recognizes repeated indices and sums 
 over them, like the Einstein summation convention used
 in physics. Instead of bookkeeping the order of tensor indices,
-users get to focus on the structure of tensor networks.
+users can focus on the structure of tensor networks.
 Certain bugs are ruled out, such as mistaking one index for
-another index of the same size.
+another of the same size.
 
 Let's take a closer look at an example involving two matrix-like ITensors 
 
     auto A = ITensor(i,j);
     auto B = ITensor(k,j);
-    auto C = A*B;
+    auto C = A * B;
 
-Here the contraction `A*B` computes the matrix product @@ C = A B^\mathsf{T} @@.
+Here the contraction `A * B` computes the matrix product @@ C = A B^\mathsf{T} @@.
 The Index <code style="border:none;">j</code> appears on both A and B so is automatically summed over,
 leaving C to have indices i and k.
 
@@ -57,7 +57,7 @@ the second index of B and write something like
 
 to get the correct result. ITensor handles this transposition automatically, 
 making user code simple and robust. If B were to be redefined
-with transposed index order, the ITensor operation `A*B` would continue to give the correct result.
+with transposed index order, the ITensor operation `A * B` would continue to give the correct result.
 
 Say we didn't want to contract over the index j &mdash; we could do the following
 
@@ -70,18 +70,18 @@ We have computed an outer product of two matrices with very little effort.
 
 ITensor has many other features emphasizing productivity
 over programming details:
-* Adding ITensors just works without 
-needing to permute the index order. 
+* Adding ITensors simply works without 
+the user having to permute the index order. 
 * ITensor data storage automatically switches from real to complex as needed,
-such as when setting an element to or multiplying by a complex number.
+such as when multiplying by a complex number.
 * Sparse ITensors seamlessly interoperate with regular, dense
 ITensors.
 * Quantum-number conserving (block sparse) tensors have the same interface as dense tensors.
 
 
 Last but not least, ITensor includes routines for tensor decompositions
-and a rich, high-level interface for matrix product state and density matrix 
-renormalization group (DMRG) algorithms used in physics applications.
+and a rich, high-level layer for matrix product state and density matrix 
+renormalization group (DMRG) algorithms used in physics and chemistry.
 <br/>
 <br/>
 
