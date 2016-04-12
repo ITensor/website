@@ -51,9 +51,7 @@ is overwritten with optimized ground state wavefunction on return.
 Below you can find a complete working code that includes all of these steps,
 along with the headers you need to include to obtain all of the necessary library code.
 
-    #include "itensor/mps/dmrg.h"
-    #include "itensor/mps/sites/spinone.h"
-    #include "itensor/mps/autompo.h"
+    #include "itensor/all.h"
 
     using namespace itensor;
 

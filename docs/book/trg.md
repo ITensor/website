@@ -161,7 +161,7 @@ but let's look at each piece step by step.
 
 To get started, start with the following empty application:
 
-    #include "itensor/decomp.h"
+    #include "itensor/all_basic.h"
 
     using namespace itensor;
 
@@ -172,9 +172,6 @@ To get started, start with the following empty application:
 
     return 0;
     }
-
-We could include additional header files, but "itensor/decomp.h" is sufficient because it will
-pull in "itensor/itensor.h" and other important headers.
 
 First define some basic parameters of the calculation, such as the temperature "T"; the
 maximum number  of singular values "maxm"; and the top-most scale we want to reach

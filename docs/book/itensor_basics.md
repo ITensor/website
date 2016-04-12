@@ -21,14 +21,14 @@ Alternatively you can call `T.r()`.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/itensor.h"
+    #include "itensor/all_basic.h"
     using namespace itensor;
 
     int main()
     {
-    auto i = Index("index i",2),
-         j = Index("index j",3),
-         k = Index("index k",4);
+    auto i = Index("index i",2);
+    auto j = Index("index j",3);
+    auto k = Index("index k",4);
     
     auto T = ITensor(i,j,k);
     
@@ -93,7 +93,7 @@ Calling `.cplx` always succeeds even if the tensor has only real elements.
 
 A convenient way to print and ITensor is to use the `Print` macro:
 
-    #include "itensor/util/print_macro.h"
+    #include "itensor/all_basic.h"
     
     Print(T);
     //prints: 

@@ -7,8 +7,7 @@ use the IQTensor, IQMPS, and IQMPO classes instead but otherwise leave the code 
 First set up the MPS you would like to time evolve. An easy way to do this is to make
 a product state using the InitState helper class:
 
-    #include "itensor/mps/sites/spinhalf.h"
-    #include "itensor/mps/autompo.h"
+    #include "itensor/all.h"
     //...
     int N = 100;
     auto sites = SpinHalf(N);

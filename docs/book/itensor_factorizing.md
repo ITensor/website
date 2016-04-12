@@ -61,15 +61,14 @@ an ITensor identical to T:
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/util/print_macro.h"
-    #include "itensor/decomp.h"
+    #include "itensor/all_basic.h"
     using namespace itensor;
 
     int main() 
     {
-    auto i = Index("index i",3),
-         j = Index("index j",4),
-         k = Index("index k",5);
+    auto i = Index("index i",3);
+    auto j = Index("index j",4);
+    auto k = Index("index k",5);
 
     //Make a random ITensor with indices i,j,k
     auto T = randomTensor(i,j,k);
@@ -129,16 +128,14 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/util/print_macro.h"
-    #include "itensor/decomp.h"
-
+    #include "itensor/all_basic.h"
     using namespace itensor;
 
     int main() 
     {
-    auto i = Index("index i",30),
-         j = Index("index j",40),
-         k = Index("index k",50);
+    auto i = Index("index i",30);
+    auto j = Index("index j",40);
+    auto k = Index("index k",50);
 
     //Make a random ITensor with indices i,j,k
     auto T = randomTensor(i,j,k);

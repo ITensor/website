@@ -17,6 +17,10 @@ of this Index to recognize each other:
     auto j = i;  //make a copy of i
     Print(j==i); //prints: j==i = true
 
+Note that neither the name nor size are used to compare indices, only their
+internal id number (and prime level&mdash;see next section). So creating an Index with the same name and size
+as another Index does not make them compare equal!
+
 To access the size of an Index, use its `.m()` method
 
     println("The size of ",i.name()," is ",i.m());
@@ -26,7 +30,7 @@ The convention of calling the size "m" comes from the DMRG literature.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/index.h"
+    #include "itensor/all_basic.h"
     using namespace itensor;
 
     int main() 
