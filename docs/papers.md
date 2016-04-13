@@ -3,10 +3,13 @@
 
 ## 2016
 
-* [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://arxiv.org/abs/1602.08172), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz arxiv:1602.08172
+* [Ising tricriticality in the extended Hubbard model with bond dimerization](http://arxiv.org/abs/1604.01228) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, arxiv:1604.01228
 
+* [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://arxiv.org/abs/1602.08172), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz, arxiv:1602.08172
 
-* [Charge density waves in disordered media circumventing the Imry-Ma argument](http://arxiv.org/abs/1601.03041), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes arxiv:1601.03041
+* [Non-Markovian Dynamics in Chiral Quantum Networks with Spins and Photons](http://arxiv.org/abs/1602.00926), Tomás&nbsp;Ramos, Benoît&nbsp;Vermersch, Philipp&nbsp;Hauke, Hannes&nbsp;Pichler, Peter&nbsp;Zoller, arxiv:1602.00926
+
+* [Charge density waves in disordered media circumventing the Imry-Ma argument](http://arxiv.org/abs/1601.03041), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes, arxiv:1601.03041
 
 
 ## 2015
