@@ -1,29 +1,28 @@
 # Index #
 
-An Index represents a single tensor index with fixed dimension m.
+An Index represents a single tensor index with fixed size m. Copies of an Index compare equal unless
+their "prime levels" are set to different values.
 
-In addition an Index has an IndexType (typically `Site` or `Link`&mdash;see [[index conventions|itensor_conventions]]),
-a name for printing purposes, a unique id (of type `Real`), and an integer prime level.
-
-All copies of an Index instance retain the same dimension and IndexType, but their prime levels can be adjusted to make them
-temporarily distinct.
-Indices compare equal if and only if they have the same primelevel and are copies of the same original Index.
+An Index has a name just for printing purposes, and an Index
+carries an IndexType label (typically `Site` or `Link`&mdash;see [[index conventions|itensor_conventions]]).
 
 ## Synopsis ##
 
-    auto s1 = Index("Site 1",2,Site);
-    Print(s1.m()); //prints s1.m() = 2
+    auto i = Index("index i",4);
+    Print(i.m()); //prints i.m() = 4
 
-    auto i = s1; //i is a copy of s1
-    Print(i == s1); //prints "true"
+    //Copies of the same Index compare equal
+    auto ii = i; //ii is a copy of i
+    Print(ii == i); //prints "true"
 
-    Print(i.primeLevel()); //prints i.primeLevel() = 0
-    i.prime(2);
-    Print(i.primeLevel()); //prints i.primeLevel() = 2
+    //The prime level of an Index can be
+    //adjusted to make it distinct
+    ii.prime(2);
+    Print(ii.primeLevel()); //prints ii.primeLevel() = 2
+    Print(ii == i); //prints "false"
 
-    Print(i == s1); //prints "false"
-    i.noprime();
-    Print(i == s1); //prints "true"
+    ii.noprime();
+    Print(ii == i); //prints "true"
 
 
 ## Constructors ##
@@ -37,7 +36,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
         auto i = Index();
         if(!i) println("Index i is default constructed.");
 
-* `Index(string name, int m, IndexType it, int primelevel = 0)` 
+* `Index(string name, int m, IndexType it = Link, int primelevel = 0)` 
 
    Construct an Index with the following fields:
    - The name is just for printing purposes. 
@@ -56,50 +55,50 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
 ## Accessor Methods ##
 
-* `m() -> long` 
+* `.m() -> long` 
 
   Return the index size.
 
-* `primeLevel() -> int` 
+* `.primeLevel() -> int` 
 
   Return the prime level.
 
-* `primeLevel(int n)`  
+* `.primeLevel(int n)`  
 
   Set prime level to n.
 
-* `type() -> IndexType`  
+* `.type() -> IndexType`  
 
   Return the `IndexType` of this Index. The [[IndexType|classes/indextype]] is a tag used to distinguish 
   different types of indices to make adjusting their prime levels more convenient.
 
-* `name() -> string` 
+* `.name() -> string` 
 
   Return the name of this Index, with prime level information included at the end.
 
-* `rawname() -> string`  
+* `.rawname() -> string`  
 
   Return the name of this Index without prime level information.
 
-* `id() -> id_type`
+* `.id() -> id_type`
 
   The unique id number of this Index (returned as a string)
 
 ## Prime Level Methods ##
 
-* `prime(int inc = 1)`  
+* `.prime(int inc = 1)`  
 
   Increment prime level of this Index instance. (Optionally, increment by amount `inc`.)
 
-* `prime(IndexType type, int inc = 1)`  
+* `.prime(IndexType type, int inc = 1)`  
 
   Increment prime level if Index type() matches type. (Optionally, increment by amount `inc`.)
 
-* `noprime(IndexType type = All)`  
+* `.noprime(IndexType type = All)`  
 
   Reset prime level to zero. (Optionally, only if `type()==type` or `type` is `All`.)
 
-* `mapprime(int plevold, int plevnew, IndexType type = All)`  
+* `.mapprime(int plevold, int plevnew, IndexType type = All)`  
 
   If Index has prime level plevold, change to plevnew. Otherwise has no effect. 
   (Optionally, map prime level only if `type()==type` or `type` is `All`.)
@@ -142,7 +141,7 @@ Indices compare equal if and only if they have the same primelevel and are copie
 
   Defines an ordering of Index objects &mdash; useful for sorting and finding Index instances in collections.
 
-* `noprimeEquals(Index other) -> bool`  
+* `.noprimeEquals(Index other) -> bool`  
 
   Return `true` if this Index and other are copies of the same original Index, regardless of prime level.
 
@@ -156,22 +155,25 @@ Indices compare equal if and only if they have the same primelevel and are copie
   The resulting integer is the size of the Index.
 
 
-## Other Class Methods ##
+## Other Index Class Methods ##
 
-* `write(std::ostream& s)`  
+* `.write(std::ostream& s)`  
 
   Write Index to stream in binary form.
 
-* `read(std::istream s)`  
+* `.read(std::istream s)`  
 
   Read Index from stream in binary form.
 
-* `dag()`  
+* `.dag()`  
 
   Has no effect. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
-* `dir() -> Arrow` 
+* `.dir() -> Arrow` 
 
   Return the `Arrow` direction of this Index. Always returns `Out`. 
   Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
+
+<br/>
+_This page current as of version 2.0.3_
