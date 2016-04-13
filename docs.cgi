@@ -3,10 +3,14 @@
 import sys
 import re #regular expressions
 from cgi import FieldStorage
+#import markdown2
+#import markdown
+
 import mistune #Markdown renderer
 from pygments import highlight
 from pygments.lexers import CppLexer
 from pygments.formatters import HtmlFormatter
+
 from functools import partial
 # Turn on cgitb to get nice debugging output.
 # Remember to turn off when done debugging, otherwise not secure.
@@ -138,6 +142,29 @@ def convert(string):
     #
     #        mdstring += "<code>\n"+chunk+"</code>\n"
 
+    #
+    # Markdown2 Renderer
+    #
+    #htmlstring = markdown2.markdown(mdstring)
+
+    ##
+    ## Standard Python Markdown Renderer
+    ##
+    #htmlstring = markdown.markdown(mdstring,
+    #             extensions=["markdown.extensions.codehilite",
+    #                         "markdown.extensions.fenced_code"],
+    #                         #"markdown.extensions.nl2br"],
+    #             extension_configs = 
+    #             {
+    #             "markdown.extensions.codehilite" :
+    #                 {
+    #                 "css_class" : "highlight"
+    #                 }
+    #             })
+
+    ##
+    ## Mistune Markdown Renderer
+    ##
     renderer = MyRenderer()
     md = mistune.Markdown(renderer=renderer)
     htmlstring = md.render(mdstring)
