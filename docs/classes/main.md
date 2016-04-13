@@ -7,7 +7,8 @@ IndexSet containing Index objects.)
 
 * [[Index|classes/index]]. Single tensor index. <br/>
   [[Index Functions|classes/index_functions]] for working with Index and similar classes. <br/>
-  [[IndexVal|classes/indexval]]. Index set to a particular value. 
+  [[IndexVal|classes/indexval]]. Index-value pair. <br/>
+  [[IndexType|classes/indextype]]. Lightweight label for Index objects. <br/>
 * [[IndexSet|classes/indexset]]. Container for storing indices. <br/>
   [[IndexSet functions|classes/indexset_functions]].
 * [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
