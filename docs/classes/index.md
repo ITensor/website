@@ -31,7 +31,7 @@ carries an IndexType label (typically `Site` or `Link`&mdash;see [[index convent
 
   Default constructor. A default-constructed Index evaluates to false in a boolean context.
 
-  <div class="example_clicker">Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
         auto i = Index();
         if(!i) println("Index i is default constructed.");
@@ -48,7 +48,7 @@ carries an IndexType label (typically `Site` or `Link`&mdash;see [[index convent
      which can be used to distinguish different copies of 
      the same original Index.
 
-  <div class="example_clicker">Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto s1 = Index("Site 1",2,Site);
 
@@ -84,7 +84,7 @@ carries an IndexType label (typically `Site` or `Link`&mdash;see [[index convent
 
   The unique id number of this Index (returned as a string)
 
-## Prime Level Methods ##
+## Prime Level Class Methods ##
 
 * `.prime(int inc = 1)`  
 
@@ -110,7 +110,7 @@ carries an IndexType label (typically `Site` or `Link`&mdash;see [[index convent
   Return an [[IndexVal|classes/indexval]] representing this Index set to value i.
   This method is one-indexed, meaning i can run from 1 to m().
 
-  <div class="example_clicker">Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto I = Index("My Index",10);
 
@@ -174,6 +174,30 @@ carries an IndexType label (typically `Site` or `Link`&mdash;see [[index convent
   Return the `Arrow` direction of this Index. Always returns `Out`. 
   Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
 
+## Prime Level Functions
+
+* `prime(Index I, int inc = 1) -> Index` 
+
+   Return a copy of  `I` with prime level increased by 1 (or optional amount `inc`).
+
+* `prime(Index I, IndexType type, int inc = 1) -> Index` 
+
+   Return a copy of  `I` with prime level increased by 1 (or `inc`) if `I.type()` equals specified type.
+
+* `noprime(Index I, IndexType type = All) -> Index` 
+
+   Return a copy of `I` with prime level set to zero (optionally only if `I.type()` matches type).
+
+* `mapprime(Index I, int plevold, int plevnew, IndexType type = All) -> Index` 
+
+   Return a copy of `I` with prime level plevnew if `I.primeLevel()==plevold`. Otherwise has no effect.
+   (Optionally, only map prime level if type of `I` matches specified type.)
+
+## Other Functions
+
+* `showm(Index I) -> string`
+
+   Returns a string version of the size of Index I.
 
 <br/>
 _This page current as of version 2.0.3_

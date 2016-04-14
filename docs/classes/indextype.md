@@ -4,7 +4,7 @@ IndexType is a lightweight label for Index objects.
 
 IndexTypes are useful for manipulating and retrieving Index
 objects based on a certain grouping (the meaning is up to 
-the user). For example, we may want to only adjust the prime
+the user). For example, you may want to only adjust the prime
 level of Index objects of type `Site` while leaving other 
 indices unchanged.
 
@@ -49,7 +49,7 @@ string of up to 7 characters.
 
   Add an IndexType valued field to an Args named argument object.
 
-  <div class="example_clicker">Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto MyType = IndexType("MyType");
       auto args = Args("Maxm",50,"DoStep",true);
@@ -66,7 +66,7 @@ string of up to 7 characters.
   as an IndexType.
   Throws an exception if there is no argument with this name.
 
-  <div class="example_clicker">Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto type = getIndexType(args,"BondType");
 
@@ -81,7 +81,7 @@ string of up to 7 characters.
   as an IndexType. If the Args object does not have a field with
   the given name, returns the default IndexType provided.
 
-  <div class="example_clicker">Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto type = getIndexType(args,"BondType",Link);
 

@@ -1,6 +1,6 @@
 # IndexVal #
 
-An IndexVal represents an Index fixed to a specific value.
+An IndexVal conceptually represents an Index fixed to a specific value.
 
 IndexVal holds both an Index called "`index`" and 
 an integer "`val`" representing a particular value the Index can take.
