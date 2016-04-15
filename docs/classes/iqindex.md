@@ -6,15 +6,16 @@ An IQIndex is a tensor index with additional structure.
 As a subtype of [[Index|classes/index]], an IQIndex has a name, size, type, prime level, and unique id number.
 IQIndex also inherits all of the class methods of [[Index|classes/index]].
 
-An IQIndex also has quantum number "sectors". Each sector is an [[Index|classes/index]]-[[QN|classes/qn]] pair.
-The number and order of sectors of an IQIndex cannot be changed after the IQIndex is constructed.
-The size of an IQIndex is the total size of all of the Index objects labeling the sectors.
+An IQIndex is also divided into quantum number "blocks". 
+Each block is labeled by a [[Index|classes/index]]-[[QN|classes/qn]] pair (an [[IndexQN|classes/indexqn]]), and the size of each 
+block is the size of its Index.
+The size of an IQIndex is just the total size of all of its blocks.
+The number and order of blocks of an IQIndex cannot be changed after the IQIndex is constructed.
 
-For example, the IQIndex representing a single spin 1/2 site has size 2, 
-which is further broken into two sectors: 
-* a spin up sector of size 1,
+For example, the IQIndex representing a single spin 1/2 has total size 2, which is made up of two blocks:
+* a spin up block of size 1,
   indicated by a [[QN|classes/qn]](+1) paired with an Index of size 1
-* a spin down sector of size 1, indicated by a [[QN|classes/qn]](-1) paired with an Index of size 1
+* a spin down block of size 1, indicated by a [[QN|classes/qn]](-1) paired with an Index of size 1
 
 An IQIndex also has a direction, which is of type `Arrow`. An Arrow can be `In` or `Out`, 
 and the default for an IQIndex is `Out`. <br/>
@@ -22,6 +23,8 @@ For more information on Arrows, see the page on [[index conventions|itensor_conv
 
 ## Synopsis ##
 
+    // Make an IQIndex with five blocks
+    // and total size 4+8+10+8+4=34
     auto I = IQIndex("I",Index("I+2",4),QN(+2),
                          Index("I+1",8),QN(+1),
                          Index("I_0",10),QN(0),
@@ -30,10 +33,10 @@ For more information on Arrows, see the page on [[index conventions|itensor_conv
 
     Print(I.m()); //prints: I.m() = 34
 
-    //Get number of sectors of I
-    Print(I.ns()); //prints: I.ns() = 5
+    //Get number of blocks of I
+    Print(I.nblock()); //prints: I.nblock() = 5
 
-    //Get Index and QN of sector 2
+    //Get Index and QN of block 2
     Print(I.index(2)); //prints: (I+1,8,Link)
     Print(I.qn(2));    //prints: QN(+1)
 
@@ -50,7 +53,7 @@ For more information on Arrows, see the page on [[index conventions|itensor_conv
           Arrow dir = Out)`
   ```
 
-  Construct an IQIndex with the given name and sectors corresponding to the Index-QN
+  Construct an IQIndex with the given name and blocks corresponding to the Index-QN
   pairs provided.<br/>
   Optionally, the last argument can be an Arrow direction, which defaults to `Out`.
 
@@ -71,7 +74,7 @@ For more information on Arrows, see the page on [[index conventions|itensor_conv
 
   Construct an IQIndex with the following attributes:
   * `name` is the name of the IQIndex
-  * `iq` is a std::vector&lt;[[IndexQN|classes/indexqn]]&gt; which defines the sectors, in order, of the IQIndex.
+  * `iq` is a std::vector&lt;[[IndexQN|classes/indexqn]]&gt; which defines the blocks, in order, of the IQIndex.
     `iq` is an rvalue and its contents will be moved into the IQIndex.
   * Optional `dir` specifying the direction of the IQIndex 
   * Optional `plev` specifying the prime level of the IQIndex 
@@ -89,24 +92,26 @@ For more information on Arrows, see the page on [[index conventions|itensor_conv
 
       auto I = IQIndex("I",std::move(v),Out,0);
 
-* `.ns() -> long`<br/>
+* `.nblock() -> long`<br/>
   `.nindex() -> long`
 
-  Return the number of sectors of this IQIndex.
+  Return the number of blocks of this IQIndex. <br/>
+  (`.nindex()` is just an alternative name for
+  backwards compatibility reasons.)<br/>
 
 * `.index(int i) -> Index`
 
-  Return the Index of the nth sector of this IQIndex. <br/>
+  Return the Index of the nth block of this IQIndex. <br/>
   n is 1-indexed.
 
 * `.operator[](int n) -> Index`
 
-  Return the Index of the nth sector of this IQIndex. <br/>
+  Return the Index of the nth block of this IQIndex. <br/>
   n is 0-indexed.
 
 * `qn(int n) -> QN`
 
-  Return the QN of the nth sector of this IQIndex.
+  Return the QN of the nth block of this IQIndex.
 
 * `dir() -> Arrow`
 
@@ -145,36 +150,36 @@ For more information on Arrows, see the page on [[index conventions|itensor_conv
 
 * `hasindex(IQIndex I, Index j) -> bool`
 
-  Return `true` if the Index `j` labels one of the sectors of the IQIndex `I`.
+  Return `true` if the Index `j` labels one of the blocks of the IQIndex `I`.
 
 * `findindex(IQIndex I, Index j) -> long`
 
-  Return the integer `n` of the sector of `I` labeled by the Index `j`. <br/>
+  Return the integer `n` of the block of `I` labeled by the Index `j`. <br/>
   The returned integer fulfills the property `I.index(n) == j`. <br/>
-  If no sector matching `j` is found, the return value is `0`.
+  If no block matching `j` is found, the return value is `0`.
 
 * `offset(IQIndex I, Index j) -> long`
 
-  Return the sum of sizes of all sectors of `I` preceding the 
-  sector corresponding to `j`.
+  Return the sum of sizes of all blocks of `I` preceding the 
+  block corresponding to `j`.
 
-  For example, if `j` labels the third sector, and sectors one and 
+  For example, if `j` labels the third block, and blocks one and 
   two have sizes 4 and 7, then offset(I,j) returns 4+7=11.
 
 * `qn(IQIndex I, Index j) -> QN`
 
-  Return the quantum number of the sector labeled by `j`.<br/>
-  If there is no matching sector, throws an exception.
+  Return the quantum number of the block labeled by `j`.<br/>
+  If there is no matching block, throws an exception.
 
 * `findByQN(IQIndex I, QN q) -> Index`
 
-  Return the Index labeling the first sector whose QN matches q. <br/>
-  If there is no matching sector, throws an exception.
+  Return the Index labeling the first block whose QN matches q. <br/>
+  If there is no matching block, throws an exception.
 
 * `showm(IQIndex I) -> string`
 
   Return a string with detailed information about the total size
-  and individual sector sizes and quantum numbers of the IQIndex.
+  and individual block sizes and quantum numbers of the IQIndex.
 
 ## Prime Level Functions
 

@@ -5,21 +5,23 @@ Detailed information about every method and function in the ITensor library.
 
 ## Index: named tensor index
 
-* [[Index|classes/index]]. Tensor index. <br/>
+* [[Index|classes/index]]. Tensor index.
 
-* [[IndexVal|classes/indexval]]. Index-value pair. <br/>
+* [[IndexVal|classes/indexval]]. Index-value pair.
 
-* [[IndexType|classes/indextype]]. Lightweight label for Index objects. <br/>
+* [[IndexType|classes/indextype]]. Lightweight label for Index objects.
 
-* [[IndexSet|classes/indexset]]. Container for storing indices. <br/>
+* [[IndexSet|classes/indexset]]. Container for storing indices.
 
 ## IQIndex: Index with quantum number sectors
 
 * [[QN|classes/qn]]. Abelian quantum numbers.
 
-* [[IQIndex|classes/iqindex]]. Index with quantum number sectors. <br/>
+* [[IQIndex|classes/iqindex]]. Index with quantum number sectors.
 
-* [[IQIndexVal|classes/iqindexval]]. IQIndex set to a particular value.
+* [[IndexQN|classes/indexqn]]. Index-QN pair.
+
+* [[IQIndexVal|classes/iqindexval]]. IQIndex-value pair.
 
 ## ITensor and IQTensor
 
