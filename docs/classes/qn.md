@@ -1,64 +1,222 @@
-# QN #
+# QN 
 
-<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+A QN object is an ordered set of "quantum numbers". Quantum numbers are integers which follow either usual integer
+addition or @@Z\_N@@ addition rules.
 
-Class for representing a set of Abelian quantum numbers. Currently QN supports three quantum numbers: `sz` representing the spin in the z direction,
-`Nf` representing the particle number, and `Nfp` representing the fermion parity (number of fermions mod 2). Setting a particular quantum number to 
-zero throughout a simulation indicates that it is not to be tracked.
+QN objects have up to four "slots" which can be assigned values. 
+Each slot also has a modulus which can take the following types of values:
+* If the modulus is 1, the slot follows regular integer addition. 
+* If the modulus equals @@N>1@@, the slot obeys @@Z\_N@@ addition. 
+* If the modulus equals @@-N@@ where @@N\geq 1@@, the slot is fermionic. 
+  Fermionic slots behave the same as "bosonic" ones with modulus @@|N|@@, that is, 
+  the minus sign on the modulus only acts as a flag.
 
-## Constructors ##
+The QN class recognizes certain conventions about the order and type of slots used. These are implemented by
+the QN constructor which takes named arguments. For example, creating a QN as
 
-* `QN(int sz = 0, int Nf = 0)`
+    auto q = QN("Sz=",+3,"Nf=",5);
 
-  Construct a QN with spin (magnetic) quantum number `sz` and particle number `Nf`. 
+results in q having two slots: the first slot `"Sz"` has a modulus of 1 and a value of 3; the second slot `"Nf"`
+has a modulus of -1 and a value of 5. Passing the arguments in a different order has the exact same result,
+because by convention `"Sz"` is always in the first slot if present.
+QN objects following the recognized conventions are also printed out in a nicer way than "custom" QN objects.
 
-* `QN(int sz, int Nf, int Nfp)`
+The special types of QN's with named slots are as follows:
 
-  Construct a QN with spin (magnetic) quantum number `sz`, particle number `Nf`, and "fermion parity" `Nfp`. The parity `Nfp` is 
-  required to equal `Nf` mod 2 unless `Nf` is set to zero, which indicates that `Nf` is not a good quantum number.
+* Spin Sz
 
-## Accessor Methods ##
+      auto q1  = QN("Sz=",+1);
+      auto q0  = QN("Sz=", 0);
+      auto q-2 = QN("Sz=",-2);
 
-* `int sz()`
+* Spinless Boson 
 
-  Retrieve the spin quantum number of this QN.
+      auto q0 = QN("Nb=",+1);
+      auto q1 = QN("Nb=",+2);
+      auto q2 = QN("Nb=",+3);
 
-* `int Nf()`
+* Spinless Fermion
 
-  Retrieve the particle number of this QN.
+      auto q0 = QN("Nf=",+1);
+      auto q1 = QN("Nf=",+2);
+      auto q2 = QN("Nf=",+3);
 
-* `int Nfp()`
+* Spinful Boson
 
-  Retrieve the fermion parity of this QN. Because it is equal to the number of particles mod 2, it can only take the values 0 or 1.
+      auto qup = QN("Sz=",+1,"Nb=",1);
+      auto qdn = QN("Sz=",-1,"Nb=",1);
+      auto q2  = QN("Sz=", 0,"Nb=",2);
 
-* `string toString()`
+* Spinful Fermion
 
-  Returns a string representation of the QN.
+      auto qup   = QN("Sz=",+1,"Nf=",1);
+      auto qdn   = QN("Sz=",-1,"Nf=",1);
+      auto qsing = QN("Sz=", 0,"Nf=",2);
 
-## Operators ##
+* Spinless Fermion Parity
 
-* `QN& operator+=()` <br/>
-  `QN& operator-=()` <br/>
-  (and related free methods)
+      auto q0 = QN("Pf=",0);
+      auto q1 = QN("Pf=",1);
 
-  QN addition and subtraction, which act on the sz and Nf quantum numbers like regular integers, 
-  whereas Nfp is computed from Nf mod 2.
 
-* `QN& operator-()`
+* Spin and Fermion Parity
 
-  Negation operator: negates sz and Nf like regular integers, while Nfp is computed from Nf mod 2.
+      auto qup   = QN("Sz=",+1,"Pf=",1);
+      auto qdn   = QN("Sz=",-1,"Pf=",1);
+      auto qsing = QN("Sz=", 0,"Pf=",0);
 
-* `QN& operator==()` <br/>
-  `QN& operator!=()`
 
-  QN equality comparison. Two QN objects compare equal if sz, Nf, and Nfp are all the same.
+## QN Class Methods
 
-* `QN& operator<()` <br/>
+* ```
+  QN(Name name1, int val1, 
+     Name name2, int val2, ...)
+  ``` 
 
-  QN less than comparison, which is useful for sorting. Defined to sort QN objects by sz, then by Nf, then finally by Nfp.
+  `QN(Args args)`
 
-* `QN& operator*=(Arrow dir)`
+  Construct a QN from a set of name-value pairs. The order of these pairs is not important, as 
+  recognized names (Sz,Nb,Nf,Pf) correspond to specific slots by convention. (Sz is always first 
+  if present, followed by one of Nb, Nf, or Pf.)
 
-  Multiplication by an In Arrow flips the sign of the QN whereas an Out Arrow preserves the sign. Used in computing the quantum number
-  flux of a collection of [[IQIndex|classes/iqindex]] objects.
+  The list of name-value pairs can also be passed inside an [[Args|classes/args]] object.
 
+  For examples of this constructor, see the special QN types above.
+
+
+* `QN(QNVal qv1, QNVal qv2, ...)`
+
+  Construct a QN from a set of up to 4 QNVals, which themselves can be constructed from an initializer
+  list `{v,m}` where
+
+  * v is an integer value
+  * m is an integer modulus
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      //Make QN with first slot having value 0 and modulus 3
+      //and second slot having value 2 and modulus 1
+      auto qa = QN({0,3},{2,1});
+
+      //Make QN with first slot having value 5 and modulus 1,
+      //second slot having value 3 and modulus -1,
+      //and third slot having value 1 and modulus 2
+      auto qb = QN({5,1},{3,-1},{1,2});
+
+* `QN(int v1, int v2, ...)`
+
+  Make a QN with up to 4 slots, all having modulus 1 (regular integer addition behavior)
+  and values v1, v2, etc.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto q0 = QN(0);
+      auto q1 = QN(1);
+
+      auto q0_3 = QN(0,3);
+      auto q3_4 = QN(3,4);
+
+* `.operator[](size_t n) -> int`
+
+  Retrieve the value of the nth slot; n is 0-indexed.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto q = QN(2,7);
+      Print(q[0]); //prints: q[0] = 2
+      Print(q[1]); //prints: q[0] = 7
+
+* `.operator()(size_t n) -> int`
+
+  Retrieve the value of the nth slot; n is 1-indexed.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto q = QN(2,7);
+      Print(q(1)); //prints: q(1) = 2
+      Print(q(2)); //prints: q(2) = 7
+
+* `.mod(size_t n) -> int`
+
+  Retrieve the modulus of the nth slot; n is 1-indexed.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto a = QN(2);
+      Print(a.mod(1)); //prints: a.mod(1) = 1
+
+      auto b = QN({1,3},{0,2});
+      Print(b.mod(1)); //prints: b.mod(1) = 3
+      Print(b.mod(2)); //prints: b.mod(2) = 2
+
+      auto c = QN("Sz=",+1,"Nf=",1);
+      Print(c.mod(1)); //prints: c.mod(1) = 1
+      Print(c.mod(2)); //prints: c.mod(2) = -1
+
+## Other QN Features
+
+* QN's can be compared with `==` and `!=` and ordered with `<`.
+
+* QN's can be added, subtracted, and negated. <br/>
+  Each slot obeys its own addition rule based on its modulus.
+
+* A QN can be multiplied by an Arrow direction (`In` or `Out`) which
+  flips the sign of QN's values appropriately. <br/>
+  (Currently `In` 
+  negates QN values while `Out` leaves them unchanged, but this behavior is
+  an arbitrary convention and should not be relied upon in user code).
+
+* QN's can be printed. If a QN conforms to one of the special cases explained 
+  above, each slot's name will be printed along with its value. <br/> 
+  For custom QN's each slot's value and modulus is explicitly printed.
+
+* QN's can be read from and written to disk using `read(s,q)` and `write(s,q)`
+  where s is a stream object and q is a QN.
+
+## QN Value Access Functions
+
+To aid in retrieving special QN slot values according to the special QN types
+listed at the top of this page, users may use the following functions.
+
+* `Sz(QN q) -> int`
+
+   Return the value of the spin "Sz" slot of q.
+
+* `Nb(QN q) -> int`
+
+   Return the value of the boson number "Nb" slot of q.
+
+* `Nf(QN q) -> int`
+
+   Return the value of the fermion number "Nf" slot of q.
+
+* `Pf(QN q) -> int`
+
+   Return the value of the fermion parity "Pf" slot of q.
+
+## QN Functions
+
+* `isActive(QN q, int n) -> bool`
+
+   Return `true` if slot n is active (i.e. has a non-zero modulus). <br/>
+   n is 1-indexed.
+
+* `isFermionic(QN q, int n) -> bool`
+
+   Return `true` if slot n is fermionic (has negative modulus).<br/>
+   n is 1-indexed.
+
+* `paritySign(QN q, int n) -> int`
+
+   Return -1 if slot n is fermionic and has odd-parity. Otherwise
+   returns +1.<br/>
+   n is 1-indexed.
+
+* `printFull(QN q)`
+
+  Print the QN to standard out without using any special conventions.<br/>
+  Explicitly prints the value and modulus of each active slot.
+
+
+<br/>
+_This page current as of version 2.0.3_
