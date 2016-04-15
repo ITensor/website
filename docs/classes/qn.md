@@ -75,11 +75,12 @@ The special types of QN's with named slots are as follows:
 
   `QN(Args args)`
 
-  Construct a QN from a set of name-value pairs. The order of these pairs is not important, as 
-  recognized names (Sz,Nb,Nf,Pf) correspond to specific slots by convention. (Sz is always first 
+  Construct a QN from a set of name-value pairs (trailing spaces and equals signs after the names are ignored). 
+  The order of these pairs is not important, as 
+  recognized names (Sz,Nb,Nf,Pf) will automatically be put into a fixed order. (Sz is always first 
   if present, followed by one of Nb, Nf, or Pf.)
 
-  The list of name-value pairs can also be passed inside an [[Args|classes/args]] object.
+  The list of name-value pairs can also be passed via an [[Args|classes/args]] object.
 
   For examples of this constructor, see the special QN types above.
 
