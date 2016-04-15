@@ -22,8 +22,13 @@ of the Index.
     Print(ivc.val); //prints: ivc.val = 4
     Print(ivc.index); //prints: ("Site 1",4,Site)
 
+## Public Data Members ##
 
-## Constructors ##
+* `Index index`
+
+* `long val`
+
+## Class Methods
 
 * `IndexVal()`
 
@@ -34,24 +39,9 @@ of the Index.
   Construct an IndexVal from an Index `I` and integer value `i`.
   The value `i` must be between 1 and `I.m()`, inclusive
 
-## Public Data Members ##
-
-* `Index index`
-
-  The index referred to by this `IndexVal`. 
-  Conceptually and IndexVal represents fixing the `Index index` to the integer `i`.
-
-* `long i`
-
-  The value of this IndexVal. For an IndexVal `iv`, `iv.i` must range from 1 up to `iv.m()`.
-
-## Accessor Methods ##
-
 * `.m() -> long` 
 
   Return the bond dimension of the `Index` "index".
-
-## Prime Level Methods ##
 
 * `.prime(int inc = 1)`  
 
@@ -76,7 +66,7 @@ of the Index.
 
 * An IndexVal compares equal to an Index objects if its `.index` field matches the Index.
 
-* IndexVals can be printed using the stream `<<` operator.
+* IndexVals can be printed.
 
 
 <br/>
