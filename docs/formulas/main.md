@@ -9,10 +9,11 @@ like to see.
 * [[Creating your own "driver" code that builds against ITensor|formulas/driver]]
 
 ## ITensor Formulas
-Formulas about working with individual tensors and indices (objects like Index, ITensor).
+Formulas about working with ITensors, Index, etc.
 
 * [[Create a set of Site indices to use as a lattice|formulas/index_sites]]
 * [[Make a single-site operator (no quantum numbers)|formulas/itensor_single_site_op]]
+* [[Extract the Storage of a Dense ITensor|formulas/extractdense]]
 
 ## IQTensor Formulas
 Formulas involving quantum number tensors and indices (objects such as IQIndex, IQTensor).
