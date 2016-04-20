@@ -1,5 +1,14 @@
 # Change Log #
 
+<a name="v2.0.4"></a>
+## [Version 2.0.4](https://github.com/ITensor/ITensor/tree/v2.0.4) (Apr 18, 2016) ##
+
+* Introduced convenience headers all.h, all_basic.h, and all_mps.h. Thanks for Siva Swaminathan for emphasizing the need for these.
+
+* Merge pull requests by Kyungmin Lee which fix various issues when using ITensor on Windows.
+
+* Updated tutorial/project_template/ code.
+
 <a name="v2.0.3"></a>
 ## [Version 2.0.3](https://github.com/ITensor/ITensor/tree/v2.0.3) (Apr 11, 2016) ##
 
