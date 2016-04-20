@@ -1,0 +1,200 @@
+# Fermions and Jordan-Wigner String
+
+<span class='article_sig'>Miles Stoudenmire&mdash;April 20, 2016</span>
+
+Operators in ITensor are "bosonic". By this we mean that an ITensor or IQTensor which
+represents an operator does not automatically "know" about fermion anticommutation rules.
+Even if we put in minus signs to correctly define the action of a fermionic operator on a
+single site of a lattice model, it will still lack the correct behavior in a 
+system with multiple sites unless we enforce the right behavior.
+
+So in ITensor (up to and including version 2.x) the way we deal with fermionic systems
+is to actually work with bosonic operators plus non-local "string" operators, first
+discussed by Jordan and Wigner. We always refer to these string operators using
+the letter "F".
+
+Let's first discuss Jordan-Wigner string in the context of spinless fermions, 
+then turn to fermions with spin.
+
+## Spinless Fermions
+
+The local (single site) Hilbert space of a spinless fermions has two states
+* vacuum state: @@|0\rangle@@
+* occupied state: @@|1\rangle@@ 
+
+### Basics of spinless creation and annihilation operators
+
+The occupied state can be viewed as the result of acting on the vacuum state
+with the creation operator @@c^\dagger@@, that is
+$$
+|1\rangle = c^\dagger\, |0\rangle
+$$
+The annihilation operator @@c@@ returns the system to the vacuum state
+$$
+|0\rangle = c\, |1\rangle
+$$
+You can view these equations as being the _definition_ of these operators.
+
+In a many-body setting, a crucial fact is that creation and annihilation operators
+acting on different sites anticommute
+$$
+c\_i c\_j = -c\_j c\_i
+$$
+$$
+c^\dagger\_i c^\dagger\_j = -c^\dagger\_j c^\dagger\_i
+$$
+$$
+c\_i c^\dagger\_j = -c^\dagger\_j c\_i + \delta\_{ij}
+$$
+(The @@\delta\_{ij}@@ in the last equation is important for a consistent definition of these
+operators but will not much concern us here.)
+
+### Spinless Jordan-Wigner transformation
+
+The Jordan-Wigner transformation is a mathematical equivalence, or mapping, between
+a Hilbert space of spinless fermions and a Hilbert space of "hard core" bosons.
+(The term "hard core" bosons refers to the rule that these bosons cannot share the same site,
+as if they had an infinitely repulsive short-range interaction.)
+Under this mapping, the fermionic creation/annihilation operators map to non-local operators
+in terms of the bosons. However, most of the non-local parts of these operators typically cancel.
+
+Historically this mapping was introduced to solve a difficult bosonic system by mapping it to a system
+of non-interacting fermions. Here we are interested in the reverse: mapping fermions (whether interacting or
+not) to bosonic systems since it is simpler for computers to deal with bosons.
+
+The mapping goes as follows:
+$$
+c\_j = F\_1 F\_2 \cdots F\_{j-1} \,a\_j
+$$
+$$
+c^\dagger\_j = F\_1 F\_2 \cdots F\_{j-1} \, a^\dagger\_j
+$$
+Here @@a\_j@@ and @@a^\dagger\_j@@ are the annihilation and creation operators for the bosons
+(defined identically to the fermion creation/annihilation operators except @@a\_i@@ and @@a^\dagger\_j@@
+commute when acting on different sites).
+The operator @@F\_j@@ is defined as
+$$
+F\_j = (-1)^{n\_j} = 1-2 n\_j \ .
+$$
+In words, @@F\_j@@ is a diagonal operator which takes the value +1 if the site j is empty, and -1 if it is
+occupied.
+If it helps, you can think of the mappings above as being the definition of the operators @@a\_j@@ and
+@@a^\dagger\_j@@.
+
+As an exercise, let us use the above mapping to check that they are consistent with the fact
+that fermionic operators anticommute. Assuming @@i < j @@, let us first compute
+\begin{align}
+c\_i c\_j  & = (F\_1 F\_2 \cdots F\_{i-1})\, a\_i \, (F\_1 F\_2 \cdots F\_{j-1})\, a\_j \\
+           & = F\_1^2 F\_2^2 \cdots F\_{i-1}^2\, (a\_i F\_{i})\, F\_{i+1} \cdots F\_{j-1}\, a\_j \\
+           & = -a\_i \, F\_{i+1} \cdots F\_{j-1}\, a\_j
+\end{align}
+In the above lines above we used three important facts:
+* When acting on different sites, the "F" and "a" operators commute.
+* The square of an @@F\_j@@ operator is just the identity: @@F\_j^2=1@@
+* @@a\_i F\_{i} = -a\_i@@ since either site i is occupied and the F gives a -1 or else acting with @@a\_i@@ gives zero anyway
+
+Now let us check that using the mapping on the reversed operators give a consistent result
+\begin{align}
+- c\_j c\_i  & = (F\_1 F\_2 \cdots F\_{j-1})\, a\_j \, (F\_1 F\_2 \cdots F\_{i-1})\, a\_i \\
+             & = - F\_1^2 F\_2^2 \cdots F\_{i-1}^2\, (F\_{i} a\_i)\, F\_{i+1} \cdots F\_{j-1}\, a\_j \\
+             & = - a\_i \, F\_{i+1} \cdots F\_{j-1}\, a\_j
+\end{align}
+This time the @@F\_i@@ operator ended up on the left of the @@a\_i@@ operator and @@F\_i a\_i = a\_i@@.
+The takeaway is that we got the exact same operator in the bosonic language, so we see that the
+mapping is consistent with the fact that the fermions anticommute @@c\_i c\_j = - c\_j c\_i@@. 
+
+### Some Useful Mappings for Spinless Fermions
+
+With the Jordan-Wigner transformation in hand, we can apply it to common operators 
+one encounters when mapping fermionic Hamiltonians to bosonic ones, or when
+measuring correlation functions involving creation/annihilation operators:
+
+(1) Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
+$$
+(c^\dagger\_i c\_{i+1} + c^\dagger\_{i+1} c\_i) = (a^\dagger\_i a\_{i+1} + a^\dagger\_{i+1} a\_i)
+$$
+
+If we write the same operator, but this time keeping the operators in increasing site order, we find:
+$$
+(c^\dagger\_i c\_{i+1} - c\_{i} c^\dagger\_{i+1}) = (a^\dagger\_i a\_{i+1} + a\_i a^\dagger\_{i+1})
+$$
+which you should be able to check is completely consistent with the other version above.
+
+
+(2) Further-neighbor "hopping" term, assuming @@i < j @@
+$$
+(c^\dagger\_i c\_j + c^\dagger\_j c\_i) = (a^\dagger\_i F\_{i+1} F\_{i+2} \cdots F\_{j-1} a\_{j} + a\_{i} F\_{i+1} F\_{i+2} \cdots F\_{j-1} a^\dagger\_j)
+$$
+In this case we see that the starting and ending operators and signs are all the same, but there is a "string" of F operators
+between the first and last sites.
+
+(3) Next-neighbor pairing, or superconducting "field" term
+$$
+(c^\dagger\_i c^\dagger\_{i+1} + c\_{i+1} c\_{i}) = (a^\dagger\_{i} a^\dagger\_{i+1} + a\_i a\_{i+1})
+$$
+
+## Fermions with Spin
+
+Fermions with spin have a local Hilbert space with four states
+* vacuum state: @@|0\rangle@@
+* up state: @@|\!\uparrow\rangle@@ 
+* down state: @@|\!\downarrow\rangle@@ 
+* doubly occupied state: @@|2\rangle@@ 
+
+These states can be thought of as being "created" from the vacuum by the operators
+@@c^\dagger\_{\uparrow}@@ and @@c^\dagger\_{\downarrow}@@. Crucially, 
+the state @@|2\rangle@@ is defined as
+$$
+|2\rangle = c^\dagger\_{\uparrow} c^\dagger\_{\downarrow} |0\rangle  \ .
+$$
+with the up operator coming before the down operator.
+This implies that on the one hand @@c^\dagger\_{\uparrow} |\!\downarrow\rangle = |2\rangle@@
+while on the other @@c^\dagger\_{\downarrow} |\!\uparrow\rangle = -|2\rangle@@.
+
+To extend the Jordan-Wigner mapping to the case of fermions with spin, we can use trick of 
+introducing two string operators, one for each spin. 
+The operator @@F\_\uparrow@@ gives
+a minus sign if the site contains an up-fermion (is in the @@|\!\uparrow\rangle@@ or the @@|2\rangle@@ state).
+The operator @@F\_\downarrow@@ gives
+a minus sign if the site contains an down-fermion (is in the @@|\!\downarrow\rangle@@ or the @@|2\rangle@@ state).
+
+It is also convenient to introduce a "total" string operator @@F = F\_\uparrow F\_\downarrow@@ which gives
+a minus sign if the site contains an odd number of fermions.
+
+### Spinful Jordan-Wigner Transformations
+
+With the above definitions we can map spinful fermion operators to spinful boson operators as follows
+\begin{align}
+c\_{\uparrow j} & = F\_1 F\_2 \cdots F\_{j-1} \,  a\_{\uparrow j} \\
+c\_{\downarrow j} & =  F\_1 F\_2 \cdots F\_{j-1} \, F\_{\uparrow j}\, a\_{\downarrow j} \\
+                  & =  F\_1 F\_2 \cdots F\_{j-1} \, F\_j\, a\_{\downarrow j}
+\end{align}
+Note the extra @@F\_{\uparrow j}@@ on the second line, which acts on the same site as the 
+bosonic annihilation operator. On the last line we used the identity 
+@@a\_{\downarrow j} = F\_{\downarrow j}\, a\_{\downarrow j}@@ and the definition @@F\_j = F\_{\uparrow j} F\_{\downarrow j}@@.
+
+
+### Some Useful Mappings for Spinful Fermions
+
+With the spinful Jordan-Wigner mapping thus defined, we can use
+it to transform common operators
+one encounters when mapping fermionic Hamiltonians to bosonic ones, or when
+measuring correlation functions involving creation/annihilation operators:
+
+(1) Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
+\begin{align}
+\sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,i+1} + c^\dagger\_{\sigma,i+1} c\_{\sigma,i}) & = 
+\big[(a^\dagger\_{\uparrow,i} F\_i)\, a\_{\uparrow,i+1} + (F\_i a\_{\uparrow,i})\, a^\dagger\_{\uparrow,i+1}\big] \\
+& \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, (F\_{i+1} a\_{\uparrow,i+1}) + a\_{\downarrow,i}\, (a^\dagger\_{\uparrow,i+1} F\_{i+1}) \big]
+\end{align}
+Note the minus sign in front of the second term on the right-hand side.
+
+(2) Further-neighbor "hopping" term, assuming @@i < j @@
+\begin{align}
+\sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,j} + c^\dagger\_{\sigma,j} c\_{\sigma,i}) & = 
+\big[(a^\dagger\_{\uparrow,i} F\_i)\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\,  a\_{\uparrow,j} + (F\_i a\_{\uparrow,i})\,F\_{i+1} F\_{i+2} \cdots F\_{j-1} \, a^\dagger\_{\uparrow,j}\big] \\
+& \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_{j} a\_{\uparrow,j}) + a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (a^\dagger\_{\uparrow,j} F\_{j}) \big]
+\end{align}
+
+
+

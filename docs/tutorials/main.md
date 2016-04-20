@@ -21,6 +21,10 @@
   The singular value decomposition (SVD) provides a way to separate large degrees 
   of freedom from irrelevant ones.  ITensors allows for the easy SVD of tensors.
 
+* [[Fermions and Jordan-Wigner String|tutorials/fermions]]
+
+  Learn how to map fermionic operators to bosonic operators with non-local "string" operators.
+
 
 ### ITensor Library Features
 
