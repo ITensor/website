@@ -6,7 +6,9 @@ Operators in ITensor are "bosonic". By this we mean that an ITensor or IQTensor 
 represents an operator does not automatically "know" about fermion anticommutation rules.
 Even if we put in minus signs to correctly define the action of a fermionic operator on a
 single site of a lattice model, it will still lack the correct behavior in a 
-system with multiple sites unless we enforce the right behavior.
+system with multiple sites unless we enforce the right behavior. 
+
+(Note that AutoMPO does automatically give the correct behavior&mdash;<a href="#autompo">more on this below</a>.)
 
 So in ITensor (up to and including version 2.x) the way we deal with fermionic systems
 is to actually work with bosonic operators plus non-local "string" operators, first
@@ -58,11 +60,11 @@ as if they had an infinitely repulsive short-range interaction.)
 Under this mapping, the fermionic creation/annihilation operators map to non-local operators
 in terms of the bosons. However, most of the non-local parts of these operators typically cancel.
 
-Historically this mapping was introduced to solve a difficult bosonic system by mapping it to a system
-of non-interacting fermions. Here we are interested in the reverse: mapping fermions (whether interacting or
-not) to bosonic systems since it is simpler for computers to deal with bosons.
+Historically this mapping was introduced to solve a bosonic system by mapping it to a system
+of non-interacting fermions. Here we are interested in the reverse: mapping fermions 
+to bosons since it is simpler for computers to deal with bosons.
 
-The mapping goes as follows:
+The Jordan-Wigner mapping is defined as follows:
 $$
 c\_j = F\_1 F\_2 \cdots F\_{j-1} \,a\_j
 $$
@@ -196,5 +198,18 @@ Note the minus sign in front of the second term on the right-hand side.
 & \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_{j} a\_{\uparrow,j}) + a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (a^\dagger\_{\uparrow,j} F\_{j}) \big]
 \end{align}
 
+
+<a name="autompo"></a>
+
+## Fermions and AutoMPO
+
+The one place where fermions and Jordan-Wigner string are handled automatically for you in the ITensor library
+is in AutoMPO. AutoMPO recognizes operators whose names start with "C" as being fermionic, and uses
+special internal rewriting rules to map them to non-local bosonic operators correctly before producing
+the MPO tensors.
+
+Even though AutoMPO will produce a correct MPO, if you use this MPO in DMRG, for example, to find a ground
+state of a fermionic system, when measuring correlation functions such as @@\langle c^\dagger\_i c\_j \rangle@@
+it is still required that you insert the necessary Jordan-Wigner string operators yourself.
 
 
