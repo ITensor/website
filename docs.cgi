@@ -63,7 +63,9 @@ def processMathJax(matchobj,delimit=""):
     if delimit=="@@":
         return "<span> " + math + " </span>"
     elif delimit=="$$":
-        return "\n<div> " + math + " </div>\n"
+        return "\n<div>\n" + math + "\n</div>\n"
+    elif delimit=="align":
+        return "\n<div>\n " + math + "\n</div>\n"
     return None
 
 def includeFile(matchobj):
@@ -98,6 +100,7 @@ def convert(string):
     #Latex string
     string = re.sub(r"(@@.+?@@)",partial(processMathJax,delimit="@@"),string)
     string = re.sub(r"(\$\$.+?\$\$)",partial(processMathJax,delimit="$$"),string,flags=re.DOTALL|re.MULTILINE)
+    string = re.sub(r"(\\begin{align}.+?\\end{align})",partial(processMathJax,delimit="align"),string,flags=re.DOTALL|re.MULTILINE)
 
     string = re.sub(r"([ ]*)include:(\S+)",partial(includeFile),string)
 
