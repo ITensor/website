@@ -644,14 +644,6 @@ for details about the possible arguments to these functions.
 * `multSiteOps`
 * `read/write`
 
-Document these by both putting them on the ITensor
-page and making a separate page discussing each
-type of storage:
-* `setElt`
-* `combiner`
-* `delta`
-* `diagTensor`
-
 And developer/advanced methods.
 
 -->

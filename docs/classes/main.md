@@ -27,6 +27,12 @@ Detailed information about every method and function in the ITensor library.
 
 * [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
 
+* Sparse ITensors:
+
+    - [[Single Element ITensor|classes/single_itensor]]
+    - [[Combiner|classes/combiner]]
+    - [[Delta and Diagonal ITensor|classes/diag_itensor]]
+
 <br/>
 <br/>
 <span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0</span>
