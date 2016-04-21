@@ -99,11 +99,11 @@ Major changes:
 
       auto q = QN("Sz=",-1,"Nf=",1);
 
-  More advanced QNs can be created by provided a list of value-modfac pairs.
-  The modfac is an integer saying how addition is defined for that particular
+  More advanced QNs can be created by provided a list of value-modulus pairs.
+  The modulus is an integer saying how addition is defined for that particular
   "slot" of the QN. For example, a QN constructed as `QN({a,1},{b,3})`
-  will have the value "a" in slot one and "b" in slot two. When adding this
-  QN to a similarly constructed one, the first slot will obey regular integer
+  will have the value "a", modulus 1 in slot one and value "b", modulus 3 in slot two. 
+  When adding QNs of this type, the first slot will obey regular integer
   addition (@@Z_1@@ in an abuse of notation) while the second slot will obey
   @@Z_3@@ addition rules.
 
