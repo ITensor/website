@@ -310,7 +310,7 @@ margin-bottom: 8px;
     }
 .docs code 
     { 
-    font-family: monospace;  
+    font-family: 'Inconsolata',monospace;  
     font-weight: normal;
     border-style: solid;
     border-width: 1px;
@@ -336,6 +336,7 @@ margin-bottom: 8px;
 
 .docs .highlight
 {
+font-family: 'Inconsolata',monospace;
 margin-bottom: 15px;
 padding-top: 8px;
 padding-left: 4px;
@@ -365,7 +366,7 @@ margin-bottom: 15px;
 padding-top: 8px;
 padding-left: 4px;
 padding-bottom: 8px;
-font-family: monospace;
+font-family: 'Inconsolata',monospace;
 font-size: 12pt;
 border-style: solid;
 border-width: 1px;
@@ -375,7 +376,7 @@ border-color: #ddd;
 .docs pre code
     { 
     font-weight: normal;
-    font-family: monospace;
+    font-family: 'Inconsolata',monospace;
     background-color:#ddd;
     display: block;
     border: 1px solid black;
