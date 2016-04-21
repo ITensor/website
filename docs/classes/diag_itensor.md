@@ -33,7 +33,6 @@ functions:
     auto T2 = ITensor(i,j,prime(i));
     T2 *= delta(i,prime(i));
 
-
     //
     // Tie multiple indices together
     //
