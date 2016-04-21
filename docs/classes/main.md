@@ -23,10 +23,13 @@ Detailed information about every method and function in the ITensor library.
 
 * [[IQIndexVal|classes/iqindexval]]. IQIndex-value pair.
 
-## ITensor and IQTensor
+## ITensor
 
-* [[ITensor and IQTensor|classes/itensor]]. The elementary tensor type. <br/>
-  [[ITensor Functions|classes/itensor_functions]] for working with ITensor and similar classes. <br/>
+* [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
+
+<br/>
+<br/>
+<span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0</span>
 
 ## Methods for working with tensors
 
