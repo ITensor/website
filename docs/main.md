@@ -1,5 +1,5 @@
 
-<img src="docs/install.png" class="icon">  [[Installing ITensor|installing]]
+<img src="docs/install/icon.png" class="icon">  [[Installing ITensor|install]]
 
 <img src="docs/book/icon.png" class="icon">   [[The ITensor Book|book]]. A comprehensive introduction to ITensor.
 

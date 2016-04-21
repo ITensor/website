@@ -1,4 +1,4 @@
-# Installation Instructions
+# <img src="docs/install/icon.png" class="largeicon"> Installing ITensor
 
 ## Downloading the Library
 
