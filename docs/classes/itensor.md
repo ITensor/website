@@ -259,7 +259,7 @@ and that the result will be an ITensor.
 
 * `ITensor + ITensor -> ITensor`<br/>
   `ITensor - ITensor -> ITensor`<br/>
-  `ITensor += ITensor`
+  `ITensor += ITensor`<br/>
   `ITensor -= ITensor`
 
   ITensor addition and subtraction. Adds ITensors element-wise. 
@@ -443,7 +443,7 @@ and that the result will be an ITensor.
 
 * `randomize(ITensor & T, Args args = Args::global())`
 
-  Randomize all elements of this ITensor. Optimized more for speed than for true randomness.
+  Randomize all elements the ITensor T. Optimized more for speed than for true randomness.
   Afterward all elements will be real by default.
 
   Optionally `randomize` accepts a named argument "Complex" which if set to `true`
