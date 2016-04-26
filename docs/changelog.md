@@ -1,5 +1,16 @@
 # Change Log #
 
+<a name="v2.0.5"></a>
+## [Version 2.0.5](https://github.com/ITensor/ITensor/tree/v2.0.5) (Apr 25, 2016) ##
+
+* Added `expHermitian` function for exponentiating Hermitian tensors
+
+* Added new `eigen` function for computing eigenvectors and eigenvalues of a general tensor
+
+* Fixed `ordered` and `orderedC` to make sure ITensor is allocated
+
+* Building library now updates timestamp of `all.h`, `all_basic.h`, and `all_mps.h` files
+
 <a name="v2.0.4"></a>
 ## [Version 2.0.4](https://github.com/ITensor/ITensor/tree/v2.0.4) (Apr 18, 2016) ##
 
