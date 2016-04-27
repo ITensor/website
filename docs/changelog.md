@@ -1,5 +1,16 @@
 # Change Log #
 
+<a name="v2.0.6"></a>
+## [Version 2.0.6](https://github.com/ITensor/ITensor/tree/v2.0.6) (Apr 27, 2016) ##
+
+* Fixed some cases which failed to compile when using the .apply method on ITensor and IQTensor with diagonal storage.
+
+* Fixed addition of Diag ITensors to work in all real or complex combinations.
+
+* Added second argument to expHermitian function, which is necessary for including a complex factor in the exponential.
+
+* Merged pull request #104 from Kyungmin Lee, which includes cstdlib header in error.h
+
 <a name="v2.0.5"></a>
 ## [Version 2.0.5](https://github.com/ITensor/ITensor/tree/v2.0.5) (Apr 25, 2016) ##
 
