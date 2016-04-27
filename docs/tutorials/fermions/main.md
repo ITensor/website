@@ -229,8 +229,13 @@ Note the minus signs associated with adding or removing a down fermion to/from t
 minus signs occur because in our convention (and as discussed above) the up state is ordered before the down state 
 within a single site.
 
-Using the "Cup", "Cdn", etc. operators in ITensor is _optional_. It is often clearer to use the "Aup", "Adn", etc.
+Using the "Cup", "Cdn", etc. operators in ITensor is _optional_ when doing measurements properties of MPS or when making 
+your own MPO (not using AutoMPO). It is often clearer to use the "Aup", "Adn", etc.
 operators because it makes it clear that one is working with hard-core bosons plus Jordan-Wigner string.
+
+On the other hand, if you want to create a Hamiltonian for a fermionic system using AutoMPO, using the operator
+names "Cup", "Cdn" etc. is not optional. This is because AutoMPO recognizes these special operator names and
+uses internal rewriting rules to add Jordan-Wigner "F" string in between them. (See next section.)
 
 
 <a name="autompo"></a>
