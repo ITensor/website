@@ -198,6 +198,40 @@ Note the minus sign in front of the second term on the right-hand side.
 & \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_{j} a\_{\uparrow,j}) + a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (a^\dagger\_{\uparrow,j} F\_{j}) \big]
 \end{align}
 
+<a name="c_ops"></a>
+
+### On the Aup, Adagup, etc. versus Cup, Cdagup, etc. Hubbard SiteSet Operators
+
+The Hubbard site set in ITensor provides operators "Cup", "Cdagup", "Cdn", "Cdagdn"
+as well as "Aup", "Adagup", "Adn", "Adagdn". The presence of the "C..." operators
+can be confusing because while these are defined to correctly behave as fermionic
+operators for a single site, they do not anti-commute on different sites. To
+correctly define many-body fermionic Hamiltonians or other many-body fermionic
+operators (such as a operator like @@c^\dagger\_i c\_j@@) it is still necessary
+to account for fermion anticommutation using Jordan-Wigner "F" operators.
+
+Here is a table of how the "Aup", "Adagup", etc. operators act on a single site:
+\begin{align}
+a\_{\uparrow} |\!\uparrow\rangle & = |0\rangle & a\_{\downarrow} |\!\downarrow\rangle & = |0\rangle \\
+a\_{\uparrow} |\!\uparrow\downarrow\rangle & = |\!\downarrow\rangle & a\_{\downarrow} |\!\uparrow\downarrow\rangle & = |\!\uparrow\rangle \\
+a^\dagger\_{\uparrow} |0\rangle & = |\!\uparrow\rangle & a^\dagger\_{\downarrow} |0\rangle & = |\!\downarrow\rangle \\
+a^\dagger\_{\uparrow} |\!\downarrow\rangle & = |\!\uparrow\downarrow\rangle & a^\dagger\_{\downarrow} |\!\uparrow\rangle & = |\!\uparrow\downarrow\rangle
+\end{align}
+
+In contrast, here is how the "Cup", "Cdagup", etc. operators act _on a single site_:
+\begin{align}
+c\_{\uparrow} |\!\uparrow\rangle & = |0\rangle & c\_{\downarrow} |\!\downarrow\rangle & = |0\rangle \\
+c\_{\uparrow} |\!\uparrow\downarrow\rangle & = |\!\downarrow\rangle & c\_{\downarrow} |\!\uparrow\downarrow\rangle & = -|\!\uparrow\rangle \\
+c^\dagger\_{\uparrow} |0\rangle & = |\!\uparrow\rangle & c^\dagger\_{\downarrow} |0\rangle & = |\!\downarrow\rangle \\
+c^\dagger\_{\uparrow} |\!\downarrow\rangle & = |\!\uparrow\downarrow\rangle & c^\dagger\_{\downarrow} |\!\uparrow\rangle & = -|\!\uparrow\downarrow\rangle
+\end{align}
+Note the minus signs associated with adding or removing a down fermion to/from the doubly-occupied state. These
+minus signs occur because in our convention (and as discussed above) the up state is ordered before the down state 
+within a single site.
+
+Using the "Cup", "Cdn", etc. operators in ITensor is _optional_. It is often clearer to use the "Aup", "Adn", etc.
+operators because it makes it clear that one is working with hard-core bosons plus Jordan-Wigner string.
+
 
 <a name="autompo"></a>
 
