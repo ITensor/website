@@ -1,5 +1,7 @@
 # IQTensor #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 A tensor with components separated into quantum number blocks. Each block is an ITensor stored within the IQTensor. Each Index of a
 block belongs to exactly one IQIndex of the IQTensor.
 

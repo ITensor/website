@@ -20,13 +20,10 @@ or a bra (a covector, dual vector, or lowered index).
 * `Site` indices are physical, or real, indices such as the sites of a lattice model.
 
 * `Link` indices (sometimes called virtual indices) label internal, or gauge, degrees of freedom of a tensor network.
-For example, the bonds of a matrix product state are `Link` indices.
-
-* The real and imaginary parts of a complex ITensor or IQTensor are indexed by a special Index or IQIndex
-of type `ReIm`.
+  For example, the bonds of a matrix product state are `Link` indices.
 
 * There is a special IndexType `All` which can be used to specify that a certain function or transformation 
-should be applied to all indices regardless of type.
+  should be applied to all indices regardless of type.
 
 ## Matrix Product States ##
 

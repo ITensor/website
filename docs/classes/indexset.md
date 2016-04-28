@@ -1,247 +1,320 @@
-# IndexSet<IndexT> #
+## IndexSet (and IQIndexSet)
 
-Container for storing indices, templated over the index type `IndexT`. For example, `IndexT` coud be [[`Index`|classes/index]] or [[`IQIndex`|classes/iqindex]].
+Container for storing indices. 
 
-Internally, indices are stored as a partially ordered array, with `m!=1` indices preceding `m==1` indices (where `m` is the bond dimension).
+The following documentation refers to IndexSet, but also applies to
+IQIndexSet, which is implemented using the same template class. 
+For IQIndexSet, just replace all usage of the `Index` type with
+the type `IQIndex`.
+
+* `IndexSet` is an alias for `IndexSetT<Index>`
+* `IQIndexSet` is an alias for `IndexSetT<IQIndex>`
+
 
 ## Synopsis ##
 
-    Index b1("bond 1",5), 
-          b3("bond 3",8),
-          a("trivial link",1),
-          s2("Site 2",2,Site), 
-          s3("Site 3",2,Site);
+    //Make some indices
+    auto b1 = Index("bond 1",5);
+    auto b3 = Index("bond 3",8);
+    auto s2 = Index("Site 2",2,Site); 
+    auto s3 = Index("Site 3",2,Site);
 
-    IndexSet<Index> inds(b1,b3,s2,s3,a);
+    auto inds = IndexSet(b1,b3,s2,s3);
 
     //Print all the indices
-    Foreach(const Index& I, inds)
-        {
-        println(I);
-        }
+    for(auto& i : inds) println(i);
 
     //Or just print the whole set at once
     println("inds = ",inds);
 
-    Print(inds.r()); //prints 5
-    Print(inds.rn()); //prints 4, only 4 m!=1 indices
+    Print(rank(inds)); //prints 4
 
 ## Constructors ##
 
 * `IndexSet()` 
 
-   Default constructor. For a default-constructed IndexSet `inds`, `inds.r() == 0`.
+   Default constructor. For a default-constructed IndexSet "inds", `rank(inds) == 0`.
 
-* `IndexSet(IndexT i1)` 
+* `IndexSet(Index i1,Index i2,Index i3,...)`
 
-  `IndexSet(IndexT i1, IndexT i2)` 
+   Constructor taking any number of Index objects.
 
-  `IndexSet(IndexT i1, IndexT i2, IndexT i3)` 
+   <div class="example_clicker">Click to Show Example</div>
 
-   ... etc. up to 8 indices 
+      auto s1 = Index("Site 1",2,Site), 
+      auto s2 = Index("Site 2",2,Site);
+      auto inds = IndexSet(s1,s2);
 
-   Construct an IndexSet with the given indices. Indices may be partially reordered from the order given.
+* `IndexSet(IndxContainer C)` 
 
-   <div class="example_clicker">Show Example</div>
+   Constructor accepting a container of indices. <br/>
+   The container `C` can be either std::array<Index> or std::vector<Index>.
 
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site);
-        IndexSet<Index> inds(s1,s2);
-        Print(T.r()); //Prints 2
+   <div class="example_clicker">Click to Show Example</div>
+
+      auto s1 = Index("Site 1",2,Site), 
+      auto s2 = Index("Site 2",2,Site);
+      auto vinds = std::vector<Index>(2);
+      vinds[0] = s1;
+      vinds[1] = s2;
+      auto inds = IndexSet(vinds);
+
+* `IndexSet(std::initializer_list<Index> ii)` 
+
+   Constructor accepting an initializer list of indices.
+
+* `IndexSet(storage_type && store)` 
+
+   Constructor which "moves" indices from an IndexSet storage container.
+   This is the most efficient way to construct an IndexSet other than
+   explicitly providing all of the indices in a single constructor call.
+   Useful when you want to build an IndexSet in a loop.
+
+   The type `storage_type` is guaranteed to have the same interface
+   as a std::vector.
+
+   <div class="example_clicker">Click to Show Example</div>
+
+      auto s1 = Index("Site 1",2,Site), 
+      auto s2 = Index("Site 2",2,Site);
+      auto store = IndexSet::storage_type(2);
+      store[0] = s1;
+      store[1] = s2;
+      auto inds = IndexSet(std::move(store));
+
 
 ## Accessor Methods ##
 
-* `int r()`
+* `.r() -> long`
 
    Return number of indices in this set.
 
-   <div class="example_clicker">Show Example</div>
+* `.operator[](int j) -> Index&`
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link);
+   Access the jth index in the set, starting from 0.
 
-        IndexSet<Index> inds(s1,l);
-        Print(inds.r()); //prints 2
+   <div class="example_clicker">Click to Show Example</div>
 
-* `int rn()`
+      auto s1 = Index("s1",2,Site);
+      auto l = Index("l",10);
+      auto a = Index("a",1);
 
-   Return number of `m!=1` indices in this set.
+      auto inds = IndexSet(s1,a,l);
 
-   <div class="example_clicker">Show Example</div>
+      //Access indices
+      Print(inds[0]); //prints: (s1,2,Site)
+      Print(inds[1]); //prints: (a,1,Link)
+      Print(inds[2]); //prints: (l,10,Link)
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link),
-              a("trivial link",1,Link);
+      //Modify an Index
+      auto i = Index("i",3);
+      inds[0] = i;
+      Print(inds[0]); //prints: (i,3,Link)
 
-        IndexSet<Index> inds(s1,a,l);
-        Print(inds.rn()); //prints 2
-        Print(inds.r()); //prints 3
+* `.index(int j) -> Index&`
 
-* `IndexT operator[](int j)`
+   Access the jth index in the set, starting from 1.
 
-   Return the jth index in the set (zero-indexed such that the first element corresponds to j=0).
+* `.extent(size_type i) -> long`
 
-   <div class="example_clicker">Show Example</div>
+   Return the extent (size, or dimension) of the ith index; the argument i is 0-indexed.
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link),
-              a("trivial link",1,Link);
+* `.stride(size_type i) -> size_type`
 
-        IndexSet<Index> inds(s1,a,l);
+   Return the stride of the ith index; the argument i is 0-indexed.<br/>
+   For a "normal" (unpermuted) IndexSet, the stride of an index is the product
+   of the extents of all previous indices.
 
-        Print(inds[0]); //prints s1
-        Print(inds[1]); //prints l
-        Print(inds[2]); //prints a (last since a.m() == 1)
+* `.front() -> Index const&`
 
-* `IndexT index(int j)`
+   Return the first index in the set.
 
-   Return the jth index in the set (one-indexed such that the first element corresponds to j=1).
+* `.back() -> Index const&`
 
-   <div class="example_clicker">Show Example</div>
+   Return the last index in the set.
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link),
-              a("trivial link",1,Link);
+* `.range() -> parent const&`
 
-        IndexSet<Index> inds(s1,a,l);
+   Reference to this IndexSet as its parent type, namely `RangeT<index_type>`
+   where `index_type` is Index for IndexSet or IQIndex for IQIndexSet.
 
-        Print(inds.index(1)); //prints s1
-        Print(inds.index(2)); //prints l
-        Print(inds.index(3)); //prints a (last since a.m() == 1)
+## Other Class Methods and Features
 
-* `int dim()`
+* `.dag()`
 
-   Return the total dimension of the set, defined as the product of all index bond dimensions.
+  Call the dag() operation (which flips IQIndex arrows) on each index in the set.
 
-   <div class="example_clicker">Show Example</div>
+* `.swap(IndexSet & other)`
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link),
-              a("trivial link",1,Link);
+  Efficiently swap the contents of this IndexSet with another.
 
-        IndexSet<Index> inds(s1,a,l);
-        Print(inds.dim()); //prints 20 == 2*10*1
+* One can iterate over an IndexSet in a range-based for loop
 
+  Example:
+  
+      auto inds = IndexSet(s1,a,l);
+      //Iterate over and print each index in the set
+      for(auto& I : inds) println(I);
 
-* `Real uniqueReal()`
+* IndexSets can be printed.
 
-   Return the unique Real of the set, defined to be the sum of the unique Reals of all the indices.
+## Prime Level Functions
 
-## Iteration ##
+* `prime(IndexSet & is, int inc = 1)`
 
-* `const_iterator begin() const` <br/>
-  `const_iterator end() const`
+  Increment prime level of all indices by 1, or by the optional amount "inc".
 
-   Return beginning and end iterators.
+  <div class="example_clicker">Click to Show Example</div>
 
-   <div class="example_clicker">Show Example</div>
+      auto inds = IndexSet(l1,s2,s3,l3);
+      Print(inds[1]); //prints: (s2,2,Site)
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link),
-              a("trivial link",1,Link);
+      prime(inds,2);
+      Print(inds[1]); //prints: (s2,2,Site)''
 
-        IndexSet<Index> inds(s1,a,l);
 
-        //Iterate over and print each index in the set
-        for(IndexSet<Index>::const_iterator it = inds.begin();
-            it != inds.end();
-            ++it)
-            {
-            cout << *it < endl;
-            }
+* ``` 
+  prime(IndexSet & is, 
+        Index i1, Index i2, ..., 
+        int inc = 1)
+  ```
 
-        //More convenient version using the boost Foreach macro
-        Foreach(const Index& I, inds)
-            {
-            cout << I << endl;
-            }
+  Increment prime level of the specific indices i1, i2, etc. by 
+  1 or by the optional amount `inc`.
 
-## Prime Level Methods ##
+  <div class="example_clicker">Click to Show Example</div>
 
-* ` prime(int inc = 1)`
+      auto inds = IndexSet(l1,s2,s3,l3);
 
-  Increment prime level of all indices by 1. (Optionally by amount `inc`.)
+      //Increment prime level of s2 and s3 by 4
+      prime(inds,s2,s3,4);
 
-  <div class="example_clicker">Show Example</div>
+      Print(inds[1]); //prints: (s2,2,Site)'4
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+* ``` 
+  prime(IndexSet & is, 
+        IndexType t1, IndexType t2, ..., 
+        int inc = 1)
+  ```
 
-        IndexSet<Index> inds(l1,s2,s3,l3);
+  Increment prime level of all indices of the specified IndexTypes
+  by 1 or by the optional amount `inc`.
 
-        inds.prime();
-        Print(hasindex(inds,prime(s2))); //Prints 1 (true)
-        Print(hasindex(inds,s2));         //Prints 0 (false)
-        Print(hasindex(inds,prime(s3))); //Prints 1 (true)
-        Print(hasindex(inds,prime(l1))); //Prints 1 (true)
-        Print(hasindex(inds,prime(l3))); //Prints 1 (true)
+  <div class="example_clicker">Click to Show Example</div>
 
-* ` prime(IndexT I, int inc = 1)`
+      auto inds = IndexSet(l1,s2,s3,l3);
 
-  Increment prime level of only index `I` by 1. (Optionally by amount `inc`.)
-  Throws an exception of the IndexSet does not have index `I`.
+      //Increment prime level of all indices of
+      //type Site by 5
+      prime(inds,Site,5);
 
-  <div class="example_clicker">Show Example</div>
+      Print(inds[0]); //prints: (l1,1,Link)
+      Print(inds[1]); //prints: (s2,2,Site)'5
+      Print(inds[2]); //prints: (s3,2,Site)'5
+      Print(inds[3]); //prints: (l3,3,Link)
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+* ``` 
+  primeExcept(IndexSet & is, 
+              Index i1, Index i2, ..., 
+              int inc = 1)
+  ```
+  ``` 
+  primeExcept(IndexSet & is, 
+              IndexType t1, IndexType t2, ..., 
+              int inc = 1)
+  ```
 
-        IndexSet<Index> inds(l1,s2,s3,l3);
+  Increment the prime level of all indices NOT matching the list of
+  indices provided (or list of IndexTypes provided) by 1 or the 
+  optional amount "inc".
 
-        inds.prime(s3);
-        Print(hasindex(inds,prime(s3))); //Prints 1 (true)
-        Print(hasindex(inds,s3));         //Prints 0 (false)
-        Print(hasindex(inds,prime(s2))); //Prints 0 (false)
-        Print(hasindex(inds,prime(l1))); //Prints 0 (false)
-        Print(hasindex(inds,prime(l3))); //Prints 0 (false)
-        Print(hasindex(inds,s2));         //Prints 1 (true)
-        //etc.
 
-* ` prime(IndexType t, int inc = 1)`
+* ` noprime(IndexSet & is)`
 
-  Increment prime level of every index of type `t`. (Optionally by amount `inc`.)
+  Set prime level of all indices to zero.
 
-  <div class="example_clicker">Show Example</div>
+* ``` 
+  noprime(IndexSet & is, 
+          Index i1, Index i2, ...)
+  ```
+  ``` 
+  noprime(IndexSet & is, 
+          IndexType t1, IndexType t2, ...)
+  ```
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+  Set prime level all indices listed (or IndexTypes listed) to zero.
 
-        IndexSet<Index> inds(l1,s2,s3,l3);
+* ``` 
+  mapprime(IndexSet & is,
+           VArgs&&... vargs)
+  ```
 
-        inds.prime(Site);
-        Print(hasindex(inds,prime(s2))); //Prints 1 (true)
-        Print(hasindex(inds,s2));         //Prints 0 (false)
-        Print(hasindex(inds,prime(s3))); //Prints 1 (true)
-        Print(hasindex(inds,l1));         //Prints 1 (true)
+  Map classes of indices from a current prime level to a new prime level. The arguments
+  "vargs" are triples of the form `I,plevold,plevnew` where I is either an Index or an
+  IndexType. Any Index matching I that has prime level plevold will have its prime level
+  replaced with plevnew.
 
-* ` noprime(IndexType t = All)`
+  <div class="example_clicker">Click to Show Example</div>
 
-  Set prime level of all indices to 0. (Optionally only indices of type `t`.)
+      auto b1 = Index("bond 1",5,Link);
+      auto b3 = Index("bond 3",8,Link);
+      auto s2 = Index("Site 2",2,Site); 
+      auto s3 = Index("Site 3",2,Site);
 
-* ` noprime(IndexT I)`
+      auto inds = IndexSet(b1,prime(b3,2),s2,s3);
 
-  Set prime level of index `I` to 0. Throws an exception if the set does not have index `I`.
+      mapprime(inds,Site,0,4,b3,2,5);
 
-* ` mapprime(int plevold, int plevnew, IndexType t = All)`
+      //Now s2 and s3 will have prime level 4
+      //and b3 will have prime level 5
 
-  Change prime level of all indices having prime level `plevold` to `plevnew`. (Optionally only if their type matches `t`.) 
+* ``` 
+  mapprime(IndexSet & is,
+           int plevold, int plevnew, 
+           IndexType t = All)
+  ```
 
-## Other Methods ##
+  Change prime level of all indices having prime level `plevold` to `plevnew`. 
+  (Optionally only if their IndexType matches `t`.) 
 
-* ` addindex(IndexT I)`
+## Other IndexSet Functions
 
-  Add index I to the set. Depending on whether `I.m()==1` or not, will add I to the end of the set or to the end of the `m!=1` indices.
+* `findindex(IndexSet const& inds, Index const& I) -> long`
 
-* ` swap(IndexSet& other)`
+  Find the position of the Index `I` within the IndexSet `inds`.<br/>
+  Returns an integer j such that `inds[j] == I`.<br/>
+  If the Index I is not found, returns -1.
 
-  Efficiently swap contents of this IndexSet with a different IndexSet `other`.
+* `findtype(IndexSet const& inds, IndexType t) -> Index`
 
-* ` clear()`
+  Finds the first Index in the set whose type matches `t`.
 
-  Reset this IndexSet to the empty set.
+* `finddir(IQIndexSet const& inds, Arrow dir) -> IQIndex`
+
+  Finds the first IQIndex in the set whose arrow direction matches `dir`.
+
+* `dir(IQIndexSet const& inds, IQIndex const& I) -> Arrow`
+
+  Return the arrow direction of the IQIndex `I` as it appears in this IQIndexSet.<br/>
+  (Note that arrows are not used for comparing IQIndices, so the argument `I` provided can
+  have either direction.)
+
+* `hasindex(IndexSet const& inds, Index const& I) -> bool`
+
+  Return `true` if `inds` contains the Index `I`.
+
+* `hastype(IndexSet const& inds, IndexType t) -> bool`
+
+  Return `true` if `inds` contains an Index of IndexType `t`.
+
+* `minM(IndexSet const& inds) -> long`
+
+  Return the size of the smallest Index in the set.
+
+* `maxM(IndexSet const& inds) -> long`
+
+  Return the size of the largest Index in the set.
+
+
+<br/>
+_This page current as of version 2.0.3_

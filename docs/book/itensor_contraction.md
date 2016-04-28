@@ -2,15 +2,16 @@
 
 Tensor contraction is often the most expensive
 step of a tensor algorithm. 
-In tensor libraries where the interface depends on index order,
-tensor contraction code can also be fragile
-and error-prone.
-ITensor makes it possible to transcribe tensor
-contraction diagrams directly to robust high-level code,
-allowing you to focus on the connectivity of a tensor
-network rather than tensor implementation details.
+The code for performing contractions can also be 
+fragile and error-prone if the tensor interface depends
+on the index ordering.
+The goal of ITensor is to make it easy to transcribe
+tensor contraction diagrams directly into code,
+helping you to focus on the connectivity of a tensor
+network. ITensor also works behind the scenes
+to ensure that contractions are performed efficiently.
 
-Pairs of ITensors are contracted by multiplying them
+Pairs of ITensors are contracted 
 using the `*` operator, which <i>contracts all matching indices</i>.
 Some pairs of indices may match, yet you do not want them to be
 contracted. To prevent this from happening, change the prime

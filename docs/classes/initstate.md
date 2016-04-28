@@ -1,5 +1,7 @@
 # InitState #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 A class for initializing matrix product states.
 
 An InitState is constructed by providing (at minimum) an object derived from [[SiteSet|classes/siteset]]. 

@@ -25,6 +25,7 @@
     <li><a class="thispage" href="index.html">Home</a> </li>
     <li><a href="news.html">News</a> </li>
     <li><a href="docs.cgi">Learn</a> </li>
+    <li><a href="support/">Discuss</a> </li>
     <li><a href="collaboration.html">Contributors</a></li>
     </ul>
 </div>
@@ -39,13 +40,13 @@
 <div class="full">
 
     <div id="download" class="rounded">
-        <h4>Clone via <a target="_blank" href="https://github.com/ITensor/ITensor">github</a>.</br>
-        (this is the preferred method&mdash;see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide.)</br>
-        Or download latest <br/> version <a href="https://github.com/ITensor/ITensor/tree/v1.3.0" target="_blank">v1.3.0</a>
-        (<a href="docs.cgi?page=changelog#v1.3.0">changelog</a>)</h4>
+        <h4>Clone via <a target="_blank" href="https://github.com/ITensor/ITensor">github</a></br>
+        (this is the preferred method&mdash;see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide).</br>
+        Or download latest <br/> version <a href="https://github.com/ITensor/ITensor/tree/v2.0.6" target="_blank">v2.0.6</a>
+        (<a href="docs.cgi?page=changelog#v2.0.6">changelog</a>)</h4>
         <ul>
-        <li><a href="https://github.com/ITensor/ITensor/tarball/v1.3.0">tar.gz</a></br>
-        <li><a href="https://github.com/ITensor/ITensor/zipball/v1.3.0">zip</a></br>
+        <li><a href="https://github.com/ITensor/ITensor/tarball/v2.0.6">tar.gz</a></br>
+        <li><a href="https://github.com/ITensor/ITensor/zipball/v2.0.6">zip</a></br>
         </ul>
     </div>
 
@@ -58,23 +59,23 @@
     <li>Efficient matrix product state class</li>
     <li>Quantum number conserving (block-sparse) tensors</li>
     <li>Complex numbers (handled lazily: no efficiency loss if real)</li>
-    <li>Easy to <a href="docs.cgi?page=installing">install</a>; only dependencies are BLAS/LAPACK and C++11
+    <li>Easy to <a href="docs.cgi?page=install">install</a>; only dependencies are BLAS/LAPACK and C++11
     </ul>
     </p>
     <div id="latest" class="rounded">
         <h2 class="rounded">Recent News</h2>
         <ul>
-        <li><a href="news.html#version1.1">ITensor 1.1 (May 2015)</a></li>
-        <li><a href="news.html#periodic">Article: Should you use Periodic Boundary Conditions in DMRG?</a></li>
-        <li><a href="news.html#sherbrooke">ITensor at 2014 Sherbrooke Summer School</a></li>
+        <li><a href="news.html#fermion_string">Tutorial on Fermions and Jordan-Wigner Mapping</a></li>
+        <li><a href="news.html#discuss">New Discussion Forum</a></li>
+        <li><a href="news.html#version2">Version 2.0 released!</a></li>
+        <li><a href="news.html#sherbrooke2016">ITensor at 2016 Sherbrooke Summer School</a></li>
         </ul>
-        <br/>
-        <br/>
+        ITensor on Twitter: <a href="https://twitter.com/ITensorLib" target="_blank">@ITensorLib</a> 
         <br/>
     </div>
 
     <p>
-    ITensors have an "Einstein summation" interface making them nearly as easy to multiply as 
+    ITensors have an <a href="https://en.wikipedia.org/wiki/Einstein_notation" target="_blank">Einstein summation</a> interface making them nearly as easy to multiply as 
     scalars: tensors indices have unique identities
     and matching indices automatically contract when two ITensors are multiplied. 
     This type of interface makes it simple to transcribe tensor network diagrams into correct, efficient code.
@@ -101,7 +102,7 @@
     <li>Type <code>make</code> to build ITensor.
     </ol>
     <p>
-    For more details, read the full <a href="docs.cgi?page=installing">installation</a> instructions.</br>
+    For more details, read the full <a href="docs.cgi?page=install">installation</a> instructions.</br>
     Browse the <a href="docs.cgi">documentation</a> to learn more about ITensor.
     </p>
     
@@ -143,7 +144,7 @@ sweeps.maxm() = 50, 50, 100, 100, 200;
 dmrg(psi,H,sweeps);
 
 <span style="color:#5081AA">//Continue to analyze wavefunction afterward </span>
-Real energy = psiHphi(psi,H,psi);
+Real energy = overlap(psi,H,psi); <span style="color:#5081AA">//&lt;psi|H|psi&gt;</span>
 for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
     {
     <span style="color:#5081AA">//Make site j the MPS "orthogonality center"</span>
@@ -159,7 +160,7 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
 
 <div class="full screenshot">
 <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
-<h2>Multiply Two ITensors</h2>
+<h2>Contract Two ITensors</h2>
 <pre>
 Index a("a",2), 
       b("b",2), 
@@ -193,8 +194,8 @@ Print( R.real(a(2),c(1)) );
 <tr>
 <td>
 E. Miles Stoudenmire</br>
-Perimeter Institute</br>
-<i>emiles__pitp.ca</i> </br>
+UC Irvine</br>
+<i>estouden__uci.edu</i> </br>
 <a href="http://itensor.org/miles">Homepage</a>
 </td>
 <td>
@@ -219,6 +220,16 @@ UC Irvine </br>
 Steve developed the original ITensor concept and implementation and remains actively involved.
 </td>
 </tr>
+
+<tr>
+<td>
+We are grateful for generous support from the Simons Foundation.
+</td>
+<td>
+<img width="400px" src="simons_found_logo.jpg"/>
+</td>
+</tr>
+
 
 </table>
 

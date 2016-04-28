@@ -3,10 +3,14 @@
 import sys
 import re #regular expressions
 from cgi import FieldStorage
+#import markdown2
+#import markdown
+
 import mistune #Markdown renderer
 from pygments import highlight
 from pygments.lexers import CppLexer
 from pygments.formatters import HtmlFormatter
+
 from functools import partial
 # Turn on cgitb to get nice debugging output.
 # Remember to turn off when done debugging, otherwise not secure.
@@ -59,8 +63,23 @@ def processMathJax(matchobj,delimit=""):
     if delimit=="@@":
         return "<span> " + math + " </span>"
     elif delimit=="$$":
-        return "\n<div> " + math + " </div>\n"
+        return "\n<div>\n" + math + "\n</div>\n"
+    elif delimit=="align":
+        return "\n<div>\n " + math + "\n</div>\n"
     return None
+
+def includeFile(matchobj):
+    spacing = len(matchobj.group(1))
+    fname = matchobj.group(2)
+    text = ""
+    try:
+        f = open(fname,'r')
+        white = " "*spacing
+        for line in f:
+            text += white+line
+        return text
+    except:
+        return "&lt;File {} not found&gt;".format(fname)
     
 
 def convert(string):
@@ -70,6 +89,10 @@ def convert(string):
     string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"<a target='_blank' href='http://arxiv.org/abs/cond-mat/\1'>cond-mat/\1</a>",string)
     #Convert github:<sha> links
     string = re.sub(r"github:(\w{5})\w*",r"<a class='github' target='_blank' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
+    #Convert #nn github issue links
+    string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+    string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+    string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
 
     #Convert MathJax @@...@@ -> <span>@@...@@</span>
     #and $$...$$ -> <div>$$..$$</div> to protect
@@ -77,6 +100,9 @@ def convert(string):
     #Latex string
     string = re.sub(r"(@@.+?@@)",partial(processMathJax,delimit="@@"),string)
     string = re.sub(r"(\$\$.+?\$\$)",partial(processMathJax,delimit="$$"),string,flags=re.DOTALL|re.MULTILINE)
+    string = re.sub(r"(\\begin{align}.+?\\end{align})",partial(processMathJax,delimit="align"),string,flags=re.DOTALL|re.MULTILINE)
+
+    string = re.sub(r"([ ]*)include:(\S+)",partial(includeFile),string)
 
     #Convert wiki links to markdown link syntax
     slist = re.split("\[\[(.+?)\]\]",string)
@@ -119,6 +145,29 @@ def convert(string):
     #
     #        mdstring += "<code>\n"+chunk+"</code>\n"
 
+    #
+    # Markdown2 Renderer
+    #
+    #htmlstring = markdown2.markdown(mdstring)
+
+    ##
+    ## Standard Python Markdown Renderer
+    ##
+    #htmlstring = markdown.markdown(mdstring,
+    #             extensions=["markdown.extensions.codehilite",
+    #                         "markdown.extensions.fenced_code"],
+    #                         #"markdown.extensions.nl2br"],
+    #             extension_configs = 
+    #             {
+    #             "markdown.extensions.codehilite" :
+    #                 {
+    #                 "css_class" : "highlight"
+    #                 }
+    #             })
+
+    ##
+    ## Mistune Markdown Renderer
+    ##
     renderer = MyRenderer()
     md = mistune.Markdown(renderer=renderer)
     htmlstring = md.render(mdstring)

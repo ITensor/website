@@ -1,440 +1,653 @@
 # ITensor #
 
-The foundational tensor type of the ITensor Library; the key feature of the ITensor is automatic contraction over all matching indices. 
+An ITensor is a tensor with named indices and an interface which does not depend on the index order.
+The key feature of the ITensor is automatic contraction over all matching indices, 
+similar to Einstein summation.
 
-An ITensor is created with a fixed
-number of Index objects specifying its indices. Because each Index has a unique id, the
-ITensor interface does not depend on a specific Index order. For example, 
-given an ITensor constructed with indices `a` and `b`, `T(a(2),b(5))` and `T(b(5),a(2))` refer to the same component.
+An ITensor is created with a fixed number of Index objects specifying its indices. 
+Because Index objects carry identifying information, nothing about the 
+ITensor interface depends on the Index order. For example, 
+given an ITensor constructed with indices `a` and `b`, 
+calling `T.real(a(2),b(5))` and `T.real(b(5),a(2))` accesses the same tensor element.
+
+In addition to the default dense real storage, ITensors can have other storage types
+such as complex storage or various sparse storage types.
 
 ## Synopsis ##
 
-    Index b1("bond 1",5), b3("bond 3",8),
-          s2("Site 2",2,Site), s3("Site 3",2,Site);
+    auto b1 = Index("bond 1",5);
+    auto b3 = Index("bond 3",8);
+    auto s2 = Index("site 2",2,Site);
+    auto s3 = Index("site 3",2,Site);
 
-    ITensor phi(b1,s2,s3,b3);
+    auto phi = ITensor(b1,s2,s3,b3);
 
-    phi(b1(2),s2(1),s3(2),b3(2)) = -0.5;
-    phi(b1(3),s2(2),s3(1),b3(6)) = 1.4;
-    ...
+    phi.set(b1(2),s2(1),s3(2),b3(2), -0.5);
+    phi.set(b1(3),s2(2),s3(1),b3(6), 1.4);
+    //...
 
-    Real nrm = phi.norm(); //save the original norm of phi
-    phi /= phi.norm(); //division by a scalar
-    Print(phi.norm()); //Prints 1.0
+    auto nrm = norm(phi); //save the original norm of phi
+    phi /= nrm; //division by a scalar
+    Print(norm(phi)); //prints: 1.0
 
-    //The * operator automatically contracts over 
-    //matching indices b1, s2, and s3.
+    //The * operator automatically contracts all matching indices.
     //The prime(phi,b3) method primes the b3 Index of the second
-    //ITensor in the product so it is not summed over 
+    //ITensor in the product so it is not contracted.
 
-    ITensor rho = phi * dag(prime(phi,b3));
+    ITensor rho = phi * prime(phi,b3);
 
-    Print(rho.r()); //prints 2
-    Print(hasindex(rho,b3) ? "true" : "false"); //prints "true"
-    Print(hasindex(rho,prime(b3)) ? "true" : "false"); //prints "true"
-    Print(hasindex(rho,b2) ? "true" : "false"); //prints "false"
+    Print(rank(rho)); //prints 2
+    Print(hasindex(rho,b3)); //prints: true
+    Print(hasindex(rho,prime(b3))); //prints: true
+    Print(hasindex(rho,b2)); //prints: false
 
-    Print(trace(rho,b3,prime(b3))); //Prints 1.0
-
-## Constructors ##
+## Constructors and Accessor Methods
 
 * `ITensor()` 
 
-   Default constructor. A default-constructed ITensor evaluates to false in a boolean context. To construct a rank zero ITensor use the `ITensor(Real val)` constructor below.
+   Default constructor. <br/>
+   A default-constructed ITensor evaluates to false in a boolean context. <br/>
+   To construct a rank-zero (scalar) ITensor use the `ITensor(Cplx val)` constructor below.
 
-* `ITensor(Index i1)` 
+* `ITensor(Index i1, Index i2, ...)` 
 
-  `ITensor(Index i1, Index i2)` 
+   Construct an ITensor with one or more indices. All elements are initially zero.
+   For efficiency reasons no storage is actually allocated when calling this constructor, 
+   but automatically gets allocated when, for example, setting an element.
 
-  `ITensor(Index i1, Index i2, Index i3)` 
+   <div class="example_clicker">Click to Show Example</div>
 
-   ... 
-   
-   (etc. up to 8 Indices)
+      auto s1 = Index("Site 1",2,Site); 
+      auto s2 = Index("Site 2",2,Site);
+      auto T = ITensor(s1,s2);
 
-   Construct an ITensor with the given indices. All components are initialized to zero.
+* `ITensor(Cplx val)` 
 
-   <div class="example_clicker">Show Example</div>
+   Construct a rank zero, scalar ITensor with its single component set to val.
+   If the imaginary part of `val` is exactly zero then the storage of the ITensor will
+   be real.<br/>
+   Because Real numbers automatically convert to Cplx, calling `ITensor(3.14)` calls 
+   this constructor.
 
-        Index s1("Site 1",2,Site), s2("Site 2",2,Site);
-        ITensor T(s1,s2);
-        Print(T.r()); //Prints 2, the rank of T
-        Print(T.norm()); //Prints 0
+   <div class="example_clicker">Click to Show Example</div>
 
-* `ITensor(Real val)` 
+      auto R = ITensor(2.71);
+      auto C = ITensor(3+4_i);
 
-   Construct a rank zero, scalar ITensor with single component set to val.
+* `ITensor(std::vector<Index> inds)`<br/>
+  `ITensor(std::array<Index> inds)`<br/>
+  `ITensor(std::initializer_list<Index> inds)`
 
-* `ITensor(IndexVal iv1)` 
-
-  `ITensor(IndexVal iv1, IndexVal iv2)` 
-
-  `ITensor(IndexVal iv1, IndexVal iv2, IndexVal iv3)` 
-
-   ... etc. up to 8 [[IndexVals|classes/indexval]]
-
-   Construct an ITensor with indices `iv1`, `iv2`, etc. ([[IndexVals|classes/indexval]] interpreted as objects of type [[Index|classes/index]]), such that the component corresponding to `iv1.i`, `iv2.i`, etc. is set equal to 1 and all other components are set equal to zero. For example, constructing an ITensor `T` by calling `ITensor T(a(1),b(2),c(3));` makes all components of T zero except for `T(a(1),b(2),c(3))==1`.
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site);
-
-        ITensor T(s1(2),s2(2));
-        Print(T(s1(2),s2(2)); // Prints 1
-        Print(T(s1(1),s2(2)); // Prints 0, similarly for other components
+  Construct an ITensor with indices provided in a vector, array, or initializer_list.
+  All elements are initially set to zero.
 
 
-## Accessor Methods ##
-
-* `int r()`
+* `.r() -> int`
 
    Return rank (number of indices) of this ITensor.
 
-   <div class="example_clicker">Show Example</div>
+   <div class="example_clicker">Click to Show Example</div>
 
-        Index s1("Site 1",2,Site), 
-              l("Bond index",10,Link);
+      auto s1 = Index("Site 1",2,Site); 
+      auto s2 = Index("Site 2",2,Site);
+      auto T = ITensor(s1,s2);
 
-        ITensor T(s1,l);
-        Print(T.r()); //prints 2 since T has two indices
+      Print(T.r()); //prints: T.r() = 2
 
 
-* `bool isComplex()`
+* `.inds() -> IndexSet const&`
 
-   Return `true` if this ITensor has a non-zero imaginary part, otherwise `false`.
+   Return a reference to the indices of this ITensor, as an [[IndexSet|classes/indexset]] container.
+   This method is useful for iterating over all of the indices of an ITensor.
 
-   <div class="example_clicker">Show Example</div>
+   <div class="example_clicker">Click to Show Example</div>
 
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site);
+        auto s1 = Index("Site 1",2,Site); 
+        auto s2 = Index("Site 2",2,Site);
+        auto l1 = Index("Link 1",10,Link);
+        auto l2 = Index("Link 2",24,Link);
 
-        ITensor R(s1,s2),
-                I(s1,s2);
-        R.randomize();
-        I.randomize();
-
-        ITensor T = R + Complex_i*I;
-
-        Print(R.isComplex()); //prints 0 (false)
-        Print(I.isComplex()); //prints 0 (false)
-        Print(T.isComplex()); //prints 1 (true)
-
-* `const IndexSet<Index>& indices()`
-
-   Return (a const reference to) the indices of this ITensor, stored internally in an [[IndexSet|classes/indexset]]<Index> container.
-   This enables, for example, iteration over all of the indices. For more possibilities see the documentation on [[IndexSet|classes/indexset]].
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              l1("Link 1",10,Link),
-              l2("Link 2",24,Link);
-
-        ITensor T(l1,s1,s2,l2);
+        auto T = ITensor(l1,s1,s2,l2);
 
         //Print out just the Link indices of T
-        Foreach(const Index& I, T.indices())
+        for(auto& I : T.inds())
             {
-            if(I.type() == Link)
-                cout << I << endl;
+            if(I.type() == Link) println(I);
             }
 
-## Element Access Methods ##
+* `explicit operator bool()`
 
-* `Real& operator()(IndexVal iv1, IndexVal iv2, ...)` 
+  Evaluate an ITensor in a boolean context. Evaluates to `false` only if an ITensor is default constructed.
 
-   Access component of this ITensor such that `i1.ind` is set to value `i1.i`, `i2.ind` to `i2.i`, etc. For example, given a matrix-like ITensor `M` with indices `r` and `c`, can access the (2,1) component by calling `M(r(2),c(1))`. Result is independent of the order of the arguments and depends only on the set of IndexVals provided. For the previous example, `M(r(2),c(1)) == M(c(1),r(2))`.
+   <div class="example_clicker">Click to Show Example</div>
 
-   <div class="example_clicker">Show Example</div>
+        auto T1 = ITensor();
+        if(T1) println("T1 evaluates to true");
+        else   println("T1 evaluates to false");
+        //prints: T1 evaluates to false
 
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              la("link A",4,Link);
+        auto T2 = ITensor(s1,s2);
+        if(T2) println("T2 evaluates to true");
+        else   println("T2 evaluates to false");
+        //prints: T2 evaluates to true
 
-        ITensor T(s1,s2,la);
-        T(s1(1),s2(1),la(3)) = 0.113;
-        T(s1(2),s2(1),la(4)) = -0.214;
-        Print(T(s1(1),s2(1),la(3))); //Prints 0.113
-        Print(T(s2(1),s1(1),la(3))); //Also prints 0.113
-        Print(T(la(4),s1(2),s2(1))); //Prints -0.214
+## Element Access Methods
 
-* `Real toReal()` 
+* `.real(IndexVal iv1, IndexVal iv2, ...) -> Real`
 
-  Return value of a rank zero, scalar ITensor. If the ITensor has rank greater than zero or if ITensor is complex (see below), throws an exception.
+  Return the element of this ITensor corresponding to the provided IndexVals as a Real number.
 
-  <div class="example_clicker">Show Example</div>
+  An [[IndexVal|classes/indexval]] `iv` is a pairing of an Index `iv.index` and an integer `iv.val`.
+  The element returned is the one corresponding to holding `iv1.index` equal to `iv1.val`; `iv2.index` equal
+  to `iv2.val`; etc.
 
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              la("link A",4,Link);
+  If the element to be accessed as a non-zero imaginary part, this method throws an exception.
 
-        ITensor T(s1,s2,la);
-        T(s1(1),s2(1),la(3)) = 0.113;
-        T(s1(2),s2(1),la(4)) = -0.214;
+  <div class="example_clicker">Click to Show Example</div>
 
-        ITensor T2 = T * T; //Calculate T squared - contracts over all indices
-        Print(T2.r()); //Prints 0: T2 is a scalar
-        Print(T2.toReal()); //Prints 0.058565, the squared norm of T
+      //Make a scalar ITensor
+      auto S = ITensor(2.7);
+      //Access its value as a real number
+      auto rs = S.real();
+
+      //Make a random rank 3 ITensor
+      auto T = ITensor(i,j,k);
+      randomize(T);
+      //Get one of its elements
+      auto rt = T.real(j(2),k(1),i(4));
 
 
-* `Complex toComplex()`
+* `.cplx(IndexVal iv1, IndexVal iv2, ...) -> Cplx`
 
-  Return value of a complex, scalar (rank zero) ITensor. If the ITensor has rank greater than zero, throws an exception.
+  Return the element of this ITensor corresponding to the provided IndexVals as a Cplx number.
 
-## Operators ##
+  This method behaves identically to the `.real` method described above, except its return type is a complex
+  number. It succeeds whether the ITensor has complex or real storage.
 
-* `ITensor& operator*=(ITensor other)`
+  <div class="example_clicker">Click to Show Example</div>
 
-  `ITensor operator*(ITensor A, ITensor B)`
+      //Make a complex scalar ITensor
+      auto S = ITensor(2.7-4_i);
+      //Access its value as a complex number
+      auto zs = S.cplx();
 
-  Contracting product. A*B contracts (sums) over all Index pairs in common between A and B. 
+* `.set(IndexVal iv1, IndexVal iv2, ... , Cplx z)`
 
-  <div class="example_clicker">Show Example</div>
+  Set the element of this ITensor corresponding to the provided IndexVals to the value `z`.
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+  If `z` has exactly zero imaginary part and the ITensor storage is real, it will not be 
+  switched to complex storage.
 
-        ITensor A(l1,s2,s3,l3);
-        //set components of A ...
+  Because Real numbers are automatically convertible to Cplx, one can plug Real numbers into this method.
 
-        ITensor B(l1,s2,prime(s3),prime(l3));
-        //set components of B ...
+  <div class="example_clicker">Click to Show Example</div>
 
-        ITensor R = A * B; //Contracts over l1 and s2
+      //Make a rank 3 ITensor
+      auto T = ITensor(i,j,k);
 
-        Print(R.r()); //Prints 4, rank of R
-        Print(hasindex(R,s3)); //Prints 1 (true)
-        Print(hasindex(R,l3)); //Prints 1 (true)
-        Print(hasindex(R,prime(s3))); //Prints 1 (true)
-        Print(hasindex(R,prime(l3))); //Prints 1 (true)
-        Print(hasindex(R,l1)); //Prints 0 (false)
+      //Set an element to a real number
+      T.set(k(2),j(2),i(3),-1.24);
 
-* `ITensor& operator+=(ITensor other)`
+      //Set an element to a complex number
+      T.set(k(4),j(1),i(2),3.2-4.7_i);
 
-  `ITensor& operator-=(ITensor other)`
+<a name="primelev_methods"></a>
+## Prime Level Methods
 
-  (and related free methods)
+* `.noprime(IndexType type = All)`
 
-  ITensor addition and subtraction. Adds ITensors element-wise. Both ITensors must have the same set of indices.
+  Set the prime level of all indices to zero. (Optionally only those matching the specified [[IndexType|classes/indextype]].)
 
-  <div class="example_clicker">Show Example</div>
+* `.noprime(IndexType type1, IndexType type2, ...)`
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+  Set the prime level of all indices matching the specified IndexTypes to zero.
 
-        ITensor A(l1,s2,s3,l3),
-                B(l1,s2,s3,l3);
-        //set components of A and B...
+* `.prime(int inc = 1)`
 
-        ITensor S = A + B; //sum A and B
-        ITensor D = A - B; //subtract B from A
+  Increment the prime level of all indices by 1, or an optional amount `inc`.
+  
+* `.prime(Index i1, Index i2, ..., int inc = 1)`
 
-* `ITensor& operator*=(Real fac)`
+  Increment the prime level of the specified indices by 1, or by an optional amount `inc`.
 
-  `ITensor& operator/=(Real fac)`
+* `.prime(IndexType type1, IndexType type2, ..., int inc = 1)`
 
-  `ITensor operator-()`
+  Increment the prime level of all indices of the specified types by 1, or by an optional amount `inc`.
 
-  (and related free methods)
+* `.primeExcept(Index i1, Index i2, ..., int inc = 1)`
 
-  Multiplication by a real scalar, division by a real scalar, and negation. Factor is applied to all elements of the ITensor
-  (handled lazily internally).
+  Increment the prime level of all indices, _except_ those specified, by 1, or by an optional amount `inc`.
 
-* `ITensor& operator*=(Complex z)`
+* `.primeExcept(IndexType type1, IndexType type2, ..., int inc = 1)`
 
-  Multiplication by a Complex scalar (where Complex is a typedef for std::complex<Real>). Useful for creating complex ITensors
-  by using the idiom `ITensor T = A + B*Complex_i` where A and B are real ITensors and Complex_i is a constant equal to
-  Complex(0,1).
+  Increment the prime level of all indices, _except_ those matching the specified types, by 1, or by an optional amount `inc`.
 
-  <div class="example_clicker">Show Example</div>
 
-        //Create a random complex ITensor T
+## Operators Supported By ITensors ##
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+In this section, expressions like `ITensor * ITensor -> ITensor` are pseudocode
+indicating that two ITensors can be multiplied using the `*` operator,
+and that the result will be an ITensor.
 
-        ITensor A(l1,s2,s3,l3),
-                B(l1,s2,s3,l3);
-        A.randomize();
-        B.randomize();
+* `ITensor * ITensor -> ITensor` <br/>
+  `ITensor *= ITensor`
 
-        ITensor T = A+B*Complex_i;
-
-        Print((realPart(T)-A).norm()); //prints zero
-        Print((imagPart(T)-B).norm()); //prints zero
-
-* `ITensor& operator/=(ITensor other)`
-
-  `ITensor operator/(ITensor A, ITensor B)`
-
-  Non-contracting product. A/B creates a new tensor out of A and B by "merging" any common indices
-  according to the rule R<sub>ijk</sub> = A<sub>ik</sub> B<sub>jk</sub> (no sum over k). Here i, j, and k
-  could be individual indices or groups of indices. 
+  Contracting product. `A * B` contracts (sums) over all indices common to A and B. 
+  The `*=` version overwrites the ITensor on the left afterward.
 
   <div class="example_clicker">Show Example</div>
 
-        Index s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+        auto l1 = Index("link 1",4);
+        auto s2 = Index("Site 2",2,Site); 
+        auto s3 = Index("Site 3",2,Site);
+        auto l3 = Index("link 3",4);
 
-        ITensor A(s2,s3,l3);
-        //set components of A ...
+        auto A = ITensor(l1,s2,s3,l3);
 
-        ITensor B(s3,l3);
-        //set components of B ...
+        auto B = ITensor(l1,s2,prime(s3),prime(l3));
 
-        ITensor R = A * B; //merge indices s3 and l3
+        //... set components of A and B ...
 
-        Print(R.r()); //Prints 3, rank of R
-        Print(hasindex(R,s2)); //Prints 1 (true)
-        Print(hasindex(R,s3)); //Prints 1 (true)
-        Print(hasindex(R,l3)); //Prints 1 (true)
+        ITensor R = A * B; //contracts l1 and s2
 
-## Prime Level Methods ##
+        Print(rank(R)); //prints 4, the rank of R
+        Print(hasindex(R,s3)); //prints "true"
+        Print(hasindex(R,l3)); //prints "true"
+        Print(hasindex(R,prime(s3))); //prints "true"
+        Print(hasindex(R,prime(l3))); //prints "true"
+        Print(hasindex(R,l1)); //prints "false"
 
-* `ITensor& prime(int inc = 1)`
+* `ITensor + ITensor -> ITensor`<br/>
+  `ITensor - ITensor -> ITensor`<br/>
+  `ITensor += ITensor`<br/>
+  `ITensor -= ITensor`
 
-  Increment prime level of all indices by 1. (Optionally by amount `inc`.) Returns a reference to the modified ITensor.
-
-  <div class="example_clicker">Show Example</div>
-
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
-
-        ITensor A(l1,s2,s3,l3);
-
-        A.prime();
-        Print(hasindex(A,prime(s2))); //Prints 1 (true)
-        Print(hasindex(A,s2));         //Prints 0 (false)
-        Print(hasindex(A,prime(s3))); //Prints 1 (true)
-        Print(hasindex(A,prime(l1))); //Prints 1 (true)
-        Print(hasindex(A,prime(l3))); //Prints 1 (true)
-
-* `ITensor& prime(Index I, int inc = 1)`
-
-  Increment prime level of only Index `I` by 1. (Optionally by amount `inc`.)
-  Throws an exception of ITensor does not have Index `I`. Returns a reference to the modified ITensor.
+  ITensor addition and subtraction. Adds ITensors element-wise. 
+  Both ITensors must have the same set of indices, though they can be in
+  different orders.
 
   <div class="example_clicker">Show Example</div>
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+        auto l1 = Index("link 1",4);
+        auto s2 = Index("Site 2",2,Site);
+        auto s3 = Index("Site 3",2,Site);
+        auto l3 = Index("link 3",4);
 
-        ITensor A(l1,s2,s3,l3);
+        auto A = ITensor(l1,s2,s3,l3);
 
-        A.prime(s3);
-        Print(hasindex(A,prime(s3))); //Prints 1 (true)
-        Print(hasindex(A,s3));         //Prints 0 (false)
-        Print(hasindex(A,prime(s2))); //Prints 0 (false)
-        Print(hasindex(A,prime(l1))); //Prints 0 (false)
-        Print(hasindex(A,prime(l3))); //Prints 0 (false)
-        Print(hasindex(A,s2));         //Prints 1 (true)
-        //etc.
+        auto B = ITensor(l3,s3,s2,l1);
 
-* `ITensor& prime(IndexType t, int inc = 1)`
+        //...set components of A and B...
 
-  Increment prime level of every Index of type `t`. (Optionally by amount `inc`.) Returns a reference to the modified ITensor.
+        ITensor S = A + B; //sum of A and B
+        ITensor D = A - B; //difference of A and B
+
+* `-ITensor -> ITensor`
+
+  Negate each element of an ITensor.
+
+* `ITensor * Real -> ITensor`<br/>
+  `Real * ITensor -> ITensor`<br/>
+  `ITensor / Real -> ITensor`<br/>
+  `ITensor *= Real`<br/>
+  `ITensor /= Real`<br/>
+
+  Multiply or divide each element of an ITensor by a real scalar.
+
+* `ITensor * Cplx -> ITensor`<br/>
+  `Cplx * ITensor -> ITensor`<br/>
+  `ITensor / Cplx -> ITensor`<br/>
+  `ITensor *= Cplx`<br/>
+  `ITensor /= Cplx`<br/>
+
+  Multiply or divide each element of an ITensor by a complex scalar. 
+
+  If the ITensor initially has real storage
+  and the complex scalar has a non-zero imaginary part, the storage automatically
+  converts to complex storage. If the complex number has exactly zero imaginary part, the ITensor
+  will continue to have real storage.
+
+* `ITensor / ITensor -> ITensor`<br/>
+  `ITensor /= ITensor`<br/>
+
+  Non-contracting product (has no relationship to division). 
+  `A / B` creates a new tensor out of A and B by "merging" any common indices
+  according to the rule R<sub>ijk</sub> = A<sub>ik</sub> B<sub>jk</sub> (no sum over k). 
+  (Here i, j, and k could be individual indices or represent groups of indices.)
 
   <div class="example_clicker">Show Example</div>
 
-        Index l1("link 1",4),
-              s2("Site 2",2,Site), 
-              s3("Site 3",2,Site),
-              l3("link 3",4);
+        auto s2 = Index("Site 2",2,Site); 
+        auto s3 = Index("Site 3",2,Site);
+        auto l3 = Index("link 3",4);
 
-        ITensor A(l1,s2,s3,l3);
+        auto A = ITensor(s2,s3,l3);
+        auto B = ITensor(s3,l3);
 
-        A.prime(Site);
-        Print(hasindex(A,prime(s2))); //Prints 1 (true)
-        Print(hasindex(A,s2));         //Prints 0 (false)
-        Print(hasindex(A,prime(s3))); //Prints 1 (true)
-        Print(hasindex(A,l1));         //Prints 1 (true)
+        //...set components of A and B...
 
-* `ITensor& noprime(IndexType t = All)`
+        ITensor R = A / B; //merge indices s3 and l3
 
-  Set prime level of all indices to 0. (Optionally only indices of type `t`.) Returns a reference to the modified ITensor.
+        Print(rank(R)); //prints 3, rank of R
+        Print(hasindex(R,s2)); //prints "true"
+        Print(hasindex(R,s3)); //prints "true"
+        Print(hasindex(R,l3)); //prints "true"
 
-* `ITensor& noprime(Index I)`
+## Complex ITensor Methods
 
-  Set prime level of Index `I` to 0. Throws an exception if ITensor does not have Index `I`. Returns a reference to the modified ITensor.
+* `.conj()`
+  
+   Complex conjugate each element of this ITensor.
 
-* `ITensor& mapprime(int plevold, int plevnew, IndexType t = All)`
+* `.takeReal()`
+  
+   Replace each element of this ITensor with their real part. Afterwards the ITensor
+   will have real storage.
 
-  Change prime level of all indices having prime level `plevold` to `plevnew`. (Optionally only if their type matches `t`.) 
-  Returns a reference to the modified ITensor.
+* `.takeImag()`
+  
+   Replace each element of this ITensor with their imaginary part. Afterwards the ITensor
+   will have real storage.
 
-## Miscellaneous Methods ##
+* `.dag()`
+  
+   Complex conjugate each element of this ITensor. Same as `.conj()` but
+   useful for interface compatibility with IQTensor.
+   
+## Elementwise Transformation Methods
 
-* `randomize()`
+* `.fill(Cplx z)`
 
-  Randomize all elements of this ITensor. Optimized more for speed than for true randomness.
+  Replace all elements with the number z. If z has zero imaginary part, the ITensor
+  will have real storage afterward. Note that Real scalars automatically convert
+  to Cplx so this method can be used for either type.
 
-* `Real norm()`
+  <div class="example_clicker">Click to Show Example</div>
 
-  Return the norm of this ITensor, that is, the Euclidean norm when treating the ITensor as a vector.
-  Equivalent to, but much more efficient than, `sqrt((T*T).toReal())` for some real ITensor `T`.
+      auto T = ITensor(i,j,k);
 
-* `Real sumels()`
+      T.fill(1.);
+      T.fill(2.+3._i);
 
-  Return the sum of all elements of this ITensor.
+      PrintData(T);
 
-* `ITensor& mapElems(const Callable& f)`
+* `.generate(Func f)`
 
-   Apply the function f to each element of this ITensor, where f is a function, or function object, mapping Real to Real.
-   Returns a reference to this ITensor on return.
+  Set each element of this ITensor by repeatedly calling the function `f()`.
 
-   <div class="example_clicker">Show Example</div>
+  For example, if `f` is a random number generator, then the ITensor elements
+  will be randomized by calling `f` once for each element.
 
-        //Define a function object type
-        struct Sqrt
-            {
-            Real
-            operator()(Real x) const { return sqrt(fabs(x)); }
-            };
+  <div class="example_clicker">Click to Show Example</div>
 
-        ...
+      auto T = ITensor(i,j,k);
 
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site);
-        ITensor T(s1,s2);
-        //...set elements of T...
+      //create a lambda function
+      //which return a scalar
+      auto c = 1;
+      auto countUp = [&c]() { return c++; };
 
-        //Take the square root of each element of T
-        T.mapElems(Sqrt());
+      T.generate(countUp);
+
+      PrintData(T);
+
+* `.apply(Func f)`
+
+  Transform this ITensor by applying the function `f` to each element
+  and replacing the element with the return value of `f`.
+  
+  If the ITensor has real storage, the function `f` is only required
+  to accept Real arguments (accepting a Cplx argument works 
+  too since Real is automatically convertible to Cplx).
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,j,k);
+      randomize(T);
+
+      //create a lambda function
+      //which returns the square of its argument
+      auto square = [](Real r) { return r*r; };
+
+      T.apply(square);
+
+      PrintData(T);
+
+* `.visit(Func f)`
+
+  Apply the function `f` to each element of this ITensor.
+  Calling `visit` has no effect on an ITensor but is useful
+  for inspecting each element. For example, it could be 
+  print elements meeting a certain criterion.
+  
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,j,k);
+      randomize(T);
+
+      //create a lambda function
+      //which remembers the largest 
+      //magnitude number given to it
+      Real max_mag = 0.;
+      auto maxComp = [&max_mag](Real r)
+        {
+        if(std::fabs(r) > max_mag) max_mag = std::fabs(r);
+        };
+
+      T.visit(maxComp);
+
+      println("Largest magnitude elt of T is ",max_mag);
 
 
-* `ITensor& takeRealPart()`
-    
-  Set an ITensor to its real part, dropping its imaginary part. Returns a reference to the resulting ITensor.
+## Functions for Modifying ITensors
 
-* `ITensor& takeImagPart()`
-    
-  Set an ITensor to its imaginary part, dropping its real part. Returns a reference to the resulting ITensor.
+* `randomize(ITensor & T, Args args = Args::global())`
+
+  Randomize all elements the ITensor T. Optimized more for speed than for true randomness.
+  Afterward all elements will be real by default.
+
+  Optionally `randomize` accepts a named argument "Complex" which if set to `true`
+  will make the ITensor have random complex elements.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,j,k);
+      randomize(T);
+      randomize(T,{"Complex",true});
+
+## Functions for Transforming ITensors
+
+* `apply(ITensor T, Func f) -> ITensor`
+  
+  Return the ITensor resulting from transforming each element of T by calling `f(x) -> y`. 
+  Works similarly to the `.apply` method discussed above but creates a new 
+  ITensor instead of modifying an ITensor in-place.
+
+* `random(ITensor T, Args args = Args::global()) -> ITensor`
+
+  Return a new ITensor with the same indices as T but with randomized, real elements.
+
+  Optionally `random` accepts a named argument "Complex" which if set to `true`
+  will make the returned ITensor have random complex elements.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,j,k);
+
+      auto RT = random(T);
+
+      auto CT = random(T,{"Complex",true});
 
 
-## Advanced Methods ##
+* `conj(ITensor T) -> ITensor` <br/>
+  `dag(ITensor T) -> ITensor`
 
-These are methods that either require some knowledge of the internals of an ITensor or otherwise are not intended for typical use cases.
+  Return the complex conjugate of T.
 
-* `const LogNumber& scale()`
+  `dag(T)` has the same result as `conj(T)` and is defined for interface compatibility with IQTensor.
 
-   Return (a const reference to) the scale factor of this ITensor, which is of type [[LogNumber|classes/lognumber]]. 
-   The actual value of an ITensor element is its internally stored value times the scale factor. This facilitates dealing with ITensors whose typical
-   non-zero elements differ by orders of magnitude and allows certain optimizations such as handling scalar multiplication lazily.
+* `realPart(ITensor T) -> ITensor`
 
-* `scaleTo(const LogNumber& newscale)`
+  Return just the real part of an ITensor T.
 
-   Set the scale factor of this ITensor to be newscale. This is a logically const operator on an ITensor and does not change the value of its elements, only
-   internally stored values relative to the (changed) scale factor.
+* `imagPart(ITensor T) -> ITensor`
+
+  Return just the imaginary part of an ITensor T.
+
+## ITensor Prime Level Transformations
+
+For the following functions, the symbol `...` is pseudocode
+which signifies these functions forward their arguments
+internally to the ITensor class method with the same name.
+
+See <a href="#primelev_methods">the ITensor prime level methods</a>
+for details about the possible arguments to these functions.
+
+* `prime(ITensor T, ...) -> ITensor`
+  
+  Return a copy of T, calling `.prime(...)` on this copy before returning it.
+  
+* `primeExcept(ITensor T, ...) -> ITensor`
+  
+  Return a copy of T, calling `.primeExcept(...)` on this copy before returning it.
+
+* `noprime(ITensor T, ...) -> ITensor`
+  
+  Return a copy of T, calling `.noprime(...)` on this copy before returning it.
+
+* `mapprime(ITensor T, ...) -> ITensor`
+  
+  Return a copy of T, calling `.mapprime(...)` on this copy before returning it.
+
+## Extracting Properties of ITensors
+
+* `rank(ITensor T) -> long` <br/>
+  `order(ITensor T) -> long` <br/>
+
+  Return the number of indices of T.
+
+* `isComplex(ITensor T) -> bool` <br/>
+
+  Return `true` if the ITensor has complex storage, otherwise `false`. 
+  Returns true even if the norm of the imaginary part happens to be zero.
+
+* `norm() -> Real`
+
+  Return the Euclidean norm of this ITensor 
+  (the square root of the sum of squares of its elements).
+  Equivalent to, but much more efficient than, `sqrt((T*T).real())`.
+  
+  For complex ITensors, it is equivalent to `sqrt((dag(T)*T).cplx().real())`
+
+* `sumels(ITensor const& T) -> Real` <br/>
+  `sumelsC(ITensor const& T) -> Cplx` <br/>
+
+  Return the sum of all elements of this ITensor. If the ITensor has a non-zero imaginary
+  part, throws an exception.
+
+  For a function that works for real or complex ITensors, use `sumelsC`.
+
+## Inspecting ITensor Indices
+
+* `hasindex(ITensor T, Index i) -> bool`
+
+  Returns `true` if ITensor T has an Index exactly matching `i` (including its prime level).
+
+* `findtype(ITensor T, IndexType type) -> Index`
+
+  Return the first Index of T whose IndexType matches `type`. If no such Index is found, returns
+  a default-constructed Index (which evaluates to `false` in a boolean context).
+
+  <div class="example_clicker">Click to Show Example</div>
+
+       auto s = Index("s",3,Site);
+       auto l = Index("l",10,Link);
+
+       auto T = ITensor(s,l);
+
+       auto x = findtype(T,Site);
+       if(x) println("Found Site Index ",x);
+
+       auto y = findtype(T,MyType);
+       if(!y) println("T does not have a MyType Index");
+
+* `commonIndex(ITensor A, ITensor B, IndexType t = All) -> Index`
+
+  Return the first Index found on both A and B. If A and B
+  have no Index in common, returns a default constructed Index
+  (which will evaluate to `false` in a boolean context).
+
+  If the optional IndexType `t` is provided, only a common
+  Index of that type will be returned if found.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto A = ITensor(i,j,k);
+      auto B = ITensor(k,m,n);
+
+      auto c = commonIndex(A,B);
+      if(c) println("Common Index of A and B is ",c);
+
+* `uniqueIndex(ITensor A, ITensor B, IndexType t = All) -> Index`
+
+  Return the first Index of A found NOT to be on B.
+
+  If all of A's indices are also present on B, returns a 
+  default constructed Index
+  (which will evaluate to `false` in a boolean context).
+
+  If the optional IndexType `t` is provided, only a unique
+  Index of that type will be returned if found.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto A = ITensor(i,j);
+      auto B = ITensor(k,j);
+
+      auto u = uniqueIndex(A,B);
+
+      Print(u == i); //prints "true"
+
+* `findindex(ITensor T, Cond c) -> Index`
+
+  Return the first Index of T for which the condition function `c(i)` returns `true`.
+  If no Index matches the condition, returns 
+  a default-constructed Index (which evaluates to `false` in a boolean context).
+
+  <div class="example_clicker">Click to Show Example</div>
+
+       auto s = Index("s",3,Site);
+       auto l = Index("l",10,Link);
+
+       auto T = ITensor(s,l);
+
+       auto sizeIs3 = [](Index const& i) { return i.m()==3; };
+       auto x = findindex(T,sizeIs3);
+       if(x) printfln("Found Index %s with size of 3",x);
+
+<!-- Still need to document:
+
+* ITensor * IndexVal -> ITensor
+  IndexVal * ITensor -> ITensor
+
+* IndexVal * IndexVal -> ITensor
+
+* IndexVal * Real -> ITensor
+  Real * IndexVal -> ITensor
+
+* `randomTensor`
+* `randomTensorC`
+* `matrixTensor`
+* `ordered`
+* `orderedC`
+* `swapPrime`
+* `multSiteOps`
+* `read/write`
+
+And developer/advanced methods.
+
+-->
+
+<br/>
+_This page current as of version 2.0.3_
+

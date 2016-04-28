@@ -4,9 +4,9 @@ The ITensor, or intelligent tensor, is the basic tensor of the ITensor library.
 
 The simplest way to construct an ITensor is to provide its indices:
 
-    auto i = Index("index i",2),
-         j = Index("index j",3),
-         k = Index("index k",4);
+    auto i = Index("index i",2);
+    auto j = Index("index j",3);
+    auto k = Index("index k",4);
 
     auto T = ITensor(i,j,k);
 
@@ -21,14 +21,14 @@ Alternatively you can call `T.r()`.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/itensor.h"
+    #include "itensor/all_basic.h"
     using namespace itensor;
 
     int main()
     {
-    auto i = Index("index i",2),
-         j = Index("index j",3),
-         k = Index("index k",4);
+    auto i = Index("index i",2);
+    auto j = Index("index j",3);
+    auto k = Index("index k",4);
     
     auto T = ITensor(i,j,k);
     
@@ -36,6 +36,10 @@ Alternatively you can call `T.r()`.
 
     return 0;
     }
+
+In applied mathematics, the number of 
+indices is often called the "order" of a tensor. Therefore we also provide
+`order(T)` as an alternative to `rank(T)`.
 
 <a name="elements"></a>
 ### Accessing ITensor Elements
@@ -46,11 +50,14 @@ To set a particular element, or component, of an ITensor call its `.set` method:
 
 This element now has the value 4.56.
 
-In a more conventional tensor interface, the above operation would look like:
+In a more conventional tensor interface, the above operation would look like
 
     T(2,1,3) = 4.56; //not actual ITensor code!!
 
-The reason the indices are passed along with their values in the ITensor `.set` method
+where the user would have to remember that the first entry corresponds to index
+i, the second to index j, and the third to index k.
+
+For an ITensor, the reason the indices are passed to the `.set` method along with their values
 is that nothing about the ITensor interface requires knowing the index order.
 
 If we gave the Index-value pairs such as `j(2)` in a different order,
@@ -58,7 +65,9 @@ the `.set` method still accesses the correct element. A call such as
 
     T.set(k(3),i(2),j(1),4.56);
 
-has exactly the same outcome as the one above.
+has exactly the same outcome as the call
+
+    T.set(i(2),j(1),k(3),4.56);
 
 We can retrieve this element by calling the `.real` method:
 
@@ -66,8 +75,8 @@ We can retrieve this element by calling the `.real` method:
     println("el = ",el);
     //prints: el = 4.56
 
-This method is named "real" because it says we want the element to be
-returned as a real number.
+This method is named "real" because it says the type of the element
+returned is a real number.
 
 We can also set elements of ITensors to be complex numbers:
 
@@ -86,6 +95,8 @@ Calling `.cplx` always succeeds even if the tensor has only real elements.
 
 A convenient way to print and ITensor is to use the `Print` macro:
 
+    #include "itensor/all_basic.h"
+    
     Print(T);
     //prints: 
     // T = 

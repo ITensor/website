@@ -1,13 +1,34 @@
 # IndexVal #
 
-An IndexVal represents an Index fixed to a specific value.
+An IndexVal conceptually represents an Index fixed to a specific value.
 
-IndexVal holds both an Index in a field called "`index`" and 
-an integer "`i`" representing a particular value the Index can take.
-This value is 1-indexed and must be >= 1 and <= `index.m()`.
+IndexVal holds both an Index called "`index`" and 
+an integer "`val`" representing a particular value the Index can take.
+The value is 1-indexed and must be in the range [1,m] where m is the size
+of the Index.
 
 
-## Constructors ##
+## Synopsis
+
+    auto s1 = Index("Site 1",4,Site);
+    auto iva = IndexVal(s1,3),
+    auto ivb = IndexVal(s1,1);
+    Print(iva.val); //prints: iva.val = 3
+    Print(ivb.val); //prints: ivb.val = 1
+
+    //Can make an IndexVal by "plugging" an
+    //integer into an Index
+    auto ivc = s1(4);
+    Print(ivc.val); //prints: ivc.val = 4
+    Print(ivc.index); //prints: ("Site 1",4,Site)
+
+## Public Data Members ##
+
+* `Index index`
+
+* `long val`
+
+## Class Methods
 
 * `IndexVal()`
 
@@ -16,55 +37,37 @@ This value is 1-indexed and must be >= 1 and <= `index.m()`.
 * `IndexVal(Index I, int i)`
 
   Construct an IndexVal from an Index `I` and integer value `i`.
-  The value `i` must be >= 1 and <= `I.m()`.
+  The value `i` must be between 1 and `I.m()`, inclusive
 
-  <div class="example_clicker">Show Example</div>
+* `.m() -> long` 
 
-        Index s1("Site 1",4,Site);
-        IndexVal iva(s1,3),
-                 ivb(s1,1);
-        Print(iva.i); //Prints 3
-        Print(ivb.i); //Prints 1
+  Return the bond dimension of the `Index` "index".
 
-## Public Data Members ##
-
-* `Index index`
-
-  The index referred to by this `IndexVal`. Conceptually and IndexVal represents fixing the `Index index` to the integer `i`.
-
-* `int i`
-
-  The value of this IndexVal. For an IndexVal `iv`, `iv.i` must be >= 1 and <= `iv.m()`.
-
-## Accessor Methods ##
-
-* `int m()` 
-
-  Return the bond dimension of the `Index` `index`.
-
-## Prime Level Methods ##
-
-* `prime(int inc = 1)`  
+* `.prime(int inc = 1)`  
 
   Increment prime level of `index`. (Optionally, increment by amount `inc`.)
 
-* `prime(IndexType type, int inc = 1)`  
+* `.prime(IndexType type, int inc = 1)`  
 
   Increment prime level of `index` if Index type() matches type. (Optionally, increment by amount `inc`.)
 
-* `noprime(IndexType type = All)`  
+* `.noprime(IndexType type = All)`  
 
   Reset prime level of `index` to zero. (Optionally, only if `type()==type` or `type` is `All`.)
 
-* `mapprime(int plevold, int plevnew, IndexType type = All)`  
+* `.mapprime(int plevold, int plevnew, IndexType type = All)`  
 
-  If `index` has prime level plevold, change to plevnew. Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
+  If `index` has prime level plevold, change to plevnew. 
+  Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
-## Operators ##
+## Other Operations With IndexVals
 
-* `bool operator==(IndexVal other)`  
+* IndexVals can be compared to each other. They are equal if the have the same Index and value.
 
-  `bool operator!=(IndexVal other)`  
+* An IndexVal compares equal to an Index objects if its `.index` field matches the Index.
 
-  Return `true` (for ==, `false` for !=) if this IndexVal equals other as an Index and this->i == other.i.
+* IndexVals can be printed.
 
+
+<br/>
+_This page current as of version 2.0.3_

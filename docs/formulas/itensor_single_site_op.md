@@ -5,7 +5,7 @@ involves expectation values of single-site operators or  products and sums of su
 
 Say we have an Index s representing a particular site. We could have created s (thinking here of spin 1/2 or a hardcore boson):
 
-    Index s("s",2,Site);
+    auto s = Index("s",2,Site);
 
 Or we could obtain s from a set of Site indices already created earlier (see the recipe for [[creating a set of Site indices|index_sites]]).
 
@@ -13,13 +13,13 @@ Once we have this site index, we can make various operators as follows:
 
     Index sP = prime(s); //convenient to save this as a different variable
 
-    ITensor sz(s,sP);
-    sz(s(1),sP(1)) = 0.5;
-    sz(s(2),sP(2)) = -0.5;
+    auto sz = ITensor(s,sP);
+    sz.set(s(1),sP(1),+0.5);
+    sz.set(s(2),sP(2),-0.5);
 
-    ITensor sx(s,sP);
-    sx(s(1),sP(2)) = 0.5;
-    sx(s(2),sP(1)) = 0.5;
+    auto sx = ITensor(s,sP);
+    sx.set(s(1),sP(2),0.5);
+    sx.set(s(2),sP(1),0.5);
 
 We can even get fancy and create a 'factory' function which takes our site and an operator-name string and returns the operator we want:
 
@@ -27,18 +27,18 @@ We can even get fancy and create a 'factory' function which takes our site and a
     op(Index s, string name)
         {
         Index sP = prime(s);
-        ITensor res(s,sP); //res is short for result
+        auto res = ITensor(s,sP); //res is short for result
 
         if(name == "Sz")
             {
-            res(s(1),sP(1)) = 0.5;
-            res(s(2),sP(2)) = -0.5;
+            res.set(s(1),sP(1),+0.5);
+            res.set(s(2),sP(2),-0.5);
             }
         else
         if(name == "Sx")
             {
-            res(s(1),sP(2)) = 0.5;
-            res(s(2),sP(1)) = 0.5;
+            res.set(s(1),sP(2),0.5);
+            res.set(s(2),sP(1),0.5);
             }
         else
             {
@@ -58,9 +58,10 @@ of sites and operators for you. But of course there are always reasons you may w
 Complete sample code:
 
 
-    #include "core.h"
+    #include "itensor/all.h"
 
-    using namespace std;
+    using namespace itensor;
+    using std::string;
 
     ITensor
     op(Index s, string name)
@@ -70,14 +71,14 @@ Complete sample code:
 
         if(name == "Sz")
             {
-            res(s(1),sP(1)) = 0.5;
-            res(s(2),sP(2)) = -0.5;
+            res.set(s(1),sP(1),+0.5);
+            res.set(s(2),sP(2),-0.5);
             }
         else
         if(name == "Sx")
             {
-            res(s(1),sP(2)) = 0.5;
-            res(s(2),sP(1)) = 0.5;
+            res.set(s(1),sP(2),0.5);
+            res.set(s(2),sP(1),0.5);
             }
         else
             {
@@ -93,17 +94,16 @@ Complete sample code:
         {
         const int d = 2;
 
-        Index s1("s1",d,Site),
-              s2("s2",d,Site);
+        auto s1 = Index("s1",d,Site);
+        auto s2 = Index("s2",d,Site);
 
         ITensor sz1 = op(s1,"Sz");
         ITensor sz2 = op(s2,"Sz");
         ITensor sx1 = op(s1,"Sx");
 
-        Print(sz1);
-        Print(sz2);
-        Print(sx1);
+        PrintData(sz1);
+        PrintData(sz2);
+        PrintData(sx1);
 
         return 0;
         }
-

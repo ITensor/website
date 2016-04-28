@@ -1,5 +1,7 @@
 # Options #
 
+<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+
 Class for specifying parameters, defined in utilities/options.h
 A default set of options is always available via `Global::opts()` and will be used unless locally overridden by the user.
 

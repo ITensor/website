@@ -13,7 +13,9 @@ some compelling alternatives to PBC:
 * Use open boundary conditions (OBC). Though this introduces edge effects, the number of states needed
   to reach a given accuracy is <i>drastically</i> lower than with PBC (see next section below). For gapped systems DMRG
   scales linearly with system size, meaning often one can study systems with many hundreds or even
-  thousands of sites.
+  thousands of sites. Last but not least, open boundaries are often more natural. For studying systems
+  which spontaneously break symmetry, adding "pinning" fields on the edge is often a very nice way to
+  tip the balance toward a certain symmetry broken state while leaving the bulk unmodified.
 
 * Use smooth boundary conditions. The basic idea is to use OBC but 
   send the Hamiltonian parameters smoothly to zero at the boundary so that the system can not "feel"

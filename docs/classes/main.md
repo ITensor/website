@@ -1,24 +1,41 @@
 # <img src="docs/classes/icon.png" class="largeicon"> ITensor Library Classes and Methods #
 
-The classes and methods below are ordered starting from most fundamental. (For example, an ITensor stores its indices in an
-IndexSet containing Index objects.)
+Detailed information about every method and function in the ITensor library.
 
-## ITensor: dense tensor class
 
-* [[Index|classes/index]]. Single tensor index. <br/>
-  [[Index Functions|classes/index_functions]] for working with Index and similar classes. <br/>
-  [[IndexVal|classes/indexval]]. Index set to a particular value. 
-* [[IndexSet|classes/indexset]]. Container for storing indices. <br/>
-  [[IndexSet functions|classes/indexset_functions]].
+## Index: named tensor index
+
+* [[Index|classes/index]]. Tensor index.
+
+* [[IndexVal|classes/indexval]]. Index-value pair.
+
+* [[IndexType|classes/indextype]]. Lightweight label for Index objects.
+
+* [[IndexSet|classes/indexset]]. Container for storing indices.
+
+## IQIndex: Index with quantum number sectors
+
+* [[QN|classes/qn]]. Abelian quantum numbers.
+
+* [[IQIndex|classes/iqindex]]. Index with quantum number sectors.
+
+* [[IndexQN|classes/indexqn]]. Index-QN pair.
+
+* [[IQIndexVal|classes/iqindexval]]. IQIndex-value pair.
+
+## ITensor
+
 * [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
-  [[ITensor Functions|classes/itensor_functions]] for working with ITensor and similar classes. <br/>
 
-## IQTensor: quantum number block-sparse tensors
+* Sparse ITensors:
 
-* [[QN|classes/qn]]. Abelian quantum number class.
-* [[IQIndex|classes/iqindex]]. Index split into quantum number blocks. <br/>
-  [[IQIndexVal|classes/iqindexval]]. IQIndex set to a particular value.
-* [[IQTensor|classes/iqtensor]]. Tensor with quantum number block structure.
+    - [[Single Element ITensor|classes/single_itensor]]
+    - [[Combiner|classes/combiner]]
+    - [[Delta and Diagonal ITensor|classes/diag_itensor]]
+
+<br/>
+<br/>
+<span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0</span>
 
 ## Methods for working with tensors
 

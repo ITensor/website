@@ -26,6 +26,7 @@
     <li><a href="index.html">Home</a> </li>
     <li><a class="thispage" href="news.html">News</a> </li>
     <li><a href="docs.cgi">Learn</a> </li>
+    <li><a href="support/">Discuss</a> </li>
     <li><a href="collaboration.html">Contributors</a></li>
     </ul>
 </div>
@@ -36,6 +37,87 @@
 </div>
 
 <div class="full section rounded"> <h2>Latest News</h2> </div>
+
+<a name="fermion_string"></a>
+<div class="full newsitem">
+<h3>Tutorial on Fermions and Jordan-Wigner Transformations</h3>
+<h2>(Apr 20, 2016) </h2>
+<p>
+One difficulty with ITensor (which we hope to remedy in future versions) is that to work
+with fermionic operators acting on different sites, you must map them to bosonic
+operators using the Jordan-Wigner transformation. 
+</p>
+<p>
+Because this transformation can be tricky to get right, we have added a 
+<a href="docs.cgi?page=tutorials/fermions">detailed tutorial</a>, which
+even includes the case of fermions with spin. Please email Miles if 
+you would like to see extra examples in this tutorial or additional
+steps in greater detail.
+</p>
+</div>
+
+<a name="discuss"></a>
+<div class="full newsitem">
+<h3>New Discussion Forum</h3>
+<h2>(Mar 25, 2016) </h2>
+<p>
+Along with the new release of ITensor, we have added a <a href="support/">discussion forum</a> to the website.
+This forum works similarly to Stack Exchange, where you can vote on questions and answers.
+Please create an account and post a question.
+</p>
+<p>
+When writing a post, you can indent code text by 4 spaces to have it be automatically formatted (different font and highlighting).
+You can also delimit latex by @@...latex...@@ for inline latex or by <br/>
+$$<br/>
+...latex...<br/>
+$$ <br/>
+for latex on its own separate line.
+</p>
+</div>
+
+<a name="version2"></a>
+<div class="full newsitem">
+<h3>ITensor Version 2.0 Released</h3>
+<h2>(Mar 25, 2016) </h2>
+<p>
+The latest release of ITensor comes with a major overhaul of ITensor and IQTensor internals.
+Tensor storage is now handled by a set of independent storage types, which can have completely
+arbitrary layouts and behaviors. This paves the way for future support for even more sparse
+tensor types, in addition to the currently support ones such as diagonal tensors. For example,
+"combiners" are no longer a separate type, but are now just a special case of an ITensor
+or IQTensor with "combiner storage".
+</p>
+
+<p>
+The new version also includes a new low-level linear algebra library as a foundation for ITensor.
+This library revolves around a simple tensor type with indices having a fixed order.
+Matrices and vectors are treated as special cases of tensors.
+</p>
+
+<p>
+For more details on the update, see the <a href="http://itensor.org/docs.cgi?page=changelog#v2.0.0">changelog</a>.
+</p>
+<p>
+For help upgrading your code to the new version, see the <a href="http://itensor.org/docs.cgi?page=v2transition_guide">transition guide</a>.
+</p>
+<p>
+For a deeper discussion of the new ITensor internals, read about the <a href="http://itensor.org/docs.cgi?page=articles/storage">new storage system</a>.
+</p>
+</div>
+
+<a name="sherbrooke2016"></a>
+<div class="full newsitem">
+<h3>ITensor at 2016 Sherbrooke Summer School</h3>
+<h2>(Jan 11, 2016) </h2>
+<p>
+The <a href="http://pitp.physics.ubc.ca/confs/sherbrooke2016/index.html" target="_blank">International Summer School on Computational Quantum Materials</a> will again be featuring lectures on using ITensor
+to implement matrix product state (e.g. DMRG) methods. Following lectures by U.&nbsp;Schollwoeck on MPS and DMRG,
+Miles Stoudenmire will present two lectures, 1.5 hours each, with
+hands-on demos of ITensor. Please register or notify your students about this opportunity to discuss details
+of ITensor with Miles in person and to attend a great summer school with many distinguished speakers.
+Deadline for registration is Feb 1, 2016.
+</p>
+</div>
 
 <a name="version1.1"></a>
 <div class="full newsitem">
