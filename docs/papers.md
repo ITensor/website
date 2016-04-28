@@ -3,6 +3,9 @@
 
 ## 2016
 
+* [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
+
+
 * [Ising tricriticality in the extended Hubbard model with bond dimerization](http://arxiv.org/abs/1604.01228) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, arxiv:1604.01228
 
 * [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://arxiv.org/abs/1602.08172), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz, arxiv:1602.08172
