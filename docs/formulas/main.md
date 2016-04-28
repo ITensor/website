@@ -7,6 +7,7 @@ like to see.
 ## General Formulas 
 
 * [[Creating your own "driver" code that builds against ITensor|formulas/driver]]
+* [[Running your program in debug mode|formulas/debug_mode]]
 
 ## ITensor Formulas
 Formulas about working with ITensors, Index, etc.
