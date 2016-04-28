@@ -16,10 +16,10 @@ We start by declaring some header files that contain `SiteSets` and AutoMPO.  We
     //>-------|    (1) Header Files    |-------<
     //        +------------------------+
     //These files contain functions we use below.  They are found through 
-    //the Makefile
-    #include "core.h"
-    #include "sites/spinhalf.h"
-    #include "autompo.h"
+    //the Makefile.  Include "all.h" is a catch-all for every header file
+    //that you might need.  This reduces compile time slightly.  Speed this up
+    //by only including the header files you actually need (example: "/itensor/mps/dmrg.h").
+    #include "all.h"
 
     using namespace itensor;// this tells ITensor specific functions where to be found, use everywhere
 
@@ -117,9 +117,7 @@ The output from the `dmrg` function can be printed, sorted, put into another alg
 
   <div class="example_clicker">Show Full Code!</div>
 
-    #include "itensor/core.h"
-    #include "itensor/mps/sites/spinhalf.h"
-    #include "itensor/mps/autompo.h"
+    #include "all.h"
 
     using namespace itensor;// this tells ITensor specific functions where to be found, use everywhere
 
