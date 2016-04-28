@@ -1,22 +1,50 @@
-<span class='article_title'>Beginner's guide to C++</span>
+<span class='article_title'>Beginner's guide to C++ for ITensor</span>
 
 <span class='article_sig'>Thomas E. Baker&mdash;November 11, 2015</span>
 
-C++ can often be daunting for a programmer who has no background in coding in it.  ITensor seeks to reduce the amount of high level C++ knowledge that is necessary to make and run code.  In that sense, ITensor emphasizes the parts of C++ that act like python or other higher level programming language.  For example, pointers are not necessary to implement in order to use this code. [THISNK}
+C++ can often be daunting for a programmer if you are used to programming in a different language like python, Mathematica, or Fortran. ITensor seeks to reduce the amount of high level C++ knowledge that is necessary to make and run code.  In that sense, ITensor emphasizes the parts of C++ that act like python or other higher level programming language making it easy to use.  Even though ITensor has these high level programming features, it is still fast.  For large computations, the most efficient program is always best and C++11 provides us with a compiler that can assemble code so you can run your programs with the least amount of computational time.
 
-This article will explain the basics of how to set up a general code.  For an example, see our [[quickstart|tutorials/quickstart]] guide to get going on a fully working tensor network code.  You can also look in the `samples` folder of the ITensor library or the `tutorials`.
+The ITensor development community makes sure all the internals of the program are fast and efficient.  As the programmer, this lets you have complete control over the design aspects of your program.
+
+This article will explain the basics of how to set up a general code in C++11.  For an example pertaining specifically to DMRG, see our [[quickstart|tutorials/quickstart]] guide to get going on a fully working DMRG code.  You can also look in the `samples` folder of the ITensor library or the `tutorials`.  To install C++11 on your computer, you can perform an internet search of "install C++11 [operating system]" if it is not already installed.
 
 ## Why C++11?
 
-There are a lot of nice features in C++ that make running the ITensor library fast and efficient. ITensor uses its own tensor class and functions for computations.  Doing the same construction in Fortran would be possible (dynamically allocating memory, etc.), but there are a ton of advantages for you, the user, to write your code with the newest C++ compiler.  For example, in C++11, the use of the `auto` function makes defining quantities easy. C++ also allows for more sophisticated data types to be used. 
+There are a lot of nice features in C++11 that make running the ITensor library fast and efficient like the ability to define classes.  Classes, such as the `ITensor` itself allow the program to encapsulate objects that have many data types.  In contrast, regular C programming didn't have classes, making code more cumbersome.  We would also have to deallocate memory once we were done using it and that is accomplished automatically in C++.
 
-[don't confuse optional things like auto]
+C++11 is a major improvement on the C++ language.  How memory is allocated is done automatically with the `auto` type declaration.  Instead of allocating memory for an integer with the keyword `int`, we can now use `auto` and the compiler will determine which type is needed by looking at how the variable is used.
 
-C++11 has many features that are suitable for a high performance tensor library.  Having classes makes it easier to encapsulate objects like a tensor which has many data...
+The ITensor library increases the functionality of C++11 with many functions that are documented [[here|classes]].  Writing a similar library in Fortran would be possible, but there are a ton of advantages for you, the user, to write your code with the newest C++ compiler.  If you're coming from python, Mathematica, Matlab, or some other language, then note that a similar computation in one of those languages may be much slower than can be accomplished in C++.
 
-C++11 improves on past versions [what's the problema nd what's the solution] ....having classes helps...no classes in C...when you allocate memeory, you have to release it later
+In the future, we hope to add a higher level programming langauge interface so that programming becomes even easier, but for now using ITensor requires very little knowledge beyond basic programming.
 
-In the future, we hope to add a higher level programming langauge interface so that programming becomes easier, but for now using ITensor requires very little knowledge beyond basic programming.
+## Hello ITensor
+
+Here is an example of the first introductory program `hello_itensor.cc`.  This program will contract two `ITensor`s together.
+
+    #include "itensor/itensor.h"
+    using namespace itensor;
+  
+    int main() 
+    {
+    auto i = Index("index i",3);
+    auto j = Index("index j",4);
+    auto k = Index("index k",2);
+  
+    auto A = ITensor(i,j);
+    auto B = ITensor(k,j);
+
+    A.set(i(3),j(2),3.141);
+    B.set(k(1),j(2),2.718);
+
+    auto C = A * B;//contraction over the index j
+
+    printfln("A * B = %f",C);
+
+    return 0;
+    }
+
+In this article, we are more concerned with what happens beyond the ITensor functions.  `Index`, `ITensor`, `set`, `printfln`, and other ITensor specific functions and classes are covered in the [[ITensor book|]].  Here, we want to concentrate on the basics of C++11 like `include`, header files, `using namespace`, `auto`, `int`, `main`, and `return` as well as all the semicolons, curly braces {}, and how to run the program.
 
 ## Good things to know about C++
 
@@ -142,6 +170,8 @@ order of -l matters on some compilers (Trial and error)
 
 Here is a basic makefile that you can use (copy into a file `Makefile` in the same directory as the main `.cc` file to compile code.
 
+WARNING:  Don't copy this file as there are specific formatting needs that must be fulfilled to actually run the makefile.  Instead, copy a Makefile from the `tutorials/` or `sample/` folder in the ITensor library.
+
     include ../this_dir.mk
     include ../options.mk
     ################################################################
@@ -175,9 +205,7 @@ Here is a basic makefile that you can use (copy into a file `Makefile` in the sa
     clean:
             rm -fr *.o .debug_objs hellodmrg hellodmrg-g
 
-your header files must have a tab
-
-...make a download link
+To re-emphasize, your header files must have a tab.
 
 The first line is the path to the `this_dir.mk` in the ITensor library (this example was adapted from the `sample` folder, so it is just one directory up--the `../` command).The second points to `options.mk`.
 
