@@ -1,6 +1,7 @@
 # ITensor #
 
-An ITensor is a tensor with named indices and an interface which does not depend on the index order.
+
+An ITensor is a tensor with named indices (of type [[Index|classes/index]]).
 The key feature of the ITensor is automatic contraction over all matching indices, 
 similar to Einstein summation.
 
@@ -12,6 +13,8 @@ calling `T.real(a(2),b(5))` and `T.real(b(5),a(2))` accesses the same tensor ele
 
 In addition to the default dense real storage, ITensors can have other storage types
 such as complex storage or various sparse storage types.
+
+The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itensor/itensor_interface.h" and "itensor/itensor_interface.ih".
 
 ## Synopsis ##
 
@@ -333,6 +336,36 @@ and that the result will be an ITensor.
         Print(hasindex(R,s3)); //prints "true"
         Print(hasindex(R,l3)); //prints "true"
 
+* `ITensor  * IndexVal -> ITensor` <br/>
+  `IndexVal * ITensor  -> ITensor` <br/>
+  `ITensor *= IndexVal` <br/>
+
+  When multiplied by an ITensor, an IndexVal behaves like a rank-1 (single Index) ITensor
+  whose only non-zero element is the element corresponding to the IndexVal, which has the value 1.0.
+  
+  In other words, an IndexVal behaves as if it has been plugged into the [[setElt|classes/single_itensor]]
+  function before being contracted.
+
+  Note that multiplying an IndexVal by another IndexVal or multiplying an IndexVal by a scalar
+  also results in an ITensor. For more information, see the [[IndexVal documentation|classes/indexval]].
+  
+  <div class="example_clicker">Show Example</div>
+
+      auto i = Index("i",3);
+      auto j = Index("j",4);
+
+      auto T = ITensor(i,j);
+      randomize(T);
+
+      auto S = T * i(2);
+
+      // Now S will have only Index j
+      // and will correspond to the "slice"
+      // of T with i fixed to the value 2
+
+      Print(S.real(j(3)) - T.real(i(2),j(3))); //prints: 0.0
+
+
 ## Complex ITensor Methods
 
 * `.conj()`
@@ -438,6 +471,77 @@ and that the result will be an ITensor.
 
       println("Largest magnitude elt of T is ",max_mag);
 
+## Other Facts About ITensors
+
+* An ITensor `T` can be read from or written to a stream using
+  `read(s,T)` or `write(s,T)`.
+
+* Printing an ITensor shows its indices and some other
+  information such as its scale factor.
+
+  To view all non-zero elements of an ITensor `T`,
+  do one of the following:
+
+  * PrintData(T);
+
+  * printfln("T = %f",T);
+
+  In the `printfln` command, the `%s` formatting token 
+  does not display ITensor elements, whereas the `%f` token
+  shows all non-zero elements.
+  
+<a name"scale_fac"></a>
+* An ITensor carries a scale factor, which is a real number
+  of type `LogNum`. This scale factor introduces various
+  efficiencies and makes ITensors more robust to roundoff errors.
+  However, the scale factor is intended as an internal feature
+  for use in developer-level code and does not need to be accessed users.
+
+
+## Functions for Creating ITensors
+
+* `randomTensor(Index i1, Index i2, ...)` <br/>
+  `randomTensorC(Index i1, Index i2, ...)` <br/>
+  `randomTensor(IndexSet inds)`
+
+  Create an ITensor with the provided indices and with random elements.
+
+  `randomTensorC` makes an ITensor with random complex elements.
+
+   <div class="example_clicker">Click to Show Example</div>
+
+      auto i = Index("i",2);
+      auto j = Index("j",3);
+
+      auto T = randomTensor(i,j);
+
+      auto TC = randomTensorC(i,j);
+      Print(isComplex(TC)); //prints: true
+
+* `matrixTensor(Matrix&& M, Index i1, Index i2)`
+
+  Create an ITensor with the two indices i1 and i2, which correspond to the 
+  row and column indices of the provided Matrix. The elements of the returned
+  ITensor are set to be those of the Matrix provided.
+
+  The Matrix M is expected to be passed as an lvalue, either by passing a temporary
+  or by calling std::move. Its storage will be moved into the returned ITensor and
+  the Matrix will have empty storage afterward.
+
+   <div class="example_clicker">Click to Show Example</div>
+
+      auto M = Matrix(2,2);
+      M(0,0) = 11;
+      M(0,1) = 12;
+      M(1,0) = 21;
+      M(1,1) = 22;
+
+      auto r = Index("r",2);
+      auto c = Index("c",2);
+
+      auto T = matrixTensor(std::move(M),r,c);
+
+
 
 ## Functions for Modifying ITensors
 
@@ -462,6 +566,36 @@ and that the result will be an ITensor.
   Return the ITensor resulting from transforming each element of T by calling `f(x) -> y`. 
   Works similarly to the `.apply` method discussed above but creates a new 
   ITensor instead of modifying an ITensor in-place.
+
+* `ordered(ITensor T, Index i1, Index i2, ...) -> TensorRef1` <br/>
+  `orderedC(ITensor T, Index i1, Index i2, ...) -> CTensorRef1`
+
+  Given an ITensor T and a list of all of its indices in a particular order,
+  return a TensorRef1 with the same index order. This TensorRef1 points to
+  the data of the provided ITensor, such that changing one of its elements
+  changes the corresponding element of the ITensor.
+
+  `ordered` can only be used for real ITensors; using it
+  on a complex ITensor throws an exception.
+
+  `orderedC` can be used on either real of complex ITensors,
+  but if the ITensor's storage is real it will 
+  immediately be converted to complex.
+
+  Warning: a TensorRef behaves similar to a regular C++ pointer in that it
+  is a non-owning "view" of the data it points to. If the original ITensor
+  goes out of scope, the TensorRef will be invalid and accessing it in this
+  state will cause memory corruption.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,j,k);
+
+      auto t = ordered(T,j,i,k);
+
+      t(1,2,3) = 123;
+      
+      Print(T.real(j(1),i(2),k(3))); //prints: 123
 
 * `random(ITensor T, Args args = Args::global()) -> ITensor`
 
@@ -495,6 +629,28 @@ and that the result will be an ITensor.
   Return just the imaginary part of an ITensor T.
 
 ## ITensor Prime Level Transformations
+
+* `swapPrime(ITensor T, int plev1, int plev2) -> ITensor`
+
+  Return a copy of the ITensor T modified such that any
+  Index having prime level `plev1` now has `plev2` 
+  and any Index having prime level `plev2` has `plev1`.
+
+  Any Index with a prime level other than `plev1` or `plev2`
+  remains unchanged.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,prime(i));
+
+      T.set(i(1),prime(i)(2), 12);
+      T.set(i(2),prime(i)(1), 21);
+
+      auto TT = swapPrime(T,0,1);
+
+      Print(T.real(i(1),prime(i)(2))); //prints: 21
+      Print(T.real(i(2),prime(i)(1))); //prints: 12
+
 
 For the following functions, the symbol `...` is pseudocode
 which signifies these functions forward their arguments
@@ -625,28 +781,76 @@ for details about the possible arguments to these functions.
        auto x = findindex(T,sizeIs3);
        if(x) printfln("Found Index %s with size of 3",x);
 
-<!-- Still need to document:
+## Other Functions
 
-* ITensor * IndexVal -> ITensor
-  IndexVal * ITensor -> ITensor
+* `multSiteOps(ITensor A, ITensor B) -> ITensor`
 
-* IndexVal * IndexVal -> ITensor
+  Multiply two operators whose index structure follows the
+  ITensor convention for operators.
 
-* IndexVal * Real -> ITensor
-  Real * IndexVal -> ITensor
+  A and B are expected to have `Site` type indices 
+  s1, s2, s3, ... and indices s1', s2', s3', ...
+  and no othe `Site` indices.
 
-* `randomTensor`
-* `randomTensorC`
-* `matrixTensor`
-* `ordered`
-* `orderedC`
-* `swapPrime`
-* `multSiteOps`
-* `read/write`
+  This function: 
+  1. Increments the prime level of A's `Site`
+     indices by 1
+  2. Contracts A with B
+  3. Maps all `Site` indices with prime level 2
+     back to prime level 1.
 
-And developer/advanced methods.
+  <div class="example_clicker">Click to Show Example</div>
 
--->
+      auto s1 = Index("s1",3,Site);
+      auto s2 = Index("s2",3,Site);
+
+      auto A = ITensor(s1,s2,prime(s1),prime(s2));
+      auto B = ITensor(s1,s2,prime(s1),prime(s2));
+
+      //...set elements of A and B...
+
+      auto C = multSiteOps(A,B);
+
+      //ASCII art drawing:
+      s1' s2'
+       |   |     s1' s2'
+       [ A ]      |   |
+       |   |   =  [ C ] 
+       [ B ]      |   |
+       |   |     s1  s2
+      s1  s2  
+
+## Advanced / Developer Methods
+
+* `.scaleTo(Real newscale)` <br/>
+  `.scaleTo(LogNum newscale)`
+
+  Rescale the elements of this ITensor such that its scale
+  factor equals `newscale`. Up to possible roundoff errors,
+  does not change the value of any tensor elements, making
+  this method "logically const".
+
+* `.scale() -> LogNum&` 
+
+  Directly access the scale factor.
+
+* `.store() -> storage_ptr&`
+
+  Access the storage pointer, which is of an opaque "box"
+  type called `ITData`. Useful for writing new methods
+  that "dynamically overload" on the storage type
+  using the doTask system.
+
+* `ITensor(IndexSet iset, StorageType&& store, LogNum scale = 1.)` <br/>
+  `ITensor(IndexSet iset, storage_ptr&& pstore, LogNum scale = 1.)` <br/>
+
+  Construct an ITensor having IndexSet `iset`, storage `dat`,
+  and optional scale. The storage object must be a temporary
+  or moved using `std::move`. The type of the storage object
+  must be one of the registered types in "itensor/itdata/storage_types.h".
+
+  Alternatively a `storage_ptr` can be passed instead of a storage object.
+
 
 <br/>
 _This page current as of version 2.0.3_

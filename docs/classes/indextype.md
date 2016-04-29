@@ -11,6 +11,7 @@ indices unchanged.
 An IndexType is implemented internally as a constant, fixed-size
 string of up to 7 characters.
 
+IndexType is defined in "itensor/indextype.h".
 
 ## Synopsis
 

@@ -66,6 +66,8 @@ The special types of QN's with named slots are as follows:
       auto qsing = QN("Sz=", 0,"Pf=",0);
 
 
+QN is defined in the header "itensor/qn.h".
+
 ## QN Class Methods
 
 * ```

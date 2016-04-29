@@ -13,6 +13,8 @@ two blocks, both of size 8. If `iv.val <= 8`
 it corresponds to the first block of `I`. If `iv.val > 8`
 it corresponds to the second block of `I`.
 
+IQIndexVal is defined in the header "itensor/iqindex.h".
+
 ## Synopsis ##
 
     auto I = IQIndex("I",Index("I+1",8),QN(+1),

@@ -2,6 +2,9 @@
 
 Detailed information about every method and function in the ITensor library.
 
+The following documentation may omit minor details that do not change method semantics, 
+for example, describing a particular function signature as `f(ITensor T)` even though
+its actual signature is `f(ITensor const& T)` for efficiency reasons.
 
 ## Index: named tensor index
 
@@ -35,7 +38,8 @@ Detailed information about every method and function in the ITensor library.
 
 <br/>
 <br/>
-<span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0</span>
+<span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0 but
+may still be useful</span>
 
 ## Methods for working with tensors
 
@@ -51,12 +55,4 @@ Detailed information about every method and function in the ITensor library.
     * [[SpinHalf|classes/spinhalf]]. Set of S=1/2 degrees of freedom.
     * [[SpinOne|classes/spinone]]. Set of S=1 degrees of freedom.
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
-
-
-* [[Options|classes/options]]. Class for specifying various options.
-
-The above documentation may omit minor details that do not change method semantics, 
-for example, describing a particular function signature as `f(ITensor T)` even though
-for efficiency reasons its actual signature is `f(const ITensor& T)`. 
-Also the return type is often omitted for functions returning `void`.
 

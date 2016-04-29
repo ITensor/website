@@ -10,6 +10,8 @@ the type `IQIndex`.
 * `IndexSet` is an alias for `IndexSetT<Index>`
 * `IQIndexSet` is an alias for `IndexSetT<IQIndex>`
 
+IndexSet and IQIndexSet are defined in "itensor/indexset.h". Also see "itensor/indexset.ih".
+An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 ## Synopsis ##
 
