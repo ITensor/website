@@ -6,6 +6,8 @@ their "prime levels" are set to different values.
 An Index has a name just for printing purposes, and an Index
 carries an IndexType label (typically `Site` or `Link`&mdash;see [[index conventions|itensor_conventions]]).
 
+Index is defined in "itensor/index.h".
+
 ## Synopsis ##
 
     auto i = Index("index i",4);

@@ -18,6 +18,9 @@ functions:
   with different elements along the diagonal.
 
 
+The functions `delta` and `diagTensor` are defined in "itensor/itensor.h"; also
+see "itensor/itensor.ih".
+
 ## Synopsis
 
 

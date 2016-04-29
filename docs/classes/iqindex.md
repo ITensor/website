@@ -21,6 +21,8 @@ An IQIndex also has a direction, which is of type `Arrow`. An Arrow can be `In` 
 and the default for an IQIndex is `Out`. <br/>
 For more information on Arrows, see the page on [[index conventions|itensor_conventions]].
 
+IQIndex is defined in the header "itensor/iqindex.h".
+
 ## Synopsis ##
 
     // Make an IQIndex with five blocks

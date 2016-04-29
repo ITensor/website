@@ -7,6 +7,7 @@ an integer "`val`" representing a particular value the Index can take.
 The value is 1-indexed and must be in the range [1,m] where m is the size
 of the Index.
 
+IndexVal is defined in "itensor/index.h".
 
 ## Synopsis
 
@@ -61,6 +62,20 @@ of the Index.
   Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
 ## Other Operations With IndexVals
+
+* `IndexVal * IndexVal -> ITensor`
+
+  Return an ITensor with indices those of the two multiplied IndexVals. This ITensor has
+  only one non-zero element (equal to 1.0) corresponding to setting each Index to the value of its
+  respective IndexVal.
+
+* `IndexVal * Cplx -> ITensor` <br/>
+  `Cplx * IndexVal -> ITensor`
+
+  Return an ITensor with one Index corresponding to the IndexVal in the above product.
+  This ITensor has one non-zero element equal to the scalar value in the above product.
+  This non-zero element is the one corresponding to the IndexVal.
+  If the scalar has exactly zero imaginary part, the resulting ITensor will have real storage.
 
 * IndexVals can be compared to each other. They are equal if the have the same Index and value.
 

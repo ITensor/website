@@ -26,7 +26,7 @@ The matrix S is diagonal and has real, non-negative entries known as the singula
 values. The  SVD can be computed for arbitrary, rectangular matrices. It also
 leads to a controlled approximation, where the error due to discarding columns of U and V
 is small if the corresponding singular values are small.
-For more background reading on the SVD, see our [[SVD tutorial article|tutorials/svd]].
+For more background reading on the SVD, see our [[SVD tutorial article|tutorials/SVD]].
 
 
 To compute the SVD of an ITensor, you only need to think about which indices are the "row"

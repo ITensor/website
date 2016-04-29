@@ -3,6 +3,8 @@
 An IndexQN is a struct holding an [[Index|classes/index]] and a [[QN|classes/qn]]. Its primary
 purpose is for labeling individual sectors of an [[IQIndex|classes/iqindex]].
 
+IndexQN is defined in the header "itensor/iqindex.h".
+
 ## Synopsis
 
     auto i = Index("i",2);
