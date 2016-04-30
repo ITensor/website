@@ -88,4 +88,4 @@ IndexType is defined in "itensor/indextype.h".
 
 
 <br/>
-_This page current as of version 2.0.3_
+_This page current as of version 2.0.6_

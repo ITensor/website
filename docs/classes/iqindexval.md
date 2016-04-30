@@ -115,4 +115,4 @@ IQIndexVal is defined in the header "itensor/iqindex.h".
   Return a copy of the IQIndexVal `iv` such that if the primelevel of its `.index` field is `plevold`, it is changed to `plevnew` (optionally only if its IndexType matches `type`).
 
 <br/>
-_This page current as of version 2.0.3_
+_This page current as of version 2.0.6_

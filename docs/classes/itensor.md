@@ -853,5 +853,4 @@ for details about the possible arguments to these functions.
 
 
 <br/>
-_This page current as of version 2.0.3_
-
+_This page current as of version 2.0.6_

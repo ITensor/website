@@ -7,10 +7,10 @@ As a subtype of [[Index|classes/index]], an IQIndex has a name, size, type, prim
 IQIndex also inherits all of the class methods of [[Index|classes/index]].
 
 An IQIndex is also divided into quantum number "blocks". 
-Each block is labeled by a [[Index|classes/index]]-[[QN|classes/qn]] pair (an [[IndexQN|classes/indexqn]]), and the size of each 
-block is the size of its Index.
-The size of an IQIndex is just the total size of all of its blocks.
-The number and order of blocks of an IQIndex cannot be changed after the IQIndex is constructed.
+Each block is defined by a [[Index|classes/index]]-[[QN|classes/qn]] pair (an [[IndexQN|classes/indexqn]]) 
+where the size of each block is the size of its Index.
+The size of an IQIndex is the total size of all of its blocks.
+The order and number of blocks of an IQIndex cannot be changed after the IQIndex is constructed.
 
 For example, the IQIndex representing a single spin 1/2 has total size 2, which is made up of two blocks:
 * a spin up block of size 1,
@@ -45,7 +45,7 @@ IQIndex is defined in the header "itensor/iqindex.h".
     //Get direction of I
     Print(I.dir()); //prints: I.dir() = Out
 
-## Class Methods (only showing those not inherited from [[Index|classes/index]])
+## Class Methods (only showing those differing from [[Index|classes/index]])
 
 * ```
   IQIndex(string name, 
@@ -218,5 +218,4 @@ IQIndex is defined in the header "itensor/iqindex.h".
    (Optionally, only map prime level if type of `I` matches specified type.)
 
 <br/>
-_This page current as of version 2.0.3_
-
+_This page current as of version 2.0.6_

@@ -202,4 +202,4 @@ Index is defined in "itensor/index.h".
    Returns a string version of the size of Index I.
 
 <br/>
-_This page current as of version 2.0.3_
+_This page current as of version 2.0.6_

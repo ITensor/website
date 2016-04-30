@@ -6,10 +6,10 @@ addition or @@Z\_N@@ addition rules.
 QN objects have up to four "slots" which can be assigned values. 
 Each slot also has a modulus which can take the following types of values:
 * If the modulus is 1, the slot follows regular integer addition. 
-* If the modulus equals @@N>1@@, the slot obeys @@Z\_N@@ addition. 
-* If the modulus equals @@-N@@ where @@N\geq 1@@, the slot is fermionic. 
-  Fermionic slots behave the same as "bosonic" ones with modulus @@|N|@@, that is, 
-  the minus sign on the modulus only acts as a flag.
+* If the modulus is @@N>1@@, the slot obeys @@Z\_N@@ addition. 
+* If the modulus is @@-N \leq 1 @@, the slot is fermionic. 
+  Fermionic slots behave the same as "bosonic" ones with modulus @@|N|@@
+  and the minus sign on the modulus acts only as a flag.
 
 The QN class recognizes certain conventions about the order and type of slots used. These are implemented by
 the QN constructor which takes named arguments. For example, creating a QN as
@@ -222,4 +222,4 @@ listed at the top of this page, users may use the following functions.
 
 
 <br/>
-_This page current as of version 2.0.3_
+_This page current as of version 2.0.6_

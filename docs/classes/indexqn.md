@@ -52,5 +52,4 @@ IndexQN is defined in the header "itensor/iqindex.h".
 * IndexQN's can be printed.
 
 <br/>
-_This page current as of version 2.0.3_
-
+_This page current as of version 2.0.6_

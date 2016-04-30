@@ -56,3 +56,5 @@ into a single, new Index `c`.
 The resulting ITensor will have all of the indices provided, plus one extra Index `c` whose
 size is the product of sizes `i1.m() * i2.m() * ...`.
 
+<br/>
+_This page current as of version 2.0.6_
