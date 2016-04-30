@@ -131,6 +131,11 @@ IQIndex is defined in the header "itensor/iqindex.h".
 
 ## Other Features of IQIndex
 
+* An IQIndex can be compared to another using `==` or `!=`. IQIndex 
+  comparison ignores the Arrow direction, thus it works identically
+  to Index comparison, only caring about the prime level and internal
+  id number.
+
 * An IQIndex supports iteration, for example
 
       for(auto& iq : I)

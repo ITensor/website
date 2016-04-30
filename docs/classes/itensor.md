@@ -703,7 +703,7 @@ for details about the possible arguments to these functions.
 
   For a function that works for real or complex ITensors, use `sumelsC`.
 
-## Inspecting ITensor Indices
+## Analyzing ITensor Indices
 
 * `hasindex(ITensor T, Index i) -> bool`
 

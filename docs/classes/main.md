@@ -26,7 +26,7 @@ its actual signature is `f(ITensor const& T)` for efficiency reasons.
 
 * [[IQIndexVal|classes/iqindexval]]. IQIndex-value pair.
 
-## ITensor
+## ITensor and IQTensor
 
 * [[ITensor|classes/itensor]]. The elementary tensor type. <br/>
 
@@ -35,6 +35,8 @@ its actual signature is `f(ITensor const& T)` for efficiency reasons.
     - [[Single Element ITensor|classes/single_itensor]]
     - [[Combiner|classes/combiner]]
     - [[Delta and Diagonal ITensor|classes/diag_itensor]]
+
+* [[IQTensor|classes/iqtensor]]. Quantum number block sparse tensor.
 
 <br/>
 <br/>
