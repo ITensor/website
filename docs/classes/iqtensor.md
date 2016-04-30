@@ -10,14 +10,25 @@ IQTensors obey the rule that the only blocks allowed to be non-zero are those wi
 the same [[QN|classes/qn]] "flux" or "divergence". A block of an IQTensor corresponds to a
 specific sector of each IQIndex. The flux of a given block is the sum
 of the QNs of the corresponding sectors times the Arrow direction of each IQIndex.
-On an intuitive level, the flux of an IQTensor is how much contracting with the IQTensor
-changes the total quantum number. As an example involving
-spins, an "Sz" operator has zero flux while an "S+" operator has flux +2 since it 
-increases the total Sz by +2 (in units of spin 1/2).
+On an intuitive level, the flux of an IQTensor says how much the total quantum
+number will be changed by contracting with that IQTensor.
+As an example involving spins, an "Sz" operator has zero flux while an "S+" operator 
+has flux +2 since it increases the total Sz by +2 (in units of spin 1/2).
 
 Contracting IQTensors can be much more efficient 
 than contracting ITensors. This is because IQTensors have an explicit sparse 
-structure where many blocks are constrained to be zero.
+structure where many of its blocks are constrained to be zero.
+
+Because IQTensor and ITensor have an identical interface (both implemented using the 
+same template class), to see a list of class methods available for IQTensors 
+see the [[ITensor|classes/itensor]] documentation.
+
+Functions acting on ITensors which are not discussed below can 
+be assumed to have the same behavior for IQTensors.
+
+IQTensor is defined in "itensor/iqtensor.h"; also see "itensor/iqtensor.ih". The 
+IQTensor interface is defined in "itensor/itensor_interface.h".
+
 
 ## Synopsis ##
 
@@ -27,7 +38,6 @@ structure where many blocks are constrained to be zero.
     auto S = IQIndex("S",Index("S-",1),QN(-1),
                          Index("S+",1),QN(+1));
 
-    
     //Create a zero IQTensor
     auto A = IQTensor(L,S);
 
@@ -45,14 +55,6 @@ structure where many blocks are constrained to be zero.
     //contracting ITensors except contracted 
     //IQIndex's must have opposite Arrow directions
     auto R = A * B; //contract over common IQIndex L
-
-
-Because IQTensor and ITensor have an identical interface (both implemented using the 
-same template class), to see a list of class methods available for IQTensors 
-see the [[ITensor|classes/itensor]] documentation.
-
-Functions acting on ITensors which are not listed here can 
-be assumed to have the same behavior for IQTensors.
 
 ## IQTensor Class Methods Specializations
 
