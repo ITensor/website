@@ -1,5 +1,18 @@
 # Change Log #
 
+<a name="v2.0.7"></a>
+## [Version 2.0.7](https://github.com/ITensor/ITensor/tree/v2.0.7) (May 2, 2016) ##
+
+* Product of IndexVal and scalar now works for complex scalars too
+
+* Combined prime function taking Index objects and function taking IndexType arguments 
+  into single function which can take combinations of both.
+
+* Function findIQInd now returns default-constructed IQIndex if not found; previously would throw an exception.
+
+* orderedC function now switches ITensor storage to complex if it was real instead of throwing an exception.
+
+
 <a name="v2.0.6"></a>
 ## [Version 2.0.6](https://github.com/ITensor/ITensor/tree/v2.0.6) (Apr 27, 2016) ##
 
