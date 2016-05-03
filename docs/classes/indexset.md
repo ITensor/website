@@ -181,39 +181,57 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
         int inc = 1)
   ```
 
-  Increment prime level of the specific indices i1, i2, etc. by 
-  1 or by the optional amount `inc`.
-
-  <div class="example_clicker">Click to Show Example</div>
-
-      auto inds = IndexSet(l1,s2,s3,l3);
-
-      //Increment prime level of s2 and s3 by 4
-      prime(inds,s2,s3,4);
-
-      Print(inds[1]); //prints: (s2,2,Site)'4
-
-* ``` 
+  ``` 
   prime(IndexSet & is, 
         IndexType t1, IndexType t2, ..., 
         int inc = 1)
   ```
 
-  Increment prime level of all indices of the specified IndexTypes
-  by 1 or by the optional amount `inc`.
+  ``` 
+  prime(IndexSet & is, 
+        Index i1, IndexType t2, ..., 
+        int inc = 1)
+  ```
+
+  Increment prime level of specific indices, or index types, by 
+  1 or by the optional amount `inc`.
+
+  The arguments following the IndexSet can be any number of Index
+  or IndexType objects, in any order.
+
+  All indices of the IndexSet matching one of the provided Index 
+  objects (including having the same prime level) or matching one
+  of the IndexTypes will have its prime level incremented by `inc`.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto inds = IndexSet(l1,s2,s3,l3);
+      //
+      // First example
+      //
+      auto indsA = IndexSet(l1,s2,s3,l3);
 
-      //Increment prime level of all indices of
-      //type Site by 5
-      prime(inds,Site,5);
+      //Increment prime level of s2 and s3 by 4
+      prime(indsA,s2,s3,4);
 
-      Print(inds[0]); //prints: (l1,1,Link)
-      Print(inds[1]); //prints: (s2,2,Site)'5
-      Print(inds[2]); //prints: (s3,2,Site)'5
-      Print(inds[3]); //prints: (l3,3,Link)
+      Print(indsA[0]); //prints: (l1,3,Link)
+      Print(indsA[1]); //prints: (s2,2,Site)'4
+      Print(indsA[2]); //prints: (s3,2,Site)'4
+      Print(indsA[3]); //prints: (l3,7,Link)
+
+      //
+      // Second example
+      //
+      auto indsB = IndexSet(l1,s2,s3,l3);
+
+      //Increment prime level of s2 and 
+      //of all Link indices (assumed to be l1 and l3)
+      //by two
+      prime(indsB,s2,Link,2);
+
+      Print(indsB[0]); //prints: (l1,3,Link)'2
+      Print(indsB[1]); //prints: (s2,2,Site)'2
+      Print(indsB[2]); //prints: (s3,2,Site)
+      Print(indsB[3]); //prints: (l3,7,Link)'2
 
 * ``` 
   primeExcept(IndexSet & is, 
@@ -319,4 +337,4 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 
 <br/>
-_This page current as of version 2.0.6_
+_This page current as of version 2.0.7_
