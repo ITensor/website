@@ -18,12 +18,12 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
     //any 'position' between i and j, inclusive, would work here
     psi.position(i); 
 
-    //psi.Anc(1) *= psi.A(0)//Uncomment if using iDMRG calculation
+    //psi.Anc(1) *= psi.A(0); //Uncomment if doing iDMRG calculation
 
     //index linking i to i+1:
     auto ir = commonIndex(psi.A(i),psi.A(i+1),Link);
 
-    auto C = psi.A(i)*op_i*dag(prime(prime(psi.A(i),Site),ir));
+    auto C = psi.A(i)*op_i*dag(prime(psi.A(i),Site,ir));
     for(int k = i+1; k < j; ++k)
         {
         C *= psi.A(k);
@@ -33,9 +33,9 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
     C *= op_j;
     //index linking j to j-1:
     auto jl = commonIndex(psi.A(j),psi.A(j-1),Link);
-    C *= dag(prime(prime(psi.A(j),Site),jl));
+    C *= dag(prime(psi.A(j),jl,Site));
 
-    auto result = toReal(C); //or toComplex(C) if expecting complex
+    auto result = C.real(); //or C.cplx() if expecting complex
 
 ### Notes:
 * `auto` is a C++11 keyword that tells the compiler to automatically deduce the correct type from the expression on the right-hand side
