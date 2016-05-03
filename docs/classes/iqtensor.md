@@ -7,13 +7,13 @@ IQTensors actually have the same interface as [[ITensors|classes/itensor]], but 
 IQTensor are of type [[IQIndex|classes/iqindex]]. 
 
 IQTensors obey the rule that the only blocks allowed to be non-zero are those with
-the same [[QN|classes/qn]] "flux" or "divergence". A block of an IQTensor corresponds to a
-specific sector of each IQIndex. The flux of a given block is the sum
+the same [[QN|classes/qn]] "divergence". A block of an IQTensor corresponds to a
+specific sector of each IQIndex. The divergence of a given block is the sum
 of the QNs of the corresponding sectors times the Arrow direction of each IQIndex.
-On an intuitive level, the flux of an IQTensor says how much the total quantum
+On an intuitive level, the divergence of an IQTensor says how much the total quantum
 number will be changed by contracting with that IQTensor.
-As an example involving spins, an "Sz" operator has zero flux while an "S+" operator 
-has flux +2 since it increases the total Sz by +2 (in units of spin 1/2).
+As an example involving spins, an "Sz" operator has zero divergence while an "S+" operator 
+has divergence +2 since it increases the total Sz by +2 (in units of spin 1/2).
 
 Contracting IQTensors can be much more efficient 
 than contracting ITensors. This is because IQTensors have an explicit sparse 
@@ -42,12 +42,13 @@ IQTensor interface is defined in "itensor/itensor_interface.h".
     auto A = IQTensor(L,S);
 
     //Setting an element determines
-    //the flux of this IQTensor
+    //the divergence of this IQTensor
     A.set(L(2),S(2),2.2);
 
-    Print(flux(A)); //prints: QN(0)
+    //Compute IQTensor divergence
+    Print(div(A)); //prints: QN(0)
 
-    //Create an IQTensor with flux QN(0)
+    //Create an IQTensor with div QN(0)
     //but otherwise random elements
     auto B = randomTensor(QN(0),dag(L),S);
 
@@ -119,14 +120,14 @@ defined for IQTensors:
   `IQTensor /= IQTensor`
 
   The non-contracting product is not currently implemented for IQTensors
-  since it can give results with ill-defined flux in certain cases.
+  since it can give results with ill-defined divergence in certain cases.
 
 ## Functions for Constructing IQTensors
 
 * `randomTensor(QN q, IQIndex i1, IQIndex i2, ...) -> IQTensor` <br/>
   `randomTensorC(QN q, IQIndex i1, IQIndex i2, ...) -> IQTensor`
 
-  Create an IQTensor having IQIndex's i1, i2, etc. and having flux `q`. 
+  Create an IQTensor having IQIndex's i1, i2, etc. and having divergence `q`. 
   All non-zero blocks of this IQTensor are initialized with random elements.
 
   `randomTensorC` is the same except blocks are initialized with random complex
@@ -135,9 +136,9 @@ defined for IQTensors:
 * `randomTensor(IQIndexVal iv1, IQIndexVal iv2, ...) -> IQTensor` <br/>
 
   Given a set of [[IQIndexVals|classes/iqindexval]], return an IQTensor
-  having IQIndex's corresponding to the IQIndexVals. The flux of the IQTensor
+  having IQIndex's corresponding to the IQIndexVals. The divergence of the IQTensor
   is determined by which block contains the element corresponding to the IQIndexVals.
-  All blocks having this flux are filled with random elements.
+  All blocks having this divergence are filled with random elements.
 
 ## Functions for Constructing Sparse IQTensors
 
@@ -198,14 +199,13 @@ defined for IQTensors:
 
 ## Functions for Analyzing IQTensors
 
-* `flux(IQTensor T) -> QN` <br/>
-  `div(IQTensor T) -> QN`
+* `div(IQTensor T) -> QN`
 
-  Return the total flux of this IQTensor (`div` is alternate name for `flux`).
+  Return the total divergence of this IQTensor.
 
-  Flux is defined as follows:
+  Divergence is defined as follows:
 
-  1. All non-zero blocks of an IQTensor have the same flux.
+  1. All non-zero blocks of an IQTensor have the same divergence.
   2. For any non-zero block, identify the sector of each IQIndex it corresponds to.
   3. Compute the product of the QN of each IQIndex sector the block corresponds to times
      the Arrow direction of that IQIndex.
@@ -213,7 +213,7 @@ defined for IQTensors:
      (Recall that Arrows can be either `In` or `Out`; multiplying a QN by `In` 
       flips its sign while `Out` leaves a QN's sign unchanged.)
 
-  4. The flux is the sum of these QN * Arrow products, which is again a QN.
+  4. The divergence is the sum of these QN * Arrow products, which is again a QN.
 
 * `dir(IQTensor T, IQIndex I) -> Arrow`
 
@@ -270,7 +270,7 @@ defined for IQTensors:
   Construct an IQTensor with IQIndex's i1, i2, etc. The IQTensor
   has QMixed storage, which allows any tensor component to be 
   non-zero just like a regular ITensor. This means it has "mixed"
-  QN flux sectors.
+  QN divergence sectors.
 
   The main purpose of mixedIQTensors is to create an ITensor 
   but from a function that can only return one type; by choosing 
