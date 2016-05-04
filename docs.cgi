@@ -63,7 +63,7 @@ def processMathJax(matchobj,delimit=""):
     if delimit=="@@":
         return "<span> " + math + " </span>"
     elif delimit=="$$":
-        return "\n<div>\n" + math + "\n</div>\n"
+        return "<div>\n" + math + "\n</div>"
     elif delimit=="align":
         return "\n<div>\n " + math + "\n</div>\n"
     return None
