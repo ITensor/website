@@ -97,9 +97,9 @@ In the above lines above we used three important facts:
 
 Now let us check that using the mapping on the reversed operators give a consistent result
 \begin{align}
-- c\_j c\_i  & = (F\_1 F\_2 \cdots F\_{j-1})\, a\_j \, (F\_1 F\_2 \cdots F\_{i-1})\, a\_i \\
-             & = - F\_1^2 F\_2^2 \cdots F\_{i-1}^2\, (F\_{i} a\_i)\, F\_{i+1} \cdots F\_{j-1}\, a\_j \\
-             & = - a\_i \, F\_{i+1} \cdots F\_{j-1}\, a\_j
+-c\_j c\_i  & = (F\_1 F\_2 \cdots F\_{j-1})\, a\_j \, (F\_1 F\_2 \cdots F\_{i-1})\, a\_i \\
+& = - F\_1^2 F\_2^2 \cdots F\_{i-1}^2\, (F\_{i} a\_i)\, F\_{i+1} \cdots F\_{j-1}\, a\_j \\
+& = - a\_i \, F\_{i+1} \cdots F\_{j-1}\, a\_j
 \end{align}
 This time the @@F\_i@@ operator ended up on the left of the @@a\_i@@ operator and @@F\_i a\_i = a\_i@@.
 The takeaway is that we got the exact same operator in the bosonic language, so we see that the
