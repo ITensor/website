@@ -63,9 +63,9 @@ def processMathJax(matchobj,delimit=""):
     if delimit=="@@":
         return "<span> " + math + " </span>"
     elif delimit=="$$":
-        return "<div>\n" + math + "\n</div>"
+        return "<div>\n" + math + "\n</div>\n<!---->"
     elif delimit=="align":
-        return "\n<div>\n " + math + "\n</div>\n"
+        return "<div>\n " + math + "\n</div>\n<!---->"
     return None
 
 def includeFile(matchobj):
