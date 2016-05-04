@@ -2,9 +2,9 @@
 
 Detailed information about every method and function in the ITensor library.
 
-The following documentation may omit minor details that do not change method semantics, 
-for example, describing a particular function signature as `f(ITensor T)` even though
-its actual signature is `f(ITensor const& T)` for efficiency reasons.
+The documentation may omit minor details that do not change how you use a method,
+like describing a particular function as `f(ITensor T)` even though
+its actual signature is `f(ITensor const& T)`.
 
 ## Index: named tensor index
 
