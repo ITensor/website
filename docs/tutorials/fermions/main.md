@@ -111,29 +111,37 @@ With the Jordan-Wigner transformation in hand, we can apply it to common operato
 one encounters when mapping fermionic Hamiltonians to bosonic ones, or when
 measuring correlation functions involving creation/annihilation operators:
 
-(1) Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
-$$
-(c^\dagger\_i c\_{i+1} + c^\dagger\_{i+1} c\_i) = (a^\dagger\_i a\_{i+1} + a^\dagger\_{i+1} a\_i)
-$$
 
-If we write the same operator, but this time keeping the operators in increasing site order, we find:
-$$
-(c^\dagger\_i c\_{i+1} - c\_{i} c^\dagger\_{i+1}) = (a^\dagger\_i a\_{i+1} + a\_i a^\dagger\_{i+1})
-$$
-which you should be able to check is completely consistent with the other version above.
+1. Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
+   $$
+   (c^\dagger\_i c\_{i+1} + c^\dagger\_{i+1} c\_i) = (a^\dagger\_i a\_{i+1} + a^\dagger\_{i+1} a\_i)
+   $$
+   If we write the same operator, but this time keeping the operators in increasing site order, we find:
+   \begin{align}
+   (c^\dagger\_i c\_{i+1} - c\_{i} c^\dagger\_{i+1}) & = (a^\dagger\_i a\_{i+1} + a\_i a^\dagger\_{i+1}) \\
+   & = (a^\dagger\_i a\_{i+1} + a^\dagger\_{i+1} a\_{i})
+   \end{align}
+   which is completely consistent with the other version above.
 
+2. Further-neighbor "hopping" term, assuming @@i < j @@
+   $$
+   (c^\dagger\_i c\_j + c^\dagger\_j c\_i) = (a^\dagger\_i F\_{i+1} F\_{i+2} \cdots F\_{j-1} a\_{j} + a\_{i} F\_{i+1} F\_{i+2} \cdots F\_{j-1} a^\dagger\_j)
+   $$
+   In this case we see that the starting and ending operators and signs are all the same, but there is a "string" of F operators
+   between the first and last sites.
 
-(2) Further-neighbor "hopping" term, assuming @@i < j @@
-$$
-(c^\dagger\_i c\_j + c^\dagger\_j c\_i) = (a^\dagger\_i F\_{i+1} F\_{i+2} \cdots F\_{j-1} a\_{j} + a\_{i} F\_{i+1} F\_{i+2} \cdots F\_{j-1} a^\dagger\_j)
-$$
-In this case we see that the starting and ending operators and signs are all the same, but there is a "string" of F operators
-between the first and last sites.
+3. Operator pairs used in correlation functions
 
-(3) Next-neighbor pairing, or superconducting "field" term
-$$
-(c^\dagger\_i c^\dagger\_{i+1} + c\_{i+1} c\_{i}) = (a^\dagger\_{i} a^\dagger\_{i+1} + a\_i a\_{i+1})
-$$
+   Here we assume that i < j.
+   \begin{align}
+   c^\dagger\_i c\_j & = \ \ a^\dagger\_i \  F\_{i+1} F\_{i+2} \cdots F\_{j-1}\  a\_{j} \\
+   c\_i c^\dagger\_j & = -a\_{i} \  F\_{i+1} F\_{i+2} \cdots F\_{j-1}\  a^\dagger\_{j}
+   \end{align}
+
+4. Next-neighbor pairing, or superconducting "field" term
+   $$
+   (c^\dagger\_i c^\dagger\_{i+1} + c\_{i+1} c\_{i}) = (a^\dagger\_{i} a^\dagger\_{i+1} + a\_i a\_{i+1})
+   $$
 
 ## Fermions with Spin
 
@@ -144,8 +152,8 @@ Fermions with spin have a local Hilbert space with four states
 * doubly occupied state: @@|2\rangle@@ 
 
 These states can be thought of as being "created" from the vacuum by the operators
-@@c^\dagger\_{\uparrow}@@ and @@c^\dagger\_{\downarrow}@@. Crucially, 
-the state @@|2\rangle@@ is defined as
+@@c^\dagger\_{\uparrow}@@ and @@c^\dagger\_{\downarrow}@@. Importantly, 
+the state @@|2\rangle@@ is defined to be
 $$
 |2\rangle = c^\dagger\_{\uparrow} c^\dagger\_{\downarrow} |0\rangle  \ .
 $$
@@ -153,28 +161,17 @@ with the up operator coming before the down operator.
 This implies that on the one hand @@c^\dagger\_{\uparrow} |\!\downarrow\rangle = |2\rangle@@
 while on the other @@c^\dagger\_{\downarrow} |\!\uparrow\rangle = -|2\rangle@@.
 
-To extend the Jordan-Wigner mapping to the case of fermions with spin, we can use trick of 
-introducing two string operators, one for each spin. 
-The operator @@F\_\uparrow@@ gives
-a minus sign if the site contains an up-fermion (is in the @@|\!\uparrow\rangle@@ or the @@|2\rangle@@ state).
-The operator @@F\_\downarrow@@ gives
-a minus sign if the site contains an down-fermion (is in the @@|\!\downarrow\rangle@@ or the @@|2\rangle@@ state).
-
-It is also convenient to introduce a "total" string operator @@F = F\_\uparrow F\_\downarrow@@ which gives
-a minus sign if the site contains an odd number of fermions.
-
 ### Spinful Jordan-Wigner Transformations
 
 With the above definitions we can map spinful fermion operators to spinful boson operators as follows
 \begin{align}
-c\_{\uparrow j} & = F\_1 F\_2 \cdots F\_{j-1} \,  a\_{\uparrow j} \\
-c\_{\downarrow j} & =  F\_1 F\_2 \cdots F\_{j-1} \, F\_{\uparrow j}\, a\_{\downarrow j} \\
-                  & =  F\_1 F\_2 \cdots F\_{j-1} \, F\_j\, a\_{\downarrow j}
+c\_{\uparrow j}   & = F\_1 F\_2 \cdots F\_{j-1} \ \ \  a\_{\uparrow j} \\
+c\_{\downarrow j} & =  F\_1 F\_2 \cdots F\_{j-1} \, \big( F\_j\, a\_{\downarrow j} \big)
 \end{align}
-Note the extra @@F\_{\uparrow j}@@ on the second line, which acts on the same site as the 
-bosonic annihilation operator. On the last line we used the identity 
-@@a\_{\downarrow j} = F\_{\downarrow j}\, a\_{\downarrow j}@@ and the definition @@F\_j = F\_{\uparrow j} F\_{\downarrow j}@@.
-
+Note the extra @@F\_{j}@@ in the mapping for the down-spin operator. This operator
+gives the extra minus sign needed when annihilating a down spin from the doubly occupied state.
+Be careful with this extra @@F\_{j}@@ operator because while the "F" and "a" operators commute on
+different sites they do not commute when sharing the same site.
 
 ### Some Useful Mappings for Spinful Fermions
 
@@ -230,7 +227,7 @@ minus signs occur because in our convention (and as discussed above) the up stat
 within a single site.
 
 Using the "Cup", "Cdn", etc. operators in ITensor is _optional_ when doing measurements properties of MPS or when making 
-your own MPO (not using AutoMPO). It is often clearer to use the "Aup", "Adn", etc.
+your own MPO "by hand" (i.e. not using AutoMPO). It is often clearer to use the "Aup", "Adn", etc.
 operators because it makes it clear that one is working with hard-core bosons plus Jordan-Wigner string.
 
 On the other hand, if you want to create a Hamiltonian for a fermionic system using AutoMPO, using the operator
