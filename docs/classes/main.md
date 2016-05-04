@@ -38,6 +38,8 @@ its actual signature is `f(ITensor const& T)` for efficiency reasons.
 
 * [[IQTensor|classes/iqtensor]]. Quantum number block sparse tensor.
 
+* [[Tensor Decompositions|classes/decomp]]. Singular value decomposition, density matrix diagonalization, etc.
+
 <br/>
 <br/>
 <span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0 but
@@ -45,7 +47,6 @@ may still be useful</span>
 
 ## Methods for working with tensors
 
-* [[SVD Algorithms|classes/svdalgs]]. Singular value decomposition, density matrix diagonalization, etc.
 * [[Spectrum|classes/spectrum]]. Class for storing & analyzing density matrix eigenvalue spectrum.
 
 ## Matrix product states and DMRG
