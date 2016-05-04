@@ -39,8 +39,21 @@
 
 <div class="full">
 
+    <div id="rightbar">
+
     <div id="download" class="rounded">
-        <h4>Clone via <a target="_blank" href="https://github.com/ITensor/ITensor">github</a></br>
+        <h4>
+        Latest version is <a href="docs.cgi?page=changelog#v2.0.7">v2.0.7</a>
+        </h4>
+        <h4>Clone from <a target="_blank" href="https://github.com/ITensor/ITensor">github</a> (preferred)</h4>
+        <h4>Download: <a href="https://github.com/ITensor/ITensor/tarball/v2.0.7">tar.gz</a>, 
+                     <a href="https://github.com/ITensor/ITensor/zipball/v2.0.7">zip</a> </h4>
+        <table style="padding:0;margin:0">
+        <tr><td>Report bugs:&nbsp;</td><td><a href="https://github.com/ITensor/ITensor/issues" target="_blank">code</a><td></tr>
+        <tr><td></td><td><a href="https://github.com/ITensor/website/issues" target="_blank">website</a><td></tr>
+        </table>
+        <h4>Follow: <a href="https://twitter.com/ITensorLib" target="_blank">@ITensorLib</a></h4>
+        <!--
         (this is the preferred method&mdash;see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide).</br>
         Or download latest <br/> version <a href="https://github.com/ITensor/ITensor/tree/v2.0.7" target="_blank">v2.0.7</a>
         (<a href="docs.cgi?page=changelog#v2.0.7">changelog</a>)</h4>
@@ -48,7 +61,21 @@
         <li><a href="https://github.com/ITensor/ITensor/tarball/v2.0.7">tar.gz</a></br>
         <li><a href="https://github.com/ITensor/ITensor/zipball/v2.0.7">zip</a></br>
         </ul>
+        -->
     </div>
+
+    <div id="latest" class="rounded">
+        <h2 class="rounded">Recent News</h2>
+        <ul>
+        <li><a href="news.html#fermion_string">Tutorial on Fermions and Jordan-Wigner Mapping</a></li>
+        <li><a href="news.html#discuss">New Discussion Forum</a></li>
+        <li><a href="news.html#version2">Version 2.0 released!</a></li>
+        <li><a href="news.html#sherbrooke2016">ITensor at 2016 Sherbrooke Summer School</a></li>
+        </ul>
+        <br/>
+    </div>
+
+    </div> <!-- rightbar -->
 
     <p>
     ITensor&mdash;Intelligent Tensor&mdash;is a C++ library for implementing tensor product wavefunction calculations.
@@ -62,17 +89,6 @@
     <li>Easy to <a href="docs.cgi?page=install">install</a>; only dependencies are BLAS/LAPACK and C++11
     </ul>
     </p>
-    <div id="latest" class="rounded">
-        <h2 class="rounded">Recent News</h2>
-        <ul>
-        <li><a href="news.html#fermion_string">Tutorial on Fermions and Jordan-Wigner Mapping</a></li>
-        <li><a href="news.html#discuss">New Discussion Forum</a></li>
-        <li><a href="news.html#version2">Version 2.0 released!</a></li>
-        <li><a href="news.html#sherbrooke2016">ITensor at 2016 Sherbrooke Summer School</a></li>
-        </ul>
-        ITensor on Twitter: <a href="https://twitter.com/ITensorLib" target="_blank">@ITensorLib</a> 
-        <br/>
-    </div>
 
     <p>
     ITensors have an <a href="https://en.wikipedia.org/wiki/Einstein_notation" target="_blank">Einstein summation</a> interface making them nearly as easy to multiply as 
@@ -81,7 +97,7 @@
     This type of interface makes it simple to transcribe tensor network diagrams into correct, efficient code.
     </p>
     <p>
-    For example, the diagram below (resembling the partial overlap of two matrix product states) 
+    For example, the diagram below (resembling the overlap of matrix product states) 
     can be converted to code as
     </p>
     <img class="diagram" style="margin-left:100px;" width="400px" src="Diagram.png"/></br>

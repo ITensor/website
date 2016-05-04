@@ -1,7 +1,7 @@
 /* This resets all elements */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
 body {line-height:1.5;}
-table {border-collapse:separate;border-spacing:0;}
+table {border-collapse:separate;border-spacing:0;padding:0;margin:0;}
 caption, th, td {text-align:left;font-weight:normal;}
 table, td, th {vertical-align:middle;}
 blockquote:before, blockquote:after, q:before, q:after {content:"";}
@@ -73,14 +73,18 @@ font-size: 12pt;
 #banner { width:200px; float:left; margin:0px; margin-left: 20px; padding-top:30px; }
 #banner img { width:460px; }
 
+#rightbar
+    {
+    float: right;
+    }
+
 #download 
     { 
-    width: 190px;
-    float:right;
+    width: 210px;
     font-size: 12pt; 
     font-family: sans-serif; 
     background: #FFDC75;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 10px 14px 12px;
     margin-left: 15px;
     margin-right: 0px;
     -moz-box-shadow: 1px 1px 1px #999;
@@ -92,10 +96,10 @@ font-size: 12pt;
 #download ul { display: table; color: #CD2626; margin-bottom:0px; padding-bottom:0px; }
 #download ul li { display: table; padding-left: 20px; color: #CD2626; }
 
+
 #latest 
     { 
     width: 230px;
-    float:right;
     font-size: 12pt; 
     font-family: sans-serif; 
     background: #FFFFFF;
