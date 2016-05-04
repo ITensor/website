@@ -5,10 +5,27 @@ Below are the major interface changes in ITensor version 2.0 versus 1.x.
 Most of this interface is already supported, although optional, in the 1.x branch.
 Following version 2.0 these changes are mandatory.
 
+### General Tips for Updating
+
+* When updating, remove your old options.mk file
+  and create a new one from the options.mk.sample file.
+  You can save a backup your old file to recall your BLAS/LAPACK settings.
+
+* It may not hurt to completely re-clone ITensor from github. For example, the include/ folder
+  is no longer used in version 2.0 but may stay around on your machine if you upgrade
+  by just doing a git pull.
+
 ### Changes to Basic Interface
 
+Note that some of these changes already work under version 1.3.x. However, they are mandatory
+following version 2.0.x.
 
-* Include statements now include paths to header files.
+* There is now an "all.h" header which gives a convenient way to include the entire library.
+
+      #include "itensor/all.h"
+
+
+* Include statements must now include paths to header files.
 
   Old-style version 1.x code
 
