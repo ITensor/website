@@ -59,13 +59,17 @@ def printContentType():
     print "Content-Type: text/html\n\n"
 
 def processMathJax(matchobj,delimit=""):
-    math = re.sub(r"\\_","_",matchobj.group(0))
     if delimit=="@@":
+        math = re.sub(r"\\_","_",matchobj.group(0))
         return "<span> " + math + " </span>"
     elif delimit=="$$":
-        return "\n<div>\n" + math + "\n</div>\n<!---->"
+        white = matchobj.group(1)
+        math = re.sub(r"\\_","_",matchobj.group(2))
+        return "\n{}<div>\n{}{}\n{}</div>\n<!-- -->".format(white,white,math,white)
     elif delimit=="align":
-        return "\n<div>\n " + math + "\n</div>\n<!---->"
+        white = matchobj.group(1)
+        math = re.sub(r"\\_","_",matchobj.group(2))
+        return "\n{}<div>\n{}{}\n{}</div>\n<!-- -->".format(white,white,math,white)
     return None
 
 def includeFile(matchobj):
@@ -99,8 +103,8 @@ def convert(string):
     #from Markdown formatter, also replace \_ -> _ in 
     #Latex string
     string = re.sub(r"(@@.+?@@)",partial(processMathJax,delimit="@@"),string)
-    string = re.sub(r"(\$\$.+?\$\$)",partial(processMathJax,delimit="$$"),string,flags=re.DOTALL|re.MULTILINE)
-    string = re.sub(r"(\\begin{align}.+?\\end{align})",partial(processMathJax,delimit="align"),string,flags=re.DOTALL|re.MULTILINE)
+    string = re.sub(r"([ ]*)(\$\$.+?\$\$)",partial(processMathJax,delimit="$$"),string,flags=re.DOTALL|re.MULTILINE)
+    string = re.sub(r"([ ]*)(\\begin{align}.+?\\end{align})",partial(processMathJax,delimit="align"),string,flags=re.DOTALL|re.MULTILINE)
 
     string = re.sub(r"([ ]*)include:(\S+)",partial(includeFile),string)
 

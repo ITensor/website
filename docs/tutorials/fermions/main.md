@@ -103,7 +103,7 @@ Now let us check that using the mapping on the reversed operators give a consist
 \end{align}
 This time the @@F\_i@@ operator ended up on the left of the @@a\_i@@ operator and @@F\_i a\_i = a\_i@@.
 The takeaway is that we got the exact same operator in the bosonic language, so we see that the
-mapping is consistent with the fact that the fermions anticommute @@c\_i c\_j = - c\_j c\_i@@. 
+mapping is consistent with the fact that the fermions anticommute @@c\_i c\_j = - c\_j c\_i@@ . 
 
 ### Some Useful Mappings for Spinless Fermions
 
@@ -180,20 +180,20 @@ it to transform common operators
 one encounters when mapping fermionic Hamiltonians to bosonic ones, or when
 measuring correlation functions involving creation/annihilation operators:
 
-(1) Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
-\begin{align}
-\sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,i+1} + c^\dagger\_{\sigma,i+1} c\_{\sigma,i}) & = 
-\big[(a^\dagger\_{\uparrow,i} F\_i)\, a\_{\uparrow,i+1} + (F\_i a\_{\uparrow,i})\, a^\dagger\_{\uparrow,i+1}\big] \\
-& \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, (F\_{i+1} a\_{\uparrow,i+1}) + a\_{\downarrow,i}\, (a^\dagger\_{\uparrow,i+1} F\_{i+1}) \big]
-\end{align}
-Note the minus sign in front of the second term on the right-hand side.
+1. Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
+   \begin{align}
+   \sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,i+1} + c^\dagger\_{\sigma,i+1} c\_{\sigma,i}) & = 
+   \big[(a^\dagger\_{\uparrow,i} F\_i)\, a\_{\uparrow,i+1} + (F\_i a\_{\uparrow,i})\, a^\dagger\_{\uparrow,i+1}\big] \\
+   & \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, (F\_{i+1} a\_{\uparrow,i+1}) + a\_{\downarrow,i}\, (a^\dagger\_{\uparrow,i+1} F\_{i+1}) \big]
+   \end{align}
+   Note the minus sign in front of the second term on the right-hand side.
 
-(2) Further-neighbor "hopping" term, assuming @@i < j @@
-\begin{align}
-\sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,j} + c^\dagger\_{\sigma,j} c\_{\sigma,i}) & = 
-\big[(a^\dagger\_{\uparrow,i} F\_i)\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\,  a\_{\uparrow,j} + (F\_i a\_{\uparrow,i})\,F\_{i+1} F\_{i+2} \cdots F\_{j-1} \, a^\dagger\_{\uparrow,j}\big] \\
-& \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_{j} a\_{\uparrow,j}) + a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (a^\dagger\_{\uparrow,j} F\_{j}) \big]
-\end{align}
+2. Further-neighbor "hopping" term, assuming @@i < j @@
+   \begin{align}
+   \sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,j} + c^\dagger\_{\sigma,j} c\_{\sigma,i}) & = 
+   \big[(a^\dagger\_{\uparrow,i} F\_i)\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\,  a\_{\uparrow,j} + (F\_i a\_{\uparrow,i})\,F\_{i+1} F\_{i+2} \cdots F\_{j-1} \, a^\dagger\_{\uparrow,j}\big] \\
+   & \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_{j} a\_{\uparrow,j}) + a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (a^\dagger\_{\uparrow,j} F\_{j}) \big]
+   \end{align}
 
 <a name="c_ops"></a>
 

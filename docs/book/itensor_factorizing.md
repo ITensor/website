@@ -95,15 +95,14 @@ a modest set of values.
 
 To obtain an approximate SVD in ITensor, pass one or more of
 the following accuracy parameters:
+
 * `"Cutoff"` &mdash; real number @@\epsilon@@. Discard the smallest singular values
-@@\lambda\_n@@ such that the <i>truncation error</i> is less than @@\epsilon@@:
-
-$$
-\frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
-$$
-
-Using a cutoff allows the SVD algorithm to truncate as many states as possible while still
-ensuring a certain accuracy.
+  @@\lambda\_n@@ such that the <i>truncation error</i> is less than @@\epsilon@@:
+  $$
+  \frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
+  $$
+  Using a cutoff allows the SVD algorithm to truncate as many states as possible while still
+  ensuring a certain accuracy.
 
 * `"Maxm"` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
 
