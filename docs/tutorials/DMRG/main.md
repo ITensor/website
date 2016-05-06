@@ -58,14 +58,7 @@ $$
 \mathcal{H}[A^{\sigma\_i}\_{a\_ia\_{i+1}}A^{\sigma\_{i+1}}\_{a\_{i+1}a\_{i+2}}]-E[A^{\sigma\_i}\_{a\_ia\_{i+1}}A^{\sigma\_{i+1}}\_{a\_{i+1}a\_{i+2}}]\overset!=0
 $$
 
-While the mathematical expression for this eigenvalue problem on the local tensor is cumbersome (we have hidden a complicated sum by simply writing @@\mathcal{H}@@ in the above), the ITensor code is not.  We will cover how the [[Lanczos and Davidson|tutorials/Lanczos]] algorithms work in the library in another article; however,  ITensor provides a function `davidson` that will evaluate this for us
-
-    auto H;//define an operator
-    auto psi;//define a wavefunction
-    auto args;//arguments
-    davidson(H,psi,args);//returns the scalar energy
-
-The output of the `davidson` algorithm undergoes a SVD in order to restore the form of the MPS (see [[SVD|tutorials/SVD]] for code examples).
+While the mathematical expression for this eigenvalue problem on the local tensor is cumbersome (we have hidden a complicated sum by simply writing @@\mathcal{H}@@ in the above), the ITensor code is not.  We will cover how the [[Lanczos and Davidson|tutorials/Lanczos]] algorithms work in the library in another article; however,  ITensor provides a function `davidson` that will evaluate this for us. The output of the `davidson` algorithm undergoes a SVD in order to restore the form of the MPS (see [[SVD|tutorials/SVD]] for code examples).
 
 There is one more step that must be taken to ensure the algorithm is fast and can solve larger systems than exact diagonalization.  Keeping all states in the SVD is not necessary to obtain the correct ground state at an acceptable accuracy. Truncating the MPS in the SVD keeps only the most relevant degrees of freedom for the ground state and eliminates extraneous degrees of freedom.  Controlling the number of many body states kept with the `maxm` and `minm` functions in ITensor does this.  Repositioning the orthogonality center to the next pair of sites and sweeping back and forth in the system eventually approaches the ground state.
 

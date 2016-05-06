@@ -1,16 +1,10 @@
 <span class='article_title'>ITensor Quickstart Guide</span>
 
-<span class='article_sig'>Thomas E. Baker&mdash;November 3, 2015</span>
+<span class='article_sig'>Thomas E. Baker&mdash; May 4, 2016</span>
 
-Using ITensor as a software package for DMRG or another tensor network method is simple and quick to get started.  Using the code in this article will get you going immediately.
+This article provides code for a quick introduction to the fundamentals of ITensor. For a quickstart guide oriented towards performing a DMRG calculation, go [[here|tutorials/DMRGquickstart]].
 
-The [[Tutorials|tutorials]] covers common methods and basics of tensor networks.  Here, we're going to go step by step through a sample code and discuss how you can modify it to what you need.  Here's an example of some real, starter ITensor code for a spin-1/2 chain.  The code is rewritten with banners below.  We'll cover all seven of those elements in the next chapters, in order, with general advice for any system you want to study.
-
-This program calculates the ground state energy of a spin-1/2 chain.  Putting this in a file called `hellodmrg.cc` and using a [[makefile|ITensorC++]] runs the code with the library.  We provide a full version in the dropdown menu below.
-
-If this looks completely new to you or there's something you don't understand, check out our [[C++ guide for ITensor|articles/ITensorC++]].
-
-We start by declaring some header files that contain `SiteSets` and AutoMPO.  We also declare the ITensor namespace.
+The following sample program generates a code to establish several indices, `ITensors` and `IQTensors` as well as setting manipulating values of tensors.
 
     //        +------------------------+
     //>-------|    (1) Header Files    |-------<
@@ -23,28 +17,21 @@ We start by declaring some header files that contain `SiteSets` and AutoMPO.  We
 
     using namespace itensor;// this tells ITensor specific functions where to be found, use everywhere
 
-Now we declare the main program and `InputGroup` that holds the parameters we want for the file.
+Now we declare the main program and define some indices (SHOW A DIAGRAM).
 
-    int main(int argc, char* argv[])//master object in program--must be called main
+    int main()//master object in program--must be called main
     {
-    //        +------------------------+
-    //>-------|  (2) Input parameters  |-------<
-    //        +------------------------+
-    //This part of the fie allows you to only compile the program once 
-    //and change parameters at runtime.  We can also put in parameters by hand
-    //each time we need to change them...but that requires we recompile!
+    //        +----------------+
+    //>-------|  (2) Indicies  |-------<
+    //        +----------------+
+    //
 
-    if(argc != 2)
-      {//reminds us to give an input file if we don't
-      cout << "Usage: " << argv[0] << " inputfile." <<endl;
-      return 0;
-      }
-    string infilename(argv[1]);
-    InputFile infile(infilename);
-    InputGroup basic(infile,"basic");//[[loads a file of parameters|tutorials/input]]
+    Index s1,s2,s3,s4,s4,s5;//initializes five indices
+    ITensor T(s1),U(s1,s2),V(s3,s4,s5);
 
-    const int N = basic.getReal("N",20);//number of sites
-    Real J = basic.getReal("J",1);
+    IQIndex q1,q2,q3,q4,q5;//initializes five indices with the appropriate quantum numbers
+
+STOPPED HERE...DEFINE IQTENSORS AND MANIPULATE THEM
 
 Now we declare the `SiteSet` that is used in the MPS, MPO, and many other places.
     

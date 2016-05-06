@@ -18,7 +18,7 @@ We will discuss some characteristics of MPSs and introduce some concepts that ar
 
 To make an MPS, we can use the constructor
 
-    MPS psi;//constructs a random MPS
+    MPS psi;//constructs an uninitialized MPS
     //or
     SpinHalf sites(5);
     auto psi = MPS(sites);//construct a random product state with indices

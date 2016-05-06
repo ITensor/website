@@ -111,6 +111,8 @@ Let's pretend we identify an accuracy we wish to achieve with our DMRG run as @@
 
 This is the number of steps in the Davidson algorithm used at each step of the [[DMRG|tutorials/DMRG]] algorithm.
 
+The choice for the size of the basis set is up to the user, but we recommend `niter=2`.  Why?  Increasing the number of kyrlov vectors kept decreases the runtime of `dmrg`.  Further, the extra accuracy given by a larger `niter` doesn't help converge `dmrg` to any higher accuracy.  The reason for this second remark is that we want a small change (in angle) of the state vector for a given block.  Changing the vector by a larger angle may overshoot the actual answer.
+
 #### Number of sweeps: `nsweeps`
 
 This is simply the number of sweeps (left to right or right to left) that DMRG will perform.
@@ -142,6 +144,20 @@ For reference, the truncation error is defined as the sum of the discarded singu
 #### Pinning fields
 
 In order to isolate some behaviors in a system, a pinning field can be applied to certain sites.  Because this depends so strongly on the system considered, we refer the interested reader to a comprehensive article [2].
+
+### Infinite DMRG calculations
+
+The [[`idmrg` function|tutorials/iDMRG]] has special convergence parameters. 
+
+when calling `idmrg`, some useful flags are
+
+    idmrg(psi,infH,infsweeps,{"OutputLevel",2,"NUCSweeps",nsubsweeps});
+
+`infsweeps` is a `Sweeps` class parameter.  
+
+The default number of sweeps over the unit cell is 1 (`nsubsweeps`=1).  Any other number of subsweeps must be odd to avoid an error.  The reason for this is the placement of the orthogonality center for the next sweep.
+
+The number of sweeps (`infsweeps`) for the whole algorithm (number of unit cells inserted) must be even for similar reasons.
 
 ### References
 
