@@ -1,6 +1,10 @@
 <span class='article_title'>ITensor Quickstart Guide</span>
 
-<span class='article_sig'>Thomas E. Baker&mdash;November 3, 2015</span>
+<span class='article_sig'>Thomas E. Baker&mdash; April 28, 2016</span>
+
+This article provides an introduction to using DMRG in ITensor.  For a more general quickstart guide, go [[here|tutorials/quickstart]].
+
+ITensor provides many features for tensor network computations.  This quickstart guide goes through some of the basic features.  A full explanation is contained in other articles.
 
 Using ITensor as a software package for DMRG or another tensor network method is simple and quick to get started.  Using the code in this article will get you going immediately.
 
