@@ -65,7 +65,7 @@ Now we declare the `SiteSet` that is used in the MPS, MPO, and many other places
 Next we define the [[MPO|tutorials/MPO]].
 
     //        +------------------------+
-    //>-------|       (4)  [[MPO|tutorials/MPO]]         |-------<
+    //>-------|       (4)  MPO         |-------<
     //        +------------------------+
     //ITensor uses an automatic MPO generator from a simple string
     //This covers most cases you might want to use, but making your own
@@ -83,7 +83,7 @@ Next we define the [[MPO|tutorials/MPO]].
 Then the MPS:
 
     //        +------------------------+
-    //>-------|       (5)  [[MPS|tutorials/MPS]]         |-------<
+    //>-------|       (5)  MPS         |-------<
     //        +------------------------+
     //Initializing an MPS will generate a random state.  
     //Making an initial state with some property is also included in the library.

@@ -17,84 +17,67 @@ The following sample program generates a code to establish several indices, `ITe
 
     using namespace itensor;// this tells ITensor specific functions where to be found, use everywhere
 
-Now we declare the main program and define some indices (SHOW A DIAGRAM).
+Now we declare the main program and define some indices.  [[Priming|tutorials/primes]] and [[index types|classes/index]] are discussed in other pages.
 
     int main()//master object in program--must be called main
     {
     //        +----------------+
-    //>-------|  (2) Indicies  |-------<
+    //>-------|  (2) Indices   |-------<
     //        +----------------+
     //
 
-    Index s1,s2,s3,s4,s4,s5;//initializes five indices
-    ITensor T(s1),U(s1,s2),V(s3,s4,s5);
+    auto i = Index("index i",4);//initializes index "i" with size 4 (i.e., four possible values)
+    auto j = Index("index j",6,"MyIndexType",2);//another index with a custom type (third field) and prime level 2
 
-    IQIndex q1,q2,q3,q4,q5;//initializes five indices with the appropriate quantum numbers
 
-STOPPED HERE...DEFINE IQTENSORS AND MANIPULATE THEM
+    println(j.type());//prints "MyIndexType"...see code link above for more options!
 
-Now we declare the `SiteSet` that is used in the MPS, MPO, and many other places.
+ITensor also supports indices that label specific quantum number sectors.  Read more [[here|classes/iqindex]] and [[here|tutorials/Qnumbers]].
+
+    //        +----------------+
+    //>-------| (3) IQIndices  |-------<
+    //        +----------------+
+    //
+
+    auto L = IQIndex("L",Index("L-",2),QN(-1),
+                         Index("L0",4),QN( 0),
+                         Index("L+",2),QN(+1));//Creates index separated into quantum numbers
+
+The backbone of ITensor is the `ITensor` and `IQTensor` classes.  Read about them [[here|classes/itensor]] and [[here|iqtensors]] as well in-depth dicussions in the [[ITensor book|page=book]].
     
-    //        +------------------------+
-    //>-------|       (3) SiteSet      |-------<
-    //        +------------------------+
-    //The SiteSet will tell the MPS and MPO classes what system and what 
-    //indices are available.  ITensor comes with three premade SiteSets:  
-    //SpinHalf, SpinOne, and Hubbard.  Making a custom system is discussed below.
-
-    SpinHalf sites(N);//note that changing to a spin-1 model replaces 
-                      //SpinHalf with SpinOne
-
-Next we define the [[MPO|tutorials/MPO]].
-
-    //        +------------------------+
-    //>-------|       (4)  [[MPO|tutorials/MPO]]         |-------<
-    //        +------------------------+
-    //ITensor uses an automatic MPO generator from a simple string
-    //This covers most cases you might want to use, but making your own
-    //MPO is also a snap; see below!
-
-    AutoMPO ampo(sites);
-    for (int j = 1; j<=N-1;j++)
-      {//makes a Heisenberg model
-        ampo += -J/2,"S+",j,"S-",j+1;
-        ampo += -J/2,"S-",j,"S+",j+1;
-        ampo += -J,"Sz",j,"Sz",j+1;
-      }
-    auto H = MPO(ampo);
-
-Then the MPS:
-
-    //        +------------------------+
-    //>-------|       (5)  [[MPS|tutorials/MPS]]         |-------<
-    //        +------------------------+
-    //Initializing an MPS will generate a random state.  
-    //Making an initial state with some property is also included in the library.
-
-    MPS psi(sites);
-
-Now we load into the `Sweeps` class all the parameters we'd like to use in our computation.
-
     //        +----------------------------+
-    //>-------| (6) Solve/Use a function   |-------<
+    //>-------| (4) ITensors and IQTensors |-------<
     //        +----------------------------+
-    //Specify parameters and perform an operation on your system.
+    auto Q = IQTensor(L);//creates an IQTensor with the quantum number index defined above
+                //supports up to 8 indices
+    auto T = ITensor(i,j);//creates an ITensor with the index defined above
+               //supports up to 8 indices
 
-    Sweeps sweeps(20);
-    sweeps.maxm() = 10, 20, 40, 80, 100;//how many many body states to keep
-                                        //the last entry is repeated
+How to access and store data in ITensors.  See [[this page|classes/itensor]] for more nifty features.
 
-    dmrg(psi,H,sweeps,"Quiet");//run DMRG
+    //        +------------------------+
+    //>-------| (5) Set tensor data    |-------<
+    //        +------------------------+
 
-The output from the `dmrg` function can be printed, sorted, put into another algorithm or whatever else is needed.
+    T.set(i(2),j(2),3.14159);//sets value for given index
+    println(T.real(i(2),j(2)));//prints 3.14159
 
-    //        +--------------------+
-    //>-------|     (7) Output     |-------<
-    //        +--------------------+
-    //Read off the energy, calculate a correlation function, print out 
-    //the wavefunction, etc.  It all goes here!
+    printData(T);//prints data in T
 
-    printfln("Energy = %.20f",psiHphi(psi,H,psi));
+Contracting over indices with the `*` operator.
+
+    //        +------------------------+
+    //>-------|   (5)  Contraction     |-------<
+    //        +------------------------+
+
+    auto jj = Index("index jj",6,"MyIndexType",1);
+    auto k  = Index("index k",3,"OtherIndexType",2);
+    auto P  = ITensor(i,jj,k);
+    auto result = T*P;//contracts over index "i" only
+
+
+Note that both prime levels and indices must match to contract.
+
 
     return 0;//return value for C++ program
 
@@ -106,45 +89,34 @@ The output from the `dmrg` function can be printed, sorted, put into another alg
 
     #include "all.h"
 
-    using namespace itensor;// this tells ITensor specific functions where to be found, use everywhere
+    using namespace itensor;
 
-    int main(int argc, char* argv[])//master object in program--must be called main
+    int main()
     {
+    auto i = Index("index i",4);//initializes index "i" with size 4 (i.e., four possible values)
+    auto j = Index("index j",6,"MyIndexType",2);//another index with a custom type (third field) and prime level 2
 
-    if(argc != 2)
-      {//reminds us to give an input file if we don't
-      cout << "Usage: " << argv[0] << " inputfile." <<endl;
-      return 0;
-      }
-    string infilename(argv[1]);
-    InputFile infile(infilename);
-    InputGroup basic(infile,"basic");
 
-    const int N = basic.getReal("N",20);//number of sites
-    Real J = basic.getReal("J",1);
+    println(j.type());//prints "MyIndexType"...see code link above for more options!
 
-    SpinHalf sites(N);//note that changing to a spin-1 model replaces 
-                      //SpinHalf with SpinOne
+    auto L = IQIndex("L",Index("L-",2),QN(-1),
+                         Index("L0",4),QN( 0),
+                         Index("L+",2),QN(+1));//Creates index separated into quantum numbers
 
-    AutoMPO ampo(sites);
-    for (int j = 1; j<=N-1;j++)
-      {//makes a Heisenberg model
-        ampo += -J/2,"S+",j,"S-",j+1;
-        ampo += -J/2,"S-",j,"S+",j+1;
-        ampo += -J,"Sz",j,"Sz",j+1;
-      }
-    auto H = MPO(ampo);
+    auto Q = IQTensor(L);
+    auto T = ITensor(i,j);
 
-    MPS psi(sites);
+    T.set(i(2),j(2),3.14159);
+    println(T.real(i(2),j(2)));//prints 3.14159
 
-    Sweeps sweeps(20);
-    sweeps.maxm() = 10, 20, 40, 80, 100;//how many many body states to keep
-                                        //the last entry is repeated
+    printData(T);//prints data in T
 
-    dmrg(psi,H,sweeps,"Quiet");//run DMRG
+    auto jj = Index("index jj",6,"MyIndexType",1);
+    auto k  = Index("index k",3,"OtherIndexType",2);
+    auto P  = ITensor(i,jj,k);
+    auto result = T*P;//contracts over index "i" only
 
-    printfln("Energy = %.20f",psiHphi(psi,H,psi));
+    return 0;//return value for C++ program
 
     }
-
 
