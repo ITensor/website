@@ -65,12 +65,10 @@ of non-interacting fermions. Here we are interested in the reverse: mapping ferm
 to bosons since it is simpler for computers to deal with bosons.
 
 The Jordan-Wigner mapping is defined as follows:
-$$
-c\_j = F\_1 F\_2 \cdots F\_{j-1} \,a\_j
-$$
-$$
-c^\dagger\_j = F\_1 F\_2 \cdots F\_{j-1} \, a^\dagger\_j
-$$
+\begin{align}
+c\_j & = F\_1 F\_2 \cdots F\_{j-1} \,a\_j \\
+c^\dagger\_j & = F\_1 F\_2 \cdots F\_{j-1} \, a^\dagger\_j
+\end{align}
 Here @@a\_j@@ and @@a^\dagger\_j@@ are the annihilation and creation operators for the bosons
 (defined identically to the fermion creation/annihilation operators except @@a\_i@@ and @@a^\dagger\_j@@
 commute when acting on different sites).
@@ -137,6 +135,7 @@ measuring correlation functions involving creation/annihilation operators:
    c^\dagger\_i c\_j & = \ \ a^\dagger\_i \  F\_{i+1} F\_{i+2} \cdots F\_{j-1}\  a\_{j} \\
    c\_i c^\dagger\_j & = -a\_{i} \  F\_{i+1} F\_{i+2} \cdots F\_{j-1}\  a^\dagger\_{j}
    \end{align}
+   <span>&nbsp;</span>
 
 4. Next-neighbor pairing, or superconducting "field" term
    $$

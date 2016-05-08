@@ -61,15 +61,17 @@ def printContentType():
 def processMathJax(matchobj,delimit=""):
     if delimit=="@@":
         math = re.sub(r"\\_","_",matchobj.group(0))
-        return "<span> " + math + " </span>"
+        return "<span> " + math + " </span> "
     elif delimit=="$$":
         white = matchobj.group(1)
         math = re.sub(r"\\_","_",matchobj.group(2))
-        return "\n{}<div>\n{}{}\n{}</div>\n<!-- -->".format(white,white,math,white)
+        #return "\n{}<div>\n{}{}\n{}</div>\n<!-- -->".format(white,white,math,white)
+        return "\n{}<div>\n{}{}\n{}</div>\n".format(white,white,math,white)
     elif delimit=="align":
         white = matchobj.group(1)
         math = re.sub(r"\\_","_",matchobj.group(2))
-        return "\n{}<div>\n{}{}\n{}</div>\n<!-- -->".format(white,white,math,white)
+        #return "\n{}<div>\n{}{}\n{}</div>\n<!-- -->".format(white,white,math,white)
+        return "\n{}<div>\n{}{}\n{}</div>\n".format(white,white,math,white)
     return None
 
 def includeFile(matchobj):

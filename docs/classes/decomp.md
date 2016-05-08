@@ -72,6 +72,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
      $$
      \frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
      $$
+     <span>&nbsp;</span>
   
   * "Minm" &mdash; integer m. At least m singular values will be kept, even if they fall below the cutoff.
   
@@ -273,6 +274,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
      $$
      \frac{\sum\_{n\in\text{discarded}} \  p\_n}{\sum\_{n} p\_n} < \epsilon \:.
      $$
+     <span>&nbsp;</span>
 
   * "Minm" &mdash; integer m. At least m singular values will be kept, even if they fall below the cutoff.
   
