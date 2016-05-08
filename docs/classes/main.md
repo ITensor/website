@@ -44,10 +44,7 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
 
-<br/>
-<br/>
-<span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0 but
-may still be useful</span>
+<!--
 
 ## Methods for working with tensors
 
@@ -55,11 +52,34 @@ may still be useful</span>
 
 ## Matrix product states and DMRG
 
-* [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
-  [[MPS Functions|classes/mps_functions]]. Functions for working with MPS. <br/>
+* [[MPS Functions|classes/mps_functions]]. Functions for working with MPS. <br/>
   [[InitState|classes/initstate]]. Class for initializing matrix product states.
 * [[SiteSet|classes/siteset]]. Class handling the site space.
     * [[SpinHalf|classes/spinhalf]]. Set of S=1/2 degrees of freedom.
     * [[SpinOne|classes/spinone]]. Set of S=1 degrees of freedom.
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
+
+To Do:
+- Spectrum
+- InitState
+- MPS functions & algorithms
+- MPO
+- MPO functions & algorithms
+- SiteSet
+  * SpinHalf
+  * SpinOne
+  * Spinless
+  * Hubbard
+  * tJ
+  * Z3
+- BondGate
+- dmrg functions
+- idmrg
+- Sweeps
+- Observer / DMRGObserver
+- AutoMPO
+- HamBuilder
+- Args
+- LocalOp, LocalMPO, etc.
+-->
 

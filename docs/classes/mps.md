@@ -1,45 +1,53 @@
 # MPS and IQMPS #
 
-<span style="color:red;font-style:italic;">Note: this documentation page refers to code prior to version 2.0</span>
+MPS is matrix product state of ITensors. IQMPS nearly identical but uses IQTensors.
+In the documentation below, MPS refers to both MPS and IQMPS unless explicitly
+specified. The type ITensor should be replaced with IQTensor for the case of an IQMPS.
 
-MPS and IQMPS are matrix product states consisting of ITensors and IQTensors respectively. Otherwise both
-classes have an identical interface. In the documentation below, MPS may refer to either an MPS or IQMPS 
-if used in a generic context. The type `Tensor` refers to `ITensor` for an MPS and `IQTensor` for an IQMPS.
+The main benefit of using the MPS class is that it can provide strong guarantees about the 
+orthogonality properties of the matrix product state it represents. Calling `psi.position(n)`
+on an MPS `psi` makes site n the orthogonality center (OC). Calling `psi.position(m)` moves
+the OC in an intelligent way using the fewest steps possible. If an arbitrary tensor of
+the MPS is modified, and `psi.position(n)` is again called, the MPS class knows how
+to restore the OC in the fewest number of steps.
 
-An MPS can be constructed from either a [[SiteSet|classes/siteset]] or an [[InitState|classes/initstate]].
+MPS tensors follow the convention that indices connecting neighboring tensors have the IndexType
+`Link`. Physical indices have the IndexType `Site`.
+
+MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [[InitState|classes/initstate]].
 
 ## Synopsis ##
 
-    const int N = 100;
-    SpinHalf sites(N);
+    int N = 100;
+    auto sites = SpinHalf(N);
 
-    MPS psi(sites); //create random product MPS
+    auto psi = MPS(sites); //create random product MPS
 
-    //Shift MPS gauge such that site 1 is
-    //the orthogonality center ("left-canonical gauge")
+    // Shift MPS gauge such that site 1 is
+    // the orthogonality center
     psi.position(1);
+    //Shift orthogonality center to site k
+    psi.position(k);
 
-    //Contract link index of first and second
-    //MPS site tensors to create two site wavefunction
-    ITensor bondWF = psi.A(1)*psi.A(2);
+    // Read-only access of tensor at site j
+    auto A = psi.A(j);
 
-    //Shift MPS gauge to a different site j ("mixed-canonical gauge")
-    psi.position(j);
+    // Replace tensor at site j with
+    // a modified tensor
+    psi.setA(j,2*A);
 
-    //Modify tensor at site j
+    // Directly modify tensor at site j
     //"nc" stands for "non-const"
-    psi.Anc(j).randomize();
+    psi.Anc(j) *= -1;
 
-    //Initialize an IQMPS to a specific product state,
-    //in this case the Neel state
-    InitState state(sites);
+    // Initialize an IQMPS to a specific product state
+    auto state = InitState(sites);
     for(int i = 1; i <= N; ++i)
         {
         if(i%2 == 0) state.set(i,"Up");
         else         state.set(i,"Dn");
         }
-
-    IQMPS qpsi(state);
+    auto qpsi = IQMPS(state);
 
 
 ## Constructors ##
@@ -56,68 +64,82 @@ An MPS can be constructed from either a [[SiteSet|classes/siteset]] or an [[Init
 
 * `MPS(SiteSet sites)`
 
-  Construct an `MPS` with physical sites given by a `SiteSet`. The `MPS` will be initialized to a random product state.
+  Construct an `MPS` with physical sites given by a [[SiteSet|classes/siteset]]. The `MPS` will be initialized to a random product state.
 
 * `IQMPS(SiteSet sites)`
 
-  Construct an `IQMPS` with physical sites given by a `SiteSet`. The `IQMPS` site tensors will not be initialized.
+  Construct an `IQMPS` with physical sites given by a [[SiteSet|classes/siteset]]. 
+  The `IQMPS` site tensors will _not_ be initialized (to construct an initialized IQMPS see next function).
 
 * `MPS(InitState state)` <br/>
   `IQMPS(InitState state)`
 
-  Construct an `MPS` or `IQMPS` and set its site tensors to be in the product state specified by the `InitState` argument.
+  Construct an `MPS` or `IQMPS` and set its site tensors to be in the product state 
+  specified by an [[InitState|classes/initstate]] object.
 
-## Accessor Methods
+## Retrieving Basic Information about MPS
 
-* `int N()`
+* `.N() -> int`
 
-  Returns the number of lattice sites of the MPS.
+  Returns the number of sites (number of tensors) of the MPS.
 
-* `const Tensor& A(int i)`
+* `.A(int i) -> ITensor const&`
 
   Returns a const reference (read-only access) to the MPS tensor at site `i`.
 
-* `Tensor& Anc(int i)`
+* `.rightLim() -> int`
+
+  Return the right orthogonality limit. If `rightLim()==j`, all tensors
+  at sites `i >= j` are guaranteed to be right orthogonal.
+
+* `.leftLim() -> int`
+
+  Return the left orthogonality limit. If `leftLim()==j`, all tensors
+  at sites `i <= j` are guaranteed to be left orthogonal.
+
+* `.isOrtho() -> bool`
+
+  Return `true` if the MPS has a well-defined orthogonality center that is a single site. 
+  This is equivalent to
+  the condition that `leftLim()+1 == rightLim()-1`, 
+  in which case the center site is `leftLim()+1`.
+
+* `.orthoCenter() -> int`
+
+  Return the location of the center site (unique site which is the orthogonality center of the MPS).
+  Throws an `ITError` exception if the orthogonality center is not well defined i.e. if `isOrtho()==false`.
+
+* `.sites() -> SiteSet const&`
+
+  Return a read-only reference to the `SiteSet` associated with the lattice sites of this MPS.
+
+## Modifying MPS Tensors
+
+* `.setA(int i, ITensor T)`
+
+  Set the MPS tensor on site i to be the tensor T.
+
+  If site `i` is not the orthogonality center, calling `setA(i,T)` will set `leftLim()`
+  to `i-1` or `rightLim()` to `i+1` depending on whether `i` comes before or after 
+  the center site&mdash;this can lead to additional overhead later when calling `position(j)`
+  to gauge the MPS to a different site.
+
+* `.Anc(int i) -> ITensor&`
 
   Returns a non-const reference (read-write access) to the MPS tensor at site `i`.
 
-  If read-only access is sufficient, use the `A(i)` method instead of this one.
+  If read-only access is sufficient, use the `A(i)` method instead of this one
+  because `Anc` may be less efficient.
+
   If site `i` is not the orthogonality center, calling `Anc(i)` will set `leftLim()`
   to `i-1` or `rightLim()` to `i+1` depending on whether `i` comes before or after 
   the center site&mdash;this can lead to additional overhead later when calling `position(j)`
   to gauge the MPS to a different site.
 
-* `int rightLim()` <br/>
-  `void rightLim(int j)`
 
-  Returns (or sets) the right orthogonality limit. If `rightLim()` returns the value `j`, all tensors
-  at sites `i >= j` are guaranteed to be right orthogonal.
-  Only set the `rightLim` manually if you are certain that this condition is met.
+## Modifying and Re-gauging MPS
 
-* `int leftLim()` <br/>
-  `void leftLim(int j)`
-
-  Returns (or sets) the left orthogonality limit. If `leftLim()` returns the value `j`, all tensors
-  at sites `i <= j` are guaranteed to be left orthogonal.
-  Only set the `leftLim` manually if you are certain that this condition is met.
-
-* `bool isOrtho()`
-
-  Returns `true` if the MPS has an orthogonality center that is a single site. This is equivalent to
-  the condition that `leftLim()+1 == rightLim()-1`, in which case the center site is `leftLim()+1`.
-
-* `int orthoCenter()`
-
-  Returns the location of the center site (unique site which is the orthogonality center of the MPS).
-  Throws an `ITError` if the orthogonality center is not well defined i.e. if `isOrtho()==false`.
-
-* `const SiteSet& sites()`
-
-  Returns a const reference to the `SiteSet` associated with the lattice sites of this MPS.
-
-# Modifying and Re-gauging MPS
-
-* `position(int j)`
+* `.position(int j)`
 
   Sets the orthogonality center to site `j` by performing singular value decompositions of tensors
   between `leftLim()` and `rightLim()`. After calling `position(j)`, tensors at sites `i < j` are
@@ -125,28 +147,122 @@ An MPS can be constructed from either a [[SiteSet|classes/siteset]] or an [[Init
   and right orthogonal site tensors can be omitted from operator expectation values for sites not 
   in the support of the operator.
 
-  Note: calling `position(j)` may in general change the "virtual" indices between some or all of
-  the MPS tensors.
+  Note: calling `position(j)` may in general change the "virtual" or `Link` indices between 
+  some or all of the MPS tensors.
 
-* `orthogonalize(OptSet opts = Global::opts())`
+* `.orthogonalize(Args args = Args::global())`
 
-  Fully re-gauge and compress the MPS by performing two passes: one to make all of the tensors orthogonal with minimal truncation,
-  and another to truncate the MPS to the requested accuracy.
+  Fully re-gauge and compress the MPS by performing two passes: one to make all of the 
+  tensors orthogonal with minimal truncation, and another to truncate the MPS to the requested accuracy.
 
-  Opts recognized:
-  * "Cutoff": truncation error cutoff
-  * "Maxm": maximum bond dimension of MPS
+  Named arguments recognized:
 
-* `svdBond(int b, Tensor AA, Direction dir, OptSet opts = Global::opts())`
+  * "Cutoff" &mdash; truncation error cutoff to use
+
+  * "Maxm" &mdash; maximum bond dimension of MPS to allow
+
+* ```
+  .svdBond(int b, ITensor AA, Direction dir, 
+           Args args = Args::global()) -> Spectrum
+  ```
 
   Replace the tensors at sites `b` and `b+1` (i.e. on bond `b`) with the tensor `AA`, which will be decomposed
   using a factorization equivalent to an SVD. If the `Direction` argument `dir==Fromleft`, then after the call
   to `svdBond`, site `b+1` will be the orthogonality center of the MPS. Similarly, if `dir==Fromright` then `b`
   will be the orthogonality center.
 
-* `svdBond(int b, Tensor AA, Direction dir, const LocalOpT& PH, OptSet opts = Global::opts())`
+  Returns a [[Spectrum|classes/spectrum]] object with information about the truncation and density
+  matrix eigenvalues.
 
-  Equivalent to `svdBond` above but with an additional argument `PH` (for "projected Hamiltonian") which
+* ```
+  .svdBond(int b, ITensor AA, Direction dir, BigMatrixT PH, 
+           Args args = Args::global()) -> Spectrum
+  ```
+
+  Equivalent to `svdBond` above but with an additional argument `PH` which
   is used to compute the "noise term" which will be added to the density matrix used to decompose `AA`.
+  For more information see the docs on [[denmatDecomp|classes/decomp]].
 
 
+* `.swap(MPS & phi)`
+
+  Efficiently replace all tensors of this MPS with the corresponding tensors
+  of another MPS `phi`, which must have the same number of sites.
+
+## MPS Prime Level Methods
+
+* `.mapprime(int plevold, int plevnew, IndexType type = All)`
+
+  For each tensor of the MPS, any index having prime level `plevold`
+  will have its prime level changed to `plevnew`.
+
+  Optionally the mapping will only be applied to indices with IndexType `type`.
+
+* `.primelinks(int plevold, int plevnew)`
+
+  For each tensor of the MPS, any index having type `Link` and prime level `plevold`
+  will have its prime level changed to `plevnew`.
+
+* `.noprimelink()`
+
+  Reset the `Link` indices of the MPS back to prime level zero.
+
+## Operations on MPS
+
+* `MPS * Real -> MPS` <br/>
+  `Real * MPS -> MPS` <br/>
+  `MPS * Cplx -> MPS` <br/>
+  `Cplx * MPS -> MPS` <br/>
+  `MPS *= Real` <br/> <!--*-->
+  `MPS *= Cplx`
+
+  Multiply an MPS by a real or complex scalar. 
+  The factor is put into the orthogonality center
+  tensor, if well defined. Otherwise it is put into an arbitrary tensor.
+
+* `MPS /= Real` <br/>
+  `MPS /= Cplx`
+
+  Divide an MPS by a real or complex scalar. 
+  The divisor is put into the orthogonality center
+  tensor, if well defined. Otherwise it is put into an arbitrary tensor.
+
+## Functions for Analyzing MPS
+
+* `norm(MPS psi) -> Real`
+  
+  Compute the norm of psi (square root of overlap of psi with itself).
+
+  If MPS has a well-defined orthogonality center (`psi.isOrtho()==true`),
+  the norm is computed very efficiently using only a single tensor.
+
+  If the MPS does not have a well-defined orthogonality center, the
+  norm is computed using the full overlap of `psi` with itself.
+
+## Functions for Modifying MPS
+
+* `normalize(MPS & psi) -> Real`
+  
+  Multiply the MPS by a factor such that it is normalized. Afterward calling `psi.norm()` or `overlap(psi,psi)`
+  for the MPS `psi` will give the value 1.0.
+
+  For convenience, returns the previous norm of the MPS as computed by `norm(psi)`.
+
+
+## Developer / Advanced Methods
+
+* `.leftLim(int j)` <br/>
+  `.rightLim(int j)`
+
+  Forcibly set the left or right orthogonality limits (see documentation 
+  for leftLim() and rightLim() above).
+
+  Only use these methods after modifying MPS tensors using `.setA` or `.Anc` 
+  when you know that the replaced tensors obey left or right orthogonality
+  constraints.
+
+  Setting these incorrectly could lead to an improperly gauged MPS even
+  after calling the `.position` method.
+
+<br/>
+_This page current as of version 2.0.7_
