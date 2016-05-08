@@ -40,6 +40,10 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Tensor Decompositions|classes/decomp]]. Singular value decomposition, density matrix diagonalization, etc.
 
+## Matrix product states and DMRG
+
+* [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
+
 <br/>
 <br/>
 <span style="color:red;font-style:italic;">Note: the remainder of these links refer to code prior to version 2.0 but
