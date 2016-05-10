@@ -2,8 +2,8 @@
 
 ITensor is designed to simplify tensor
 calculations through an "Einstein summation" interface for tensor contractions.
-ITensor indices are objects which "remember" their identities, so that nothing about the interface
-depends on the index ordering; this makes ITensor code easy to write and maintain.
+ITensors have indices with unique identities, so nothing about the interface
+depends on their ordering; this makes ITensor code easy to write and maintain.
 Despite these higher level features, ITensor is very efficient.
 
 The goal of this book is to first familiarize users with the 

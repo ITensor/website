@@ -14,15 +14,15 @@ The simplest way to construct an Index is to give its name and size:
 Upon creation, an Index gets "stamped" with a hidden id number that allows copies 
 of the Index to recognize each other.
 
-Two indices match if they are copies of the same original index
-(and have the same "prime level"; more on this below):
+Two indices match if they are copies of the same original index:
 
     auto j = i;  //make a copy of i
     Print(j==i); //prints: j==i = true
 
-Note that neither the name nor size are used to compare indices, only their
-internal id number (and prime level; see next section). So creating an Index with the same name and size
-as another Index does not make them compare equal!
+(also they must have the same "prime level"; see next section).
+
+Neither the name nor size are used to compare indices, because it would be easy
+for two different indices to have the same name and size by accident.
 
 To access the size of an Index, use its `.m()` method
 
@@ -54,7 +54,8 @@ meaning of a given Index object cannot be changed.
 The one property of an Index you can change is its prime level.
 
 An Index starts out with prime level zero.
-Two copies of the same Index with the same prime level compare equal.
+Copies of the same original Index must have the same prime level to compare
+equal.
 
 Calling `prime(i)` will produce a copy of i with prime level raised by 1.
 Because this copy has a different prime level, it will no longer compare equal to i.
@@ -79,24 +80,26 @@ Calling `noprime` resets the prime level to zero.
     //prints: 0
 
 We will see more ways to manipulate primes as we 
-work with ITensors that have multiple indices.
+work with ITensors with multiple indices.
 
 ### Printing Indices
 
 Printing an Index shows useful information about it:
 
     println(i);
-    //prints: (index i,3,Link)
+    //prints: (index i,3,Link,587)
 
 The output shows the name, size, and IndexType of i (the default is Link).
-
+The last number is part of the id number of the Index. Id numbers are 
+random and vary each time you run your program.
+ 
 The prime level is displayed at the end:
 
     println(prime(i,2));
-    //prints: (index i,3,Link)''
+    //prints: (index i,3,Link,587)''
 
     println(prime(i,10));
-    //prints: (index i,3,Link)'10
+    //prints: (index i,3,Link,587)'10
 
 ### Index Types
 
