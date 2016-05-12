@@ -16,6 +16,7 @@ $(document).ready(function()
     function(e)
         {
 
+
         /*
         $(e.target).toggle(
         function(e) { $(e.target).text("Show Example").stop(); },
@@ -23,6 +24,21 @@ $(document).ready(function()
         */
 
         $(e.target).next('.highlight').slideToggle(100);
+
+        /* Change text */
+        var str = $(e.target).text();
+        if(str.search("Show") > -1)
+            {
+            str = str.split("Show").join("Hide");
+            }
+        else
+            {
+            str = str.split("Hide").join("Show");
+            }
+
+        var set_text = function() { $(e.target).text(str); }
+        window.setTimeout(set_text, 200);
+
         });
 
     });

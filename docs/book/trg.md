@@ -28,6 +28,7 @@ neighboring @@\sigma@@ variables.
 In the two-dimensional case described below, there is a "critical" temperature @@T\_c=2.269\ldots@@
 at which this Ising system develops an interesting hidden scale invariance.
 
+
 ### One dimension
 
 In one dimension, spins only have two neighbors since they are arranged along a chain.

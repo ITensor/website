@@ -72,6 +72,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
      $$
      \frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
      $$
+     <span>&nbsp;</span>
   
   * "Minm" &mdash; integer m. At least m singular values will be kept, even if they fall below the cutoff.
   
@@ -193,117 +194,149 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
       T = randomTensor(i,j,prime(i),prime(j));
 
-      //Make T Hermitian
-      T = T + swapPrime(T,0,1);
+      //Make Hermitian tensor out of T
+      auto H = T + swapPrime(T,0,1);
 
       ITensor U,D;
-      diagHermitian(T,U,D); 
+      diagHermitian(H,U,D); 
 
-      Print((T-dag(U)*D*prime(U)).norm()); //prints: 0.0
+      Print((H-dag(U)*D*prime(U)).norm()); //prints: 0.0
+
+* `expHermitian(ITensor H, Cplx tau = 1) -> ITensor` <br/>
+  `expHermitian(IQTensor H, Cplx tau = 1) -> IQTensor`
+
+  Given a Hermitian tensor H, with matching pairs of indices (one with prime level zero, the other 
+  with prime level 1), returns the exponential of this tensor.
+
+  Optionally a factor `tau` can be included in the exponent. If `tau` has zero imaginary
+  part and the tensor H is real, the returned tensor will also be real.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto i = Index("i",2);
+      auto j = Index("j",4);
+
+      T = randomTensor(i,j,prime(i),prime(j));
+
+      //Make Hermitian tensor out of T
+      auto H = T + swapPrime(T,0,1);
+
+      // compute exp(i * H)
+      auto expiH = expHermitian(H,1_i);
+
+      // compute exp(2 * H)
+      auto exp2H = expHermitian(H,2);
+
+* ```
+  denmatDecomp(ITensor T, ITensor & A, ITensor & B, 
+               Direction dir, Args args = Args::global()) -> Spectrum
+  ```
+  ```
+  denmatDecomp(IQTensor T, IQTensor & A, IQTensor & B, 
+               Direction dir, Args args = Args::global()) -> Spectrum
+  ```
+
+   Factorize a tensor T into products A and B such that `T==A * B`. 
+   A and B are passed by reference and overwritten to hold the results. 
+
+   _Returns_: [[Spectrum|classes/spectrum]] object containing information about truncation 
+   and density matrix eigenvalues.
+
+   To determine which indices of T should end up on A versus B, the method inspects the 
+   initial indices of A (or B if A is default constructed) and keeps the same 
+   indices on A upon return, with the rest of the indices going onto B. 
+   (This is similar to how the `svd` method above works.)
+
+   If `dir==Fromleft` the tensor A will be "left orthogonal" in the sense that A times the 
+   conjugate of A summed over all indices not in common with B will produce an identity 
+   (Kronecker delta) tensor. If `dir==Fromright` B will be unitary ("right orthogonal"). 
+   
+   If `dir==Fromleft`, the result of this method is equivalent to computing an SVD of T 
+   such that `T==U * D * V` then setting `A=U` and `B=D * V`. 
+   (If `dir==Fromright` it would be equivalent to setting `A=U * D` and `B=V`.) 
+
+   Although the results of this method are related to the SVD, the implementation 
+   is different.  Rather than performing an SVD, the method computes a "density matrix" from T 
+   (using an analogy where T is a wave function, which may or may not actually be the case) 
+   and diagonalizes this density matrix. Two key reasons for doing this versus an SVD
+   are computational efficiency and having the ability to implement the DMRG 
+   noise term (see the next version of `denmatDecomp` below).
+
+   To compute a truncated version of this decomposition, pass one or both of the
+   named arguments "Cutoff" or "Maxm" described below.
+
+   The denmatDecomp function recognizes the following optional named arguments:
+   
+   * "Maxm" &mdash; integer M. If there are more than M eigenvalues, only the largest M are kept.
+
+  * "Cutoff" &mdash; real number @@\epsilon@@. Discard the smallest eigenvalues
+     @@p\_n@@ such that the <i>truncation error</i> is less than @@\epsilon@@:
+     $$
+     \frac{\sum\_{n\in\text{discarded}} \  p\_n}{\sum\_{n} p\_n} < \epsilon \:.
+     $$
+     <span>&nbsp;</span>
+
+  * "Minm" &mdash; integer m. At least m singular values will be kept, even if they fall below the cutoff.
+  
+  * "Truncate" &mdash; if set to `false`, no truncation occurs. Otherwise truncation parameters ("Cutoff",
+    "Maxm", "Minm") will be used to perform a truncation of singular values.
+  
+  * "ShowEigs" &mdash; if `true`, print lots of extra information about the truncation of singular values.
+    Default is `false`.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = randomTensor(l1,s1,s2,l2);
+
+      auto A = ITensor(l1,s1); //want l1, s1 to end up on A
+      ITensor B;
+      denmatDecomp(T,A,B,Fromleft); //decompose T into A * B
+
+      Print(norm(T-A*B)); //prints: 0
+
+* ```
+  template<class BigMatrixT>
+  denmatDecomp(ITensor T, ITensor & A, ITensor & B, 
+               Direction dir, 
+               BigMatrixT PH,
+               Args args = Args::global()) -> Spectrum
+  ```
+  ```
+  template<class BigMatrixT>
+  denmatDecomp(IQTensor T, IQTensor & A, IQTensor & B, 
+               Direction dir, 
+               BigMatrixT PH,
+               Args args = Args::global()) -> Spectrum
+  ```
+
+  Identical to denmatDecomp function described above, except before the decomposition the density matrix
+  formed from T has the "noise term" added to it. For more information on the noise term see the paper
+  [Density matrix renormalization group algorithms with a single center site](http://prb.aps.org/abstract/PRB/v72/i18/e180403), 
+  S.R.&nbsp;White, <i>Phys.&nbsp;Rev.&nbsp;B</i> *72*, 180403(R) (2005).
+
+  For the PH object to implement the noise term, it must provide the `deltaRho` method. For more information
+  see the documentation on [[LocalOp|classes/localop]].
+
+  Named arguments recognized:
+
+  * "Noise" &mdash; real number. Coefficient of noise term; default is 0.
 
 <!--
 
-## Density Matrix Decomposition ##
-
-* `denmatDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, OptSet opts = Global::opts())`
+* `orthoDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, Args args = Args::global())`
 
    *Returns*: `Spectrum` object containing density matrix eigenvalues.
 
-   Factorize a Tensor T into products A and B such that `T==A*B`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. A and B are passed by reference and overwritten to hold the results. If `dir==Fromleft` the tensor A will be unitary ("left orthogonal") in the sense that A times the conjugate of A summed over all indices not in common with B will produce an identity (Kronecker delta) tensor. If `dir==Fromright` B will be unitary ("right orthogonal"). The result of this method is equivalent to computing an SVD of T such that `T==U*D*V` then setting `A=U` and `B=D*V` assuming `dir==Fromleft`. (If `dir==Fromright` it would be equivalent to setting `A=U*D` and `B=V`.) However, the implementation is different from the SVD (see below).
+   Factorize a tensor T such that `T==A * B`.
 
-   To determine which indices of T should end up on A versus B, the method inspects the initial indices of A (or B if A is default constructed) and keeps the same indices on A upon return, with the rest of the indices going onto B. (This is similar to how the `svd` method above works.)
+   The orthoDecomp method is somewhat similar to denmatDecomp above, in that setting `dir==Fromleft` 
+   guarantees A is left orthogonal, except that orthoDecomp provides the additional guarantee that 
+   A is real (and similarly for B if `dir==Fromright`). This may come at the cost of a higher 
+   bond dimension of the common index of A and B.
 
-   Although the results of this method are related to the SVD, the implementation is different. Rather than performing an SVD, the method computes a "density matrix" from T (using an analogy where T is a wave function, which may or may not actually be the case) and diagonalizes this density matrix. Two key reasons for doing this in contrast to just an SVD are computational efficiency and having the ability to implement the DMRG noise term (see the last version of `denmatDecomp` below).
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              l1("Link 1",4,Link),
-              l2("Link 1",4,Link);
-
-        ITensor T(l1,s1,s2,l2);
-        T.randomize();
-
-        ITensor A(l1,s1), //want l1, s1 to end up on A
-                B;
-
-        denmatDecomp(T,A,B,Fromleft); //decompose T into A*B
-
-        Print((T-A*B).norm()); //prints 0
-
-
-* `denmatDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, LocalOpT PH, OptSet opts = Global::opts())`
-
-   *Returns*: `Spectrum` object containing density matrix eigenvalues.
-
-   Factorize a Tensor T, truncating the density matrix eigenvalues (equivalent to the squares of the singular values) according to the parameters contained in the [[Spectrum|classes/spectrum]] instance `spec`. Also add a noise term constructed out of the projected Hamiltonian `PH` with strength given by `spec.noise()`. For more information on the noise term see [Density matrix renormalization group algorithms with a single center site](http://prb.aps.org/abstract/PRB/v72/i18/e180403), S.R.&nbsp;White, <i>Phys.&nbsp;Rev.&nbsp;B</i> *72*, 180403(R) (2005).
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              l1("Link 1",4,Link),
-              l2("Link 1",4,Link);
-
-        ITensor T(l1,s1,s2,l2);
-        T.randomize();
-
-        ITensor A(l1,s1), //want l1, s1 to end up on A
-                B;
-
-        //Create a OptSet object to control the truncation
-        OptSet opts;
-        opts.add("Cutoff",1E-8);
-        opts.add("Maxm",100);
-        opts.add("Noise",1E-10); //set the noise level to 1E-10
-
-        //Given an appropriately constructed Hamiltonian MPO H,
-        //create a projected Hamiltonian
-        LocalMPO<ITensor> PH(H);
-        //...may have to call position method of PH to correctly initialize...
-
-        denmatDecomp(T,A,B,Fromleft,PH,opts); //add noise term to T, factorize,and truncate
-
-        Print((T-A*B).norm()); //prints a small number since we truncated
-
-## Hermitian Diagonalization ##
-
-* `diagHermitian(Tensor T, Tensor& U, Tensor& D, OptSet opts = Global::opts())`
-
-   *Returns*: `Spectrum` object containing eigenvalues of T.
-
-   Diagonalize a Hermitian Tensor T such that `T==dag(U)*D*prime(U)`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. U and D are passed by reference and overwritten on return.
-
-   The method assumes that the indices of T come in pairs, one index with prime level 0 and a matching index with prime level 1 (reflecting the Hermitian nature of T). For example, T could have indices i,i',j, and j'. Saying that T is Hermitian means that `T == dag(swapPrime(T,0,1))`.
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site);
-
-        ITensor T(s1,s2,prime(s1),prime(s2));
-        T.randomize();
-
-        T = T + swapPrime(T,0,1);
-
-        ITensor U,D;
-
-        diagHermitian(T,U,D); 
-
-        Print((T-dag(U)*D*prime(U)).norm()); //prints 0
-
-## Orthogonal (Real) Factorization ##
-
-* `orthoDecomp(Tensor T, Tensor& A, Tensor& B, Direction dir, OptSet opts = Global::opts())`
-
-   *Returns*: `Spectrum` object containing density matrix eigenvalues.
-
-   Factorize a Tensor T such that `T==A*B`. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. A and B are passed by reference and overwritten on return.
-
-   The orthoDecomp method is somewhat similar to denmatDecomp above, in that setting `dir==Fromleft` guarantees A is left orthogonal, except that orthoDecomp provides the additional guarantee that A is real (and similarly for B if `dir==Fromright`). This may come at the cost of a higher bond dimension of the common index of A and B.
-
-   To determine which indices of T appear on A versus B after the factorization, orthoDecomp inspects the initial value of A and B when the method is called and keeps the initial indices of A on A (or inspects B if A is null) and puts the rest on B.
+   To determine which indices of T appear on A versus B after the factorization, orthoDecomp 
+   inspects the initial value of A and B when the method is called and keeps 
+   the initial indices of A on A (or inspects B if A is null) and puts the rest on B.
 
    <div class="example_clicker">Show Example</div>
 
@@ -324,32 +357,15 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
         Print((T-A*B).norm()); //prints 0
 
 
-## Inverse Singular Value Decomposition ##
+-->
 
-* `csvd(Tensor T, Tensor& L, Tensor& V, Tensor& R, OptSet opts = Global::opts())`
+<!--
 
-   *Returns*: `Spectrum` object containing density matrix eigenvalues.
+To add:
 
-   Compute the "inverse" singular value decomposition of a Tensor T. "Tensor" is a templated type and could be e.g. ITensor or IQTensor. On return, the arguments L, V, and R are overwritten to hold the resulting factors such that `T==L*V*R`.
-
-   The inverse SVD works similarly to the normal SVD method defined above (and uses the same implementation), but on return the factor V is set to the inverse of the singular value matrix D. The tensors L and R are constructed from the unitaries computed by the SVD times an extra factor of D.
-
-   <div class="example_clicker">Show Example</div>
-
-        Index s1("Site 1",2,Site), 
-              s2("Site 2",2,Site),
-              l1("Link 1",4,Link),
-              l2("Link 1",4,Link);
-
-        ITensor T(l1,s1,s2,l2);
-        T.randomize();
-
-        ITensor L(l1,s1), //want l1, s1 to end up on U
-                V,R;
-
-        csvd(T,L,V,R); //compute inverse SVD
-
-        Print((T-L*V*R).norm()); //prints 0
-
+* eigen
 
 -->
+
+<br/>
+_This page current as of version 2.0.7_
