@@ -41,8 +41,8 @@ where @@t=-1/(2a^2)@@ and a sum over spins has been ignored (recovered below).  
     {
       ampo += t,"Cdagup",i,"Cup",i+1; //must be ordered i->i+1
       ampo += t,"Cdagdn",i,"Cdn",i+1; //for Fermion phases
-      ampo += t,"Cup",i,"Cdagup",i+1;
-      ampo += t,"Cdn",i,"Cdagdn",i+1; 
+      ampo += -t,"Cup",i,"Cdagup",i+1;
+      ampo += -t,"Cdn",i,"Cdagdn",i+1; 
       ampo += -2*t,"Ntot",i;          //density term
     }
     auto H = IQMPO(ampo);//generates MPO
@@ -111,7 +111,9 @@ Let's pretend we identify an accuracy we wish to achieve with our DMRG run as @@
 
 This is the number of steps in the Davidson algorithm used at each step of the [[DMRG|tutorials/DMRG]] algorithm.
 
-The choice for the size of the basis set is up to the user, but we recommend `niter=2`.  Why?  Increasing the number of kyrlov vectors kept decreases the runtime of `dmrg`.  Further, the extra accuracy given by a larger `niter` doesn't help converge `dmrg` to any higher accuracy.  The reason for this second remark is that we want a small change (in angle) of the state vector for a given block.  Changing the vector by a larger angle may overshoot the actual answer.
+The choice for the size of the basis set is up to the user, but we recommend `niter=2`.  Why?  Increasing the number of kyrlov vectors kept decreases the runtime of `dmrg`.  Further, the extra accuracy given by a larger `niter` doesn't help converge `dmrg` to any higher accuracy.  The reason for this second remark is that we want a small change of the state vector for a given block.  Changing the vector by a larger amount may overshoot the actual answer.
+
+The key difference is that converging a local block in DMRG, for example, doesn't necessarily help converge the entire system globally.
 
 #### Number of sweeps: `nsweeps`
 
