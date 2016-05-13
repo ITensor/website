@@ -3,8 +3,9 @@
 
 ## 2016
 
-* [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
+* [Space Group Symmetry Fractionalization in a Chiral Kagome Heisenberg Antiferromagnet](http://dx.doi.org/10.1103/PhysRevLett.116.197203), Michael&nbsp;P.&nbsp;Zaletel, Zhenyue&nbsp;Zhu, Yuan-Ming&nbsp;Lu, Ashvin&nbsp;Vishwanath, and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i>&nbsp;<b>116</b>&nbsp;<a href="http://dx.doi.org/10.1103/PhysRevLett.116.197203">197203</a> (2016)
 
+* [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
 
 * [Ising tricriticality in the extended Hubbard model with bond dimerization](http://arxiv.org/abs/1604.01228) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, arxiv:1604.01228
 
