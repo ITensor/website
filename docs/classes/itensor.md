@@ -269,6 +269,11 @@ and that the result will be an ITensor.
   Both ITensors must have the same set of indices, though they can be in
   different orders.
 
+  <span style="color:red">Important note:</span> if the left-hand-side
+  ITensor is default initialized, doing += or -= will assign the right-hand
+  ITensor to it (click to see example below). This is for convenience when summing multiple ITensors in 
+  a loop.
+
   <div class="example_clicker">Show Example</div>
 
         auto l1 = Index("link 1",4);
@@ -284,6 +289,18 @@ and that the result will be an ITensor.
 
         ITensor S = A + B; //sum of A and B
         ITensor D = A - B; //difference of A and B
+
+        //
+        // Calling += on a default-initialized ITensor
+        //
+        auto T1 = ITensor();
+        auto T2 = ITensor(l1,l2);
+        if(not T1) print("T1 is default initialized");
+
+        T1 += T2;
+
+        if(T1) print("T1 is now initialized and equals T2");
+
 
 * `-ITensor -> ITensor`
 
