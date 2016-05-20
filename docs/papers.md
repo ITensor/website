@@ -3,6 +3,10 @@
 
 ## 2016
 
+* [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://arxiv.org/abs/1605.05737), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, arxiv:1605.05737
+
+* [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775
+
 * [Space Group Symmetry Fractionalization in a Chiral Kagome Heisenberg Antiferromagnet](http://dx.doi.org/10.1103/PhysRevLett.116.197203), Michael&nbsp;P.&nbsp;Zaletel, Zhenyue&nbsp;Zhu, Yuan-Ming&nbsp;Lu, Ashvin&nbsp;Vishwanath, and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i>&nbsp;<b>116</b>&nbsp;<a href="http://dx.doi.org/10.1103/PhysRevLett.116.197203">197203</a> (2016)
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
