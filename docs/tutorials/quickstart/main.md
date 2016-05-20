@@ -1,10 +1,11 @@
-<span class='article_title'>ITensor Quickstart Guide</span>
+<span class='article_title'>ITensor Quick Start Guide</span>
 
 <span class='article_sig'>Thomas E. Baker&mdash; May 4, 2016</span>
 
-This article provides code for a quick introduction to the fundamentals of ITensor. For a quickstart guide oriented towards performing a DMRG calculation, go [[here|tutorials/DMRGquickstart]].
+This article provides a quick introduction to writing a program based on ITensor. 
+For a similar guide oriented towards performing a DMRG calculation, see [[DMRG Quick Start|tutorials/DMRGquickstart]].
 
-The contents of `helloitensor.cc`.
+The contents of `hello_itensor.cc`.
 
     #include "itensor/all.h"
 
@@ -12,8 +13,8 @@ The contents of `helloitensor.cc`.
 
     int main()
     {
-    auto i = Index("index i",4);//initializes index "i" with size 4 (i.e., four possible values)
-    auto j = Index("index j",6,"MyIndexType",2);//another index with a custom type (third field) and prime level 2
+    auto i = Index("index i",4);
+    auto j = Index("index j",6);
     auto T = ITensor(i,j);
 
     T.set(i(3),j(2),3.14159);
@@ -21,49 +22,60 @@ The contents of `helloitensor.cc`.
     PrintData(T);
 
     return 0;
-
     }
 
-The following sample program generates a code to establish several indices, `ITensors` and `IQTensors` as well as setting manipulating values of tensors.
 
-These files contain functions we use below.  They are found through the Makefile.  Include "all.h" is a catch-all for every header file that you might need.  This reduces compile time slightly.  Speed this up by only including the header files you actually need (example: "/itensor/mps/dmrg.h").
+To understand what this program does, let us start at the top. The line
 
-We also must show what namespace to look in for special functions.  This is called as `using namespace itensor;`
-
-    //        +------------------------+
-    //>-------|    (1) Header Files    |-------<
-    //        +------------------------+
     #include "itensor/all.h"
+
+pulls in _all_ of the ITensor library. You can also include just the parts of
+ITensor you want to use to help your code compile a bit faster; for more information
+on which headers define each library feature see the [[detailed documentation|classes]].
+
+The next line of the program 
 
     using namespace itensor;
 
-Now we declare the main program.  C++ requires this declaration and that it is called `main`.
+says to pull in every function and object type defined in
+the `itensor` namespace. Otherwise we have to type things like `itensor::Index` instead of
+just `Index`.
 
-    //        +------------------------+
-    //>-------|    (2) Main object     |-------<
-    //        +------------------------+
 
-    int main()//master object in program--must be called main
+Now we reach the actual code our program will run.
+C++ requires that all programs have
+a function named `main`
+
+    int main()
     {
 
     //...rest of code here
 
     return 0;
-
     }
 
-Here is the body of the code.  It will define two indices and create an [[ITensor|classes/itensor]] from them.  [[Priming|tutorials/primes]] and [[index types|classes/index]] are discussed on the linked pages.
+The main function is what gets called first when your program is executed.
 
-    //        +----------------+
-    //>-------| (3) Code body  |-------<
-    //        +----------------+
-    //
+Now let us look at the body of the code. 
+First we define two tensor indices, of type `Index`.
 
-    auto i = Index("index i",4);//initializes index "i" with size 4 (i.e., four possible values)
-    auto j = Index("index j",6,"MyIndexType",2);//another index with a custom type (third field) and prime level 2
+    auto i = Index("index i",4);
+    auto j = Index("index j",6);
+
+Each Index has a name and a size. Using these indices, we can define
+an ITensor
+
     auto T = ITensor(i,j);
+
+which starts out with all elements zero. To change an element, we
+can call
 
     T.set(i(3),j(2),3.14159);
 
-    PrintData(T);//prints ITensor T
+which sets the i=3, j=2 element to the value 3.14159. 
+
+The `PrintData` macro conveniently prints information about the
+ITensor T (such as its indices) and shows all of its non-zero elements:
+ 
+    PrintData(T);
 

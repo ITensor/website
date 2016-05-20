@@ -2,6 +2,12 @@
 # <img src="docs/tutorials/icon.png" class="largeicon"> Tutorials
 
 
+### Learn By Example
+
+* [[ITensor Library Quick Start|tutorials/quickstart]]
+
+  Study a simple example program (similar to "hello world") based on the ITensor library.
+
 ### Fundamentals
 
 * [[Understanding Tensor Diagrams|tutorials/diagrams]]
