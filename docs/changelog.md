@@ -1,5 +1,24 @@
 # Change Log #
 
+<a name="v2.0.8"></a>
+## [Version 2.0.8](https://github.com/ITensor/ITensor/tree/v2.0.8) (May 24, 2016) ##
+
+* Fixed major bug in davidson algorithm where Gram-Schmidt was not being repeated after orthog failure.
+
+* Improved behavior of Truncate argument to svd and diagHermitian. Now gets set to true automatically if a truncation parameter (such as Cutoff or Maxm) is set.
+
+* Split tensor decomposition and MPS code into separate .cc files to help with linker limitations on Windows.
+
+* Removed static vectors from lapack_wrap.cc to make calls to these wrappers thread safe.
+
+* Fixed compilation errors and an off-by-one bug in stats.h
+
+* Fixed issue with using exactApplyMPO with same input and output MPS
+
+* Added sweepnext1 for single site sweeping algorithms
+
+* nmultMPO now uses a small default cutoff if none is provided
+
 <a name="v2.0.7"></a>
 ## [Version 2.0.7](https://github.com/ITensor/ITensor/tree/v2.0.7) (May 2, 2016) ##
 
