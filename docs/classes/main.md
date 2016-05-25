@@ -44,6 +44,10 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
 
+* [[MPO and IQMPO|classes/mpo]]. Matrix product operator class. <br/>
+
+* [[Algorithms for MPS and MPO|classes/mps_mpo_algs]] (including IQMPS and IQMPO algorithms). <br/>
+
 <!--
 
 ## Methods for working with tensors

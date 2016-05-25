@@ -227,6 +227,30 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   The divisor is put into the orthogonality center
   tensor, if well defined. Otherwise it is put into an arbitrary tensor.
 
+* `.plusEq(MPS R, Args args = Args::global())`
+
+  Add an MPS `R` to this MPS. When using this algorithm it is recommended to
+  pass truncation accuracy parameters such as "Cutoff" and "Maxm" through
+  the named arguments `args`. Internally these parameters will be passed
+  to the svd algorithm; for more information on the available parameters
+  and their meaning see the [[svd documentation|classes/decomp]].
+
+  <div class="example_clicker">Show Example</div>
+
+      auto sites = SpinHalf(N);
+      auto state = InitState(sites);
+      
+      // Make an all-up MPS
+      for(auto j : range1(N)) state.set(j,"Up");
+      auto psi1 = MPS(state);
+
+      // Make a "Neel state" MPS
+      for(auto j : range1(N)) state.set(j,j%2==1 ? "Up" : "Dn");
+      auto psi2 = MPS(state);
+
+      psi1.plusEq(psi2,{"Maxm",500,"Cutoff",1E-9});
+
+
 ## Functions for Analyzing MPS
 
 * `norm(MPS psi) -> Real`
@@ -255,7 +279,7 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   `.rightLim(int j)`
 
   Forcibly set the left or right orthogonality limits (see documentation 
-  for leftLim() and rightLim() above).
+  for `leftLim()` and `rightLim()` above).
 
   Only use these methods after modifying MPS tensors using `.setA` or `.Anc` 
   when you know that the replaced tensors obey left or right orthogonality
@@ -263,6 +287,30 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
 
   Setting these incorrectly could lead to an improperly gauged MPS even
   after calling the `.position` method.
+
+<!--
+
+Still need to add:
+
+* Args for 
+  - position
+  - orthogonalize
+  - svdBond
+* doWrite
+* writeDir
+* linkInd
+* rightLinkInd
+* leftLinkInd
+* isComplex
+* isOrtho
+* orthoCenter
+* averageM
+* maxM
+* applyGate
+* checkQNs
+* totalQN
+
+-->
 
 <br/>
 _This page current as of version 2.0.7_
