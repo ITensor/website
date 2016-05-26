@@ -111,11 +111,11 @@ IQIndex is defined in the header "itensor/iqindex.h".
   Return the Index of the nth block of this IQIndex. <br/>
   n is 0-indexed.
 
-* `qn(int n) -> QN`
+* `.qn(int n) -> QN`
 
-  Return the QN of the nth block of this IQIndex.
+  Return the QN of the nth block of this IQIndex. n is 1-indexed.
 
-* `dir() -> Arrow`
+* `.dir() -> Arrow`
 
   Return the Arrow direction of this IQIndex. Can be `In` or `Out`. <br/>
   For more information see the [[index conventions|itensor_conventions]] page.
