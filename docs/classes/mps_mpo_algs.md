@@ -87,6 +87,22 @@
   (In ITensor version 1.x this function was called `psiHKphi`. This name is still supported
   for backwards compatibility.)
 
+## Multiplying MPOs
+
+* `nmultMPO(MPO A, MPO B, MPO & C, Args args = Args::global())` <br/>
+  `nmultMPO(IQMPO A, IQMPO B, IQMPO & C, Args args = Args::global())`
+
+  Multiply MPOs A and B. On return, the result is stored in C. 
+  MPO tensors are multiplied one at 
+  a time from left to right and the resulting tensors are compressed using
+  the truncation parameters (such as "Cutoff" and "Maxm") provided through
+  the named arguments `args`.
+
+  <div class="example_clicker">Show Example</div>
+
+      MPO C;
+      nmultMPO(A,B,C,{"Maxm",500,"Cutoff",1E-8});
+
 
 
 <!--
@@ -95,7 +111,7 @@ To do:
 
 * overlap functions taking boundary tensors
 * psiHKphi where you pass re and im by reference
-* nmultMPO
+
 * exactApplyMPO
 * fitApplyMPO
 * zipUpApplyMPO
