@@ -87,6 +87,8 @@
   (In ITensor version 1.x this function was called `psiHKphi`. This name is still supported
   for backwards compatibility.)
 
+
+
 <!--
 
 To do:
@@ -94,6 +96,9 @@ To do:
 * overlap functions taking boundary tensors
 * psiHKphi where you pass re and im by reference
 * nmultMPO
+* exactApplyMPO
+* fitApplyMPO
+* zipUpApplyMPO
 
 -->
 

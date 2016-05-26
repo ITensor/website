@@ -263,6 +263,46 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   If the MPS does not have a well-defined orthogonality center, the
   norm is computed using the full overlap of `psi` with itself.
 
+  Caution: if the MPS does not have a well-defined orthogonality center then the cost of 
+  `norm` is linear in the system size. If the MPS does have a well-defined ortho center
+  the cost of `norm` is only proportional to the bond dimension m.
+
+* `linkInd(MPS psi, int b) -> Index`
+
+  Return the Index connecting the MPS tensor at site b to the tensor at site b+1.
+
+* `rightLinkInd(MPS psi, int s) -> Index`
+
+  Return the Index connecting the MPS tensor at site s to the tensor at site s+1.
+
+* `leftLinkInd(MPS psi, int s) -> Index`
+
+  Return the Index connecting the MPS tensor at site s-1 to the tensor at site s.
+
+* `isOrtho(MPS psi) -> bool`
+  
+  Return `true` if the MPS has a well defined orthogonality center.
+
+* `orthoCenter(MPS psi) -> int`
+  
+  Return the position of the site tensor which is the orthogonality center of the MPS psi.
+  If the MPS does not have a well-defined orthogonality center, throws at ITError exception.
+
+* `isComplex(MPS psi) -> bool`
+  
+  Return `true` if any tensor of the MPS is complex (has complex number storage).
+
+* `averageM(MPS psi) -> Real`
+
+  Return the average bond dimension of the MPS psi.
+
+* `maxM(MPS psi) -> int`
+
+  Return the maximum bond dimension of the MPS psi. This means the actual maximum of 
+  all of the current bond (Link) indices, not any theoretical maximum.
+  
+
+
 ## Functions for Modifying MPS
 
 * `normalize(MPS & psi) -> Real`
@@ -271,6 +311,10 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   for the MPS `psi` will give the value 1.0.
 
   For convenience, returns the previous norm of the MPS as computed by `norm(psi)`.
+
+  Caution: if the MPS does not have a well-defined orthogonality center then the cost of 
+  normalize is linear in the system size. If the MPS does have a well-defined ortho center
+  the cost of normalize is only proportional to the bond dimension m.
 
 
 ## Developer / Advanced Methods
@@ -298,14 +342,6 @@ Still need to add:
   - svdBond
 * doWrite
 * writeDir
-* linkInd
-* rightLinkInd
-* leftLinkInd
-* isComplex
-* isOrtho
-* orthoCenter
-* averageM
-* maxM
 * applyGate
 * checkQNs
 * totalQN
