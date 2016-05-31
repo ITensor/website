@@ -12,7 +12,7 @@ previous versions of the software).
 To clone the [ITensor repo](http://github.com/ITensor/ITensor) from Github (a website which stores and provides access to various repos), issue
 the following command on your computer:
 
-    git clone git@github.com:ITensor/ITensor.git itensor
+    git clone https://github.com/ITensor/ITensor.git itensor
 
 The last argument is the name of the folder you want git to put the ITensor source code into.
 You can choose any name you like for this folder.
