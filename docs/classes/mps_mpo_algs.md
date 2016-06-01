@@ -104,6 +104,23 @@
       nmultMPO(A,B,C,{"Maxm",500,"Cutoff",1E-8});
 
 
+## Applying MPO to MPS
+
+* `exactApplyMPO(MPS psi, MPO K, MPS & phi, Args args = Args::global())` <br/>
+  `exactApplyMPO(IQMPS psi, IQMPO K, IQMPS & phi, Args args = Args::global())`
+
+  Apply an MPO K to an MPS psi, resulting in the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@.
+
+  No approximation is made when applying the MPO, but after applying it the resulting
+  MPS is compressed using the truncation parameters provided in the named arguments `args`.
+
+  This method can be useful for applying an MPO to an MPS a small number of times, but
+  using it repeatedly will cause the MPS bond dimension to grow exponentially quickly.
+
+  Named arguments recognized:
+
+  * `"Orthog"` &mdash; (defaults to `true`) whether to orthogonalize and compress the resulting MPS
+  
 
 <!--
 
