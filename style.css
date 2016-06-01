@@ -443,3 +443,21 @@ border-color: #ddd;
 .newsitem p { padding: 10px; text-indent: 0px; }
 .newsitem a { color: #900; }
 
+
+#people
+{
+width: 800px;
+}
+#people td
+{
+padding: 1px;
+}
+#people td.name
+{
+width: 23%;
+padding: 1px;
+}
+#people td.descrip
+{
+padding: 40px;
+}
