@@ -1,12 +1,17 @@
 # <img src="docs/book/icon.png" class="largeicon">  The ITensor Book
 
-ITensor is designed to simplify tensor
-calculations through an "Einstein summation" interface for tensor contractions.
-ITensors have indices with unique identities, so nothing about the interface
-depends on their ordering; this makes ITensor code easy to write and maintain.
-Despite these higher level features, ITensor is very efficient.
+Tensor methods are a powerful approach for problems in physics and
+applied mathematics, but keeping track of tensor indices can be tedious
+and error-prone.
 
-The goal of this book is to first familiarize users with the 
+Inspired by tensor diagram notation, ITensor automatically handles
+low-level details of index ordering and data permutation, freeing the user
+to think about the structure of tensor networks. Indices in ITensor
+carry extra information and "multiplying" two ITensors contracts all
+matching indices, similar to Einstein summation.
+Despite these higher level features ITensor is very efficient.
+
+The goal of this book is to quickly familiarize users with the 
 main features of ITensor. Later chapters turn to advanced features and
 customizing higher-level parts of the library.
 
