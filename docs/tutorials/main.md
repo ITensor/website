@@ -6,7 +6,7 @@
 
 * [[ITensor Library Quick Start|tutorials/quickstart]]
 
-  Study a simple example program (similar to "hello world") based on the ITensor library.
+  Simplest possible example program (similar to "hello world") based on the ITensor library.
 
 ### Fundamentals
 

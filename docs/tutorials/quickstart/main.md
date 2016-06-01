@@ -2,8 +2,8 @@
 
 <span class='article_sig'>Thomas E. Baker&mdash; May 4, 2016</span>
 
-This article provides a quick introduction to writing a program based on ITensor. 
-For a similar guide oriented towards performing a DMRG calculation, see [[DMRG Quick Start|tutorials/DMRGquickstart]].
+Let's get started with ITensor by looking at the simplest program we can write involving a tensor.
+For a similar guide oriented towards DMRG calculations, see [[DMRG Quick Start|tutorials/DMRGquickstart]].
 
 The contents of `hello_itensor.cc`.
 
@@ -29,22 +29,23 @@ To understand what this program does, let us start at the top. The line
 
     #include "itensor/all.h"
 
-pulls in _all_ of the ITensor library. You can also include just the parts of
-ITensor you want to use to help your code compile a bit faster; for more information
-on which headers define each library feature see the [[detailed documentation|classes]].
+pulls in _all_ of the ITensor library. You could instead just include the parts of
+ITensor you want; for more information
+on which headers define each feature see the [[detailed documentation|classes]].
 
 The next line of the program 
 
     using namespace itensor;
 
 says to pull in every function and object type defined in
-the `itensor` namespace. Otherwise we have to type things like `itensor::Index` instead of
+the `itensor` namespace. Otherwise you would have to type things like `itensor::Index` instead of
 just `Index`.
 
 
 Now we reach the actual code our program will run.
 C++ requires that all programs have
-a function named `main`
+a function named `main` which is the first function
+to run when your program is executed
 
     int main()
     {
@@ -54,10 +55,8 @@ a function named `main`
     return 0;
     }
 
-The main function is what gets called first when your program is executed.
-
 Now let us look at the body of the code. 
-First we define two tensor indices, of type `Index`.
+First we define tensor indices i and j, of type `Index`.
 
     auto i = Index("index i",4);
     auto j = Index("index j",6);
