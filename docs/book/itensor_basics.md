@@ -39,7 +39,7 @@ Alternatively you can call `T.r()`.
 
 In applied mathematics, the number of 
 indices is often called the "order" of a tensor. Therefore we also provide
-`order(T)` as an alternative to `rank(T)`.
+`order(T)` as an alias for `rank(T)`.
 
 <a name="elements"></a>
 ### Accessing ITensor Elements
@@ -48,7 +48,7 @@ To set a particular element, or component, of an ITensor call its `.set` method:
 
     T.set(i(2),j(1),k(3),4.56);
 
-This element now has the value 4.56.
+This sets the i=2,j=1,k=3 element of the tensor to the value 4.56.
 
 In a more conventional tensor interface, the above operation would look like
 
@@ -69,7 +69,7 @@ has exactly the same outcome as the call
 
     T.set(i(2),j(1),k(3),4.56);
 
-We can retrieve this element by calling the `.real` method:
+We can retrieve an element by calling the `.real` method:
 
     auto el = T.real(k(3),i(2),j(1));
     println("el = ",el);

@@ -2,7 +2,7 @@
 
 The real power of tensor algorithms comes from tensor factorization,
 which can achieve huge compression of high-dimensional data.
-For example, a matrix product state (tensor train) can be viewed as
+For example, a matrix product state (a.k.a. tensor train) can be viewed as
 the successive factorization of a very high rank tensor.
 
 The ITensor approach to tensor factorizations emphasizes the structure
@@ -23,14 +23,15 @@ M = U S V^\dagger
 $$
 with U and V having the property @@U^\dagger U = 1@@ and @@V^\dagger V = 1@@.
 The matrix S is diagonal and has real, non-negative entries known as the singular
-values. The  SVD can be computed for arbitrary, rectangular matrices. It also
+values, which are typically ordered from largest to smallest. 
+The SVD is well-defined for any matrix, including rectangular matrices. It also
 leads to a controlled approximation, where the error due to discarding columns of U and V
-is small if the corresponding singular values are small.
-For more background reading on the SVD, see our [[SVD tutorial article|tutorials/SVD]].
+is small if the corresponding singular values discarded are small.
+For more background reading on the SVD, see our [[SVD article|tutorials/SVD]].
 
 
-To compute the SVD of an ITensor, you only need to think about which indices are the "row"
-indices (thinking of the ITensor as a matrix), with the rest assumed to be the "column" 
+To compute the SVD of an ITensor, you only need to specify which indices are (collectively) 
+the "row" indices (thinking of the ITensor as a matrix), with the rest assumed to be the "column" 
 indices.
 
 Say we have an ITensor with indices i,j, and k

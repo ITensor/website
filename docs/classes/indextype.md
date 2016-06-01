@@ -11,6 +11,9 @@ indices unchanged.
 An IndexType is implemented internally as a constant, fixed-size
 string of up to 7 characters.
 
+ITensor pre-defines a number of IndexTypes for you to use
+(see the <a href="#predef">full list</a> below).
+
 IndexType is defined in "itensor/indextype.h".
 
 ## Synopsis
@@ -85,6 +88,28 @@ IndexType is defined in "itensor/indextype.h".
   <div class="example_clicker">Click to Show Example</div>
 
       auto type = getIndexType(args,"BondType",Link);
+
+<a name="predef"></a>
+## Pre-defined IndexTypes
+
+Below are IndexType variables pre-defined by ITensor for you to use:
+
+* `Site` &mdash; conventionally used for physical, or "site" indices of wavefunctions
+* `Link` &mdash; conventionally used for link, virtual, or bond indices of tensor networks
+* `All` &mdash; special argument to functions taking an IndexType,
+  indicating the behavior should apply to any IndexType. Users are not allowed
+  to create Index objects with the `All` type.
+* `NullInd` &mdash; specal IndexType indicating that no IndexType was provided
+
+For convenience, ITensor also pre-defines the following IndexTypes, leaving their interpretation up to the user:
+* `AType`
+* `BType`
+* `CType`
+* `DType`
+* `VType`
+* `WType`
+* `XType`
+* `YType`
 
 
 <br/>

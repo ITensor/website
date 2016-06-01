@@ -7,8 +7,8 @@ are already enough to implement a powerful algorithm: the _tensor renormalizatio
 First proposed by Levin and Nave (cond-mat/0611687), TRG is a strategy for contracting a network
 of tensors connected in a two-dimensional lattice pattern by decimating the network
 in a heirarchical fashion. The term ["renormalization group"](http://physics.ohio-state.edu/~jay/846/Wilson.pdf) 
-refers to any such process where less important information at small distance scales is 
-repeatedly removed until the most important information remains.
+refers to processes where less important information at small distance scales is 
+repeatedly discarded until only the most important information remains.
 
 ## The Problem
 
@@ -101,7 +101,7 @@ be found by contracting the following network of @@A@@ tensors:
 
 The above drawing is of a lattice of 32 Ising spins (recall that the spins live on
 the tensor indices). The indices at the edges of this square wrap around in a periodic
-fashion because the energy was defined to use periodic boundary conditions.
+fashion because the energy function was defined using periodic boundary conditions.
 
 ## The TRG Algorithm
 
@@ -119,8 +119,8 @@ TRG is to factorize the @@A\_0@@ tensor in two different ways:
 Both factorizations can be computed using the [[singular value decomposition (SVD)|book/itensor_factorizing]].
 For example, to compute the first factorization, view @@A\_0@@ as a matrix with a collective "row"
 index @@\sigma\_l@@ and @@\sigma\_t@@ and collective "column" index @@\sigma\_b@@ and @@\sigma\_r@@. 
-After performing an SVD of @@A\_0@@ in this way, further factorize the singular value matrix @@S@@ 
-as @@S = \sqrt{S} \sqrt{S}@@ and absorb each @@\sqrt{S}@@ factor into 
+After performing an SVD of @@A\_0@@ in this way, further factorize the singular value matrix @@S@@ as @@S = \sqrt{S} \sqrt{S}@@ and 
+absorb each @@\sqrt{S}@@ factor into 
 U and V to create the factors @@F\_1@@ and @@F\_2@@. Pictorially:
 
 <img class="diagram" width="100%" src="docs/book/images/TRG_factorizing.png"/>

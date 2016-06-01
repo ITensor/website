@@ -11,18 +11,18 @@ The simplest way to construct an Index is to give its name and size:
 
     auto i = Index("index i",3);
 
-Upon creation, an Index gets "stamped" with a hidden id number that allows copies 
-of the Index to recognize each other.
-
-Two indices match if they are copies of the same original index:
+Upon creation, an Index gets "stamped" with a permanent, hidden id number that allows copies 
+of the Index to recognize each other. Typically you do not need to look at these
+id numbers; it is enough to know that indices match (compare equal)
+if they are copies of the same original index:
 
     auto j = i;  //make a copy of i
     Print(j==i); //prints: j==i = true
 
 (also they must have the same "prime level"; see next section).
 
-Neither the name nor size are used to compare indices, because it would be easy
-for two different indices to have the same name and size by accident.
+Neither the name nor size are used to compare indices, because 
+two different indices could accidentally have the same name and size.
 
 To access the size of an Index, use its `.m()` method
 
@@ -107,18 +107,22 @@ The Index constructor accepts an optional `IndexType` argument:
 
     auto s2 = Index("site 2",2,Site); //IndexType set to Site
 
-IndexTypes are useful because they allows us to manipulate or 
-retrieve only indices of a certain type. 
+IndexTypes are useful because they allow you to manipulate or 
+retrieve indices of a certain type. 
 IndexTypes can be thought of as labels that distinguish broad categories of indices, 
 such as "physical" versus "virtual" indices.
 
-It is possible to define a custom IndexType:
+In addition to the IndexTypes [[pre-defined by ITensor|classes/indextype#predef]], 
+you can define a custom IndexType 
 
     auto MyType = IndexType("MyType");
+
+and use it to create indices of this type
+
     auto m1 = Index("m1",5,MyType);
     auto m2 = Index("m2",7,MyType);
 
-An IndexType is just a fixed-size, constant string, and can be up to 7 characters long. 
+Internally, IndexType data is just a fixed-size, constant string, and can be up to 7 characters long. 
 The IndexType of an Index can be obtained by calling the `.type()` method.
 
     println("The type of m1 is ",m1.type());

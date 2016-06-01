@@ -30,7 +30,7 @@ Then the following code contracts over the index j
 
     auto C = A * B;
 
-In traditional notation this is the elementwise operation
+In traditional notation this means performing the sum
 $$
 C\_{i k} = \sum\_j A\_{i j} B\_{k j} \ .
 $$
@@ -60,10 +60,9 @@ In traditional tensor notation, we want to compute
 $$
 D\_{s s^\prime} = \sum\_{i,j} W\_{i s j} W\_{i s^\prime j} \ .
 $$
-But this notation can become difficult to read as contractions 
-become more complex.
+But this notation can become cumbersome for more complicated contractions.
 
-A nicer way to write this tensor contraction is 
+A nicer way to notate a tensor contraction is 
 by using a diagram
 
 <img class="diagram" width="40%" src="docs/book/images/WW_contraction.png"/>

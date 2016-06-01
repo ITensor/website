@@ -1,16 +1,16 @@
 # ITensor Library Overview
 
-Matrix methods have been a major success in the applied sciences.
-*Tensor* methods promise even greater insights and more powerful
+Matrix methods have been a great success in the applied sciences.
+*Tensor* methods promise even deeper insights and more powerful
 algorithms.
 Major advances in physics and chemistry have come from
 tensor network wavefunctions.
-Data scientists are discovering tensor algorithms
+Mathematicians and data scientists are discovering tensor algorithms
 which decisively outperform standard techniques.
 
 When a problem is cast into the language of tensors,
-each tensor index can typically be assigned
-a semantic, or physical meaning. 
+each tensor index typically has some
+ semantic, or physical meaning. 
 Similarly in ITensor, tensor indices are objects with
 unique identities. Constructing an index in ITensor looks like:
 
@@ -71,7 +71,7 @@ We have computed an outer product of two matrices with very little effort.
 ITensor has many other features emphasizing productivity
 over programming details:
 * Adding ITensors simply works without 
-the user having to permute the index order. 
+requiring the user to permute the index order. 
 * ITensor data storage automatically switches from real to complex as needed,
 such as when multiplying by a complex number.
 * Sparse ITensors seamlessly interoperate with regular, dense
