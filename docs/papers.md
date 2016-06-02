@@ -3,17 +3,18 @@
 
 ## 2016
 
+* [The entanglement negativity in random spin chains](https://arxiv.org/abs/1605.00674), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1605.00674
+
 * [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://arxiv.org/abs/1605.05737), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, arxiv:1605.05737
 
 * [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775
 
-* [Space Group Symmetry Fractionalization in a Chiral Kagome Heisenberg Antiferromagnet](http://dx.doi.org/10.1103/PhysRevLett.116.197203), Michael&nbsp;P.&nbsp;Zaletel, Zhenyue&nbsp;Zhu, Yuan-Ming&nbsp;Lu, Ashvin&nbsp;Vishwanath, and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i>&nbsp;<b>116</b>&nbsp;<a href="http://dx.doi.org/10.1103/PhysRevLett.116.197203">197203</a> (2016)
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
 
 * [Ising tricriticality in the extended Hubbard model with bond dimerization](http://arxiv.org/abs/1604.01228) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, arxiv:1604.01228
 
-* [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://arxiv.org/abs/1602.08172), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz, arxiv:1602.08172
+* [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://dx.doi.org/10.1103/PhysRevB.93.195118), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.195118">195118</a> (2016) [arxiv:1602.08172]
 
 * [Non-Markovian Dynamics in Chiral Quantum Networks with Spins and Photons](http://arxiv.org/abs/1602.00926), Tomás&nbsp;Ramos, Benoît&nbsp;Vermersch, Philipp&nbsp;Hauke, Hannes&nbsp;Pichler, Peter&nbsp;Zoller, arxiv:1602.00926
 
@@ -25,6 +26,8 @@
 * [Quantum Loop States in Spin-Orbital Models on the Honeycomb Lattice](http://arxiv.org/abs/1511.01505), Lucile&nbsp;Savary,
   arxiv:1511.01505
 
+* [Space Group Symmetry Fractionalization in a Chiral Kagome Heisenberg Antiferromagnet](http://dx.doi.org/10.1103/PhysRevLett.116.197203), Michael&nbsp;P.&nbsp;Zaletel, Zhenyue&nbsp;Zhu, Yuan-Ming&nbsp;Lu, Ashvin&nbsp;Vishwanath, and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i>&nbsp;<b>116</b>&nbsp;<a href="http://dx.doi.org/10.1103/PhysRevLett.116.197203">197203</a> (2016) [arxiv:1511.01510]
+
 * [Entanglement structure of the two-channel Kondo model](http://dx.doi.org/10.1103/PhysRevB.93.081106), Bedoor&nbsp;Alkurtass, Abolfazl&nbsp;Bayat, Ian&nbsp;Affleck, Sougato&nbsp;Bose, Henrik&nbsp;Johannesson, Pasquale&nbsp;Sodano, Erik&nbsp;S.&nbsp;Sørensen, Karyn&nbsp;Le&nbsp;Hur, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.081106">081106(R)</a> (2016) [arxiv:1509.02949]
 
 * [Unusual Corrections to Scaling and Convergence of Universal Renyi Properties at Quantum Critical Points](http://dx.doi.org/10.1103/PhysRevB.93.085120), Sharmistha&nbsp;Sahoo, E.&nbsp;Miles&nbsp;Stoudenmire, Jean-Marie&nbsp;Stéphan, Trithep&nbsp;Devakul, Rajiv&nbsp;R.&nbsp;P.&nbsp;Singh, Roger&nbsp;G.&nbsp;Melko, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.085120">085120</a> (2016) [arxiv:1509.00468]
@@ -35,7 +38,7 @@
 
 * [Criticality at the Haldane insulator charge-density-wave quantum phase transition](http://dx.doi.org/10.1103/PhysRevB.92.041120), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>92</b> <a href="http://dx.doi.org/10.1103/PhysRevB.92.041120">041120(R)</a> (2015) [arxiv:1506.04003]
 
-* [Two iridates, two models, two approaches: a comparative study on magnetism in 3D honeycomb materials](http://arxiv.org/abs/1506.06746), Eric&nbsp;Kin-Ho&nbsp;Lee, Jeffrey&nbsp;G.&nbsp;Rau, and Yong&nbsp;Baek&nbsp;Kim, arxiv:1506.06746
+* [Two iridates, two models, and two approaches: a comparative study on magnetism in three-dimensional honeycomb materials](http://dx.doi.org/10.1103/PhysRevB.93.184420), Eric&nbsp;Kin-Ho&nbsp;Lee, Jeffrey&nbsp;G.&nbsp;Rau, and Yong&nbsp;Baek&nbsp;Kim, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;B</i>&nbsp; <b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.184420)">184420</a> (2016) [arxiv:1506.06746]
 
 * [Using entanglement to discern phases in the disordered one- dimensional Bose-Hubbard model](http://iopscience.iop.org/0295-5075/111/2/26004/), Andrew&nbsp;M.&nbsp;Goldsborough and Rudolf&nbsp;A.&nbsp;Roemer, <i style="color:#CC0000">EPL</i>&nbsp;&nbsp;<b>111</b> <a target="_blank"  href="http://iopscience.iop.org/0295-5075/111/2/26004/">26004</a> (2015) [arxiv:1503.02973]
 
