@@ -153,7 +153,7 @@ of the `Spectrum` object returned by the `svd` function:
 
 
     auto spectrum = svd(T,U,D,V);
-    auto SvN=0;//The von Neumann entropy
+    Real SvN=0.;//The von Neumann entropy
     for(auto eig : spectrum.eigsKept())
     {
     SvN += -eig * log(eig);

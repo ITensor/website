@@ -24,7 +24,7 @@
     //Get density-matrix eigenvalues
     auto P = spectrum.eigsKept();
     //Apply von Neumann formula
-    Real SvN = 0;
+    Real SvN = 0.;
     for(auto p : P)
         {
         SvN += -p*log(p);
