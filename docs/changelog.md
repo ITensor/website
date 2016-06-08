@@ -1,5 +1,25 @@
 # Change Log #
 
+<a name="v2.0.9"></a>
+## [Version 2.0.9](https://github.com/ITensor/ITensor/tree/v2.0.9) (Jun 8, 2016) ##
+
+* Reorganized library code for big speedup of driver-code compile times.
+
+* Restored computation of quantum numbers of entanglement spectrum. It is now only done if requested
+  by passing the (boolean) named arg "ComputeQNs".
+
+* Fixed bug where AutoMPO was not working for non-QN conserving operators (thanks Yifan Tian).
+
+* Fixed bug where Truncate=false was getting set back to true if other truncation args (Cutoff, Maxm) were set
+  (thanks Bill Huggins).
+
+* Fixed autovector to allow types with non-constexpr default constructor.
+
+* Changed averageM(MPS) to return a Real instead of an int.
+
+* Broke up some big source files to aid compilation on Windows using cygwin.
+
+
 <a name="v2.0.8"></a>
 ## [Version 2.0.8](https://github.com/ITensor/ITensor/tree/v2.0.8) (May 24, 2016) ##
 
