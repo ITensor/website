@@ -3,6 +3,8 @@
 
 ## 2016
 
+* [Electronic quasiparticles in the quantum dimer model: density matrix renormalization group results](https://arxiv.org/abs/1606.04105), Junhyun&nbsp;Lee, Subir&nbsp;Sachdev, and Steven&nbsp;R.&nbsp;White, arxiv:1606.04105
+
 * [The entanglement negativity in random spin chains](https://arxiv.org/abs/1605.00674), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1605.00674
 
 * [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://arxiv.org/abs/1605.05737), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, arxiv:1605.05737
@@ -12,11 +14,11 @@
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
 
-* [Ising tricriticality in the extended Hubbard model with bond dimerization](http://arxiv.org/abs/1604.01228) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, arxiv:1604.01228
+* [Ising tricriticality in the extended Hubbard model with bond dimerization](http://dx.doi.org/10.1103/PhysRevB.93.235118) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.235118">235118</a> (2016) [arxiv:1604.01228]
 
 * [Tricritical Ising phase transition in two-ladder Majorana fermion lattice](http://dx.doi.org/10.1103/PhysRevB.93.195118), Xiaoyu&nbsp;Zhu, Marcel&nbsp;Franz, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.195118">195118</a> (2016) [arxiv:1602.08172]
 
-* [Non-Markovian Dynamics in Chiral Quantum Networks with Spins and Photons](http://arxiv.org/abs/1602.00926), Tomás&nbsp;Ramos, Benoît&nbsp;Vermersch, Philipp&nbsp;Hauke, Hannes&nbsp;Pichler, Peter&nbsp;Zoller, arxiv:1602.00926
+* [Non-Markovian Dynamics in Chiral Quantum Networks with Spins and Photons](http://dx.doi.org/10.1103/PhysRevA.93.062104), Tomás&nbsp;Ramos, Benoît&nbsp;Vermersch, Philipp&nbsp;Hauke, Hannes&nbsp;Pichler, Peter&nbsp;Zoller, <i style="color:#CC0000">Phys. Rev. A</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevA.93.062104">062104</a> (2016) [arxiv:1602.00926]
 
 * [Charge density waves in disordered media circumventing the Imry-Ma argument](http://arxiv.org/abs/1601.03041), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes, arxiv:1601.03041
 
