@@ -16,11 +16,13 @@ You can also download a zip file of the latest code by clicking <a href="https:/
 ## Building the Library
 
 1. Check that you have a C++ compiler and LAPACK libraries installed on your system.
-   On Mac OSX, this typically requires installing the free XCode package available 
-   from the App Store. On Linux, the `g++` program is typically available. On Windows
-   a good option is to install <a href="https://www.cygwin.com" target="blank_">Cygwin</a>,
-   which lets you run Unix programs inside a terminal. If you use Cygwin, make sure to install
-   the C++ compiler (gcc) and LAPACK packages.
+   * On Mac OS, this typically requires installing the free XCode package available 
+   from the App Store. 
+   * On Linux, the `g++` (gcc) program is typically available. Many package managers
+     offer a lapack-devel package which includes the LAPACK headers.
+   * On Windows a good option is to install <a href="https://www.cygwin.com" target="blank_">Cygwin</a>,
+     which lets you run Unix programs inside a terminal. If you use Cygwin, make sure to install
+     the C++ compiler (gcc) and LAPACK packages.
 
 2. Edit the user configurable options. Start by making a copy 
    of the sample Makefile options file: 
@@ -31,8 +33,8 @@ You can also download a zip file of the latest code by clicking <a href="https:/
    and follow the remaining instructions.
 
 3. Set which compiler to use (the `CCCOM` variable). 
-   Determine if your compiler supports C++11, the latest version of the
-   C++ standard (this is true for Clang v3.0; G++ v4.7 or so; Intel C++ v13.0),
+   Make sure your compiler supports C++11, the latest version of the
+   C++ standard (this is true for Clang v3.0; and G++ v4.8 and after)
    and make sure to set the flag -std=c++11 or similar to enable C++11.
    
 5. Edit `PLATFORM`, `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
