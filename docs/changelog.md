@@ -1,5 +1,16 @@
 # Change Log #
 
+<a name="v2.0.10"></a>
+## [Version 2.0.10](https://github.com/ITensor/ITensor/tree/v2.0.10) (Jun 19, 2016) ##
+
+* Fixed bug where denmatDecomp and diagHermitian were passing wrong scale factor to showEigs method (did not affect results, only printing of density matrix eigenvalues)
+
+* factor decomposition now returns a Spectrum object computing by the svd
+
+* Added optional method to MPS/IQMPS: you can use Aref(int i) as an alternative to Anc(int i)
+
+* Added -lpthread to suggested flags for PLATFORM=lapack in options.mk.sample
+
 <a name="v2.0.9"></a>
 ## [Version 2.0.9](https://github.com/ITensor/ITensor/tree/v2.0.9) (Jun 8, 2016) ##
 
