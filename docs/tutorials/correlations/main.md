@@ -2,7 +2,7 @@
 
 <span class='article_sig'>Thomas E. Baker&mdash;August 8, 2015</span>
 
-Let's calculate the two operator correlation function for a five site spin chain which is demonstrated in [[the coding recipe measuring a correlator for an MPS|recipes/correlator_mps]].  We can connect each line to a diagram and show them.  The actual object we want to calculate is
+Let's calculate the two operator correlation function for a five site spin chain which is demonstrated in [[the coding recipe measuring a correlator for an MPS|recipes/correlator_mps]].  The actual object we want to calculate is
 
 <p align="center"><img src="docs/tutorials/correlations/contract1.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
@@ -22,7 +22,7 @@ The first thing to notice is that the orthogonality center (red) has been placed
 
 This allows for the left-normalized (purple) blocks of the MPS to give the identity on contraction, so we don't need to program anything special to deal with these. The same is true for the right-normalized (yellow) blocks outside the region we are interested in.  Note that site 5 has this property. Technically, site 3 is also right normalized but it will not cancel to an identity since it lies in between two operators.
 
-It is important to use the most [[efficient method of contracting|articles/contractions]] the tensor network as we will do here; otherwise, the cost of computation will increase.  The first tensor to add to the contraction `C` is the tensor of the MPS for site 2.
+It is important to use the most [[efficient method of contracting|articles/contractions]] the tensor network as we will do here; otherwise, the cost of computation will increase. We will contract all of the tensors one at a time into a tensor `C` which holds our partially completed diagram. The first tensor we will use to begin the sequence of contractions is the MPS tensor for site 2: 
 
 <p align="center"><img src="docs/tutorials/correlations/contract3.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
@@ -44,10 +44,11 @@ We need to apply the same tensor of the MPS for the bra vector, but this tensor 
 
 <p align="center"><img src="docs/tutorials/correlations/contract6.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
-    auto ir = commonIndex(psi.A(2),psi.A(3),Link);//index to right of bra
-    C *= dag(prime(prime(psi.A(2),Site),ir));//primes all Site type indices 
-                                             //(physical indices) on the 
-                                             //second site and index ir
+    auto ir = commonIndex(psi.A(2),psi.A(3),Link); //index to right of bra
+
+    C *= dag(prime(prime(psi.A(2),Site),ir)); //primes all Site type indices 
+                                              //(physical indices) on the 
+                                              //second site and index ir
 
 Since we have gauged the MPS so it's orthogonality center is on site 2, the left-normalized (purple) blocks that we could draw here are equivalent to the identity. So, we do not need to include them in our code.  Note that the primed link line (horizontal) will not contract with the primed physical index or the unprimed link index on the bottom.  ITensor will not contract links and physical indices because they have different link identifications.  The `*` operator only contracts the same index.  The utility of calling a particular index a link or a site is to make it easy to prime all link or site indices on calling `prime(psi,Site)` or similar for other uses.
 
@@ -55,7 +56,7 @@ The diagram so far looks like the following diagram and is stored in `C`.
 
 <p align="center"><img src="docs/tutorials/correlations/contract7.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
-Then, we add in the next tensor in `psi`.
+Then, we contract with the next tensor in `psi`.
 
 <p align="center"><img src="docs/tutorials/correlations/contract8.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
@@ -67,15 +68,15 @@ The equivalent element in the bra is next:
 
     C *= dag(prime(psi.A(3),Link));
 
-Note that we do not prime the physical index here.  We want the indices to match so that the vertical lines connect to the next piece we add. Rather, we simply want a primed link index for the same reasons as before.
+Note that we do not prime the physical index here.  We want the indices to match so that the vertical lines connect to the next piece we contract with. Rather, we simply want a primed link index for the same reasons as before.
 
-Once again, we contract and the add the next part of the wavefunction:
+Once again, we contract in the next part of the wavefunction:
 
 <p align="center"><img src="docs/tutorials/correlations/contract10.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
     C *= psi.A(4);
 
-Then we add in the second operator:
+Then we contract the second operator into the network:
 
 <p align="center"><img src="docs/tutorials/correlations/contract11.png" alt="<Sz.Sz>" style="height: 250px;"/></p>
 
@@ -96,7 +97,7 @@ $$=\langle\psi|S_2^zS_4^z|\psi\rangle$$
 
 This represents the entire tensor contraction to measure the correlation function.  The final tensor `C` is a scalar (no indices); to extract its value as a real number we can use
 
-    C.toReal();
+    C.real();
 
 Extending these ideas to more operators in a correlation function is straightforward.  We add more operators to more sites just like those above.
 <!----
