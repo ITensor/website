@@ -8,6 +8,7 @@ like to see.
 
 * [[Creating your own "driver" code that builds against ITensor|formulas/driver]]
 * [[Running your program in debug mode|formulas/debug_mode]]
+* [[Reading input from a file|formulas/input]]
 
 ## ITensor Formulas
 Formulas about working with ITensors, Index, etc.
