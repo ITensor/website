@@ -125,11 +125,11 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
 * ```
   factor(ITensor T, ITensor & A, ITensor & B, 
-         Args args = Args::global())
+         Args args = Args::global()) -> Spectrum
   ```
   ```
   factor(IQTensor T, IQTensor & A, IQTensor & B, 
-         Args args = Args::global())
+         Args args = Args::global()) -> Spectrum
   ```
 
   The "factor" decomposition is based on the SVD,
@@ -368,4 +368,4 @@ To add:
 -->
 
 <br/>
-_This page current as of version 2.0.7_
+_This page current as of version 2.0.10_
