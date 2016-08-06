@@ -3,6 +3,8 @@
 
 ## 2016
 
+* [Entanglement and thermodynamics after a quantum quench in integrable systems](http://arxiv.org/abs/1608.00614), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1608.00614
+
 * [Many-Body Localization in System with a Completely Delocalized Single-Particle Spectrum](https://arxiv.org/abs/1607.04652), Yevgeny&nbsp;Bar&nbsp;Lev, David&nbsp;R.&nbsp;Reichman, and Yoav&nbsp;Sagi, arxiv:1607.04652
 
 * [Electronic quasiparticles in the quantum dimer model: density matrix renormalization group results](https://arxiv.org/abs/1606.04105), Junhyun&nbsp;Lee, Subir&nbsp;Sachdev, and Steven&nbsp;R.&nbsp;White, arxiv:1606.04105
