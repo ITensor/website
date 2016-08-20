@@ -3,17 +3,21 @@
 
 ## 2016
 
+* [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](http://arxiv.org/abs/1608.04490), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, arxiv:1608.04490
+
+
 * [Entanglement and thermodynamics after a quantum quench in integrable systems](http://arxiv.org/abs/1608.00614), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1608.00614
 
 * [Many-Body Localization in System with a Completely Delocalized Single-Particle Spectrum](https://arxiv.org/abs/1607.04652), Yevgeny&nbsp;Bar&nbsp;Lev, David&nbsp;R.&nbsp;Reichman, and Yoav&nbsp;Sagi, arxiv:1607.04652
 
 * [Electronic quasiparticles in the quantum dimer model: density matrix renormalization group results](https://arxiv.org/abs/1606.04105), Junhyun&nbsp;Lee, Subir&nbsp;Sachdev, and Steven&nbsp;R.&nbsp;White, arxiv:1606.04105
 
-* [The entanglement negativity in random spin chains](https://arxiv.org/abs/1605.00674), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1605.00674
-
 * [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://arxiv.org/abs/1605.05737), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, arxiv:1605.05737
 
-* [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775
+* [The entanglement negativity in random spin chains](http://dx.doi.org/10.1103/PhysRevB.94.035152), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.035152">035152</a> [arxiv:1605.00674]
+
+
+* [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775 <i style="color:#CC0000">To appear in proceedings of NIPS 2016</i>
 
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
