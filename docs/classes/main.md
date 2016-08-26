@@ -40,7 +40,14 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Tensor Decompositions|classes/decomp]]. Singular value decomposition, density matrix diagonalization, etc.
 
-## Matrix product states and DMRG
+## Matrix product states (MPS)
+
+* [[SiteSet|classes/siteset]]. Collection of site objects, defining a Hilbert space and local operators. <br/>
+  - [[SpinHalf and SpinHalfSite|classes/spinhalf]]. S=1/2 spin sites. <br/>
+  - [[SpinOne and SpinOneSite|classes/spinone]]. S=1 spin sites. <br/>
+  - [[Spinless and SpinlessSite|classes/spinless]]. Spinless particle sites. <br/>
+  - [[Hubbard and HubbardSite|classes/hubbard]]. Spinful particle sites. <br/>
+  - [[tJ and tJSite|classes/tj]]. SiteSet of t-J model sites. <br/>
 
 * [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
 
@@ -54,7 +61,7 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Spectrum|classes/spectrum]]. Class for storing & analyzing density matrix eigenvalue spectrum.
 
-## Matrix product states and DMRG
+## Matrix product states
 
 * [[MPS Functions|classes/mps_functions]]. Functions for working with MPS. <br/>
   [[InitState|classes/initstate]]. Class for initializing matrix product states.
@@ -66,9 +73,6 @@ its actual signature is `f(ITensor const& T)`.
 To Do:
 - Spectrum
 - InitState
-- MPS functions & algorithms
-- MPO
-- MPO functions & algorithms
 - SiteSet
   * SpinHalf
   * SpinOne
