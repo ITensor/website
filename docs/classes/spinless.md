@@ -41,15 +41,13 @@ Spinless and SpinlessSite are defined in the file "itensor/mps/sites/spinless.h"
 
 * `"F"` &mdash; the Jordan-Wigner fermion 'string' operator @@\hat{F}=(1-2\hat{n})=(-1)^{\hat{n}}@@
 
-* `"C"` &mdash; the annihilation operator @@\hat{c}@@. For the SpinlessSite this operator
-  is defined identically to the @@\hat{a}@@ operator when obtained directly from the 
-  Spinless site set (`"C"` does carry the actual meaning of a fermionic operator when used
-  to create an AutoMPO)
+For the following fermionic operators, it is crucial to note that when obtaining them as individual
+tensors from a site set, they do not anti-commute with each other on different sites, only on 
+the same site (for more details on how these operators act on a single site read more at
+[[this tutorial|tutorials/fermions]]). In contrast, when used as operator names in the
+construction of an AutoMPO, they do anti-commute but only in that context.
 
-* `"Cdag"` &mdash; the creation operator @@\hat{c}^\dagger@@. For the SpinlessSite this operator
-  is defined identically to the @@\hat{a}^\dagger@@ operator when obtained directly from the 
-  Spinless site set (`"Cdag"` does carry the actual meaning of a fermionic operator when used
-  to create an AutoMPO)
+* `"C"` &mdash; the annihilation operator @@\hat{c}@@.
 
-
+* `"Cdag"` &mdash; the creation operator @@\hat{c}^\dagger@@.
 
