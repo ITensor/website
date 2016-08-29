@@ -47,7 +47,7 @@ its actual signature is `f(ITensor const& T)`.
   - [[SpinOne and SpinOneSite|classes/spinone]]. S=1 spin sites. <br/>
   - [[Spinless and SpinlessSite|classes/spinless]]. Spinless particle sites. <br/>
   - [[Hubbard and HubbardSite|classes/hubbard]]. Spinful particle sites. <br/>
-  - [[tJ and tJSite|classes/tj]]. SiteSet of t-J model sites. <br/>
+  - [[tJ and tJSite|classes/tj]]. t-J model sites. <br/>
 
 * [[MPS and IQMPS|classes/mps]]. Matrix product state class. <br/>
 
@@ -73,13 +73,6 @@ its actual signature is `f(ITensor const& T)`.
 To Do:
 - Spectrum
 - InitState
-- SiteSet
-  * SpinHalf
-  * SpinOne
-  * Spinless
-  * Hubbard
-  * tJ
-  * Z3
 - BondGate
 - dmrg functions
 - idmrg
