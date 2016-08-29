@@ -17,7 +17,7 @@ A Hubbard site set (and HubbardSite) accepts the following optional named argume
   the spin. If set to false, the quantum numbers will only charge or parity, depending on 
   the value of "ConserveNf"
 
-Hubbard and HubbardSite are defined in the file "itensor/mps/sites/spinless.h"
+Hubbard and HubbardSite are defined in the file "itensor/mps/sites/hubbard.h"
 
 ## Synopsis
 
@@ -25,7 +25,7 @@ Hubbard and HubbardSite are defined in the file "itensor/mps/sites/spinless.h"
 
     auto Ntot_3 = sites.op("Ntot",3);
 
-    auto C_4 = sites.op("C",4);
+    auto Cup_4 = sites.op("Cup",4);
 
     //Make a Hubbard site set which only conserves parity
     auto psites = Hubbard(100,{"ConserveNf",false});
