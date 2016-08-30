@@ -3,6 +3,12 @@
 
 ## 2016
 
+* [Full counting statistics in the Haldane-Shastry chain](http://arxiv.org/abs/1608.06856), Jean-Marie&nbsp;Stéphan, Frank&nbsp;Pollmann, arxiv:1608.06856
+
+* [Quantum Entanglement Growth Under Random Unitary Dynamics](http://arxiv.org/abs/1608.06950), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, Sagar&nbsp;Vijay, Jeongwan&nbsp;Haah, arxiv:1608.06950
+
+* [Quenching a Quantum Critical State by the Order Parameter: Dynamical Quantum Phase Transitions and Quantum Speed Limits](http://arxiv.org/abs/1608.06659), Markus&nbsp;Heyl, arxiv:1608.06659
+
 * [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](http://arxiv.org/abs/1608.04490), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, arxiv:1608.04490
 
 
@@ -28,7 +34,7 @@
 
 * [Non-Markovian Dynamics in Chiral Quantum Networks with Spins and Photons](http://dx.doi.org/10.1103/PhysRevA.93.062104), Tomás&nbsp;Ramos, Benoît&nbsp;Vermersch, Philipp&nbsp;Hauke, Hannes&nbsp;Pichler, Peter&nbsp;Zoller, <i style="color:#CC0000">Phys. Rev. A</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevA.93.062104">062104</a> (2016) [arxiv:1602.00926]
 
-* [Charge density waves in disordered media circumventing the Imry-Ma argument](http://arxiv.org/abs/1601.03041), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes, arxiv:1601.03041
+* [Charge density waves in disordered media circumventing the Imry-Ma argument](http://www.nature.com/articles/srep31897), Hitesh&nbsp;J.&nbsp;Changlani, Norm&nbsp;M.&nbsp;Tubman, Taylor&nbsp;L.&nbsp;Hughes, <i style="color:#CC0000">Scientific Reports</i>&nbsp;&nbsp;<b>6</b> <a href="http://www.nature.com/articles/srep31897">31897</a> (2016) [arxiv:1601.03041]
 
 
 ## 2015
