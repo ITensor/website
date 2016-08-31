@@ -182,16 +182,18 @@ measuring correlation functions involving creation/annihilation operators:
 1. Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
    \begin{align}
    \sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,i+1} + c^\dagger\_{\sigma,i+1} c\_{\sigma,i}) & = 
-   \big[(a^\dagger\_{\uparrow,i} F\_i)\, a\_{\uparrow,i+1} + (F\_i a\_{\uparrow,i})\, a^\dagger\_{\uparrow,i+1}\big] \\
-   & \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, (F\_{i+1} a\_{\uparrow,i+1}) + a\_{\downarrow,i}\, (a^\dagger\_{\uparrow,i+1} F\_{i+1}) \big]
-   \end{align}
-   Note the minus sign in front of the second term on the right-hand side.
+   (a^\dagger\_{\uparrow,i}\, F\_i)\, a\_{\uparrow,i+1} + a\_{\downarrow,i}\, (F\_{i+1}\, a^\dagger\_{\downarrow,i+1}) \\
+   & \ \mbox{} - (a\_{\uparrow,i} F\_i)\, a^\dagger\_{\uparrow,i+1} - a\_{\downarrow,i}\, (F\_{i+1} a^\dagger\_{\downarrow,i+1}) \   \end{align}
+   Note the minus signs in front of the last two terms. We can interpret the F operators remaining on the right-hand
+   side as checking whether a fermion of the other spin type is present that the particle will hop "over". The minus signs
+   on the last two terms basically just come from writing the operators in left-to-right order (or can be found by
+   conjugating the first two terms and using the fact that 
 
 2. Further-neighbor "hopping" term, assuming @@i < j @@
    \begin{align}
    \sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,j} + c^\dagger\_{\sigma,j} c\_{\sigma,i}) & = 
-   \big[(a^\dagger\_{\uparrow,i} F\_i)\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\,  a\_{\uparrow,j} + (F\_i a\_{\uparrow,i})\,F\_{i+1} F\_{i+2} \cdots F\_{j-1} \, a^\dagger\_{\uparrow,j}\big] \\
-   & \ \mbox{} - \big[a^\dagger\_{\downarrow,i}\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_{j} a\_{\uparrow,j}) + a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (a^\dagger\_{\uparrow,j} F\_{j}) \big]
+   (a^\dagger\_{\uparrow,i} F\_i)\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\,  a\_{\uparrow,j} + a^\dagger\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1} \, (F\_j\, a\_{\downarrow,j})\\
+   & \ \mbox{} - (a\_{\uparrow,i}\,F\_i)\, F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, a^\dagger\_{\uparrow,j} - a\_{\downarrow,i}\,F\_{i+1} F\_{i+2} \cdots F\_{j-1}\, (F\_j\, a^\dagger\_{\downarrow,j})
    \end{align}
 
 <a name="c_ops"></a>
