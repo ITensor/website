@@ -55,6 +55,10 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Algorithms for MPS and MPO|classes/mps_mpo_algs]] (including IQMPS and IQMPO algorithms). <br/>
 
+## Density matrix renormalization group (DMRG)
+
+* [[Sweeps|classes/sweeps]]. Class for specifying DMRG accuracy parameters.
+
 <!--
 
 ## Methods for working with tensors
@@ -65,10 +69,6 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[MPS Functions|classes/mps_functions]]. Functions for working with MPS. <br/>
   [[InitState|classes/initstate]]. Class for initializing matrix product states.
-* [[SiteSet|classes/siteset]]. Class handling the site space.
-    * [[SpinHalf|classes/spinhalf]]. Set of S=1/2 degrees of freedom.
-    * [[SpinOne|classes/spinone]]. Set of S=1 degrees of freedom.
-* [[Sweeps|classes/sweeps]]. Class for specifying DMRG sweep parameters.
 
 To Do:
 - Spectrum
@@ -76,7 +76,6 @@ To Do:
 - BondGate
 - dmrg functions
 - idmrg
-- Sweeps
 - Observer / DMRGObserver
 - AutoMPO
 - HamBuilder
