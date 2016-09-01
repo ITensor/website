@@ -45,9 +45,118 @@ ITensor also offers DMRG routines for more general optimization tasks, including
 
 ## Basic DMRG interface
 
+* ```
+  dmrg(MPS & psi,
+       MPO H,
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  ```
+  dmrg(IQMPS & psi,
+       IQMPO H,
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  Run a DMRG calculation to find the ground state of the Hamiltonian (MPO or IQMPO) H 
+  using the initial state given by the MPS or IQMPS psi. The variable psi is
+  overwritten to hold the final wavefunction upon return.
+
+  The number of sweeps and DMRG accuracy parameters are controlled by a [[Sweeps|classes/sweeps]]
+  object.
+
+  After the DMRG calculation completes, it returns the final ground state energy.
+
+  The `dmrg` function also accepts the following optional named arguments:
+
+  - "Quiet" &mdash; suppress most output except a short summary of the result of each DMRG sweep
+  - "WriteM" &mdash; if WriteM is defined, upon beginning a sweep number n such that sweeps.maxm(n) value 
+    exceeds WriteM, the MPS and MPO will be set to "write-to-disk" mode such that all but a few "core"
+    tensors will remain on the hard drive to save on RAM
+  - "DebugLevel" &mdash; non-negative integer telling the internal Davidson eigensolver how
+    much extra information to print out
 
 
+## Generalized DMRG interfaces
 
+* ```
+  dmrg(MPS & psi,
+       std::vector<MPO> H,
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  ```
+  dmrg(IQMPS & psi,
+       std::vector<IQMPO> H,
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  Run a DMRG calculation using a collection of MPOs provided in a std::vector object (0-indexed).
+
+  The MPOs will be treated as if they are summed. That is, the Hamiltonian is defined as the sum of 
+  the MPOs provided. However, no actual sum of the MPOs will be performed, such that the cost
+  grows only linearly in the number of MPOs provided.
+
+
+* ```
+  dmrg(MPS & psi,
+       MPO H,
+       std::vector<MPS> wfs,
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  ```
+  dmrg(IQMPS & psi,
+       IQMPO H,
+       std::vector<IQMPS> wfs,
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  Run a DMRG calculation to find the lowest energy eigenstate of the Hamiltonian H,
+  but with the constraint that psi should be orthogonal to all of the MPS provided
+  in the (0-indexed) std::vector wfs.
+
+  This code works by putting in an energy penalty for psi to have any overlap with 
+  the MPS in wfs. This penalty is the product of the overlap of psi with each
+  state times a "Weight", whose default value is 1.0 but which can be 
+  adjusted by providing the named argument "Weight" as part of the args (last
+  argument of type Args).
+
+  To see a detailed example of using this excited-state DMRG code, see
+  the code formula on [[computing excited states|formulas/excited_dmrg]].
+
+
+* ```
+  dmrg(MPS & psi,
+       MPO H,
+       ITensor LH,
+       ITensor RH
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  ```
+  dmrg(IQMPS & psi,
+       IQMPO H,
+       IQTensor LH,
+       IQTensor RH
+       Sweeps sweeps,
+       Args args = Args::global()) -> Real
+  ```
+
+  Run a DMRG calculation to find the ground state of the Hamiltonian H using the initial
+  state psi, using a "boundary environment" defined by the tensors LH and RH.
+
+  The boundary environments LH and RH (e.g. representing the projection of a Hamiltonian for a larger
+  system into a fixed "MPS basis") should be tensors with three indices. One index connects
+  to the bond index of the Hamiltonian MPO H at the left and right edge. The other two indices
+  are i and dag(i') where i is the virtual (bond) index of the MPS psi at the left or right edge
+  (and dag(i') is i with prime level 1 and reversed arrow in the case of an IQIndex).
 
 
 
