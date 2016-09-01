@@ -63,25 +63,20 @@ its actual signature is `f(ITensor const& T)`.
 
 <!--
 
-## Methods for working with tensors
-
 * [[Spectrum|classes/spectrum]]. Class for storing & analyzing density matrix eigenvalue spectrum.
 
-## Matrix product states
-
-* [[MPS Functions|classes/mps_functions]]. Functions for working with MPS. <br/>
-  [[InitState|classes/initstate]]. Class for initializing matrix product states.
+* [[InitState|classes/initstate]]. Class for initializing matrix product states.
 
 To Do:
 - AutoMPO
-- Spectrum
 - InitState
-- BondGate
-- dmrg functions
+- Spectrum
 - idmrg
-- Observer / DMRGObserver
-- HamBuilder
 - Args
+- BondGate
+- HamBuilder
 - LocalOp, LocalMPO, etc.
+- Observer / DMRGObserver
+- DMRGObserver related dmrg functions?
 -->
 
