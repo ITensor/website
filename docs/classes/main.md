@@ -59,6 +59,8 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Sweeps|classes/sweeps]]. Class for specifying DMRG accuracy parameters.
 
+* [[DMRG|classes/dmrg]]. Interface for running DMRG calculations.
+
 <!--
 
 ## Methods for working with tensors
@@ -71,13 +73,13 @@ its actual signature is `f(ITensor const& T)`.
   [[InitState|classes/initstate]]. Class for initializing matrix product states.
 
 To Do:
+- AutoMPO
 - Spectrum
 - InitState
 - BondGate
 - dmrg functions
 - idmrg
 - Observer / DMRGObserver
-- AutoMPO
 - HamBuilder
 - Args
 - LocalOp, LocalMPO, etc.
