@@ -99,6 +99,7 @@ def convert(string):
     string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
     string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
     string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+    string = re.sub(r"pull #(\d+)",r"pull <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
 
     #Convert MathJax @@...@@ -> <span>@@...@@</span>
     #and $$...$$ -> <div>$$..$$</div> to protect
