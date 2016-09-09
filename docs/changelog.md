@@ -1,5 +1,26 @@
 # Change Log #
 
+<a name="v2.0.11"></a>
+## [Version 2.0.11](https://github.com/ITensor/ITensor/tree/v2.0.11) (Sep 8, 2016) ##
+
+* Fixed poor convergence of idmrg, which was due to a poorly chosen value for a pseudo-inverse cutoff
+
+* Fixed a declaration of an overload of the "overlap" functions
+
+* Added "S+" and "S-" operator names to tJ SiteSet (thanks Mingru Yang for this suggestion)
+
+* Merged pull #108 from user ybarlev, improving lattice generating functions
+
+* Merged pull #107 from user kyungminlee, improving OpenBLAS compatibility
+
+* Updated Davidson code to support multiple targeting
+
+* Merge pull #106 from using mingpu, improving reading of Sweeps from a table in a file
+
+* Fixed bug in printing of SiteSets
+
+* Some improvements to tutorial codes
+
 <a name="v2.0.10"></a>
 ## [Version 2.0.10](https://github.com/ITensor/ITensor/tree/v2.0.10) (Jun 19, 2016) ##
 
