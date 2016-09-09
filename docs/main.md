@@ -15,6 +15,8 @@
 
 <img src="docs/classes/icon.png" class="icon">   [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
 
+<img src="docs/papers/icon.png" class="icon">   [[Papers Using ITensor|papers]]
+
 ## Additional information
 
 * <img src="docs/install/icon.png" class="icon"> [[Simons 2016 Summer School|simons]]
@@ -22,8 +24,6 @@
 * [[Version 1.x to 2.0 Transition Guide|v2transition_guide]]
 
 * [[Change Log|changelog]]
-
-* [[Papers Using ITensor|papers]]
 
 * [[Helpful Reading|reading]]
 
