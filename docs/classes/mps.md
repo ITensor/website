@@ -36,9 +36,9 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
     // a modified tensor
     psi.setA(j,2*A);
 
-    // Directly modify tensor at site j
-    //"nc" stands for "non-const"
-    psi.Anc(j) *= -1;
+    // Directly modify tensor at site j; "ref"
+    //signified that a reference to A_j tensor is returned
+    psi.Aref(j) *= -1;
 
     // Initialize an IQMPS to a specific product state
     auto state = InitState(sites);
@@ -124,14 +124,16 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   the center site&mdash;this can lead to additional overhead later when calling `position(j)`
   to gauge the MPS to a different site.
 
-* `.Anc(int i) -> ITensor&`
+* `.Aref(int i) -> ITensor&` <br/>
+  `.Anc(int i) -> ITensor&`
 
   Returns a non-const reference (read-write access) to the MPS tensor at site `i`.
+  (Previously named `Anc`, which is also still present for backwards compatibility.)
 
   If read-only access is sufficient, use the `A(i)` method instead of this one
-  because `Anc` may be less efficient.
+  because `Aref` may be less efficient.
 
-  If site `i` is not the orthogonality center, calling `Anc(i)` will set `leftLim()`
+  If site `i` is not the orthogonality center, calling `Aref(i)` will set `leftLim()`
   to `i-1` or `rightLim()` to `i+1` depending on whether `i` comes before or after 
   the center site&mdash;this can lead to additional overhead later when calling `position(j)`
   to gauge the MPS to a different site.
