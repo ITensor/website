@@ -22,6 +22,8 @@
 
 * [Many-Body Localization in System with a Completely Delocalized Single-Particle Spectrum](https://arxiv.org/abs/1607.04652), Yevgeny&nbsp;Bar&nbsp;Lev, David&nbsp;R.&nbsp;Reichman, and Yoav&nbsp;Sagi, arxiv:1607.04652
 
+* [Temperature dependence of the NMR relaxation rate 1/T_1 for quantum spin chains](https://arxiv.org/abs/1606.09502), Maxime&nbsp;Dupont, Sylvain&nbsp;Capponi, Nicolas&nbsp;Laflorencie, arxiv:1606.09502
+
 * [Electronic quasiparticles in the quantum dimer model: density matrix renormalization group results](http://link.aps.org/doi/10.1103/PhysRevB.94.115112), Junhyun&nbsp;Lee, Subir&nbsp;Sachdev, and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.115112">115112</a> [arxiv:1606.04105]
 
 * [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://arxiv.org/abs/1605.05737), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, arxiv:1605.05737
