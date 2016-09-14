@@ -4,6 +4,8 @@
 
 ## 2016
 
+* [Pure density functional for strong correlations and the thermodynamic limit from machine learning](http://arxiv.org/abs/1609.03705), Li&nbsp;Li, Thomas&nbsp;E.&nbsp;Baker, Steven&nbsp;R.&nbsp;White, Kieron&nbsp;Burke, arxiv:1609.03705
+
 * [Fate of the Ising Quantum Critical Point Coupled to a Gapless Boson](http://arxiv.org/abs/1609.02599), Ori&nbsp;Alberton, Jonathan&nbsp;Ruhman, Erez&nbsp;Berg, Ehud&nbsp;Altman, arxiv:1609.02599
 
 * [Full counting statistics in the Haldane-Shastry chain](http://arxiv.org/abs/1608.06856), Jean-Marie&nbsp;Stéphan, Frank&nbsp;Pollmann, arxiv:1608.06856
