@@ -225,6 +225,58 @@ The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itens
 
   Increment the prime level of all indices, _except_ those matching the specified types, by 1, or by an optional amount `inc`.
 
+* `.mapprime(int plevold, int plevnew, IndexType type = All)`
+
+  Change the prime level of all indices of level `plevold` to have level `plevnew`.
+
+  This applies to all indices by default. The optional argument `type` can be used to
+  map only indices of a certain IndexType (such as Site or Link).
+
+* `.mapprime(int plevold, int plevnew, IndexType type = All)`
+
+  Change the prime level of all indices of level `plevold` to have level `plevnew`.
+
+  This applies to all indices by default. The optional argument `type` can be used to
+  map only indices of a certain IndexType (such as Site or Link).
+
+* ```
+  .mapprime(...,
+            IndexType t, int oldtlev, int newtlev, ...
+            Index i, int oldilev, int newilev, 
+            ...)
+  ```
+
+  This version of mapprime takes an unlimited arguments, but arguments
+  must come in groups of three, either
+
+  1. `IndexType t, int oldtlev, int newtlev` or
+  2. `Index i, int oldilev , int newilev`
+
+  For arguments of type 1, all indices of `IndexType t` with prime level `oldtlev` have
+  their prime level changed to `newtlev`.
+
+  For arguments of type 2, if a copy of `Index i` is found with prime level `oldilev`,
+  it is changed to prime level `newilev`.
+
+  The operation of this function is such that each Index of the ITensor is visited
+  only once, and compared to all of the arguments from left to right 
+  until there is a match. If so, the Index is modified and then the function 
+  proceeds to the next Index of the ITensor.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto b1 = Index("bond 1",5,Link);
+      auto b3 = Index("bond 3",8,Link);
+      auto s2 = Index("Site 2",2,Site); 
+      auto s3 = Index("Site 3",2,Site);
+
+      auto T = ITensor(b1,prime(b3,2),s2,s3);
+
+      T.mapprime(Site,0,4,b3,2,5);
+
+      //Now s2 and s3 will have prime level 4
+      //and b3 will have prime level 5
+
 
 ## Operators Supported By ITensors ##
 
