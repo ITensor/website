@@ -182,7 +182,7 @@ measuring correlation functions involving creation/annihilation operators:
 1. Next-neighbor "hopping" part of a 1d fermionic Hamiltonian:
    \begin{align}
    \sum\_\sigma (c^\dagger\_{\sigma,i} c\_{\sigma,i+1} + c^\dagger\_{\sigma,i+1} c\_{\sigma,i}) & = 
-   (a^\dagger\_{\uparrow,i}\, F\_i)\, a\_{\uparrow,i+1} + a\_{\downarrow,i}\, (F\_{i+1}\, a^\dagger\_{\downarrow,i+1}) \\
+   (a^\dagger\_{\uparrow,i}\, F\_i)\, a\_{\uparrow,i+1} + a^\dagger\_{\downarrow,i}\, (F\_{i+1}\, a\_{\downarrow,i+1}) \\
    & \ \mbox{} - (a\_{\uparrow,i} F\_i)\, a^\dagger\_{\uparrow,i+1} - a\_{\downarrow,i}\, (F\_{i+1} a^\dagger\_{\downarrow,i+1}) \   \end{align}
    Note the minus signs in front of the last two terms. We can interpret the F operators remaining on the right-hand
    side as checking whether a fermion of the other spin type is present that the particle will hop "over". The minus signs
