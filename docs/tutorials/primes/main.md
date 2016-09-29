@@ -37,7 +37,7 @@ ITensor does not currently allow negative prime levels.
 
  * `noprime(ITensor)` - sets prime level of an ITensor to zero
 
- * `mapPrime(ITensor, inta, intb)` - changes prime level on all indices of an ITensor having level inta to level intb.
+ * `mapprime(ITensor, inta, intb)` - changes prime level on all indices of an ITensor having level inta to level intb.
 
 ## An Exercise in Priming: Unitary Rotations
 
@@ -162,7 +162,7 @@ This returns us to the original diagram.
 
 Now we get serious.  Let's remove all primes from `S4`:
 
-    A *= noprime(S4);//or mapPrime(S4,2,0)
+    A *= noprime(S4);//or mapprime(S4,2,0)
 
 <p align="center"><img src="docs/tutorials/primes/trg2.png" alt="MPS" style="height: 200px;"/></p>
 
