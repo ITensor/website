@@ -4,6 +4,8 @@
 
 ## 2016
 
+* [A real-time extension of density matrix embedding theory for non-equilibrium electron dynamics](http://arxiv.org/abs/1609.07678), Joshua&nbsp;S.&nbsp;Kretchmer and Garnet&nbsp;Kin-Lic&nbsp;Chan, arxiv:1609.07678
+
 * [Pure density functional for strong correlations and the thermodynamic limit from machine learning](http://arxiv.org/abs/1609.03705), Li&nbsp;Li, Thomas&nbsp;E.&nbsp;Baker, Steven&nbsp;R.&nbsp;White, Kieron&nbsp;Burke, arxiv:1609.03705
 
 * [Fate of the Ising Quantum Critical Point Coupled to a Gapless Boson](http://arxiv.org/abs/1609.02599), Ori&nbsp;Alberton, Jonathan&nbsp;Ruhman, Erez&nbsp;Berg, Ehud&nbsp;Altman, arxiv:1609.02599
@@ -33,7 +35,7 @@
 * [The entanglement negativity in random spin chains](http://dx.doi.org/10.1103/PhysRevB.94.035152), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.035152">035152</a> [arxiv:1605.00674]
 
 
-* [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775 <i style="color:#CC0000">To appear in proceedings of NIPS 2016</i>
+* [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775 <i>To appear in proceedings of</i> <i style="color:#CC0000">NIPS 2016</i>
 
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
@@ -106,7 +108,7 @@
 
 * [Real-space parallel density matrix renormalization group](http://link.aps.org/doi/10.1103/PhysRevB.87.155137), <br/>E.M.&nbsp;Stoudenmire and Steven&nbsp;R.&nbsp;White, </br> <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>87</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevB.87.155137">155137</a> (2013) [arxiv:1301.3494]
 
-* [Topological phases in ultracold polar-molecule quantum magnets](http://link.aps.org/doi/10.1103/PhysRevB.87.081106), Salvatore&nbsp;R.&nbsp;Manmana, E.M.&nbsp;Stoudenmire, Kaden&nbsp;R.A.&nbsp;Hazzard, Ana&nbsp;Maria&nbsp;Rey, and Alexey&nbsp;Gorshkov, </br> <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>87</b>, <a href="(http://link.aps.org/doi/10.1103/PhysRevB.87.081106" target="_blank">081106(R)</a> (2013) [arxiv:1210.5518]
+* [Topological phases in ultracold polar-molecule quantum magnets](http://link.aps.org/doi/10.1103/PhysRevB.87.081106), Salvatore&nbsp;R.&nbsp;Manmana, E.M.&nbsp;Stoudenmire, Kaden&nbsp;R.A.&nbsp;Hazzard, Ana&nbsp;Maria&nbsp;Rey, and Alexey&nbsp;Gorshkov, <br/> <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>87</b>, <a href="(http://link.aps.org/doi/10.1103/PhysRevB.87.081106" target="_blank">081106(R)</a> (2013) [arxiv:1210.5518]
 
 ## 2012 ##
 
