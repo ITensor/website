@@ -1,4 +1,4 @@
-<span class='article_title'>ITensor Quick Start Guide</span>
+<span class='article_title'>ITensor Basics Quick Start</span>
 
 <span class='article_sig'>Thomas E. Baker&mdash; May 4, 2016</span>
 

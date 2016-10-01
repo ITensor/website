@@ -4,9 +4,9 @@
 
 ### Learn By Example
 
-* [[ITensor Library Quick Start|tutorials/quickstart]]
+* [[ITensor Basics Quick Start|tutorials/quickstart]]
 
-  Simplest possible example program (similar to "hello world") based on the ITensor library.
+  Simplest non-trivial program (similar to "hello world") based on the ITensor library.
 
 ### Fundamentals
 

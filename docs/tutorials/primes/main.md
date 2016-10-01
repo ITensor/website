@@ -2,23 +2,25 @@
 
 <span class='article_sig'>Thomas E. Baker&mdash;August 21, 2015</span>
 
-ITensor uses an `Index` for each argument in an `ITensor`. This `Index` describes the local degrees of freedom on each site; it contains the 'physics' of each site.  For example, an index on an @@S_z@@ operator corresponds to the spin up and spin down quantum number degrees of freedom.
+Each index of an ITensor is an object of type `Index`. Each `Index` represents some vector space over which the tensor is defined.
 
-If the physics ever changes on that site (we give an example next), then we should use a different index.  But what about sites that retain the physics but whose lines we don't want to contract?  For example, consider the @@S_z@@ operator.  The two physical indices attached to the operator:
+For example, a matrix product state (MPS) tensor has one physical `Index` of type `Site`. If the MPS is the wavefunction of a chain of S=1/2 spins, then a site index of a particular MPS tensor represents the "degrees of freedom" of that site. If the meaning of this site index ever changes (we give an example below), then we should replace the original Index with a different one.  But what about indices that have the same meaning, but which we do not want the ITensor `*` operation to contract? (Recall that taking the `*` product of two ITensor contracts all pairs of identical indices.)
+
+For example, consider the @@S_z@@ operator.  This operator has two indices:
 
 <p align="center"><img src="docs/tutorials/primes/Sz.png" alt="MPS" style="height: 150px;"/></p>
 
-should definitely never contract.  We want them to connect with wavefunction indices.  The prime indices (in this case, the vertical line) are only used as a way to prevent contraction.
+When acting @@S_z@@ onto a wavefunction, we only want one of the indices (the bottom one in the above diagram) to be contracted, with the top one remaining uncontracted. Putting a prime on the top index enforces this behavior, assuming the wavefunction has unprimed indices.
 
 We will detail in this article how to use primes on indices and best practices.
 
 ## When not to use Primes
 
-An example where we might want to give a new name to a site is during coarse graining.  If we go from a fine lattice to a coarser one, then we have a diagram that looks like the diagram on the left:
+An example where we might want to introduce a new `Index` (rather than priming an existing one) is during a coarse graining of a lattice (in some real-space RG procedure).  If we go from a fine lattice to a coarser one, then we have a diagram that looks like the diagram on the left:
 
 <p align="center"><img src="docs/tutorials/primes/primingpractice.png" alt="MPS" style="height: 250px;"/></p>
 
-The physics of the `Index` is changing on the coarser level.  We're describing a new lattice site with a different [[MPO|tutorials/MPO]] at this next level, so we introduce a new `Index` `t1`.  We don't want to call this new site `s1'` even though we are still never going to contract `s1'` with `s1`. But in light of the new physics, we should just rename the `Index` (left) instead of priming the `Index` (right).
+The local physics has changed on the coarser level. A single site now corresponds to two sites of the original lattice. If the new coarse-grained lattice happens to have the same local dimension as the old, it might be tempting to "recycle" the index `s1` by using a primed copy of it as the new site index (as in the diagram on the right). But in light of the new physics, we should just introduce a new `Index` (left) instead of using a primed version of an existing `Index` (right).
 
 ## Functions that Prime Indices
 
@@ -50,7 +52,7 @@ $$
 and how this works with ITensor's priming system.  First, let's convert the expression into tensors all of rank two:
 
 $$
-\sum\_{\beta\gamma} U\_{\alpha\beta}\mathcal{H}\_{\beta\gamma}U\_{\gamma\delta}^dagger
+\sum\_{\beta\gamma} U\_{\alpha\beta}\mathcal{H}\_{\beta\gamma}U\_{\gamma\delta}^\dagger
 $$
 
 This form is perfectly acceptable on paper, but we need to convert it to something that ITensor can understand.  Handling the indices @@\alpha@@, @@\beta@@, @@\gamma@@, and @@\delta@@ are handled very simply in ITensor.  Note that we only include one index in ITensor to account for all four indices that appear above!  This is managed by using different priming levels appropriately.
