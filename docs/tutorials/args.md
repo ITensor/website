@@ -6,15 +6,15 @@
 ### The Problem
 
 A unfortunate fact about C++ functions is that arguments must be passed in a fixed order.
-This is frustrating when you are happy with the default value of, say, the third argument,
-but have to provide it anyway to reach the fourth and fifth arguments.
+This is frustrating when you are ok with certain default arguments, but must provide
+them anyway to reach arguments further down the list.
 
 To make matters worse, function arguments can be opaque and hard to interpret.
-<br/>In the following code
+<br/>Consider the following code:
 
     truncateMPS(psi,500,1E-5,false);
 
-it is clear that psi is some matrix product state to be truncated, but what do
+While it is clear that psi is some matrix product state to be truncated, what do
 the other parameters mean?
 
 If the truncateMPS function accepted an Args object instead, we
@@ -37,12 +37,28 @@ system. So the following call would have identical results
 
     truncateMPS(psi,{"ShowSizes",false,"Maxm",500,"Cutoff",1E-9});
 
+Of course, in production code it is bad practice to "hard wire" numbers directly 
+into functions; a better practice is to define all parameters one place, like at 
+the top of main when reading from a parameter file. Even in this situation,
+the Args system makes things more readable and flexible
+regarding argument order and default arguments:
+
+    int maxm = 500;
+    Real cut = 1E-9;
+    bool show_sizes = false;
+    ...
+    truncateMPS(psi,{"ShowSizes=",show_sizes,"Maxm=",maxm,"Cutoff=",cut});
+
 <br/>
 ### Creating a Function that Accepts Args
 
 To allow a function to take an Args object, first make sure the Args class is available
 
     #include "itensor/util/args.h"
+
+Or just do
+
+    #include "itensor/all.h"
 
 Next define the last argument of your function to be
 
