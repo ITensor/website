@@ -48,12 +48,15 @@
 
 * [[Matrix Product Operators (MPO)|tutorials/MPO]]
 
-  The Hamiltonian may be rewritten in terms of a site by site operator.  This 
-  article provides an overview
+  Hamiltonians and other sums of local operators can be represented as a tensor 
+  network called an MPO. This tutorial introduces the idea of an MPO with an 
+  example, and gives a taste of some advanced concepts.
+
 
 * [[AutoMPO|tutorials/AutoMPO]]
 
-  Instead of making MPOs by hand, ITensor allows for the automatic creation of MPOs in only a few lines of code.
+  Instead of making MPOs by hand, ITensor has a facility to create MPOs using a
+  simple interface resembling hand-written mathematical notation.
 
 
 * [[Calculating a Two-Site Correlation Function|tutorials/correlations]]
