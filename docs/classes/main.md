@@ -68,6 +68,7 @@ its actual signature is `f(ITensor const& T)`.
 * [[InitState|classes/initstate]]. Class for initializing matrix product states.
 
 To Do:
+- STOP_DMRG file feature of DMRG codes
 - AutoMPO
 - InitState
 - Spectrum

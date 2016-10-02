@@ -4,42 +4,53 @@
 
 Each index of an ITensor is an object of type `Index`. Each `Index` represents some vector space over which the tensor is defined.
 
-For example, a matrix product state (MPS) tensor has one physical `Index` of type `Site`. If the MPS is the wavefunction of a chain of S=1/2 spins, then a site index of a particular MPS tensor represents the "degrees of freedom" of that site. If the meaning of this site index ever changes (we give an example below), then we should replace the original Index with a different one.  But what about indices that have the same meaning, but which we do not want the ITensor `*` operation to contract? (Recall that taking the `*` product of two ITensor contracts all pairs of identical indices.)
+For example, a matrix product state (MPS) tensor has one physical `Index` of [[type|classes/indextype]] `Site`. If the MPS is the wavefunction of a chain of S=1/2 spins, then a site index of a particular MPS tensor represents the physical "degrees of freedom" of that site. If the meaning of this site index ever changes (we give an example below), then we should replace the original Index with a different one.  But what about indices that have the same meaning, but which we do not want the ITensor `*` operation to contract? (Recall that taking the `*` product of two ITensor contracts all pairs of matching indices.)
 
-For example, consider the @@S_z@@ operator.  This operator has two indices:
+For example, consider the @@S\_z@@ operator.  This operator has two indices:
 
 <p align="center"><img src="docs/tutorials/primes/Sz.png" alt="MPS" style="height: 150px;"/></p>
 
-When acting @@S_z@@ onto a wavefunction, we only want one of the indices (the bottom one in the above diagram) to be contracted, with the top one remaining uncontracted. Putting a prime on the top index enforces this behavior, assuming the wavefunction has unprimed indices.
+When acting @@S\_z@@ onto a wavefunction, we only want one of the indices (the bottom one in the diagram) to be contracted, with the top one remaining uncontracted. Setting the prime level of the top index to 1 enforces this behavior, assuming the wavefunction has unprimed indices.
 
 We will detail in this article how to use primes on indices and best practices.
 
 ## When not to use Primes
 
-An example where we might want to introduce a new `Index` (rather than priming an existing one) is during a coarse graining of a lattice (in some real-space RG procedure).  If we go from a fine lattice to a coarser one, then we have a diagram that looks like the diagram on the left:
+An example where we might want to introduce a new `Index`, rather than priming an existing one, is when coarse graining a lattice (in some real-space RG procedure).  If we go from a fine lattice to a coarser one, then we have a diagram that looks like the diagram on the left:
 
 <p align="center"><img src="docs/tutorials/primes/primingpractice.png" alt="MPS" style="height: 250px;"/></p>
 
-The local physics has changed on the coarser level. A single site now corresponds to two sites of the original lattice. If the new coarse-grained lattice happens to have the same local dimension as the old, it might be tempting to "recycle" the index `s1` by using a primed copy of it as the new site index (as in the diagram on the right). But in light of the new physics, we should just introduce a new `Index` (left) instead of using a primed version of an existing `Index` (right).
+The local physics has changed on the coarser level. A single site now corresponds to two sites of the original lattice and could have a dimension ranging from 1 to the square of the original lattice dimension. If the new coarse-grained lattice happens to have the same local dimension as the old, it might be tempting to "recycle" the index `s1` by using a primed copy of it as the new site index (as in the diagram on the right). But in light of the new physics, we should just introduce a new `Index` (left) instead of using a primed version of an existing `Index` (right).
 
 ## Functions that Prime Indices
 
-In the following, we use "ITensor" to refer to either ITensors or IQTensors.
+In the following, we use "ITensor" to refer to either [[ITensors|classes/itensor]] or [[IQTensors|classes/iqtensor]], since they have the nearly same interface. For an exhaustive list of all class methods and functions for manipulating prime levels, see the documentation for [[ITensor|classes/itensor]] objects.
 
- * `prime(ITensor)` - Updates prime level of an ITensor by one
- * `prime(ITensor,int)` - Updates the prime level of an ITensor by "int" (can also be negative)
- * `prime(ITensor,Type)` - Updates all indices of type Type on an ITensor
+Let us look at some of the most common functions used to manipulate ITensor prime levels. These functions all return an copy of the ITensor with modified prime levels. (ITensors are inexpensive to copy, and only copy their data when absolutely needed.)
 
-For example, `prime(psi,Site)` raises the prime level of all indices labeled as Site.  Indices can be given custom IndexTypes such as Link, Site, etc.
+Some priming functions act on all the indices:
+
+ * `prime(ITensor)` - Return a copy of the ITensor with all index prime levels incremented by one
+ * `prime(ITensor,int)` - Increment the prime level of each index by "int" (can also be negative)
+
+You can also just raise the prime level of indices of a given [[IndexType|classes/indextype]]
+
+ * `prime(ITensor,IndexType)` - Increment all indices of [[IndexType|classes/indextype]] Type
+
+For example, `prime(psi,Site)` raises the prime level of all indices of type `Site`.  
+Indices can be given custom IndexTypes such as Link, Site, etc.
 
  * `prime(ITensor,Index,int)` - Changes the prime level of the specific index "Index" on an ITensor by value "int"
  * `prime(ITensor,Type,int)` - Increment the prime level of all indices having type "Type" by "int". 
 
-ITensor does not currently allow negative prime levels.
+To reset all prime levels back to zero, use:
 
  * `noprime(ITensor)` - sets prime level of an ITensor to zero
 
- * `mapprime(ITensor, inta, intb)` - changes prime level on all indices of an ITensor having level inta to level intb.
+Sometimes it is convenient to refer to indices by their current prime level. To turn indices of prime level "inta"
+into indices of prime level "intb", use:
+
+ * `mapprime(ITensor, inta, intb)` - return an ITensor with indices having level inta mapped to level intb.
 
 ## An Exercise in Priming: Unitary Rotations
 
