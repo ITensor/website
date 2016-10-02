@@ -22,7 +22,7 @@
 
 ## Additional information
 
-* <img src="docs/install/icon.png" class="icon"> [[Simons 2016 Summer School|simons]]
+<!-- * <img src="docs/install/icon.png" class="icon"> [[Simons 2016 Summer School|simons]] -->
 
 * [[Version 1.x to 2.0 Transition Guide|v2transition_guide]]
 
