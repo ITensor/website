@@ -1,25 +1,34 @@
 # QN 
 
-A QN object is an ordered set of "quantum numbers". Quantum numbers are integers which follow either usual integer
-addition or @@Z\_N@@ addition rules.
+A QN object is an ordered set of "quantum numbers". Quantum numbers are ordered sets of integers,
+each of which follow either usual integer addition or @@Z\_N@@ addition rules.
+
+When describing spin quantum numbers (total Sz, say), our convention is to work in units of spin 1/2.
+Thus a QN object made as QN("Sz=",+1) means Sz=+0.5 in physics units. The reason for this is that
+computers can perform integer arithmetic quickly and exactly. For particle quantum numbers (such as 
+total boson or fermion number) integer values have their usual meaning.
 
 QN objects have up to four "slots" which can be assigned values. 
 Each slot also has a modulus which can take the following types of values:
 * If the modulus is 1, the slot follows regular integer addition. 
 * If the modulus is @@N>1@@, the slot obeys @@Z\_N@@ addition. 
 * If the modulus is @@-N \leq 1 @@, the slot is fermionic. 
-  Fermionic slots behave the same as "bosonic" ones with modulus @@|N|@@
-  and the minus sign on the modulus acts only as a flag.
+  A fermionic slot follows the same addition rules as a bosonic slot of modulus @@|N|@@;
+  the minus sign on the modulus acts only as a "flag" indicating fermionic statistics.
+  (As of version 2.x of ITensor we do not use these fermionic flags for any purpose, but have implemented
+   them for future experimental automatic fermionic features to be released.)
 
 The QN class recognizes certain conventions about the order and type of slots used. These are implemented by
 the QN constructor which takes named arguments. For example, creating a QN as
 
     auto q = QN("Sz=",+3,"Nf=",5);
 
-results in q having two slots: the first slot `"Sz"` has a modulus of 1 and a value of 3; the second slot `"Nf"`
-has a modulus of -1 and a value of 5. Passing the arguments in a different order has the exact same result,
-because by convention `"Sz"` is always in the first slot if present.
-QN objects following the recognized conventions are also printed out in a nicer way than "custom" QN objects.
+results in q having two slots: the first slot `"Sz"` will have a value of 3 and a modulus of 1 (since spin follows
+usual integer addition rules); the second slot `"Nf"` has a value of 5 and 
+a modulus of -1 (integer addition with a fermionic "flag"). 
+Passing the arguments in a different order has the exact same result when using named slots ("Sz", "Nf"),
+because the QN system recognizes certain names and keeps them in the right order internally.
+QN objects made with named slots are also printed out in a nicer way than "custom" QN objects.
 
 The special types of QN's with named slots are as follows:
 
