@@ -60,7 +60,7 @@ Hubbard and HubbardSite are defined in the file "itensor/mps/sites/hubbard.h"
 
 * `"F"` &mdash; the Jordan-Wigner fermion 'string' operator @@\hat{F}=(-1)^{\hat{n}\_\text{tot}}@@
 
-* `"Sz"` &mdash; the z-component spin operator (+0.5 for an up spin, -0.5 for a down spin)
+* `"Sz"` &mdash; the z-component spin operator (matrix elements +0.5 for an up spin, -0.5 for a down spin)
 
 For the following fermionic operators, it is crucial to note that when obtaining them as individual
 tensors from a site set, they do not anti-commute with each other on different sites, only on 
