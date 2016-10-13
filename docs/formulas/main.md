@@ -37,6 +37,7 @@ Formulas involving matrix product states and DMRG.
     - [[Measure local properties of an MPS wavefunction|formulas/measure_mps]]
     - [[Measure two-point correlator from an MPS wavefunction|formulas/correlator_mps]]
     - [[Compute entanglement entropy|formulas/entanglement_mps]]
+    - [[Measure spinless fermion two-point correlator|formulas/spinless_correlator_mps]]
 
 * <h3>Time Evolution</h3>
     - [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
