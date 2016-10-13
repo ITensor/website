@@ -28,7 +28,6 @@ see [[the tutorial on fermions|tutorials/fermions]].
     //index linking i to i+1:
     auto ir = commonIndex(psi.A(i),psi.A(i+1),Link);
     auto Corr = psi.A(i)*Adag_i*dag(prime(psi.A(i),Site,ir));
-    Print(Corr);
     
     for(int k = i+1; k < j; ++k)
         {
