@@ -4,6 +4,12 @@
 
 ## 2016
 
+* [An energy-resolved atomic scanning probe](http://arxiv.org/abs/1610.01903), Daniel&nbsp;Gruss, Chih-Chun&nbsp;Chien, Massimiliano&nbsp;Di&nbsp;Ventra, Michael&nbsp;Zwolak, arxiv:1610.01903
+
+* [Competing Spin Liquid Phases in the S=1/2 Heisenberg Model on the Kagome Lattice](http://arxiv.org/abs/1610.02024), Shenghan&nbsp;Jiang, Panjin&nbsp;Kim, Jung&nbsp;Hoon&nbsp;Han, Ying&nbsp;Ran, arxiv:1610.02024
+
+* [Universal front propagation in the quantum Ising chain with domain-wall initial states](http://arxiv.org/abs/1610.01540), Viktor&nbsp;Eisler, Florian&nbsp;Maislinger, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1610.01540
+
 * [A real-time extension of density matrix embedding theory for non-equilibrium electron dynamics](http://arxiv.org/abs/1609.07678), Joshua&nbsp;S.&nbsp;Kretchmer and Garnet&nbsp;Kin-Lic&nbsp;Chan, arxiv:1609.07678
 
 * [Pure density functional for strong correlations and the thermodynamic limit from machine learning](http://arxiv.org/abs/1609.03705), Li&nbsp;Li, Thomas&nbsp;E.&nbsp;Baker, Steven&nbsp;R.&nbsp;White, Kieron&nbsp;Burke, arxiv:1609.03705
