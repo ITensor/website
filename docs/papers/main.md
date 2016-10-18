@@ -4,6 +4,8 @@
 
 ## 2016
 
+* [Nuclear magnetic resonance study of the magnetic-field-induced ordered phase in the NiCl2-4SC(NH2)2 compound](http://arxiv.org/abs/1610.03312), Rémi&nbsp;Blinder, Maxime&nbsp;Dupont, Sutirtha&nbsp;Mukhopadhyay, Mihael&nbsp;S.&nbsp;Grbić, Nicolas&nbsp;Laflorencie, Sylvain&nbsp;Capponi, Hadrien&nbsp;Mayaffre, Claude&nbsp;Berthier, Armando&nbsp;Paduan-Filho, Mladen&nbsp;Horvatić, arxiv:1610.03312
+
 * [An energy-resolved atomic scanning probe](http://arxiv.org/abs/1610.01903), Daniel&nbsp;Gruss, Chih-Chun&nbsp;Chien, Massimiliano&nbsp;Di&nbsp;Ventra, Michael&nbsp;Zwolak, arxiv:1610.01903
 
 * [Competing Spin Liquid Phases in the S=1/2 Heisenberg Model on the Kagome Lattice](http://arxiv.org/abs/1610.02024), Shenghan&nbsp;Jiang, Panjin&nbsp;Kim, Jung&nbsp;Hoon&nbsp;Han, Ying&nbsp;Ran, arxiv:1610.02024
