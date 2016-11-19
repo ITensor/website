@@ -4,6 +4,8 @@
 
 ## 2016
 
+* [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://arxiv.org/abs/1611.05016), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1611.05016
+
 * [Nuclear magnetic resonance study of the magnetic-field-induced ordered phase in the NiCl2-4SC(NH2)2 compound](http://arxiv.org/abs/1610.03312), Rémi&nbsp;Blinder, Maxime&nbsp;Dupont, Sutirtha&nbsp;Mukhopadhyay, Mihael&nbsp;S.&nbsp;Grbić, Nicolas&nbsp;Laflorencie, Sylvain&nbsp;Capponi, Hadrien&nbsp;Mayaffre, Claude&nbsp;Berthier, Armando&nbsp;Paduan-Filho, Mladen&nbsp;Horvatić, arxiv:1610.03312
 
 * [An energy-resolved atomic scanning probe](http://arxiv.org/abs/1610.01903), Daniel&nbsp;Gruss, Chih-Chun&nbsp;Chien, Massimiliano&nbsp;Di&nbsp;Ventra, Michael&nbsp;Zwolak, arxiv:1610.01903
@@ -38,7 +40,7 @@
 
 * [Electronic quasiparticles in the quantum dimer model: density matrix renormalization group results](http://link.aps.org/doi/10.1103/PhysRevB.94.115112), Junhyun&nbsp;Lee, Subir&nbsp;Sachdev, and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.115112">115112</a> [arxiv:1606.04105]
 
-* [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://arxiv.org/abs/1605.05737), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, arxiv:1605.05737
+* [Universal Power-Law Entanglement Spectrum in Many-Body Localized Phases](https://doi.org/10.1103/PhysRevLett.117.160601), Maksym&nbsp;Serbyn, Alexios&nbsp;A.&nbsp;Michailidis, Dmitry&nbsp;A.&nbsp;Abanin, Z.&nbsp;Papić, <i style="color:#CC0000">Phys. Rev. Lett.</i>&nbsp;&nbsp;<b>117</b> <a href="https://doi.org/10.1103/PhysRevLett.117.160601">160601</a> [arxiv:1605.05737]
 
 * [The entanglement negativity in random spin chains](http://dx.doi.org/10.1103/PhysRevB.94.035152), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.035152">035152</a> [arxiv:1605.00674]
 
