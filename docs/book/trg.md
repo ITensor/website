@@ -410,3 +410,6 @@ of how it is normalized.
 <span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>
+<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+[[IQTensor Overview|book/iqtensor_overview]]
+</span>
