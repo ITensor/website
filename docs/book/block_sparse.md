@@ -24,6 +24,10 @@ Diagrammatically, the equation @@a |1\rangle = |0\rangle@@ looks like
 
 <img class="diagram" width="25%" src="docs/book/images/annihilation.png"/>
 
+Unlike plain ITensors, these tensors have arrows on their indices. 
+There are two kinds of arrows: in and out (relative to the tensor). 
+The direction of the arrow on the page (up, down, left, right) will not be important.
+
 We will continue to discuss arrows in more detail, but for now observe that:
 * physical (ket) indices have an out arrow
 * operators have one incoming index and one outgoing index

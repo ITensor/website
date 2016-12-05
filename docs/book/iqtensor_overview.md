@@ -1,18 +1,17 @@
 # IQTensor Overview
 
-Physical systems can have symmetries which make it easier to understand their
-structure and to compute their properties. Key examples are spin-rotation
-symmetry or particle number conservation.
+Physical systems often have symmetries which help to compute their properties. 
+Key examples are spin-rotation symmetry or particle number conservation.
 
-Here we consider only global Abelian symmetries
+Here we consider global Abelian symmetries
 associated with conserved "quantum numbers". 
 Though tensor networks can exploit spatial and non-Abelian symmetries,
 these require additional techniques.
 
-Conserving quantum numbers will make our tensors
+Conserving quantum numbers allows tensors to be
 block-sparse, with non-zero elements only for certain index ranges.
 Many elements will be strictly zero, so we neither have to store them in memory or 
-loop over them in computations.
+loop over them during computations.
 
 Of course, conserving quantum numbers is important for physics too.
 Real experiments often conserve particle number. 
@@ -21,7 +20,8 @@ state properties.
 
 Using the block-sparse [[IQTensor|classes/iqtensor]] class makes conserving quantum numbers automatic
 for any tensor network algorithm. IQTensors have nearly the same interface as ITensors,
-so they are easy to use.
+so they are straightforward to use. But the concepts behind IQTensors require some background
+understanding, which is the aim of the following chapters.
 
 <br/>
 <span style="float:left;"><img src="docs/arrowleft.png" class="icon">
