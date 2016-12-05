@@ -1,7 +1,7 @@
 # IQTensor Overview
 
-Physical systems often have symmetries which help to compute their properties. 
-Spin-rotation symmetry or particle number conservation are some key examples.
+Physical systems often have symmetries which can help to compute their properties. 
+Spin-rotation symmetry and particle number conservation (U(1) symmetry) are some key examples.
 
 Here we consider global Abelian symmetries
 associated with conserved "quantum numbers". 
