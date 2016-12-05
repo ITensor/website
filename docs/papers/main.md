@@ -4,6 +4,8 @@
 
 ## 2016
 
+* [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://arxiv.org/abs/1611.05877), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, arxiv:1611.05877
+
 * [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://arxiv.org/abs/1611.05016), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1611.05016
 
 * [Nuclear magnetic resonance study of the magnetic-field-induced ordered phase in the NiCl2-4SC(NH2)2 compound](http://arxiv.org/abs/1610.03312), Rémi&nbsp;Blinder, Maxime&nbsp;Dupont, Sutirtha&nbsp;Mukhopadhyay, Mihael&nbsp;S.&nbsp;Grbić, Nicolas&nbsp;Laflorencie, Sylvain&nbsp;Capponi, Hadrien&nbsp;Mayaffre, Claude&nbsp;Berthier, Armando&nbsp;Paduan-Filho, Mladen&nbsp;Horvatić, arxiv:1610.03312
