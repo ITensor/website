@@ -15,13 +15,14 @@ loop over them during computations.
 
 Of course, conserving quantum numbers is important for physics too.
 Real experiments often conserve particle number. 
-Using quantum numbers can also make it easier to compute excited 
+Also using quantum numbers can make it easier to compute excited 
 state properties.
 
 Using the block-sparse [[IQTensor|classes/iqtensor]] class makes conserving quantum numbers automatic
 for any tensor network algorithm. IQTensors have nearly the same interface as ITensors,
-so they are straightforward to use. But the concepts behind IQTensors require some background
-understanding, which is the aim of the following chapters.
+so they are straightforward to use in your code. But understanding IQTensors requires some 
+background knowledge and an awareness of certain conventions IQTensors follow;
+these are the focus of the next few chapters.
 
 <br/>
 <span style="float:left;"><img src="docs/arrowleft.png" class="icon">
