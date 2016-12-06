@@ -39,9 +39,9 @@ customizing higher-level parts of the library.
 
 - [[IQTensor Overview|book/iqtensor_overview]]
 - [[Block-Sparse Tensors|book/block_sparse]]
+- [[IQIndex|book/iqindex]]
 
 <!--
-- [[IQIndex Objects|book/iqindex]]
 - [[IQTensor Basics|book/iqtensor_basics]]
 -->
 
