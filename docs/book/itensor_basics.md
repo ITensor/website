@@ -170,6 +170,7 @@ This constructor is very handy for creating ITensors which
 
 -->
 
+<br/>
 
 <span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[Index Objects|book/index]]
@@ -177,3 +178,5 @@ This constructor is very handy for creating ITensors which
 <span style="float:right;"><img src="docs/arrowright.png" class="icon">
 [[Contracting ITensors|book/itensor_contraction]]
 </span>
+
+<br/>

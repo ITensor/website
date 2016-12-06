@@ -82,6 +82,7 @@ no longer compare equal. Printing the result D confirms that it
 has only s and s' as indices.
 
 
+<br/>
 
 <span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[ITensor Basics|book/itensor_basics]]
@@ -89,3 +90,5 @@ has only s and s' as indices.
 <span style="float:right;"><img src="docs/arrowright.png" class="icon">
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>
+
+<br/>

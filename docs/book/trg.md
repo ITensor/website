@@ -413,3 +413,5 @@ of how it is normalized.
 <span style="float:right;"><img src="docs/arrowright.png" class="icon">
 [[IQTensor Overview|book/iqtensor_overview]]
 </span>
+
+<br/>

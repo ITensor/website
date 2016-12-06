@@ -160,3 +160,4 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 [[Case Study: TRG Algorithm|book/trg]]
 </span>
 
+<br/>

@@ -132,6 +132,7 @@ The IndexType of an Index can be obtained by calling the `.type()` method.
 <i>For a complete listing of all of the methods of class Index, view the
 [[detailed documentation|classes/index]].</i>
 
+<br/>
 
 <span style="float:left;"><img src="docs/arrowleft.png" class="icon">
 [[ITensor Library Overview|book/intro]]
@@ -139,3 +140,5 @@ The IndexType of an Index can be obtained by calling the `.type()` method.
 <span style="float:right;"><img src="docs/arrowright.png" class="icon">
 [[ITensor Basics|book/itensor_basics]]
 </span>
+
+<br/>
