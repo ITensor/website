@@ -10,8 +10,8 @@ as spatial symmetries, these require additional techniques beyond the scope of o
 
 Conserving quantum numbers allows tensors to be
 block-sparse, with non-zero elements only for certain index ranges.
-Many elements will be strictly zero, so we neither have to store them in memory or 
-loop over them during computations.
+Many elements will be strictly zero, so we neither have to store these elements in memory or 
+iterate over them during computations.
 
 Of course, conserving quantum numbers is important for physics too.
 Real experiments often conserve particle number. 
