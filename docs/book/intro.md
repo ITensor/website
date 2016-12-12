@@ -3,8 +3,7 @@
 Matrix methods have been a great success in the applied sciences.
 *Tensor* methods promise even deeper insights and more powerful
 algorithms.
-Major advances in physics and chemistry have come from
-tensor network wavefunctions.
+Tensor network wavefunctions have driven major advances in physics and chemistry.
 Mathematicians and data scientists are discovering tensor algorithms
 which decisively outperform standard techniques.
 
