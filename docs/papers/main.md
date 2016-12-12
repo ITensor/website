@@ -4,6 +4,10 @@
 
 ## 2016
 
+* [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://arxiv.org/abs/1612.01548), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau , arxiv:1612.01548
+
+* [Anyonic Haldane insulator in one dimension](https://arxiv.org/abs/1612.00605), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, arxiv:1612.00605
+
 * [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://arxiv.org/abs/1611.05877), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, arxiv:1611.05877
 
 * [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://arxiv.org/abs/1611.05016), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1611.05016
