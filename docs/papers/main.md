@@ -4,6 +4,8 @@
 
 ## 2016
 
+* [Fork Tensor Product States - Efficient Three Orbital Real Time DMFT Solver](https://arxiv.org/abs/1612.05587), Daniel&nbsp;Bauernfeind, Manuel&nbsp;Zingl, Robert&nbsp;Triebl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1612.05587
+
 * [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://arxiv.org/abs/1612.01548), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau , arxiv:1612.01548
 
 * [Anyonic Haldane insulator in one dimension](https://arxiv.org/abs/1612.00605), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, arxiv:1612.00605
