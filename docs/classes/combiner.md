@@ -48,13 +48,26 @@ call special optimized routines to reshape a regular ITensor as efficiently as p
 
 ## Specification
 
-`combiner(Index i1, Index i2, ...) -> ITensor`
+* `combiner(Index i1, Index i2, ...) -> ITensor`
 
-Given one or more indices, return a combiner ITensor which can be used to combine these indices
-into a single, new Index `c`.
+  Given one or more indices, return a combiner ITensor which can be used to combine these indices
+  into a single, new Index `c`.
 
-The resulting ITensor will have all of the indices provided, plus one extra Index `c` whose
-size is the product of sizes `i1.m() * i2.m() * ...`.
+  The resulting ITensor will have all of the indices provided, plus one new Index `c` whose
+  size is the product of sizes `i1.m() * i2.m() * ...`.
+
+* `combiner(std::vector<Index> inds, Args args = Args::global()) -> ITensor`
+
+  Given a std::vector of Index objects, return a combiner ITensor which combines these indices
+  into a single new index.
+
+  The resulting ITensor will have all of the indices provided, plus one new Index `c` whose
+  size is the product of sizes `i1.m() * i2.m() * ...`.
+
+  This function also recognizes the following optional named arguments:
+
+  * "IndexName" (default: "cmb") &mdash; provide a string to use for the name of the new, combined Index
+  * "IndexType" (default: Link) &mdash; set the [[IndexType|classes/indextype]] of the new, combined Index
 
 <br/>
-_This page current as of version 2.0.6_
+_This page current as of version 2.0.11_
