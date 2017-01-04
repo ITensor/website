@@ -34,7 +34,7 @@
 
 * [Quenching a Quantum Critical State by the Order Parameter: Dynamical Quantum Phase Transitions and Quantum Speed Limits](http://arxiv.org/abs/1608.06659), Markus&nbsp;Heyl, arxiv:1608.06659
 
-* [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](http://arxiv.org/abs/1608.04490), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, arxiv:1608.04490
+* [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](https://doi.org/10.1103/PhysRevB.94.245145), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="https://doi.org/10.1103/PhysRevB.94.245145">245145</a> [arxiv:1608.04490]
 
 
 * [Entanglement and thermodynamics after a quantum quench in integrable systems](http://arxiv.org/abs/1608.00614), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1608.00614
@@ -53,7 +53,7 @@
 * [The entanglement negativity in random spin chains](http://dx.doi.org/10.1103/PhysRevB.94.035152), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.035152">035152</a> [arxiv:1605.00674]
 
 
-* [Supervised Learning with Quantum-Inspired Tensor Networks](https://arxiv.org/abs/1605.05775), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, arxiv:1605.05775 <i>To appear in proceedings of</i> <i style="color:#CC0000">NIPS 2016</i>
+* [Supervised Learning with Tensor Networks](https://papers.nips.cc/paper/6211-supervised-learning-with-tensor-networks), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, <i style="color:#CC0000">Advances in Neural Information Processing Systems</i>&nbsp;&nbsp;<b>29</b> <a href="https://papers.nips.cc/paper/6211-supervised-learning-with-tensor-networks">4799</a> [arxiv:1605.05775]
 
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
