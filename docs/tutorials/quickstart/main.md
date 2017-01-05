@@ -2,10 +2,11 @@
 
 <span class='article_sig'>Thomas E. Baker&mdash; May 4, 2016</span>
 
-Let's get started with ITensor by looking at the simplest program we can write involving a tensor.
-For a similar guide oriented towards DMRG calculations, see [[DMRG Quick Start|tutorials/DMRGquickstart]].
+Let's get started with ITensor by creating the simplest possible program involving an ITensor.
 
-The contents of `hello_itensor.cc`.
+<!--(For a similar guide oriented towards DMRG calculations, see [[DMRG Quick Start|tutorials/DMRGquickstart]].)-->
+
+Here is our program `hello_itensor.cc`.
 
     #include "itensor/all.h"
 
@@ -29,8 +30,8 @@ To understand what this program does, let us start at the top. The line
 
     #include "itensor/all.h"
 
-pulls in _all_ of the ITensor library. You could instead just include the parts of
-ITensor you want; for more information
+pulls in _all_ of the ITensor library. You could just include specific parts of
+ITensor instead; for more information
 on which headers define each feature see the [[detailed documentation|classes]].
 
 The next line of the program 
