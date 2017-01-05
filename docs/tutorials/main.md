@@ -32,7 +32,7 @@
   Learn how to map fermionic operators to bosonic operators with non-local "string" operators.
 
 
-### ITensor Library Features
+### ITensor Library Tutorials
 
 * [[Priming Indices in ITensor|tutorials/primes]]
 
@@ -45,6 +45,11 @@
   ITensor includes a full-featured matrix product state class that can be used
   with or without quantum number conservation.
   -->
+
+* [[Choosing DMRG Parameters|tutorials/dmrg_params]]
+
+  Learn how to choose optimal parameters (number of sweeps; cutoff; etc)
+  for DMRG calculations of ground states.
 
 * [[Matrix Product Operators (MPO)|tutorials/MPO]]
 
