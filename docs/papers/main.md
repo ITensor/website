@@ -2,6 +2,10 @@
 
 <i style="font-size:90%; color:#999999">Please send any papers not listed here to estouden -at- uci.edu</i>
 
+## 2017
+
+* [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://arxiv.org/abs/1701.02248), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, arxiv:1701.02248
+
 ## 2016
 
 * [Fork Tensor Product States - Efficient Three Orbital Real Time DMFT Solver](https://arxiv.org/abs/1612.05587), Daniel&nbsp;Bauernfeind, Manuel&nbsp;Zingl, Robert&nbsp;Triebl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1612.05587
@@ -36,11 +40,9 @@
 
 * [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](https://doi.org/10.1103/PhysRevB.94.245145), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="https://doi.org/10.1103/PhysRevB.94.245145">245145</a> [arxiv:1608.04490]
 
-
 * [Entanglement and thermodynamics after a quantum quench in integrable systems](http://arxiv.org/abs/1608.00614), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1608.00614
 
 * [Shannon-Rényi entropy for Nambu-Goldstone modes in two dimensions](https://arxiv.org/abs/1607.02465), Grégoire&nbsp;Misguich, Vincent&nbsp;Pasquier, Masaki&nbsp;Oshikawa, arxiv:1607.02465
-
 
 * [Many-Body Localization in System with a Completely Delocalized Single-Particle Spectrum](https://doi.org/10.1103/PhysRevB.94.201116), Yevgeny&nbsp;Bar&nbsp;Lev, David&nbsp;R.&nbsp;Reichman, and Yoav&nbsp;Sagi, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.201116">201116(R)</a> [arxiv:1607.04652]
 
@@ -52,9 +54,7 @@
 
 * [The entanglement negativity in random spin chains](http://dx.doi.org/10.1103/PhysRevB.94.035152), Paola&nbsp;Ruggiero, Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.035152">035152</a> [arxiv:1605.00674]
 
-
 * [Supervised Learning with Tensor Networks](https://papers.nips.cc/paper/6211-supervised-learning-with-tensor-networks), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, <i style="color:#CC0000">Advances in Neural Information Processing Systems</i>&nbsp;&nbsp;<b>29</b> <a href="https://papers.nips.cc/paper/6211-supervised-learning-with-tensor-networks">4799</a> [arxiv:1605.05775]
-
 
 * [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
 
