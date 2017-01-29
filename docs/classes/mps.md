@@ -318,6 +318,42 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   normalize is linear in the system size. If the MPS does have a well-defined ortho center
   the cost of normalize is only proportional to the bond dimension m.
 
+## Reading/Writing MPS or MPO To/From Disk
+* `writeToFile(string file_name, MPS psi)`
+
+  Write the MPS to a file. Both the [[SiteSet|classes/siteset]] and MPS need to be written. See the [[formulas|formulas/readwrite_mps]] for a concrete example.
+      
+* `readFromFile(string file_name, MPS psi)`
+
+  Read the MPS from a file. Both the [[SiteSet|classes/siteset]] and MPS need to be read. See the [[formulas|formulas/readwrite_mps]] for a concrete example.
+  
+* `.write(ostream & s)`
+
+  Write the MPS throw an ostream, which is useful to write multiple MPS/MPO into a single file. The example shows how to write two MPS to a file. Note that both the [[SiteSet|classes/siteset]], for example a [[SpinHalf|classes/spinhalf]], and the MPS need to be written.
+  
+  <div class="example_clicker">Show Example</div>
+      SpinHalf sites (100); // 100 is the number of site
+      MPS psi1(sites), psi2(sites);
+      
+      ofstream ofs("file_name");
+      sites.write(ofs);
+      psi1.write(ofs);
+      psi2.write(ofs);
+      ofs.close();
+      
+* `.read(istream & s)`
+
+  Read the MPS throw an istream, which is useful to read multiple MPS/MPO from a single file. The example shows how to read two MPS from a file. Note that both the [[SiteSet|classes/siteset]], for example a [[SpinHalf|classes/spinhalf]], and the MPS need to be read.
+  
+  <div class="example_clicker">Show Example</div>
+      SpinHalf sites;
+      ifstream ifs("file_name"); // Assume that SiteSet and MPS were written into file_name
+      sites.read(ifs);
+      
+      MPS psi1(sites), psi2(sites);
+      psi1.read(ifs);
+      psi2.read(ifs);
+      ifs.close();
 
 ## Developer / Advanced Methods
 
