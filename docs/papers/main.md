@@ -18,7 +18,7 @@
 
 * [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://arxiv.org/abs/1611.05016), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1611.05016
 
-* [Nuclear magnetic resonance study of the magnetic-field-induced ordered phase in the NiCl2-4SC(NH2)2 compound](http://arxiv.org/abs/1610.03312), Rémi&nbsp;Blinder, Maxime&nbsp;Dupont, Sutirtha&nbsp;Mukhopadhyay, Mihael&nbsp;S.&nbsp;Grbić, Nicolas&nbsp;Laflorencie, Sylvain&nbsp;Capponi, Hadrien&nbsp;Mayaffre, Claude&nbsp;Berthier, Armando&nbsp;Paduan-Filho, Mladen&nbsp;Horvatić, arxiv:1610.03312
+* [Nuclear magnetic resonance study of the magnetic-field-induced ordered phase in the NiCl2-4SC(NH2)2 compound](https://doi.org/10.1103/PhysRevB.94.245129), Rémi&nbsp;Blinder, Maxime&nbsp;Dupont, Sutirtha&nbsp;Mukhopadhyay, Mihael&nbsp;S.&nbsp;Grbić, Nicolas&nbsp;Laflorencie, Sylvain&nbsp;Capponi, Hadrien&nbsp;Mayaffre, Claude&nbsp;Berthier, Armando&nbsp;Paduan-Filho, Mladen&nbsp;Horvatić, PhysRev[B,94,245129] [arxiv:1610.03312]
 
 * [An energy-resolved atomic scanning probe](http://arxiv.org/abs/1610.01903), Daniel&nbsp;Gruss, Chih-Chun&nbsp;Chien, Massimiliano&nbsp;Di&nbsp;Ventra, Michael&nbsp;Zwolak, arxiv:1610.01903
 
@@ -32,7 +32,7 @@
 
 * [Fate of the Ising Quantum Critical Point Coupled to a Gapless Boson](http://arxiv.org/abs/1609.02599), Ori&nbsp;Alberton, Jonathan&nbsp;Ruhman, Erez&nbsp;Berg, Ehud&nbsp;Altman, arxiv:1609.02599
 
-* [Full counting statistics in the Haldane-Shastry chain](http://arxiv.org/abs/1608.06856), Jean-Marie&nbsp;Stéphan, Frank&nbsp;Pollmann, arxiv:1608.06856
+* [Full counting statistics in the Haldane-Shastry chain](https://doi.org/10.1103/PhysRevB.95.035119), Jean-Marie&nbsp;Stéphan, Frank&nbsp;Pollmann, PhysRev[B,95,035119] [arxiv:1608.06856]
 
 * [Quantum Entanglement Growth Under Random Unitary Dynamics](http://arxiv.org/abs/1608.06950), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, Sagar&nbsp;Vijay, Jeongwan&nbsp;Haah, arxiv:1608.06950
 
