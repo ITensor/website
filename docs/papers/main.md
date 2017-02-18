@@ -4,7 +4,11 @@
 
 ## 2017
 
+* [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://arxiv.org/abs/1702.03650), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, arxiv:1702.03650
+
 * [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://arxiv.org/abs/1701.02248), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, arxiv:1701.02248
+
+* [Finding Matrix Product State Representations of Highly Excited Eigenstates of Many-Body Localized Hamiltonians](https://doi.org/10.1103/PhysRevLett.118.017201), Xiongjie&nbsp;Yu, David&nbsp;Pekker, and Bryan&nbsp;K.&nbsp;Clark, PhysRev[Lett,118,017201]
 
 ## 2016
 
