@@ -34,13 +34,13 @@
 
 * [Pure density functional for strong correlations and the thermodynamic limit from machine learning](https://doi.org/10.1103/PhysRevB.94.245129), Li&nbsp;Li, Thomas&nbsp;E.&nbsp;Baker, Steven&nbsp;R.&nbsp;White, Kieron&nbsp;Burke, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="https://doi.org/10.1103/PhysRevB.94.245129">245129</a> [arxiv:1609.03705]
 
-* [Fate of the Ising Quantum Critical Point Coupled to a Gapless Boson](http://arxiv.org/abs/1609.02599), Ori&nbsp;Alberton, Jonathan&nbsp;Ruhman, Erez&nbsp;Berg, Ehud&nbsp;Altman, arxiv:1609.02599
+* [Fate of the Ising Quantum Critical Point Coupled to a Gapless Boson](http://arxiv.org/abs/1609.02599), Ori&nbsp;Alberton, Jonathan&nbsp;Ruhman, Erez&nbsp;Berg, Ehud&nbsp;Altman, PhysRev[B,95,075132] [arxiv:1609.02599]
 
 * [Full counting statistics in the Haldane-Shastry chain](https://doi.org/10.1103/PhysRevB.95.035119), Jean-Marie&nbsp;Stéphan, Frank&nbsp;Pollmann, PhysRev[B,95,035119] [arxiv:1608.06856]
 
 * [Quantum Entanglement Growth Under Random Unitary Dynamics](http://arxiv.org/abs/1608.06950), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, Sagar&nbsp;Vijay, Jeongwan&nbsp;Haah, arxiv:1608.06950
 
-* [Quenching a Quantum Critical State by the Order Parameter: Dynamical Quantum Phase Transitions and Quantum Speed Limits](http://arxiv.org/abs/1608.06659), Markus&nbsp;Heyl, arxiv:1608.06659
+* [Quenching a Quantum Critical State by the Order Parameter: Dynamical Quantum Phase Transitions and Quantum Speed Limits](http://arxiv.org/abs/1608.06659), Markus&nbsp;Heyl, PhysRev[B,95,060504] [arxiv:1608.06659]
 
 * [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](https://doi.org/10.1103/PhysRevB.94.245145), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="https://doi.org/10.1103/PhysRevB.94.245145">245145</a> [arxiv:1608.04490]
 
@@ -60,7 +60,7 @@
 
 * [Supervised Learning with Tensor Networks](https://papers.nips.cc/paper/6211-supervised-learning-with-tensor-networks), E.M.&nbsp;Stoudenmire, David&nbsp;J.&nbsp;Schwab, <i style="color:#CC0000">Advances in Neural Information Processing Systems</i>&nbsp;&nbsp;<b>29</b> <a href="https://papers.nips.cc/paper/6211-supervised-learning-with-tensor-networks">4799</a> [arxiv:1605.05775]
 
-* [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, arxiv:1604.04511
+* [Fibonacci anyon excitations of one-dimensional dipolar lattice bosons](http://arxiv.org/abs/1604.04511) Tanja&nbsp;Duric, Krzysztof&nbsp;Biedroń, Jakub&nbsp;Zakrzewski, PhysRev[B,95,085102] [arxiv:1604.04511]
 
 * [Ising tricriticality in the extended Hubbard model with bond dimerization](http://dx.doi.org/10.1103/PhysRevB.93.235118) Satoshi&nbsp;Ejima, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Florian&nbsp;Lange, Holger&nbsp;Fehske, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>93</b> <a href="http://dx.doi.org/10.1103/PhysRevB.93.235118">235118</a> (2016) [arxiv:1604.01228]
 
