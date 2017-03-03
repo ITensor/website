@@ -97,8 +97,8 @@ ITensor also offers DMRG routines for more general optimization tasks, including
   Run a DMRG calculation using a collection of MPOs provided in a std::vector object (0-indexed).
 
   The MPOs will be treated as if they are summed. That is, the Hamiltonian is defined as the sum of 
-  the MPOs provided. However, no actual sum of the MPOs will be performed, such that the cost
-  grows only linearly in the number of MPOs provided.
+  the MPOs provided. However, no actual sum of the MPOs will be performed, such that the cost of the algorithm
+  is the sum of the costs of using each MPO individually.
 
 
 * ```
