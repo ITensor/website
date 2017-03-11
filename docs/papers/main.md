@@ -4,6 +4,10 @@
 
 ## 2017
 
+* [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://arxiv.org/abs/1703.01836), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, arxiv:1703.01836
+
+* [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
+
 * [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://arxiv.org/abs/1702.03650), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, arxiv:1702.03650
 
 * [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://arxiv.org/abs/1701.02248), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, arxiv:1701.02248
