@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Estimating the central charge from the Rényi entanglement entropy](https://arxiv.org/abs/1703.10577), A.&nbsp;Bazavov, Y.&nbsp;Meurice, S.-W.&nbsp;Tsai, J.&nbsp;Unmuth-Yockey, Li-Ping&nbsp;Yang, Jin&nbsp;Zhang, arxiv:1703.10577
+
 * [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://arxiv.org/abs/1703.01836), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, arxiv:1703.01836
 
 * [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
@@ -13,6 +15,8 @@
 * [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://arxiv.org/abs/1701.02248), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, arxiv:1701.02248
 
 * [Finding Matrix Product State Representations of Highly Excited Eigenstates of Many-Body Localized Hamiltonians](https://doi.org/10.1103/PhysRevLett.118.017201), Xiongjie&nbsp;Yu, David&nbsp;Pekker, and Bryan&nbsp;K.&nbsp;Clark, PhysRev[Lett,118,017201]
+
+* [Comparing numerical and analytical approaches to strongly interacting two-component mixtures in one dimensional traps](http://link.springer.com/article/10.1140/epjd/e2017-70650-8), F.&nbsp;F.&nbsp;Bellotti, A.&nbsp;S.&nbsp;Dehkharghani, N.&nbsp;T.&nbsp;Zinner, <i style="color:#CC0000">Eur. Phys. J. D</i>, 71:37 (2017)
 
 ## 2016
 
