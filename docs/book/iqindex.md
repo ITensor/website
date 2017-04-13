@@ -3,6 +3,7 @@
 We have seen that indices of quantum-number conserving tensors have
 quantum number <i>sectors</i>. That is, some values the index takes
 correspond to a quantum number q1; other values of the index correspond to q2; etc.
+(These quantum numbers are the small red numbers in the figure below.)
 
 Let us revisit our example from the last chapter of a single-site operator acting
 on the Hilbert space of a single hard-core boson:
@@ -71,7 +72,7 @@ The IQIndex class is a subtype of the Index class. Thus every IQIndex is also an
 and an IQIndex can be automatically converted to an Index.
 
 For the example above of the IQIndex "J", if we convert this IQIndex to an Index, 
-the resulting Index will have the same name and total size, but will no longer 
+the resulting Index will have the same name and total size (=18), but will no longer 
 contain information about the sectors (sector sizes, sector Index labels, and QNs).
 
 <br/>

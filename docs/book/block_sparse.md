@@ -82,9 +82,9 @@ For the lower left block we compute a flux: @@\mbox{}+1 - 0 = +1@@.
 ## IQTensors
 
 An IQTensor is defined as a tensor whose blocks all have the same flux. 
-When we speak of the flux of an IQTensor, we mean the flux of its non-zero blocks.
+When we speak of the flux of an IQTensor, we mean the flux of any of its non-zero blocks.
 Acting an operator which is an IQTensor onto a state changes the state's quantum
-number by the flux of the IQTensor.
+number by the flux of that IQTensor.
 
 The operators @@a@@, @@a^\dagger@@, and @@n@@ above are all IQTensors.
 We can confirm this for @@a^\dagger@@ and @@n@@ by checking that their
