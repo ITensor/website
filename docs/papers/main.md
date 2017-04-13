@@ -12,7 +12,7 @@
 
 * [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://arxiv.org/abs/1702.03650), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, arxiv:1702.03650
 
-* [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://arxiv.org/abs/1701.02248), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, arxiv:1701.02248
+* [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://scipost.org/10.21468/SciPostPhys.2.2.012), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, <i style="color:#CC0000">SciPost Phys.</i>&nbsp;&nbsp;<b>2</b> <a href="https://scipost.org/10.21468/SciPostPhys.2.2.012">012</a> [arxiv:1701.02248]
 
 * [Finding Matrix Product State Representations of Highly Excited Eigenstates of Many-Body Localized Hamiltonians](https://doi.org/10.1103/PhysRevLett.118.017201), Xiongjie&nbsp;Yu, David&nbsp;Pekker, and Bryan&nbsp;K.&nbsp;Clark, PhysRev[Lett,118,017201]
 
@@ -24,7 +24,7 @@
 
 * [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://arxiv.org/abs/1612.01548), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau , arxiv:1612.01548
 
-* [Anyonic Haldane insulator in one dimension](https://arxiv.org/abs/1612.00605), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, arxiv:1612.00605
+* [Anyonic Haldane insulator in one dimension](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.120401), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, PhysRev[Lett,118,120401] [arxiv:1612.00605]
 
 * [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://arxiv.org/abs/1611.05877), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, arxiv:1611.05877
 
