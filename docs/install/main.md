@@ -32,15 +32,18 @@ You can also download a zip file of the latest code by clicking <a href="https:/
    Then begin editing options.mk in a text editor
    and follow the remaining instructions.
 
-3. Set which compiler to use (the `CCCOM` variable). 
-   Make sure your compiler supports C++11, the latest version of the
-   C++ standard (this is true for Clang v3.0; and G++ v4.8 and after)
-   and make sure to set the flag -std=c++11 or similar to enable C++11.
+3. Within the options.mk file, choose which compiler to use by setting the `CCCOM` 
+   variable. Make sure whichever compiler you select supports C++11, the latest version of the
+   C++ standard (this is true for Clang v3.0; and G++ v4.8 and after) as well as the C++11 
+   standard libraries and make sure to set the flag -std=c++11 or similar to enable C++11
+   language support.
    
-5. Edit `PLATFORM`, `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
+5. Within the options.mk file, edit `PLATFORM`, `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
    type and location of your BLAS/LAPACK libraries. The list of currently
    available platforms is: macos, mkl, acml, lapack
-   (for details see matrix/lapack_wrap.h). The `PLATFORM` variable 
+   (for details see matrix/lapack_wrap.h). 
+   See examples within the file for common settings of these variables for the various platforms.
+   The `PLATFORM` variable 
    selects which function signature definitions will be used to wrap 
    vendor-specific BLAS/LAPACK fortran calls into C.
 
