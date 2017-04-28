@@ -751,9 +751,13 @@ for details about the possible arguments to these functions.
 
   Return the number of indices of T.
 
+* `isReal(ITensor T) -> bool` <br/>
+
+  Return `true` if the ITensor has real valued storage, otherwise `false`. 
+
 * `isComplex(ITensor T) -> bool` <br/>
 
-  Return `true` if the ITensor has complex storage, otherwise `false`. 
+  Return `true` if the ITensor has complex valued storage, otherwise `false`. 
   Returns true even if the norm of the imaginary part happens to be zero.
 
 * `norm() -> Real`
