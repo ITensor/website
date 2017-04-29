@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Strongly repulsive anyons in one dimension](https://arxiv.org/abs/1704.07197), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1704.07197
+
 * [Estimating the central charge from the Rényi entanglement entropy](https://arxiv.org/abs/1703.10577), A.&nbsp;Bazavov, Y.&nbsp;Meurice, S.-W.&nbsp;Tsai, J.&nbsp;Unmuth-Yockey, Li-Ping&nbsp;Yang, Jin&nbsp;Zhang, arxiv:1703.10577
 
 * [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://arxiv.org/abs/1703.01836), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, arxiv:1703.01836
