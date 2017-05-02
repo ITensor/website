@@ -4,7 +4,10 @@
 
 ## 2017
 
+
 * [Strongly repulsive anyons in one dimension](https://arxiv.org/abs/1704.07197), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1704.07197
+
+* [Energy as a Detector of Nonlocality of Many-Body Spin Systems](https://doi.org/10.1103/PhysRevX.7.021005), J.&nbsp;Tura, G.&nbsp;De&nbsp;las&nbsp;Cuevas, R.&nbsp;Augusiak, M.&nbsp;Lewenstein, A.&nbsp;Acín, and J.&nbsp;I.&nbsp;Cirac, PhysRev[X,7,021005]
 
 * [Estimating the central charge from the Rényi entanglement entropy](https://arxiv.org/abs/1703.10577), A.&nbsp;Bazavov, Y.&nbsp;Meurice, S.-W.&nbsp;Tsai, J.&nbsp;Unmuth-Yockey, Li-Ping&nbsp;Yang, Jin&nbsp;Zhang, arxiv:1703.10577
 
