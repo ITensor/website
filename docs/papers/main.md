@@ -4,6 +4,9 @@
 
 ## 2017
 
+* [Topological degeneracy and pairing in a one-dimensional gas of spinless Fermions](https://arxiv.org/abs/1705.00635), Jonathan&nbsp;Ruhman, Ehud&nbsp;Altman, arxiv:1705.00635
+
+* [Emergence of curved light-cones in a class of inhomogeneous Luttinger liquids](https://arxiv.org/abs/1705.00679), J.&nbsp;Dubail, J.-M.&nbsp;Stéphan, P.&nbsp;Calabrese, arxiv:1705.00679
 
 * [Strongly repulsive anyons in one dimension](https://arxiv.org/abs/1704.07197), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1704.07197
 
