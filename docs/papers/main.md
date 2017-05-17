@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Matrix product state techniques for two-dimensional systems at finite temperature](https://arxiv.org/abs/1705.05578), Benedikt&nbsp;Bruognolo, Zhenyue&nbsp;Zhu, Steven&nbsp;R.&nbsp;White, E.M.&nbsp;Stoudenmire, arxiv:1705.05578
+
 * [Topological degeneracy and pairing in a one-dimensional gas of spinless Fermions](https://arxiv.org/abs/1705.00635), Jonathan&nbsp;Ruhman, Ehud&nbsp;Altman, arxiv:1705.00635
 
 * [Emergence of curved light-cones in a class of inhomogeneous Luttinger liquids](https://arxiv.org/abs/1705.00679), J.&nbsp;Dubail, J.-M.&nbsp;Stéphan, P.&nbsp;Calabrese, arxiv:1705.00679
