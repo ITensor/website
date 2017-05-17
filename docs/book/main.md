@@ -1,17 +1,17 @@
 # <img src="docs/book/icon.png" class="largeicon">  The ITensor Book
 
 Tensor methods are a powerful approach for problems in physics and
-applied mathematics, but keeping track of tensor indices can be tedious
-and error-prone.
+applied math, but keeping track of tensor indices by hand
+can be tedious and make your code fragile and prone to bugs.
 
-Inspired by tensor diagram notation, ITensor automatically handles
-low-level details of index ordering and data permutation, freeing the user
-to think about the structure of tensor networks. Indices in ITensor
-carry extra information and "multiplying" two ITensors contracts all
-matching indices, similar to Einstein summation.
-Despite these higher level features ITensor is very efficient.
+Inspired by diagrammatic notation for tensor networks, ITensor lets you
+focus on the connectivity of tensor networks without thinking about
+low-level details like index ordering and data permutation.
+Indices in ITensor carry extra information so that "multiplying" 
+two ITensors contracts all matching indices, similar to Einstein summation.
+ITensor remains very efficient despite these high level features.
 
-The goal of this book is to quickly familiarize users with the 
+The goal of this book is to quickly familiarize you with the 
 main features of ITensor. Later chapters turn to advanced features and
 customizing higher-level parts of the library.
 
