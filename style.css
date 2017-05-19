@@ -461,3 +461,29 @@ padding: 1px;
 {
 padding: 40px;
 }
+
+#codes
+{
+width: 800px;
+}
+#codes td
+{
+padding: 1px;
+vertical-align: top;
+}
+#codes td.name
+{
+width: 20%;
+padding: 1px;
+font-weight: bold;
+}
+#codes td.contrib
+{
+width: 25%;
+padding: 1px;
+}
+#codes td.descrip
+{
+padding-bottom: 40px;
+vertical-align: top;
+}
