@@ -47,7 +47,7 @@ You can also download a zip file of the latest code by clicking <a href="https:/
    selects which function signature definitions will be used to wrap 
    vendor-specific BLAS/LAPACK fortran calls into C.
 
-6. Finally, at the top level of the library (same directory as this file),
+6. Finally, at the top level of the library (same directory as the options.mk file),
    run the commmand "make" on the command line.
    If all goes well, the built library files should appear in the LIBDIR
    folder specified in options.mk.
