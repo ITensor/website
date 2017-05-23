@@ -40,7 +40,7 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Tensor Decompositions|classes/decomp]]. Singular value decomposition, density matrix diagonalization, etc.
 
-## Matrix product states (MPS)
+## Matrix product states (MPS) and matrix product operators (MPO)
 
 * [[SiteSet|classes/siteset]]. Collection of site objects, defining a Hilbert space and local operators. <br/>
   - [[SpinHalf and SpinHalfSite|classes/spinhalf]]. S=1/2 spin sites. <br/>
@@ -54,6 +54,8 @@ its actual signature is `f(ITensor const& T)`.
 * [[MPO and IQMPO|classes/mpo]]. Matrix product operator class. <br/>
 
 * [[Algorithms for MPS and MPO|classes/mps_mpo_algs]] (including IQMPS and IQMPO algorithms). <br/>
+
+* [[AutoMPO|classes/autompo]]. System for making MPOs from sums of local operators. <br/>
 
 ## Density matrix renormalization group (DMRG)
 
