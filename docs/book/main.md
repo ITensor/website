@@ -9,7 +9,7 @@ focus on the connectivity of tensor networks without thinking about
 low-level details like index ordering and data permutation.
 Indices in ITensor carry extra information so that "multiplying" 
 two ITensors contracts all matching indices, similar to Einstein summation.
-ITensor remains very efficient despite these high level features.
+ITensor is very efficient despite these high level features.
 
 The goal of this book is to quickly familiarize you with the 
 main features of ITensor. Later chapters turn to advanced features and

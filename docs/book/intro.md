@@ -1,9 +1,9 @@
 # ITensor Library Overview
 
-Matrix techniques have been a great success in the applied sciences.
-*Tensor* methods promise even deeper insights and 
-algorithms that are even more powerful.
-Tensor network wavefunctions have driven major advances in physics and chemistry.
+Matrix techniques have been a major success in the applied sciences.
+*Tensor* methods could lead to even deeper insights and 
+more powerful algorithms.
+Tensor networks have driven major advances in physics and chemistry.
 Mathematicians and data scientists are discovering tensor algorithms
 that decisively outperform standard techniques.
 
