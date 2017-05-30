@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://arxiv.org/pdf/1705.09143), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, arxiv:1705.09143
+
 * [Matrix product state techniques for two-dimensional systems at finite temperature](https://arxiv.org/abs/1705.05578), Benedikt&nbsp;Bruognolo, Zhenyue&nbsp;Zhu, Steven&nbsp;R.&nbsp;White, E.M.&nbsp;Stoudenmire, arxiv:1705.05578
 
 * [Topological degeneracy and pairing in a one-dimensional gas of spinless Fermions](https://arxiv.org/abs/1705.00635), Jonathan&nbsp;Ruhman, Ehud&nbsp;Altman, arxiv:1705.00635
