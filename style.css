@@ -237,6 +237,46 @@ code
 .screenshot a { font-family: monospace; }
 .screenshot pre { font-family: monospace; font-size: 120%; }
 
+#contribtable
+{
+width: 800px;
+}
+#contribtable td.icon
+{
+width: 20%;
+padding-top: 10px;
+padding-left: 40px;
+padding-right: 0px;
+}
+#contribtable td.descrip
+{
+padding: 0px;
+}
+#contribtable img
+{
+width: 32px;
+padding-right: 4px;
+vertical-align: middle;
+}
+
+.contributor
+{
+font-size: 12pt; 
+font-family: sans-serif; 
+text-indent: 0px;
+padding-top: 20px;
+}
+.contributor img
+{
+width: 32px;
+padding-right: 4px;
+vertical-align: middle;
+}
+.contributor i
+{
+padding-right: 4px;
+}
+
 .docs 
 { 
 font-family: sans-serif; 
