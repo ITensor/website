@@ -4,7 +4,9 @@
 
 ## 2017
 
-* [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://arxiv.org/pdf/1705.09143), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, arxiv:1705.09143
+* [Dynamics of entanglement and transport in 1D systems with quenched randomness](https://arxiv.org/abs/1705.10364), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, David&nbsp;A.&nbsp;Huse,  arxiv:1705.10364
+
+* [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://arxiv.org/abs/1705.09143), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, arxiv:1705.09143
 
 * [Matrix product state techniques for two-dimensional systems at finite temperature](https://arxiv.org/abs/1705.05578), Benedikt&nbsp;Bruognolo, Zhenyue&nbsp;Zhu, Steven&nbsp;R.&nbsp;White, E.M.&nbsp;Stoudenmire, arxiv:1705.05578
 
