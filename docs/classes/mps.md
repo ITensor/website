@@ -152,10 +152,12 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   Note: calling `position(j)` may in general change the "virtual" or `Link` indices between 
   some or all of the MPS tensors.
 
+<a name="orthogonalize"></a>
 * `.orthogonalize(Args args = Args::global())`
 
-  Fully re-gauge and compress the MPS by performing two passes: one to make all of the 
-  tensors orthogonal with minimal truncation, and another to truncate the MPS to the requested accuracy.
+  Fully re-gauge and compress the MPS, regardless of what its gauge properties might be. 
+  
+  Afterward the position (orthogonality center) will be at site 1.
 
   Named arguments recognized:
 
