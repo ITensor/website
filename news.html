@@ -39,6 +39,37 @@
 
 <div class="full section rounded"> <h2>Latest News</h2> </div>
 
+<a name="v2.1"></a><br/>
+<div class="full newsitem">
+<h3>Version 2.1 Released</h3>
+<h2>(Jun 1, 2017) </h2>
+<p>
+Version 2.1.0 of ITensor is out! This version includes some powerful new
+features, as well as a raft of small improvements and bug fixes.
+</p>
+<p>
+One notable improvement is that an AutoMPO can now include terms with operators
+acting on more than two sites. And the default AutoMPO backend uses a compression
+algorithm to ensure that the resulting MPO dimension is as small as possible without
+losing accuracy. Combined with the ability of AutoMPO to handle arbitrary range
+interactions, such as for making MPOs for quasi-2D systems, ITensor is now more
+useful than ever for setting up advanced DMRG and MPS calculations.
+</p>
+<p> 
+Another useful change is that the SiteSet system has been overhauled internally.
+This make it much easier to define custom Hilbert spaces, possibly with different
+types of degrees of freedom on different sites.
+</p>
+<p>
+Some other important internal changes include switching to 64 bit Index ID numbers
+to avoid collisions in heavy-duty calculations, and improved internal handling of 
+scalar tensors.
+</p>
+<p>
+For even more details, see the <a href="docs.cgi?page=changelog#v2.1.0">changelog</a>.
+</p>
+</div>
+
 <a name="autompo"></a><br/>
 <div class="full newsitem">
 <h3>AutoMPO Official Release</h3>
