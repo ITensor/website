@@ -1,5 +1,31 @@
 # Change Log #
 
+<a name="v2.1.0"></a>
+## [Version 2.1.0](https://github.com/ITensor/ITensor/tree/v2.1.0) (Jun 1, 2017) ##
+
+* New default AutoMPO backend that supports terms with operators acting on more than two sites. This backend also performs a series of SVDs to compress the resulting MPO to as small a bond dimension as possible, which can be extremely useful for MPOs representing long-range interactions, for example.
+
+* Changed Index (and IQIndex) internal ID numbers to be 64 bit. Fixes random crash bug during long tim evolution runs reported by multiple users. <span style="color:red;">Note:</span> this change is backwards incompatible with tensors or other objects such as MPS saved to disk in previous version of ITensor.
+
+* New SiteSet system. New design makes it easier to create SiteSets with a mixture of different local degrees of freedom (such as spin chains with alternating spin sizes). It is also now very cheap to copy a SiteSet as all copies point to the same underlying storage.
+
+* New ScalarReal and ScalarCplx storage types. Leads to cleaner handling of scalar ITensors and IQTensors. (Thanks Chia-Min Chung for suggestions leading to this design.)
+
+* Build system now optionally builds dynamic libraries. (Thanks Kyungmin Lee for contributing this.)
+
+* New MPS::orthogonalize algorithm. Orthogonalizes MPS in a single pass without using a more heuristic two-pass approach like the older routine did.
+
+* Fixed a fault optimization of IQTensor combiners for the case of combining a single IQIndex. (Thanks Chia-Min Chung for reporting this.)
+
+* Changed logic for deducing the arrow direction of the IQIndex produced by a combiner when the combined indices have different arrow directions. (Thanks Lars-Hendrick Frahm for bringing this to my attention.)
+
+* New SpinTwo SiteSet. (Thanks Samuel Gozel for contributing.)
+
+* New parallel.h tools for sending tensors and other data via MPI. (Thanks Lars Frahm for improvements to this also.)
+
+* More efficient implementation of gateTEvol template routine.
+
+
 <a name="v2.0.11"></a>
 ## [Version 2.0.11](https://github.com/ITensor/ITensor/tree/v2.0.11) (Sep 8, 2016) ##
 
