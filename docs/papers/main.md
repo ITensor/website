@@ -4,7 +4,7 @@
 
 ## 2017
 
-* [Dynamics of entanglement and transport in 1D systems with quenched randomness](https://arxiv.org/abs/1705.10364), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, David&nbsp;A.&nbsp;Huse,  arxiv:1705.10364
+* [Entanglement and quantum transport in integrable systems](https://arxiv.org/abs/1706.00020), Vincenzo&nbsp;Alba, arxiv:1706.00020
 
 * [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://arxiv.org/abs/1705.09143), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, arxiv:1705.09143
 
@@ -40,7 +40,7 @@
 
 * [Anyonic Haldane insulator in one dimension](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.120401), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, PhysRev[Lett,118,120401] [arxiv:1612.00605]
 
-* [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://arxiv.org/abs/1611.05877), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, arxiv:1611.05877
+* [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.195152), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, PhysRev[B,95,195152] [arxiv:1611.05877]
 
 * [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://arxiv.org/abs/1611.05016), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1611.05016
 
