@@ -24,7 +24,7 @@
 
 * [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
 
-* [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://arxiv.org/abs/1702.03650), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, arxiv:1702.03650
+* [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://arxiv.org/abs/1702.03650), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys. Rev. Lett.</i> (accepted), arxiv:1702.03650
 
 * [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://scipost.org/10.21468/SciPostPhys.2.2.012), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, <i style="color:#CC0000">SciPost Phys.</i>&nbsp;&nbsp;<b>2</b> <a href="https://scipost.org/10.21468/SciPostPhys.2.2.012">012</a> [arxiv:1701.02248]
 
