@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Quantum spin chains with multiple dynamics](https://arxiv.org/abs/1706.02304), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1706.02304
+
 * [Entanglement and quantum transport in integrable systems](https://arxiv.org/abs/1706.00020), Vincenzo&nbsp;Alba, arxiv:1706.00020
 
 * [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://arxiv.org/abs/1705.09143), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, arxiv:1705.09143
