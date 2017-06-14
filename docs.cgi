@@ -90,7 +90,7 @@ def includeFile(matchobj):
 
 def convert(string):
     #Convert PhysRev[Letter,Vol,PageNum]tags
-    string = re.sub(r"PhysRev\[(.+?),(\d+),(\d+)\]",r"<i style='color:#CC0000'>Phys. Rev. \1</i>&nbsp;&nbsp;<b>\2</b> <a href='https://doi.org/10.1103/PhysRev\1.\2.\3'>\3</a>",string)
+    string = re.sub(r"PhysRev\[(.+?),(\d+),(\d+)\]",r"<i style='color:#CC0000'>Phys.&nbsp;Rev.&nbsp;\1</i>&nbsp;&nbsp;<b>\2</b> <a href='https://doi.org/10.1103/PhysRev\1.\2.\3'>\3</a>",string)
     #Convert arxiv:####.#### links
     string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a target='_blank' href='http://arxiv.org/abs/\1'>\1</a>",string)
     #Convert cond-mat/####### links

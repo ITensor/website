@@ -30,7 +30,7 @@
 
 * [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://scipost.org/10.21468/SciPostPhys.2.2.012), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, <i style="color:#CC0000">SciPost Phys.</i>&nbsp;&nbsp;<b>2</b> <a href="https://scipost.org/10.21468/SciPostPhys.2.2.012">012</a> [arxiv:1701.02248]
 
-* [Finding Matrix Product State Representations of Highly Excited Eigenstates of Many-Body Localized Hamiltonians](https://doi.org/10.1103/PhysRevLett.118.017201), Xiongjie&nbsp;Yu, David&nbsp;Pekker, and Bryan&nbsp;K.&nbsp;Clark, PhysRev[Lett,118,017201]
+* [Finding Matrix Product State Representations of Highly Excited Eigenstates of Many-Body Localized Hamiltonians](https://doi.org/10.1103/PhysRevLett.118.017201), Xiongjie&nbsp;Yu, David&nbsp;Pekker, and Bryan&nbsp;K.&nbsp;Clark, PhysRev[Lett.,118,017201]
 
 * [Comparing numerical and analytical approaches to strongly interacting two-component mixtures in one dimensional traps](http://link.springer.com/article/10.1140/epjd/e2017-70650-8), F.&nbsp;F.&nbsp;Bellotti, A.&nbsp;S.&nbsp;Dehkharghani, N.&nbsp;T.&nbsp;Zinner, <i style="color:#CC0000">Eur. Phys. J. D</i>, 71:37 (2017)
 
@@ -40,7 +40,7 @@
 
 * [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://arxiv.org/abs/1612.01548), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau , arxiv:1612.01548
 
-* [Anyonic Haldane insulator in one dimension](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.120401), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, PhysRev[Lett,118,120401] [arxiv:1612.00605]
+* [Anyonic Haldane insulator in one dimension](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.120401), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, PhysRev[Lett.,118,120401] [arxiv:1612.00605]
 
 * [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.195152), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, PhysRev[B,95,195152] [arxiv:1611.05877]
 
@@ -66,11 +66,11 @@
 
 * [Quenching a Quantum Critical State by the Order Parameter: Dynamical Quantum Phase Transitions and Quantum Speed Limits](http://arxiv.org/abs/1608.06659), Markus&nbsp;Heyl, PhysRev[B,95,060504] [arxiv:1608.06659]
 
-* [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](https://doi.org/10.1103/PhysRevB.94.245145), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="https://doi.org/10.1103/PhysRevB.94.245145">245145</a> [arxiv:1608.04490]
+* [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](https://doi.org/10.1103/PhysRevB.94.245145), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, PhysRev[B,94,245145] [arxiv:1608.04490]
 
 * [Entanglement and thermodynamics after a quantum quench in integrable systems](http://arxiv.org/abs/1608.00614), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1608.00614
 
-* [Shannon-Rényi entropy for Nambu-Goldstone modes in two dimensions](https://arxiv.org/abs/1607.02465), Grégoire&nbsp;Misguich, Vincent&nbsp;Pasquier, Masaki&nbsp;Oshikawa, arxiv:1607.02465
+* [Finite-size scaling of the Shannon-Rényi entropy in two-dimensional systems with spontaneously broken continuous symmetry](https://doi.org/10.1103/PhysRevB.95.195161), Grégoire&nbsp;Misguich, Vincent&nbsp;Pasquier, Masaki&nbsp;Oshikawa, PhysRev[B,95,195161] [arxiv:1607.02465]
 
 * [Many-Body Localization in System with a Completely Delocalized Single-Particle Spectrum](https://doi.org/10.1103/PhysRevB.94.201116), Yevgeny&nbsp;Bar&nbsp;Lev, David&nbsp;R.&nbsp;Reichman, and Yoav&nbsp;Sagi, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp;&nbsp;<b>94</b> <a href="http://dx.doi.org/10.1103/PhysRevB.94.201116">201116(R)</a> [arxiv:1607.04652]
 
