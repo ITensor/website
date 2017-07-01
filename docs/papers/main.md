@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Critical behavior of the extended Hubbard model with bond dimerization](https://arxiv.org/abs/1706.07486), Satoshi&nbsp;Ejima, Florian&nbsp;Lange, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Holger&nbsp;Fehske, arxiv:1706.07486
+
 * [Quantum spin chains with multiple dynamics](https://arxiv.org/abs/1706.02304), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1706.02304
 
 * [Entanglement and quantum transport in integrable systems](https://arxiv.org/abs/1706.00020), Vincenzo&nbsp;Alba, arxiv:1706.00020
