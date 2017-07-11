@@ -4,7 +4,7 @@
 
 ## 2017
 
-* [Critical behavior of the extended Hubbard model with bond dimerization](https://arxiv.org/abs/1706.07486), Satoshi&nbsp;Ejima, Florian&nbsp;Lange, Fabian&nbsp;H.&nbsp;L.&nbsp;Essler, Holger&nbsp;Fehske, arxiv:1706.07486
+* [Gapless quantum spin chains: multiple dynamics and conformal wavefunctions](https://arxiv.org/abs/1707.02317), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1707.02317
 
 * [Quantum spin chains with multiple dynamics](https://arxiv.org/abs/1706.02304), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1706.02304
 
