@@ -79,4 +79,4 @@ Internally, a combiner is implemented as a type of ITensor with a special storag
   has combiner storage as it should. If this is not the case, an exception is thrown.
 
 <br/>
-_This page current as of version 2.0.11_
+_This page current as of version 2.1.0_
