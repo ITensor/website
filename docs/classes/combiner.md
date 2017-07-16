@@ -1,13 +1,12 @@
 # Combiner ITensor
 
-A combiner is a type of ITensor used to "reshape" several indices into one Index whose size is the product of
-the smaller indices. The same combiner can be used to reverse this process.
+A combiner is a type of ITensor used to "reshape" several indices into one Index whose size is the product of the smaller indices. The same combiner can be used to reverse this process.
 
 To construct a combiner ITensor, call the `combiner` method with the indices you want to combine as arguments.
 
-A combiner is implemented as a type of ITensor with a special storage type. This storage performs no allocation
-of any elements whatsoever; instead it acts as a "tag" which causes contraction with a combiner to
-call special optimized routines to reshape a regular ITensor as efficiently as possible.
+To retrieve the "combined" index that results from merging all of the indices provided, use the combinedIndex` function (see below).
+
+Internally, a combiner is implemented as a type of ITensor with a special storage type. This storage performs no allocation of any elements whatsoever; instead it acts as a "tag" which causes contraction with a combiner to call special optimized routines to reshape a regular ITensor as efficiently as possible.
 
 
 ## Synopsis
@@ -68,6 +67,16 @@ call special optimized routines to reshape a regular ITensor as efficiently as p
 
   * "IndexName" (default: "cmb") &mdash; provide a string to use for the name of the new, combined Index
   * "IndexType" (default: Link) &mdash; set the [[IndexType|classes/indextype]] of the new, combined Index
+
+## Related functions
+
+* `combinedIndex(ITensor C) -> Index`
+  
+  Returned the "combined" index of the combiner C. This is the new Index that C has 
+  which resulted from merging the indices passed to the `combiner` function.
+
+  In debug mode, performs a run-time check that the ITensor C actually
+  has combiner storage as it should. If this is not the case, an exception is thrown.
 
 <br/>
 _This page current as of version 2.0.11_
