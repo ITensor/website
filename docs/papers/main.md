@@ -18,13 +18,13 @@
 
 * [Emergence of curved light-cones in a class of inhomogeneous Luttinger liquids](https://arxiv.org/abs/1705.00679), J.&nbsp;Dubail, J.-M.&nbsp;Stéphan, P.&nbsp;Calabrese, arxiv:1705.00679
 
-* [Strongly repulsive anyons in one dimension](https://arxiv.org/abs/1704.07197), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1704.07197
+* [Strongly repulsive anyons in one dimension](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.063621), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, PhysRev[A,95,063621] [arxiv:1704.07197]
 
 * [Energy as a Detector of Nonlocality of Many-Body Spin Systems](https://doi.org/10.1103/PhysRevX.7.021005), J.&nbsp;Tura, G.&nbsp;De&nbsp;las&nbsp;Cuevas, R.&nbsp;Augusiak, M.&nbsp;Lewenstein, A.&nbsp;Acín, and J.&nbsp;I.&nbsp;Cirac, PhysRev[X,7,021005]
 
 * [Estimating the central charge from the Rényi entanglement entropy](https://arxiv.org/abs/1703.10577), A.&nbsp;Bazavov, Y.&nbsp;Meurice, S.-W.&nbsp;Tsai, J.&nbsp;Unmuth-Yockey, Li-Ping&nbsp;Yang, Jin&nbsp;Zhang, arxiv:1703.10577
 
-* [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://arxiv.org/abs/1703.01836), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, arxiv:1703.01836
+* [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://doi.org/10.1088/1361-6455/aa7797), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, <i style="color:#CC0000">J. Phys. B: At. Mol. Opt. Phys.</i> <b>50</b> <a href="https://doi.org/10.1088/1361-6455/aa7797" target="_blank">144002</a> (2017) [arxiv:1703.01836]
 
 * [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
 
