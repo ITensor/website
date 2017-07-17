@@ -5,7 +5,7 @@
 
 * New default [[AutoMPO|classes/autompo]] backend that supports terms with operators acting on more than two sites. This backend also performs a series of SVDs to compress the resulting MPO to as small a bond dimension as possible, which can be extremely useful for MPOs representing long-range interactions, for example. (Thanks to Anna Keselman for a lot of hard work on this new system.)
 
-* Changed Index (and IQIndex) internal ID numbers to be 64 bit. Fixes random crash bug during long tim evolution runs reported by multiple users. <span style="color:red;">Note:</span> this change is backwards incompatible with tensors or other objects such as MPS saved to disk in previous version of ITensor.
+* Changed Index (and IQIndex) internal ID numbers to be 64 bit. Fixes random crash bug during long time evolution runs reported by multiple users. <span style="color:red;">Note:</span> this change is backwards incompatible with tensors or other objects such as MPS saved to disk in previous version of ITensor.
 
 * New [[SiteSet|classes/siteset]] system. New design makes it easier to create SiteSets with a mixture of different local degrees of freedom (such as spin chains with alternating spin sizes). It is also now very cheap to copy a SiteSet as all copies point to the same underlying storage.
 
