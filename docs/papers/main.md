@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [A cavity-induced artificial gauge field in a Bose-Hubbard ladder](https://arxiv.org/abs/1707.04123), Catalin-Mihai&nbsp;Halati, Ameneh&nbsp;Sheikhan, Corinna&nbsp;Kollath, arxiv:1707.04123
+
 * [Gapless quantum spin chains: multiple dynamics and conformal wavefunctions](https://arxiv.org/abs/1707.02317), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1707.02317
 
 * [Quantum spin chains with multiple dynamics](https://arxiv.org/abs/1706.02304), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1706.02304
