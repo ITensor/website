@@ -4,6 +4,10 @@
 
 ## 2017
 
+* [Quantum Simulation and Spectroscopy of Entanglement Hamiltonians](https://arxiv.org/abs/1707.04455), Marcello&nbsp;Dalmonte, Benoît&nbsp;Vermersch, Peter&nbsp;Zoller, arxiv:1707.04455
+
+* [Towards quantum simulation with circular Rydberg atoms](https://arxiv.org/abs/1707.04397), Thanh&nbsp;Long&nbsp;Nguyen, Jean-Michel&nbsp;Raimond, Clément&nbsp;Sayrin, Rodrigo&nbsp;Cortinas, Tigrane&nbsp;Cantat-Moltrecht, Fédéric&nbsp;Assemat, Igor&nbsp;Dotsenko, Sébastien&nbsp;Gleyzes, Serge&nbsp;Haroche, Guillaume&nbsp;Roux, Thierry&nbsp;Jolicoeur, Michel&nbsp;Brune, arxiv:1707.04397
+
 * [A cavity-induced artificial gauge field in a Bose-Hubbard ladder](https://arxiv.org/abs/1707.04123), Catalin-Mihai&nbsp;Halati, Ameneh&nbsp;Sheikhan, Corinna&nbsp;Kollath, arxiv:1707.04123
 
 * [Gapless quantum spin chains: multiple dynamics and conformal wavefunctions](https://arxiv.org/abs/1707.02317), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1707.02317
