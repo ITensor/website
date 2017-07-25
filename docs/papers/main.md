@@ -4,6 +4,10 @@
 
 ## 2017
 
+* [Return probability after a quench from a domain wall initial state in the spin-1/2 XXZ chain](https://arxiv.org/abs/1707.06625), Jean-Marie&nbsp;Stéphan, arxiv:1707.06625
+
+* [Out-of-equilibrium dynamics in a quantum impurity model: numerics for particle transport and entanglement entropy](https://arxiv.org/abs/1707.06111), Kemal&nbsp;Bidzhiev, Grégoire&nbsp;Misguich, arxiv:1707.06111
+
 * [Quantum Simulation and Spectroscopy of Entanglement Hamiltonians](https://arxiv.org/abs/1707.04455), Marcello&nbsp;Dalmonte, Benoît&nbsp;Vermersch, Peter&nbsp;Zoller, arxiv:1707.04455
 
 * [Towards quantum simulation with circular Rydberg atoms](https://arxiv.org/abs/1707.04397), Thanh&nbsp;Long&nbsp;Nguyen, Jean-Michel&nbsp;Raimond, Clément&nbsp;Sayrin, Rodrigo&nbsp;Cortinas, Tigrane&nbsp;Cantat-Moltrecht, Fédéric&nbsp;Assemat, Igor&nbsp;Dotsenko, Sébastien&nbsp;Gleyzes, Serge&nbsp;Haroche, Guillaume&nbsp;Roux, Thierry&nbsp;Jolicoeur, Michel&nbsp;Brune, arxiv:1707.04397
@@ -34,7 +38,7 @@
 
 * [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
 
-* [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://arxiv.org/abs/1702.03650), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys. Rev. Lett.</i> (accepted), arxiv:1702.03650
+* [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://dx.doi.org/10.1103/PhysRevLett.119.046401), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, PhysRev[Lett,119,046401] [arxiv:1702.03650]
 
 * [One-particle density matrix of trapped one-dimensional impenetrable bosons from conformal invariance](https://scipost.org/10.21468/SciPostPhys.2.2.012), Yannis&nbsp;Brun, Jérôme&nbsp;Dubail, <i style="color:#CC0000">SciPost Phys.</i>&nbsp;&nbsp;<b>2</b> <a href="https://scipost.org/10.21468/SciPostPhys.2.2.012">012</a> [arxiv:1701.02248]
 
@@ -44,7 +48,7 @@
 
 ## 2016
 
-* [Fork Tensor Product States - Efficient Three Orbital Real Time DMFT Solver](https://arxiv.org/abs/1612.05587), Daniel&nbsp;Bauernfeind, Manuel&nbsp;Zingl, Robert&nbsp;Triebl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1612.05587
+* [Fork Tensor Product States - Efficient Three Orbital Real Time DMFT Solver](https://doi.org/10.1103/PhysRevX.7.031013), Daniel&nbsp;Bauernfeind, Manuel&nbsp;Zingl, Robert&nbsp;Triebl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, PhysRev[X,7,031013] [arxiv:1612.05587]
 
 * [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://arxiv.org/abs/1612.01548), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau , arxiv:1612.01548
 
