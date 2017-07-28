@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Quantum dynamics in transverse-field Ising models from classical networks](https://arxiv.org/abs/1707.06656), Markus&nbsp;Schmitt, Markus&nbsp;Heyl, arxiv:1707.06656
+
 * [Return probability after a quench from a domain wall initial state in the spin-1/2 XXZ chain](https://arxiv.org/abs/1707.06625), Jean-Marie&nbsp;Stéphan, arxiv:1707.06625
 
 * [Out-of-equilibrium dynamics in a quantum impurity model: numerics for particle transport and entanglement entropy](https://arxiv.org/abs/1707.06111), Kemal&nbsp;Bidzhiev, Grégoire&nbsp;Misguich, arxiv:1707.06111
