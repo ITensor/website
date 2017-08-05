@@ -44,14 +44,14 @@ The convention of calling the size "m" comes from the DMRG literature.
     }
 
 
-After creating an Index, most of its properties are permanently fixed. 
+After creating an Index, most of its properties are permanently fixed, including its size. 
 The philosophy of ITensor is that indices have a meaning given at the time they are created.
 A new Index can be created to take the place of an old one, but the semantic
 meaning of a given Index object cannot be changed.
 
 ### Priming Indices
 
-The one property of an Index you can change is its prime level.
+There is one property of an Index you can change: its prime level.
 
 An Index starts out with prime level zero.
 Copies of the same original Index must have the same prime level to compare
@@ -60,11 +60,11 @@ equal.
 Calling `prime(i)` will produce a copy of i with prime level raised by 1.
 Because this copy has a different prime level, it will no longer compare equal to i.
 
-    auto ip = prime(i);
-    println("The prime level of ip is ",ip.primeLevel());
+    auto i1 = prime(i);
+    println("The prime level of i1 is ",i1.primeLevel());
     //prints: The prime level of ip is 1
-    printfln("ip==i is %s",ip==i);
-    //prints: ip==i is false
+    printfln("i1==i is %s",i1==i);
+    //prints: i1==i is false
 
 There are many convenient ways to manipulate Index prime levels.
 The `prime` function accepts an optional increment amount:

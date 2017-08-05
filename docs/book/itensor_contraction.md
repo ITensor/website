@@ -1,18 +1,18 @@
 # Contracting ITensors
 
-Tensor contraction is often the most expensive
-step of a tensor algorithm. 
-The code for performing contractions can also be 
-fragile and error-prone if the tensor interface depends
+Tensor contraction is usually the most expensive
+step of tensor algorithms.
+Code for contracting tensors can be 
+fragile and error-prone when the tensor interface depends
 on the index ordering.
-The goal of ITensor is to make it easy to transcribe
-tensor contraction diagrams directly into code,
-helping you to focus on the connectivity of a tensor
-network. ITensor also works behind the scenes
-to ensure that contractions are performed efficiently.
 
-Pairs of ITensors are contracted 
-using the `*` operator, which <i>contracts all matching indices</i>.
+ITensor gets around these issues by using "intelligent"
+indices which recognize each other and automatically contract,
+regardless of the order they are in. ITensor works behind
+the scenes to make sure this is done as efficiently as possible.
+
+To contract two ITensors, use
+the `*` operator, which <i>contracts all matching indices</i>.
 Some pairs of indices may match, yet you do not want them to be
 contracted. To prevent this from happening, change the prime
 level of such indices on one or both tensors as in the 

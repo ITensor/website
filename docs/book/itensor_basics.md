@@ -37,8 +37,8 @@ Alternatively you can call `T.r()`.
     return 0;
     }
 
-In applied mathematics, the number of 
-indices is often called the "order" of a tensor. Therefore we also provide
+In the mathematics literature, the number of 
+indices is often called the _order_ of a tensor. Therefore we also provide
 `order(T)` as an alias for `rank(T)`.
 
 <a name="elements"></a>
@@ -93,7 +93,7 @@ Calling `.cplx` always succeeds even if the tensor has only real elements.
 
 ### Printing ITensors 
 
-A convenient way to print and ITensor is to use the `Print` macro:
+A convenient way to print an ITensor is to use the `Print` macro:
 
     #include "itensor/all_basic.h"
     
