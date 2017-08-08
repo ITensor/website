@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Dynamics of the spin-1/2 Heisenberg chain initialized in a domain-wall state](https://arxiv.org/abs/1708.01843), Grégoire&nbsp;Misguich, Kirone&nbsp;Mallick, P.&nbsp;L.&nbsp;Krapivsky, arxiv:1708.01843
+
 * [Quantum dynamics in transverse-field Ising models from classical networks](https://arxiv.org/abs/1707.06656), Markus&nbsp;Schmitt, Markus&nbsp;Heyl, arxiv:1707.06656
 
 * [Return probability after a quench from a domain wall initial state in the spin-1/2 XXZ chain](https://arxiv.org/abs/1707.06625), Jean-Marie&nbsp;Stéphan, arxiv:1707.06625
