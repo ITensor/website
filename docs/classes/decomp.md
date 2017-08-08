@@ -74,7 +74,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
      $$
      <span>&nbsp;</span>
   
-  * "Minm" &mdash; integer m. At least m singular values will be kept, even if they fall below the cutoff.
+  * "Minm" &mdash; integer m. At least m singular values will be kept, even if the cutoff criterion would discard more.
   
   * "Truncate" &mdash; if set to `false`, no truncation occurs. Otherwise truncation parameters ("Cutoff",
     "Maxm", "Minm") will be used to perform a truncation of singular values.
@@ -202,6 +202,27 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
       Print((H-dag(U)*D*prime(U)).norm()); //prints: 0.0
 
+   The diagHermitian function recognizes the following optional named arguments:
+   
+   * "Maxm" &mdash; integer M. If there are more than M eigenvalues, only the largest M are kept.
+
+   * "Cutoff" &mdash; real number @@\epsilon@@. Discard the smallest eigenvalues
+      @@p\_n@@ such that the <i>truncation error</i> is less than @@\epsilon@@:
+      $$
+      \frac{\sum\_{n\in\text{discarded}} p\_n}{\sum\_{n} p\_n} < \epsilon \:.
+      $$
+      <span>&nbsp;</span>
+
+   * "Minm" &mdash; integer m. At least m eigenvalues will be kept, even if the cutoff criterion would discard more.
+
+   * "IndexName" &mdash; string. Specify the name of the new index shared between U and D.
+
+   * "ShowEigs" &mdash; if `true`, print lots of extra information about the truncation of singular values.
+
+   * "Truncate" &mdash; if set to `false`, no truncation occurs. Otherwise truncation parameters ("Cutoff","Maxm", "Minm") will be used to perform a truncation of singular values.
+
+   <br/>
+
 * `expHermitian(ITensor H, Cplx tau = 1) -> ITensor` <br/>
   `expHermitian(IQTensor H, Cplx tau = 1) -> IQTensor`
 
@@ -226,6 +247,8 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
       // compute exp(2 * H)
       auto exp2H = expHermitian(H,2);
+
+   <br/>
 
 * ```
   denmatDecomp(ITensor T, ITensor & A, ITensor & B, 
@@ -293,6 +316,8 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
       denmatDecomp(T,A,B,Fromleft); //decompose T into A * B
 
       Print(norm(T-A*B)); //prints: 0
+
+   <br/>
 
 * ```
   template<class BigMatrixT>
