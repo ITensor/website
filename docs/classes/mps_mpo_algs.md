@@ -106,20 +106,25 @@
 
 ## Applying MPO to MPS
 
-* `exactApplyMPO(MPS psi, MPO K, MPS & phi, Args args = Args::global())` <br/>
-  `exactApplyMPO(IQMPS psi, IQMPO K, IQMPS & phi, Args args = Args::global())`
+* `exactApplyMPO(MPO K, MPS psi, Args args = Args::global()) -> MPS` <br/>
+  `exactApplyMPO(IQMPO K, IQMPS psi, Args args = Args::global()) -> IQMPS`
 
-  Apply an MPO K to an MPS psi, resulting in the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@.
+  Apply an MPO K to an MPS psi, resulting in the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@. <br/>
+  The resulting MPS is returned.
 
   No approximation is made when applying the MPO, but after applying it the resulting
   MPS is compressed using the truncation parameters provided in the named arguments `args`.
 
-  This method can be useful for applying an MPO to an MPS a small number of times, but
-  using it repeatedly will cause the MPS bond dimension to grow exponentially quickly.
+  If input MPS has typical bond dimension @@m@@ and MPO has typical bond dimension @@k@@,
+  scaling is @@m^3 k^2 + m^2 k^3@@.
 
   Named arguments recognized:
 
-  * `"Orthog"` &mdash; (defaults to `true`) whether to orthogonalize and compress the resulting MPS
+  * `"Cutoff"` &mdash; (default: 1E-13) truncation error cutoff for compressing resulting MPS
+
+  * `"Maxm"` &mdash; maximum bond dimension of resulting compressed MPS
+
+  * `"Verbose"` &mdash; (default: false) if true, prints extra output
   
 
 <!--
