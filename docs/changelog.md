@@ -1,5 +1,42 @@
 # Change Log #
 
+<a name="v2.1.1"></a>
+## [Version 2.1.1](https://github.com/ITensor/ITensor/tree/v2.1.1) (Aug 8, 2017) ##
+
+### Feature improvements
+
+* Completely new implementation of exactApplyMPO which scales much better
+  than previous version and uses a globally optimal approximation
+  for compressing the resulting MPS.
+
+* New interface for fitApplyMPO that returns the resulting MPS.
+
+* Added `combinedIndex` function which fetches the combined index of a
+  combiner (both ITensor and IQTensor versions)
+
+* New version of `.set` method of ITensor and IQTensor that
+  accepts a vector of IndexVals (thanks Mengsu Chen for suggesting)
+
+* Added "IndexName" option to diagHermitian.
+
+* Added operator[] element access to Ten, TenRef, TenRefc classes
+
+* Added itensor::read and itensor::write for std::array
+
+* Added read/write methods for Args (thanks Lars-Hendrik Frahm)
+
+* Added read/write methods for for Ten class
+
+### Bug Fixes
+
+* Added missing `defined` macro keyword in lapack\_wrap.h (thanks Jahan Claes)
+
+* Enclosed error.h functions in itensor namespace (thanks Mengsu Chen)
+
+* Added a macro directive to undefine the `I` macro defined by complex.h
+
+* Added missing setA method for MPO template class (thanks Martin Richter)
+
 <a name="v2.1.0"></a>
 ## [Version 2.1.0](https://github.com/ITensor/ITensor/tree/v2.1.0) (Jun 1, 2017) ##
 
