@@ -62,7 +62,7 @@ Because this copy has a different prime level, it will no longer compare equal t
 
     auto i1 = prime(i);
     println("The prime level of i1 is ",i1.primeLevel());
-    //prints: The prime level of ip is 1
+    //prints: The prime level of i1 is 1
     printfln("i1==i is %s",i1==i);
     //prints: i1==i is false
 
@@ -79,6 +79,10 @@ Calling `noprime` resets the prime level to zero.
     println(i0.primeLevel());
     //prints: 0
 
+Note that the above names (`i3`, `i0`, etc.) are just 
+for pedagogical reasons&mdash;you can use any variable names 
+you want regardless of the prime level.
+
 We will see more ways to manipulate primes as we 
 work with ITensors with multiple indices.
 
@@ -86,20 +90,22 @@ work with ITensors with multiple indices.
 
 Printing an Index shows useful information about it:
 
-    println(i);
-    //prints: (index i,3,Link,587)
+    auto i = Index("index i",3,Link);
 
-The output shows the name, size, and IndexType of i (the default is Link).
+    println(i);
+    //prints: ("index i",3,Link|587)
+
+The output shows the name, size, and IndexType of i.
 The last number is part of the id number of the Index. Id numbers are 
-random and vary each time you run your program.
+random 64 bit integers and vary each time you run your program.
  
 The prime level is displayed at the end:
 
     println(prime(i,2));
-    //prints: (index i,3,Link,587)''
+    //prints: ("index i",3,Link|587)''
 
     println(prime(i,10));
-    //prints: (index i,3,Link,587)'10
+    //prints: ("index i",3,Link|587)'10
 
 ### Index Types
 
