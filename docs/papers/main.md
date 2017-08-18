@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [The 10 phases of spin chains with two Ising symmetries](https://arxiv.org/abs/1708.03400), Bat-el&nbsp;Friedman, Atanu&nbsp;Rajak, Angelo&nbsp;Russomanno, Emanuele&nbsp;G.&nbsp;Dalla&nbsp;Torre, arxiv:1708.03400
+
 * [Dynamics of the spin-1/2 Heisenberg chain initialized in a domain-wall state](https://arxiv.org/abs/1708.01843), Grégoire&nbsp;Misguich, Kirone&nbsp;Mallick, P.&nbsp;L.&nbsp;Krapivsky, arxiv:1708.01843
 
 * [Quantum dynamics in transverse-field Ising models from classical networks](https://arxiv.org/abs/1707.06656), Markus&nbsp;Schmitt, Markus&nbsp;Heyl, arxiv:1707.06656
