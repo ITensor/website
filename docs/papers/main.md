@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Front dynamics and entanglement in the XXZ chain with a gradient](https://arxiv.org/abs/1708.05187), Viktor&nbsp;Eisler, Daniel&nbsp;Bauernfeind, arxiv:1708.05187
+
 * [The 10 phases of spin chains with two Ising symmetries](https://arxiv.org/abs/1708.03400), Bat-el&nbsp;Friedman, Atanu&nbsp;Rajak, Angelo&nbsp;Russomanno, Emanuele&nbsp;G.&nbsp;Dalla&nbsp;Torre, arxiv:1708.03400
 
 * [Dynamics of the spin-1/2 Heisenberg chain initialized in a domain-wall state](https://arxiv.org/abs/1708.01843), Grégoire&nbsp;Misguich, Kirone&nbsp;Mallick, P.&nbsp;L.&nbsp;Krapivsky, arxiv:1708.01843
@@ -43,6 +45,8 @@
 * [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://doi.org/10.1088/1361-6455/aa7797), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, <i style="color:#CC0000">J. Phys. B: At. Mol. Opt. Phys.</i> <b>50</b> <a href="https://doi.org/10.1088/1361-6455/aa7797" target="_blank">144002</a> (2017) [arxiv:1703.01836]
 
 * [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
+
+* [Towards the solution of the many-electron problem in real materials: equation of state of the hydrogen chain with state-of-the-art many-body methods](https://arxiv.org/abs/1705.01608), Mario&nbsp;Motta, David&nbsp;M.&nbsp;Ceperley, Garnet&nbsp;Kin-Lic&nbsp;Chan, John&nbsp;A.&nbsp;Gomez, Emanuel&nbsp;Gull, Sheng&nbsp;Guo, Carlos&nbsp;Jimenez-Hoyos, Tran&nbsp;Nguyen&nbsp;Lan, Jia&nbsp;Li, Fengjie&nbsp;Ma, Andrew&nbsp;J.&nbsp;Millis, Nikolay&nbsp;V.&nbsp;Prokof'ev, Ushnish&nbsp;Ray, Gustavo&nbsp;E.&nbsp;Scuseria, Sandro&nbsp;Sorella, Edwin&nbsp;M.&nbsp;Stoudenmire, Qiming&nbsp;Sun, Igor&nbsp;S.&nbsp;Tupitsyn, Steven&nbsp;R.&nbsp;White, Dominika&nbsp;Zgid, Shiwei&nbsp;Zhang, arxiv:1705.01608
 
 * [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://dx.doi.org/10.1103/PhysRevLett.119.046401), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, PhysRev[Lett,119,046401] [arxiv:1702.03650]
 
