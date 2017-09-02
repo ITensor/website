@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Entanglement renormalization for disordered systems](https://arxiv.org/abs/1708.07652), Andrew&nbsp;M.&nbsp;Goldsborough, Glen&nbsp;Evenbly, arxiv:1708.07652
+
 * [Front dynamics and entanglement in the XXZ chain with a gradient](https://arxiv.org/abs/1708.05187), Viktor&nbsp;Eisler, Daniel&nbsp;Bauernfeind, arxiv:1708.05187
 
 * [The 10 phases of spin chains with two Ising symmetries](https://arxiv.org/abs/1708.03400), Bat-el&nbsp;Friedman, Atanu&nbsp;Rajak, Angelo&nbsp;Russomanno, Emanuele&nbsp;G.&nbsp;Dalla&nbsp;Torre, arxiv:1708.03400
@@ -32,7 +34,7 @@
 
 * [Matrix product state techniques for two-dimensional systems at finite temperature](https://arxiv.org/abs/1705.05578), Benedikt&nbsp;Bruognolo, Zhenyue&nbsp;Zhu, Steven&nbsp;R.&nbsp;White, E.M.&nbsp;Stoudenmire, arxiv:1705.05578
 
-* [Topological degeneracy and pairing in a one-dimensional gas of spinless Fermions](https://arxiv.org/abs/1705.00635), Jonathan&nbsp;Ruhman, Ehud&nbsp;Altman, arxiv:1705.00635
+* [Topological degeneracy and pairing in a one-dimensional gas of spinless Fermions](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.085133), Jonathan&nbsp;Ruhman, Ehud&nbsp;Altman, PhysRev[B,96,085133] [arxiv:1705.00635]
 
 * [Emergence of curved light-cones in a class of inhomogeneous Luttinger liquids](https://arxiv.org/abs/1705.00679), J.&nbsp;Dubail, J.-M.&nbsp;Stéphan, P.&nbsp;Calabrese, arxiv:1705.00679
 
@@ -40,7 +42,7 @@
 
 * [Energy as a Detector of Nonlocality of Many-Body Spin Systems](https://doi.org/10.1103/PhysRevX.7.021005), J.&nbsp;Tura, G.&nbsp;De&nbsp;las&nbsp;Cuevas, R.&nbsp;Augusiak, M.&nbsp;Lewenstein, A.&nbsp;Acín, and J.&nbsp;I.&nbsp;Cirac, PhysRev[X,7,021005]
 
-* [Estimating the central charge from the Rényi entanglement entropy](https://arxiv.org/abs/1703.10577), A.&nbsp;Bazavov, Y.&nbsp;Meurice, S.-W.&nbsp;Tsai, J.&nbsp;Unmuth-Yockey, Li-Ping&nbsp;Yang, Jin&nbsp;Zhang, arxiv:1703.10577
+* [Estimating the central charge from the Rényi entanglement entropy](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.96.034514), A.&nbsp;Bazavov, Y.&nbsp;Meurice, S.-W.&nbsp;Tsai, J.&nbsp;Unmuth-Yockey, Li-Ping&nbsp;Yang, Jin&nbsp;Zhang, PhysRev[D,96,034514] [arxiv:1703.10577]
 
 * [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://doi.org/10.1088/1361-6455/aa7797), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, <i style="color:#CC0000">J. Phys. B: At. Mol. Opt. Phys.</i> <b>50</b> <a href="https://doi.org/10.1088/1361-6455/aa7797" target="_blank">144002</a> (2017) [arxiv:1703.01836]
 
@@ -66,7 +68,7 @@
 
 * [Holographic Dynamics from Multiscale Entanglement Renormalization Ansatz](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.95.195152), Victor&nbsp;Chua, Vasilios&nbsp;Passias, Apoorv&nbsp;Tiwari, Shinsei&nbsp;Ryu, PhysRev[B,95,195152] [arxiv:1611.05877]
 
-* [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://arxiv.org/abs/1611.05016), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1611.05016
+* [Probing the conformal Calabrese-Cardy scaling with cold atoms](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.96.023603), J.&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, P.M.&nbsp;Preiss, Li-Ping&nbsp;Yang, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, PhysRev[A,96,023603] [arxiv:1611.05016]
 
 * [Nuclear magnetic resonance study of the magnetic-field-induced ordered phase in the NiCl2-4SC(NH2)2 compound](https://doi.org/10.1103/PhysRevB.94.245129), Rémi&nbsp;Blinder, Maxime&nbsp;Dupont, Sutirtha&nbsp;Mukhopadhyay, Mihael&nbsp;S.&nbsp;Grbić, Nicolas&nbsp;Laflorencie, Sylvain&nbsp;Capponi, Hadrien&nbsp;Mayaffre, Claude&nbsp;Berthier, Armando&nbsp;Paduan-Filho, Mladen&nbsp;Horvatić, PhysRev[B,94,245129] [arxiv:1610.03312]
 
@@ -84,13 +86,13 @@
 
 * [Full counting statistics in the Haldane-Shastry chain](https://doi.org/10.1103/PhysRevB.95.035119), Jean-Marie&nbsp;Stéphan, Frank&nbsp;Pollmann, PhysRev[B,95,035119] [arxiv:1608.06856]
 
-* [Quantum Entanglement Growth Under Random Unitary Dynamics](http://arxiv.org/abs/1608.06950), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, Sagar&nbsp;Vijay, Jeongwan&nbsp;Haah, arxiv:1608.06950
+* [Quantum Entanglement Growth Under Random Unitary Dynamics](https://journals.aps.org/prx/abstract/10.1103/PhysRevX.7.031016), Adam&nbsp;Nahum, Jonathan&nbsp;Ruhman, Sagar&nbsp;Vijay, Jeongwan&nbsp;Haah, PhysRev[X,7,031016] [arxiv:1608.06950]
 
 * [Quenching a Quantum Critical State by the Order Parameter: Dynamical Quantum Phase Transitions and Quantum Speed Limits](http://arxiv.org/abs/1608.06659), Markus&nbsp;Heyl, PhysRev[B,95,060504] [arxiv:1608.06659]
 
 * [Incommensurate spiral magnetic order on anisotropic triangular lattice: Dynamical mean field study in a spin-rotating frame](https://doi.org/10.1103/PhysRevB.94.245145), Shimpei&nbsp;Goto, Susumu&nbsp;Kurihara, Daisuke&nbsp;Yamamoto, PhysRev[B,94,245145] [arxiv:1608.04490]
 
-* [Entanglement and thermodynamics after a quantum quench in integrable systems](http://arxiv.org/abs/1608.00614), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, arxiv:1608.00614
+* [Entanglement and thermodynamics after a quantum quench in integrable systems](http://www.pnas.org/content/114/30/7947), Vincenzo&nbsp;Alba, and Pasquale&nbsp;Calabrese, <i style="color:#CC0000">PNAS</i>&nbsp;&nbsp;<b>114</b> <a href="http://www.pnas.org/content/114/30/7947">7947</a> [arxiv:1608.00614]
 
 * [Finite-size scaling of the Shannon-Rényi entropy in two-dimensional systems with spontaneously broken continuous symmetry](https://doi.org/10.1103/PhysRevB.95.195161), Grégoire&nbsp;Misguich, Vincent&nbsp;Pasquier, Masaki&nbsp;Oshikawa, PhysRev[B,95,195161] [arxiv:1607.02465]
 
