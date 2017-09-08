@@ -178,7 +178,7 @@ and "itensor/mps/autompo.cc".
     
   The toExpH function converts an AutoMPO representing a sum of operators
   @@H@@ into an MPO (or IQMPO) which approximates the operator @@e^{-t H}@@
-  for a small time step t, making an error of order @@t^2@@.
+  for a small time step t, making an error of order @@t^2@@ _per time step_.
   The time step t can be real or complex.
 
   The method used to do this is based on the following article:
