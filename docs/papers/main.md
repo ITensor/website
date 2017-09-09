@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [A new kind of spin-1 chain model with competing dimer and trimer interactions](https://arxiv.org/abs/1709.01344), Yun-Tak&nbsp;Oh, Hosho&nbsp;Katsura, Hyunyong&nbsp;Lee, Jung Hoon&nbsp;Han, arxiv:1709.01344
+
 * [Entanglement renormalization for disordered systems](https://arxiv.org/abs/1708.07652), Andrew&nbsp;M.&nbsp;Goldsborough, Glen&nbsp;Evenbly, arxiv:1708.07652
 
 * [Front dynamics and entanglement in the XXZ chain with a gradient](https://arxiv.org/abs/1708.05187), Viktor&nbsp;Eisler, Daniel&nbsp;Bauernfeind, arxiv:1708.05187
