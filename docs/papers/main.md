@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Rényi entropies after releasing the Néel state in the XXZ spin-chain](https://arxiv.org/abs/1709.02193), Vincenzo&nbsp;Alba, Pasquale&nbsp;Calabrese, arxiv:1709.02193
+
 * [A new kind of spin-1 chain model with competing dimer and trimer interactions](https://arxiv.org/abs/1709.01344), Yun-Tak&nbsp;Oh, Hosho&nbsp;Katsura, Hyunyong&nbsp;Lee, Jung Hoon&nbsp;Han, arxiv:1709.01344
 
 * [Entanglement renormalization for disordered systems](https://arxiv.org/abs/1708.07652), Andrew&nbsp;M.&nbsp;Goldsborough, Glen&nbsp;Evenbly, arxiv:1708.07652
