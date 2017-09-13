@@ -1,8 +1,8 @@
 <span class='article_title'>ITensor Basics Quick Start</span>
 
-<span class='article_sig'>Thomas E. Baker&mdash; May 4, 2016</span>
+<span class='article_sig'>Thomas E. Baker &amp; Miles Stoudenmire &mdash; May 4, 2016</span>
 
-Let's get started with ITensor by creating the simplest possible program involving an ITensor.
+Let's create the simplest possible program involving an ITensor.
 
 If you need help compiling the program below, there is a set of codes in the 
 `tutorial/project_template` folder included in the ITensor source directory which you can
@@ -82,4 +82,5 @@ The `PrintData` macro conveniently prints information about the
 ITensor T (such as its indices) and shows all of its non-zero elements:
  
     PrintData(T);
+
 
