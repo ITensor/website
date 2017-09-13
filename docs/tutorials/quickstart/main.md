@@ -4,12 +4,16 @@
 
 Let's get started with ITensor by creating the simplest possible program involving an ITensor.
 
+If you need help compiling the program below, there is a set of codes in the 
+`tutorial/project_template` folder included in the ITensor source directory which you can
+use as a template for your own program. See the README file in `tutorial/project_template`
+for instructions.
+
 <!--(For a similar guide oriented towards DMRG calculations, see [[DMRG Quick Start|tutorials/DMRGquickstart]].)-->
 
 Here is our program `hello_itensor.cc`.
 
     #include "itensor/all.h"
-
     using namespace itensor;
 
     int main()
