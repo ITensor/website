@@ -103,13 +103,17 @@
     for Windows install <a href="https://www.cygwin.com" target="_blank">cygwin</a>.</li>
     <li>Clone the latest version of ITensor: <pre><code>git clone https://github.com/ITensor/ITensor itensor</code></pre>
         (Or <a href="https://github.com/ITensor/ITensor/zipball/master" target="_blank">download</a> the zip file if you do not have git.)<br/>
-        Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?page=tutorials/git">git quickstart</a> guide.
+        Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?page=tutorials/git">git quick start</a> guide.
 
     </li>
     <li>Create the options.mk file: <code>cp options.mk.sample options.mk</code>.
         Follow the instructions in this file to customize for your machine.
     </li>
-    <li>Type <code>make</code> to build ITensor.
+    <li>Type <code>make</code> to build ITensor.</li>
+    <li>The resulting compiled library files remain inside the ITensor source
+        folder and are not put anywhere else on your machine. To create a program using
+        ITensor, use the files in `tutorial/project_template` as a starting point for
+        making your own code.</li>
     </ol>
     <p>
     For more details, read the full <a href="docs.cgi?page=install">installation</a> instructions.</br>

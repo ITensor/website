@@ -52,20 +52,26 @@ You can also download a zip file of the latest code by clicking <a href="https:/
    If all goes well, the built library files should appear in the LIBDIR
    folder specified in options.mk.
 
+7. The resulting compiled library files remain inside the ITensor source
+   folder and are not put anywhere else on your machine. To create a 
+   program using ITensor, use the files in `tutorial/project_template` as a 
+   starting point for making your own code.
+
 Note: sometimes ITensor has issues compiling if the make "-j" flag is used 
 (this flag enables parallel compilation on multi-core machines). Try 
 disabling it (e.g. explicitly type `make -j 1`) if you have compilation 
 errors.
 
 
-## Building the sample and sandbox apps
+## Building the sample codes
 
 We have provided sample applications under the "sample" directory. If you 
 would like to experiment with these, consider making a copy of this folder 
 to keep the original sample codes as a reference (and experiment on the copy).
 
 To build the sample apps, simply 'cd' into the "sample" folder and type 'make'.
-To build an individual app type 'make <appname>'.
+To build an individual app type 'make app_name' where app_name could be
+`dmrg`, `iqdmrg`, `exthubbard`, etc.
 
 
 ## Linking your own applications to the libraries
