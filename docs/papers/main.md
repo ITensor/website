@@ -148,7 +148,6 @@
 
 * [Absence of Diffusion in an Interacting System of Spinless Fermions on a One-Dimensional Disordered Lattice](http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.100601), Yevgeny&nbsp;Bar&nbsp;Lev, Guy&nbsp;Cohen, and David&nbsp;R.&nbsp;Reichman, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i>&nbsp;<b>114</b>&nbsp;<a href="http://dx.doi.org/10.1103/PhysRevLett.114.100601">100601</a> (2015)
 
-
 * [One hole in the two-leg t-J ladder and adiabatic continuity to the non-interacting limit](http://dx.doi.org/10.1103/PhysRevLett.115.056401), S.&nbsp;R.&nbsp;White, D.&nbsp;J.&nbsp;Scalapino, S.&nbsp;A.&nbsp;Kivelson, <i style="color:#CC0000">Phys. Rev. Lett.</i>&nbsp;<b>115</b> <a ghref="http://dx.doi.org/10.1103/PhysRevLett.115.056401">056401</a> (2015) [arxiv:1502.04403]
 
 * [Gapless Symmetry-Protected Topological Phase of Fermions in One Dimension](http://link.aps.org/doi/10.1103/PhysRevB.91.235309), Anna&nbsp;Keselman and Erez&nbsp;Berg, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>91</b> <a href="http://link.aps.org/doi/10.1103/PhysRevB.91.235309">235309</a> (2015)  [arxiv:1502.02037]
@@ -170,7 +169,6 @@
 * [Chiral spin density wave, spin-charge-Chern liquid and d+id superconductivity in 1/4-doped correlated electronic systems on the honeycomb lattice](http://journals.aps.org/prx/abstract/10.1103/PhysRevX.4.031040), Shenghan&nbsp;Jiang, Andrej&nbsp;Mesaros, and Ying&nbsp;Ran, <i style="color:#CC0000">Phys. Rev. X</i>&nbsp; <b>4</b> <a href="http://journals.aps.org/prx/abstract/10.1103/PhysRevX.4.031040" target="_blank">031040</a> (2014) [arxiv:1404.3452]
 
 * [Kohn-Sham calculations with the exact functional](http://link.aps.org/doi/10.1103/PhysRevB.90.045109), Lucas&nbsp;O.&nbsp;Wagner, Thomas&nbsp;E.&nbsp;Baker, E.M.&nbsp;Stoudenmire, Kieron&nbsp;Burke, and Steven&nbsp;R.&nbsp;White, <br/> <i style="color:#CC0000">Phys. Rev. B</i> <b>90</b>, 045109 [arxiv:1405.0864]
-
 
 * [Corner contribution to the entanglement entropy of an O(3) quantum critical point in 2+1 dimensions](http://stacks.iop.org/1742-5468/2014/i=6/a=P06009), Ann&nbsp;Kallin, E.M.&nbsp;Stoudenmire, Paul&nbsp;Fendley, Rajiv&nbsp;R.P.&nbsp;Singh, <br/> and Roger&nbsp;G.&nbsp;Melko, <i style="color:#CC0000">J. Stat. Mech.</i> P06009 [arxiv:1401.3504]
 
@@ -194,9 +192,7 @@
 
 * [Interaction Effects in Topological Superconducting Wires Supporting Majorana Fermions](http://link.aps.org/doi/10.1103/PhysRevB.84.014503),  E.M.&nbsp;Stoudenmire, Jason&nbsp;Alicea, Oleg&nbsp;A.&nbsp;Starykh and Matthew&nbsp;P.A.&nbsp;Fisher, <i style="color:#CC0000">Phys. Rev. B</i>&nbsp; <b>84</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevB.84.014503" target="_blank">014503</a> (2011) [arxiv:1104.5493]
 
-
 * [Minimally Entangled Typical Thermal State Algorithms](http://dx.doi.org/10.1088/1367-2630/12/5/055026), E.M.&nbsp;Stoudenmire and Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">New&nbsp;J.&nbsp;Phys.</i>, <b>12</b>, <a href="http://dx.doi.org/10.1088/1367-2630/12/5/055026" target="_blank">055026</a> (2010) [arxiv:1002.1305]
-
 
 * [Minimally Entangled Typical Quantum States at Finite Temperature](http://link.aps.org/doi/10.1103/PhysRevLett.102.190601), Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i> <b>102</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevLett.102.190601" target="_blank">190601</a> (2009) [arxiv:0902.4475]
 
