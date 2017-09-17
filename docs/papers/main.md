@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Chemical accuracy from small, system-adapted basis functions](https://arxiv.org/abs/1709.03460), Thomas&nbsp;E.&nbsp;Baker, Kieron&nbsp;Burke, Steven&nbsp;R.&nbsp;White, arxiv:1709.03460
+
 * [Rényi entropies after releasing the Néel state in the XXZ spin-chain](https://arxiv.org/abs/1709.02193), Vincenzo&nbsp;Alba, Pasquale&nbsp;Calabrese, arxiv:1709.02193
 
 * [A new kind of spin-1 chain model with competing dimer and trimer interactions](https://arxiv.org/abs/1709.01344), Yun-Tak&nbsp;Oh, Hosho&nbsp;Katsura, Hyunyong&nbsp;Lee, Jung Hoon&nbsp;Han, arxiv:1709.01344
