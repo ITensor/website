@@ -89,6 +89,8 @@ def includeFile(matchobj):
     
 
 def convert(string):
+    #Convert SciPost[Vol,Issue,PageNum]tags
+    string = re.sub(r"SciPost\[(\d+),(\d+),(\d+)\]",r"<i style='color:#CC0000'>SciPost Phys.</i>&nbsp;&nbsp;<b>\1</b> <a href='https://scipost.org/10.21468/SciPostPhys.\1.\2.\3'>\3</a>",string)
     #Convert PhysRev[Letter,Vol,PageNum]tags
     string = re.sub(r"PhysRev\[(.+?),(\d+),(\d+)\]",r"<i style='color:#CC0000'>Phys.&nbsp;Rev.&nbsp;\1</i>&nbsp;&nbsp;<b>\2</b> <a href='https://doi.org/10.1103/PhysRev\1.\2.\3'>\3</a>",string)
     #Convert arxiv:####.#### links
