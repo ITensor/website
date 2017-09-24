@@ -4,6 +4,10 @@
 
 ## 2017
 
+* [Twofold twist defect chains at criticality](https://arxiv.org/abs/1709.05560), Xiongjie&nbsp;Yu, Xiao&nbsp;Chen, Abhishek&nbsp;Roy, Jeffrey&nbsp;C.&nbsp;Y.&nbsp;Teo, arxiv:1709.05560
+
+* [Rényi Entropies from Random Quenches in Atomic Hubbard and Spin Models](https://arxiv.org/abs/1709.05060), Andreas&nbsp;Elben, Benoît&nbsp;Vermersch, Marcello&nbsp;Dalmonte, J.&nbsp;Ignacio&nbsp;Cirac, Peter&nbsp;Zoller, arxiv:1709.05060
+
 * [Chemical accuracy from small, system-adapted basis functions](https://arxiv.org/abs/1709.03460), Thomas&nbsp;E.&nbsp;Baker, Kieron&nbsp;Burke, Steven&nbsp;R.&nbsp;White, arxiv:1709.03460
 
 * [Rényi entropies after releasing the Néel state in the XXZ spin-chain](https://arxiv.org/abs/1709.02193), Vincenzo&nbsp;Alba, Pasquale&nbsp;Calabrese, arxiv:1709.02193
