@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [A DMRG study: Pair-density wave in spin-valley locked systems](https://arxiv.org/abs/1709.10058), Jordan&nbsp;Venderley, Eun-Ah&nbsp;Kim, arxiv:1709.10058
+
 * [Twofold twist defect chains at criticality](https://arxiv.org/abs/1709.05560), Xiongjie&nbsp;Yu, Xiao&nbsp;Chen, Abhishek&nbsp;Roy, Jeffrey&nbsp;C.&nbsp;Y.&nbsp;Teo, arxiv:1709.05560
 
 * [Rényi Entropies from Random Quenches in Atomic Hubbard and Spin Models](https://arxiv.org/abs/1709.05060), Andreas&nbsp;Elben, Benoît&nbsp;Vermersch, Marcello&nbsp;Dalmonte, J.&nbsp;Ignacio&nbsp;Cirac, Peter&nbsp;Zoller, arxiv:1709.05060
@@ -58,7 +60,7 @@
 
 * [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
 
-* [Towards the solution of the many-electron problem in real materials: equation of state of the hydrogen chain with state-of-the-art many-body methods](https://arxiv.org/abs/1705.01608), Mario&nbsp;Motta, David&nbsp;M.&nbsp;Ceperley, Garnet&nbsp;Kin-Lic&nbsp;Chan, John&nbsp;A.&nbsp;Gomez, Emanuel&nbsp;Gull, Sheng&nbsp;Guo, Carlos&nbsp;Jimenez-Hoyos, Tran&nbsp;Nguyen&nbsp;Lan, Jia&nbsp;Li, Fengjie&nbsp;Ma, Andrew&nbsp;J.&nbsp;Millis, Nikolay&nbsp;V.&nbsp;Prokof'ev, Ushnish&nbsp;Ray, Gustavo&nbsp;E.&nbsp;Scuseria, Sandro&nbsp;Sorella, Edwin&nbsp;M.&nbsp;Stoudenmire, Qiming&nbsp;Sun, Igor&nbsp;S.&nbsp;Tupitsyn, Steven&nbsp;R.&nbsp;White, Dominika&nbsp;Zgid, Shiwei&nbsp;Zhang, arxiv:1705.01608
+* [Towards the solution of the many-electron problem in real materials: equation of state of the hydrogen chain with state-of-the-art many-body methods](https://arxiv.org/abs/1705.01608), Mario&nbsp;Motta, David&nbsp;M.&nbsp;Ceperley, Garnet&nbsp;Kin-Lic&nbsp;Chan, John&nbsp;A.&nbsp;Gomez, Emanuel&nbsp;Gull, Sheng&nbsp;Guo, Carlos&nbsp;Jimenez-Hoyos, Tran&nbsp;Nguyen&nbsp;Lan, Jia&nbsp;Li, Fengjie&nbsp;Ma, Andrew&nbsp;J.&nbsp;Millis, Nikolay&nbsp;V.&nbsp;Prokof'ev, Ushnish&nbsp;Ray, Gustavo&nbsp;E.&nbsp;Scuseria, Sandro&nbsp;Sorella, Edwin&nbsp;M.&nbsp;Stoudenmire, Qiming&nbsp;Sun, Igor&nbsp;S.&nbsp;Tupitsyn, Steven&nbsp;R.&nbsp;White, Dominika&nbsp;Zgid, Shiwei&nbsp;Zhang, PhysRev[X,7,031059] [arxiv:1705.01608]
 
 * [Sliced Basis Density Matrix Renormalization Group for Electronic Structure](https://dx.doi.org/10.1103/PhysRevLett.119.046401), E.&nbsp;M.&nbsp;Stoudenmire, Steven&nbsp;R.&nbsp;White, PhysRev[Lett,119,046401] [arxiv:1702.03650]
 
