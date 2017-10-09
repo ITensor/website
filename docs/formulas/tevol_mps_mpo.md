@@ -45,25 +45,21 @@ which gives @@exp(-i\tau H)@@. Fully complex time steps @@\tau=a+ib@@ are fine t
 
 To carry out the actual time evolution, repeatedly apply the MPO to the MPS using one of the following methods:
 
-* `exactApplyMPO(psia,K,psib)` &mdash; exactly computes @@|\psi\_b\rangle = \hat{K} |\psi\_a\rangle@@. Only use this for very small MPS!
+* `psib = exactApplyMPO(K,psia[,args])` &mdash; exactly compute @@\hat{K} |\psi\_a\rangle@@ then recompress the result as an MPS @@|\psi\_b\rangle@@. Not the fastest method, but is fully controlled and does not have any risk of getting stuck (versus fitApply, which in contrast can have different output based on the initial state provided). Providing the named args "Cutoff" and "Maxm" control the amount of truncation of the resulting MPS.
 
 * `fitApplyMPO(psia,K,psib[,args])` &mdash; compute @@|\psi\_b\rangle = \hat{K} |\psi\_a\rangle@@ using a DMRG-style "fitting" algorithm. Very efficient but can fail if @@|\psi\_b\rangle@@ is too different from @@\hat{K}|\psi\_b\rangle@@ (this failure isn't a concern for time evolution with a small time step). Of the optional args recognized by this function, two key ones are "Cutoff" which specifies the truncation-error cutoff used to truncate the resulting MPS and "Maxm" which sets an upper limit on the bond dimension of the resulting MPS.
 
-* `zipUpApplyMPO(psia,K,psib)` &mdash; computes @@|\psi\_b\rangle = \hat{K} |\psi\_a\rangle@@ using the "zip up" algorithm described in  New. J. Phys. 12, 055026. 
+The recommended practice is to use exactApplyMPO to make sure your code is working. Then consider switching to fitApplyMPO if you need more efficiency, especially if the MPO you are applying has a large bond dimension. But verify that the results you obtain with fitApplyMPO are very similar to the ones you obtain with exactApplyMPO.
 
-
-Here is some sample code using one step of exactApplyMPO (since we started from a product state) followed by fitApplyMPO
-for the rest of the steps:
+Here is some sample time evolution code using exactApplyMPO:
 
     auto args = Args("Cutoff=",1E-9,"Maxm=",3000);
     auto ttotal = 3.0;
     auto nt = int(ttotal/tau+(1e-9*(ttotal/tau)));
 
-    exactApplyMPO(psi,expH,psi);
-
-    for(int n = 2; n <= nt; ++n)
+    for(int n = 1; n <= nt; ++n)
         {
-        fitApplyMPO(psi,expH,psi,args);
+        psi = exactApplyMPO(expH,psi,args);
         }
 
 
