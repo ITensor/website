@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Cooling schemes for two-component fermions in layered optical lattices](https://arxiv.org/abs/1710.00521), Shimpei&nbsp;Goto, Ippei&nbsp;Danshita, arxiv:1710.00521
+
 * [A DMRG study: Pair-density wave in spin-valley locked systems](https://arxiv.org/abs/1709.10058), Jordan&nbsp;Venderley, Eun-Ah&nbsp;Kim, arxiv:1709.10058
 
 * [Twofold twist defect chains at criticality](https://arxiv.org/abs/1709.05560), Xiongjie&nbsp;Yu, Xiao&nbsp;Chen, Abhishek&nbsp;Roy, Jeffrey&nbsp;C.&nbsp;Y.&nbsp;Teo, arxiv:1709.05560
