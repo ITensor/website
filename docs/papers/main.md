@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Monte Carlo Tensor Network Renormalization](https://arxiv.org/abs/1710.03757), William&nbsp;Huggins, C.&nbsp;Daniel&nbsp;Freeman, Miles&nbsp;Stoudenmire, Norm&nbsp;M.&nbsp;Tubman, K.&nbsp;Birgitta&nbsp;Whaley, arxiv:1710.03757
+
 * [Cooling schemes for two-component fermions in layered optical lattices](https://arxiv.org/abs/1710.00521), Shimpei&nbsp;Goto, Ippei&nbsp;Danshita, arxiv:1710.00521
 
 * [A DMRG study: Pair-density wave in spin-valley locked systems](https://arxiv.org/abs/1709.10058), Jordan&nbsp;Venderley, Eun-Ah&nbsp;Kim, arxiv:1709.10058
