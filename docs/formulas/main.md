@@ -13,10 +13,10 @@ like to see.
 ## ITensor Formulas
 Formulas about working with ITensors, Index, etc.
 
+* [[Evaluate a Function on Each Element of a Tensor|formulas/visit]]
+* [[Extract the Storage of a Dense ITensor|formulas/extractdense]]
 * [[Create a set of Site indices to use as a lattice|formulas/index_sites]]
 * [[Make a single-site operator (no quantum numbers)|formulas/itensor_single_site_op]]
-* [[Extract the Storage of a Dense ITensor|formulas/extractdense]]
-* [[Evaluate a Function on Each Element of a Tensor|formulas/visit]]
 
 ## IQTensor Formulas
 Formulas involving quantum number tensors and indices (objects such as IQIndex, IQTensor).

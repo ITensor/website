@@ -29,6 +29,11 @@ There are two ways to do this:
 1. Using `applyFunc` to apply a function to T's storage
 2. Using the `doTask` system to create functions "dynamically overloaded" on T's storage type
 
+_Note_: when working with the internal storage of an ITensor or IQTensor, it is important
+to remember that the true elements of an ITensor are defined by the product of 
+its scale factor (accessible via the `.scale()` method) with one of the elements in the 
+storage.
+
 ## Using applyFunc
 
 It is simple to extract the data as a `std::vector<Real>` using the function
@@ -45,9 +50,9 @@ the provided function to it:
 In the code above, `extractReal` is a lambda function that takes a `Dense<Real>` (by const reference
 so it does not make a copy) and returns its storage, which is a `std::vector<Real>`. The call to 
 `applyFunc` takes `extractReal` as its first argument, and takes T's "storage pointer" `T.store()`
-as its second. It performs some magic to unwrap the storage pointer and discover that it is of type `Dense<Real>`
-in order to successfully call `extractReal`. If the storage had been of a different type, then `applyFunc`
-would throw an exception.
+as its second. It performs some magic to unwrap the storage pointer and discover 
+that it is of type `Dense<Real>` in order to successfully call `extractReal`. If the storage 
+had been of a different type, then `applyFunc` would throw an exception.
 
 ## Using doTask
 
