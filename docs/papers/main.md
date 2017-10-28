@@ -4,6 +4,10 @@
 
 ## 2017
 
+* [Exploring one particle orbitals in large Many-Body Localized systems](https://arxiv.org/abs/1710.05036), Benjamin&nbsp;Villalonga, Xiongjie&nbsp;Yu, David&nbsp;J.&nbsp;Luitz, Bryan&nbsp;K.&nbsp;Clark, arxiv:1710.05036
+
+* [Doped Kondo chain - a heavy Luttinger liquid](https://arxiv.org/abs/1710.04847), Ilia&nbsp;Khait, Patrick&nbsp;Azaria, Claudius&nbsp;Hubig, Ulrich&nbsp;Schollwöck, Assa&nbsp;Auerbach, arxiv:1710.04847
+
 * [Monte Carlo Tensor Network Renormalization](https://arxiv.org/abs/1710.03757), William&nbsp;Huggins, C.&nbsp;Daniel&nbsp;Freeman, Miles&nbsp;Stoudenmire, Norm&nbsp;M.&nbsp;Tubman, K.&nbsp;Birgitta&nbsp;Whaley, arxiv:1710.03757
 
 * [Cooling schemes for two-component fermions in layered optical lattices](https://arxiv.org/abs/1710.00521), Shimpei&nbsp;Goto, Ippei&nbsp;Danshita, arxiv:1710.00521
