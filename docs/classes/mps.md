@@ -64,7 +64,7 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
 
 * `MPS(SiteSet sites)`
 
-  Construct an `MPS` with physical sites given by a [[SiteSet|classes/siteset]]. The `MPS` will be initialized to a random product state.
+  Construct an `MPS` with physical sites given by a [[SiteSet|classes/siteset]]. The `MPS` will be initialized to a random product state with real entries.
 
 * `IQMPS(SiteSet sites)`
 
