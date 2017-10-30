@@ -44,4 +44,5 @@ Formulas involving matrix product states and DMRG.
     - [[Measure spinless fermion two-point correlator|formulas/spinless_correlator_mps]]
 
 * <h3>Time Evolution</h3>
+    - [[Time-evolving an MPS with Trotter Gates|formulas/tevol_trotter]]
     - [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
