@@ -1,11 +1,15 @@
-<span class='article_title'>How to use AutoMPO</span>
+<span class='article_title'>Introduction to AutoMPO</span>
 
-<span class='article_sig'>Thomas E. Baker&mdash;August 18, 2015</span>
+<span class='article_sig'>Thomas E. Baker &amp; Miles Stoudenmire &mdash;Nov 9, 2017</span>
 
-Instead of programming an [[MPO by hand|tutorials/MPO]], ITensor has AutoMPO which allows for the automatic generation of an MPO.  This feature allows for the typing of a chain of input which AutoMPO converts into an MPO for the full system.  
+Instead of programming an [[matrix product operator (MPO)|tutorials/MPO]] by hand, 
+which can be very technical, ITensor has a feature called AutoMPO which automatically generates MPOs
+and IQMPOS (quantum number conserving MPOs) from human readable input.  
 
-Here is a code snippet for making an MPO for the Heisenberg model on a spin-half chain.
+Here is a code snippet for making an MPO for the Heisenberg model Hamiltonian 
+for a one-dimensional spin-half system with N=100 sites:
 
+    int N = 100;
     SpinHalf sites(N);
     AutoMPO ampo(sites);
     for(int j = 1; j < N;++j)
@@ -16,36 +20,35 @@ Here is a code snippet for making an MPO for the Heisenberg model on a spin-half
       }
     auto H = MPO(ampo);
 
-Let's go line by line through it and see what AutoMPO is doing.  Here, we are just showing the part that makes the MPO. Higher up in the code (maybe the previous line), we must initialize a number `N` to record that we want `N` sites. Below the code, we might use the `dmrg` function to calculate the ground state of the MPO we've made.
+After one obtains the MPO H, it can be used as input for a DMRG calculation, or 
+for evaluating observables such as correlation functions, among many other examples.
 
-The `+=` operator accepts the following input:
+Let's go through the code above line by line to see what AutoMPO is doing.
 
-    [value],"[operator name]",[site],"[operator name]",[site]
-
-or
+The AutoMPO `+=` operator accepts the input:
 
     [value],"[operator name]",[site]
 
-for single site operators.  The `[operator name]` must be recognizable by the `SiteSet` (for example, `SpinHalf`) class.  If `[value]` is omitted, it will be assumed to be `1.0`.  Using this syntax, the only concern is adding the correct terms into our Hamiltonian on every site.  AutoMPO will convert these statements to a string and make the appropriate MPO.  
+for single-site operators, or
 
-Currently, AutoMPO only accepts operators that act non-trivially on up to two sites.  If we have, for example, @@(S^x_iS^x_iS^y_jS^y_j)@@ then we can indicate two operators with `*` inside of the string:
+    [value],"[operator name]",[site],"[operator name]",[site]
 
-    ampo += "Sx*Sx",i,"Sy*Sy",j;
+for two-site operators, etc. Operators acting on an arbitrary number of
+sites are allowed, such as four-site operators common in
+quantum chemistry calculations.
 
-Note this only works for two operators on the same site!
+The `"[operator name]"` string must be recognizable by the site set used to construct the AutoMPO.
+For example, the `SpinHalf` site set recognizes operator names such as "Sz" and "S+", whereas the `Hubbard` site set recognizes operators such as "Cdagup" and "Ntot".  
 
-Let's say we want to now run a code for a spin one chain.  We only need to make one replacement.  The line that reads `SpinHalf sites(N);` can be changed to
+The coefficient `[value]` can be real or complex. If the coefficient is omitted, it will be assumed to be 1.0.  Using the AutoMPO syntax above, the user only has to focus on adding the correct terms, and AutoMPO will handle the conversion of the operator names to tensors and the construction of the resulting MPO or IQMPO.
+
+One advantage of AutoMPO is its generic treatment of operators, regardless of the underlying site set 
+(or Hilbert space). Let's say we want to use the code above to create an MPO that is the Heisenberg Hamiltonian for a spin one chain. We only need to make one replacement: the line that reads `SpinHalf sites(N);` can be changed to
 
     SpinOne sites(N);
 
-We can also make a custom `SiteSet` and use that if we need.  
+And the AutoMPO will use the definition of the spin operators appropriate to an @@S=1@@ spin.
+You can even make a custom `SiteSet` and use that if needed.
 
-## Exponentiating MPOs
-
-A neat trick allows us to produce exponentials of Hamiltonians quickly and easily with the function
-
-    MPO toExpH<ITensor>( MPO, [Complex number])
-
-This function also accepts `IQTensors`.  This method is based on [1] and gives us @@\exp(-\tau\mathcal{H})@@.
-
+Another key advantage of AutoMPO is that the operators in each term need not be spatially close together. This is useful for making Hamiltonian MPOs for doing DMRG calculations of two-dimensional systems.
 

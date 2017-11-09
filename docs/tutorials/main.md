@@ -58,7 +58,7 @@
   example, and gives a taste of some advanced concepts.
 
 
-* [[AutoMPO|tutorials/AutoMPO]]
+* [[Introduction to AutoMPO|tutorials/AutoMPO]]
 
   Instead of making MPOs by hand, ITensor has a facility to create MPOs using a
   simple interface resembling hand-written mathematical notation.
