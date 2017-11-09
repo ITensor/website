@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Fast preparation of critical ground states using superluminal fronts](https://arxiv.org/abs/1710.09840), Kartiek&nbsp;Agarwal, R.&nbsp;N.&nbsp;Bhatt, S.&nbsp;L.&nbsp;Sondhi, arxiv:1710.09840
+
 * [Exploring one particle orbitals in large Many-Body Localized systems](https://arxiv.org/abs/1710.05036), Benjamin&nbsp;Villalonga, Xiongjie&nbsp;Yu, David&nbsp;J.&nbsp;Luitz, Bryan&nbsp;K.&nbsp;Clark, arxiv:1710.05036
 
 * [Doped Kondo chain - a heavy Luttinger liquid](https://arxiv.org/abs/1710.04847), Ilia&nbsp;Khait, Patrick&nbsp;Azaria, Claudius&nbsp;Hubig, Ulrich&nbsp;Schollwöck, Assa&nbsp;Auerbach, arxiv:1710.04847
@@ -44,13 +46,13 @@
 
 * [A cavity-induced artificial gauge field in a Bose-Hubbard ladder](https://arxiv.org/abs/1707.04123), Catalin-Mihai&nbsp;Halati, Ameneh&nbsp;Sheikhan, Corinna&nbsp;Kollath, arxiv:1707.04123
 
-* [Gapless quantum spin chains: multiple dynamics and conformal wavefunctions](https://arxiv.org/abs/1707.02317), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1707.02317
+* [Gapless quantum spin chains: multiple dynamics and conformal wavefunctions](http://iopscience.iop.org/article/10.1088/1751-8121/aa8dbc), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, <i style="color:#CC0000">J. Phys. A: Math. Theor. </i>&nbsp;<b>50</b> <a href="http://iopscience.iop.org/article/10.1088/1751-8121/aa8dbc">464002</a> [arxiv:1707.02317]
 
-* [Quantum spin chains with multiple dynamics](https://arxiv.org/abs/1706.02304), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, arxiv:1706.02304
+* [Quantum spin chains with multiple dynamics](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.180402), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, PhysRev[B,96,180402] [arxiv:1706.02304]
 
 * [Entanglement and quantum transport in integrable systems](https://arxiv.org/abs/1706.00020), Vincenzo&nbsp;Alba, arxiv:1706.00020
 
-* [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://arxiv.org/abs/1705.09143), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, arxiv:1705.09143
+* [Absence of Ergodicity without Quenched Disorder: from Quantum Disentangled Liquids to Many-Body Localization](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.176601), Adam&nbsp;Smith, Johannes&nbsp;Knolle, Roderich&nbsp;Moessner, Dmitry&nbsp;L.&nbsp;Kovrizhin, PhysRev[Lett,119,176601] [arxiv:1705.09143]
 
 * [Matrix product state techniques for two-dimensional systems at finite temperature](https://arxiv.org/abs/1705.05578), Benedikt&nbsp;Bruognolo, Zhenyue&nbsp;Zhu, Steven&nbsp;R.&nbsp;White, E.M.&nbsp;Stoudenmire, arxiv:1705.05578
 
