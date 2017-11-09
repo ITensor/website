@@ -248,6 +248,10 @@ defined for IQTensors:
 
       Print(I == L); //prints: true
 
+* `isEmpty(IQTensor T) -> bool`
+  
+  Returns true if the IQTensor has no blocks in its storage. Otherwise returns false.
+
 * `qn(IQTensor T, Index i) -> QN`
 
   Searches each IQIndex of T until one is found which has the Index `i` as
