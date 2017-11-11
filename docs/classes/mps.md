@@ -141,7 +141,7 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
 
 ## Modifying and Re-gauging MPS
 
-* `.position(int j)`
+* `.position(int j, Args args = Args::global())`
 
   Sets the orthogonality center to site `j` by performing singular value decompositions of tensors
   between `leftLim()` and `rightLim()`. After calling `position(j)`, tensors at sites `i < j` are
@@ -151,6 +151,17 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
 
   Note: calling `position(j)` may in general change the "virtual" or `Link` indices between 
   some or all of the MPS tensors.
+
+  By default, the .position method only changes the position of the orthogonality center,
+  and does not truncate the MPS. However, it will truncate if the "Cutoff" or "Maxm"
+  named arguments are provided.
+
+  Optional named arguments recognized:
+
+  * "Cutoff" &mdash; truncation error cutoff to use to truncate MPS
+
+  * "Maxm" &mdash; maximum bond dimension to use when truncating MPS
+
 
 <a name="orthogonalize"></a>
 * `.orthogonalize(Args args = Args::global())`
