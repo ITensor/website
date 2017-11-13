@@ -20,6 +20,9 @@
 
 <img src="docs/papers/icon.png" class="icon">   [[Papers Using ITensor|papers]]
 
+<br/>
+Search the ITensor website: <div><gcse:search></gcse:search></div>
+
 ## Additional information
 
 <!-- * <img src="docs/install/icon.png" class="icon"> [[Simons 2016 Summer School|simons]] -->
