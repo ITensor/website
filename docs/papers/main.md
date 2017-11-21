@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Spin-orbit coupled bosons in one dimension: emergent gauge field and Lifshitz transition](https://arxiv.org/abs/1711.05794), William&nbsp;S.&nbsp;Cole, Junhyun&nbsp;Lee, Khan&nbsp;W.&nbsp;Mahmud, Yahya&nbsp;Alavirad, I.&nbsp;B.&nbsp;Spielman, Jay&nbsp;D.&nbsp;Sau, arxiv:1711.05794
+
 * [Fast preparation of critical ground states using superluminal fronts](https://arxiv.org/abs/1710.09840), Kartiek&nbsp;Agarwal, R.&nbsp;N.&nbsp;Bhatt, S.&nbsp;L.&nbsp;Sondhi, arxiv:1710.09840
 
 * [Exploring one particle orbitals in large Many-Body Localized systems](https://arxiv.org/abs/1710.05036), Benjamin&nbsp;Villalonga, Xiongjie&nbsp;Yu, David&nbsp;J.&nbsp;Luitz, Bryan&nbsp;K.&nbsp;Clark, arxiv:1710.05036
