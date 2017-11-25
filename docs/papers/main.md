@@ -38,9 +38,9 @@
 
 * [Quantum dynamics in transverse-field Ising models from classical networks](https://arxiv.org/abs/1707.06656), Markus&nbsp;Schmitt, Markus&nbsp;Heyl, arxiv:1707.06656
 
-* [Return probability after a quench from a domain wall initial state in the spin-1/2 XXZ chain](https://arxiv.org/abs/1707.06625), Jean-Marie&nbsp;Stéphan, arxiv:1707.06625
+* [Return probability after a quench from a domain wall initial state in the spin-1/2 XXZ chain](http://iopscience.iop.org/article/10.1088/1742-5468/aa8c19/meta), Jean-Marie&nbsp;Stéphan, <i style="color:#CC0000">J. Stat. Mech.</i> 103108 [arxiv:1707.06625]
 
-* [Out-of-equilibrium dynamics in a quantum impurity model: numerics for particle transport and entanglement entropy](https://arxiv.org/abs/1707.06111), Kemal&nbsp;Bidzhiev, Grégoire&nbsp;Misguich, arxiv:1707.06111
+* [Out-of-equilibrium dynamics in a quantum impurity model: numerics for particle transport and entanglement entropy](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.195117), Kemal&nbsp;Bidzhiev, Grégoire&nbsp;Misguich, PhysRev[B,96,195117] [arxiv:1707.06111]
 
 * [Quantum Simulation and Spectroscopy of Entanglement Hamiltonians](https://arxiv.org/abs/1707.04455), Marcello&nbsp;Dalmonte, Benoît&nbsp;Vermersch, Peter&nbsp;Zoller, arxiv:1707.04455
 
@@ -86,7 +86,7 @@
 
 * [Fork Tensor Product States - Efficient Three Orbital Real Time DMFT Solver](https://doi.org/10.1103/PhysRevX.7.031013), Daniel&nbsp;Bauernfeind, Manuel&nbsp;Zingl, Robert&nbsp;Triebl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, PhysRev[X,7,031013] [arxiv:1612.05587]
 
-* [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://arxiv.org/abs/1612.01548), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau , arxiv:1612.01548
+* [Z3 parafermionic zero modes without Andreev backscattering from the 2/3 fractional quantum Hall state](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.119.217701), Yahya&nbsp;Alavirad, David&nbsp;Clarke, Amit&nbsp;Nag, and Jay&nbsp;D.&nbsp;Sau, PhysRev[Lett,119,217701] [arxiv:1612.01548]
 
 * [Anyonic Haldane insulator in one dimension](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.120401), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, and Holger&nbsp;Fehske, PhysRev[Lett.,118,120401] [arxiv:1612.00605]
 
