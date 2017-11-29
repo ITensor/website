@@ -62,6 +62,10 @@ Hubbard and HubbardSite are defined in the file "itensor/mps/sites/hubbard.h"
 
 * `"Sz"` &mdash; the z-component spin operator (matrix elements +0.5 for an up spin, -0.5 for a down spin)
 
+* `"S+"` &mdash; the spin raising operator (matrix element +1.0 for mapping a down spin to an up spin)
+
+* `"S-"` &mdash; the spin lowering operator (matrix element +1.0 for mapping an up spin to a down spin)
+
 For the following fermionic operators, it is crucial to note that when obtaining them as individual
 tensors from a site set, they do not anti-commute with each other on different sites, only on 
 the same site (for more details on how these operators act on a single site read more at
