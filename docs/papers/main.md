@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Topological Luttinger Liquids from Decorated Domain Walls](https://arxiv.org/abs/1711.09106), Daniel&nbsp;E.&nbsp;Parker, Thomas&nbsp;Scaffidi, Romain&nbsp;Vasseur, arxiv:1711.09106
+
 * [Spin-orbit coupled bosons in one dimension: emergent gauge field and Lifshitz transition](https://arxiv.org/abs/1711.05794), William&nbsp;S.&nbsp;Cole, Junhyun&nbsp;Lee, Khan&nbsp;W.&nbsp;Mahmud, Yahya&nbsp;Alavirad, I.&nbsp;B.&nbsp;Spielman, Jay&nbsp;D.&nbsp;Sau, arxiv:1711.05794
 
 * [Fast preparation of critical ground states using superluminal fronts](https://arxiv.org/abs/1710.09840), Kartiek&nbsp;Agarwal, R.&nbsp;N.&nbsp;Bhatt, S.&nbsp;L.&nbsp;Sondhi, arxiv:1710.09840
