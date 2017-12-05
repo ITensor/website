@@ -32,6 +32,7 @@ The simplest MPI parallel code you can write using the
 parallel.h tools is as follows
 
     #include "itensor/all.h"
+    #include "itensor/util/parallel.h"
     using namespace itensor;
 
     int
