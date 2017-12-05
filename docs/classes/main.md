@@ -10,6 +10,8 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Reading and Writing Objects to Disk|classes/readwrite]]
 
+* [[Support for MPI (Message Passing Interface) Parallelism|classes/parallel]]
+
 ## Index: named tensor index
 
 * [[Index|classes/index]]. Tensor index.
