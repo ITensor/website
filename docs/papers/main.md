@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Dynamical properties of the S=1/2 random Heisenberg chain](https://arxiv.org/abs/1712.01701), Yu-Rong Shu, Maxime Dupont, Dao-Xin Yao, Sylvain Capponi, Anders W. Sandvik, arxiv:1712.01701
+
 * [Statistically induced topological phase transitions in one-dimensional superlattice anyon-Hubbard model](https://arxiv.org/abs/1711.10748), Zheng-Wei&nbsp;Zuo, Guo-Ling&nbsp;Li, Liben&nbsp;Li, arxiv:1711.10748
 
 * [Topological Luttinger Liquids from Decorated Domain Walls](https://arxiv.org/abs/1711.09106), Daniel&nbsp;E.&nbsp;Parker, Thomas&nbsp;Scaffidi, Romain&nbsp;Vasseur, arxiv:1711.09106
