@@ -1,8 +1,10 @@
 # <img src="docs/papers/icon.png" class="largeicon"> Papers Using the ITensor Library
 
-<i style="font-size:90%; color:#999999">Please send any papers not listed here to estouden -at- uci.edu</i>
+<i style="font-size:90%; color:#999999">Please send any papers not listed here to miles.stoud -at- gmail.com</i>
 
 ## 2017
+
+* [The Inhomogeneous Gaussian Free Field, with application to ground state correlations of trapped 1d Bose gases](https://arxiv.org/abs/1712.05262), Yannis Brun, Jérôme Dubail, arxiv:1712.05262
 
 * [Dynamical properties of the S=1/2 random Heisenberg chain](https://arxiv.org/abs/1712.01701), Yu-Rong Shu, Maxime Dupont, Dao-Xin Yao, Sylvain Capponi, Anders W. Sandvik, arxiv:1712.01701
 
