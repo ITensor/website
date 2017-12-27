@@ -4,6 +4,8 @@
 
 ## 2017
 
+* [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://arxiv.org/abs/1712.08055), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1712.08055
+
 * [Lattice supersymmetry and order-disorder coexistence in the tricritical Ising model](https://arxiv.org/abs/1712.06662), Edward&nbsp;O'Brien, Paul&nbsp;Fendley, arxiv:1712.06662
 
 * [The Inhomogeneous Gaussian Free Field, with application to ground state correlations of trapped 1d Bose gases](https://arxiv.org/abs/1712.05262), Yannis Brun, Jérôme Dubail, arxiv:1712.05262
