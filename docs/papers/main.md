@@ -2,6 +2,10 @@
 
 <i style="font-size:90%; color:#999999">Please send any papers not listed here to miles.stoud -at- gmail.com</i>
 
+## 2018
+
+* [Learning Relevant Features of Data with Multi-scale Tensor Networks](https://arxiv.org/abs/1801.00315), E.M. Stoudenmire, arxiv:1801.00315
+
 ## 2017
 
 * [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://arxiv.org/abs/1712.08055), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1712.08055
@@ -40,13 +44,13 @@
 
 * [A new kind of spin-1 chain model with competing dimer and trimer interactions](https://arxiv.org/abs/1709.01344), Yun-Tak&nbsp;Oh, Hosho&nbsp;Katsura, Hyunyong&nbsp;Lee, Jung Hoon&nbsp;Han, arxiv:1709.01344
 
-* [Entanglement renormalization for disordered systems](https://arxiv.org/abs/1708.07652), Andrew&nbsp;M.&nbsp;Goldsborough, Glen&nbsp;Evenbly, arxiv:1708.07652
+* [Entanglement renormalization for disordered systems](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.155136), Andrew&nbsp;M.&nbsp;Goldsborough, Glen&nbsp;Evenbly, PhysRev[B,96,155136] [arxiv:1708.07652]
 
-* [Front dynamics and entanglement in the XXZ chain with a gradient](https://arxiv.org/abs/1708.05187), Viktor&nbsp;Eisler, Daniel&nbsp;Bauernfeind, arxiv:1708.05187
+* [Front dynamics and entanglement in the XXZ chain with a gradient](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.174301), Viktor&nbsp;Eisler, Daniel&nbsp;Bauernfeind, PhysRev[B,96,174301] [arxiv:1708.05187]
 
 * [The 10 phases of spin chains with two Ising symmetries](https://arxiv.org/abs/1708.03400), Bat-el&nbsp;Friedman, Atanu&nbsp;Rajak, Angelo&nbsp;Russomanno, Emanuele&nbsp;G.&nbsp;Dalla&nbsp;Torre, arxiv:1708.03400
 
-* [Dynamics of the spin-1/2 Heisenberg chain initialized in a domain-wall state](https://arxiv.org/abs/1708.01843), Grégoire&nbsp;Misguich, Kirone&nbsp;Mallick, P.&nbsp;L.&nbsp;Krapivsky, arxiv:1708.01843
+* [Dynamics of the spin-1/2 Heisenberg chain initialized in a domain-wall state](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.195151), Grégoire&nbsp;Misguich, Kirone&nbsp;Mallick, P.&nbsp;L.&nbsp;Krapivsky, PhysRev[B,96,195151] [arxiv:1708.01843]
 
 * [Quantum dynamics in transverse-field Ising models from classical networks](https://arxiv.org/abs/1707.06656), Markus&nbsp;Schmitt, Markus&nbsp;Heyl, arxiv:1707.06656
 
@@ -58,7 +62,7 @@
 
 * [Towards quantum simulation with circular Rydberg atoms](https://arxiv.org/abs/1707.04397), Thanh&nbsp;Long&nbsp;Nguyen, Jean-Michel&nbsp;Raimond, Clément&nbsp;Sayrin, Rodrigo&nbsp;Cortinas, Tigrane&nbsp;Cantat-Moltrecht, Fédéric&nbsp;Assemat, Igor&nbsp;Dotsenko, Sébastien&nbsp;Gleyzes, Serge&nbsp;Haroche, Guillaume&nbsp;Roux, Thierry&nbsp;Jolicoeur, Michel&nbsp;Brune, arxiv:1707.04397
 
-* [A cavity-induced artificial gauge field in a Bose-Hubbard ladder](https://arxiv.org/abs/1707.04123), Catalin-Mihai&nbsp;Halati, Ameneh&nbsp;Sheikhan, Corinna&nbsp;Kollath, arxiv:1707.04123
+* [A cavity-induced artificial gauge field in a Bose-Hubbard ladder](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.96.063621), Catalin-Mihai&nbsp;Halati, Ameneh&nbsp;Sheikhan, Corinna&nbsp;Kollath, PhysRev[A,96,063621] [arxiv:1707.04123]
 
 * [Gapless quantum spin chains: multiple dynamics and conformal wavefunctions](http://iopscience.iop.org/article/10.1088/1751-8121/aa8dbc), Xiao&nbsp;Chen, Eduardo&nbsp;Fradkin, William&nbsp;Witczak-Krempa, <i style="color:#CC0000">J. Phys. A: Math. Theor. </i>&nbsp;<b>50</b> <a href="http://iopscience.iop.org/article/10.1088/1751-8121/aa8dbc">464002</a> [arxiv:1707.02317]
 
@@ -82,7 +86,7 @@
 
 * [Analytical and numerical studies of Bose-Fermi mixtures in a one-dimensional harmonic trap](https://doi.org/10.1088/1361-6455/aa7797), A.&nbsp;S.&nbsp;Dehkharghani, F.&nbsp;F.&nbsp;Bellotti, N.&nbsp;T.&nbsp;Zinner, <i style="color:#CC0000">J. Phys. B: At. Mol. Opt. Phys.</i> <b>50</b> <a href="https://doi.org/10.1088/1361-6455/aa7797" target="_blank">144002</a> (2017) [arxiv:1703.01836]
 
-* [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://arxiv.org/abs/1703.01994), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, arxiv:1703.01994
+* [Rigorous renormalization group method for ground space and low-energy states of local Hamiltonians](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.214203), Brenden&nbsp;Roberts, Thomas&nbsp;Vidick, Olexei&nbsp;I.&nbsp;Motrunich, PhysRev[B,96,214203] [arxiv:1703.01994]
 
 * [Towards the solution of the many-electron problem in real materials: equation of state of the hydrogen chain with state-of-the-art many-body methods](https://arxiv.org/abs/1705.01608), Mario&nbsp;Motta, David&nbsp;M.&nbsp;Ceperley, Garnet&nbsp;Kin-Lic&nbsp;Chan, John&nbsp;A.&nbsp;Gomez, Emanuel&nbsp;Gull, Sheng&nbsp;Guo, Carlos&nbsp;Jimenez-Hoyos, Tran&nbsp;Nguyen&nbsp;Lan, Jia&nbsp;Li, Fengjie&nbsp;Ma, Andrew&nbsp;J.&nbsp;Millis, Nikolay&nbsp;V.&nbsp;Prokof'ev, Ushnish&nbsp;Ray, Gustavo&nbsp;E.&nbsp;Scuseria, Sandro&nbsp;Sorella, Edwin&nbsp;M.&nbsp;Stoudenmire, Qiming&nbsp;Sun, Igor&nbsp;S.&nbsp;Tupitsyn, Steven&nbsp;R.&nbsp;White, Dominika&nbsp;Zgid, Shiwei&nbsp;Zhang, PhysRev[X,7,031059] [arxiv:1705.01608]
 
