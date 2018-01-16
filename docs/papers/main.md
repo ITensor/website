@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Topological phase, supercritical point and emergent fermions in the extended parafermion chain](https://arxiv.org/abs/1801.03269), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1801.03269
+
 * [Learning Relevant Features of Data with Multi-scale Tensor Networks](https://arxiv.org/abs/1801.00315), E.M. Stoudenmire, arxiv:1801.00315
 
 ## 2017
