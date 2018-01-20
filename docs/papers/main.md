@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Interband excitations in the 1D limit of two-band fractional Chern insulators](https://arxiv.org/abs/1801.04543), Błażej&nbsp;Jaworowski, Piotr&nbsp;Kaczmarkiewicz, Paweł&nbsp;Potasz, Arkadiusz&nbsp;Wójs, arxiv:1801.04543
+
 * [Topological phase, supercritical point and emergent fermions in the extended parafermion chain](https://arxiv.org/abs/1801.03269), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1801.03269
 
 * [Learning Relevant Features of Data with Multi-scale Tensor Networks](https://arxiv.org/abs/1801.00315), E.M. Stoudenmire, arxiv:1801.00315
