@@ -126,6 +126,12 @@
 
   * `"Verbose"` &mdash; (default: false) if true, prints extra output
   
+* `checkMPOProd(MPS psi2, MPO K, MPS psi1) -> Real` <br/>
+  `checkMPOProd(IQMPS psi2, IQMPO K, IQMPS psi1) -> Real`
+
+  Computes, without approximation, the difference @@||\, |\psi\_2\rangle - K |\psi\_1\rangle ||^2@@,
+  where K is an arbitrary MPO.
+  This is especially useful for testing methods for applying an MPO to an MPS.
 
 <!--
 
