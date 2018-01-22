@@ -20,6 +20,7 @@ Formulas about working with ITensors, Index, etc.
 * [[Extract the Storage of a Dense ITensor|formulas/extractdense]]
 * [[Evaluate a Function on Each Element of a Tensor|formulas/visit]]
 * [[Exactly Compute the Ground State of a Small Hamiltonian|formulas/simple_ed]]
+* [[Replace an ITensor Index with Another Index|formulas/itensor_replace_index]]
 
 ## IQTensor Formulas
 Formulas involving quantum number tensors and indices (objects such as IQIndex, IQTensor).
