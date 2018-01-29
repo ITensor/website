@@ -77,6 +77,14 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
   Construct an `MPS` or `IQMPS` and set its site tensors to be in the product state 
   specified by an [[InitState|classes/initstate]] object.
 
+## Conversions
+
+* `toMPS(IQMPS Psi) -> MPS`
+  
+  Given an IQMPS, returns a numerically identical MPS, except that all quantum number
+  block sparsity information is removed. (This is done by just converting each
+  IQTensor to an ITensor.)
+
 ## Retrieving Basic Information about MPS
 
 * `.N() -> int`
