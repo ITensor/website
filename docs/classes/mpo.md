@@ -17,5 +17,13 @@ by the AutoMPO helper class.
 
 For algorithms that take MPOs as input or which manipulate MPOs, see [[MPS and MPO algorithms|classes/mps_mpo_algs]].
 
+## MPO Functions
+
+* `toMPO(IQMPO K) -> MPO`
+
+  Given an IQMPO, returns an MPO which is numerically identical (all tensors formed by just 
+  converting IQTensors to ITensors) except that all quantum number block sparsity information is
+  removed.
+
 <br/>
 _This page current as of version 2.0.7_
