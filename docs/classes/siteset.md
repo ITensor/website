@@ -24,7 +24,10 @@ without losing information about the underlying site type.
 
     sites.op("Sz",3); //obtain the "Sz" operator at site number 3
 
-## SiteSet Interface
+
+## General SiteSet Interface
+
+This part of the interface is common to all site set objects.
 
 * `N() -> int`
 
@@ -124,3 +127,21 @@ as described from the `.op` method.
        //Projects site 3 onto state 2 (i.e. the down state)
        auto P3_2 = sites.op("Proj",3,{"State",2});
 
+## Generic SiteSet class
+
+You can also use the SiteSet class itself as a generic collection of site
+indices which defines only the minimal set of operators discussed above
+above. A generic SiteSet can still be very useful for keeping track
+of Hilbert spaces not necessarily equipped with specific local site
+operators.
+
+* `SiteSet(int N)`
+
+  Construct a generic SiteSet object with N sites.
+
+* `SiteSet(vector<IQIndex> inds)`
+
+  Construct a generic SiteSet with indices provided in a
+  std::vector<IQIndex>. The std::vector will be treated as
+  zero-indexed so the resulting SiteSet will have as many
+  sites as the size of the std::vector.
