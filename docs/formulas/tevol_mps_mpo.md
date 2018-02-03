@@ -60,6 +60,7 @@ Here is some sample time evolution code using exactApplyMPO:
     for(int n = 1; n <= nt; ++n)
         {
         psi = exactApplyMPO(expH,psi,args);
+        normalize(psi);
         }
 
 
