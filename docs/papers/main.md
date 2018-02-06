@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Finite-temperature dynamic structure factor of the spin-1 XXZ chain with single-ion anisotropy](https://arxiv.org/abs/1801.10572), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1801.10572
+
 * [Interband excitations in the 1D limit of two-band fractional Chern insulators](https://arxiv.org/abs/1801.04543), Błażej&nbsp;Jaworowski, Piotr&nbsp;Kaczmarkiewicz, Paweł&nbsp;Potasz, Arkadiusz&nbsp;Wójs, arxiv:1801.04543
 
 * [Topological phase, supercritical point and emergent fermions in the extended parafermion chain](https://arxiv.org/abs/1801.03269), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1801.03269
@@ -34,7 +36,7 @@
 
 * [Monte Carlo Tensor Network Renormalization](https://arxiv.org/abs/1710.03757), William&nbsp;Huggins, C.&nbsp;Daniel&nbsp;Freeman, Miles&nbsp;Stoudenmire, Norm&nbsp;M.&nbsp;Tubman, K.&nbsp;Birgitta&nbsp;Whaley, arxiv:1710.03757
 
-* [Cooling schemes for two-component fermions in layered optical lattices](https://arxiv.org/abs/1710.00521), Shimpei&nbsp;Goto, Ippei&nbsp;Danshita, arxiv:1710.00521
+* [Cooling schemes for two-component fermions in layered optical lattices](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.96.063602), Shimpei&nbsp;Goto, Ippei&nbsp;Danshita, PhysRev[A,96,063602] [arxiv:1710.00521]
 
 * [A DMRG study: Pair-density wave in spin-valley locked systems](https://arxiv.org/abs/1709.10058), Jordan&nbsp;Venderley, Eun-Ah&nbsp;Kim, arxiv:1709.10058
 
@@ -44,9 +46,9 @@
 
 * [Chemical accuracy from small, system-adapted basis functions](https://arxiv.org/abs/1709.03460), Thomas&nbsp;E.&nbsp;Baker, Kieron&nbsp;Burke, Steven&nbsp;R.&nbsp;White, arxiv:1709.03460
 
-* [Rényi entropies after releasing the Néel state in the XXZ spin-chain](https://arxiv.org/abs/1709.02193), Vincenzo&nbsp;Alba, Pasquale&nbsp;Calabrese, arxiv:1709.02193
+* [Rényi entropies after releasing the Néel state in the XXZ spin-chain](http://iopscience.iop.org/article/10.1088/1742-5468/aa934c/meta), Vincenzo&nbsp;Alba, Pasquale&nbsp;Calabrese, <i style="color:#CC0000">J. Stat. Mech.</i> 113105 [arxiv:1709.02193]
 
-* [A new kind of spin-1 chain model with competing dimer and trimer interactions](https://arxiv.org/abs/1709.01344), Yun-Tak&nbsp;Oh, Hosho&nbsp;Katsura, Hyunyong&nbsp;Lee, Jung Hoon&nbsp;Han, arxiv:1709.01344
+* [Proposal of a spin-one chain model with competing dimer and trimer interactions](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.165126), Yun-Tak&nbsp;Oh, Hosho&nbsp;Katsura, Hyunyong&nbsp;Lee, Jung Hoon&nbsp;Han, PhysRev[B,96,165126] [arxiv:1709.01344]
 
 * [Entanglement renormalization for disordered systems](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.155136), Andrew&nbsp;M.&nbsp;Goldsborough, Glen&nbsp;Evenbly, PhysRev[B,96,155136] [arxiv:1708.07652]
 
