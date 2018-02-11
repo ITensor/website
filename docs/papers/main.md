@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [A computational inverse method for constructing spaces of quantum models from wave functions](https://arxiv.org/abs/1802.01590), Eli&nbsp;Chertkov, Bryan&nbsp;K.&nbsp;Clark, arxiv:1802.01590
+
 * [Finite-temperature dynamic structure factor of the spin-1 XXZ chain with single-ion anisotropy](https://arxiv.org/abs/1801.10572), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1801.10572
 
 * [Interband excitations in the 1D limit of two-band fractional Chern insulators](https://arxiv.org/abs/1801.04543), Błażej&nbsp;Jaworowski, Piotr&nbsp;Kaczmarkiewicz, Paweł&nbsp;Potasz, Arkadiusz&nbsp;Wójs, arxiv:1801.04543
