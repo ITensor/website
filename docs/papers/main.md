@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Semiclassical echo dynamics in the Sachdev-Ye-Kitaev model](https://arxiv.org/abs/1802.06796), Markus&nbsp;Schmitt, Dries&nbsp;Sels, Stefan&nbsp;Kehrein, Anatoli&nbsp;Polkovnikov, arxiv:1802.06796
+
 * [Fermionized parafermions and symmetry-enriched Majorana modes](https://arxiv.org/abs/1802.04809), Aaron Chew, David F. Mross, Jason Alicea, arxiv:1802.04809
 
 * [A computational inverse method for constructing spaces of quantum models from wave functions](https://arxiv.org/abs/1802.01590), Eli&nbsp;Chertkov, Bryan&nbsp;K.&nbsp;Clark, arxiv:1802.01590
