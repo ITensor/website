@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Extended Bose-Hubbard Model with dipolar and contact interactions](https://arxiv.org/abs/1802.08104), Krzysztof&nbsp;Biedroń, Mateusz&nbsp;Łącki, Jakub&nbsp;Zakrzewski, arxiv:1802.08104
+
 * [Semiclassical echo dynamics in the Sachdev-Ye-Kitaev model](https://arxiv.org/abs/1802.06796), Markus&nbsp;Schmitt, Dries&nbsp;Sels, Stefan&nbsp;Kehrein, Anatoli&nbsp;Polkovnikov, arxiv:1802.06796
 
 * [Fermionized parafermions and symmetry-enriched Majorana modes](https://arxiv.org/abs/1802.04809), Aaron Chew, David F. Mross, Jason Alicea, arxiv:1802.04809
