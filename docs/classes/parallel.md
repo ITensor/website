@@ -14,8 +14,11 @@ To use the code in this file, you must have an implementation
 of MPI (such as Open MPI, LAM, or MPICH) and provide both
 an include path to the file `mpi.h` as well as link to the 
 relevant MPI library files. Most MPI implementations provide
-a command named `mpic++` with an option that lets you view
+a command named `mpic++` or `mpicxx` that acts as a replacement
+C++ compiler that will automatically include MPI support.
+These commands also typically come with an option that lets you view
 the correct set of compiler and linker flags for your system.
+(For some versions of MPI, the command is `mpicxx --showme`.)
 
 At a lower level, MPI is a set of rather simple C functions.
 The parallel.h file provided in ITensor mainly provides some
