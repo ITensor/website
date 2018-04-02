@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Towards Quantum Machine Learning with Tensor Networks](https://arxiv.org/abs/1803.11537), William Huggins, Piyush Patel, K. Birgitta Whaley, E.M. Stoudenmire, arxiv:1803.11537
+
 * [Spinon Fermi surface in a cluster Mott insulator model on a triangular lattice and possible application to 1T-TaS2](https://arxiv.org/abs/1803.00999), Wen-Yu&nbsp;He, Xiao&nbsp;Yan&nbsp;Xu, Gang&nbsp;Chen, K.&nbsp;T.&nbsp;Law, Patrick&nbsp;A.&nbsp;Lee, arxiv:1803.00999
 
 * [Extended Bose-Hubbard Model with dipolar and contact interactions](https://arxiv.org/abs/1802.08104), Krzysztof&nbsp;Biedroń, Mateusz&nbsp;Łącki, Jakub&nbsp;Zakrzewski, arxiv:1802.08104
