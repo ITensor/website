@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Quantum simulation of the universal features of the Polyakov loop](https://arxiv.org/abs/1803.11166), Jin&nbsp;Zhang, J.&nbsp;Unmuth-Yockey, A.&nbsp;Bazavov, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1803.11166
+
 * [Towards Quantum Machine Learning with Tensor Networks](https://arxiv.org/abs/1803.11537), William Huggins, Piyush Patel, K. Birgitta Whaley, E.M. Stoudenmire, arxiv:1803.11537
 
 * [Spinon Fermi surface in a cluster Mott insulator model on a triangular lattice and possible application to 1T-TaS2](https://arxiv.org/abs/1803.00999), Wen-Yu&nbsp;He, Xiao&nbsp;Yan&nbsp;Xu, Gang&nbsp;Chen, K.&nbsp;T.&nbsp;Law, Patrick&nbsp;A.&nbsp;Lee, arxiv:1803.00999
