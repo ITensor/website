@@ -43,12 +43,30 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
   Sweeps(int nsweeps,
          int minm = 1,
          int maxm = 500,
-         Real cutoff = 1E-8)
+         Real cutoff = 1E-8,
+         Real noise = 0.)
   ```
   Construct a Sweeps object specifying the number of sweeps (nsweeps).
 
   You can optionally provide fixed values of minm, maxm, cutoff to use 
   on every sweep (these can be changed later).
+
+* ```
+  Sweeps(Args const& args)
+  ```
+  Construct a Sweeps object by specifying a set of named arguments.
+
+  Required arguments:
+  - "Nsweep" &mdash; number of sweeps
+  - "Maxm" &mdash; maximum bond dimension of MPS
+  - "Cutoff" &mdash; truncation error threshold used for density matrix truncation
+
+  Optional arguments:
+
+  - "Minm" &mdash; maximum bond dimension of MPS
+  - "Noise" &mdash; coefficient of density matrix noise term
+  - "Niter" &mdash; maximum number of Davidson iterations
+
 
 * `Sweeps(int nsweeps, InputGroup & sweep_table)`
 
