@@ -67,6 +67,11 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
   - "Noise" &mdash; coefficient of density matrix noise term
   - "Niter" &mdash; maximum number of Davidson iterations
 
+  <div class="example_clicker">Show Example</div>
+
+      auto sweeps = Sweeps({"Nsweep=",5,
+                            "Maxm=",100,
+                            "Cutoff=",1E-8});
 
 * `Sweeps(int nsweeps, InputGroup & sweep_table)`
 
