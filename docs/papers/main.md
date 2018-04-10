@@ -4,6 +4,8 @@
 
 ## 2018
 
+* [Ground states of linear rotor chains via the density matrix renormalization group](https://doi.org/10.1063/1.5024403), Dmitri&nbsp;Iouchtchenko, Pierre-Nicholas&nbsp;Roy, <i style="color:#CC0000">J. Chem. Phys.</i> <b>148</b>, <a href="https://doi.org/10.1063/1.5024403">134115</a> (2018)
+
 * [Quantum simulation of the universal features of the Polyakov loop](https://arxiv.org/abs/1803.11166), Jin&nbsp;Zhang, J.&nbsp;Unmuth-Yockey, A.&nbsp;Bazavov, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1803.11166
 
 * [Towards Quantum Machine Learning with Tensor Networks](https://arxiv.org/abs/1803.11537), William Huggins, Piyush Patel, K. Birgitta Whaley, E.M. Stoudenmire, arxiv:1803.11537
