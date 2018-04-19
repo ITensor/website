@@ -393,10 +393,12 @@ of how it is normalized.
   Levin and Nave, "Tensor Renormalization Group Approach to Two-Dimensional Classical Lattice Models",
   [PRL 99, 120601](http://dx.doi.org/10.1103/PhysRevLett.99.120601) (2007)  cond-mat/0611687
 
-- _Paper on an improved TRG (TEFR) with very useful figures_:
+- _Paper on TRG with very useful figures (particularly Fig. 5)_:
 
-  Gu and Wen, "Tensor-entanglement-filtering renormalization approach and symmetry-protected topological order"
-  [PRB 80, 155131](http://dx.doi.org/10.1103/PhysRevB.80.155131) (2009)  arxiv:0903.1069
+  Gu, Levin, and Wen, 
+  "Tensor-entanglement renormalization group approach as a unified method for symmetry
+  breaking and topological phase transitions"
+  [PRB 78, 205116](http://dx.doi.org/10.1103/PhysRevB.78.205116) (2008)  arxiv:0806.3509
 
 - _TNR is an extension of TRG which qualitatively improves TRG's fixed-point behavior
    and can be used to generate MERA tensor networks_:
