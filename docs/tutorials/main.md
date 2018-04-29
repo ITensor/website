@@ -8,7 +8,7 @@
 
   Simplest non-trivial program (similar to "hello world") based on the ITensor library.
 
-### Fundamentals
+### Tensor Network Fundamentals
 
 * [[Understanding Tensor Diagrams|tutorials/diagrams]]
 
@@ -50,6 +50,13 @@
 
   Learn how to choose optimal parameters (number of sweeps; cutoff; etc)
   for DMRG calculations of ground states.
+
+* [[Matrix Product States (MPS)|tutorials/MPS]]
+
+  A matrix product state (MPS) is a tensor network often used to
+  represent ground states and low-lying excited states of one-dimensional
+  quantum systems. Learn about some basics of using MPS with ITensor.
+
 
 * [[Matrix Product Operators (MPO)|tutorials/MPO]]
 

@@ -17,17 +17,23 @@ An MPS diagram for a five site system looks like
 
 We will discuss some characteristics of MPSs and introduce some concepts that are essential for working with MPS in ITensor.
 
-### Using the ITensor MPS Class
+## Using the ITensor MPS Class
 
-To make an MPS, we can use the constructor
+To make an MPS, one typically uses the following code pattern:
 
-    MPS psi;//constructs an uninitialized MPS
-    //or
     SpinHalf sites(5);
     auto psi = MPS(sites);//construct a random product state with indices
                           //based on the SiteSet used (here SpinHalf)
 
-which automatically makes a random product-state MPS.
+which automatically makes a random product-state MPS. Here we chose
+the Hilbert space to be spin 1/2 sites, but other types of sites are 
+available (see [[the list of site sets on this page|classes]]).
+
+For example, to make a generic five-site MPS where each site has a 
+local dimension (physical index dimension) of two:
+
+    SiteSet sites(5,2);
+    auto psi = MPS(sites);
 
 For read-only access to a particular tensor of the MPS, use the ``psi.A(j)`` method.
 This method is called "A" because it is very common in the MPS literature to use
@@ -45,7 +51,7 @@ Here is an example of using this method to multiply the third MPS tensor by a sc
 
 Another way to modify the tensors of an MPS is to use the ``.setA`` method. 
 
-### Working with MPS Gauges
+## Working with MPS Gauges
 
 The gauge of an MPS can be chosen to make computing local properties very efficient. 
 The gauge used in standard DMRG calculations chooses
