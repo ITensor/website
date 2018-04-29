@@ -4,6 +4,12 @@
 
 ## 2018
 
+<!--
+* [](), , arxiv:
+-->
+
+* [Spin transport through a spin-1/2 XXZ chain contacted to fermionic leads](https://arxiv.org/abs/1804.08957), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Tomonori&nbsp;Shirakawa, Seiji&nbsp;Yunoki, Holger&nbsp;Fehske, arxiv:1804.08957
+
 * [Topology of one dimensional quantum systems out of equilibrium](https://arxiv.org/abs/1804.05756), Max&nbsp;McGinley, Nigel&nbsp;R.&nbsp;Cooper, arxiv:1804.05756
 
 * [Ground states of linear rotor chains via the density matrix renormalization group](https://doi.org/10.1063/1.5024403), Dmitri&nbsp;Iouchtchenko, Pierre-Nicholas&nbsp;Roy, <i style="color:#CC0000">J. Chem. Phys.</i> <b>148</b>, <a href="https://doi.org/10.1063/1.5024403">134115</a> (2018)
@@ -22,17 +28,17 @@
 
 * [A computational inverse method for constructing spaces of quantum models from wave functions](https://arxiv.org/abs/1802.01590), Eli&nbsp;Chertkov, Bryan&nbsp;K.&nbsp;Clark, arxiv:1802.01590
 
-* [Finite-temperature dynamic structure factor of the spin-1 XXZ chain with single-ion anisotropy](https://arxiv.org/abs/1801.10572), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, arxiv:1801.10572
+* [Finite-temperature dynamic structure factor of the spin-1 XXZ chain with single-ion anisotropy](https://doi.org/10.1103/PhysRevB.97.060403), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, PhysRev[B,97,060403] [arxiv:1801.10572]
 
 * [Interband excitations in the 1D limit of two-band fractional Chern insulators](https://arxiv.org/abs/1801.04543), Błażej&nbsp;Jaworowski, Piotr&nbsp;Kaczmarkiewicz, Paweł&nbsp;Potasz, Arkadiusz&nbsp;Wójs, arxiv:1801.04543
 
 * [Topological phase, supercritical point and emergent fermions in the extended parafermion chain](https://arxiv.org/abs/1801.03269), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1801.03269
 
-* [Learning Relevant Features of Data with Multi-scale Tensor Networks](https://arxiv.org/abs/1801.00315), E.M. Stoudenmire, arxiv:1801.00315
+* [Learning Relevant Features of Data with Multi-scale Tensor Networks](https://doi.org/10.1088/2058-9565/aaba1a), E.M. Stoudenmire,  <i style="color:#CC0000">Quantum Science and Technology</i> <b>3</b>, <a href="https://doi.org/10.1088/2058-9565/aaba1a">034003</a> (2018) [arxiv:1801.00315]
 
 ## 2017
 
-* [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://arxiv.org/abs/1712.08055), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, arxiv:1712.08055
+* [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://doi.org/10.1103/PhysRevB.97.115156), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, PhysRev[B,97,115156] [arxiv:1712.08055]
 
 * [Lattice supersymmetry and order-disorder coexistence in the tricritical Ising model](https://arxiv.org/abs/1712.06662), Edward&nbsp;O'Brien, Paul&nbsp;Fendley, arxiv:1712.06662
 
