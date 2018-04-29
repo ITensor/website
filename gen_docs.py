@@ -1,4 +1,5 @@
-#!/bin/env python
+#!/usr/local/opt/python/libexec/bin/python
+# ! /usr/bin/env python
 
 import sys
 import re #regular expressions
@@ -188,69 +189,70 @@ def convert(string):
 
     return htmlstring
 
-page = form.getvalue("page")
+def generate():
+    page = form.getvalue("page")
 
-if page == None: page = "main"
+    if page == None: page = "main"
 
-mdfname = reldocpath + page + ".md"
-mdfile = openFile(mdfname)
-
-# "page.md" file doesn't exist, reinterpret "page" as a
-# directory name and look for a main.md file there
-if not mdfile:
-    mdfname = reldocpath + page + "/main.md"
+    mdfname = reldocpath + page + ".md"
     mdfile = openFile(mdfname)
 
-printContentType()
+    # "page.md" file doesn't exist, reinterpret "page" as a
+    # directory name and look for a main.md file there
+    if not mdfile:
+        mdfname = reldocpath + page + "/main.md"
+        mdfile = openFile(mdfname)
 
-bodyhtml = ""
-if mdfile:
-    bodyhtml = convert("".join(mdfile.readlines()))
-    mdfile.close()
-else:
-    bodyhtml = "<p>(Documentation file not found)</p>"
+    printContentType()
 
-# Generate directory tree hyperlinks
-dirlist = page.split('/')
-page_name = dirlist.pop(-1)
+    bodyhtml = ""
+    if mdfile:
+        bodyhtml = convert("".join(mdfile.readlines()))
+        mdfile.close()
+    else:
+        bodyhtml = "<p>(Documentation file not found)</p>"
 
-nav = ""
+    # Generate directory tree hyperlinks
+    dirlist = page.split('/')
+    page_name = dirlist.pop(-1)
 
-for dirname in dirlist:
-    nav += "%s<a href=\"%s?page=%s\">%s</a>"%(nav_delimiter,this_fname,dirname,dirname)
-if page_name != "main":
-    nav += nav_delimiter+page_name
-if not (len(dirlist) == 0 and page_name == "main"):
-    nav = "<a href=\"%s?page=main\">main</a>%s</br>"%(this_fname,nav)
+    nav = ""
+
+    for dirname in dirlist:
+        nav += "%s<a href=\"%s?page=%s\">%s</a>"%(nav_delimiter,this_fname,dirname,dirname)
+    if page_name != "main":
+        nav += nav_delimiter+page_name
+    if not (len(dirlist) == 0 and page_name == "main"):
+        nav = "<a href=\"%s?page=main\">main</a>%s</br>"%(this_fname,nav)
 
 
-prenav_header_file = open(prenav_header_fname)
-postnav_header_file = open(postnav_header_fname)
-footer_file = open(footer_fname)
-print "".join(prenav_header_file.readlines())
-print nav
-print "".join(postnav_header_file.readlines())
-print bodyhtml
+    prenav_header_file = open(prenav_header_fname)
+    postnav_header_file = open(postnav_header_fname)
+    footer_file = open(footer_fname)
+    print "".join(prenav_header_file.readlines())
+    print nav
+    print "".join(postnav_header_file.readlines())
+    print bodyhtml
 
-#
-# Auto-generate back links
-#
-backlinks = []
-full_dirname = ""
-for dirname in dirlist:
-    text = "Back to " + dirname.capitalize()
-    full_dirname += dirname
-    iconfname = "docs/"+full_dirname+"/icon.png"
-    iconimg = "<!-- " + iconfname + " -->"
-    if fileExists(iconfname): iconimg = "<img src=\"%s\" class=\"icon\">"%(iconfname,)
-    backlinks.append( "<br/>%s<a href=\"%s?page=%s\">%s</a>"%(iconimg,this_fname,full_dirname,text) )
-    full_dirname += "/"
-backlinks.reverse()
-for bl in backlinks: print bl
+    #
+    # Auto-generate back links
+    #
+    backlinks = []
+    full_dirname = ""
+    for dirname in dirlist:
+        text = "Back to " + dirname.capitalize()
+        full_dirname += dirname
+        iconfname = "docs/"+full_dirname+"/icon.png"
+        iconimg = "<!-- " + iconfname + " -->"
+        if fileExists(iconfname): iconimg = "<img src=\"%s\" class=\"icon\">"%(iconfname,)
+        backlinks.append( "<br/>%s<a href=\"%s?page=%s\">%s</a>"%(iconimg,this_fname,full_dirname,text) )
+        full_dirname += "/"
+    backlinks.reverse()
+    for bl in backlinks: print bl
 
-if not (len(dirlist)==0 and page_name == "main"):
-    print "<br/><img src=\"docs/icon.png\" class=\"icon\"><a href=\"%s\">Back to Main</a>"%(this_fname)
+    if not (len(dirlist)==0 and page_name == "main"):
+        print "<br/><img src=\"docs/icon.png\" class=\"icon\"><a href=\"%s\">Back to Main</a>"%(this_fname)
 
-print "".join(footer_file.readlines())
-footer_file.close()
-#header_file.close()
+    print "".join(footer_file.readlines())
+    footer_file.close()
+    #header_file.close()
