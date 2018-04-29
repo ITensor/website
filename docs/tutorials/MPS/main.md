@@ -2,9 +2,12 @@
 
 <span class='article_sig'>Thomas E. Baker&mdash;August 17, 2015</span>
 
-The Hilbert space is large.  Scanning through the entire space would be take longer than is reasonable.  Writing down a good guess for the wavefunction can be a great way to get close enough to the right ground state. 
-A very good guess for strongly correlated, gapped systems in one dimension is the matrix product state (MPS). 
-DMRG and many tensor network methods rely on this ansatz to quickly and efficiently calculate the ground state.
+The Hilbert space is large.  Scanning through the entire space would be take longer than is 
+reasonable.  Writing down a good guess for the wavefunction can be a great way to get close 
+enough to the right ground state. 
+A very good guess for the ground state of a gapped system in one dimension is the 
+matrix product state (MPS). DMRG and many tensor network methods rely on the MPS ansatz to 
+represent ground states and low-lying excited states.
 
 Each bulk tensor of an MPS has three indices, @@A^{\sigma\_i}\_{a\_i a\_{i+1}}@@.  The subscripts convey that indices connecting different bonds may vary in size. The size of a typical index @@a\_i@@ is known as the bond dimension of the MPS, and corresponds to the number of states kept in a DMRG calculation. The index @@\sigma_i@@ is the physical index.  This has two values for a spin@@-1/2@@ chain.
 
@@ -14,7 +17,7 @@ An MPS diagram for a five site system looks like
 
 We will discuss some characteristics of MPSs and introduce some concepts that are essential for working with MPS in ITensor.
 
-### ITensor Methods
+### Using the ITensor MPS Class
 
 To make an MPS, we can use the constructor
 
@@ -26,8 +29,28 @@ To make an MPS, we can use the constructor
 
 which automatically makes a random product-state MPS.
 
-The gauge of an MPS can be chosen to make computing local properties very efficient. The gauge used in standard DMRG calculations chooses
-a certain site to be the <i>orthogonality center</i>. All sites to the left and right of the orthogonality center will be left and right orthogonal, respectively.
+For read-only access to a particular tensor of the MPS, use the ``psi.A(j)`` method.
+This method is called "A" because it is very common in the MPS literature to use
+the letter A to denote MPS tensors.
+For example, if we want to print the fourth tensor of the above MPS, 
+we could do
+
+    Print(psi.A(4));
+
+For read and write access to an MPS tensor, use the ``psi.Aref(j)`` method. 
+This method is called "Aref" because it returns a reference to the j'th "A" tensor.
+Here is an example of using this method to multiply the third MPS tensor by a scalar:
+
+    psi.Aref(3) *= 0.1827;
+
+Another way to modify the tensors of an MPS is to use the ``.setA`` method. 
+
+### Working with MPS Gauges
+
+The gauge of an MPS can be chosen to make computing local properties very efficient. 
+The gauge used in standard DMRG calculations chooses
+a certain site to be the <i>orthogonality center</i>. 
+All sites to the left and right of the orthogonality center will be left and right orthogonal, respectively.
 
 To set site 4 of the 5-site MPS above to be the orthogonality center, call
 
@@ -37,22 +60,20 @@ ITensor will compute a series of [[singular value decompositions|tutorials/SVD]]
 
 <p align="center"><img src="docs/tutorials/MPS/MPS_site2.png" alt="Regauged MPS" style="height: 150px;"/></p>
 
-Regauging the MPS allows us to access its elements.  For example, calling the function
-
-    psi.A(3);
-
-moves the orthogonality center so it covers sites 3 and 4.  The element of site 3 can be accessed then.  This is known as the mixed canonical form (have more than one site as the orthogonality center).  ITensor has been designed so that it will perform the minimum number of operations in every case.
-
-Reorthogonalizing an MPS has other advantages.  To illustrate, we have drawn purple squares to be left-normalized while yellow squares are right-normalized.
+To illustrate one advantage of setting the MPS gauge, consider the diagram below where we have drawn purple squares to be left-normalized while yellow squares are right-normalized.
 
 <p align="center"><img src="docs/tutorials/MPO/onsite.png" alt="MPS Diagram" style="height: 200px;"/></p>
 
-The utility of this is to take advantage of normalization condition (@@\sum A^{\sigma\_{i}\dagger}\_{a\_ia\_{i+1}}A^{\sigma\_{i}}\_{a\_ia\_{i+1}}=1@@ if both tensors are appropriately gauged).  Two left-normalized tensors are the identity.  For example, another way to calculate the spin expectation value on site 4 would be to call (see [[an article on Correlation functions|tutorials/correlations]] for more details)
+First call ``psi.position(2)`` to center the gauge at site 2 as in the above diagram.
 
-    psi.position(4);
-    auto Mz = dag(prime(psi.A(4),Site))*sites.op("Sz",4)*psi.A(4);
+Then to compute the expectation value of the "Sz" operator on site 2, we can use the fact that in the diagram above all of the left-orthogonal and right-orthogonal tensors contract to the identity, so can be left out of the calculation (see [[an article on Correlation functions|tutorials/correlations]] for more details). So the only code needed to obtain the expectation value is:
 
-but notice we only called the tensor on site 4!  We need not bother with the other sites since we know they contract to the identity.
+    auto Mz2 = (dag(prime(psi.A(2),Site))*sites.op("Sz",2)*psi.A(2)).real();
+
+where notice that we only accessed the tensor on site 2 and no other MPS tensors.
+We need not bother with the other sites since we know they contract to the identity.
+
+<!--
 
 ### Singlet Example
 
@@ -84,5 +105,7 @@ To normalize our wavefunction, we can call
     psi.norm();
 
 ### A note on bond dimension
+
+-->
 
 
