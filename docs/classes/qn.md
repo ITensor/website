@@ -218,11 +218,12 @@ listed at the top of this page, users may use the following functions.
    Return `true` if slot n is fermionic (has negative modulus).<br/>
    n is 1-indexed.
 
-* `paritySign(QN q, int n) -> int`
+* `paritySign(QN q) -> int`
 
-   Return -1 if slot n is fermionic and has odd-parity. Otherwise
-   returns +1.<br/>
-   n is 1-indexed.
+   Return -1 if the QN has odd fermion parity. Otherwise
+   return +1. The parity of a QN is product of the parity
+   of each of its sectors. A sector has odd (-1) parity if 
+   it is fermionic and has an odd-numbered value.<br/>
 
 * `printFull(QN q)`
 
