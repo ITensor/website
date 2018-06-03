@@ -8,6 +8,9 @@
 * [](), , arxiv:
 -->
 
+* [Emergent Haldane phase in an alternating bond ℤ3 parafermion chain](https://arxiv.org/abs/1805.11299), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1805.1129
+
+
 * [Spin transport through a spin-1/2 XXZ chain contacted to fermionic leads](https://arxiv.org/abs/1804.08957), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Tomonori&nbsp;Shirakawa, Seiji&nbsp;Yunoki, Holger&nbsp;Fehske, arxiv:1804.08957
 
 * [Topology of one dimensional quantum systems out of equilibrium](https://arxiv.org/abs/1804.05756), Max&nbsp;McGinley, Nigel&nbsp;R.&nbsp;Cooper, arxiv:1804.05756
