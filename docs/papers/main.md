@@ -27,7 +27,7 @@
 
 * [Spinon Fermi surface in a cluster Mott insulator model on a triangular lattice and possible application to 1T-TaS2](https://arxiv.org/abs/1803.00999), Wen-Yu&nbsp;He, Xiao&nbsp;Yan&nbsp;Xu, Gang&nbsp;Chen, K.&nbsp;T.&nbsp;Law, Patrick&nbsp;A.&nbsp;Lee, arxiv:1803.00999
 
-* [Extended Bose-Hubbard Model with dipolar and contact interactions](https://arxiv.org/abs/1802.08104), Krzysztof&nbsp;Biedroń, Mateusz&nbsp;Łącki, Jakub&nbsp;Zakrzewski, arxiv:1802.08104
+* [Extended Bose-Hubbard Model with dipolar and contact interactions](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.245102), Krzysztof&nbsp;Biedroń, Mateusz&nbsp;Łącki, Jakub&nbsp;Zakrzewski, PhysRev[B,97,245102] [arxiv:1802.08104]
 
 * [Semiclassical echo dynamics in the Sachdev-Ye-Kitaev model](https://arxiv.org/abs/1802.06796), Markus&nbsp;Schmitt, Dries&nbsp;Sels, Stefan&nbsp;Kehrein, Anatoli&nbsp;Polkovnikov, arxiv:1802.06796
 
