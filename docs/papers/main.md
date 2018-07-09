@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Many-body localization as a large family of localized groundstates](https://arxiv.org/abs/1807.01313), Maxime&nbsp;Dupont, Nicolas&nbsp;Laflorencie, arxiv:1807.01313
+
 * [Probing entanglement entropy via randomized measurements](https://arxiv.org/abs/1806.05747), Tiff&nbsp;Brydges, Andreas&nbsp;Elben, Petar&nbsp;Jurcevic, Benoît&nbsp;Vermersch, Christine&nbsp;Maier, Ben&nbsp;P.&nbsp;Lanyon, Peter&nbsp;Zoller, Rainer&nbsp;Blatt, Christian&nbsp;F.&nbsp;Roos, arxiv:1806.05747
 
 * [Emergent Haldane phase in an alternating bond ℤ3 parafermion chain](https://arxiv.org/abs/1805.11299), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1805.1129
