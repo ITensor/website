@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Towards a Generalized Hydrodynamics description of Rényi entropies in integrable systems](https://arxiv.org/abs/1807.01800), Vincenzo&nbsp;Alba, arxiv:1807.01800
+
 * [Many-body localization as a large family of localized groundstates](https://arxiv.org/abs/1807.01313), Maxime&nbsp;Dupont, Nicolas&nbsp;Laflorencie, arxiv:1807.01313
 
 * [Probing entanglement entropy via randomized measurements](https://arxiv.org/abs/1806.05747), Tiff&nbsp;Brydges, Andreas&nbsp;Elben, Petar&nbsp;Jurcevic, Benoît&nbsp;Vermersch, Christine&nbsp;Maier, Ben&nbsp;P.&nbsp;Lanyon, Peter&nbsp;Zoller, Rainer&nbsp;Blatt, Christian&nbsp;F.&nbsp;Roos, arxiv:1806.05747
