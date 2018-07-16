@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Andreev-reflection and Aharonov-Bohm dynamics in atomtronic circuits](https://arxiv.org/abs/1807.03616), Tobias&nbsp;Haug, Rainer&nbsp;Dumke, Leong-Chuan&nbsp;Kwek, Luigi&nbsp;Amico, arxiv:1807.03616
+
 * [Towards a Generalized Hydrodynamics description of Rényi entropies in integrable systems](https://arxiv.org/abs/1807.01800), Vincenzo&nbsp;Alba, arxiv:1807.01800
 
 * [Many-body localization as a large family of localized groundstates](https://arxiv.org/abs/1807.01313), Maxime&nbsp;Dupont, Nicolas&nbsp;Laflorencie, arxiv:1807.01313
