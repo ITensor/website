@@ -8,6 +8,9 @@
 * [](), , arxiv:
 -->
 
+* [Non-Abelian chiral spin liquid in a quantum antiferromagnet revealed by an iPEPS study
+](https://arxiv.org/abs/1807.04385), Ji-Yao&nbsp;Chen, Laurens&nbsp;Vanderstraeten, Sylvain&nbsp;Capponi, Didier&nbsp;Poilblanc, arxiv:1807.04385
+
 * [Andreev-reflection and Aharonov-Bohm dynamics in atomtronic circuits](https://arxiv.org/abs/1807.03616), Tobias&nbsp;Haug, Rainer&nbsp;Dumke, Leong-Chuan&nbsp;Kwek, Luigi&nbsp;Amico, arxiv:1807.03616
 
 * [Towards a Generalized Hydrodynamics description of Rényi entropies in integrable systems](https://arxiv.org/abs/1807.01800), Vincenzo&nbsp;Alba, arxiv:1807.01800
