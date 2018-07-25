@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Combined tensor network/cluster expansion method using logic gates: Illustrated for (bi-)excitons by a single layer MoS2 model system](https://arxiv.org/abs/1807.09036), Sandra&nbsp;Kuhn, Marten&nbsp;Richter, arxiv:1807.09036
+
 * [Non-Abelian chiral spin liquid in a quantum antiferromagnet revealed by an iPEPS study
 ](https://arxiv.org/abs/1807.04385), Ji-Yao&nbsp;Chen, Laurens&nbsp;Vanderstraeten, Sylvain&nbsp;Capponi, Didier&nbsp;Poilblanc, arxiv:1807.04385
 
