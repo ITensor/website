@@ -8,6 +8,12 @@
 * [](), , arxiv:
 -->
 
+* [Universal features of the Abelian Polyakov loop in 1+1 dimension](https://arxiv.org/abs/1807.09186), Judah&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, Alexei&nbsp;Bazavov, Yannick&nbsp;Meurice, Shan-Wen&nbsp;Tsai, arxiv:1807.09186
+
+* [Probing scrambling using statistical correlations between randomized measurements](https://arxiv.org/abs/1807.09087), Benoît&nbsp;Vermersch, Andreas&nbsp;Elben, Lukas&nbsp;M.&nbsp;Sieberer, Norman&nbsp;Y.&nbsp;Yao, Peter&nbsp;Zoller, arxiv:1807.09087
+
+* [Validating Quantum-Classical Programming Models with Tensor Network Simulations](https://arxiv.org/abs/1807.07914), Alexander&nbsp;McCaskey, Eugene&nbsp;Dumitrescu, Mengsu&nbsp;Chen, Dmitry&nbsp;Lyakh, Travis&nbsp;S.&nbsp;Humble, arxiv:1807.07914
+
 * [Combined tensor network/cluster expansion method using logic gates: Illustrated for (bi-)excitons by a single layer MoS2 model system](https://arxiv.org/abs/1807.09036), Sandra&nbsp;Kuhn, Marten&nbsp;Richter, arxiv:1807.09036
 
 * [Non-Abelian chiral spin liquid in a quantum antiferromagnet revealed by an iPEPS study
