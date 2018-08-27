@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Measurement-Induced Phase Transitions in the Dynamics of Entanglement](https://arxiv.org/abs/1808.05953), Brian&nbsp;Skinner, Jonathan&nbsp;Ruhman, Adam&nbsp;Nahum, arxiv:1808.05953
+
 * [Universal features of the Abelian Polyakov loop in 1+1 dimension](https://arxiv.org/abs/1807.09186), Judah&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, Alexei&nbsp;Bazavov, Yannick&nbsp;Meurice, Shan-Wen&nbsp;Tsai, arxiv:1807.09186
 
 * [Probing scrambling using statistical correlations between randomized measurements](https://arxiv.org/abs/1807.09087), Benoît&nbsp;Vermersch, Andreas&nbsp;Elben, Lukas&nbsp;M.&nbsp;Sieberer, Norman&nbsp;Y.&nbsp;Yao, Peter&nbsp;Zoller, arxiv:1807.09087
