@@ -893,6 +893,38 @@ for details about the possible arguments to these functions.
        |   |     s1  s2
       s1  s2  
 
+<a name="reindex"></a>
+* `reindex(ITensor T, Index old1, Index new1, Index old2, Index new2, ...) -> ITensor`
+
+  Given an ITensor T which has indices `old1`, `old2`, and possibly other indices
+  or other copies of `old1` etc. with various prime levels, this function
+  returns a new ITensor with the same components but 
+  with `old1` replaced by `new1`, `old2` replaced by `new2`, etc. This includes all
+  different copies of the old indices which might be part of the index set with various
+  prime levels. Any other indices of T which are not mentioned in the arguments to
+  `reindex` are left unchanged.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto s1 = Index("s1",2,Site);
+      auto s2 = Index("s2",2,Site);
+      auto s3 = Index("s3",2,Site);
+      auto s4 = Index("s4",2,Site);
+
+      auto T12 = ITensor(s1,prime(s1),s2,prime(s2));
+
+      auto T34 = reindex(T12,s1,s3,s2,s4);
+
+      //ASCII art drawing:
+             
+      s1' s2'    s3' s4'
+       |   |      |   |
+       [T12]  ->  [T34] 
+       |   |      |   |
+      s1  s2     s3  s4
+              
+
+
 ## Advanced / Developer Methods
 
 * `.scaleTo(Real newscale)` <br/>
