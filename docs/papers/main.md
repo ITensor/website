@@ -8,6 +8,12 @@
 * [](), , arxiv:
 -->
 
+* [Resonating quantum three-coloring wavefunctions for the kagome quantum antiferromagnet](https://arxiv.org/abs/1808.08633), Hitesh&nbsp;J.&nbsp;Changlani, Sumiran&nbsp;Pujari, Chia-Min&nbsp;Chung, Bryan&nbsp;K.&nbsp;Clark, arxiv:1808.08633
+
+* [Magnetism driven by fluctuations and frustration in synthetic triangular antiferromagnets with ultracold fermions in optical lattices](https://arxiv.org/abs/1808.08916), Daisuke&nbsp;Yamamoto, Giacomo&nbsp;Marmorini, Masahiro&nbsp;Tabata, Kazuki&nbsp;Sakakura, Ippei&nbsp;Danshita, arxiv:1808.08916
+
+* [Dynamical quantum phase transitions in U(1) quantum link models](https://arxiv.org/abs/1808.07874), Yi-Ping&nbsp;Huang, Debasish&nbsp;Banerjee, Markus&nbsp;Heyl, arxiv:1808.07874
+
 * [Measurement-Induced Phase Transitions in the Dynamics of Entanglement](https://arxiv.org/abs/1808.05953), Brian&nbsp;Skinner, Jonathan&nbsp;Ruhman, Adam&nbsp;Nahum, arxiv:1808.05953
 
 * [Universal features of the Abelian Polyakov loop in 1+1 dimension](https://arxiv.org/abs/1807.09186), Judah&nbsp;Unmuth-Yockey, Jin&nbsp;Zhang, Alexei&nbsp;Bazavov, Yannick&nbsp;Meurice, Shan-Wen&nbsp;Tsai, arxiv:1807.09186
