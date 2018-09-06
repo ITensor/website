@@ -112,11 +112,12 @@
   Apply an MPO K to an MPS psi, resulting in the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@. <br/>
   The resulting MPS is returned.
 
+  The algorithm used is the <a href="https://tensornetwork.org/mps/algorithms/denmat_mpo_mps">"density matrix" algorithm</a>.
+  If input MPS has typical bond dimension @@m@@ and MPO has typical bond dimension @@k@@,
+  this algorithm scales as @@m^3 k^2 + m^2 k^3@@.
+
   No approximation is made when applying the MPO, but after applying it the resulting
   MPS is compressed using the truncation parameters provided in the named arguments `args`.
-
-  If input MPS has typical bond dimension @@m@@ and MPO has typical bond dimension @@k@@,
-  scaling is @@m^3 k^2 + m^2 k^3@@.
 
   Named arguments recognized:
 
