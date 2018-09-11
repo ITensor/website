@@ -8,6 +8,10 @@
 * [](), , arxiv:
 -->
 
+* [Photoinduced η-pairing in the Hubbard Model](https://arxiv.org/abs/1809.01865), Tatsuya Kaneko, Tomonori Shirakawa, Sandro Sorella, Seiji Yunoki, arxiv:1809.01865
+
+* [Performance of the time-dependent variational principle for matrix product states in long time evolution of a pure state](https://arxiv.org/abs/1809.01400), Shimpei Goto, Ippei Danshita, arxiv:1809.01400
+
 * [Resonating quantum three-coloring wavefunctions for the kagome quantum antiferromagnet](https://arxiv.org/abs/1808.08633), Hitesh&nbsp;J.&nbsp;Changlani, Sumiran&nbsp;Pujari, Chia-Min&nbsp;Chung, Bryan&nbsp;K.&nbsp;Clark, arxiv:1808.08633
 
 * [Magnetism driven by fluctuations and frustration in synthetic triangular antiferromagnets with ultracold fermions in optical lattices](https://arxiv.org/abs/1808.08916), Daisuke&nbsp;Yamamoto, Giacomo&nbsp;Marmorini, Masahiro&nbsp;Tabata, Kazuki&nbsp;Sakakura, Ippei&nbsp;Danshita, arxiv:1808.08916
@@ -37,7 +41,6 @@
 
 * [Emergent Haldane phase in an alternating bond ℤ3 parafermion chain](https://arxiv.org/abs/1805.11299), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1805.1129
 
-
 * [Spin transport through a spin-1/2 XXZ chain contacted to fermionic leads](https://arxiv.org/abs/1804.08957), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Tomonori&nbsp;Shirakawa, Seiji&nbsp;Yunoki, Holger&nbsp;Fehske, arxiv:1804.08957
 
 * [Topology of one dimensional quantum systems out of equilibrium](https://arxiv.org/abs/1804.05756), Max&nbsp;McGinley, Nigel&nbsp;R.&nbsp;Cooper, arxiv:1804.05756
@@ -47,6 +50,8 @@
 * [Quantum simulation of the universal features of the Polyakov loop](https://arxiv.org/abs/1803.11166), Jin&nbsp;Zhang, J.&nbsp;Unmuth-Yockey, A.&nbsp;Bazavov, S.-W.&nbsp;Tsai, Y.&nbsp;Meurice, arxiv:1803.11166
 
 * [Towards Quantum Machine Learning with Tensor Networks](https://arxiv.org/abs/1803.11537), William Huggins, Piyush Patel, K. Birgitta Whaley, E.M. Stoudenmire, arxiv:1803.11537
+
+* [Beyond many-body localized states in a spin-disordered Hubbard model with pseudo-spin symmetry](https://arxiv.org/abs/1803.02838), Xiongjie Yu, Di Luo, Bryan K. Clark, arxiv:1803.02838
 
 * [Spinon Fermi surface in a cluster Mott insulator model on a triangular lattice and possible application to 1T-TaS2](https://arxiv.org/abs/1803.00999), Wen-Yu&nbsp;He, Xiao&nbsp;Yan&nbsp;Xu, Gang&nbsp;Chen, K.&nbsp;T.&nbsp;Law, Patrick&nbsp;A.&nbsp;Lee, arxiv:1803.00999
 
@@ -77,7 +82,6 @@
 * [Dynamical properties of the S=1/2 random Heisenberg chain](https://arxiv.org/abs/1712.01701), Yu-Rong Shu, Maxime Dupont, Dao-Xin Yao, Sylvain Capponi, Anders W. Sandvik, arxiv:1712.01701
 
 * [Statistically induced topological phase transitions in one-dimensional superlattice anyon-Hubbard model](https://arxiv.org/abs/1711.10748), Zheng-Wei&nbsp;Zuo, Guo-Ling&nbsp;Li, Liben&nbsp;Li, arxiv:1711.10748
-
 
 * [Topological Luttinger Liquids from Decorated Domain Walls](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.165114), Daniel&nbsp;E.&nbsp;Parker, Thomas&nbsp;Scaffidi, Romain&nbsp;Vasseur, PhysRev[B,97,165114] [arxiv:1711.09106]
 
