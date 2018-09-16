@@ -43,9 +43,9 @@
 
 * [Emergent Haldane phase in an alternating bond ℤ3 parafermion chain](https://arxiv.org/abs/1805.11299), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1805.1129
 
-* [Spin transport through a spin-1/2 XXZ chain contacted to fermionic leads](https://arxiv.org/abs/1804.08957), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Tomonori&nbsp;Shirakawa, Seiji&nbsp;Yunoki, Holger&nbsp;Fehske, arxiv:1804.08957
+* [Spin transport through a spin-1/2 XXZ chain contacted to fermionic leads](https://arxiv.org/abs/1804.08957), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Tomonori&nbsp;Shirakawa, Seiji&nbsp;Yunoki, Holger&nbsp;Fehske, PhysRev[B,97,245124] [arxiv:1804.08957]
 
-* [Topology of one dimensional quantum systems out of equilibrium](https://arxiv.org/abs/1804.05756), Max&nbsp;McGinley, Nigel&nbsp;R.&nbsp;Cooper, arxiv:1804.05756
+* [Topology of one dimensional quantum systems out of equilibrium](https://arxiv.org/abs/1804.05756), Max&nbsp;McGinley, Nigel&nbsp;R.&nbsp;Cooper, PhysRev[Lett,121,090401] [arxiv:1804.05756]
 
 * [Ground states of linear rotor chains via the density matrix renormalization group](https://doi.org/10.1063/1.5024403), Dmitri&nbsp;Iouchtchenko, Pierre-Nicholas&nbsp;Roy, <i style="color:#CC0000">J. Chem. Phys.</i> <b>148</b>, <a href="https://doi.org/10.1063/1.5024403">134115</a> (2018)
 
@@ -53,17 +53,17 @@
 
 * [Towards Quantum Machine Learning with Tensor Networks](https://arxiv.org/abs/1803.11537), William Huggins, Piyush Patel, K. Birgitta Whaley, E.M. Stoudenmire, arxiv:1803.11537
 
-* [Beyond many-body localized states in a spin-disordered Hubbard model with pseudo-spin symmetry](https://arxiv.org/abs/1803.02838), Xiongjie Yu, Di Luo, Bryan K. Clark, arxiv:1803.02838
+* [Beyond many-body localized states in a spin-disordered Hubbard model with pseudo-spin symmetry](https://arxiv.org/abs/1803.02838), Xiongjie Yu, Di Luo, Bryan K. Clark, PhysRev[B,98,115106] [arxiv:1803.02838]
 
-* [Spinon Fermi surface in a cluster Mott insulator model on a triangular lattice and possible application to 1T-TaS2](https://arxiv.org/abs/1803.00999), Wen-Yu&nbsp;He, Xiao&nbsp;Yan&nbsp;Xu, Gang&nbsp;Chen, K.&nbsp;T.&nbsp;Law, Patrick&nbsp;A.&nbsp;Lee, arxiv:1803.00999
+* [Spinon Fermi surface in a cluster Mott insulator model on a triangular lattice and possible application to 1T-TaS2](https://arxiv.org/abs/1803.00999), Wen-Yu&nbsp;He, Xiao&nbsp;Yan&nbsp;Xu, Gang&nbsp;Chen, K.&nbsp;T.&nbsp;Law, Patrick&nbsp;A.&nbsp;Lee, PhysRev[Lett,121,046401] [arxiv:1803.00999]
 
 * [Extended Bose-Hubbard Model with dipolar and contact interactions](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.245102), Krzysztof&nbsp;Biedroń, Mateusz&nbsp;Łącki, Jakub&nbsp;Zakrzewski, PhysRev[B,97,245102] [arxiv:1802.08104]
 
 * [Semiclassical echo dynamics in the Sachdev-Ye-Kitaev model](https://arxiv.org/abs/1802.06796), Markus&nbsp;Schmitt, Dries&nbsp;Sels, Stefan&nbsp;Kehrein, Anatoli&nbsp;Polkovnikov, arxiv:1802.06796
 
-* [Fermionized parafermions and symmetry-enriched Majorana modes](https://arxiv.org/abs/1802.04809), Aaron Chew, David F. Mross, Jason Alicea, arxiv:1802.04809
+* [Fermionized parafermions and symmetry-enriched Majorana modes](https://arxiv.org/abs/1802.04809), Aaron Chew, David F. Mross, Jason Alicea, PhysRev[B,98,085143] [arxiv:1802.04809]
 
-* [A computational inverse method for constructing spaces of quantum models from wave functions](https://arxiv.org/abs/1802.01590), Eli&nbsp;Chertkov, Bryan&nbsp;K.&nbsp;Clark, arxiv:1802.01590
+* [A computational inverse method for constructing spaces of quantum models from wave functions](https://arxiv.org/abs/1802.01590), Eli&nbsp;Chertkov, Bryan&nbsp;K.&nbsp;Clark, PhysRev[X,8,031029] [arxiv:1802.01590]
 
 * [Finite-temperature dynamic structure factor of the spin-1 XXZ chain with single-ion anisotropy](https://doi.org/10.1103/PhysRevB.97.060403), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Holger&nbsp;Fehske, PhysRev[B,97,060403] [arxiv:1801.10572]
 
@@ -127,7 +127,7 @@
 
 * [Quantum Simulation and Spectroscopy of Entanglement Hamiltonians](https://arxiv.org/abs/1707.04455), Marcello&nbsp;Dalmonte, Benoît&nbsp;Vermersch, Peter&nbsp;Zoller, arxiv:1707.04455
 
-* [Towards quantum simulation with circular Rydberg atoms](https://arxiv.org/abs/1707.04397), Thanh&nbsp;Long&nbsp;Nguyen, Jean-Michel&nbsp;Raimond, Clément&nbsp;Sayrin, Rodrigo&nbsp;Cortinas, Tigrane&nbsp;Cantat-Moltrecht, Fédéric&nbsp;Assemat, Igor&nbsp;Dotsenko, Sébastien&nbsp;Gleyzes, Serge&nbsp;Haroche, Guillaume&nbsp;Roux, Thierry&nbsp;Jolicoeur, Michel&nbsp;Brune, arxiv:1707.04397
+* [Towards quantum simulation with circular Rydberg atoms](https://arxiv.org/abs/1707.04397), Thanh&nbsp;Long&nbsp;Nguyen, Jean-Michel&nbsp;Raimond, Clément&nbsp;Sayrin, Rodrigo&nbsp;Cortinas, Tigrane&nbsp;Cantat-Moltrecht, Fédéric&nbsp;Assemat, Igor&nbsp;Dotsenko, Sébastien&nbsp;Gleyzes, Serge&nbsp;Haroche, Guillaume&nbsp;Roux, Thierry&nbsp;Jolicoeur, Michel&nbsp;Brune, PhysRev[X,8,011032] [arxiv:1707.04397]
 
 * [A cavity-induced artificial gauge field in a Bose-Hubbard ladder](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.96.063621), Catalin-Mihai&nbsp;Halati, Ameneh&nbsp;Sheikhan, Corinna&nbsp;Kollath, PhysRev[A,96,063621] [arxiv:1707.04123]
 
