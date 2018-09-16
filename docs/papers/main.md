@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Quantum Simulation and Optimization in Hot Quantum Networks](https://arxiv.org/abs/1809.03794), Martin J. A. Schuetz, Benoît Vermersch, Gerhard Kirchmair, Lieven M. K. Vandersypen, J. Ignacio Cirac, Mikhail D. Lukin, Peter Zoller, arxiv:1809.03794
+
 * [Photoinduced η-pairing in the Hubbard Model](https://arxiv.org/abs/1809.01865), Tatsuya Kaneko, Tomonori Shirakawa, Sandro Sorella, Seiji Yunoki, arxiv:1809.01865
 
 * [Performance of the time-dependent variational principle for matrix product states in long time evolution of a pure state](https://arxiv.org/abs/1809.01400), Shimpei Goto, Ippei Danshita, arxiv:1809.01400
