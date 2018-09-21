@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Density Matrix Renormalization Group Study of a One Dimensional Diatomic Molecule beyond the Born-Oppenheimer Approximation](https://arxiv.org/abs/1809.05808), Mingru Yang, Steven R. White, arxiv:1809.05808
+
 * [Quantum Simulation and Optimization in Hot Quantum Networks](https://arxiv.org/abs/1809.03794), Martin J. A. Schuetz, Benoît Vermersch, Gerhard Kirchmair, Lieven M. K. Vandersypen, J. Ignacio Cirac, Mikhail D. Lukin, Peter Zoller, arxiv:1809.03794
 
 * [Photoinduced η-pairing in the Hubbard Model](https://arxiv.org/abs/1809.01865), Tatsuya Kaneko, Tomonori Shirakawa, Sandro Sorella, Seiji Yunoki, arxiv:1809.01865
