@@ -3,9 +3,11 @@
 Matrix techniques have been a major success in the applied sciences.
 *Tensor* methods could lead to even deeper insights and 
 more powerful algorithms.
-Tensor networks have driven major advances in physics and chemistry.
-Mathematicians and data scientists are discovering tensor algorithms
-that decisively outperform standard techniques.
+Tensor network methods in physics and chemistry have yielded 
+very precise results and greater understanding of many-body wavefunctions.
+Mathematicians and computer scientists are using tensor algorithms
+to uncover correlations in data and to scale algorithms 
+to high-dimensional spaces.
 
 When a problem is cast into the language of tensors,
 each tensor index typically has some
