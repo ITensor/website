@@ -486,11 +486,12 @@ border-color: #ddd;
 
 #people
 {
-width: 800px;
+width: 100%;
 }
 #people td
 {
-padding: 1px;
+padding: 10px;
+padding-bottom: 15px;
 }
 #people td.name
 {
@@ -500,6 +501,14 @@ padding: 1px;
 #people td.descrip
 {
 padding: 40px;
+}
+#people img
+{ 
+border: solid gray 1px; 
+padding: 1px;
+display: block;
+margin-left: auto; 
+margin-right: auto;
 }
 
 #codes
