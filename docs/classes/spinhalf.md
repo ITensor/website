@@ -1,7 +1,7 @@
 # SpinHalf and SpinHalfSite
 
 The SpinHalf class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites of be of type SpinHalfSite, representing a S=1/2 spin.
+its sites to be of type SpinHalfSite, representing a S=1/2 spin.
 
 The SpinHalfSite class can also be used to create custom SiteSets which mix SpinHalfSites 
 with other types of sites.

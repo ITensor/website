@@ -1,7 +1,7 @@
 # Spinless and SpinlessSite
 
 The Spinless class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites of be of type SpinlessSite, representing a spinless particle with maximum 
+its sites to be of type SpinlessSite, representing a spinless particle with maximum 
 site occupancy of one (a fermion or "hard-core" boson).
 
 The SpinlessSite class can also be used to create custom SiteSets which mix SpinlessSites 

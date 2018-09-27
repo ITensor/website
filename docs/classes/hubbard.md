@@ -1,7 +1,7 @@
 # Hubbard and HubbardSite
 
 The Hubbard class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites of be of type HubbardSite, representing a particle with spin 1/2 (either
+its sites to be of type HubbardSite, representing a particle with spin 1/2 (either
 a fermion or a spinful boson) occupying a 
 single local orbital (meaning that the maximum occupancy of the site is two particles:
 one with spin up and one with spin down).

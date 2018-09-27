@@ -1,7 +1,7 @@
 # tJ and tJSite
 
 The tJ class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites of be of type tJSite, representing a particle with spin 1/2
+its sites to be of type tJSite, representing a particle with spin 1/2
 single local orbital, but constrained never to doubly-occupy this orbital as in the
 t-J model.
 
