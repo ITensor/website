@@ -1,7 +1,7 @@
 # SpinOne and SpinOneSite
 
 The SpinOne class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites of be of type SpinOneSite, representing a S=1 spin.
+its sites to be of type SpinOneSite, representing a S=1 spin.
 
 The SpinOneSite class can also be used to create custom SiteSets which mix SpinOneSites 
 with other types of sites.
