@@ -167,9 +167,9 @@ With the above definitions we can map spinful fermion operators to spinful boson
 c\_{\uparrow j}   & = F\_1 F\_2 \cdots F\_{j-1} \ \ \  a\_{\uparrow j} \\
 c\_{\downarrow j} & =  F\_1 F\_2 \cdots F\_{j-1} \, \big( F\_j\, a\_{\downarrow j} \big)
 \end{align}
-where for spinful fermions, the operator $F_j$ is defined as 
+where for spinful fermions, the operator @@F_j@@ is defined as 
 \begin{align}
-F_j = (1-2 n_{\uparrow j}) (1-2 n_{\downarrow j}) \ .
+F_j = (1-2 n_{\uparrow j}) (1-2 n_{\downarrow j}) = (-1)^{n_j} \ .
 \end{align}
 
 Note the extra @@F\_{j}@@ in the mapping for the down-spin operator. This operator
