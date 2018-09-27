@@ -167,6 +167,11 @@ With the above definitions we can map spinful fermion operators to spinful boson
 c\_{\uparrow j}   & = F\_1 F\_2 \cdots F\_{j-1} \ \ \  a\_{\uparrow j} \\
 c\_{\downarrow j} & =  F\_1 F\_2 \cdots F\_{j-1} \, \big( F\_j\, a\_{\downarrow j} \big)
 \end{align}
+where for spinful fermions, the operator $F_j$ is defined as 
+\begin{align}
+F_j = (1-2 n_{\uparrow j}) (1-2 n_{\downarrow j}) \ .
+\end{align}
+
 Note the extra @@F\_{j}@@ in the mapping for the down-spin operator. This operator
 gives the extra minus sign needed when annihilating a down spin from the doubly occupied state.
 Be careful with this extra @@F\_{j}@@ operator because while the "F" and "a" operators commute on
@@ -187,7 +192,7 @@ measuring correlation functions involving creation/annihilation operators:
    Note the minus signs in front of the last two terms. We can interpret the F operators remaining on the right-hand
    side as checking whether a fermion of the other spin type is present that the particle will hop "over". The minus signs
    on the last two terms basically just come from writing the operators in left-to-right order (or can be found by
-   conjugating the first two terms and using the fact that 
+   conjugating the first two terms and using the fact that the operators anticommute).
 
 2. Further-neighbor "hopping" term, assuming @@i < j @@
    \begin{align}
