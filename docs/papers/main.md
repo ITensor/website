@@ -8,6 +8,12 @@
 * [](), , arxiv:
 -->
 
+* [Cavity-induced superconducting and 4kF charge-density-wave states](https://arxiv.org/abs/1809.09884), Ameneh Sheikhan, Corinna Kollath, arxiv:1809.09884
+
+* [Evolution of two-time correlations in dissipative quantum spin systems: aging and hierarchical dynamics](https://arxiv.org/abs/1809.10464), Stefan Wolff, Jean-Sebastien Bernier, Dario Poletti, Ameneh Sheikhan, Corinna Kollath, arxiv:1809.10464
+
+* [Multi-sliced Gausslet Basis Sets for Electronic Structure](https://arxiv.org/abs/1809.10258), Steven R. White, E. Miles Stoudenmire, arxiv:1809.10258
+
 * [Density Matrix Renormalization Group Study of a One Dimensional Diatomic Molecule beyond the Born-Oppenheimer Approximation](https://arxiv.org/abs/1809.05808), Mingru Yang, Steven R. White, arxiv:1809.05808
 
 * [Quantum Simulation and Optimization in Hot Quantum Networks](https://arxiv.org/abs/1809.03794), Martin J. A. Schuetz, Benoît Vermersch, Gerhard Kirchmair, Lieven M. K. Vandersypen, J. Ignacio Cirac, Mikhail D. Lukin, Peter Zoller, arxiv:1809.03794
@@ -43,7 +49,7 @@
 
 * [Probing entanglement entropy via randomized measurements](https://arxiv.org/abs/1806.05747), Tiff&nbsp;Brydges, Andreas&nbsp;Elben, Petar&nbsp;Jurcevic, Benoît&nbsp;Vermersch, Christine&nbsp;Maier, Ben&nbsp;P.&nbsp;Lanyon, Peter&nbsp;Zoller, Rainer&nbsp;Blatt, Christian&nbsp;F.&nbsp;Roos, arxiv:1806.05747
 
-* [Emergent Haldane phase in an alternating bond ℤ3 parafermion chain](https://arxiv.org/abs/1805.11299), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1805.1129
+* [Emergent Haldane phase in an alternating bond ℤ3 parafermion chain](https://arxiv.org/abs/1805.11299), Shun-Yao&nbsp;Zhang, Hong-Ze&nbsp;Xu, Yue-Xin&nbsp;Huang, Guang-Can&nbsp;Guo, Zheng-Wei&nbsp;Zhou, Ming&nbsp;Gong, arxiv:1805.11299
 
 * [Spin transport through a spin-1/2 XXZ chain contacted to fermionic leads](https://arxiv.org/abs/1804.08957), Florian&nbsp;Lange, Satoshi&nbsp;Ejima, Tomonori&nbsp;Shirakawa, Seiji&nbsp;Yunoki, Holger&nbsp;Fehske, PhysRev[B,97,245124] [arxiv:1804.08957]
 
@@ -79,21 +85,21 @@
 
 * [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://doi.org/10.1103/PhysRevB.97.115156), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, PhysRev[B,97,115156] [arxiv:1712.08055]
 
-* [Lattice supersymmetry and order-disorder coexistence in the tricritical Ising model](https://arxiv.org/abs/1712.06662), Edward&nbsp;O'Brien, Paul&nbsp;Fendley, arxiv:1712.06662
+* [Lattice supersymmetry and order-disorder coexistence in the tricritical Ising model](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.206403), Edward&nbsp;O'Brien, Paul&nbsp;Fendley, PhysRev[Lett,120,206403] [arxiv:1712.06662]
 
 * [The Inhomogeneous Gaussian Free Field, with application to ground state correlations of trapped 1d Bose gases](https://arxiv.org/abs/1712.05262), Yannis Brun, Jérôme Dubail, arxiv:1712.05262
 
-* [Dynamical properties of the S=1/2 random Heisenberg chain](https://arxiv.org/abs/1712.01701), Yu-Rong Shu, Maxime Dupont, Dao-Xin Yao, Sylvain Capponi, Anders W. Sandvik, arxiv:1712.01701
+* [Dynamical properties of the S=1/2 random Heisenberg chain](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.104424), Yu-Rong Shu, Maxime Dupont, Dao-Xin Yao, Sylvain Capponi, Anders W. Sandvik, PhysRev[B,97,104424] [arxiv:1712.01701]
 
-* [Statistically induced topological phase transitions in one-dimensional superlattice anyon-Hubbard model](https://arxiv.org/abs/1711.10748), Zheng-Wei&nbsp;Zuo, Guo-Ling&nbsp;Li, Liben&nbsp;Li, arxiv:1711.10748
+* [Statistically induced topological phase transitions in one-dimensional superlattice anyon-Hubbard model](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.115126), Zheng-Wei&nbsp;Zuo, Guo-Ling&nbsp;Li, Liben&nbsp;Li, PhysRev[B,97,115126] [arxiv:1711.10748]
 
 * [Topological Luttinger Liquids from Decorated Domain Walls](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.165114), Daniel&nbsp;E.&nbsp;Parker, Thomas&nbsp;Scaffidi, Romain&nbsp;Vasseur, PhysRev[B,97,165114] [arxiv:1711.09106]
 
 * [Spin-orbit coupled bosons in one dimension: emergent gauge field and Lifshitz transition](https://arxiv.org/abs/1711.05794), William&nbsp;S.&nbsp;Cole, Junhyun&nbsp;Lee, Khan&nbsp;W.&nbsp;Mahmud, Yahya&nbsp;Alavirad, I.&nbsp;B.&nbsp;Spielman, Jay&nbsp;D.&nbsp;Sau, arxiv:1711.05794
 
-* [Fast preparation of critical ground states using superluminal fronts](https://arxiv.org/abs/1710.09840), Kartiek&nbsp;Agarwal, R.&nbsp;N.&nbsp;Bhatt, S.&nbsp;L.&nbsp;Sondhi, arxiv:1710.09840
+* [Fast preparation of critical ground states using superluminal fronts](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.210604), Kartiek&nbsp;Agarwal, R.&nbsp;N.&nbsp;Bhatt, S.&nbsp;L.&nbsp;Sondhi, PhysRev[Lett,120,210604] [arxiv:1710.09840]
 
-* [Exploring one particle orbitals in large Many-Body Localized systems](https://arxiv.org/abs/1710.05036), Benjamin&nbsp;Villalonga, Xiongjie&nbsp;Yu, David&nbsp;J.&nbsp;Luitz, Bryan&nbsp;K.&nbsp;Clark, arxiv:1710.05036
+* [Exploring one particle orbitals in large Many-Body Localized systems](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.97.104406), Benjamin&nbsp;Villalonga, Xiongjie&nbsp;Yu, David&nbsp;J.&nbsp;Luitz, Bryan&nbsp;K.&nbsp;Clark, PhysRev[B,97,104406] [arxiv:1710.05036]
 
 * [Doped Kondo chain - a heavy Luttinger liquid](https://arxiv.org/abs/1710.04847), Ilia&nbsp;Khait, Patrick&nbsp;Azaria, Claudius&nbsp;Hubig, Ulrich&nbsp;Schollwöck, Assa&nbsp;Auerbach, arxiv:1710.04847
 
