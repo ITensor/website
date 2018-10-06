@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Frustrated plane-polarized dipoles in one dimension](https://arxiv.org/abs/1810.00646), Niraj R. Ghimire, Susanne F. Yelin, arxiv:1810.00646
+
 * [Cavity-induced superconducting and 4kF charge-density-wave states](https://arxiv.org/abs/1809.09884), Ameneh Sheikhan, Corinna Kollath, arxiv:1809.09884
 
 * [Evolution of two-time correlations in dissipative quantum spin systems: aging and hierarchical dynamics](https://arxiv.org/abs/1809.10464), Stefan Wolff, Jean-Sebastien Bernier, Dario Poletti, Ameneh Sheikhan, Corinna Kollath, arxiv:1809.10464
