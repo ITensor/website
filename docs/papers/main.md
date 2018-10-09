@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Exotic criticality in the dimerized spin-1 XXZ chain with single-ion anisotropy](https://arxiv.org/abs/1810.02195), Satoshi Ejima, Tomoki Yamaguchi, Fabian H. L. Essler, Florian Lange, Yukinori Ohta, Holger Fehske, arxiv:1810.02195
+
 * [Frustrated plane-polarized dipoles in one dimension](https://arxiv.org/abs/1810.00646), Niraj R. Ghimire, Susanne F. Yelin, arxiv:1810.00646
 
 * [Cavity-induced superconducting and 4kF charge-density-wave states](https://arxiv.org/abs/1809.09884), Ameneh Sheikhan, Corinna Kollath, arxiv:1809.09884
