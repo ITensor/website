@@ -106,20 +106,33 @@
 
 ## Applying MPO to MPS
 
-* `exactApplyMPO(MPO K, MPS psi, Args args = Args::global()) -> MPS` <br/>
-  `exactApplyMPO(IQMPO K, IQMPS psi, Args args = Args::global()) -> IQMPS`
+* `applyMPO(MPO K, MPS psi, Args args = Args::global()) -> MPS` <br/>
+  `applyMPO(IQMPO K, IQMPS psi, Args args = Args::global()) -> IQMPS`
 
-  Apply an MPO K to an MPS psi, resulting in the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@. <br/>
-  The resulting MPS is returned.
+  Apply an MPO K to an MPS psi, resulting in an approximation to the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@. <br/>
+  The resulting MPS is returned. The algorithm used is chosen with the parameter "Method" in the named arguments `args`.
 
-  The algorithm used is the <a href="https://tensornetwork.org/mps/algorithms/denmat_mpo_mps">"density matrix" algorithm</a>.
-  If input MPS has typical bond dimension @@m@@ and MPO has typical bond dimension @@k@@,
+  The default algorithm used is the <a href="https://tensornetwork.org/mps/algorithms/denmat_mpo_mps">"density matrix" algorithm</a>,
+  chosen by setting the parameter "Method" to "DensityMatrix".
+  If the input MPS has a typical bond dimension of @@m@@ and the MPO has typical bond dimension @@k@@,
   this algorithm scales as @@m^3 k^2 + m^2 k^3@@.
 
   No approximation is made when applying the MPO, but after applying it the resulting
   MPS is compressed using the truncation parameters provided in the named arguments `args`.
 
+  An alternative algorithm can be chosen by setting the parameter "Method" to "Fit". This is a sweeping algorithm that iteratively
+  optimizes the resulting MPS @@|\phi\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond dimension @@k@@ 
+  compared to the "DensityMatrix" method, but is not guaranteed to converge (depending on the input MPO and MPS). 
+  The number of sweeps can be chosen with the parameter "Sweeps" and whether or not the resulting MPS is normalized can be set with the 
+  parameter "Normalize".
+
+  It is recommended to try the default "DensityMatrix" first because it is more reliable. Then, the "Fit" method can be tried if 
+  higher performance is required.
+
   Named arguments recognized:
+
+  * `"Method"` &mdash; (default: "DensityMatrix") algorithm used for applying the MPO to the MPS. Currently available options are "DensityMatrix"
+                        and "Fit"
 
   * `"Cutoff"` &mdash; (default: 1E-13) truncation error cutoff for compressing resulting MPS
 
@@ -127,12 +140,33 @@
 
   * `"Verbose"` &mdash; (default: false) if true, prints extra output
   
+  * `"Sweeps"` &mdash; (default: 1) sets the number of sweeps of the "Fit" algorithm
+
+  * `"Normalize"` &mdash; (default: true) choose whether to normalize the output wavefunction, only used by the method "Fit"
+
+  <div class="example_clicker">Show Example</div>
+
+      //Use the method "DensityMatrix"
+      auto phi = applyMPO(K,psi,{"Method=","DensityMatrix","Maxm=",100,"Cutoff=",1E-8});
+
+      //Use the method "Fit" with 5 sweeps
+      auto phi2 = applyMPO(K,psi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Sweeps=",5,"Normalize=",false});
+
+
 * `checkMPOProd(MPS psi2, MPO K, MPS psi1) -> Real` <br/>
   `checkMPOProd(IQMPS psi2, IQMPO K, IQMPS psi1) -> Real`
 
   Computes, without approximation, the difference @@||\, |\psi\_2\rangle - K |\psi\_1\rangle ||^2@@,
   where K is an arbitrary MPO.
   This is especially useful for testing methods for applying an MPO to an MPS.
+
+  <div class="example_clicker">Show Example</div>
+
+      //Approximate K*psi
+      auto phi = applyMPO(K,psi,{"Maxm=",200,"Cutoff=",1E-12});
+
+      //Check 
+      Print(checkMPOProd(phi,K,psi)); //should be close to zero
 
 <!--
 
