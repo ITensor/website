@@ -113,9 +113,9 @@
 
 * [A DMRG study: Pair-density wave in spin-valley locked systems](https://arxiv.org/abs/1709.10058), Jordan&nbsp;Venderley, Eun-Ah&nbsp;Kim, arxiv:1709.10058
 
-* [Twofold twist defect chains at criticality](https://arxiv.org/abs/1709.05560), Xiongjie&nbsp;Yu, Xiao&nbsp;Chen, Abhishek&nbsp;Roy, Jeffrey&nbsp;C.&nbsp;Y.&nbsp;Teo, arxiv:1709.05560
+* [Twofold twist defect chains at criticality](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.205435), Xiongjie&nbsp;Yu, Xiao&nbsp;Chen, Abhishek&nbsp;Roy, Jeffrey&nbsp;C.&nbsp;Y.&nbsp;Teo, PhysRev[B,96,205435] [arxiv:1709.05560]
 
-* [Rényi Entropies from Random Quenches in Atomic Hubbard and Spin Models](https://arxiv.org/abs/1709.05060), Andreas&nbsp;Elben, Benoît&nbsp;Vermersch, Marcello&nbsp;Dalmonte, J.&nbsp;Ignacio&nbsp;Cirac, Peter&nbsp;Zoller, arxiv:1709.05060
+* [Rényi Entropies from Random Quenches in Atomic Hubbard and Spin Models](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.050406), Andreas&nbsp;Elben, Benoît&nbsp;Vermersch, Marcello&nbsp;Dalmonte, J.&nbsp;Ignacio&nbsp;Cirac, Peter&nbsp;Zoller, PhysRev[Lett,120,050406] [arxiv:1709.05060]
 
 * [Chemical accuracy from small, system-adapted basis functions](https://arxiv.org/abs/1709.03460), Thomas&nbsp;E.&nbsp;Baker, Kieron&nbsp;Burke, Steven&nbsp;R.&nbsp;White, arxiv:1709.03460
 

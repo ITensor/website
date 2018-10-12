@@ -133,8 +133,9 @@
 
   Named arguments recognized:
 
-  * `"Method"` &mdash; (default: "DensityMatrix") algorithm used for applying the MPO to the MPS. 
-                        Currently available options are "DensityMatrix" and "Fit"
+  * `"Method"` &mdash; (default: "DensityMatrix") algorithm used for applying the MPO to the MPS. Currently available options are 
+    - "DensityMatrix" 
+    - "Fit"
 
   * `"Cutoff"` &mdash; (default: 1E-13) truncation error cutoff for compressing resulting MPS
 
