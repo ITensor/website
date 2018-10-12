@@ -109,30 +109,32 @@
 * `applyMPO(MPO K, MPS psi, Args args = Args::global()) -> MPS` <br/>
   `applyMPO(IQMPO K, IQMPS psi, Args args = Args::global()) -> IQMPS`
 
-  Apply an MPO K to an MPS psi, resulting in an approximation to the MPS phi:  @@|\phi\rangle = K |\psi\rangle@@. <br/>
-  The resulting MPS is returned. The algorithm used is chosen with the parameter "Method" in the named arguments `args`.
+  Apply an MPO K to an MPS psi, resulting in an approximation to the MPS phi:  
+  @@|\phi\rangle = K |\psi\rangle@@. <br/>
+  The resulting MPS is returned. The algorithm used is chosen with the parameter "Method" 
+  in the named arguments `args`.
 
   The default algorithm used is the <a href="https://tensornetwork.org/mps/algorithms/denmat_mpo_mps">"density matrix" algorithm</a>,
   chosen by setting the parameter "Method" to "DensityMatrix".
-  If the input MPS has a typical bond dimension of @@m@@ and the MPO has typical bond dimension @@k@@,
-  this algorithm scales as @@m^3 k^2 + m^2 k^3@@.
+  If the input MPS has a typical bond dimension of @@m@@ and the MPO has typical bond 
+  dimension @@k@@, this algorithm scales as @@m^3 k^2 + m^2 k^3@@.
 
   No approximation is made when applying the MPO, but after applying it the resulting
   MPS is compressed using the truncation parameters provided in the named arguments `args`.
 
-  An alternative algorithm can be chosen by setting the parameter "Method" to "Fit". This is a sweeping algorithm that iteratively
-  optimizes the resulting MPS @@|\phi\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond dimension @@k@@ 
-  compared to the "DensityMatrix" method, but is not guaranteed to converge (depending on the input MPO and MPS). 
-  The number of sweeps can be chosen with the parameter "Sweeps" and whether or not the resulting MPS is normalized can be set with the 
-  parameter "Normalize".
+  An alternative algorithm can be chosen by setting the parameter "Method" to "Fit". 
+  This is a sweeping algorithm that iteratively optimizes the resulting MPS 
+  @@|\phi\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond 
+  dimension @@k@@ compared to the "DensityMatrix" method, but is not guaranteed to converge 
+  (depending on the input MPO and MPS). The number of sweeps can be chosen with the parameter "Sweeps".
 
-  It is recommended to try the default "DensityMatrix" first because it is more reliable. Then, the "Fit" method can be tried if 
-  higher performance is required.
+  It is recommended to try the default "DensityMatrix" first because it is more reliable. 
+  Then, the "Fit" method can be tried if higher performance is required.
 
   Named arguments recognized:
 
-  * `"Method"` &mdash; (default: "DensityMatrix") algorithm used for applying the MPO to the MPS. Currently available options are "DensityMatrix"
-                        and "Fit"
+  * `"Method"` &mdash; (default: "DensityMatrix") algorithm used for applying the MPO to the MPS. 
+                        Currently available options are "DensityMatrix" and "Fit"
 
   * `"Cutoff"` &mdash; (default: 1E-13) truncation error cutoff for compressing resulting MPS
 
@@ -140,9 +142,9 @@
 
   * `"Verbose"` &mdash; (default: false) if true, prints extra output
   
-  * `"Sweeps"` &mdash; (default: 1) sets the number of sweeps of the "Fit" algorithm
+  * `"Normalize"` &mdash; (default: false) choose whether or not to normalize the output wavefunction
 
-  * `"Normalize"` &mdash; (default: true) choose whether to normalize the output wavefunction, only used by the method "Fit"
+  * `"Sweeps"` &mdash; (default: 1) sets the number of sweeps of the "Fit" algorithm
 
   <div class="example_clicker">Show Example</div>
 
@@ -150,8 +152,21 @@
       auto phi = applyMPO(K,psi,{"Method=","DensityMatrix","Maxm=",100,"Cutoff=",1E-8});
 
       //Use the method "Fit" with 5 sweeps
-      auto phi2 = applyMPO(K,psi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Sweeps=",5,"Normalize=",false});
+      auto phi2 = applyMPO(K,psi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Sweeps=",5});
 
+* `applyMPO(MPO K, MPS psi, MPS phi, Args args = Args::global()) -> MPS` <br/>
+  `applyMPO(IQMPO K, IQMPS psi, IQMPS phi, Args args = Args::global()) -> IQMPS`
+
+  Similar to `applyMPO` above, but accepts a guess for the output wavefunction (the guess wavefunction `phi` 
+  is not overwritten).
+
+  Currently, this version of `applyMPO` only accepts "Fit" for the parameter "Method". Choosing a good guess 
+  state `phi` can improve the convergence of the "Fit" method.
+
+  <div class="example_clicker">Show Example</div>
+
+      //Use the method "Fit" with 5 sweeps and a guess state phi
+      auto Kpsi = applyMPO(K,psi,phi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Sweeps=",2});
 
 * `checkMPOProd(MPS psi2, MPO K, MPS psi1) -> Real` <br/>
   `checkMPOProd(IQMPS psi2, IQMPO K, IQMPS psi1) -> Real`
