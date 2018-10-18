@@ -26,7 +26,7 @@ see the [[ITensor|classes/itensor]] documentation.
 Functions acting on ITensors which are not discussed below can 
 be assumed to have the same behavior for IQTensors.
 
-IQTensor is defined in "itensor/iqtensor.h"; also see "itensor/iqtensor.ih". The 
+IQTensor is defined in "itensor/iqtensor.h"; also see "itensor/iqtensor_impl.h". The 
 IQTensor interface is defined in "itensor/itensor_interface.h".
 
 
@@ -91,11 +91,11 @@ defined for IQTensors:
 * `IQTensor -> ITensor` <br/>
   `toITensor(IQTensor T) -> ITensor`
 
-  Automatically conversion an IQTensor to an ITensor: an IQTensor
+  Automatically convert an IQTensor to an ITensor: any IQTensor
   may be converted to an ITensor. 
   * Each Index of the resulting ITensor
     is the result of casting each IQTensor to its parent type, Index.
-  * The tensor elements remain unchanged except that it becomes dense.
+  * The tensor elements remain unchanged except that the tensor becomes dense.
     Blocks of the IQTensor previously required to be zero are now
     allocated in memory and can be set to non-zero values.
 

@@ -19,7 +19,7 @@ functions:
 
 
 The functions `delta` and `diagTensor` are defined in "itensor/itensor.h"; also
-see "itensor/itensor.ih".
+see "itensor/itensor_impl.h".
 
 ## Synopsis
 

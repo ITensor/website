@@ -5,7 +5,7 @@ It has exactly one non-zero element, which can be any element.
 
 (Currently this type of ITensor uses dense storage but this is subject to change in the future.)
 
-`setElt` is defined in "itensor/itensor_interface.h" and "itensor/itensor_interface.ih".
+`setElt` is defined in "itensor/itensor_interface.h" and "itensor/itensor_interface_impl.h".
 
 ## Synopsis
 
