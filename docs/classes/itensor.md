@@ -6,15 +6,15 @@ The key feature of the ITensor is automatic contraction over all matching indice
 similar to Einstein summation.
 
 An ITensor is created with a fixed number of Index objects specifying its indices. 
-Because Index objects carry identifying information, nothing about the 
-ITensor interface depends on the Index order. For example, 
+Because Index objects carry identifying information, most of the 
+ITensor interface does not depend on the Index order. For example, 
 given an ITensor constructed with indices `a` and `b`, 
 calling `T.real(a(2),b(5))` and `T.real(b(5),a(2))` accesses the same tensor element.
 
 In addition to the default dense real storage, ITensors can have other storage types
 such as complex storage or various sparse storage types.
 
-The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itensor/itensor_interface.h" and "itensor/itensor_interface.ih".
+The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itensor/itensor_interface.h" and "itensor/itensor_interface_impl.h".
 
 ## Synopsis ##
 
@@ -159,6 +159,24 @@ The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itens
       //Get one of its elements
       auto rt = T.real(j(2),k(1),i(4));
 
+* `.real(int i1, int i2, ...) -> Real`
+
+  Shorthand notation for `.real` above when the ordering of the indices of the ITensor are known.
+  For example, for ITensor T with indices ordered as j,i,k, `T.real(1,2,4)` is equivalent to
+  `T.real(j(1),i(2),k(4))`.
+
+  Note that the ordering of the indices of an ITensor can be set using the `order` function
+  described below.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      //Make a random rank 3 ITensor
+      auto T = ITensor(i,j,k);
+      randomize(T);
+      //Order the indices
+      T = order(T,k,i,j);
+      //Get one of its elements
+      auto rt = T.real(2,1,4); //Equivalent to T.real(k(2),i(1),j(4))
 
 * `.cplx(IndexVal iv1, IndexVal iv2, ...) -> Cplx`
 
@@ -173,6 +191,15 @@ The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itens
       auto S = ITensor(2.7-4_i);
       //Access its value as a complex number
       auto zs = S.cplx();
+
+* `.cplx(int i1, int i2, ...) -> Cplx`
+
+  Shorthand notation for `.cplx` above when the ordering of the indices of the ITensor are known.
+  For example, for ITensor T with indices ordered as j,i,k, `T.cplx(1,2,4)` is equivalent to
+  `T.cplx(j(1),i(2),k(4))`.
+
+  Note that the ordering of the indices of an ITensor can be set using the `order` function
+  described below.
 
 * `.set(IndexVal iv1, IndexVal iv2, ... , Cplx z)`
 
@@ -193,6 +220,25 @@ The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itens
 
       //Set an element to a complex number
       T.set(k(4),j(1),i(2),3.2-4.7_i);
+
+* `.set(int i1, int i2, ... , Cplx z)`
+
+  Shorthand notation for `.set` above when the ordering of the indices of the ITensor are known.
+  For example, for ITensor T with indices ordered as j,i,k, `T.set(1,2,4,3.2)` is equivalent to 
+  `T.set(j(1),i(2),k(4),3.2)`.
+
+  Note that the ordering of the indices of an ITensor can be set using the `order` function 
+  described below.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      //Make a rank 3 ITensor
+      auto T = ITensor(i,j,k);
+
+      T = order(T,j,i,k);
+      //Set an element to a real number
+      T.set(1,2,3,-1.24); 
+      Print(T.real(j(1),i(2),k(3)) == -1.24); //prints "true"
 
 <a name="primelev_methods"></a>
 ## Prime Level Methods
@@ -636,35 +682,21 @@ and that the result will be an ITensor.
   Works similarly to the `.apply` method discussed above but creates a new 
   ITensor instead of modifying an ITensor in-place.
 
-* `ordered(ITensor T, Index i1, Index i2, ...) -> TensorRef1` <br/>
-  `orderedC(ITensor T, Index i1, Index i2, ...) -> CTensorRef1`
+* `order(ITensor T, Index i1, Index i2, ...) -> ITensor` <br/>
 
   Given an ITensor T and a list of all of its indices in a particular order,
-  return a TensorRef1 with the same index order. This TensorRef1 points to
-  the data of the provided ITensor, such that changing one of its elements
-  changes the corresponding element of the ITensor.
-
-  `ordered` can only be used for real ITensors; using it
-  on a complex ITensor throws an exception.
-
-  `orderedC` can be used on either real of complex ITensors,
-  but if the ITensor's storage is real it will 
-  immediately be converted to complex.
-
-  Warning: a TensorRef behaves similar to a regular C++ pointer in that it
-  is a non-owning "view" of the data it points to. If the original ITensor
-  goes out of scope, the TensorRef will be invalid and accessing it in this
-  state will cause memory corruption.
+  return an ITensor with indices in that order.
+  The data of the output ITensor is the appropriate permutation of the data 
+  of the ITensor T.
 
   <div class="example_clicker">Click to Show Example</div>
 
       auto T = ITensor(i,j,k);
+      randomize(T);
 
-      auto t = ordered(T,j,i,k);
+      T = order(T,j,i,k);
 
-      t(1,2,3) = 123;
-      
-      Print(T.real(j(1),i(2),k(3))); //prints: 123
+      Print(T.real(1,2,4) == T.real(j(1),i(2),k(4))); //prints "true"
 
 * `random(ITensor T, Args args = Args::global()) -> ITensor`
 
