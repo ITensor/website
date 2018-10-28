@@ -8,6 +8,11 @@
 * [](), , arxiv:
 -->
 
+* [Model of spin liquids with and without time-reversal symmetry](https://arxiv.org/abs/1810.09858), Jyong-Hao Chen, Christopher Mudry, Claudio Chamon, A. M. Tsvelik, arxiv:1810.09858
+
+* [Algebraic Localization from Power-Law Interactions in Disordered Quantum Wires
+](https://arxiv.org/abs/1810.09779), Thomas Botzung, Davide Vodola, Piero Naldesi, Markus Müller, Elisa Ercolessi, Guido Pupillo, arxiv:1810.09779
+
 * [Exotic criticality in the dimerized spin-1 XXZ chain with single-ion anisotropy](https://arxiv.org/abs/1810.02195), Satoshi Ejima, Tomoki Yamaguchi, Fabian H. L. Essler, Florian Lange, Yukinori Ohta, Holger Fehske, arxiv:1810.02195
 
 * [Frustrated plane-polarized dipoles in one dimension](https://arxiv.org/abs/1810.00646), Niraj R. Ghimire, Susanne F. Yelin, arxiv:1810.00646
