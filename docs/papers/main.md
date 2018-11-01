@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Out-of-equilibrium transport in the interacting resonant level model and comparison with the boundary sine-Gordon model](https://arxiv.org/abs/1810.11058), Kemal Bidzhiev, Grégoire Misguich, Hubert Saleur, arxiv:1810.11058
+
 * [Reconstructing quantum states with generative models](https://arxiv.org/abs/1810.10584), Juan Carrasquilla, Giacomo Torlai, Roger G. Melko, Leandro Aolita, arxiv:1810.10584
 
 * [Model of spin liquids with and without time-reversal symmetry](https://arxiv.org/abs/1810.09858), Jyong-Hao Chen, Christopher Mudry, Claudio Chamon, A. M. Tsvelik, arxiv:1810.09858
