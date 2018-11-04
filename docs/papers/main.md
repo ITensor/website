@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Driving XXZ spin chains: magnetic-field and boundary effects](https://arxiv.org/abs/1810.11807), Florian Lange, Satoshi Ejima, Holger Fehske, arxiv:1810.11807
+
 * [Out-of-equilibrium transport in the interacting resonant level model and comparison with the boundary sine-Gordon model](https://arxiv.org/abs/1810.11058), Kemal Bidzhiev, Grégoire Misguich, Hubert Saleur, arxiv:1810.11058
 
 * [Reconstructing quantum states with generative models](https://arxiv.org/abs/1810.10584), Juan Carrasquilla, Giacomo Torlai, Roger G. Melko, Leandro Aolita, arxiv:1810.10584
