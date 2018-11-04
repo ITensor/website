@@ -592,7 +592,7 @@ and that the result will be an ITensor.
   `read(s,T)` or `write(s,T)`.
 
 * Printing an ITensor shows its indices and some other
-  information such as its scale factor.
+  information such as its norm.
 
   To view all non-zero elements of an ITensor `T`,
   do one of the following:
@@ -605,14 +605,6 @@ and that the result will be an ITensor.
   does not display ITensor elements, whereas the `%f` token
   shows all non-zero elements.
   
-<a name"scale_fac"></a>
-* An ITensor carries a scale factor, which is a real number
-  of type `LogNum`. This scale factor introduces various
-  efficiencies and makes ITensors more robust to roundoff errors.
-  However, the scale factor is intended as an internal feature
-  for use in developer-level code and does not need to be accessed users.
-
-
 ## Functions for Creating ITensors
 
 * `randomTensor(Index i1, Index i2, ...)` <br/>
@@ -869,6 +861,25 @@ for details about the possible arguments to these functions.
 
       Print(u == i); //prints "true"
 
+* `uniqueIndex(ITensor A, ITensor B, ITensor C, ...) -> Index`
+
+  Return the first Index of A found NOT to be on the
+  ITensors B, C, ... (up to any number of additional tensors provided).
+
+  If all of A's indices are also present on the other
+  ITensors provided, this function returns a default constructed Index
+  (which will evaluate to `false` in a boolean context).
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto A = ITensor(i,j,k,l);
+      auto B = ITensor(k,j);
+      auto C = ITensor(l);
+
+      auto u = uniqueIndex(A,B,C);
+
+      Print(u == i); //prints "true"
+
 * `findindex(ITensor T, Cond c) -> Index`
 
   Return the first Index of T for which the condition function `c(i)` returns `true`.
@@ -959,6 +970,8 @@ for details about the possible arguments to these functions.
 
 ## Advanced / Developer Methods
 
+<!--
+
 * `.scaleTo(Real newscale)` <br/>
   `.scaleTo(LogNum newscale)`
 
@@ -970,6 +983,8 @@ for details about the possible arguments to these functions.
 * `.scale() -> LogNum&` 
 
   Directly access the scale factor.
+
+-->
 
 * `.store() -> storage_ptr&`
 
@@ -990,4 +1005,4 @@ for details about the possible arguments to these functions.
 
 
 <br/>
-_This page current as of version 2.0.6_
+_This page current as of version 2.1.1_
