@@ -22,11 +22,6 @@ Formulas about working with ITensors, Index, etc.
 * [[Exactly Compute the Ground State of a Small Hamiltonian|formulas/simple_ed]]
 * [[Replace an ITensor Index with Another Index|formulas/itensor_replace_index]]
 
-## IQTensor Formulas
-Formulas involving quantum number tensors and indices (objects such as IQIndex, IQTensor).
-
-(None yet - please suggest one!)
-
 ## MPS and DMRG Formulas
 Formulas involving matrix product states and DMRG.
 
