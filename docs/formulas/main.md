@@ -38,6 +38,7 @@ Formulas involving matrix product states and DMRG.
     - [[Measure two-point correlator from an MPS wavefunction|formulas/correlator_mps]]
     - [[Compute entanglement entropy|formulas/entanglement_mps]]
     - [[Measure spinless fermion two-point correlator|formulas/spinless_correlator_mps]]
+    - [[Compute a two-site reduced density matrix from an MPS|formulas/mps_two_rdm]]
 
 * <h3>Time Evolution</h3>
     - [[Time-evolving an MPS with Trotter Gates|formulas/tevol_trotter]]
