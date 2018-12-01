@@ -43,3 +43,6 @@ Formulas involving matrix product states and DMRG.
 * <h3>Time Evolution</h3>
     - [[Time-evolving an MPS with Trotter Gates|formulas/tevol_trotter]]
     - [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
+
+* <h3>Other</h3>
+    - [[Applying a two-site 'gate' to an MPS|formulas/gate]]
