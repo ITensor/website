@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Cavity-induced spin-orbit coupling in an interacting bosonic wire](https://arxiv.org/abs/1811.11045), Catalin-Mihai Halati, Ameneh Sheikhan, Corinna Kollath, arxiv:1811.11045
+
 * [Quantum purification spectroscopy](https://journals.aps.org/pra/pdf/10.1103/PhysRevA.98.050103), Bradraj Pandey, Kirill Plekhanov, and Guillaume Roux, PhysRev[A,98,050103]
 
 * [Pair Density Wave in the doped t-J model with ring exchange on a triangular lattice](https://arxiv.org/abs/1811.06538), Xiao Yan Xu, K. T. Law, Patrick A. Lee, arxiv:1811.06538
