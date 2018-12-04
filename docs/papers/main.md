@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Statistics-tuned phases of pseudofermions in one dimension](https://arxiv.org/abs/1811.11776), Adhip Agarwala, Gaurav Kumar Gupta, Vijay B. Shenoy, Subhro Bhattacharjee, arxiv:1811.11776
+
 * [Cavity-induced spin-orbit coupling in an interacting bosonic wire](https://arxiv.org/abs/1811.11045), Catalin-Mihai Halati, Ameneh Sheikhan, Corinna Kollath, arxiv:1811.11045
 
 * [Quantum purification spectroscopy](https://journals.aps.org/pra/pdf/10.1103/PhysRevA.98.050103), Bradraj Pandey, Kirill Plekhanov, and Guillaume Roux, PhysRev[A,98,050103]
