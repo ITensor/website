@@ -8,6 +8,10 @@
 * [](), , arxiv:
 -->
 
+* [Non-local String Order Parameter in the S=1/2 Kitaev-Heisenberg Ladder](https://arxiv.org/abs/1812.04003), Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1812.04003
+
+* [Quantum phase transitions in the dimerized extended Bose-Hubbard model](https://arxiv.org/abs/1812.03489), Koudai Sugimoto, Satoshi Ejima, Florian Lange, Holger Fehske, arxiv:1812.03489
+
 * [Statistics-tuned phases of pseudofermions in one dimension](https://arxiv.org/abs/1811.11776), Adhip Agarwala, Gaurav Kumar Gupta, Vijay B. Shenoy, Subhro Bhattacharjee, arxiv:1811.11776
 
 * [Cavity-induced spin-orbit coupling in an interacting bosonic wire](https://arxiv.org/abs/1811.11045), Catalin-Mihai Halati, Ameneh Sheikhan, Corinna Kollath, arxiv:1811.11045
