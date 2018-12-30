@@ -8,6 +8,8 @@
 * [](), , arxiv:
 -->
 
+* [Quantum Scrambling and State Dependence of the Butterfly Velocity](https://arxiv.org/abs/1812.07598), Xizhi Han, Sean A. Hartnoll, arxiv:1812.07598
+
 * [Non-local String Order Parameter in the S=1/2 Kitaev-Heisenberg Ladder](https://arxiv.org/abs/1812.04003), Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1812.04003
 
 * [Quantum phase transitions in the dimerized extended Bose-Hubbard model](https://arxiv.org/abs/1812.03489), Koudai Sugimoto, Satoshi Ejima, Florian Lange, Holger Fehske, arxiv:1812.03489
