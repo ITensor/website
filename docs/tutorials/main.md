@@ -2,11 +2,15 @@
 # <img src="docs/tutorials/icon.png" class="largeicon"> Tutorials
 
 
-### Learn By Example
+### Basics of ITensor
 
-* [[ITensor Basics Quick Start|tutorials/quickstart]]
+* [[ITensor Quick Start|tutorials/quickstart]]
 
   Simplest non-trivial program (similar to "hello world") based on the ITensor library.
+
+* [[Citing the ITensor Library|tutorials/citing]]
+
+  How to cite the ITensor Library in a paper or published work.
 
 ### Tensor Network Fundamentals
 
