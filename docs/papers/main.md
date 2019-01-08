@@ -8,6 +8,9 @@
 * [](), , arxiv:
 -->
 
+* [Fermionic Moore–Read Fractional Chern Insulator in the Thin-Torus Limit](http://przyrbwn.icm.edu.pl/APP/PDF/134/app134z4p01.pdf), B. Jaworowski, P. Kaczmarkiewicz, A. Wójs, 
+<i style="color:#CC0000">Acta Physica Polonica A</i> <b>134</b>, <a href="http://przyrbwn.icm.edu.pl/APP/PDF/134/app134z4p01.pdf">919</a> (2018)
+
 * [Quantum Scrambling and State Dependence of the Butterfly Velocity](https://arxiv.org/abs/1812.07598), Xizhi Han, Sean A. Hartnoll, arxiv:1812.07598
 
 * [Non-local String Order Parameter in the S=1/2 Kitaev-Heisenberg Ladder](https://arxiv.org/abs/1812.04003), Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1812.04003
