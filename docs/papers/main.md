@@ -2,11 +2,16 @@
 
 <i style="font-size:90%; color:#999999">Please send any papers not listed here to miles.stoud -at- gmail.com</i>
 
-## 2018
-
 <!--
 * [](), , arxiv:
 -->
+ 
+## 2019
+
+* [Finite Size Scaling at the Topological Transition: Bilinear-Biquadratic Spin-1 Chain](https://arxiv.org/abs/1901.02107), Yuting Wang, Alex Kamenev, arxiv:1901.02107
+
+## 2018
+
 
 * [Fermionic Moore–Read Fractional Chern Insulator in the Thin-Torus Limit](http://przyrbwn.icm.edu.pl/APP/PDF/134/app134z4p01.pdf), B. Jaworowski, P. Kaczmarkiewicz, A. Wójs, 
 <i style="color:#CC0000">Acta Physica Polonica A</i> <b>134</b>, <a href="http://przyrbwn.icm.edu.pl/APP/PDF/134/app134z4p01.pdf">919</a> (2018)
