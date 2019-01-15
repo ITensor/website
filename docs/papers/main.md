@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Free fermions at the edge of interacting systems](https://arxiv.org/abs/1901.02770), Jean-Marie Stéphan, arxiv:1901.02770
+
 * [Finite Size Scaling at the Topological Transition: Bilinear-Biquadratic Spin-1 Chain](https://arxiv.org/abs/1901.02107), Yuting Wang, Alex Kamenev, arxiv:1901.02107
 
 ## 2018
