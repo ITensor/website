@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Valence bond fluctuations in the Kitaev spin model](https://arxiv.org/abs/1901.03973), Fan Yang, Kirill Plekhanov, Karyn Le Hur, arxiv:1901.03973
+
 * [Free fermions at the edge of interacting systems](https://arxiv.org/abs/1901.02770), Jean-Marie Stéphan, arxiv:1901.02770
 
 * [Finite Size Scaling at the Topological Transition: Bilinear-Biquadratic Spin-1 Chain](https://arxiv.org/abs/1901.02107), Yuting Wang, Alex Kamenev, arxiv:1901.02107
