@@ -8,7 +8,9 @@
  
 ## 2019
 
+<!--
 * [SU(4) Topological RVB Spin Liquid on the Square Lattice](https://arxiv.org/abs/1901.05905), O. Gauthe, S. Capponi, D. Poilblanc, arxiv:1901.05905
+-->
 
 * [Valence bond fluctuations in the Kitaev spin model](https://arxiv.org/abs/1901.03973), Fan Yang, Kirill Plekhanov, Karyn Le Hur, arxiv:1901.03973
 
