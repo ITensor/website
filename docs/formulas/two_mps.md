@@ -10,7 +10,7 @@ local operators @@O_i@@ and @@O_j@@. We can do this as follows:
     auto op_i = sites.op("Sz",i);
     auto op_j = sites.op("Sz",j);
 
-    auto M = psi.A(1)*dag(prime(phi.A(1),"Link"));
+    auto M = psi.A(1)*dag(prime(phi.A(1),Link));
     for(auto n : range1(2,N))
         {
         M *= psi.A(n);
@@ -24,7 +24,7 @@ local operators @@O_i@@ and @@O_j@@. We can do this as follows:
             }
         else
             {
-            M *= dag(prime(phi.A(n),"Link"));
+            M *= dag(prime(phi.A(n),Link));
             }
         }
     auto result = M.real();
