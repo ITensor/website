@@ -93,7 +93,7 @@ def includeFile(matchobj):
         return "&lt;File {} not found&gt;".format(fname)
     
 
-def convert(string):
+def convert(string,vers):
     #Convert SciPost[Vol,Issue,PageNum]tags
     string = re.sub(r"SciPost\[(\d+),(\d+),(\d+)\]",r"<i style='color:#CC0000'>SciPost Phys.</i>&nbsp;&nbsp;<b>\1</b> <a href='https://scipost.org/10.21468/SciPostPhys.\1.\2.\3'>\3</a>",string)
 
@@ -138,10 +138,10 @@ def convert(string):
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
-                mdstring += "<a href='%s?page=%s'>%s</a>"%(this_fname,link,name)
+                mdstring += "<a href='%s?page=%s&vers=%s'>%s</a>"%(this_fname,link,vers,name)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += "<a href='%s?page=%s'>%s</a>"%(this_fname,chunk,chunk)
+                mdstring += "<a href='%s?page=%s&vers=%s'>%s</a>"%(this_fname,chunk,vers,chunk)
 
     ##
     ## Mistune Markdown Renderer
@@ -175,9 +175,7 @@ def generate():
 
     bodyhtml = ""
     if mdfile:
-        bodyhtml = convert("".join(mdfile.readlines()))
-        bodyhtml += "version = "
-        bodyhtml += vers
+        bodyhtml = convert("".join(mdfile.readlines()),vers)
         mdfile.close()
     else:
         bodyhtml = "<p>(Documentation file not found)</p>"
@@ -189,13 +187,13 @@ def generate():
     # Create navigation line
     nav = ""
     for dirname in dirlist:
-        nav += "%s<a href=\"%s?page=%s\">%s</a>"%(nav_delimiter,this_fname,dirname,dirname)
+        nav += "%s<a href=\"%s?page=%s&vers=%s\">%s</a>"%(nav_delimiter,this_fname,dirname,vers,dirname)
 
     if page_name != "main":
         nav += nav_delimiter+page_name
 
     if not (len(dirlist) == 0 and page_name == "main"):
-        nav = "<a href=\"%s?page=main\">main</a>%s"%(this_fname,nav)
+        nav = "<a href=\"%s?page=main&vers=%s\">main</a>%s"%(this_fname,vers,nav)
 
     nav = "<span style='float:left;'>" + nav + "</span>"
 
@@ -205,9 +203,9 @@ def generate():
     for (v,vname) in versions.iteritems():
         if n > 0: vinfo += "&nbsp;|&nbsp;"
         if v == vers:
-            vinfo += "<b><u>%s</u></b>"%(vname)
+            vinfo += "<b>%s</b>"%(vname)
         else:
-            vinfo += "%s"%(vname)
+            vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page_name,v,vname)
         n += 1
     vinfo += "</span></br>"
 
@@ -231,13 +229,13 @@ def generate():
         iconfname = "docs/"+full_dirname+"/icon.png"
         iconimg = "<!-- " + iconfname + " -->"
         if fileExists(iconfname): iconimg = "<img src=\"%s\" class=\"icon\">"%(iconfname,)
-        backlinks.append( "<br/>%s<a href=\"%s?page=%s\">%s</a>"%(iconimg,this_fname,full_dirname,text) )
+        backlinks.append( "<br/>%s<a href=\"%s?page=%s&vers=%s\">%s</a>"%(iconimg,this_fname,full_dirname,vers,text) )
         full_dirname += "/"
     backlinks.reverse()
     for bl in backlinks: print bl
 
     if not (len(dirlist)==0 and page_name == "main"):
-        print "<br/><img src=\"docs/icon.png\" class=\"icon\"><a href=\"%s\">Back to Main</a>"%(this_fname)
+        print "<br/><img src=\"docs/icon.png\" class=\"icon\"><a href=\"%s?vers=%s\">Back to Main</a>"%(this_fname,vers)
 
     print "".join(footer_file.readlines())
     footer_file.close()
