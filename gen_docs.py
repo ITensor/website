@@ -103,6 +103,18 @@ def includeFile(matchobj):
         return "&lt;File {} not found&gt;".format(fname)
     
 
+def openMDFile(vdocpath,page):
+    mdfname = vdocpath + page + ".md"
+    mdfile = openFile(mdfname)
+
+    # "page.md" file doesn't exist, reinterpret "page" as a
+    # directory name and look for a main.md file there
+    if not mdfile:
+        mdfname = vdocpath + page + "/main.md"
+        mdfile = openFile(mdfname)
+
+    return mdfile
+
 def convert(string,vers):
     #Convert SciPost[Vol,Issue,PageNum]tags
     string = re.sub(r"SciPost\[(\d+),(\d+),(\d+)\]",r"<i style='color:#CC0000'>SciPost Phys.</i>&nbsp;&nbsp;<b>\1</b> <a href='https://scipost.org/10.21468/SciPostPhys.\1.\2.\3'>\3</a>",string)
@@ -186,15 +198,17 @@ def generate():
 
     vdocpath = reldocpath + "/" + vers + "/"
 
-    mdfname = vdocpath + page + ".md"
-    mdfile = openFile(mdfname)
+    mdfile = openMDFile(vdocpath,page)
 
-    # "page.md" file doesn't exist, reinterpret "page" as a
-    # directory name and look for a main.md file there
+    # If file or folder not found in given
+    # version, look in 'all' folder as a fallback
     if not mdfile:
-        mdfname = vdocpath + page + "/main.md"
-        mdfile = openFile(mdfname)
+        all_docpath = reldocpath + "/all/"
+        mdfile = openMDFile(all_docpath,page)
 
+    #
+    # Start generating the page
+    #
     printContentType(vers)
 
     bodyhtml = ""
