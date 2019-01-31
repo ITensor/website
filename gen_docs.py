@@ -15,11 +15,10 @@ from pygments.formatters import HtmlFormatter
 from functools import partial
 # Turn on cgitb to get nice debugging output.
 # Remember to turn off when done debugging, otherwise not secure.
-#import cgitb; cgitb.enable()
+import cgitb; cgitb.enable()
 
 #################################
 
-docpath = "/var/www/html/itensor/docs/"
 reldocpath = "docs/"
 prenav_header_fname = "docs_header_prenav.html"
 postnav_header_fname = "docs_header_postnav.html"
