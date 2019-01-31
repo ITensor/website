@@ -229,7 +229,7 @@ def generate():
         if v == vers:
             vinfo += "<span style='outline:solid 1px;font-weight:bold;'>%s</span>"%(vname)
         else:
-            vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page_name,v,vname)
+            vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page,v,vname)
         n += 1
     vinfo += "</span></br>"
 
