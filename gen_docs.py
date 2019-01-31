@@ -4,6 +4,9 @@
 import sys
 import re #regular expressions
 from cgi import FieldStorage
+import Cookie
+import datetime
+import os
 #import markdown2
 #import markdown
 
@@ -60,8 +63,15 @@ def openFile(fname):
     except IOError:
         return None
 
-def printContentType():
-    print "Content-Type: text/html\n\n"
+def printContentType(vers):
+    print "Content-Type: text/html"
+    #if vers != None:
+    expiration = datetime.datetime.now() + datetime.timedelta(days=30)
+    cookie = Cookie.SimpleCookie()
+    cookie["vers"] = vers
+    cookie["vers"]["expires"] = expiration.strftime("%a, %d-%b-%Y %H:%M:%S PST")
+    print cookie.output()
+    print "\n"
 
 def processMathJax(matchobj,delimit=""):
     if delimit=="@@":
@@ -161,7 +171,16 @@ def convert(string,vers):
 def generate():
     page = form.getvalue("page")
     vers = form.getvalue("vers")
-    if vers == None: vers = default_version
+
+    cookie_val = ""
+    try:
+        cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
+        cookie_val = cookie["vers"].value
+    except (Cookie.CookieError, KeyError): 
+        cookie_val = default_version
+
+    if vers == None: vers = cookie_val
+
 
     if page == None: page = "main"
 
@@ -176,7 +195,7 @@ def generate():
         mdfname = vdocpath + page + "/main.md"
         mdfile = openFile(mdfname)
 
-    printContentType()
+    printContentType(vers)
 
     bodyhtml = ""
     if mdfile:
