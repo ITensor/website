@@ -162,13 +162,15 @@ def generate():
 
     if page == None: page = "main"
 
-    mdfname = reldocpath + page + ".md"
+    vdocpath = reldocpath + "/" + vers + "/"
+
+    mdfname = vdocpath + page + ".md"
     mdfile = openFile(mdfname)
 
     # "page.md" file doesn't exist, reinterpret "page" as a
     # directory name and look for a main.md file there
     if not mdfile:
-        mdfname = reldocpath + page + "/main.md"
+        mdfname = vdocpath + page + "/main.md"
         mdfile = openFile(mdfname)
 
     printContentType()
