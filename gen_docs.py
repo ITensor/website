@@ -19,6 +19,11 @@ import cgitb; cgitb.enable()
 
 #################################
 
+versions = {"cppv2" : "C++v2", 
+            "cppv3" : "C++v3",
+            "julia" : "Julia"}
+default_version = "cppv2"
+
 reldocpath = "docs/"
 prenav_header_fname = "docs_header_prenav.html"
 postnav_header_fname = "docs_header_postnav.html"
@@ -91,14 +96,19 @@ def includeFile(matchobj):
 def convert(string):
     #Convert SciPost[Vol,Issue,PageNum]tags
     string = re.sub(r"SciPost\[(\d+),(\d+),(\d+)\]",r"<i style='color:#CC0000'>SciPost Phys.</i>&nbsp;&nbsp;<b>\1</b> <a href='https://scipost.org/10.21468/SciPostPhys.\1.\2.\3'>\3</a>",string)
+
     #Convert PhysRev[Letter,Vol,PageNum]tags
     string = re.sub(r"PhysRev\[(.+?),(\d+),(\d+)\]",r"<i style='color:#CC0000'>Phys.&nbsp;Rev.&nbsp;\1</i>&nbsp;&nbsp;<b>\2</b> <a href='https://doi.org/10.1103/PhysRev\1.\2.\3'>\3</a>",string)
+
     #Convert arxiv:####.#### links
     string = re.sub(r"arxiv:(\d\d\d\d\.\d+)",r"arxiv:<a target='_blank' href='http://arxiv.org/abs/\1'>\1</a>",string)
+
     #Convert cond-mat/####### links
     string = re.sub(r"cond-mat/(\d\d\d\d\d\d\d)",r"<a target='_blank' href='http://arxiv.org/abs/cond-mat/\1'>cond-mat/\1</a>",string)
+
     #Convert github:<sha> links
     string = re.sub(r"github:(\w{5})\w*",r"<a class='github' target='_blank' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
+
     #Convert #nn github issue links
     string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
     string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
@@ -133,49 +143,6 @@ def convert(string):
                 #Otherwise use the raw link name (file -> file.md)
                 mdstring += "<a href='%s?page=%s'>%s</a>"%(this_fname,chunk,chunk)
 
-    #Code below not needed: just indent 4 spaces and Markdown
-    #will apply the <pre> tag which preserves formatting.
-    #
-    #Format code blocks, preserving newlines and indentation
-    #slist = code_block_re.split(mdstring)
-    #mdstring = slist[0]
-    #for j in range(1,len(slist)):
-    #    chunk = slist[j]
-    #    last = False
-    #    if j == (len(slist)-1): last = True
-    #    if j%2 == 0: mdstring += chunk
-    #    else: 
-    #        #Convert whitespace to &nbsp; (html for non-breaking space)
-    #        #chunk = re.sub(r"[ \t]",r"&nbsp;",chunk)
-    #        #Convert < and > signs
-    #        #chunk = re.sub(r"<",r"&lt;",chunk)
-    #        #chunk = re.sub(r">",r"&gt;",chunk)
-    #        #Convert newlines to </br>
-    #        if not last:
-    #            chunk = re.sub(r"\n",r"</br>\n",chunk)
-    #
-    #        mdstring += "<code>\n"+chunk+"</code>\n"
-
-    #
-    # Markdown2 Renderer
-    #
-    #htmlstring = markdown2.markdown(mdstring)
-
-    ##
-    ## Standard Python Markdown Renderer
-    ##
-    #htmlstring = markdown.markdown(mdstring,
-    #             extensions=["markdown.extensions.codehilite",
-    #                         "markdown.extensions.fenced_code"],
-    #                         #"markdown.extensions.nl2br"],
-    #             extension_configs = 
-    #             {
-    #             "markdown.extensions.codehilite" :
-    #                 {
-    #                 "css_class" : "highlight"
-    #                 }
-    #             })
-
     ##
     ## Mistune Markdown Renderer
     ##
@@ -190,6 +157,8 @@ def convert(string):
 
 def generate():
     page = form.getvalue("page")
+    vers = form.getvalue("vers")
+    if vers == None: vers = default_version
 
     if page == None: page = "main"
 
@@ -207,6 +176,8 @@ def generate():
     bodyhtml = ""
     if mdfile:
         bodyhtml = convert("".join(mdfile.readlines()))
+        bodyhtml += "version = "
+        bodyhtml += vers
         mdfile.close()
     else:
         bodyhtml = "<p>(Documentation file not found)</p>"
@@ -215,21 +186,37 @@ def generate():
     dirlist = page.split('/')
     page_name = dirlist.pop(-1)
 
+    # Create navigation line
     nav = ""
-
     for dirname in dirlist:
         nav += "%s<a href=\"%s?page=%s\">%s</a>"%(nav_delimiter,this_fname,dirname,dirname)
+
     if page_name != "main":
         nav += nav_delimiter+page_name
-    if not (len(dirlist) == 0 and page_name == "main"):
-        nav = "<a href=\"%s?page=main\">main</a>%s</br>"%(this_fname,nav)
 
+    if not (len(dirlist) == 0 and page_name == "main"):
+        nav = "<a href=\"%s?page=main\">main</a>%s"%(this_fname,nav)
+
+    nav = "<span style='float:left;'>" + nav + "</span>"
+
+    # Create version information line
+    vinfo = "<span class='versions' style='float:right;'>"
+    n = 0
+    for (v,vname) in versions.iteritems():
+        if n > 0: vinfo += "&nbsp;|&nbsp;"
+        if v == vers:
+            vinfo += "<b><u>%s</u></b>"%(vname)
+        else:
+            vinfo += "%s"%(vname)
+        n += 1
+    vinfo += "</span></br>"
 
     prenav_header_file = open(prenav_header_fname)
     postnav_header_file = open(postnav_header_fname)
     footer_file = open(footer_fname)
     print "".join(prenav_header_file.readlines())
     print nav
+    print vinfo
     print "".join(postnav_header_file.readlines())
     print bodyhtml
 
