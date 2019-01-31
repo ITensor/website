@@ -115,6 +115,9 @@ def convert(string,vers):
     string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
     string = re.sub(r"pull #(\d+)",r"pull <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
 
+    #Convert VERSION token
+    string = re.sub(r"VERSION",vers,string)
+
     #Convert MathJax @@...@@ -> <span>@@...@@</span>
     #and $$...$$ -> <div>$$..$$</div> to protect
     #from Markdown formatter, also replace \_ -> _ in 
@@ -228,7 +231,7 @@ def generate():
     for dirname in dirlist:
         text = "Back to " + dirname.capitalize()
         full_dirname += dirname
-        iconfname = "docs/"+full_dirname+"/icon.png"
+        iconfname = "docs/"+vers+"/"+full_dirname+"/icon.png"
         iconimg = "<!-- " + iconfname + " -->"
         if fileExists(iconfname): iconimg = "<img src=\"%s\" class=\"icon\">"%(iconfname,)
         backlinks.append( "<br/>%s<a href=\"%s?page=%s&vers=%s\">%s</a>"%(iconimg,this_fname,full_dirname,vers,text) )
@@ -237,7 +240,7 @@ def generate():
     for bl in backlinks: print bl
 
     if not (len(dirlist)==0 and page_name == "main"):
-        print "<br/><img src=\"docs/icon.png\" class=\"icon\"><a href=\"%s?vers=%s\">Back to Main</a>"%(this_fname,vers)
+        print "<br/><img src=\"docs/%s/icon.png\" class=\"icon\"><a href=\"%s?vers=%s\">Back to Main</a>"%(vers,this_fname,vers)
 
     print "".join(footer_file.readlines())
     footer_file.close()

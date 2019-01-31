@@ -1,5 +1,5 @@
 
-# <img src="docs/articles/icon.png" class="largeicon"> Articles
+# <img src="docs/VERSION/articles/icon.png" class="largeicon"> Articles
 
 <br/>
 

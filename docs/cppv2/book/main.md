@@ -1,4 +1,4 @@
-# <img src="docs/book/icon.png" class="largeicon">  The ITensor Book
+# <img src="docs/VERSION/book/icon.png" class="largeicon">  The ITensor Book
 
 Tensor methods are a powerful approach for problems in physics and
 applied math, but keeping track of tensor indices by hand

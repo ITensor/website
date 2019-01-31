@@ -1,4 +1,4 @@
-# <img src="docs/classes/icon.png" class="largeicon"> ITensor Library Classes and Methods #
+# <img src="docs/VERSION/classes/icon.png" class="largeicon"> ITensor Library Classes and Methods #
 
 Detailed information about every method and function in the ITensor library.
 

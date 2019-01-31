@@ -1,4 +1,4 @@
-# <img src="docs/install/icon.png" class="largeicon"> Installing ITensor
+# <img src="docs/VERSION/install/icon.png" class="largeicon"> Installing ITensor
 
 ## Downloading the Library
 

@@ -1,5 +1,5 @@
 
-# <img src="docs/tutorials/icon.png" class="largeicon"> Tutorials
+# <img src="docs/VERSION/tutorials/icon.png" class="largeicon"> Tutorials
 
 
 ### Basics of ITensor
