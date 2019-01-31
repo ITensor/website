@@ -205,7 +205,7 @@ def generate():
     for (v,vname) in versions.iteritems():
         if n > 0: vinfo += "&nbsp;|&nbsp;"
         if v == vers:
-            vinfo += "<b>%s</b>"%(vname)
+            vinfo += "<span style='outline:solid 1px;font-weight:bold;'>%s</span>"%(vname)
         else:
             vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page_name,v,vname)
         n += 1
