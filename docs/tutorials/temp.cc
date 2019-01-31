@@ -1,2 +1,0 @@
-
-f(psi,{"Maxm",maxm})
