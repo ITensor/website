@@ -178,7 +178,7 @@ Index is defined in "itensor/index.h".
 
    Return a copy of `I` with a new TagSet specified by `tags`.
 
-* `replaceTags(Index I, string newtags, string oldtags)
+* `replaceTags(Index I, string newtags, string oldtags)`
 
    Return a copy of `I` with tags `oldtags` removed and tags `newtags` added.
 
