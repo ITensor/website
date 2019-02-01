@@ -40,6 +40,8 @@ Index is defined in "itensor/index.h".
     Print(ia.tags()); //prints "a"
     Print(iab.tags()); //prints "a,b"
 
+    Print(hasTags(iab,"b,a")); //prints "true"
+
 ## Constructors ##
 
 * `Index()`
