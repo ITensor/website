@@ -1,10 +1,11 @@
 # Index #
 
 An Index represents a single tensor index with fixed size m. Copies of an Index compare equal unless
-their "prime levels" and "tags" are set to different values.
+their _prime levels_ and _tags_ are set to different values.
 
-An Index carries a TagSet, a set of "tags" which are small strings that specify properties of the Index
-to help distinguish it from other Indices.
+An Index carries a TagSet, a set of _tags_ which are small strings that specify properties of the Index to help distinguish it from other Indices.
+
+Internally, an Index has a fixed id number, which is how the ITensor library knows two indices are copies of a single original Index. Index objects must have the same id, as well as the same prime level and tags to compare equal.
 
 Index is defined in "itensor/index.h".
 
@@ -26,6 +27,18 @@ Index is defined in "itensor/index.h".
     ii.noprime();
     Print(ii == i); //prints "true"
 
+    // Tags can be added or removed to an index
+    // Indices must have the same tags to compare equal
+    auto ia = addTags(i,"a");
+    Print(ia == i); //prints "false"
+
+    Print(removeTags(ia,"a") == i); //prints "true"
+
+    auto iab = addTags(ia,"b");
+
+    Print(i.tags()); //prints ""
+    Print(ia.tags()); //prints "a"
+    Print(iab.tags()); //prints "a,b"
 
 ## Constructors ##
 
