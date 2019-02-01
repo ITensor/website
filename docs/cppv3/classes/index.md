@@ -1,16 +1,16 @@
 # Index #
 
 An Index represents a single tensor index with fixed size m. Copies of an Index compare equal unless
-their "prime levels" are set to different values.
+their "prime levels" and "tags" are set to different values.
 
-An Index has a name just for printing purposes, and an Index
-carries an IndexType label (typically `Site` or `Link`&mdash;see [[index conventions|itensor_conventions]]).
+An Index carries a TagSet, a set of "tags" which are small strings that specify properties of the Index
+to help distinguish it from other Indices.
 
 Index is defined in "itensor/index.h".
 
 ## Synopsis ##
 
-    auto i = Index("index i",4);
+    auto i = Index(4);
     Print(i.m()); //prints i.m() = 4
 
     //Copies of the same Index compare equal
@@ -38,21 +38,16 @@ Index is defined in "itensor/index.h".
         auto i = Index();
         if(!i) println("Index i is default constructed.");
 
-* `Index(string name, int m, IndexType it = Link, int primelevel = 0)` 
+* `Index(int m, string tags)` 
 
    Construct an Index with the following fields:
-   - The name is just for printing purposes. 
    - The integer m is the size of the Index. 
-   - The IndexType defaults to `Link`
-     but can be set to other values to make it easier to manipulate
-     only certain types of indices. 
-   - The prime level is an integer
-     which can be used to distinguish different copies of 
-     the same original Index.
+   - The string tags is a comma seperated list of tags for the Index.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,Site);
+      // Create an Index of dimension 2 with tags "Site" and "s3"
+      auto s1 = Index(2,"Site,s3");
 
 
 ## Accessor Methods ##
@@ -65,22 +60,9 @@ Index is defined in "itensor/index.h".
 
   Return the prime level.
 
-* `.primeLevel(int n)`  
+* `.tags() -> TagSet`
 
-  Set prime level to n.
-
-* `.type() -> IndexType`  
-
-  Return the `IndexType` of this Index. The [[IndexType|classes/indextype]] is a tag used to distinguish 
-  different types of indices to make adjusting their prime levels more convenient.
-
-* `.name() -> string` 
-
-  Return the name of this Index, with prime level information included at the end.
-
-* `.rawname() -> string`  
-
-  Return the name of this Index without prime level information.
+  Return the tags of this Index as a TagSet.
 
 * `.id() -> id_type`
 
@@ -88,22 +70,17 @@ Index is defined in "itensor/index.h".
 
 ## Prime Level Class Methods ##
 
+* `.setPrime(int n)`  
+
+  Set the prime level of this Index to n.
+
 * `.prime(int inc = 1)`  
 
   Increment prime level of this Index instance. (Optionally, increment by amount `inc`.)
 
-* `.prime(IndexType type, int inc = 1)`  
+* `.noPrime()`  
 
-  Increment prime level if Index type() matches type. (Optionally, increment by amount `inc`.)
-
-* `.noprime(IndexType type = All)`  
-
-  Reset prime level to zero. (Optionally, only if `type()==type` or `type` is `All`.)
-
-* `.mapprime(int plevold, int plevnew, IndexType type = All)`  
-
-  If Index has prime level plevold, change to plevnew. Otherwise has no effect. 
-  (Optionally, map prime level only if `type()==type` or `type` is `All`.)
+  Reset prime level to zero.
 
 ## Operators and Conversions
 
@@ -114,9 +91,9 @@ Index is defined in "itensor/index.h".
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto I = Index("My Index",10);
+      auto mi = Index(10);
 
-      IndexVal iv = I(2); //call Index mi's operator() method
+      IndexVal iv = I(2); //call the operator() method of Index mi
 
       Print(iv.i); //prints 2
       Print(iv == I); //prints true
@@ -131,21 +108,22 @@ Index is defined in "itensor/index.h".
   `operator!=(Index other) -> bool`  
 
   Comparison operators: two Index objects are equal if they are copies of the 
-  same original Index (have the same id) and have the same prime level.
+  same original Index (have the same id) and have the same prime level and tags.
 
-  The name, size, and IndexType of Index objects play no explicit role in comparing them. (Of course,
-  all Index objects which compare equal will have the same name, size, and IndexType since they 
-  are all copies of the same original Index.) Creating a new Index "i2" with the same name, size,
-  and IndexType as another Index "i1" does not mean that i2==i1, since i2 will have a different 
+  The size of the Index objects play no explicit role in comparing them. (Of course,
+  all Index objects which compare equal will have the same size, since they 
+  are all copies of the same original Index.) Creating a new Index "i2" with the same size, tags,
+  and prime level as another Index "i1" does not mean that i2==i1, since i2 will have a different 
   id number.
 
 * `operator<(Index other) -> bool`  
 
   Defines an ordering of Index objects &mdash; useful for sorting and finding Index instances in collections.
+ 
+* `equalsIgnorePrime(Index i1, Index i2) -> bool`
 
-* `.noprimeEquals(Index other) -> bool`  
-
-  Return `true` if this Index and other are copies of the same original Index, regardless of prime level.
+  Return `true` if Index i1 and Index i2 are copies of the same original Index and have the same tags,
+  regardless of prime level.
 
 * `explicit operator int()`
 
@@ -182,18 +160,31 @@ Index is defined in "itensor/index.h".
 
    Return a copy of  `I` with prime level increased by 1 (or optional amount `inc`).
 
-* `prime(Index I, IndexType type, int inc = 1) -> Index` 
+* `noPrime(Index I) -> Index` 
 
-   Return a copy of  `I` with prime level increased by 1 (or `inc`) if `I.type()` equals specified type.
+   Return a copy of `I` with prime level set to zero.
 
-* `noprime(Index I, IndexType type = All) -> Index` 
+## Tag functions
 
-   Return a copy of `I` with prime level set to zero (optionally only if `I.type()` matches type).
+* `addTags(Index I, string tags) -> Index`
 
-* `mapprime(Index I, int plevold, int plevnew, IndexType type = All) -> Index` 
+   Return a copy of `I` with `tags` added to the current TagSet.
 
-   Return a copy of `I` with prime level plevnew if `I.primeLevel()==plevold`. Otherwise has no effect.
-   (Optionally, only map prime level if type of `I` matches specified type.)
+* `removeTags(Index I, string tags) -> Index`
+
+   Return a copy of `I` with `tags` removed from the current TagSet.
+
+* `setTags(Index I, string tags) -> Index`
+
+   Return a copy of `I` with a new TagSet specified by `tags`.
+
+* `replaceTags(Index I, string newtags, string oldtags)
+
+   Return a copy of `I` with tags `oldtags` removed and tags `newtags` added.
+
+* `hasTags(Index I, string tags)`
+
+   Check if the Index `I` has a TagSet containing `tags`.
 
 ## Other Functions
 
@@ -202,4 +193,4 @@ Index is defined in "itensor/index.h".
    Returns a string version of the size of Index I.
 
 <br/>
-_This page current as of version 2.0.6_
+_This page current as of version 3.0.0_
