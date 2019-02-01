@@ -20,7 +20,6 @@
 
 ## 2018
 
-
 * [Fermionic Moore–Read Fractional Chern Insulator in the Thin-Torus Limit](http://przyrbwn.icm.edu.pl/APP/PDF/134/app134z4p01.pdf), B. Jaworowski, P. Kaczmarkiewicz, A. Wójs, 
 <i style="color:#CC0000">Acta Physica Polonica A</i> <b>134</b>, <a href="http://przyrbwn.icm.edu.pl/APP/PDF/134/app134z4p01.pdf">919</a> (2018)
 
