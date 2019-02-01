@@ -532,7 +532,7 @@ and that the result will be an ITensor.
 
       //create a lambda function
       //which return a scalar
-      auto c = 1;
+      auto c = 1.0;
       auto countUp = [&c]() { return c++; };
 
       T.generate(countUp);
