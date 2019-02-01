@@ -17,7 +17,7 @@
 -->
 
 
-<img src="docs/VERSION/papers/icon.png" class="icon">   [[Papers Using ITensor|papers]]
+<img src="docs/all/papers/icon.png" class="icon">   [[Papers Using ITensor|papers]]
 
 <br/>
 Search the ITensor website: <div><gcse:search></gcse:search></div>
