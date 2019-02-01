@@ -1,16 +1,8 @@
-## IndexSet (and IQIndexSet)
+## IndexSet
 
 Container for storing indices. 
 
-The following documentation refers to IndexSet, but also applies to
-IQIndexSet, which is implemented using the same template class. 
-For IQIndexSet, just replace all usage of the `Index` type with
-the type `IQIndex`.
-
-* `IndexSet` is an alias for `IndexSetT<Index>`
-* `IQIndexSet` is an alias for `IndexSetT<IQIndex>`
-
-IndexSet and IQIndexSet are defined in "itensor/indexset.h". Also see "itensor/indexset_impl.h".
+IndexSet is defined in "itensor/indexset.h". Also see "itensor/indexset_impl.h".
 An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 ## Synopsis ##
