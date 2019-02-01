@@ -61,21 +61,32 @@ IndexVal is defined in "itensor/index.h".
   If `index` has prime level plevold, change to plevnew. 
   Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
 
+* `.dag()`
+
+  Reverse the Arrow direction of the Index stored within this IndexVal.
+
+* `.qn() -> QN`
+
+  Return the quantum number QN object associated with the block, or sector, of 
+  the Index that the value of this IndexVal falls within.
+
+
+## IndexVal Functions
+
+* `prime(IndexVal, int inc = 1) -> IndexVal`
+
+  Return an IndexVal with the same value but with the prime level of the index incremented by one
+  (or by an optional amount `inc`).
+
+* `noPrime(IndexVal) -> IndexVal`
+
+  Return an IndexVal with the same value but with the prime level of the index set to zero.
+
+* `hasQNs(IndexVal) -> bool`
+
+  Returns true if the Index of the IndexVal has QN information.
+
 ## Other Operations With IndexVals
-
-* `IndexVal * IndexVal -> ITensor`
-
-  Return an ITensor with indices those of the two multiplied IndexVals. This ITensor has
-  only one non-zero element (equal to 1.0) corresponding to setting each Index to the value of its
-  respective IndexVal.
-
-* `IndexVal * Cplx -> ITensor` <br/>
-  `Cplx * IndexVal -> ITensor`
-
-  Return an ITensor with one Index corresponding to the IndexVal in the above product.
-  This ITensor has one non-zero element equal to the scalar value in the above product.
-  This non-zero element is the one corresponding to the IndexVal.
-  If the scalar has exactly zero imaginary part, the resulting ITensor will have real storage.
 
 * IndexVals can be compared to each other. They are equal if the have the same Index and value.
 
@@ -85,4 +96,4 @@ IndexVal is defined in "itensor/index.h".
 
 
 <br/>
-_This page current as of version 2.0.6_
+_This page current as of version 3.0.0_
