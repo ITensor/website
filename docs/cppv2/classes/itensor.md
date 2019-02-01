@@ -771,7 +771,7 @@ for details about the possible arguments to these functions.
 ## Extracting Properties of ITensors
 
 * `rank(ITensor T) -> long` <br/>
-  `order(ITensor T) -> long` <br/>
+  `ord(ITensor T) -> long` <br/>
 
   Return the number of indices of T.
 
