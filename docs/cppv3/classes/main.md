@@ -18,8 +18,6 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[IndexVal|classes/indexval]]. Index-value pair.
 
-* [[IndexType|classes/indextype]]. Lightweight label for Index objects.
-
 * [[IndexSet|classes/indexset]]. Container for storing indices.
 
 * [[QN|classes/qn]]. Abelian quantum numbers.
