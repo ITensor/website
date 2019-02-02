@@ -8,10 +8,10 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 ## Synopsis ##
 
     //Make some indices
-    auto b1 = Index("bond 1",5);
-    auto b3 = Index("bond 3",8);
-    auto s2 = Index("Site 2",2,Site); 
-    auto s3 = Index("Site 3",2,Site);
+    auto b1 = Index(5);
+    auto b3 = Index(8);
+    auto s2 = Index(2,"Site"); 
+    auto s3 = Index(2,"Site");
 
     auto inds = IndexSet(b1,b3,s2,s3);
 
@@ -152,181 +152,267 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 * IndexSets can be printed.
 
-## Prime Level Functions
+## Index Tag Methods
 
-* `prime(IndexSet & is, int inc = 1)`
+* ```
+  .replaceTags(TagSet tsold, TagSet tsnew)
+  ```
+  ```
+  .replaceTags(TagSet tsold, TagSet tsnew, TagSet tsmatch)
+  ```
+  ```
+  .replaceTags(TagSet tsold, TagSet tsnew, int plmatch)
+  ```
+  ```
+  .replaceTags(TagSet tsold, TagSet tsnew, TagSet tsmatch, int plmatch)
+  ```
+  ```
+  .replaceTags(TagSet tsold, TagSet tsnew, Index imatch)
+  ```
+
+  For any index containing all of the tags in `tsold`, replace
+  these tags with those in `tsnew`. 
+
+  If a third TagSet `tsmatch` is provided, only do the above
+  replacement on indices containing the tags in `tsmatch`.
+                
+  If the argument `int plmatch`, is provided, only do the tag
+  replacement for indices having prime level `plmatch`.
+  
+  If the argument `Index imatch` is provided, only do the tag
+  replacement for the Index `imatch`.
+
+* ```
+  .setTags(TagSet tsnew)
+  ```
+  ```
+  .setTags(TagSet tsnew, TagSet tsmatch)
+  ```
+  ```
+  .setTags(TagSet tsnew, int plmatch)
+  ```
+  ```
+  .setTags(TagSet tsnew, TagSet tsmatch, int plmatch)
+  ```
+  ```
+  .setTags(TagSet tsnew, Index imatch)
+  ```
+
+  Set the tags of indices to be exactly those in the TagSet `tsnew`.
+
+  Optionally, providing the extra TagSet `tsmatch` applies the above
+  change only for indices containing tags in `tsmatch`.
+
+  Optionally, providing `int plmatch` applies the above change only
+  for indices with prime level `plmatch`.
+
+  Optionally, providing `Index imatch` applies the above change only
+  for the Index `imatch`.
+
+* ```
+  .addTags(TagSet tsadd)
+  ```
+  ```
+  .addTags(TagSet tsadd, TagSet tsmatch)
+  ```
+  ```
+  .addTags(TagSet tsadd, int plmatch)
+  ```
+  ```
+  .addTags(TagSet tsadd, TagSet tsmatch, int plmatch)
+  ```
+  ```
+  .addTags(TagSet tsadd, Index imatch)
+  ```
+
+  Add the tags in TagSet `tsadd` to the existing tags of 
+  the indices in this IndexSet
+
+  Optionally, providing the extra TagSet `tsmatch` applies the above
+  change only for indices containing tags in `tsmatch`.
+
+  Optionally, providing `int plmatch` applies the above change only
+  for indices with prime level `plmatch`.
+
+  Optionally, providing `Index imatch` applies the above change only
+  for the Index `imatch`.
+
+* ```
+  .removeTags(TagSet tsremove)
+  ```
+  ```
+  .removeTags(TagSet tsremove, TagSet tsmatch)
+  ```
+  ```
+  .removeTags(TagSet tsremove, int plmatch)
+  ```
+  ```
+  .removeTags(TagSet tsremove, TagSet tsmatch, int plmatch)
+  ```
+  ```
+  .removeTags(TagSet tsremove, Index imatch)
+  ```
+
+  Remove the tags in TagSet `tsremove` from the existing tags of 
+  the indices in this IndexSet
+
+  Optionally, providing the extra TagSet `tsmatch` applies the above
+  change only for indices containing tags in `tsmatch`.
+
+  Optionally, providing `int plmatch` applies the above change only
+  for indices with prime level `plmatch`.
+
+  Optionally, providing `Index imatch` applies the above change only
+  for the Index `imatch`.
+
+
+## Prime Level Methods
+
+* `.prime(int inc = 1, TagSet tags = "All")`
 
   Increment prime level of all indices by 1, or by the optional amount "inc".
+
+  If a TagSet is provided, only prime indices containing tags in this set.
 
   <div class="example_clicker">Click to Show Example</div>
 
       auto inds = IndexSet(l1,s2,s3,l3);
-      Print(inds[1]); //prints: (s2,2,Site)
+      Print(inds[1]); //prints: (2,"l1"|id=456)
 
       prime(inds,2);
-      Print(inds[1]); //prints: (s2,2,Site)''
+      Print(inds[1]); //prints: (2,"l1"|id=456)''
+
+* `.prime(TagSet tags = "All")`
+
+  Increment prime level of all indices by 1.
+  If a TagSet is provided, only prime indices containing tags in this set.
+
+* `.prime(int inc, Index i)`
+
+*  ``` 
+   .prime(Index i1, Index i2, ..., 
+   ```
+
+  Increment prime level of the Index objects `i1`,`i2`, etc. by 1.
 
 
-* ``` 
-  prime(IndexSet & is, 
-        Index i1, Index i2, ..., 
-        int inc = 1)
-  ```
+*  ``` 
+   .prime(int inc, Index i1, Index i2, ..., 
+   ```
 
-  ``` 
-  prime(IndexSet & is, 
-        IndexType t1, IndexType t2, ..., 
-        int inc = 1)
-  ```
+  Increment prime level of the Index objects `i1`,`i2`, etc. by an amount `inc`.
 
-  ``` 
-  prime(IndexSet & is, 
-        Index i1, IndexType t2, ..., 
-        int inc = 1)
-  ```
+*  ``` 
+   .setPrime(int plnew, TagSet tags = "All")
+   ```
 
-  Increment prime level of specific indices, or index types, by 
-  1 or by the optional amount `inc`.
+  Set the prime level of all indices to plnew. Optionally, only set the 
+  prime levels of indices containing tags tsmatch
 
-  The arguments following the IndexSet can be any number of Index
-  or IndexType objects, in any order.
+*  ``` 
+   .setPrime(int plnew, Index i1, Index i2, ...)
+   ```
 
-  All indices of the IndexSet matching one of the provided Index 
-  objects (including having the same prime level) or matching one
-  of the IndexTypes will have its prime level incremented by `inc`.
+  Set the prime level of the Index's `i1`, `i2` to plnew.
 
-  <div class="example_clicker">Click to Show Example</div>
+*  ``` 
+   .noPrime()
+   ```
 
-      //
-      // First example
-      //
-      auto indsA = IndexSet(l1,s2,s3,l3);
+  Set the prime level of all Index objects in the IndexSet to zero.
 
-      //Increment prime level of s2 and s3 by 4
-      prime(indsA,s2,s3,4);
+*  ``` 
+   .noPrime(TagSet tags)
+   ```
 
-      Print(indsA[0]); //prints: (l1,3,Link)
-      Print(indsA[1]); //prints: (s2,2,Site)'4
-      Print(indsA[2]); //prints: (s3,2,Site)'4
-      Print(indsA[3]); //prints: (l3,7,Link)
+  Set the prime level of the Index's containing the given `tags` to zero. 
 
-      //
-      // Second example
-      //
-      auto indsB = IndexSet(l1,s2,s3,l3);
+*  ``` 
+   .noPrime(Index i1, Index i2, ...)
+   ```
 
-      //Increment prime level of s2 and 
-      //of all Link indices (assumed to be l1 and l3)
-      //by two
-      prime(indsB,s2,Link,2);
+  Set the prime level of the Index's `i1`, `i2` to zero.
 
-      Print(indsB[0]); //prints: (l1,3,Link)'2
-      Print(indsB[1]); //prints: (s2,2,Site)'2
-      Print(indsB[2]); //prints: (s3,2,Site)
-      Print(indsB[3]); //prints: (l3,7,Link)'2
+*  ``` 
+   .mapPrime(int plold, int plnew, Tags tags = "All")
+   ```
 
-* ``` 
-  primeExcept(IndexSet & is, 
-              Index i1, Index i2, ..., 
-              int inc = 1)
-  ```
-  ``` 
-  primeExcept(IndexSet & is, 
-              IndexType t1, IndexType t2, ..., 
-              int inc = 1)
-  ```
+  Set the prime level of indices having level `plold` to the new value `plnew`.
+  If a TagSet is provided, only do this mapping on indices containing the given tags.
 
-  Increment the prime level of all indices NOT matching the list of
-  indices provided (or list of IndexTypes provided) by 1 or the 
-  optional amount "inc".
+*  ``` 
+   .mapPrime(Index imatch, int plold, int plnew)
+   ```
 
+  Set the prime level of Index `imatch` having level `plold` to the new value `plnew`.
 
-* ` noprime(IndexSet & is)`
+*  ``` 
+   .swapPrime(int pl1, int pl2, TagSet tags = "All")
+   ```
 
-  Set prime level of all indices to zero.
+  Set the prime level of any index having level `pl1` to `pl2` and 
+  simultanously any index having level `pl2` to `pl1`. 
 
-* ``` 
-  noprime(IndexSet & is, 
-          Index i1, Index i2, ...)
-  ```
-  ``` 
-  noprime(IndexSet & is, 
-          IndexType t1, IndexType t2, ...)
-  ```
+  Optionally, if a TagSet is provided, only perform this swap on 
+  indices containing the provided tags.
 
-  Set prime level all indices listed (or IndexTypes listed) to zero.
-
-* ``` 
-  mapprime(IndexSet & is,
-           VArgs&&... vargs)
-  ```
-
-  Map classes of indices from a current prime level to a new prime level. The arguments
-  "vargs" are triples of the form `I,plevold,plevnew` where I is either an Index or an
-  IndexType. Any Index matching I that has prime level plevold will have its prime level
-  replaced with plevnew.
-
-  <div class="example_clicker">Click to Show Example</div>
-
-      auto b1 = Index("bond 1",5,Link);
-      auto b3 = Index("bond 3",8,Link);
-      auto s2 = Index("Site 2",2,Site); 
-      auto s3 = Index("Site 3",2,Site);
-
-      auto inds = IndexSet(b1,prime(b3,2),s2,s3);
-
-      mapprime(inds,Site,0,4,b3,2,5);
-
-      //Now s2 and s3 will have prime level 4
-      //and b3 will have prime level 5
-
-* ``` 
-  mapprime(IndexSet & is,
-           int plevold, int plevnew, 
-           IndexType t = All)
-  ```
-
-  Change prime level of all indices having prime level `plevold` to `plevnew`. 
-  (Optionally only if their IndexType matches `t`.) 
 
 ## Other IndexSet Functions
 
-* `findindex(IndexSet const& inds, Index const& I) -> long`
+*  ``` 
+   findIndex(IndexSet is,
+             TagSet tsmatch,
+             int plmatch = -1) -> Index
+   ```
 
-  Find the position of the Index `I` within the IndexSet `inds`.<br/>
-  Returns an integer j such that `inds[j] == I`.<br/>
-  If the Index I is not found, returns -1.
+   Find the Index containing tags in the specified TagSet
+   and, optionally, matching the specified prime level. 
 
-* `findtype(IndexSet const& inds, IndexType t) -> Index`
+   This is useful if we know there is an Index
+   that contains Tags tsmatch, but don't know the other tags.
+   If multiple indices are found, throw an error.
+   If none are found, return a default Index (evaluates to false).
 
-  Finds the first Index in the set whose type matches `t`.
+*  ``` 
+   findIndexExact(IndexSet is,
+                  TagSet tsmatch,
+                  int plmatch = -1) -> Index
+   ```
 
-* `finddir(IQIndexSet const& inds, Arrow dir) -> IQIndex`
+   Find the Index with a certain TagSet and optional prime level.
+   If multiple indices are found, throw an error.
+   If none are found, return a default Index (evaluates to false).
 
-  Finds the first IQIndex in the set whose arrow direction matches `dir`.
+*  ``` 
+   hasIndex(IndexSet is, Index I) -> bool
+   ```
 
-* `dir(IQIndexSet const& inds, IQIndex const& I) -> Arrow`
+   Return true if the IndexSet has the provided Index.
 
-  Return the arrow direction of the IQIndex `I` as it appears in this IQIndexSet.<br/>
-  (Note that arrows are not used for comparing IQIndices, so the argument `I` provided can
-  have either direction.)
+*  ``` 
+   sim(IndexSet & is, TagSet t)
+   ```
 
-* `hasindex(IndexSet const& inds, Index const& I) -> bool`
+   Replace all indices containing the tags in `t` by "similar" indices
+   (same properties but different id numbers).
 
-  Return `true` if `inds` contains the Index `I`.
+*  ``` 
+   sim(IndexSet & is, Index I)
+   ```
 
-* `hastype(IndexSet const& inds, IndexType t) -> bool`
+   Replace Index `I` by a "similar" index (same properties but different id number).
 
-  Return `true` if `inds` contains an Index of IndexType `t`.
+*  ``` 
+   maxM(IndexSet is) -> long
+   ```
 
-* `minM(IndexSet const& inds) -> long`
+   Return the maximum dimension of all indices in the IndexSet.
 
-  Return the size of the smallest Index in the set.
+*  ``` 
+   minM(IndexSet is) -> long
+   ```
 
-* `maxM(IndexSet const& inds) -> long`
-
-  Return the size of the largest Index in the set.
-
+   Return the minimum dimension of all indices in the IndexSet.
 
 <br/>
-_This page current as of version 2.0.7_
+_This page current as of version 3.0.0_
