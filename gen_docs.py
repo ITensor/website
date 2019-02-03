@@ -163,10 +163,10 @@ def convert(string,vers):
             if nlmatch:
                 name = nlmatch.group(1)
                 link = nlmatch.group(2)
-                mdstring += "<a href='%s?page=%s&vers=%s'>%s</a>"%(this_fname,link,vers,name)
+                mdstring += "<a href='%s?vers=%s&page=%s'>%s</a>"%(this_fname,vers,link,name)
             else:
                 #Otherwise use the raw link name (file -> file.md)
-                mdstring += "<a href='%s?page=%s&vers=%s'>%s</a>"%(this_fname,chunk,vers,chunk)
+                mdstring += "<a href='%s?vers=%s&page=%s'>%s</a>"%(this_fname,vers,chunk,chunk)
 
     ##
     ## Mistune Markdown Renderer
