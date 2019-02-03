@@ -1,8 +1,6 @@
-# MPS and IQMPS #
+# MPS
 
-MPS is matrix product state of ITensors. IQMPS nearly identical but uses IQTensors.
-In the documentation below, MPS refers to both MPS and IQMPS unless explicitly
-specified. The type ITensor should be replaced with IQTensor for the case of an IQMPS.
+The MPS class is matrix product state of ITensors. 
 
 The main benefit of using the MPS class is that it can provide strong guarantees about the 
 orthogonality properties of the matrix product state it represents. Calling `psi.position(n)`
@@ -11,10 +9,11 @@ the OC in an intelligent way using the fewest steps possible. If an arbitrary te
 the MPS is modified, and `psi.position(n)` is again called, the MPS class knows how
 to restore the OC in the fewest number of steps.
 
-MPS tensors follow the convention that indices connecting neighboring tensors have the IndexType
-`Link`. Physical indices have the IndexType `Site`.
+MPS tensors follow the convention that indices connecting neighboring tensors 
+have the tag "Link". Physical indices carry the "Site" tag.
 
-MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [[InitState|classes/initstate]].
+MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or 
+an [[InitState|classes/initstate]].
 
 ## Synopsis ##
 
@@ -49,11 +48,9 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
         }
     auto qpsi = IQMPS(state);
 
-
 ## Constructors ##
 
-* `MPS()` <br/>
-  `IQMPS()`
+* `MPS()`
 
   Default constructor. A default constructed state `psi` evaluates to false in a boolean context.
 
@@ -66,24 +63,10 @@ MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or an [
 
   Construct an `MPS` with physical sites given by a [[SiteSet|classes/siteset]]. The `MPS` will be initialized to a random product state with real entries.
 
-* `IQMPS(SiteSet sites)`
-
-  Construct an `IQMPS` with physical sites given by a [[SiteSet|classes/siteset]]. 
-  The `IQMPS` site tensors will _not_ be initialized (to construct an initialized IQMPS see next function).
-
 * `MPS(InitState state)` <br/>
-  `IQMPS(InitState state)`
 
-  Construct an `MPS` or `IQMPS` and set its site tensors to be in the product state 
+  Construct an `MPS` and set its site tensors to be in the product state 
   specified by an [[InitState|classes/initstate]] object.
-
-## Conversions
-
-* `toMPS(IQMPS Psi) -> MPS`
-  
-  Given an IQMPS, returns a numerically identical MPS, except that all quantum number
-  block sparsity information is removed. (This is done by just converting each
-  IQTensor to an ITensor.)
 
 ## Retrieving Basic Information about MPS
 
@@ -372,4 +355,4 @@ Still need to add:
 -->
 
 <br/>
-_This page current as of version 2.0.7_
+_This page current as of version 3.0.0_
