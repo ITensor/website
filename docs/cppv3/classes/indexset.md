@@ -152,6 +152,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 * IndexSets can be printed.
 
+<a name="tag_methods"></a>
 ## Index Tag Methods
 
 * ```
@@ -198,7 +199,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
   .setTags(TagSet tsnew, Index imatch)
   ```
 
-  Set the tags of indices to be exactly those in the TagSet `tsnew`.
+  Set the tags of the indices in this IndexSet to be exactly those in the TagSet `tsnew`.
 
   Optionally, providing the extra TagSet `tsmatch` applies the above
   change only for indices containing tags in `tsmatch`.

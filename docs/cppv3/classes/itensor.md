@@ -11,10 +11,18 @@ ITensor interface does not depend on the Index order. For example,
 given an ITensor constructed with indices `a` and `b`, 
 calling `T.real(a(2),b(5))` and `T.real(b(5),a(2))` accesses the same tensor element.
 
-In addition to the default dense real storage, ITensors can have other storage types
+In addition to real-valued storage, ITensors can have other storage types
 such as complex storage or various sparse storage types.
 
-The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itensor/itensor_interface.h" and "itensor/itensor_interface_impl.h".
+If an ITensor is constructed with regular indices (Index objects `I` for which 
+`hasQNs(I)==false`) then its storage will be dense.
+
+If instead an ITensor is constructed with indices carrying additional quantum number (QN)
+block structure  (Index objects `I` for which 
+`hasQNs(I)==true`) then its storage will be block-sparse. 
+(Up through version 2 of ITensor, such ITensors were called IQTensors.)
+
+The `ITensor` class is defined in the header "itensor/itensor.h"
 
 ## Synopsis ##
 
@@ -323,6 +331,47 @@ The type `ITensor` is defined in the header "itensor/itensor.h"; also see "itens
       //Now s2 and s3 will have prime level 4
       //and b3 will have prime level 5
 
+<a name="tag_methods"></a>
+## Index Tag Methods
+
+* ```
+  .replaceTags(TagSet tsold, TagSet tsnew, ...)
+  ```
+
+  For any index of this ITensor containing all of the tags in `tsold`, replace
+  these tags with those in `tsnew`. 
+
+  Additional optional arguments may be provided. For the complete list of 
+  these, see the `.replaceTags` methods of [[IndexSet|classes/indexset#tag_methods]].
+
+* ```
+  .setTags(TagSet tsnew)
+  ```
+
+  Set the tags of the indices of this ITensor to be exactly those in the TagSet `tsnew`.
+
+  Additional optional arguments may be provided. For the complete list of 
+  these, see the `.setTags` methods of [[IndexSet|classes/indexset#tag_methods]].
+
+* ```
+  .addTags(TagSet tsadd)
+  ```
+
+  Add the tags in TagSet `tsadd` to the existing tags of 
+  the indices of this ITensor.
+
+  Additional optional arguments may be provided. For the complete list of 
+  these, see the `.addTags` methods of [[IndexSet|classes/indexset#tag_methods]].
+
+* ```
+  .removeTags(TagSet tsremove)
+  ```
+
+  Remove the tags in TagSet `tsremove` from the existing tags of 
+  the indices of this ITensor.
+
+  Additional optional arguments may be provided. For the complete list of 
+  these, see the `.removeTags` methods of [[IndexSet|classes/indexset#tag_methods]].
 
 ## Operators Supported By ITensors ##
 
@@ -607,25 +656,25 @@ and that the result will be an ITensor.
   
 ## Functions for Creating ITensors
 
-* `randomTensor(Index i1, Index i2, ...)` <br/>
-  `randomTensorC(Index i1, Index i2, ...)` <br/>
-  `randomTensor(IndexSet inds)`
+* `randomITensor(Index i1, Index i2, ...)` <br/>
+  `randomITensorC(Index i1, Index i2, ...)` <br/>
+  `randomITensor(IndexSet inds)`
 
   Create an ITensor with the provided indices and with random elements.
 
-  `randomTensorC` makes an ITensor with random complex elements.
+  `randomITensorC` makes an ITensor with random complex elements.
 
    <div class="example_clicker">Click to Show Example</div>
 
       auto i = Index("i",2);
       auto j = Index("j",3);
 
-      auto T = randomTensor(i,j);
+      auto T = randomITensor(i,j);
 
-      auto TC = randomTensorC(i,j);
+      auto TC = randomITensorC(i,j);
       Print(isComplex(TC)); //prints: true
 
-* `matrixTensor(Matrix&& M, Index i1, Index i2)`
+* `matrixITensor(Matrix&& M, Index i1, Index i2)`
 
   Create an ITensor with the two indices i1 and i2, which correspond to the 
   row and column indices of the provided Matrix. The elements of the returned
@@ -646,7 +695,7 @@ and that the result will be an ITensor.
       auto r = Index("r",2);
       auto c = Index("c",2);
 
-      auto T = matrixTensor(std::move(M),r,c);
+      auto T = matrixITensor(std::move(M),r,c);
 
 
 
@@ -1005,4 +1054,4 @@ for details about the possible arguments to these functions.
 
 
 <br/>
-_This page current as of version 2.1.1_
+_This page current as of version 3.0.0_

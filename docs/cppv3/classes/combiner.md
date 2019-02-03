@@ -6,15 +6,16 @@ To construct a combiner ITensor, call the `combiner` method with the indices you
 
 To retrieve the "combined" index that results from merging all of the indices provided, use the combinedIndex` function (see below).
 
-Internally, a combiner is implemented as a type of ITensor with a special storage type. This storage performs no allocation of any elements whatsoever; instead it acts as a "tag" which causes contraction with a combiner to call special optimized routines to reshape a regular ITensor as efficiently as possible.
-
+Internally, a combiner is implemented as a type of ITensor with a special storage type. This storage performs no allocation of any elements whatsoever; when a combiner ITensor is contracted with 
+another ITensor, special optimized routines are called to reshape the regular ITensor into
+the resulting ITensor with combined indices as efficiently as possible.
 
 ## Synopsis
 
-    auto i = Index("i",3);
-    auto j = Index("j",5);
-    auto k = Index("k",7);
-    auto l = Index("l",9);
+    auto i = Index(3);
+    auto j = Index(5);
+    auto k = Index(7);
+    auto l = Index(9);
 
     auto T = ITensor(i,j,k,l);
 
@@ -55,18 +56,21 @@ Internally, a combiner is implemented as a type of ITensor with a special storag
   The resulting ITensor will have all of the indices provided, plus one new Index `c` whose
   size is the product of sizes `i1.m() * i2.m() * ...`.
 
-* `combiner(std::vector<Index> inds, Args args = Args::global()) -> ITensor`
+* `combiner(IndexSet inds, Args args = Args::global()) -> ITensor`
+  `combiner(std::initializer_list<Index> inds, Args args = Args::global()) -> ITensor`
+  `combiner(std::array<Index,N> inds, Args args = Args::global()) -> ITensor`
+  `combiner(std::vector<Index> inds, Args args = Args::global()) -> ITensor`
 
-  Given a std::vector of Index objects, return a combiner ITensor which combines these indices
+  Given a container of Index objects, return a combiner ITensor which combines these indices
   into a single new index.
 
   The resulting ITensor will have all of the indices provided, plus one new Index `c` whose
   size is the product of sizes `i1.m() * i2.m() * ...`.
 
-  This function also recognizes the following optional named arguments:
+  These functions also recognizes the following optional named arguments:
 
   * "IndexName" (default: "cmb") &mdash; provide a string to use for the name of the new, combined Index
-  * "IndexType" (default: Link) &mdash; set the [[IndexType|classes/indextype]] of the new, combined Index
+  * "Tags" (default: "Link,CMB") &mdash; set the tags of the new, combined Index
 
 ## Related functions
 
@@ -79,4 +83,4 @@ Internally, a combiner is implemented as a type of ITensor with a special storag
   has combiner storage as it should. If this is not the case, an exception is thrown.
 
 <br/>
-_This page current as of version 2.1.0_
+_This page current as of version 3.0.0_

@@ -40,4 +40,4 @@ except the element corresponding to the IndexVals which is set to 1.0.
      Print(T.real(s(2),l(4))); //prints: 1.0
 
 <br/>
-_This page current as of version 2.0.6_
+_This page current as of version 3.0.0_
