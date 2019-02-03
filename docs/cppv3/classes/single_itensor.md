@@ -9,8 +9,8 @@ It has exactly one non-zero element, which can be any element.
 
 ## Synopsis
 
-    auto i = Index("i",4);
-    auto j = Index("j",3);
+    auto i = Index(4);
+    auto j = Index(3);
 
     auto T = randomTensor(i,j);
 
@@ -29,8 +29,8 @@ except the element corresponding to the IndexVals which is set to 1.0.
 
 <div class="example_clicker">Click to Show Example</div>
 
-     auto s = Index("s",3);
-     auto l = Index("l",10);
+     auto s = Index(3);
+     auto l = Index(10);
 
      auto T = setElt(s(2),l(4));
 

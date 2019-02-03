@@ -11,8 +11,8 @@
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto i = Index("index_i",2,Site);
-      auto j = Index("index_j",5,Link);
+      auto i = Index(2,"Site");
+      auto j = Index(5,"Link");
       writeToFile("ifile",i);
       writeToFile("jfile",j);
 

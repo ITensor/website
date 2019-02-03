@@ -26,10 +26,10 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
 ## Synopsis ##
 
-    auto b1 = Index("bond 1",5);
-    auto b3 = Index("bond 3",8);
-    auto s2 = Index("site 2",2,Site);
-    auto s3 = Index("site 3",2,Site);
+    auto b1 = Index(5);
+    auto b3 = Index(8);
+    auto s2 = Index(2,"Site");
+    auto s3 = Index(2,"Site");
 
     auto phi = ITensor(b1,s2,s3,b3);
 
@@ -68,8 +68,8 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,Site); 
-      auto s2 = Index("Site 2",2,Site);
+      auto s1 = Index(2,"Site"); 
+      auto s2 = Index(2,"Site");
       auto T = ITensor(s1,s2);
 
 * `ITensor(Cplx val)` 
@@ -99,8 +99,8 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,Site); 
-      auto s2 = Index("Site 2",2,Site);
+      auto s1 = Index(2,"Site"); 
+      auto s2 = Index(2,"Site");
       auto T = ITensor(s1,s2);
 
       Print(T.r()); //prints: T.r() = 2
@@ -113,10 +113,10 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
    <div class="example_clicker">Click to Show Example</div>
 
-        auto s1 = Index("Site 1",2,Site); 
-        auto s2 = Index("Site 2",2,Site);
-        auto l1 = Index("Link 1",10,Link);
-        auto l2 = Index("Link 2",24,Link);
+        auto s1 = Index(2,"Site"); 
+        auto s2 = Index(2,"Site");
+        auto l1 = Index(10,"Link");
+        auto l2 = Index(24,"Link");
 
         auto T = ITensor(l1,s1,s2,l2);
 
@@ -319,10 +319,10 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto b1 = Index("bond 1",5,Link);
-      auto b3 = Index("bond 3",8,Link);
-      auto s2 = Index("Site 2",2,Site); 
-      auto s3 = Index("Site 3",2,Site);
+      auto b1 = Index(5,"Link");
+      auto b3 = Index(8,"Link");
+      auto s2 = Index(2,"Site"); 
+      auto s3 = Index(2,"Site");
 
       auto T = ITensor(b1,prime(b3,2),s2,s3);
 
@@ -387,10 +387,10 @@ and that the result will be an ITensor.
 
   <div class="example_clicker">Show Example</div>
 
-        auto l1 = Index("link 1",4);
-        auto s2 = Index("Site 2",2,Site); 
-        auto s3 = Index("Site 3",2,Site);
-        auto l3 = Index("link 3",4);
+        auto l1 = Index(4);
+        auto s2 = Index(2,"Site"); 
+        auto s3 = Index(2,"Site");
+        auto l3 = Index(4);
 
         auto A = ITensor(l1,s2,s3,l3);
 
@@ -423,10 +423,10 @@ and that the result will be an ITensor.
 
   <div class="example_clicker">Show Example</div>
 
-        auto l1 = Index("link 1",4);
-        auto s2 = Index("Site 2",2,Site);
-        auto s3 = Index("Site 3",2,Site);
-        auto l3 = Index("link 3",4);
+        auto l1 = Index(4);
+        auto s2 = Index(2,"Site");
+        auto s3 = Index(2,"Site");
+        auto l3 = Index(4);
 
         auto A = ITensor(l1,s2,s3,l3);
 
@@ -484,9 +484,9 @@ and that the result will be an ITensor.
 
   <div class="example_clicker">Show Example</div>
 
-        auto s2 = Index("Site 2",2,Site); 
-        auto s3 = Index("Site 3",2,Site);
-        auto l3 = Index("link 3",4);
+        auto s2 = Index(2,"Site"); 
+        auto s3 = Index(2,"Site");
+        auto l3 = Index(4);
 
         auto A = ITensor(s2,s3,l3);
         auto B = ITensor(s3,l3);
@@ -515,8 +515,8 @@ and that the result will be an ITensor.
   
   <div class="example_clicker">Show Example</div>
 
-      auto i = Index("i",3);
-      auto j = Index("j",4);
+      auto i = Index(3);
+      auto j = Index(4);
 
       auto T = ITensor(i,j);
       randomize(T);
@@ -666,8 +666,8 @@ and that the result will be an ITensor.
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto i = Index("i",2);
-      auto j = Index("j",3);
+      auto i = Index(2);
+      auto j = Index(3);
 
       auto T = randomITensor(i,j);
 
@@ -692,8 +692,8 @@ and that the result will be an ITensor.
       M(1,0) = 21;
       M(1,1) = 22;
 
-      auto r = Index("r",2);
-      auto c = Index("c",2);
+      auto r = Index(2);
+      auto c = Index(2);
 
       auto T = matrixITensor(std::move(M),r,c);
 
@@ -862,8 +862,8 @@ for details about the possible arguments to these functions.
 
   <div class="example_clicker">Click to Show Example</div>
 
-       auto s = Index("s",3,Site);
-       auto l = Index("l",10,Link);
+       auto s = Index(3,"Site");
+       auto l = Index(10,"Link");
 
        auto T = ITensor(s,l);
 
@@ -937,8 +937,8 @@ for details about the possible arguments to these functions.
 
   <div class="example_clicker">Click to Show Example</div>
 
-       auto s = Index("s",3,Site);
-       auto l = Index("l",10,Link);
+       auto s = Index(3,"Site");
+       auto l = Index(10,"Link");
 
        auto T = ITensor(s,l);
 
@@ -966,8 +966,8 @@ for details about the possible arguments to these functions.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("s1",3,Site);
-      auto s2 = Index("s2",3,Site);
+      auto s1 = Index(3,"Site");
+      auto s2 = Index(3,"Site");
 
       auto A = ITensor(s1,s2,prime(s1),prime(s2));
       auto B = ITensor(s1,s2,prime(s1),prime(s2));
@@ -998,10 +998,10 @@ for details about the possible arguments to these functions.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("s1",2,Site);
-      auto s2 = Index("s2",2,Site);
-      auto s3 = Index("s3",2,Site);
-      auto s4 = Index("s4",2,Site);
+      auto s1 = Index(2,"Site");
+      auto s2 = Index(2,"Site");
+      auto s3 = Index(2,"Site");
+      auto s4 = Index(2,"Site");
 
       auto T12 = ITensor(s1,prime(s1),s2,prime(s2));
 

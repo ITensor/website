@@ -35,8 +35,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,Site), 
-      auto s2 = Index("Site 2",2,Site);
+      auto s1 = Index(2,"Site"), 
+      auto s2 = Index(2,"Site");
       auto inds = IndexSet(s1,s2);
 
 * `IndexSet(IndxContainer C)` 
@@ -46,8 +46,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,Site), 
-      auto s2 = Index("Site 2",2,Site);
+      auto s1 = Index("Site 1",2,"Site"), 
+      auto s2 = Index("Site 2",2,"Site");
       auto vinds = std::vector<Index>(2);
       vinds[0] = s1;
       vinds[1] = s2;
@@ -69,8 +69,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,Site), 
-      auto s2 = Index("Site 2",2,Site);
+      auto s1 = Index("Site 1",2,"Site"), 
+      auto s2 = Index("Site 2",2,"Site");
       auto store = IndexSet::storage_type(2);
       store[0] = s1;
       store[1] = s2;
@@ -89,21 +89,21 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("s1",2,Site);
+      auto s1 = Index("s1",2,"Site");
       auto l = Index("l",10);
       auto a = Index("a",1);
 
       auto inds = IndexSet(s1,a,l);
 
       //Access indices
-      Print(inds[0]); //prints: (s1,2,Site)
-      Print(inds[1]); //prints: (a,1,Link)
-      Print(inds[2]); //prints: (l,10,Link)
+      Print(inds[0]); //prints: (2,"Site")
+      Print(inds[1]); //prints: (1,"Link")
+      Print(inds[2]); //prints: (10,"Link")
 
       //Modify an Index
-      auto i = Index("i",3);
+      auto i = Index(3);
       inds[0] = i;
-      Print(inds[0]); //prints: (i,3,Link)
+      Print(inds[0]); //prints: (3,"Link")
 
 * `.index(int j) -> Index&`
 

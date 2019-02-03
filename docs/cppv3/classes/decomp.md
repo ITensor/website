@@ -101,10 +101,10 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   
   <div class="example_clicker">Click to Show Example</div>
   
-      auto s1 = Index("Site 1",2,Site);
-      auto s2 = Index("Site 2",2,Site);
-      auto l1 = Index("Link 1",4,Link);
-      auto l2 = Index("Link 1",4,Link);
+      auto s1 = Index(2,"Site");
+      auto s2 = Index(2,"Site");
+      auto l1 = Index(4,"Link");
+      auto l2 = Index(4,"Link");
   
       auto T = randomTensor(l1,s1,s2,l2);
   
@@ -189,8 +189,8 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto i = Index("i",2);
-      auto j = Index("j",4);
+      auto i = Index(2);
+      auto j = Index(4);
 
       T = randomTensor(i,j,prime(i),prime(j));
 
@@ -234,8 +234,8 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto i = Index("i",2);
-      auto j = Index("j",4);
+      auto i = Index(2);
+      auto j = Index(4);
 
       T = randomTensor(i,j,prime(i),prime(j));
 

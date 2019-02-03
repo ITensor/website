@@ -12,35 +12,39 @@ Index is defined in "itensor/index.h".
 ## Synopsis ##
 
     auto i = Index(4);
-    Print(i.m()); //prints i.m() = 4
+    Print(i.m()); //prints: i.m() = 4
 
     //Copies of the same Index compare equal
     auto ii = i; //ii is a copy of i
-    Print(ii == i); //prints "true"
+    Print(ii == i); //prints: true
 
     //The prime level of an Index can be
     //adjusted to make it distinct
     ii.prime(2);
-    Print(ii.primeLevel()); //prints ii.primeLevel() = 2
-    Print(ii == i); //prints "false"
+    Print(ii.primeLevel()); //prints: ii.primeLevel() = 2
+    Print(ii == i); //prints: false
 
     ii.noprime();
-    Print(ii == i); //prints "true"
+    Print(ii == i); //prints: true
+
+    // Index objects can also hold a set of up to four tags
+    auto j = Index(5,"j,Link");
+    Print(hasTags(j,"j")); //prints: true
 
     // Tags can be added or removed to an index
     // Indices must have the same tags to compare equal
     auto ia = addTags(i,"a");
-    Print(ia == i); //prints "false"
+    Print(ia == i); //prints: false
 
-    Print(removeTags(ia,"a") == i); //prints "true"
+    Print(removeTags(ia,"a") == i); //prints: true
 
     auto iab = addTags(ia,"b");
 
-    Print(i.tags()); //prints ""
-    Print(ia.tags()); //prints "a"
-    Print(iab.tags()); //prints "a,b"
+    Print(i.tags()); //prints: ""
+    Print(ia.tags()); //prints: "a"
+    Print(iab.tags()); //prints: "a,b"
 
-    Print(hasTags(iab,"b,a")); //prints "true"
+    Print(hasTags(iab,"b,a")); //prints: true
 
 ## Constructors ##
 
