@@ -11,7 +11,7 @@ IndexVal is defined in "itensor/index.h".
 
 ## Synopsis
 
-    auto s1 = Index("Site 1",4,Site);
+    auto s1 = Index(4);
     auto iva = IndexVal(s1,3),
     auto ivb = IndexVal(s1,1);
     Print(iva.val); //prints: iva.val = 3
@@ -21,7 +21,7 @@ IndexVal is defined in "itensor/index.h".
     //integer into an Index
     auto ivc = s1(4);
     Print(ivc.val); //prints: ivc.val = 4
-    Print(ivc.index); //prints: ("Site 1",4,Site)
+    Print(ivc.index); //prints: (4)
 
 ## Public Data Members ##
 
@@ -48,18 +48,9 @@ IndexVal is defined in "itensor/index.h".
 
   Increment prime level of `index`. (Optionally, increment by amount `inc`.)
 
-* `.prime(IndexType type, int inc = 1)`  
+* `.noPrime()`  
 
-  Increment prime level of `index` if Index type() matches type. (Optionally, increment by amount `inc`.)
-
-* `.noprime(IndexType type = All)`  
-
-  Reset prime level of `index` to zero. (Optionally, only if `type()==type` or `type` is `All`.)
-
-* `.mapprime(int plevold, int plevnew, IndexType type = All)`  
-
-  If `index` has prime level plevold, change to plevnew. 
-  Otherwise has no effect. (Optionally, map prime level only if `type()==type` or `type` is `All`.)
+  Reset prime level of `index` to zero.
 
 * `.dag()`
 
