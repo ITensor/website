@@ -48,9 +48,9 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
     ITensor rho = phi * prime(phi,b3);
 
     Print(rank(rho)); //prints 2
-    Print(hasindex(rho,b3)); //prints: true
-    Print(hasindex(rho,prime(b3))); //prints: true
-    Print(hasindex(rho,b2)); //prints: false
+    Print(hasIndex(rho,b3)); //prints: true
+    Print(hasIndex(rho,prime(b3))); //prints: true
+    Print(hasIndex(rho,b2)); //prints: false
 
 ## Constructors and Accessor Methods
 
@@ -60,11 +60,16 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
    A default-constructed ITensor evaluates to false in a boolean context. <br/>
    To construct a rank-zero (scalar) ITensor use the `ITensor(Cplx val)` constructor below.
 
-* `ITensor(Index i1, Index i2, ...)` 
+* `ITensor(Index i1, Index i2, ...)` <br/>
+  `ITensor(std::vector<Index> inds)`<br/>
+  `ITensor(std::array<Index> inds)`<br/>
+  `ITensor(std::initializer_list<Index> inds)`
 
    Construct an ITensor with one or more indices. All elements are initially zero.
    For efficiency reasons no storage is actually allocated when calling this constructor, 
    but automatically gets allocated when, for example, setting an element.
+
+   Indices can be provided as a list or in a vector, array, or initializer_list.
 
    <div class="example_clicker">Click to Show Example</div>
 
@@ -85,25 +90,46 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       auto R = ITensor(2.71);
       auto C = ITensor(3+4_i);
 
-* `ITensor(std::vector<Index> inds)`<br/>
-  `ITensor(std::array<Index> inds)`<br/>
-  `ITensor(std::initializer_list<Index> inds)`
+* `randomITensor(Index i1, Index i2, ...)` <br/>
+  `randomITensorC(Index i1, Index i2, ...)` <br/>
+  `randomITensor(IndexSet inds)`
 
-  Construct an ITensor with indices provided in a vector, array, or initializer_list.
-  All elements are initially set to zero.
+  Create an ITensor with the provided indices and with random elements.
 
-
-* `.r() -> int`
-
-   Return rank (number of indices) of this ITensor.
+  `randomITensorC` makes an ITensor with random complex elements.
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index(2,"Site"); 
-      auto s2 = Index(2,"Site");
-      auto T = ITensor(s1,s2);
+      auto i = Index(2);
+      auto j = Index(3);
 
-      Print(T.r()); //prints: T.r() = 2
+      auto T = randomITensor(i,j);
+
+      auto TC = randomITensorC(i,j);
+      Print(isComplex(TC)); //prints: true
+
+* `matrixITensor(Matrix&& M, Index i1, Index i2)`
+
+  Create an ITensor with the two indices i1 and i2, which correspond to the
+  row and column indices of the provided Matrix. The elements of the returned
+  ITensor are set to be those of the Matrix provided.
+
+  The Matrix M is expected to be passed as an lvalue, either by passing a temporary
+  or by calling std::move. Its storage will be moved into the returned ITensor and
+  the Matrix will have empty storage afterward.
+
+   <div class="example_clicker">Click to Show Example</div>
+
+      auto M = Matrix(2,2);
+      M(0,0) = 11;
+      M(0,1) = 12;
+      M(1,0) = 21;
+      M(1,1) = 22;
+
+      auto r = Index(2);
+      auto c = Index(2);
+
+      auto T = matrixITensor(std::move(M),r,c);
 
 
 * `.inds() -> IndexSet const&`
@@ -182,7 +208,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       auto T = ITensor(i,j,k);
       randomize(T);
       //Order the indices
-      T = order(T,k,i,j);
+      T = permute(T,k,i,j);
       //Get one of its elements
       auto rt = T.real(2,1,4); //Equivalent to T.real(k(2),i(1),j(4))
 
@@ -243,7 +269,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       //Make a rank 3 ITensor
       auto T = ITensor(i,j,k);
 
-      T = order(T,j,i,k);
+      T = permute(T,j,i,k);
       //Set an element to a real number
       T.set(1,2,3,-1.24); 
       Print(T.real(j(1),i(2),k(3)) == -1.24); //prints "true"
@@ -251,71 +277,26 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 <a name="primelev_methods"></a>
 ## Prime Level Methods
 
-* `.noprime(IndexType type = All)`
+* `prime(ITensor T, int inc = 1) -> ITensor` <br/>
+  `prime(ITensor T, int inc = 1, string tags) -> ITensor` <br/>
+  `prime(ITensor T, int inc = 1, Index i) -> ITensor`
 
-  Set the prime level of all indices to zero. (Optionally only those matching the specified [[IndexType|classes/indextype]].)
-
-* `.noprime(IndexType type1, IndexType type2, ...)`
-
-  Set the prime level of all indices matching the specified IndexTypes to zero.
-
-* `.prime(int inc = 1)`
-
-  Increment the prime level of all indices by 1, or an optional amount `inc`.
+  Return a new ITensor with the prime level of all indices incremented by 1, or an optional amount 
+  `inc`. (Optionally only those containing tags specified by `tags` or only the Index `i`.)
   
-* `.prime(Index i1, Index i2, ..., int inc = 1)`
+* `noPrime(ITensor T) -> ITensor` <br/>
+  `noPrime(ITensor T, string tags) -> ITensor` <br/>
+  `noPrime(ITensor T, Index i) -> ITensor`
 
-  Increment the prime level of the specified indices by 1, or by an optional amount `inc`.
+  Set the prime level of all indices to zero. (Optionally only those containing tags specified by `tags` or only the Index `i`.)
 
-* `.prime(IndexType type1, IndexType type2, ..., int inc = 1)`
+* `mapPrime(ITensor T, int plevold, int plevnew)` <br/>
+  `mapPrime(ITensor T, int plevold, int plevnew, string tags)` <br/>
+  `mapPrime(ITensor T, int plevold, int plevnew, Index i)`
 
-  Increment the prime level of all indices of the specified types by 1, or by an optional amount `inc`.
-
-* `.primeExcept(Index i1, Index i2, ..., int inc = 1)`
-
-  Increment the prime level of all indices, _except_ those specified, by 1, or by an optional amount `inc`.
-
-* `.primeExcept(IndexType type1, IndexType type2, ..., int inc = 1)`
-
-  Increment the prime level of all indices, _except_ those matching the specified types, by 1, or by an optional amount `inc`.
-
-* `.mapprime(int plevold, int plevnew, IndexType type = All)`
-
-  Change the prime level of all indices of level `plevold` to have level `plevnew`.
-
-  This applies to all indices by default. The optional argument `type` can be used to
-  map only indices of a certain IndexType (such as Site or Link).
-
-* `.mapprime(int plevold, int plevnew, IndexType type = All)`
-
-  Change the prime level of all indices of level `plevold` to have level `plevnew`.
-
-  This applies to all indices by default. The optional argument `type` can be used to
-  map only indices of a certain IndexType (such as Site or Link).
-
-* ```
-  .mapprime(...,
-            IndexType t, int oldtlev, int newtlev, ...
-            Index i, int oldilev, int newilev, 
-            ...)
-  ```
-
-  This version of mapprime takes an unlimited arguments, but arguments
-  must come in groups of three, either
-
-  1. `IndexType t, int oldtlev, int newtlev` or
-  2. `Index i, int oldilev , int newilev`
-
-  For arguments of type 1, all indices of `IndexType t` with prime level `oldtlev` have
-  their prime level changed to `newtlev`.
-
-  For arguments of type 2, if a copy of `Index i` is found with prime level `oldilev`,
-  it is changed to prime level `newilev`.
-
-  The operation of this function is such that each Index of the ITensor is visited
-  only once, and compared to all of the arguments from left to right 
-  until there is a match. If so, the Index is modified and then the function 
-  proceeds to the next Index of the ITensor.
+  Return a new ITensor with the prime level of all indices of level `plevold` changed 
+  to have level `plevnew`. (Optionally only those containing tags specified by `tags` 
+  or only Indices equal to Index `i` when prime levels are ignored.)
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -326,16 +307,43 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
       auto T = ITensor(b1,prime(b3,2),s2,s3);
 
-      T.mapprime(Site,0,4,b3,2,5);
+      T = mapPrime(T,0,4,"Site");
+      T = mapPrime(T,2,5,b3);
 
       //Now s2 and s3 will have prime level 4
       //and b3 will have prime level 5
+
+* `swapPrime(ITensor T, int plev1, int plev2) -> ITensor` <br/>
+  `swapPrime(ITensor T, int plev1, int plev2, string tags) -> ITensor` <br/>
+  `swapPrime(ITensor T, int plev1, int plev2, Index i) -> ITensor`
+
+  Return a new ITensor modified such that any
+  Index having prime level `plev1` now has `plev2`
+  and any Index having prime level `plev2` has `plev1`.
+  (Optionally only those containing tags specified by `tags` or only Indices 
+  equal to Index `i` when prime levels are ignored.)
+
+  Any Index with a prime level other than `plev1` or `plev2`
+  remains unchanged.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = ITensor(i,prime(i));
+
+      T.set(i(1),prime(i)(2), 12);
+      T.set(i(2),prime(i)(1), 21);
+
+      auto TT = swapPrime(T,0,1);
+
+      Print(T.real(i(1),prime(i)(2))); //prints: 21
+      Print(T.real(i(2),prime(i)(1))); //prints: 12
+
 
 <a name="tag_methods"></a>
 ## Index Tag Methods
 
 * ```
-  .replaceTags(TagSet tsold, TagSet tsnew, ...)
+  replaceTags(ITensor T, string tsold, string tsnew, ...) -> ITensor
   ```
 
   For any index of this ITensor containing all of the tags in `tsold`, replace
@@ -345,7 +353,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
   these, see the `.replaceTags` methods of [[IndexSet|classes/indexset#tag_methods]].
 
 * ```
-  .setTags(TagSet tsnew)
+  setTags(ITensor T, string tsnew, ...)
   ```
 
   Set the tags of the indices of this ITensor to be exactly those in the TagSet `tsnew`.
@@ -354,7 +362,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
   these, see the `.setTags` methods of [[IndexSet|classes/indexset#tag_methods]].
 
 * ```
-  .addTags(TagSet tsadd)
+  addTags(ITensor T, string tsadd, ...)
   ```
 
   Add the tags in TagSet `tsadd` to the existing tags of 
@@ -364,7 +372,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
   these, see the `.addTags` methods of [[IndexSet|classes/indexset#tag_methods]].
 
 * ```
-  .removeTags(TagSet tsremove)
+  removeTags(ITensor T, string tsremove, ...)
   ```
 
   Remove the tags in TagSet `tsremove` from the existing tags of 
@@ -398,14 +406,14 @@ and that the result will be an ITensor.
 
         //... set components of A and B ...
 
-        ITensor R = A * B; //contracts l1 and s2
+        auto R = A * B; //contracts l1 and s2
 
-        Print(rank(R)); //prints 4, the rank of R
-        Print(hasindex(R,s3)); //prints "true"
-        Print(hasindex(R,l3)); //prints "true"
-        Print(hasindex(R,prime(s3))); //prints "true"
-        Print(hasindex(R,prime(l3))); //prints "true"
-        Print(hasindex(R,l1)); //prints "false"
+        Print(order(R)); //prints 4, the order of R
+        Print(hasIndex(R,s3)); //prints "true"
+        Print(hasIndex(R,l3)); //prints "true"
+        Print(hasIndex(R,prime(s3))); //prints "true"
+        Print(hasIndex(R,prime(l3))); //prints "true"
+        Print(hasIndex(R,l1)); //prints "false"
 
 * `ITensor + ITensor -> ITensor`<br/>
   `ITensor - ITensor -> ITensor`<br/>
@@ -495,23 +503,17 @@ and that the result will be an ITensor.
 
         ITensor R = A / B; //merge indices s3 and l3
 
-        Print(rank(R)); //prints 3, rank of R
-        Print(hasindex(R,s2)); //prints "true"
-        Print(hasindex(R,s3)); //prints "true"
-        Print(hasindex(R,l3)); //prints "true"
+        Print(order(R)); //prints 3, order of R
+        Print(hasIndex(R,s2)); //prints "true"
+        Print(hasIndex(R,s3)); //prints "true"
+        Print(hasIndex(R,l3)); //prints "true"
 
-* `ITensor  * IndexVal -> ITensor` <br/>
-  `IndexVal * ITensor  -> ITensor` <br/>
-  `ITensor *= IndexVal` <br/>
+* `ITensor  * setElt(IndexVal) -> ITensor` <br/>
+  `setElt(IndexVal) * ITensor  -> ITensor` <br/>
+  `ITensor *= setElt(IndexVal)` <br/>
 
-  When multiplied by an ITensor, an IndexVal behaves like a rank-1 (single Index) ITensor
+  When multiplied by an ITensor, a setElt(IndexVal) behaves like a rank-1 (single Index) ITensor
   whose only non-zero element is the element corresponding to the IndexVal, which has the value 1.0.
-  
-  In other words, an IndexVal behaves as if it has been plugged into the [[setElt|classes/single_itensor]]
-  function before being contracted.
-
-  Note that multiplying an IndexVal by another IndexVal or multiplying an IndexVal by a scalar
-  also results in an ITensor. For more information, see the [[IndexVal documentation|classes/indexval]].
   
   <div class="example_clicker">Show Example</div>
 
@@ -521,7 +523,7 @@ and that the result will be an ITensor.
       auto T = ITensor(i,j);
       randomize(T);
 
-      auto S = T * i(2);
+      auto S = T * setElt(i(2));
 
       // Now S will have only Index j
       // and will correspond to the "slice"
@@ -654,51 +656,6 @@ and that the result will be an ITensor.
   does not display ITensor elements, whereas the `%f` token
   shows all non-zero elements.
   
-## Functions for Creating ITensors
-
-* `randomITensor(Index i1, Index i2, ...)` <br/>
-  `randomITensorC(Index i1, Index i2, ...)` <br/>
-  `randomITensor(IndexSet inds)`
-
-  Create an ITensor with the provided indices and with random elements.
-
-  `randomITensorC` makes an ITensor with random complex elements.
-
-   <div class="example_clicker">Click to Show Example</div>
-
-      auto i = Index(2);
-      auto j = Index(3);
-
-      auto T = randomITensor(i,j);
-
-      auto TC = randomITensorC(i,j);
-      Print(isComplex(TC)); //prints: true
-
-* `matrixITensor(Matrix&& M, Index i1, Index i2)`
-
-  Create an ITensor with the two indices i1 and i2, which correspond to the 
-  row and column indices of the provided Matrix. The elements of the returned
-  ITensor are set to be those of the Matrix provided.
-
-  The Matrix M is expected to be passed as an lvalue, either by passing a temporary
-  or by calling std::move. Its storage will be moved into the returned ITensor and
-  the Matrix will have empty storage afterward.
-
-   <div class="example_clicker">Click to Show Example</div>
-
-      auto M = Matrix(2,2);
-      M(0,0) = 11;
-      M(0,1) = 12;
-      M(1,0) = 21;
-      M(1,1) = 22;
-
-      auto r = Index(2);
-      auto c = Index(2);
-
-      auto T = matrixITensor(std::move(M),r,c);
-
-
-
 ## Functions for Modifying ITensors
 
 * `randomize(ITensor & T, Args args = Args::global())`
@@ -723,7 +680,7 @@ and that the result will be an ITensor.
   Works similarly to the `.apply` method discussed above but creates a new 
   ITensor instead of modifying an ITensor in-place.
 
-* `order(ITensor T, Index i1, Index i2, ...) -> ITensor` <br/>
+* `permute(ITensor T, Index i1, Index i2, ...) -> ITensor` <br/>
 
   Given an ITensor T and a list of all of its indices in a particular order,
   return an ITensor with indices in that order.
@@ -735,7 +692,7 @@ and that the result will be an ITensor.
       auto T = ITensor(i,j,k);
       randomize(T);
 
-      T = order(T,j,i,k);
+      T = permute(T,j,i,k);
 
       Print(T.real(1,2,4) == T.real(j(1),i(2),k(4))); //prints "true"
 
@@ -770,59 +727,29 @@ and that the result will be an ITensor.
 
   Return just the imaginary part of an ITensor T.
 
-## ITensor Prime Level Transformations
-
-* `swapPrime(ITensor T, int plev1, int plev2) -> ITensor`
-
-  Return a copy of the ITensor T modified such that any
-  Index having prime level `plev1` now has `plev2` 
-  and any Index having prime level `plev2` has `plev1`.
-
-  Any Index with a prime level other than `plev1` or `plev2`
-  remains unchanged.
-
-  <div class="example_clicker">Click to Show Example</div>
-
-      auto T = ITensor(i,prime(i));
-
-      T.set(i(1),prime(i)(2), 12);
-      T.set(i(2),prime(i)(1), 21);
-
-      auto TT = swapPrime(T,0,1);
-
-      Print(T.real(i(1),prime(i)(2))); //prints: 21
-      Print(T.real(i(2),prime(i)(1))); //prints: 12
-
-
-For the following functions, the symbol `...` is pseudocode
-which signifies these functions forward their arguments
-internally to the ITensor class method with the same name.
-
-See <a href="#primelev_methods">the ITensor prime level methods</a>
-for details about the possible arguments to these functions.
-
-* `prime(ITensor T, ...) -> ITensor`
-  
-  Return a copy of T, calling `.prime(...)` on this copy before returning it.
-  
-* `primeExcept(ITensor T, ...) -> ITensor`
-  
-  Return a copy of T, calling `.primeExcept(...)` on this copy before returning it.
-
-* `noprime(ITensor T, ...) -> ITensor`
-  
-  Return a copy of T, calling `.noprime(...)` on this copy before returning it.
-
-* `mapprime(ITensor T, ...) -> ITensor`
-  
-  Return a copy of T, calling `.mapprime(...)` on this copy before returning it.
-
 ## Extracting Properties of ITensors
 
 * `rank(ITensor T) -> long` <br/>
-  `order(ITensor T) -> long` <br/>
+  `order(ITensor T) -> long`
 
-  Return the number of indices of T.
+   Return rank or order (number of indices) of the ITensor T.
+
+   <div class="example_clicker">Click to Show Example</div>
+
+      auto s1 = Index(2,"Site");
+      auto s2 = Index(2,"Site");
+      auto T = ITensor(s1,s2);
+
+      Print(order(T)); //prints: order(T) = 2
+
+
+* `norm(ITensor T) -> Real`
+
+  Return the Euclidean norm of this ITensor 
+  (the square root of the sum of squares of its elements).
+  Equivalent to, but much more efficient than, `sqrt((T*T).real())`.
+  
+  For complex ITensors, it is equivalent to `sqrt((dag(T)*T).cplx().real())`
 
 * `isReal(ITensor T) -> bool` <br/>
 
@@ -832,14 +759,6 @@ for details about the possible arguments to these functions.
 
   Return `true` if the ITensor has complex valued storage, otherwise `false`. 
   Returns true even if the norm of the imaginary part happens to be zero.
-
-* `norm() -> Real`
-
-  Return the Euclidean norm of this ITensor 
-  (the square root of the sum of squares of its elements).
-  Equivalent to, but much more efficient than, `sqrt((T*T).real())`.
-  
-  For complex ITensors, it is equivalent to `sqrt((dag(T)*T).cplx().real())`
 
 * `sumels(ITensor const& T) -> Real` <br/>
   `sumelsC(ITensor const& T) -> Cplx` <br/>
@@ -851,13 +770,13 @@ for details about the possible arguments to these functions.
 
 ## Analyzing ITensor Indices
 
-* `hasindex(ITensor T, Index i) -> bool`
+* `hasIndex(ITensor T, Index i) -> bool`
 
-  Returns `true` if ITensor T has an Index exactly matching `i` (including its prime level).
+  Returns `true` if ITensor T has an Index exactly matching `i` (including its tags and prime level).
 
-* `findtype(ITensor T, IndexType type) -> Index`
+* `findIndex(ITensor T, TagSet tags, [int plev]) -> Index`
 
-  Return the first Index of T whose IndexType matches `type`. If no such Index is found, returns
+  Return the first Index of T that contains tags in `tags`. If no such Index is found, returns
   a default-constructed Index (which evaluates to `false` in a boolean context).
 
   <div class="example_clicker">Click to Show Example</div>
@@ -873,14 +792,14 @@ for details about the possible arguments to these functions.
        auto y = findtype(T,MyType);
        if(!y) println("T does not have a MyType Index");
 
-* `commonIndex(ITensor A, ITensor B, IndexType t = All) -> Index`
+* `commonIndex(ITensor A, ITensor B[, string tags]) -> Index`
 
   Return the first Index found on both A and B. If A and B
   have no Index in common, returns a default constructed Index
   (which will evaluate to `false` in a boolean context).
 
-  If the optional IndexType `t` is provided, only a common
-  Index of that type will be returned if found.
+  If the optional string `tags` is provided, only a common
+  Index of with the specified tags will be returned if found.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -890,7 +809,7 @@ for details about the possible arguments to these functions.
       auto c = commonIndex(A,B);
       if(c) println("Common Index of A and B is ",c);
 
-* `uniqueIndex(ITensor A, ITensor B, IndexType t = All) -> Index`
+* `uniqueIndex(ITensor A, ITensor B[, string tags]) -> Index`
 
   Return the first Index of A found NOT to be on B.
 
@@ -898,8 +817,8 @@ for details about the possible arguments to these functions.
   default constructed Index
   (which will evaluate to `false` in a boolean context).
 
-  If the optional IndexType `t` is provided, only a unique
-  Index of that type will be returned if found.
+  If the optional string `tags` is provided, only a unique
+  Index containing the specified tags will be returned if found.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -929,23 +848,6 @@ for details about the possible arguments to these functions.
 
       Print(u == i); //prints "true"
 
-* `findindex(ITensor T, Cond c) -> Index`
-
-  Return the first Index of T for which the condition function `c(i)` returns `true`.
-  If no Index matches the condition, returns 
-  a default-constructed Index (which evaluates to `false` in a boolean context).
-
-  <div class="example_clicker">Click to Show Example</div>
-
-       auto s = Index(3,"Site");
-       auto l = Index(10,"Link");
-
-       auto T = ITensor(s,l);
-
-       auto sizeIs3 = [](Index const& i) { return i.m()==3; };
-       auto x = findindex(T,sizeIs3);
-       if(x) printfln("Found Index %s with size of 3",x);
-
 ## Other Functions
 
 * `multSiteOps(ITensor A, ITensor B) -> ITensor`
@@ -953,15 +855,15 @@ for details about the possible arguments to these functions.
   Multiply two operators whose index structure follows the
   ITensor convention for operators.
 
-  A and B are expected to have `Site` type indices 
-  s1, s2, s3, ... and indices s1', s2', s3', ...
-  and no othe `Site` indices.
+  A and B are expected to have indices with a "Site" tag
+  s1, s2, s3, ... and s1', s2', s3', ...
+  and no other indices with a "Site" tag.
 
   This function: 
-  1. Increments the prime level of A's `Site`
+  1. Increments the prime level of A's "Site"
      indices by 1
   2. Contracts A with B
-  3. Maps all `Site` indices with prime level 2
+  3. Maps all "Site" indices with prime level 2
      back to prime level 1.
 
   <div class="example_clicker">Click to Show Example</div>
@@ -985,16 +887,15 @@ for details about the possible arguments to these functions.
        |   |     s1  s2
       s1  s2  
 
-<a name="reindex"></a>
-* `reindex(ITensor T, Index old1, Index new1, Index old2, Index new2, ...) -> ITensor`
+<a name="replaceinds"></a>
+* `replaceInds(ITensor T, Index old1, Index new1, Index old2, Index new2, ...) -> ITensor`
 
   Given an ITensor T which has indices `old1`, `old2`, and possibly other indices
   or other copies of `old1` etc. with various prime levels, this function
   returns a new ITensor with the same components but 
-  with `old1` replaced by `new1`, `old2` replaced by `new2`, etc. This includes all
-  different copies of the old indices which might be part of the index set with various
-  prime levels. Any other indices of T which are not mentioned in the arguments to
-  `reindex` are left unchanged.
+  with `old1` replaced by `new1`, `old2` replaced by `new2`, etc. 
+  Any other indices of T which are not mentioned in the arguments to
+  `replaceInds` are left unchanged.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -1005,7 +906,7 @@ for details about the possible arguments to these functions.
 
       auto T12 = ITensor(s1,prime(s1),s2,prime(s2));
 
-      auto T34 = reindex(T12,s1,s3,s2,s4);
+      auto T34 = replaceInds(T12,s1,s3,prime(s1),prime(s3),s2,s4,prime(s2),prime(s4));
 
       //ASCII art drawing:
              
