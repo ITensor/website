@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [A DMRG Study of Superconductivity in the Triangular Lattice Hubbard Model](https://arxiv.org/abs/1901.11034), Jordan Venderley, E. A. Kim, arxiv:1901.11034
+
+* [Open XXZ chain and boundary modes at zero temperature](https://arxiv.org/abs/1901.10932), Sebastian Grijalva, Jacopo De Nardis, Veronique Terras, arxiv:1901.10932
+
 * [Theory of the field-revealed Kitaev spin liquid](https://arxiv.org/abs/1901.09943), Jacob S. Gordon, Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1901.09943
 
 * [Critical Entanglement for the Half-Filled Extended Hubbard Model](https://arxiv.org/abs/1901.09151), Jon Spalding, Shan-Wen Tsai, David K Campbell, arxiv:1901.09151
