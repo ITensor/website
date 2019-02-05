@@ -9,7 +9,7 @@ $$
 
 In diagrammatic form, what we want to compute is
 
-<img class="diagram" width="60%" src="docs/formulas/two_rdm.png"/>
+<img class="diagram" width="60%" src="docs/VERSION/formulas/two_rdm.png"/>
 
 Then we can use the following sample code to compute this quantity 
 for fixed i and j.

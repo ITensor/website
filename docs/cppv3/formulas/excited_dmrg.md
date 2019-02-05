@@ -2,6 +2,6 @@
 
 ### Example code:
 
-    include:docs/formulas/excited_dmrg.cc
+    include:docs/VERSION/formulas/excited_dmrg.cc
 
-<img class="icon" src="docs/install.png"/>&nbsp;<a href="docs/formulas/excited_dmrg.cc">Download the example code</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/excited_dmrg.cc">Download the example code</a>

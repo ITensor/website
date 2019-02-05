@@ -2,6 +2,6 @@
 
 ### Sample code:
 
-    include:docs/formulas/entanglement_mps.cc
+    include:docs/VERSION/formulas/entanglement_mps.cc
 
-<img class="icon" src="docs/install.png"/>&nbsp;<a href="docs/formulas/entanglement_mps.cc">Download the full example code</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/entanglement_mps.cc">Download the full example code</a>

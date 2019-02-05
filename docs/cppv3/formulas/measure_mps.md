@@ -79,10 +79,10 @@ The code prints out the measured values of
 @@\langle S^z\_j \rangle@@ and @@\langle {S}\_j \cdot \vec{S}\_{j+1} \rangle@@.
 <br/>
 <br/>
-<img class="icon" src="docs/install.png"/>&nbsp;<a href="docs/formulas/measure_mps.cc">Download the sample code below</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/measure_mps.cc">Download the sample code below</a>
 
 
-    include:docs/formulas/measure_mps.cc
+    include:docs/VERSION/formulas/measure_mps.cc
 
 
 

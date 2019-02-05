@@ -37,6 +37,6 @@ time step. The `gateTEvol` function is a helper function that handles the logic 
 applying a container of gates to an MPS the right number of times and with the 
 appropriate truncation of the MPS after each step.
 
-    include:docs/formulas/tevol_trotter/tevol_trotter.cc
+    include:docs/VERSION/formulas/tevol_trotter/tevol_trotter.cc
 
-<img class="icon" src="docs/install.png"/>&nbsp;<a href="docs/formulas/tevol_trotter/tevol_trotter.cc">Download the full example code</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/tevol_trotter/tevol_trotter.cc">Download the full example code</a>

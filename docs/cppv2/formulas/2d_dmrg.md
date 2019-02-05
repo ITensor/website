@@ -18,6 +18,6 @@ the geometry a cylinder.
 
 ### Full example code:
 
-    include:docs/formulas/2d_dmrg.cc
+    include:docs/VERSION/formulas/2d_dmrg.cc
 
-<img class="icon" src="docs/install.png"/>&nbsp;<a href="docs/formulas/2d_dmrg.cc">Download the full example code</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/2d_dmrg.cc">Download the full example code</a>
