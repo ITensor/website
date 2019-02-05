@@ -65,7 +65,7 @@ But this notation can become cumbersome for more complicated contractions.
 A nicer way to notate a tensor contraction is 
 by using a diagram
 
-<img class="diagram" width="40%" src="docs/book/images/WW_contraction.png"/>
+<img class="diagram" width="40%" src="docs/VERSION/book/images/WW_contraction.png"/>
 
 In diagram notation a tensor is a blob and each line denotes an index. 
 Connecting two lines implies those indices are summed over.
@@ -84,10 +84,10 @@ has only s and s' as indices.
 
 <br/>
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[ITensor Basics|book/itensor_basics]]
 </span>
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>
 

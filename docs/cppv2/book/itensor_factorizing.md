@@ -50,7 +50,7 @@ are the "row" indices
 The call to `svd` function computes the SVD of T and overwrites U,S,V with the results.
 Diagrammatically this looks like:
 
-<img class="diagram" width="95%" src="docs/book/images/SVD_Ex1.png"/>
+<img class="diagram" width="95%" src="docs/VERSION/book/images/SVD_Ex1.png"/>
 
 Note that after the SVD, ITensor U still has indices i and k, but also a new index
 shared with S. ITensor V gets the index j from T and has the other index of S.
@@ -152,11 +152,11 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 <br/>
 
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[Contracting ITensors|book/itensor_contraction]]
 </span>
 
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[Case Study: TRG Algorithm|book/trg]]
 </span>
 

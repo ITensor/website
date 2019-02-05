@@ -25,10 +25,10 @@ background knowledge and an awareness of certain conventions;
 these are the focus of the next few chapters.
 
 <br/>
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[Case Study: TRG Algorithm|book/trg]]
 </span>
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[Block-Sparse Tensors|book/block_sparse]]
 </span>
 <br/>

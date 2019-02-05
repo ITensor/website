@@ -172,10 +172,10 @@ This constructor is very handy for creating ITensors which
 
 <br/>
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[Index Objects|book/index]]
 </span>
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[Contracting ITensors|book/itensor_contraction]]
 </span>
 

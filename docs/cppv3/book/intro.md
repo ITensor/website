@@ -85,10 +85,10 @@ renormalization group (DMRG) algorithms used in physics and chemistry.
 <br/>
 <br/>
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon"> 
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon"> 
 [[Table of Contents|book]]
 </span>
-<span style="float:right;"><img src="docs/arrowright.png" class="icon"> 
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon"> 
 [[Index Objects|book/index]]
 </span>
 

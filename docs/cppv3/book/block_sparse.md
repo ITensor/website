@@ -22,7 +22,7 @@ The operator @@a@@ annihilates a boson; @@a^\dagger@@ creates a boson; and
 
 Diagrammatically, the equation @@a |1\rangle = |0\rangle@@ looks like
 
-<img class="diagram" width="25%" src="docs/book/images/annihilation.png"/>
+<img class="diagram" width="25%" src="docs/VERSION/book/images/annihilation.png"/>
 
 Unlike plain ITensors, these tensors have arrows on their indices. 
 There are two kinds of arrows: in and out relative to the tensor. 
@@ -40,7 +40,7 @@ a raised index and an in arrow to a lowered index.
 
 We can write @@a@@ as the following matrix:
 
-<img class="diagram" width="30%" src="docs/book/images/amatrix.png"/>
+<img class="diagram" width="30%" src="docs/VERSION/book/images/amatrix.png"/>
 
 The arrows on the row and column indices match the ones in the diagram above.
 The small red numbers along the outside of the matrix are the <i>quantum numbers</i>
@@ -52,7 +52,7 @@ The definition of @@a@@ is that it lowers the particle number by one.
 Therefore if we divide the elements of @@a@@ into 
 <i>quantum number blocks</i>
 
-<img class="diagram" width="30%" src="docs/book/images/ablocks.png"/>
+<img class="diagram" width="30%" src="docs/VERSION/book/images/ablocks.png"/>
 
 it follows that the only non-zero block must be the one containing
 @@a\_{1 2}@@. If any other block were non-zero, there would be cases
@@ -64,7 +64,7 @@ superposition thereof).
 We can go further by considering a generic operator, and labeling each of its blocks
 by how much they change the boson number.
 
-<img class="diagram" width="30%" src="docs/book/images/fluxes.png"/>
+<img class="diagram" width="30%" src="docs/VERSION/book/images/fluxes.png"/>
 
 We will call these numbers the <i>flux</i> of a block. To understand this name,
 if we associate an <span style="color:green;font-weight:bold;">out</span> arrow with a
@@ -90,7 +90,7 @@ The operators @@a@@, @@a^\dagger@@, and @@n@@ above are all IQTensors.
 We can confirm this for @@a^\dagger@@ and @@n@@ by checking that their
 non-zero elements are only in blocks of the same flux:
 
-<img class="diagram" width="40%" src="docs/book/images/n_adag_ops.jpg"/>
+<img class="diagram" width="40%" src="docs/VERSION/book/images/n_adag_ops.jpg"/>
 
 Test your knowledge: what are the fluxes of the @@n@@ and @@a^\dagger@@ operators?
 
@@ -99,11 +99,11 @@ not be a well-defined IQTensor.
 
 <br/>
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[IQTensor Overview|book/iqtensor_overview]]
 </span>
 
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[IQIndex|book/iqindex]]
 </span>
 

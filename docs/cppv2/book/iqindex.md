@@ -8,7 +8,7 @@ correspond to a quantum number q1; other values of the index correspond to q2; e
 Let us revisit our example from the last chapter of a single-site operator acting
 on the Hilbert space of a single hard-core boson:
 
-<img class="diagram" width="30%" src="docs/book/images/ablocks.png"/>
+<img class="diagram" width="30%" src="docs/VERSION/book/images/ablocks.png"/>
 
 We see that for each index, if the index value is 1 then it is in the quantum
 number 0 sector. If the index value is 2, the index is in the quantum number 1 sector.
@@ -64,7 +64,7 @@ The values that J can take (the index values of J) range from 1 up to 18 (=2+4+6
 
 The above example can be summarized in a chart:
 
-<img class="diagram" width="75%" src="docs/book/images/iqindex_chart.png"/>
+<img class="diagram" width="75%" src="docs/VERSION/book/images/iqindex_chart.png"/>
 
 ## Relationship to the Index Class
 
@@ -77,7 +77,7 @@ contain information about the sectors (sector sizes, sector Index labels, and QN
 
 <br/>
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[Block-Sparse Tensors|book/block_sparse]]
 </span>
 

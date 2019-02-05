@@ -55,7 +55,7 @@ $$
 Pictorially, we can view @@\text{Tr}\left(M^N\right)@@ as a chain of tensor contractions around a
 circle:
 
-<img class="diagram" width="60%" src="docs/book/images/TRG_1dIsingZ.png"/>
+<img class="diagram" width="60%" src="docs/VERSION/book/images/TRG_1dIsingZ.png"/>
 
 With each 2-index tensor in the above diagram defined to equal the matrix M, it is an exact
 rewriting of the partition function @@Z@@ as a tensor network.
@@ -74,7 +74,7 @@ $$
 where the notation @@\langle i j \rangle@@ means the sum only includes @@i,j@@ which are
 neighboring sites. It helps to visualize the system:
 
-<img class="diagram" width="60%" src="docs/book/images/TRG_2dIsingZ.png"/>
+<img class="diagram" width="60%" src="docs/VERSION/book/images/TRG_2dIsingZ.png"/>
 
 In the figure above, the black arrows are the Ising spins @@\sigma@@ and the 
 blue lines represent the local energies @@\sigma\_i \sigma\_j@@.
@@ -88,7 +88,7 @@ $$
 A^{\sigma\_t \sigma\_r \sigma\_b \sigma\_l} = e^{-(\sigma\_t \sigma\_r + \sigma\_r \sigma\_b + \sigma\_b \sigma\_l + \sigma\_l \sigma\_t)/T}
 $$
 
-<img class="diagram" width="15%" src="docs/book/images/TRG_Atensor.png"/>
+<img class="diagram" width="15%" src="docs/VERSION/book/images/TRG_Atensor.png"/>
 
 The interpretation of this tensor is that it computes the local energies between the four spins that
 live on its indices, and its value is the Boltzmann probability weight @@e^{-E/T}@@ associated with
@@ -97,7 +97,7 @@ these energies. Note its similarity to the one-dimensional transfer matrix @@M@@
 With @@A@@ thus defined, the partition function @@Z@@ for the two-dimensional Ising model can
 be found by contracting the following network of @@A@@ tensors:
 
-<img class="diagram" width="35%" src="docs/book/images/TRG_2dPeriodic.png"/>
+<img class="diagram" width="35%" src="docs/VERSION/book/images/TRG_2dPeriodic.png"/>
 
 The above drawing is of a lattice of 32 Ising spins (recall that the spins live on
 the tensor indices). The indices at the edges of this square wrap around in a periodic
@@ -114,7 +114,7 @@ way that results in a more sparse, yet equivalent network.
 Referring to the original @@A@@ tensor as @@A\_0@@, the first "move" of 
 TRG is to factorize the @@A\_0@@ tensor in two different ways:
 
-<img class="diagram" width="85%" src="docs/book/images/TRG_factor2ways.png"/>
+<img class="diagram" width="85%" src="docs/VERSION/book/images/TRG_factor2ways.png"/>
 
 Both factorizations can be computed using the [[singular value decomposition (SVD)|book/itensor_factorizing]].
 For example, to compute the first factorization, view @@A\_0@@ as a matrix with a collective "row"
@@ -123,7 +123,7 @@ After performing an SVD of @@A\_0@@ in this way, further factorize the singular 
 absorb each @@\sqrt{S}@@ factor into 
 U and V to create the factors @@F\_1@@ and @@F\_2@@. Pictorially:
 
-<img class="diagram" width="100%" src="docs/book/images/TRG_factorizing.png"/>
+<img class="diagram" width="100%" src="docs/VERSION/book/images/TRG_factorizing.png"/>
 
 Importantly, the SVD is only done approximately by retaining just the @@\chi@@ largest singular
 values and discarding the columns of U and V corresponding to the smaller singular values.
@@ -133,11 +133,11 @@ Making the above substitutions, either
 @@A\_0=F\_1 F\_3@@ or @@A\_0=F\_2 F\_4@@ on alternating lattice sites, transforms the
 original tensor network into the following network:
 
-<img class="diagram" width="90%" src="docs/book/images/TRG_network1.png"/>
+<img class="diagram" width="90%" src="docs/VERSION/book/images/TRG_network1.png"/>
 
 Finally by contracting the four F tensors in the following way
 
-<img class="diagram" width="40%" src="docs/book/images/TRG_group.png"/>
+<img class="diagram" width="40%" src="docs/VERSION/book/images/TRG_group.png"/>
 
 one obtains the tensor @@A\_1@@ which has four indices just like @@A\_0@@.
 Contracting the @@A\_1@@ tensors in a square-lattice pattern gives the 
@@ -145,14 +145,14 @@ same result (up to SVD truncation errors) as contracting the original @@A\_0@@ t
 only there are half as many @@A\_1@@ tensors (each @@A\_0@@ consists
 of two F's while each @@A\_1@@ consists of four F's).
 
-<img class="diagram" width="80%" src="docs/book/images/TRG_recombine.png"/>
+<img class="diagram" width="80%" src="docs/VERSION/book/images/TRG_recombine.png"/>
 
 To compute @@Z@@ defined by contracting a square lattice of @@2^{1+N}@@ tensors, one
 repeats the above two steps (factor and recombine) N times until only a single
 tensor remains. Calling this final tensor @@A\_N@@, the result @@Z@@ of contracting
 the original network is equal to the following "double trace" of @@A\_N@@:
 
-<img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
+<img class="diagram" width="20%" src="docs/VERSION/book/images/TRG_top.png"/>
 
 ### Implementing TRG in ITensor
 
@@ -316,7 +316,7 @@ To obtain @@Z@@ from the top tensor, all we have to do is trace both the x indic
 other and trace the y indices with each other, which results in a scalar tensor whose
 value is @@Z@@:
 
-<img class="diagram" width="20%" src="docs/book/images/TRG_top.png"/>
+<img class="diagram" width="20%" src="docs/VERSION/book/images/TRG_top.png"/>
 
 In ITensor, you can compute a trace by creating a special type of sparse ITensor 
 called a `delta`. A `delta` tensor has only diagonal elements, all equal to 1.0.
@@ -357,9 +357,9 @@ Click the link just below to view a complete, working sample code you can compil
 
 <div class="example_clicker">Click here to view the full example code</div>
 
-    include:docs/book/trg.cc
+    include:docs/VERSION/book/trg.cc
 
-<img class="icon" src="docs/install.png"/>&nbsp;<a href="docs/book/trg.cc">Download the full example code</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/book/trg.cc">Download the full example code</a>
 
 
 ### Next Steps for You to Try
@@ -409,10 +409,10 @@ of how it is normalized.
 <br/>
 
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[IQTensor Overview|book/iqtensor_overview]]
 </span>
 

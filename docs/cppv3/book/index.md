@@ -140,10 +140,10 @@ The IndexType of an Index can be obtained by calling the `.type()` method.
 
 <br/>
 
-<span style="float:left;"><img src="docs/arrowleft.png" class="icon">
+<span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
 [[ITensor Library Overview|book/intro]]
 </span>
-<span style="float:right;"><img src="docs/arrowright.png" class="icon">
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[ITensor Basics|book/itensor_basics]]
 </span>
 
