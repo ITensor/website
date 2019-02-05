@@ -12,9 +12,13 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Support for MPI (Message Passing Interface) Parallelism|classes/parallel]]
 
-## Index: named tensor index
+## Index
 
 * [[Index|classes/index]]. Tensor index.
+
+* Special Index modes:
+
+  - [[QN Index|classes/index_qn]]. Index carrying QN block information.
 
 * [[IndexVal|classes/indexval]]. Index-value pair.
 
