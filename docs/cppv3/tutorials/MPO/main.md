@@ -94,7 +94,7 @@ The ITensor code is
 
 A diagram for an MPO may look like
 
-<p align="center"><img src="docs/tutorials/MPO/MPO.png" alt="MPO Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPO/MPO.png" alt="MPO Diagram" style="height: 200px;"/></p>
 
 In ITensor, one of the vertical lines has a different prime level than the bottom leg.  Both vertical legs have the same `Index` name, however.
 
@@ -105,7 +105,7 @@ Note that each Hamiltonian has many diagrams added together.  Our examples of th
 
 To get access to the operators, one may fix the sub-indices on an MPO (i.e., @@a\_1@@ and @@a\_2@@ in @@\mathcal{H}\_{a\_1a\_2}^{\sigma\_2\sigma\_3}@@).  Fixing the indices to be 3 and 2 in the Ising model gives the @@S^z@@ operator.  We can insert this operator only into the network to measure the onsite magnetization
 
-<p align="center"><img src="docs/tutorials/MPO/onsite.png" alt="MPS Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPO/onsite.png" alt="MPS Diagram" style="height: 200px;"/></p>
 
 $$
 =\langle\psi| S_z|\psi\rangle
@@ -120,13 +120,13 @@ That is how operators connect with MPOs and can be used in computation. They are
 
 2D systems can be mapped onto a 1D system.  Consider a square lattice:
 
-<p align="center"><img src="docs/tutorials/MPO/2D.png" alt="MPS Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPO/2D.png" alt="MPS Diagram" style="height: 200px;"/></p>
 
 The red lines show how we want to move over the lattice as we solve it, for example, with a DMRG calculation.  Note that unlike our 1D chains with near-neighbor bonds, there are horizontal bonds (green bars).  Sometimes the path is drawn differently in papers, but this is the path taken.
 
 The cost of mapping the 2D calculation to a 1D problem is the introduction of bonds that are not just near-neighbor terms.  The associated network would look like
 
-<p align="center"><img src="docs/tutorials/MPO/1D_equiv.png" alt="MPS Diagram" style="height: 250px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPO/1D_equiv.png" alt="MPS Diagram" style="height: 250px;"/></p>
 
 The complications of this diagram can be summarized by examining the bulk MPO (some middle site) for a 4x4 Heisenberg model as shown above as
 
@@ -174,7 +174,7 @@ We should also mention that one could write down an MPO for a DMRG algorithm tha
 
 We can now see why the periodic boundary conditions affect the computational speed of a calculation.  The difference between the open boundary condition and the periodic boundary condition for the Ising model is a term @@S_1^zS_N^z@@.
 
-<p align="center"><img src="docs/tutorials/MPO/periodic.png" alt="MPS Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPO/periodic.png" alt="MPS Diagram" style="height: 200px;"/></p>
 
 But our matrix on each site can no longer be the comparatively small @@3 x 3@@ matrix that makes computation fast.  We need the operator on site 1 to connect all the way to site @@N@@. We won't bother writing out the MPO that does this, but we will just reinforce that increasing matrix size increases computational time.
 

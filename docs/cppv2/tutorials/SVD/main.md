@@ -104,11 +104,11 @@ The error we calculated above is related to the truncation error in a DMRG calcu
 
 Consider a two site wavefunction
 
-<p align="center"><img src="docs/tutorials/SVD/singlet.png" alt="SVD Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/SVD/singlet.png" alt="SVD Diagram" style="height: 200px;"/></p>
 
 The SVD can be represented diagramatically as
 
-<p align="center"><img src="docs/tutorials/SVD/SVD.png" alt="SVD Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/SVD/SVD.png" alt="SVD Diagram" style="height: 200px;"/></p>
 
 ## In ITensor
 

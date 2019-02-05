@@ -7,7 +7,7 @@ In classical physics, free body diagrams represent the sum of forces in Newton's
 
 For example, the expectation value of a Hamiltonian as a tensor diagram looks like:
 
-<p align="center"><img src="docs/articles/psiHpsi.png" alt="Diagram" style="width: 400px;"/></p>
+<p align="center"><img src="docs/VERSION/articles/psiHpsi.png" alt="Diagram" style="width: 400px;"/></p>
 
 $$=\langle\psi|\hat H|\psi\rangle$$
 
@@ -36,7 +36,7 @@ Each diagram will consist of blobs connected by lines.  Each blob represents a t
 
 For example, one tensor with one line is a vector:
 
-<p align="center"><img src="docs/articles/vector.png" alt="Vector Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/articles/vector.png" alt="Vector Diagram" style="height: 200px;"/></p>
 
 $$=A^\mu$$
 
@@ -47,7 +47,7 @@ To make a vector in ITensor, one may use the code
 
 Since a matrix is a rank two object (there are two indices), the diagrammatic representation looks like
 
-<p align="center"><img src="docs/articles/matrix.png" alt="Matrix Diagram" style="height: 150px;"/></p>
+<p align="center"><img src="docs/VERSION/articles/matrix.png" alt="Matrix Diagram" style="height: 150px;"/></p>
 
 $$=A^{\mu\nu}$$
 
@@ -56,7 +56,7 @@ $$=A^{\mu\nu}$$
 
 A trace over matrices would look like
 
-<p align="center"><img src="docs/articles/trace.png" alt="Matrix Diagram" style="width: 350px;"/></p>
+<p align="center"><img src="docs/VERSION/articles/trace.png" alt="Matrix Diagram" style="width: 350px;"/></p>
 
 $$=\sum_{\alpha\beta\gamma\eta} A^{\alpha\beta}B^{\beta\gamma}C^{\gamma\eta}D^{\eta\alpha}$$
 
@@ -68,7 +68,7 @@ Note that when two ITensors are multiplied with the `*` operator, any matching I
 
 Diagrams can be simple, like those above, or they can be complicated like this one:
 
-<p align="center"><img src="docs/articles/complex.png" alt="Matrix Diagram" style="width: 350px;"/></p>
+<p align="center"><img src="docs/VERSION/articles/complex.png" alt="Matrix Diagram" style="width: 350px;"/></p>
 
 $$=\sum_{\gamma\delta\eta\mu} A^{\alpha\beta\gamma\delta\eta\mu}B^{\gamma\delta\eta\mu\nu\zeta}$$
 

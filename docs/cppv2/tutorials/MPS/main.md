@@ -13,7 +13,7 @@ Each bulk tensor of an MPS has three indices, @@A^{\sigma\_i}\_{a\_i a\_{i+1}}@@
 
 An MPS diagram for a five site system looks like
 
-<p align="center"><img src="docs/tutorials/MPS/MPS.png" alt="MPS" style="height: 150px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPS/MPS.png" alt="MPS" style="height: 150px;"/></p>
 
 We will discuss some characteristics of MPSs and introduce some concepts that are essential for working with MPS in ITensor.
 
@@ -64,11 +64,11 @@ To set site 4 of the 5-site MPS above to be the orthogonality center, call
 
 ITensor will compute a series of [[singular value decompositions|tutorials/SVD]] (in this case, only one) until the orthogonality center reaches site 4. The MPS diagram now looks like:
 
-<p align="center"><img src="docs/tutorials/MPS/MPS_site2.png" alt="Regauged MPS" style="height: 150px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPS/MPS_site2.png" alt="Regauged MPS" style="height: 150px;"/></p>
 
 To illustrate one advantage of setting the MPS gauge, consider the diagram below where we have drawn purple squares to be left-normalized while yellow squares are right-normalized.
 
-<p align="center"><img src="docs/tutorials/MPO/onsite.png" alt="MPS Diagram" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPO/onsite.png" alt="MPS Diagram" style="height: 200px;"/></p>
 
 First call ``psi.position(2)`` to center the gauge at site 2 as in the above diagram.
 
@@ -93,7 +93,7 @@ To construct a two-site singlet state in ITensor, we may use
 
 This stores a tensor in the `s1`, `s2` basis and appears in matrix form as
 
-<p align="center"><img src="docs/tutorials/MPS/singlet.png" alt="singlet MPS" style="height: 250px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/MPS/singlet.png" alt="singlet MPS" style="height: 250px;"/></p>
 
 Following the indices we defined, this is written in matrix form as
 

@@ -8,7 +8,7 @@ For example, a matrix product state (MPS) tensor has one physical `Index` of [[t
 
 For example, consider the @@S\_z@@ operator.  This operator has two indices:
 
-<p align="center"><img src="docs/tutorials/primes/Sz.png" alt="MPS" style="height: 150px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/Sz.png" alt="MPS" style="height: 150px;"/></p>
 
 When acting @@S\_z@@ onto a wavefunction, we only want one of the indices (the bottom one in the diagram) to be contracted, with the top one remaining uncontracted. Setting the prime level of the top index to 1 enforces this behavior, assuming the wavefunction has unprimed indices.
 
@@ -18,7 +18,7 @@ We will detail in this article how to use primes on indices and best practices.
 
 An example where we might want to introduce a new `Index`, rather than priming an existing one, is when coarse graining a lattice (in some real-space RG procedure).  If we go from a fine lattice to a coarser one, then we have a diagram that looks like the diagram on the left:
 
-<p align="center"><img src="docs/tutorials/primes/primingpractice.png" alt="MPS" style="height: 250px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/primingpractice.png" alt="MPS" style="height: 250px;"/></p>
 
 The local physics has changed on the coarser level. A single site now corresponds to two sites of the original lattice and could have a dimension ranging from 1 to the square of the original lattice dimension. If the new coarse-grained lattice happens to have the same local dimension as the old, it might be tempting to "recycle" the index `s1` by using a primed copy of it as the new site index (as in the diagram on the right). But in light of the new physics, we should just introduce a new `Index` (left) instead of using a primed version of an existing `Index` (right).
 
@@ -155,17 +155,17 @@ We begin by defining four tensors:
 
 This pattern of tensors appears in a [[TRG|book/trg]] calculation and this represents the final operation before updating the tensor for the next renormalization group step. In order to get a better idea of what these tensors look like, we should draw a picture:
 
-<p align="center"><img src="docs/tutorials/primes/trg_tensors.png" alt="MPS" style="height: 350px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg_tensors.png" alt="MPS" style="height: 350px;"/></p>
 
 Right now, that's not what we want.  If we contracted all the tensors (`S1*S2*S3*S4`), then we'd get a scalar.  We want the diagrams to contract just as they are drawn:  horizontal lines with horizontal lines, vertical lines with vertical lines.  We also want some extra double primes on some of the level 1 indices (`x1`, `y1`). The tensors come out of the program this way and are a necessity in the TRG algorithm.  We must manipulate the primes to get the correct contraction:
 
-<p align="center"><img src="docs/tutorials/primes/trg_final.png" alt="MPS" style="height: 350px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg_final.png" alt="MPS" style="height: 350px;"/></p>
 
 For educational purposes, let's prime one index:
 
     prime(S1,y0);
 
-<p align="center"><img src="docs/tutorials/primes/trg1.png" alt="MPS" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg1.png" alt="MPS" style="height: 200px;"/></p>
 
 and then unprime it
 
@@ -177,25 +177,25 @@ Now we get serious.  Let's remove all primes from `S4`:
 
     A *= noprime(S4);//or mapprime(S4,2,0)
 
-<p align="center"><img src="docs/tutorials/primes/trg2.png" alt="MPS" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg2.png" alt="MPS" style="height: 200px;"/></p>
 
 This is a promising step considering the contractions we eventually want.  We then contract with `S3`:
 
     A *= S3;
 
-<p align="center"><img src="docs/tutorials/primes/trg3.png" alt="MPS" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg3.png" alt="MPS" style="height: 200px;"/></p>
 
 Now we prime twice the `Xtype` indices on the next contraction:
 
     A = prime(A,Xtype,2);
 
-<p align="center"><img src="docs/tutorials/primes/trg4.png" alt="MPS" style="height: 200px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg4.png" alt="MPS" style="height: 200px;"/></p>
 
 Let's prime `S2` twice and contract it with `A`
 
     A *= prime(S2,2);
 
-<p align="center"><img src="docs/tutorials/primes/trg5.png" alt="MPS" style="height: 400px;"/></p>
+<p align="center"><img src="docs/VERSION/tutorials/primes/trg5.png" alt="MPS" style="height: 400px;"/></p>
 
 The dotted line contracted on `*`.  The last step is to contract `S1` and this gives us the correct result.
 
