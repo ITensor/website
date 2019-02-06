@@ -12,7 +12,7 @@ Index is defined in "itensor/index.h".
 ## Synopsis ##
 
     auto i = Index(4);
-    Print(i.m()); //prints: i.m() = 4
+    Print(dim(i)); //prints: dim(i) = 4
 
     //Copies of the same Index compare equal
     auto ii = i; //ii is a copy of i
@@ -21,17 +21,17 @@ Index is defined in "itensor/index.h".
     //The prime level of an Index can be
     //adjusted to make it distinct
     ii.prime(2);
-    Print(ii.primeLevel()); //prints: ii.primeLevel() = 2
+    Print(primeLevel(ii)); //prints: primeLevel(ii) = 2
     Print(ii == i); //prints: false
 
-    ii.noprime();
+    ii.noPrime();
     Print(ii == i); //prints: true
 
     // Index objects can also hold a set of up to four tags
     auto j = Index(5,"j,Link");
     Print(hasTags(j,"j")); //prints: true
 
-    // Tags can be added or removed to an index
+    // Tags can be added to or removed from an index
     // Indices must have the same tags to compare equal
     auto ia = addTags(i,"a");
     Print(ia == i); //prints: false
@@ -40,9 +40,9 @@ Index is defined in "itensor/index.h".
 
     auto iab = addTags(ia,"b");
 
-    Print(i.tags()); //prints: ""
-    Print(ia.tags()); //prints: "a"
-    Print(iab.tags()); //prints: "a,b"
+    Print(tags(i)); //prints: ""
+    Print(tags(ia)); //prints: "a"
+    Print(tags(iab)); //prints: "a,b"
 
     Print(hasTags(iab,"b,a")); //prints: true
 
@@ -71,15 +71,15 @@ Index is defined in "itensor/index.h".
 
 ## Accessor Methods ##
 
-* `.m() -> long` 
+* `dim(Index i) -> long` 
 
   Return the index size.
 
-* `.primeLevel() -> int` 
+* `primeLevel(Index i) -> int` 
 
   Return the prime level.
 
-* `.tags() -> TagSet`
+* `tags(Index i) -> TagSet`
 
   Return the tags of this Index as a TagSet.
 
@@ -87,19 +87,53 @@ Index is defined in "itensor/index.h".
 
   The unique id number of this Index (returned as a string)
 
-## Prime Level Class Methods ##
+## Prime Level Functions
 
-* `.setPrime(int n)`  
+* `setPrime(Index I, int `plev`) -> Index`
 
-  Set the prime level of this Index to n.
+   Return a copy of `I` with prime level set to `plev`.
 
-* `.prime(int inc = 1)`  
+* `.setPrime(int plev)`
+
+  Set the prime level of this Index to `plev`.
+
+* `prime(Index I, int inc = 1) -> Index`
+
+   Return a copy of `I` with prime level increased by 1 (or optional amount `inc`).
+
+* `.prime(int inc = 1)`
 
   Increment prime level of this Index instance. (Optionally, increment by amount `inc`.)
 
-* `.noPrime()`  
+* `noPrime(Index I) -> Index`
+
+   Return a copy of `I` with prime level set to zero.
+
+* `.noPrime()`
 
   Reset prime level to zero.
+
+## Tag functions
+
+* `addTags(Index I, string tags) -> Index`
+
+   Return a copy of `I` with `tags` added to the current TagSet.
+
+* `removeTags(Index I, string tags) -> Index`
+
+   Return a copy of `I` with `tags` removed from the current TagSet.
+
+* `setTags(Index I, string tags) -> Index`
+
+   Return a copy of `I` with a new TagSet specified by `tags`.
+
+* `replaceTags(Index I, string newtags, string oldtags)`
+
+   Return a copy of `I` with tags `oldtags` removed and tags `newtags` added.
+
+* `hasTags(Index I, string tags)`
+
+   Check if the Index `I` has a TagSet containing `tags`.
 
 ## Operators and Conversions
 
@@ -172,38 +206,6 @@ Index is defined in "itensor/index.h".
 
   Return the `Arrow` direction of this Index. Always returns `Out`. 
   Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
-
-## Prime Level Functions
-
-* `prime(Index I, int inc = 1) -> Index` 
-
-   Return a copy of  `I` with prime level increased by 1 (or optional amount `inc`).
-
-* `noPrime(Index I) -> Index` 
-
-   Return a copy of `I` with prime level set to zero.
-
-## Tag functions
-
-* `addTags(Index I, string tags) -> Index`
-
-   Return a copy of `I` with `tags` added to the current TagSet.
-
-* `removeTags(Index I, string tags) -> Index`
-
-   Return a copy of `I` with `tags` removed from the current TagSet.
-
-* `setTags(Index I, string tags) -> Index`
-
-   Return a copy of `I` with a new TagSet specified by `tags`.
-
-* `replaceTags(Index I, string newtags, string oldtags)`
-
-   Return a copy of `I` with tags `oldtags` removed and tags `newtags` added.
-
-* `hasTags(Index I, string tags)`
-
-   Check if the Index `I` has a TagSet containing `tags`.
 
 ## Other Functions
 
