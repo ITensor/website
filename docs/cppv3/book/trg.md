@@ -186,21 +186,24 @@ Next define the indices which will go on the initial "A"
 tensor:
 
     auto m0 = 2;
-    auto x = Index("x0",m0,Xtype);
-    auto y = Index("y0",m0,Ytype);
-    auto x2 = prime(x,2);
-    auto y2 = prime(y,2);
+    auto x0 = Index(m0,"x=0,scale=0");
+    auto y0 = Index(m0,"y=0,scale=0");
+    auto x1 = replaceTags(x,"x=0","x=1");
+    auto y1 = replaceTags(y,"y=0","y=1");
 
 Here it is good practice to save the index dimension @@m\_0=2@@ into its own variable
-to prevent "magic numbers" from appearing later in the code. The constants
-`XType` and `YType` are "IndexType" tags which let us conveniently manipulate only horizontal
-or only vertical indices later on. It is also convenient to save copies of x and 
-y with prime level raised to 2 as the variables x2 and y2.
+to prevent "magic numbers" from appearing later in the code. The strings "x=0,scale=0"
+and "y=0,scale=0" denote a `TagSet`, a set of tags that denote properties of an Index.
+`x=0` denotes that it is the left horizontal bond, and `scale=0` denotes that we have
+not renormalized the network yet.
+Copies of the same Index with different tags are considered to be distinct.
+Therefore, when we create the Index `x1` by replacing that tag "x=0" with "x=1",
+it will not automatically contract with the Index `x0`.
 
 Now let's create the "A" tensor defining the partition function and set its values as discussed
 in the previous section:
 
-    auto A = ITensor(x,y2,x2,y);
+    auto A = ITensor(x0,y1,x1,y0);
 
     auto Sig = [](int s) { return 1.-2.*(s-1); };
 
@@ -214,10 +217,10 @@ in the previous section:
         auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
                 +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
         auto P = exp(-(E-E0)/T);
-        A.set(x(s1),y2(s2),x2(s3),y(s4),P);
+        A.set(x0(s1),y1(s2),x1(s3),y0(s4),P);
         }
 
-The first line creates the "A" tensor with indices x,y2,x2,y and all elements set to zero.
+The first line creates the "A" tensor with indices x0,y1,x1,y0 and all elements set to zero.
 The next line defines a "lambda" function bound to the variable name Sig which converts integers
 1 and 2 into Ising spin values +1.0 and -1.0. To set the elements of A, we loop over integers
 s1,s2,s3,s4. The function `range1(d)` returns an object that can be used in a `for` loop to
@@ -242,70 +245,69 @@ do @@N-1@@ steps, so we will write a loop that does this number of steps:
 In contrast to the earlier `range1` function which starts at 1, `range(topscale)` makes the `for` loop
 run over 0,1,...,topscale-1.
 
-In the body of this loop let us first "grab" the x and y indices of the A tensor at the
-current scale. 
-
-	auto y = noprime(findtype(A,Ytype));
-	auto y2 = prime(y,2);
-	auto x = noprime(findtype(A,Xtype));
-	auto x2 = prime(x,2);
-
 Although on the first pass these are just the same indices we defined before, 
 new indices will arise as A refers to tensors at higher scales.
-
-The function `findtype(T,IndexType)` searches through the indices of a tensor and returns
-the first index whose type matches the specified IndexType. Since we want the version of 
-this index with prime level 0, we call noprime to reset the prime level to zero. We 
-also create versions of these indices with prime level 2 for convenience.
 
 Now it's time to decompose the current A tensor as discussed
 in the previous section. First the `A=F1*F3` factorization:
 
-	auto F1 = ITensor(x2,y);
-	auto F3 = ITensor(x,y2);
-	auto xname = format("x%d",scale+1);
+	auto F1 = ITensor(x0,y1);
+	auto F3 = ITensor(x1,y0);
 
-	factor(A,F1,F3,{"Maxm",maxm,"ShowEigs",true,
-					"IndexType",Xtype,"IndexName",xname});
+  auto xtags = format("x=0,scale=%d",scale+1);
+  factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
+                    "Tags=",xtags});
+  F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale+1));
 
 We create the ITensors F1 and F3 with the indices of A we
 want them to have after the factorization. This tells the `factor` routine how
 to group the indices of A. Along with the tensors, we pass some [[named arguments|tutorials/args]].
 The argument "Maxm" puts a limit on how many singular values are kept in the SVD. Setting "ShowEigs"
 to `true` shows helpful information about the truncation of singular values (actually the squares
-of the singular values which are called "density matrix eigenvalues"). Also we pass an IndexType and 
-name for the new index which will be created to connect F1 and F3.
-The line `auto xname = format("x%d",scale+1);` is a string formatting operation; if for example `scale == 2`
-then xname will be "x3".
+of the singular values which are called "density matrix eigenvalues"). Also we pass a set of tags
+that will be put on the new index which will be created to connect F1 and F3.
+The line `auto xtags = format("x=0,scale=%d",scale+1);` is a string formatting operation; if for example `scale == 2`
+then xtags will be "x=0,scale=3".
+
+The last step is to make sure that the new renormalized index introduced on Fx1, which we find
+because we know it has the tag format("scale=%d",scale+1), has the proper tag "x=1".
 
 We can write very similar code to do the `A=F2*F4` factorization, the main difference being
 which indices of A we request to end up on F2 versus F4:
 
-	auto F2 = ITensor(x,y);
-	auto F4 = ITensor(y2,x2);
-	auto yname = format("y%d",scale+1);
-
-	factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
-					"IndexType=",Ytype,"IndexName=",yname});
+  auto F2 = ITensor(x1,y1);
+  auto F4 = ITensor(x0,y0);
+  auto ytags = format("y=0,scale=%d",scale+1);
+  factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
+                    "Tags=",ytags});
+  F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale+1));
 
 For the last step of the TRG algorithm we combine the factors of the A tensor at the current
 scale to create a "renormalized" A tensor at the next scale:
 
-	auto l13 = commonIndex(F1,F3);
-	A = F1 * noprime(F4) * prime(F2,2) * prime(F3,l13,2);
+  F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale));
+  F2 = replaceTags(F2,"y=1","y=0",format("scale=%d",scale));
+  F3 = replaceTags(F3,"x=1","x=0",format("scale=%d",scale));
+  F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale));
 
-The first line grabs a copy of the index common to F1 and F3, which is convenient to
-have for the next line. The second line first contracts F1 with F4, then the result of this
-contraction with F2, and finally with F3 to produce the new A tensor. The functions
-wrapping the F tensors adjust the prime levels of various indices so that the indices we
-want contracted with match while the indices we don't want contracted will have unique
-prime levels.
+  A = F1 * F2 * F3 * F4;
 
-In more detail, `noprime(F4)` returns a copy of F4 (without copying F4's data) such that all
-indices have prime level 0. Calling `prime(F2,2)` increases the prime level of all of F2's indices
-by 2. And `prime(F3,l13,2)` raises the prime level of just the index `l13` by 2. Try drawing
-the tensor diagram showing the contraction of the F tensors to convince yourself that the 
-prime levels work out correctly.
+The `replaceTags` functions wrapping the F tensors adjust the tags of various indices 
+so that the indices we want contracted with match while the indices we don't want 
+contracted will have unique tags. Try drawing the tensor diagram showing the contraction 
+of the F tensors to convince yourself that the tagging works out correctly.
+
+Finally, we use `findIndex` to get the new indices that were introduced in our
+renormalized network:
+
+	x0 = findIndex(A,"x=0");
+	x1 = findIndex(A,"x=1");  // x1==replaceTags(x0,"x=0","x=1")
+	y0 = findIndex(A,"y=0");
+	y1 = findIndex(A,"y=1");  // y1==replaceTags(y0,"y=0","y=1")
+
+The function `findIndex(T,tags)` searches through the indices of a tensor and returns
+the first index that contains all of the specified tags. 
+Note that x1 (y1) is the same index as x0 (y0), under the appropriate change of tags.
 
 Last but not least, after we have proceeded through each scale
 we want to take the last A tensor at the "top scale" specified and 
@@ -322,17 +324,10 @@ In ITensor, you can compute a trace by creating a special type of sparse ITensor
 called a `delta`. A `delta` tensor has only diagonal elements, all equal to 1.0.
 Pictorially, you can view the delta tensors as the dashed lines in the above diagram.
 
-Let us grab the x and y indices of the top tensor:
+We use the indices we found at the latest scale of the network to create delta tensors:
 
-    auto xt = noprime(findtype(A,Xtype));
-    auto yt = noprime(findtype(A,Ytype));
-    auto xt2 = prime(xt,2);
-    auto yt2 = prime(yt,2);
-
-Then use these indices to create delta tensors:
-
-    auto Trx = delta(xt,xt2);
-    auto Try = delta(yt,yt2);
+    auto Trx = delta(x0,x1);
+    auto Try = delta(y0,y1);
 
 Finally we contract these tensors with "A" and convert the result to a real
 number to obtain @@Z@@:
