@@ -283,6 +283,12 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
   Return a new ITensor with the prime level of all indices incremented by 1, or an optional amount 
   `inc`. (Optionally only those containing tags specified by `tags` or only the Index `i`.)
+
+* `setPrime(ITensor T, int plev) -> ITensor` <br/>
+  `setPrime(ITensor T, int plev, string tags) -> ITensor` <br/>
+  `setPrime(ITensor T, int plev, Index i) -> ITensor`
+
+  Set the prime level of all indices to `plev`. (Optionally only those containing tags specified by `tags` or only the Index `i`.)
   
 * `noPrime(ITensor T) -> ITensor` <br/>
   `noPrime(ITensor T, string tags) -> ITensor` <br/>
