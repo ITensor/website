@@ -162,7 +162,7 @@ but let's look at each piece step by step.
 
 To get started, start with the following empty application:
 
-    #include "itensor/all_basic.h"
+    #include "itensor/all.h"
 
     using namespace itensor;
 
@@ -254,10 +254,10 @@ in the previous section. First the `A=F1*F3` factorization:
 	auto F1 = ITensor(x0,y1);
 	auto F3 = ITensor(x1,y0);
 
-  auto xtags = format("x=0,scale=%d",scale+1);
-  factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
+    auto xtags = format("x=0,scale=%d",scale+1);
+    factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
                     "Tags=",xtags});
-  F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale+1));
+    F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale+1));
 
 We create the ITensors F1 and F3 with the indices of A we
 want them to have after the factorization. This tells the `factor` routine how
@@ -267,30 +267,30 @@ to `true` shows helpful information about the truncation of singular values (act
 of the singular values which are called "density matrix eigenvalues"). Also we pass a set of tags
 that will be put on the new index which will be created to connect F1 and F3.
 The line `auto xtags = format("x=0,scale=%d",scale+1);` is a string formatting operation; if for example `scale == 2`
-then xtags will be "x=0,scale=3".
+then xtags will be `"x=0,scale=3"`.
 
 The last step is to make sure that the new renormalized index introduced on Fx1, which we find
-because we know it has the tag format("scale=%d",scale+1), has the proper tag "x=1".
+because we know it has the tag `format("scale=%d",scale+1)`, has the proper tag `"x=1"`.
 
 We can write very similar code to do the `A=F2*F4` factorization, the main difference being
 which indices of A we request to end up on F2 versus F4:
 
-  auto F2 = ITensor(x1,y1);
-  auto F4 = ITensor(x0,y0);
-  auto ytags = format("y=0,scale=%d",scale+1);
-  factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
+    auto F2 = ITensor(x1,y1);
+    auto F4 = ITensor(x0,y0);
+    auto ytags = format("y=0,scale=%d",scale+1);
+    factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
                     "Tags=",ytags});
-  F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale+1));
+    F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale+1));
 
 For the last step of the TRG algorithm we combine the factors of the A tensor at the current
 scale to create a "renormalized" A tensor at the next scale:
 
-  F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale));
-  F2 = replaceTags(F2,"y=1","y=0",format("scale=%d",scale));
-  F3 = replaceTags(F3,"x=1","x=0",format("scale=%d",scale));
-  F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale));
+    F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale));
+    F2 = replaceTags(F2,"y=1","y=0",format("scale=%d",scale));
+    F3 = replaceTags(F3,"x=1","x=0",format("scale=%d",scale));
+    F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale));
 
-  A = F1 * F2 * F3 * F4;
+    A = F1 * F2 * F3 * F4;
 
 The `replaceTags` functions wrapping the F tensors adjust the tags of various indices 
 so that the indices we want contracted with match while the indices we don't want 
