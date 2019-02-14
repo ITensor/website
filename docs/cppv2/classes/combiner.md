@@ -17,6 +17,7 @@ Internally, a combiner is implemented as a type of ITensor with a special storag
     auto l = Index("l",9);
 
     auto T = ITensor(i,j,k,l);
+    randomize(T);
 
     auto C = combiner(i,k);
 

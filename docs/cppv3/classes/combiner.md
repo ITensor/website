@@ -17,7 +17,7 @@ the resulting ITensor with combined indices as efficiently as possible.
     auto k = Index(7);
     auto l = Index(9);
 
-    auto T = ITensor(i,j,k,l);
+    auto T = randomITensor(i,j,k,l);
 
     auto C = combiner(i,k);
 
