@@ -38,11 +38,11 @@ IndexVal is defined in "itensor/index.h".
 * `IndexVal(Index I, int i)`
 
   Construct an IndexVal from an Index `I` and integer value `i`.
-  The value `i` must be between 1 and `I.m()`, inclusive
+  The value `i` must be between 1 and `dim(I)`, inclusive
 
-* `.m() -> long` 
+* `.dim() -> long` 
 
-  Return the bond dimension of the `Index` "index".
+  Return the dimension of the `Index` "index".
 
 * `.prime(int inc = 1)`  
 
