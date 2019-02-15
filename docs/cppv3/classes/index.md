@@ -73,7 +73,7 @@ Index is defined in "itensor/index.h".
 
 * `dim(Index i) -> long` 
 
-  Return the index size.
+  Return the index dimension.
 
 * `primeLevel(Index i) -> int` 
 
