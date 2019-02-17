@@ -15,7 +15,7 @@ each tensor index typically has some
 Similarly in ITensor, tensor indices are objects with
 unique identities. Constructing an index in ITensor looks like:
 
-    auto i = Index("index i",3);
+    auto i = Index(3);
 
 The resulting Index has a size, or dimension of 3. Upon creation it is 
 indelibly stamped with an internal ID number so all copies of this Index

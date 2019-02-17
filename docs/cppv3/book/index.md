@@ -7,9 +7,9 @@ like @@T_{ijk}@@ ).
 ITensors are "intelligent tensors" because they "know" what indices they have. 
 This is possible since an Index carries extra information beyond its size.
 
-The simplest way to construct an Index is to give its name and size:
+The simplest way to construct an Index is to give its size:
 
-    auto i = Index("index i",3);
+    auto i = Index(3);
 
 Upon creation, an Index gets "stamped" with a permanent, hidden id number that allows copies 
 of the Index to recognize each other. Typically you do not need to look at these
@@ -19,17 +19,12 @@ if they are copies of the same original index:
     auto j = i;  //make a copy of i
     Print(j==i); //prints: j==i = true
 
-(also they must have the same "prime level"; see next section).
+(also they must have the same tags and "prime level"; see next section).
 
-Neither the name nor size are used to compare indices, because 
-two different indices could accidentally have the same name and size.
+To access the size of an Index, use the `dim` function
 
-To access the size of an Index, use its `.m()` method
-
-    println("The size of ",i.name()," is ",i.m());
+    println("The size of index i is ",dim(i));
     //prints: The size of index i is 3
-
-The convention of calling the size "m" comes from the DMRG literature.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
@@ -38,20 +33,20 @@ The convention of calling the size "m" comes from the DMRG literature.
 
     int main() 
     {
-    auto i = Index("index i",3);
-    println("The size of ",i.name()," is ",i.m());
+    auto i = Index(3);
+    println("The size of index i is ",dim(i));
     return 0;
     }
 
 
-After creating an Index, most of its properties are permanently fixed, including its size. 
+After creating an Index, most of its properties are permanently fixed, such as its size. 
 The philosophy of ITensor is that indices have a meaning given at the time they are created.
 A new Index can be created to take the place of an old one, but the semantic
 meaning of a given Index object cannot be changed.
 
 ### Priming Indices
 
-There is one property of an Index you can change: its prime level.
+One of the properties of an Index you *can* change is the prime level.
 
 An Index starts out with prime level zero.
 Copies of the same original Index must have the same prime level to compare
@@ -80,11 +75,13 @@ Calling `noprime` resets the prime level to zero.
     //prints: 0
 
 Note that the above names (`i3`, `i0`, etc.) are just 
-for pedagogical reasons&mdash;you can use any variable names 
+to make the code easier to read&mdash;you can use any variable names 
 you want regardless of the prime level.
 
 We will see more ways to manipulate primes as we 
 work with ITensors with multiple indices.
+
+<!-- v3: Left off Here -->
 
 ### Printing Indices
 
