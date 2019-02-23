@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Stabilizing a Discrete Time Crystal Against Dissipation](https://arxiv.org/abs/1902.04986), Leon Droenner, Regina Finsterholzl, Alexander Carmele, Markus Heyl, arxiv:1902.04986
+
 * [A DMRG Study of Superconductivity in the Triangular Lattice Hubbard Model](https://arxiv.org/abs/1901.11034), Jordan Venderley, E. A. Kim, arxiv:1901.11034
 
 * [Open XXZ chain and boundary modes at zero temperature](https://arxiv.org/abs/1901.10932), Sebastian Grijalva, Jacopo De Nardis, Veronique Terras, arxiv:1901.10932
