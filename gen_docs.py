@@ -23,8 +23,8 @@ import cgitb; cgitb.enable()
 #################################
 
 versions = {"cppv2" : "C++v2", 
-            "cppv3" : "C++v3",
-            "julia" : "Julia"}
+            "cppv3" : "C++v3"}
+            #"julia" : "Julia"}
 default_version = "cppv2"
 
 reldocpath = "docs/"
@@ -254,6 +254,9 @@ def generate():
     print nav
     print vinfo
     print "".join(postnav_header_file.readlines())
+    if vers == "cppv3":
+        print "<span style='color:red;'>ITensor version 3 has not been released yet. \
+               This documentation is a preview only.</span><br/><br/>" 
     print bodyhtml
 
     #
