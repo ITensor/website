@@ -55,8 +55,6 @@ customizing higher-level parts of the library.
 - [[TensorRef Layer|book/tensorref]]
 -->
 
-_The ITensor Book is written and maintained by Miles Stoudenmire_
-
 <br/>
 <span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon"> 
 [[ITensor Library Overview|book/intro]]
