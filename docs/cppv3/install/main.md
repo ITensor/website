@@ -2,16 +2,16 @@
 
 ## Downloading the Library
 
-The preferred method is to "clone" the latest version of the library using the following command
+You can preview the unreleased ITensor version 3 by using the following commands:
 <div class="commandline"><pre>
 git clone https://github.com/ITensor/ITensor itensor
+cd itensor
+git checkout rc3
 </pre></div>
 
-This allows you to track any updates to ITensor by just doing `git pull` in the ITensor folder.
+You can track any updates to ITensor version 3 by just doing `git pull` in the ITensor folder.
 If you do not have git on your computer, you can obtain it through your package manager or from the
 <a href="http://git-scm.com/" target="blank_">git website</a>.
-
-You can also download a zip file of the latest code by clicking <a href="https://github.com/ITensor/ITensor/zipball/master">this link</a>.
 
 ## Building the Library
 
