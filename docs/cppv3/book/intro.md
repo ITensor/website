@@ -29,15 +29,16 @@ Having made a few Index objects i, j, k, one can construct ITensors
 
 and set their elements (as shown in the [[ITensor Basics|book/itensor_basics#elements]] chapter).
 
-Since matching indices can recognize each other, ITensor contraction
-is simply
+Since matching indices can recognize each other through their matching 
+ID numbers, ITensor contraction is simply
 
     D = A * B * C;
 
 The ITensor contraction engine recognizes repeated indices and sums 
 over them, like the Einstein summation convention used
 in physics. Instead of bookkeeping the order of tensor indices,
-users can focus on the structure of tensor networks.
+users can focus on the structure of tensor networks, as in 
+[tensor diagram notation](http://tensornetwork.org/diagrams).
 Certain bugs are ruled out, such as mistaking one index for
 another of the same size.
 
@@ -58,7 +59,7 @@ the second index of B and write something like
 
 to get the correct result. ITensor handles this transposition automatically, 
 making user code simple and robust. If B were to be redefined
-with transposed index order, the ITensor operation `A * B` would continue to give the correct result.
+with the transposed index order, the ITensor operation `A * B` would continue to give the correct result.
 
 Say we didn't want to contract over the index j &mdash; we could do the following
 
@@ -71,7 +72,7 @@ We have computed an outer product of two matrices with very little effort.
 
 ITensor offers many other features to enhance productivity:
 * Adding ITensors simply works without 
-requiring you to permute the index order. 
+requiring you to permute the index ordering. 
 * ITensor data storage automatically switches from real to complex as needed,
 such as when multiplying by a complex number.
 * Sparse ITensors seamlessly interoperate with regular, dense
