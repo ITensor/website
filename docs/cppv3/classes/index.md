@@ -1,6 +1,7 @@
 # Index #
 
-An Index represents a single tensor index with fixed size m. Copies of an Index compare equal unless
+An Index represents a single tensor index with fixed dimension. 
+Copies of an Index compare equal unless
 their _prime levels_ and _tags_ are set to different values.
 
 An Index carries a TagSet, a set of _tags_ which are small strings that specify properties of the Index to help distinguish it from other Indices.
@@ -209,9 +210,9 @@ Index is defined in "itensor/index.h".
 
 ## Other Functions
 
-* `showm(Index I) -> string`
+* `showDim(Index I) -> string`
 
-   Returns a string version of the size of Index I.
+   Returns a string version of the dimension of Index I.
 
 <br/>
 _This page current as of version 3.0.0_

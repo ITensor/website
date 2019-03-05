@@ -62,7 +62,7 @@ an ITensor identical to T:
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/all_basic.h"
+    #include "itensor/all.h"
     using namespace itensor;
 
     int main() 
@@ -128,7 +128,7 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/all_basic.h"
+    #include "itensor/all.h"
     using namespace itensor;
 
     int main() 
