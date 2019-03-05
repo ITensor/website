@@ -133,15 +133,15 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 
     int main() 
     {
-    auto i = Index("index i",30);
-    auto j = Index("index j",40);
-    auto k = Index("index k",50);
+    auto i = Index(30,"index i");
+    auto j = Index(40,"index j");
+    auto k = Index(50,"index k");
 
     //Make a random ITensor with indices i,j,k
-    auto T = randomTensor(i,j,k);
+    auto T = randomITensor(i,j,k);
 
     ITensor U(i,k),S,V;
-    svd(T,U,S,V,{"Cutoff",1E-2,"Maxm",500});
+    svd(T,U,S,V,{"Cutoff=",1E-2,"Maxm=",500});
 
     auto truncerr = sqr(norm(U*S*V-T)/norm(T));
     Print(truncerr);
