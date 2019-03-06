@@ -4,55 +4,57 @@ The ITensor, or intelligent tensor, is the basic tensor of the ITensor library.
 
 The simplest way to construct an ITensor is to provide its indices:
 
-    auto i = Index("index i",2);
-    auto j = Index("index j",3);
-    auto k = Index("index k",4);
+    auto i = Index(2,"index i");
+    auto j = Index(3,"index j");
+    auto k = Index(4,"index k");
 
     auto T = ITensor(i,j,k);
 
 This creates an ITensor T with all elements set to zero.
 
-To confirm this is a rank 3 tensor (a tensor with 3 indices), call `rank(T)`:
+To confirm this is an order 3 tensor (a tensor with 3 indices), call `order(T)`:
     
-    println("The rank of T is ",rank(T));
-    //prints: The rank of T is 3
+    println("The order of T is ",order(T));
+    //prints: The order of T is 3
 
-Alternatively you can call `T.r()`.
+Alternatively you can call `T.order()`, or `ord(T)` and `T.ord()` if you prefer to
+type fewer characters.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/all_basic.h"
+    #include "itensor/all.h"
     using namespace itensor;
 
     int main()
     {
-    auto i = Index("index i",2);
-    auto j = Index("index j",3);
-    auto k = Index("index k",4);
+    auto i = Index(2,"index i");
+    auto j = Index(3,"index j");
+    auto k = Index(4,"index k");
     
     auto T = ITensor(i,j,k);
     
-    println("The rank of T is ",rank(T));
+    println("The order of T is ",order(T));
 
     return 0;
     }
 
-In the mathematics literature, the number of 
-indices is often called the _order_ of a tensor. Therefore we also provide
-`order(T)` as an alias for `rank(T)`.
+In the physics tensor network literature, the number of 
+indices is often called the _rank of a tensor. Therefore we also provide
+`rank(T)` and `T.r()` as aliases for `order(T)`.
 
 <a name="elements"></a>
 ### Accessing ITensor Elements
 
 To set a particular element, or component, of an ITensor call its `.set` method:
 
-    T.set(i(2),j(1),k(3),4.56);
+    T.set(i=2,j=1,k=3, 4.56);
 
 This sets the i=2,j=1,k=3 element of the tensor to the value 4.56.
 
-In a more conventional tensor interface, the above operation would look like
+In a more conventional tensor interface, the above operation might 
+look something like
 
-    T(2,1,3) = 4.56; //not actual ITensor code!!
+    T[2,1,3] = 4.56; //not actual ITensor code!!
 
 where the user would have to remember that the first entry corresponds to index
 i, the second to index j, and the third to index k.
@@ -60,53 +62,48 @@ i, the second to index j, and the third to index k.
 For an ITensor, the reason the indices are passed to the `.set` method along with their values
 is that nothing about the ITensor interface requires knowing the index order.
 
-If we gave the Index-value pairs such as `j(2)` in a different order,
+If we gave the Index-value pairs such as `j=2` in a different order,
 the `.set` method still accesses the correct element. A call such as 
 
-    T.set(k(3),i(2),j(1),4.56);
+    T.set(k=3,i=2,j=1, 4.56);
 
 has exactly the same outcome as the call
 
-    T.set(i(2),j(1),k(3),4.56);
+    T.set(i=2,j=1,k=3, 4.56);
 
-We can retrieve an element by calling the `.real` method:
+We can retrieve an element by calling the `.elt` method:
 
-    auto el = T.real(k(3),i(2),j(1));
-    println("el = ",el);
-    //prints: el = 4.56
-
-This method is named "real" because it says the type of the element
-returned is a real number.
+    auto x = T.elt(k=3,i=2,j=1);
+    println("x = ",x);
+    //prints: x = 4.56
 
 We can also set elements of ITensors to be complex numbers:
 
-    T.set(i(2),k(3),j(1),7+8_i);
+    T.set(i=2,k=3,j=1, 7+8_i);
 
-Now we must call the `.cplx` method to retrieve this element as a 
-complex data type; calling `.real` would throw an exception:
+Now we must call the `.eltC` method to retrieve this element as a 
+complex data type; calling `.elt` would throw an exception:
 
-    auto z = T.cplx(i(2),k(3),j(1));
+    auto z = T.eltC(i=2,k=3,j=1);
     println("z = ",z);
     //prints: z = (7,8)
 
-Calling `.cplx` always succeeds even if the tensor has only real elements.
+Calling `.eltC` always succeeds even if the tensor has only real elements.
 
 ### Printing ITensors 
 
 A convenient way to print an ITensor is to use the `Print` macro:
 
-    #include "itensor/all_basic.h"
-    
     Print(T);
     //prints: 
     // T = 
-    // ITensor r = 3: ("index i",2,Link|483) ("index j",3,Link|97) ("index k",4,Link|922)
+    // ITensor ord = 3: (2,"index i"|id=483) (3,"index j"|id=97) (4,"index k"|id=922)
 
 Calling `Print(expr)` essentially rewrites the code to be `println("expr = ",expr)`,
 which is why there is a "T = " at the beginning of the output.
 
-The output shows the rank and all the indices, but not the ITensor elements
-because this could lead to a very large output.
+The output shows information about the indices, but not the 
+ITensor elements because this could lead to a very large output.
 
 To see the non-zero elements resulting from our earlier calls to `.set`, 
 we can use the `PrintData` macro, which prints both 
@@ -115,7 +112,7 @@ the indices and the non-zero elements:
     PrintData(T);
     //prints: 
     // T = 
-    // ITensor r = 3: ("index i",2,Link|483) ("index j",3,Link|97) ("index k",4,Link|922)
+    // ITensor ord = 3: (2,"index i"|id=483) (3,"index j"|id=97) (4,"index k"|id=922)
     // (2,2,1) 7.00+8.00i
     // (1,2,3) 4.56+0.00i
 
@@ -130,8 +127,8 @@ ITensors can be added, subtracted, and multiplied by scalars in the usual way:
     //etc.
 
 Two ITensors can be added and subtracted if they have the same 
-set of indices, regardless of index order. Internally, the tensor data
-will be permuted if the index order is different, guaranteeing the correct 
+set of indices, regardless of the index ordering. Internally, the tensor data
+will be permuted if the index ordering is different, guaranteeing the correct 
 result.
 
 The norm of an ITensor (square root of sum of squared elements) can be computed

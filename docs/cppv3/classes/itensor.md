@@ -9,7 +9,7 @@ An ITensor is created with a fixed number of Index objects specifying its indice
 Because Index objects carry identifying information, most of the 
 ITensor interface does not depend on the Index order. For example, 
 given an ITensor constructed with indices `a` and `b`, 
-calling `T.real(a(2),b(5))` and `T.real(b(5),a(2))` accesses the same tensor element.
+calling `T.elt(a=2,b=5)` and `T.elt(b=5,a=2)` accesses the same tensor element.
 
 In addition to real-valued storage, ITensors can have other storage types
 such as complex storage or various sparse storage types.
@@ -33,8 +33,8 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
     auto phi = ITensor(b1,s2,s3,b3);
 
-    phi.set(b1(2),s2(1),s3(2),b3(2), -0.5);
-    phi.set(b1(3),s2(2),s3(1),b3(6), 1.4);
+    phi.set(b1=2,s2=1,s3=2,b3=2, -0.5);
+    phi.set(b1=3,s2=2,s3=1,b3=6, 1.4);
     //...
 
     auto nrm = norm(phi); //save the original norm of phi
@@ -170,7 +170,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
 ## Element Access Methods
 
-* `.real(IndexVal iv1, IndexVal iv2, ...) -> Real`
+* `.elt(IndexVal iv1, IndexVal iv2, ...) -> Real`
 
   Return the element of this ITensor corresponding to the provided IndexVals as a Real number.
 
@@ -184,20 +184,20 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
       //Make a scalar ITensor
       auto S = ITensor(2.7);
-      //Access its value as a real number
-      auto rs = S.real();
+      //Access its value (a real number)
+      auto rs = S.elt();
 
       //Make a random rank 3 ITensor
       auto T = ITensor(i,j,k);
       randomize(T);
       //Get one of its elements
-      auto rt = T.real(j(2),k(1),i(4));
+      auto rt = T.elt(j=2,k=1,i=4);
 
-* `.real(int i1, int i2, ...) -> Real`
+* `.elt(int i1, int i2, ...) -> Real`
 
-  Shorthand notation for `.real` above when the ordering of the indices of the ITensor are known.
-  For example, for ITensor T with indices ordered as j,i,k, `T.real(1,2,4)` is equivalent to
-  `T.real(j(1),i(2),k(4))`.
+  Shorthand notation for `.elt` above when the ordering of the indices of the ITensor are known.
+  For example, for ITensor T with indices ordered as j,i,k, `T.elt(1,2,4)` is equivalent to
+  `T.elt(j=1,i=2,k=4)`.
 
   Note that the ordering of the indices of an ITensor can be set using the `order` function
   described below.
@@ -210,29 +210,30 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       //Order the indices
       T = permute(T,k,i,j);
       //Get one of its elements
-      auto rt = T.real(2,1,4); //Equivalent to T.real(k(2),i(1),j(4))
+      auto rt = T.elt(2,1,4); //Equivalent to T.elt(k=2,i=1,j=4)
 
-* `.cplx(IndexVal iv1, IndexVal iv2, ...) -> Cplx`
+* `.eltC(IndexVal iv1, IndexVal iv2, ...) -> Cplx`
 
   Return the element of this ITensor corresponding to the provided IndexVals as a Cplx number.
 
-  This method behaves identically to the `.real` method described above, except its return type is a complex
-  number. It succeeds whether the ITensor has complex or real storage.
+  This method behaves identically to the `.elt` method described above, 
+  except its return type is a complex number. 
+  It succeeds whether the ITensor has complex or real storage.
 
   <div class="example_clicker">Click to Show Example</div>
 
       //Make a complex scalar ITensor
       auto S = ITensor(2.7-4_i);
       //Access its value as a complex number
-      auto zs = S.cplx();
+      auto zs = S.eltC();
 
-* `.cplx(int i1, int i2, ...) -> Cplx`
+* `.eltC(int i1, int i2, ...) -> Cplx`
 
-  Shorthand notation for `.cplx` above when the ordering of the indices of the ITensor are known.
-  For example, for ITensor T with indices ordered as j,i,k, `T.cplx(1,2,4)` is equivalent to
-  `T.cplx(j(1),i(2),k(4))`.
+  Shorthand notation for `.eltC` above when the ordering of the indices of the ITensor are known.
+  For example, for ITensor T with indices ordered as j,i,k, `T.eltC(1,2,4)` is equivalent to
+  `T.eltC(j=1,i=2,k=4)`.
 
-  Note that the ordering of the indices of an ITensor can be set using the `order` function
+  Note that the ordering of the indices of an ITensor can be set using the `permute` function
   described below.
 
 * `.set(IndexVal iv1, IndexVal iv2, ... , Cplx z)`
@@ -242,7 +243,8 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
   If `z` has exactly zero imaginary part and the ITensor storage is real, it will not be 
   switched to complex storage.
 
-  Because Real numbers are automatically convertible to Cplx, one can plug Real numbers into this method.
+  Because Real numbers are automatically convertible to Cplx, one can plug Real 
+  numbers into this method.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -250,16 +252,16 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       auto T = ITensor(i,j,k);
 
       //Set an element to a real number
-      T.set(k(2),j(2),i(3),-1.24);
+      T.set(k=2,j=2,i=3, -1.24);
 
       //Set an element to a complex number
-      T.set(k(4),j(1),i(2),3.2-4.7_i);
+      T.set(k=4,j=1,i=2, 3.2-4.7_i);
 
 * `.set(int i1, int i2, ... , Cplx z)`
 
   Shorthand notation for `.set` above when the ordering of the indices of the ITensor are known.
-  For example, for ITensor T with indices ordered as j,i,k, `T.set(1,2,4,3.2)` is equivalent to 
-  `T.set(j(1),i(2),k(4),3.2)`.
+  For example, for ITensor T with indices ordered as j,i,k, `T.set(1,2,4, 3.2)` is equivalent to 
+  `T.set(j=1,i=2,k=4, 3.2)`.
 
   Note that the ordering of the indices of an ITensor can be set using the `order` function 
   described below.
@@ -272,7 +274,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       T = permute(T,j,i,k);
       //Set an element to a real number
       T.set(1,2,3,-1.24); 
-      Print(T.real(j(1),i(2),k(3)) == -1.24); //prints "true"
+      Print(T.elt(j=1,i=2,k=3) == -1.24); //prints "true"
 
 <a name="primelev_methods"></a>
 ## Prime Level Methods
@@ -336,13 +338,13 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
       auto T = ITensor(i,prime(i));
 
-      T.set(i(1),prime(i)(2), 12);
-      T.set(i(2),prime(i)(1), 21);
+      T.set(i=1,prime(i)=2, 12);
+      T.set(i=2,prime(i)=1, 21);
 
       auto TT = swapPrime(T,0,1);
 
-      Print(T.real(i(1),prime(i)(2))); //prints: 21
-      Print(T.real(i(2),prime(i)(1))); //prints: 12
+      Print(T.elt(i=1,prime(i)=2)); //prints: 21
+      Print(T.elt(i=2,prime(i)=1)); //prints: 12
 
 
 <a name="tag_methods"></a>
@@ -535,7 +537,7 @@ and that the result will be an ITensor.
       // and will correspond to the "slice"
       // of T with i fixed to the value 2
 
-      Print(S.real(j(3)) - T.real(i(2),j(3))); //prints: 0.0
+      Print(S.elt(j=3) - T.elt(i=2,j=3)); //prints: 0.0
 
 
 ## Complex ITensor Methods
@@ -700,7 +702,7 @@ and that the result will be an ITensor.
 
       T = permute(T,j,i,k);
 
-      Print(T.real(1,2,4) == T.real(j(1),i(2),k(4))); //prints "true"
+      Print(T.elt(1,2,4) == T.elt(j=1,i=2,k=4)); //prints "true"
 
 * `random(ITensor T, Args args = Args::global()) -> ITensor`
 
@@ -753,9 +755,9 @@ and that the result will be an ITensor.
 
   Return the Euclidean norm of this ITensor 
   (the square root of the sum of squares of its elements).
-  Equivalent to, but much more efficient than, `sqrt((T*T).real())`.
+  Equivalent to, but much more efficient than, `sqrt((T*T).elt())`.
   
-  For complex ITensors, it is equivalent to `sqrt((dag(T)*T).cplx().real())`
+  For complex ITensors, it is equivalent to `sqrt((dag(T)*T).eltC().real())`
 
 * `isReal(ITensor T) -> bool` <br/>
 
