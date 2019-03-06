@@ -9,7 +9,7 @@ cd itensor
 git checkout rc3
 </pre></div>
 
-You can track any updates to ITensor version 3 by just doing `git pull` in the ITensor folder.
+You can track any updates to ITensor version 3 by just executing `git pull` in the `itensor` directory.
 If you do not have git on your computer, you can obtain it through your package manager or from the
 <a href="http://git-scm.com/" target="blank_">git website</a>.
 

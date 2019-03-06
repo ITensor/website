@@ -2,14 +2,12 @@
 
 ## Downloading the Library
 
-The preferred method is to "clone" ITensor version 2 using the following commands:
+The preferred method is to "clone" ITensor version 2 using the following command:
 <div class="commandline"><pre>
 git clone https://github.com/ITensor/ITensor itensor
-cd itensor
-git checkout v2
 </pre></div>
 
-This allows you to track any updates to ITensor version 2 by just doing `git pull` in the ITensor folder.
+This allows you to track any updates to ITensor version 2 by just executing `git pull` in the `itensor` directory.
 If you do not have git on your computer, you can obtain it through your package manager or from the
 <a href="http://git-scm.com/" target="blank_">git website</a>.
 
