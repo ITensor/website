@@ -6,6 +6,7 @@ The preferred method is to "clone" ITensor version 2 using the following command
 <div class="commandline"><pre>
 git clone https://github.com/ITensor/ITensor itensor
 </pre></div>
+from within the folder where you would like the itensor/ folder to be located (the location is up to you).
 
 This allows you to track any updates to ITensor version 2 by just executing `git pull` in the `itensor` directory.
 If you do not have git on your computer, you can obtain it through your package manager or from the
