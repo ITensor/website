@@ -39,7 +39,7 @@ over them, like the Einstein summation convention used
 in physics. Instead of bookkeeping the order of tensor indices,
 users can focus on the structure of tensor networks, as in 
 [tensor diagram notation](http://tensornetwork.org/diagrams).
-Certain bugs are ruled out, such as mistaking one index for
+Certain bugs are completely ruled out, such as mistaking one index for
 another of the same size.
 
 Let's take a closer look at an example involving two matrix-like ITensors 

@@ -5,12 +5,15 @@
 
 <img src="docs/VERSION/classes/icon.png" class="icon">   [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
 
+<!--
 <img src="docs/VERSION/tutorials/icon.png" class="icon">  [[Tutorials|tutorials]]. Background reading on tensor networks and guides to ITensor features.
+-->
 
 <img src="docs/VERSION/formulas/icon.png" class="icon"> [[Code Formulas|formulas]]. Sample codes for common tasks.
 
+<!--
 <img src="docs/VERSION/articles/icon.png" class="icon"> [[Articles|articles]]. Long-form articles on tensor methods and aspects of ITensor.
-
+-->
 
 <!--
 <img src="docs/course/icon.png" class="icon"> [[Mini-course|course]]. Summer school lectures focused on matrix product states.

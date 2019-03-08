@@ -11,9 +11,9 @@ The simplest way to construct an Index is to give its size:
 
     auto i = Index(3);
 
-Upon creation, an Index gets "stamped" with a permanent id number that allows copies 
+Upon creation, an Index gets "stamped" with a permanent ID number that allows copies 
 of the Index to recognize each other. Typically you do not need to look at these
-id numbers; it is enough to know that indices match (compare equal)
+ID numbers; it is enough to know that indices match (compare equal)
 if they are copies of the same original index:
 
     auto j = i;  //make a copy of i
@@ -38,7 +38,7 @@ To access the size of an Index, use the `dim` function
     return 0;
     }
 
-Certain properties of an Index cannot be changed, such as its size and id
+Certain properties of an Index cannot be changed, such as its size and ID
 number. However, a new Index can be created to replace an old one.
 The philosophy of ITensor is that indices have a meaning given at the 
 time they are created.
@@ -48,8 +48,8 @@ time they are created.
 When constructing an Index you can additionally provide a comma-separated list of tags which 
 help to identify this Index. Only Index objects with the exact same set of tags
 will compare equal to one other (when compared with the `==` operator).
-Tags are also useful for identifying certain indices when looking at a printout,
-and for retrieving or manipulating specific indices belonging to an ITensor.
+Tags are also useful for identifying certain indices 
+or retrieving a certain index from an ITensor.
 
 To specify tags when defining an Index, list them after the Index dimension:
 
@@ -115,31 +115,31 @@ Printing an Index shows useful information about it:
     auto i = Index(3,"index i,Link");
 
     println(i);
-    //prints: (3,"index i,Link"|id=587)
+    //prints: (3|id=587|"Link,index i")
 
 The output shows the size and tags of i.
-The printout also contains part of the id number of the Index. 
-Id numbers are random 64 bit integers and vary each time you run your program.
+The printout also contains part of the ID number of the Index. 
+The ID numbers are random 64 bit integers which vary each time 
+you construct a new index (even if it has the same dimension and tags each time).
  
 The prime level is displayed at the end:
 
     println(prime(i,2));
-    //prints: (3,"index i,Link"|587)''
+    //prints: (3|id=587|"Link,index i")''
 
     println(prime(i,10));
-    //prints: (3,"index i,Link"|587)'10
+    //prints: (3|id=587|"Link,index i")'10
 
-### Review of Index Objects
+### Summary 
 
-Tensor indices in the ITensor system are represented by Index objects.
-Index objects have a fixed size and id number that is set when they
-are constructed; all copies of that Index will have the same size and id.
+The indices of an ITensor are Index objects.
+An Index has a fixed size and an ID number that are set when it is
+constructed; copies of that Index will always have the same size and ID.
 
-Index objects also have tags and a prime level.
-Tags and prime levels can be useful in various situations, such as for distinguishing
-copies of the same Index appearing on a single ITensor, or for easily identifying
-Index objects when printing them. Both the tags and prime level of an Index can be 
-modified.
+Index objects can also carry tags and a prime level.
+Tags and prime levels can be useful in various situations, such as retrieving an
+Index from an ITensor.
+The tags and prime level of an Index can be modified.
 
 <br/>
 <i>For a complete listing of all of the methods of class Index, view the

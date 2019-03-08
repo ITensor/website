@@ -114,7 +114,7 @@ Let us revisit the example above, but also provide some of these accuracy parame
     //make an ITensor with indices i,j,k and random elements
     auto T = randomTensor(i,j,k);
     ITensor U(i,k),S,V;
-    svd(T,U,S,V,{"Cutoff",1E-2,"Maxm",50});
+    svd(T,U,S,V,{"Cutoff=",1E-2,"Maxm=",50});
 
 In the code above, we specified that a cutoff of @@\epsilon=10^{-2}@@ be used and that at
 most 50 singular values should be kept. We can check that the resulting factorization is now approximate

@@ -97,7 +97,7 @@ A convenient way to print an ITensor is to use the `Print` macro:
     Print(T);
     //prints: 
     // T = 
-    // ITensor ord = 3: (2,"index i"|id=483) (3,"index j"|id=97) (4,"index k"|id=922)
+    // ITensor ord = 3: (2|id=483|"index i") (3|id=97|"index j") (4|id=922|"index k")
 
 Calling `Print(expr)` essentially rewrites the code to be `println("expr = ",expr)`,
 which is why there is a "T = " at the beginning of the output.
@@ -112,7 +112,7 @@ the indices and the non-zero elements:
     PrintData(T);
     //prints: 
     // T = 
-    // ITensor ord = 3: (2,"index i"|id=483) (3,"index j"|id=97) (4,"index k"|id=922)
+    // ITensor ord = 3: (2|id=483|"index i") (3|id=97|"index j") (4|id=922|"index k")
     // (2,2,1) 7.00+8.00i
     // (1,2,3) 4.56+0.00i
 

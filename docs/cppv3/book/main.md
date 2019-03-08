@@ -19,7 +19,7 @@ customizing higher-level parts of the library.
 
 - [[ITensor Library Overview|book/intro]]
 
-### ITensor Fundamentals
+### Introduction to ITensor
 
 - [[Index Objects|book/index]]
 
@@ -35,11 +35,13 @@ customizing higher-level parts of the library.
 - [[Sparse ITensors (combiners, diagonal,...)|book/itensor_sparse]]
 -->
 
+<!--
 ### IQTensor: Block-Sparse, Quantum Number Conserving Tensors
 
 - [[IQTensor Overview|book/iqtensor_overview]]
 - [[Block-Sparse Tensors|book/block_sparse]]
 - [[IQIndex|book/iqindex]]
+-->
 
 <!--
 - [[IQTensor Basics|book/iqtensor_basics]]
