@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Vanishing Hall Response of Charged Fermions in a Transverse Magnetic Field](https://arxiv.org/abs/1903.02000), Michele Filippone, Charles-Edouard Bardyn, Sebastian Greschner, Thierry Giamarchi, arxiv:1903.02000
+
 * [Dynamically enhanced unconventional superconducting correlations in a Hubbard ladder](https://arxiv.org/abs/1902.07947), Ameneh Sheikhan, Corinna Kollath, arxiv:1902.07947
 
 * [Numerical study of the temperature dependence of the NMR relaxation rate across the superfluid-Bose glass transition in one dimension](https://arxiv.org/abs/1902.07361), Maxime Dupont, arxiv:1902.07361
