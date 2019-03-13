@@ -2,16 +2,16 @@
 
 Container for storing indices. 
 
-The following documentation refers to IndexSet, but also applies to
-IQIndexSet, which is implemented using the same template class. 
-For IQIndexSet, just replace all usage of the `Index` type with
+The following documentation refers to `IndexSet`, but also applies to
+`IQIndexSet`, which is implemented using the same template class. 
+For `IQIndexSet`, just replace all usage of the `Index` type with
 the type `IQIndex`.
 
 * `IndexSet` is an alias for `IndexSetT<Index>`
 * `IQIndexSet` is an alias for `IndexSetT<IQIndex>`
 
-IndexSet and IQIndexSet are defined in "itensor/indexset.h". Also see "itensor/indexset_impl.h".
-An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
+IndexSet and `IQIndexSet` are defined in "itensor/indexset.h"`. Also see "itensor/indexset_impl.h".
+An `IndexSet` is a subclass of `Range` which is defined in "itensor/tensor/range.h".
 
 ## Synopsis ##
 
@@ -139,6 +139,40 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    Reference to this IndexSet as its parent type, namely `RangeT<index_type>`
    where `index_type` is Index for IndexSet or IQIndex for IQIndexSet.
+
+* `.select(index_type type) -> IndexSet`
+    
+    Returns a new `IndexSet` containing only the indices of the selected type.
+
+* `.filter(index_type type) -> IndexSet`
+
+    Returns a new `IndexSet` containing all indices which are *not* of the specified type.
+
+## Binary set operations
+
+Given two `IndexSet` instances A and B, we can do binary set operations between them and obtain
+a new `IndexSet` instance. The available operations are:
+
+* `.setUnion(IndexSet & other) -> IndexSet`
+  
+  `A.setUnion(B)` returns a new `IndexSet` which contains the collected indices from both sets.
+
+* `.setIntersection(IndexSet & other) -> IndexSet`
+  
+  `A.setIntersection(B)` returns a new `IndexSet` which contains all the common indices of both
+  sets. In a tensor contraction, these are the indices which are being summed over.
+
+* `.setDifference(IndexSet & other) -> IndexSet`
+  
+  `A.setDifference(B)` returns a new `IndexSet` which contains the indices of A which are not also
+  in B. Note that, in contrast with the previous two, this operation is not symmetric:
+  `B.setDifference(A)` will return a different set.
+
+* `.setSymmetricDifference(IndexSet & other) -> IndexSet`
+  
+  `A.setSymmetricDifference(B)` returns a new `IndexSet` which contains the indices which are unique
+  to either A or B not present in both. This is the complement of the intersection of the two
+  sets. In a tensor contraction, this is the set of indices of the resulting tensor.
 
 ## Other Class Methods and Features
 
@@ -296,6 +330,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   Change prime level of all indices having prime level `plevold` to `plevnew`. 
   (Optionally only if their IndexType matches `t`.) 
+  
 
 ## Other IndexSet Functions
 
@@ -335,6 +370,9 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   Return the size of the largest Index in the set.
 
+* `.vector() -> std::vector<index_type>`
+
+  Returns the set of indices as a vector of `Index` elements.
 
 <br/>
 _This page current as of version 2.0.7_
