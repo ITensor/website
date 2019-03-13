@@ -140,11 +140,11 @@ An `IndexSet` is a subclass of `Range` which is defined in "itensor/tensor/range
    Reference to this IndexSet as its parent type, namely `RangeT<index_type>`
    where `index_type` is Index for IndexSet or IQIndex for IQIndexSet.
 
-* `.select(index_type type) -> IndexSet`
+* `.selectType(index_type type) -> IndexSet`
     
     Returns a new `IndexSet` containing only the indices of the selected type.
 
-* `.filter(index_type type) -> IndexSet`
+* `.filterType(index_type type) -> IndexSet`
 
     Returns a new `IndexSet` containing all indices which are *not* of the specified type.
 
