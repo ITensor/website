@@ -71,6 +71,7 @@ ITensor also offers DMRG routines for more general optimization tasks, including
   The `dmrg` function also accepts the following optional named arguments:
 
   - "Quiet" &mdash; suppress most output except a short summary of the result of each DMRG sweep
+  - "Silent" &mdash; suppress *all* output
   - "WriteM" &mdash; if WriteM is defined, upon beginning a sweep number n such that sweeps.maxm(n) value 
     exceeds WriteM, the MPS and MPO will be set to "write-to-disk" mode such that all but a few "core"
     tensors will remain on the hard drive to save on RAM
