@@ -604,7 +604,14 @@ and that the result will be an ITensor.
   In the `printfln` command, the `%s` formatting token 
   does not display ITensor elements, whereas the `%f` token
   shows all non-zero elements.
+
+* To iterate over all non-zero elements of an ITensor `T`, use `iterInds(T)` to obtain an
+  iterator returning a `std::vector<IndexVal>` for each non-zero element. The order of the
+  `IndexVal` obtained in the vectors will follow the same internal order of indices in the tensor.
   
+  This can be helpful when dealing with tensor slices or other structural manipulations of tensors
+  when paired with `.set()`, `.real()`, `.cplx()`, which take such vectors as arguments.
+
 ## Functions for Creating ITensors
 
 * `randomTensor(Index i1, Index i2, ...)` <br/>
