@@ -126,7 +126,7 @@
   This is a sweeping algorithm that iteratively optimizes the resulting MPS 
   @@|\phi\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond 
   dimension @@k@@ compared to the "DensityMatrix" method, but is not guaranteed to converge 
-  (depending on the input MPO and MPS). The number of sweeps can be chosen with the parameter "Sweeps".
+  (depending on the input MPO and MPS). The number of sweeps can be chosen with the parameter "Nsweep".
 
   It is recommended to try the default "DensityMatrix" first because it is more reliable. 
   Then, the "Fit" method can be tried if higher performance is required.
@@ -145,7 +145,7 @@
   
   * `"Normalize"` &mdash; (default: false) choose whether or not to normalize the output wavefunction
 
-  * `"Sweeps"` &mdash; (default: 1) sets the number of sweeps of the "Fit" algorithm
+  * `"Nsweep"` &mdash; (default: 1) sets the number of sweeps of the "Fit" algorithm
 
   <div class="example_clicker">Show Example</div>
 
@@ -153,7 +153,7 @@
       auto phi = applyMPO(K,psi,{"Method=","DensityMatrix","Maxm=",100,"Cutoff=",1E-8});
 
       //Use the method "Fit" with 5 sweeps
-      auto phi2 = applyMPO(K,psi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Sweeps=",5});
+      auto phi2 = applyMPO(K,psi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Nsweep=",5});
 
 * `applyMPO(MPO K, MPS psi, MPS phi, Args args = Args::global()) -> MPS` <br/>
   `applyMPO(IQMPO K, IQMPS psi, IQMPS phi, Args args = Args::global()) -> IQMPS`
@@ -167,7 +167,7 @@
   <div class="example_clicker">Show Example</div>
 
       //Use the method "Fit" with 5 sweeps and a guess state phi
-      auto Kpsi = applyMPO(K,psi,phi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Sweeps=",2});
+      auto Kpsi = applyMPO(K,psi,phi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Nsweep=",2});
 
 * `checkMPOProd(MPS psi2, MPO K, MPS psi1) -> Real` <br/>
   `checkMPOProd(IQMPS psi2, IQMPO K, IQMPS psi1) -> Real`
