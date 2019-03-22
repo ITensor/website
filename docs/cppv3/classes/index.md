@@ -58,11 +58,12 @@ Index is defined in "itensor/index.h".
         auto i = Index();
         if(!i) println("Index i is default constructed.");
 
-* `Index(int m, string tags)` 
+* `Index(int dim, TagSet tags)` 
 
    Construct an Index with the following fields:
-   - The integer m is the size of the Index. 
-   - The string tags is a comma seperated list of tags for the Index.
+   - The integer `dim` is the size of the Index (the dimension of the vector space that
+     the Index defines).
+   - The TagSet `tags` is a comma seperated string listing the tags for the Index.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -76,78 +77,112 @@ Index is defined in "itensor/index.h".
 
   Return the index dimension.
 
-* `primeLevel(Index i) -> int` 
-
-  Return the prime level.
-
 * `tags(Index i) -> TagSet`
 
-  Return the tags of this Index as a TagSet.
+  Return all of the tags of this Index as a TagSet. This includes
+  the integer tag (prime level).
 
-* `.id() -> id_type`
+* `primeLevel(Index i) -> int` 
+
+  Return the value of the integer tag, referred to as the prime level.
+
+* `id(Index i) -> id_type`
 
   The unique id number of this Index (returned as a string)
 
-## Prime Level Functions
+## Tag functions ##
 
-* `setPrime(Index I, int `plev`) -> Index`
+* `addTags(Index I, TagSet tags) -> Index`
 
-   Return a copy of `I` with prime level set to `plev`.
+  `.addTags(TagSet tags)`
 
-* `.setPrime(int plev)`
+   Modify the TagSet of the Index, adding the specified tags.
 
-  Set the prime level of this Index to `plev`.
+   Note that every Index has one and only one integer tag, so an Integer 
+   tag cannot be added.
+
+* `removeTags(Index I, TagSet tags) -> Index`
+
+  `.removeTags(TagSet tags)`
+
+   Modify the TagSet of the Index, removing the specified tags.
+
+   Note that every Index has one and only one integer tag, so an Integer 
+   tag cannot be removed.
+
+* `setTags(Index I, TagSet tags) -> Index`
+
+  `.setTags(TagSet tags)`
+
+   Modify the TagSet of the Index, removing all of the tags and setting
+   them to the specified tags.
+
+   If no integer tag is specified, the integer tag is set to 0.
+   To remove all tags of an Index and set the integer tag to 0, use 
+   `setTags(I,"")`.
+
+* `replaceTags(Index I, TagSet oldtags, TagSet newtags)`
+
+  `.replaceTags(TagSet oldtags, TagSet newtags)`
+
+   Modify the TagSet of the Index, removing the tags `oldtags` and adding
+   the tags `newtags`.
+
+   Note that an integer tag must be replaced by another integer tag. If not
+   integer tag is specified, it is not modified.
 
 * `prime(Index I, int inc = 1) -> Index`
 
-   Return a copy of `I` with prime level increased by 1 (or optional amount `inc`).
+  `.prime(int inc = 1)`
 
-* `.prime(int inc = 1)`
+  Convenience function to increment the integer tag of the Index by 1. (Optionally, increment by amount `inc`.)
 
-  Increment prime level of this Index instance. (Optionally, increment by amount `inc`.)
+* `setPrime(Index I, int `plev`) -> Index`
+
+  `.setPrime(int plev)`
+
+  Convenience function to set the integer tag of the Index to `plev`.
 
 * `noPrime(Index I) -> Index`
 
-   Return a copy of `I` with prime level set to zero.
+  `.noPrime()`
 
-* `.noPrime()`
+  Convenience function to set the integer tag of the Index to zero. `noPrime(I)` is the same as `setPrime(I,0)`.
 
-  Reset prime level to zero.
+## Index properties ##
 
-## Tag functions
+* `hasTags(Index I, TagSet tags) -> bool`
 
-* `addTags(Index I, string tags) -> Index`
+   Check if the Index `I` has a TagSet that contains the TagSet `tags`.
 
-   Return a copy of `I` with `tags` added to the current TagSet.
+* `dag(Index I) -> Index`
 
-* `removeTags(Index I, string tags) -> Index`
+  `.dag()`
 
-   Return a copy of `I` with `tags` removed from the current TagSet.
+  Change the arrow direction of the Index. 
+  Only relevant for [[Indices with QN data|classes/index_qn]].
 
-* `setTags(Index I, string tags) -> Index`
+* `dir(Index) -> Arrow` 
 
-   Return a copy of `I` with a new TagSet specified by `tags`.
+  Return the `Arrow` direction of this Index. 
+  Only relevant for [[Indices with QN data|classes/index_qn]].
+  Always returns `Out` if the Index has no QN data.
 
-* `replaceTags(Index I, string newtags, string oldtags)`
+## Operators and Conversions ##
 
-   Return a copy of `I` with tags `oldtags` removed and tags `newtags` added.
+* `operator=(int val) -> IndexVal`
 
-* `hasTags(Index I, string tags)`
+  `operator()(int val) -> IndexVal`  
 
-   Check if the Index `I` has a TagSet containing `tags`.
-
-## Operators and Conversions
-
-* `operator()(int i) -> IndexVal`  
-
-  Return an [[IndexVal|classes/indexval]] representing this Index set to value i.
-  This method is one-indexed, meaning i can run from 1 to m().
+  Return an [[IndexVal|classes/indexval]] representing this Index set to value `val`.
+  This method is one-indexed, meaning `val` can run from 1 to `dim(i)` for Index `i`.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto mi = Index(10);
+      auto i = Index(10);
 
-      IndexVal iv = I(2); //call the operator() method of Index mi
+      auto iv = i=2; // Call the operator= method of Index i
+      //auto iv = i(2);  // This creates the same IndexVal
 
       Print(iv.i); //prints 2
       Print(iv == I); //prints true
@@ -170,15 +205,6 @@ Index is defined in "itensor/index.h".
   and prime level as another Index "i1" does not mean that i2==i1, since i2 will have a different 
   id number.
 
-* `operator<(Index other) -> bool`  
-
-  Defines an ordering of Index objects &mdash; useful for sorting and finding Index instances in collections.
- 
-* `equalsIgnorePrime(Index i1, Index i2) -> bool`
-
-  Return `true` if Index i1 and Index i2 are copies of the same original Index and have the same tags,
-  regardless of prime level.
-
 * `explicit operator int()`
 
   `explicit operator long()`
@@ -189,7 +215,7 @@ Index is defined in "itensor/index.h".
   The resulting integer is the size of the Index.
 
 
-## Other Index Class Methods ##
+## Reading and Writing ##
 
 * `.write(std::ostream& s)`  
 
@@ -199,16 +225,7 @@ Index is defined in "itensor/index.h".
 
   Read Index from stream in binary form.
 
-* `.dag()`  
-
-  Has no effect. Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
-
-* `.dir() -> Arrow` 
-
-  Return the `Arrow` direction of this Index. Always returns `Out`. 
-  Currently only for interface compatibility with [[IQIndex|classes/iqindex]].
-
-## Other Functions
+## Other Functions ##
 
 * `showDim(Index I) -> string`
 
