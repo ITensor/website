@@ -118,8 +118,14 @@ Index is defined in "itensor/index.h".
    them to the specified tags.
 
    If no integer tag is specified, the integer tag is set to 0.
-   To remove all tags of an Index and set the integer tag to 0, use 
-   `setTags(I,"")`.
+
+* `noTags(Index I) -> Index`
+
+  `.noTags()`
+
+   Remove all tags from an Index and set the integer tag to 0.
+   
+   `noTags(I)` is the same as `setTags(I,"")` or `setTags(I,"0")`.
 
 * `replaceTags(Index I, TagSet oldtags, TagSet newtags)`
 
