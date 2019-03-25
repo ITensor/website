@@ -127,7 +127,7 @@ Index is defined in "itensor/index.h".
    
    `noTags(I)` is the same as `setTags(I,"")` or `setTags(I,"0")`.
 
-* `replaceTags(Index I, TagSet oldtags, TagSet newtags)`
+* `replaceTags(Index I, TagSet oldtags, TagSet newtags) -> Index`
 
   `.replaceTags(TagSet oldtags, TagSet newtags)`
 

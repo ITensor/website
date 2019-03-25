@@ -19,7 +19,7 @@ IndexVal is defined in "itensor/index.h".
 
     //Can make an IndexVal by "plugging" an
     //integer into an Index
-    auto ivc = s1(4);
+    auto ivc = s1=4; // Same as: auto ivc = s1(4);
     Print(ivc.val); //prints: ivc.val = 4
     Print(ivc.index); //prints: (4)
 
@@ -29,7 +29,7 @@ IndexVal is defined in "itensor/index.h".
 
 * `long val`
 
-## Class Methods
+## General Methods
 
 * `IndexVal()`
 
@@ -38,44 +38,94 @@ IndexVal is defined in "itensor/index.h".
 * `IndexVal(Index I, int i)`
 
   Construct an IndexVal from an Index `I` and integer value `i`.
-  The value `i` must be between 1 and `dim(I)`, inclusive
+  The value `i` must be between 1 and `dim(I)`, inclusive.
 
-* `.dim() -> long` 
+  An IndexVal can also be constructed from an Index with the operators 
+  `operator=(int val) -> IndexVal` and `operator()(int val) -> IndexVal`.
 
-  Return the dimension of the `Index` "index".
+* `dim(IndexVal iv) -> long` 
 
-* `.prime(int inc = 1)`  
-
-  Increment prime level of `index`. (Optionally, increment by amount `inc`.)
-
-* `.noPrime()`  
-
-  Reset prime level of `index` to zero.
-
-* `.dag()`
-
-  Reverse the Arrow direction of the Index stored within this IndexVal.
-
-* `.qn() -> QN`
-
-  Return the quantum number QN object associated with the block, or sector, of 
-  the Index that the value of this IndexVal falls within.
-
-
-## IndexVal Functions
-
-* `prime(IndexVal, int inc = 1) -> IndexVal`
-
-  Return an IndexVal with the same value but with the prime level of the index incremented by one
-  (or by an optional amount `inc`).
-
-* `noPrime(IndexVal) -> IndexVal`
-
-  Return an IndexVal with the same value but with the prime level of the index set to zero.
+  Return the dimension of `index`.
 
 * `hasQNs(IndexVal) -> bool`
 
   Returns true if the Index of the IndexVal has QN information.
+
+* `dag(IndexVal iv) -> IndexVal`
+
+  `.dag()`
+
+  Reverse the Arrow direction of the Index stored within this IndexVal.
+
+* `qn(IndexVal iv) -> QN`
+
+  Return the quantum number QN object associated with the block, or sector, of 
+  the Index that the value of this IndexVal falls within.
+
+## Tag Functions
+
+* `addTags(IndexVal iv, TagSet tags) -> IndexVal`
+
+  `.addTags(TagSet tags)`
+
+   Modify the TagSet of `index`, adding the specified tags.
+
+   Note that every Index has one and only one integer tag, so an Integer
+   tag cannot be added.
+
+* `removeTags(IndexVal iv, TagSet tags) -> IndexVal`
+
+  `.removeTags(TagSet tags)`
+
+   Modify the TagSet of `index`, removing the specified tags.
+
+   Note that every Index has one and only one integer tag, so an Integer
+   tag cannot be removed.
+
+* `setTags(IndexVal iv, TagSet tags) -> IndexVal`
+
+  `.setTags(TagSet tags)`
+
+   Modify the TagSet of `index`, removing all of the tags and setting
+   them to the specified tags.
+
+   If no integer tag is specified, the integer tag is set to 0.
+
+* `noTags(IndexVal iv) -> IndexVal`
+
+  `.noTags()`
+
+   Remove all tags from an Index and set the integer tag to 0.
+
+   `noTags(iv)` is the same as `setTags(iv,"")` or `setTags(iv,"0")`.
+
+* `replaceTags(IndexVal iv, TagSet oldtags, TagSet newtags) -> IndexVal`
+
+  `.replaceTags(TagSet oldtags, TagSet newtags)`
+
+   Modify the TagSet of `index`, removing the tags `oldtags` and adding
+   the tags `newtags`.
+
+   Note that an integer tag must be replaced by another integer tag. If not
+   integer tag is specified, it is not modified.
+
+* `prime(IndexVal iv, int inc = 1) -> IndexVal`
+
+  `.prime(int inc = 1)`
+
+  Convenience function to increment the integer tag of the Index by 1. (Optionally, increment by amount `inc`.)
+
+* `setPrime(IndexVal iv, int `plev`) -> IndexVal`
+
+  `.setPrime(int plev)`
+
+  Convenience function to set the integer tag of `index` to `plev`.
+
+* `noPrime(IndexVal iv) -> IndexVal`
+
+  `.noPrime()`
+
+  Convenience function to set the integer tag of `index` to zero. `noPrime(iv)` is the same as `setPrime(iv,0)`.
 
 ## Other Operations With IndexVals
 
