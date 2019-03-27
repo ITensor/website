@@ -57,6 +57,14 @@ IndexVal is defined in "itensor/index.h".
 
   Reverse the Arrow direction of the Index stored within this IndexVal.
 
+* `index(IndexVal iv) -> Index`
+
+  Return the Index of this IndexVal.
+
+* `val(IndexVal iv) -> int`
+
+  Return the value of this IndexVal.
+
 * `qn(IndexVal iv) -> QN`
 
   Return the quantum number QN object associated with the block, or sector, of 

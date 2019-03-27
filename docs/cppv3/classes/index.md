@@ -58,17 +58,31 @@ Index is defined in "itensor/index.h".
         auto i = Index();
         if(!i) println("Index i is default constructed.");
 
-* `Index(int dim, TagSet tags)` 
+* `Index(int dim[, TagSet tags])` 
 
-   Construct an Index with the following fields:
-   - The integer `dim` is the size of the Index (the dimension of the vector space that
-     the Index defines).
-   - The TagSet `tags` is a comma seperated string listing the tags for the Index.
+   Construct an Index. The integer `dim` is the size of the Index (the dimension of the vector space that
+   the Index defines). An Index is assigned a random id that is used to uniquely determine an Index
+   (and indices that are made from copies of that Index).
+
+   Optionally, the TagSet `tags` can be specified as a comma seperated string listing the tags that 
+   that the Index will have. If none is specified, the Index will have no tags and the integer tag
+   (prime level) will be set to 0.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      // Create an Index of dimension 2 with tags "Site" and "s3"
-      auto s1 = Index(2,"Site,s3");
+      // Create an Index of dimension 2
+      auto i = Index(2);
+
+      // Create a different Index of dimension 2
+      auto j = Index(2);
+
+      Print(i == j); //prints: false (since their ids are different)
+
+      // Create an Index of dimension 3 with tags "Site" and "s1"
+      auto s1 = Index(3,"Site,s1");
+
+      // Create an Index with dimension 4, tag "x" and integer tag (prime level) 1
+      auto x = Index(4,"x,1");
 
 
 ## Accessor Methods ##
@@ -92,66 +106,100 @@ Index is defined in "itensor/index.h".
 
 ## Tag functions ##
 
-* `addTags(Index I, TagSet tags) -> Index`
+* `.addTags(TagSet tags)`
 
-  `.addTags(TagSet tags)`
+  `addTags(Index I, TagSet tags) -> Index`
 
-   Modify the TagSet of the Index, adding the specified tags.
+
+   Modify the TagSet of the Index, adding the specified tags. The first
+   version creates a new Index, keeping the original Index unmodified.
+   The second version modifies the Index in-place.
 
    Note that every Index has one and only one integer tag, so an Integer 
    tag cannot be added.
 
-* `removeTags(Index I, TagSet tags) -> Index`
+  <div class="example_clicker">Click to Show Example</div>
 
-  `.removeTags(TagSet tags)`
+      // Create an Index of dimension 2
+      auto i = Index(2,"i");
+
+      auto ia = addTags(i,"a");
+
+      Print(hasTags(ia,"i,a")); //prints: true
+
+* `.removeTags(TagSet tags)`
+
+  `removeTags(Index I, TagSet tags) -> Index`
+
 
    Modify the TagSet of the Index, removing the specified tags.
 
    Note that every Index has one and only one integer tag, so an Integer 
    tag cannot be removed.
 
-* `setTags(Index I, TagSet tags) -> Index`
+  <div class="example_clicker">Click to Show Example</div>
 
-  `.setTags(TagSet tags)`
+      // Create an Index of dimension 2
+      auto is = Index(2,"i,Site");
+
+      auto i = removeTags(i,"Site");
+
+      Print(hasTags(ia,"Site")); //prints: false
+
+* `.setTags(TagSet tags)`
+
+  `setTags(Index I, TagSet tags) -> Index`
+
 
    Modify the TagSet of the Index, removing all of the tags and setting
    them to the specified tags.
 
    If no integer tag is specified, the integer tag is set to 0.
 
-* `noTags(Index I) -> Index`
+  <div class="example_clicker">Click to Show Example</div>
 
-  `.noTags()`
+      // Create an Index of dimension 2
+      auto i = Index(2,"i");
+
+      auto ia = addTags(i,"a");
+
+      Print(setTags(i,"i,a") == ia); //prints: true
+
+* `.noTags()`
+
+  `noTags(Index I) -> Index`
 
    Remove all tags from an Index and set the integer tag to 0.
    
    `noTags(I)` is the same as `setTags(I,"")` or `setTags(I,"0")`.
 
-* `replaceTags(Index I, TagSet oldtags, TagSet newtags) -> Index`
 
-  `.replaceTags(TagSet oldtags, TagSet newtags)`
+* `.replaceTags(TagSet oldtags, TagSet newtags)`
+
+  `replaceTags(Index I, TagSet oldtags, TagSet newtags) -> Index`
 
    Modify the TagSet of the Index, removing the tags `oldtags` and adding
    the tags `newtags`.
 
-   Note that an integer tag must be replaced by another integer tag. If not
+   Note that an integer tag must be replaced by another integer tag. If no
    integer tag is specified, it is not modified.
 
-* `prime(Index I, int inc = 1) -> Index`
+* `.prime(int inc = 1)`
 
-  `.prime(int inc = 1)`
+  `prime(Index I, int inc = 1) -> Index`
+
 
   Convenience function to increment the integer tag of the Index by 1. (Optionally, increment by amount `inc`.)
 
-* `setPrime(Index I, int `plev`) -> Index`
+* `.setPrime(int plev)`
 
-  `.setPrime(int plev)`
+  `setPrime(Index I, int `plev`) -> Index`
 
   Convenience function to set the integer tag of the Index to `plev`.
 
-* `noPrime(Index I) -> Index`
+* `.noPrime()`
 
-  `.noPrime()`
+  `noPrime(Index I) -> Index`
 
   Convenience function to set the integer tag of the Index to zero. `noPrime(I)` is the same as `setPrime(I,0)`.
 
@@ -161,9 +209,9 @@ Index is defined in "itensor/index.h".
 
    Check if the Index `I` has a TagSet that contains the TagSet `tags`.
 
-* `dag(Index I) -> Index`
+* `.dag()`
 
-  `.dag()`
+  `dag(Index I) -> Index`
 
   Change the arrow direction of the Index. 
   Only relevant for [[Indices with QN data|classes/index_qn]].
@@ -193,23 +241,33 @@ Index is defined in "itensor/index.h".
       Print(iv.i); //prints 2
       Print(iv == I); //prints true
 
-* `operator bool()`
-
-  An Index evaluates to `true` in a boolean context if it is 
-  constructed (a default constructed Index evalues to `false`).
-
 * `operator==(Index other) -> bool`  
 
   `operator!=(Index other) -> bool`  
 
   Comparison operators: two Index objects are equal if they are copies of the 
-  same original Index (have the same id) and have the same prime level and tags.
+  same original Index (have the same id) and have the same TagSet.
 
   The size of the Index objects play no explicit role in comparing them. (Of course,
   all Index objects which compare equal will have the same size, since they 
-  are all copies of the same original Index.) Creating a new Index "i2" with the same size, tags,
-  and prime level as another Index "i1" does not mean that i2==i1, since i2 will have a different 
+  are all copies of the same original Index.) Creating a new Index `j` with the same size and TagSet
+  as another Index `i` does not mean that `i==j`, since `j` will have a different 
   id number.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      // Create an Index of dimension 2
+      auto i = Index(2);
+
+      // Create a different Index of dimension 2
+      auto j = Index(2);
+
+      Print(i == j) // False, since their ids are different
+
+* `operator bool()`
+
+  An Index evaluates to `true` in a boolean context if it is 
+  constructed (a default constructed Index evalues to `false`).
 
 * `explicit operator int()`
 

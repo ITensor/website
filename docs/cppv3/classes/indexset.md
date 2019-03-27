@@ -30,38 +30,35 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
    Default constructor. For a default-constructed IndexSet "inds", `order(inds) == 0`.
 
 * `IndexSet(Index i1,Index i2,Index i3,...)`
-
-   Constructor taking any number of Index objects.
-
-   <div class="example_clicker">Click to Show Example</div>
-
-      auto s1 = Index(2,"Site"), 
-      auto s2 = Index(2,"Site");
-      auto inds = IndexSet(s1,s2);
-
-* `IndexSet(IndxContainer C)` 
+ 
+  `IndexSet(std::initializer_list<Index> ii)` 
 
   `IndexSet(std::vector<Index> ii)`
 
-  `IndexSet(std::array<Index> ii)`
+  `IndexSet(std::array<Index,N> ii)`
 
-  `IndexSet(std::initializer_list<Index> ii)` 
+  `IndexSet(IndxContainer C)` 
 
-   Constructors accepting various containers of indices.
+   Constructors accepting either lists of Index objects or various containers of indices.
 
-   Functions defined to accept an input `IndexSet` will also accept
-   `std::vector<Index>`, `std::array<Index>`, and `std::initializer_list<Index>`.
+   Note that functions defined to accept an input `IndexSet` will also accept
+   `std::vector<Index>`, `std::array<Index,N>`, and `std::initializer_list<Index>`.
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("Site 1",2,"Site"), 
-      auto s2 = Index("Site 2",2,"Site");
-      auto vinds = std::vector<Index>(2);
-      vinds[0] = s1;
-      vinds[1] = s2;
-      auto inds = IndexSet(vinds);
+      auto s1 = Index(2,"Site,s=1"), 
+      auto s2 = Index(2,"Site,s=2");
 
-      Print(inds == IndexSet({s1,s2})); //prints: true
+      // All of the following construct the same IndexSet:
+      auto is1 = IndexSet(s1,s2);
+
+      auto is2 = IndexSet({s1,s2});
+
+      auto vinds = std::vector<Index>({s1,s2});
+      auto is3 = IndexSet(vinds);
+
+      Print(is1 == is2); //prints: true
+      Print(is1 == is3); //prints: true
 
 * `IndexSet(storage_type && store)` 
 
@@ -89,36 +86,67 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    Return number of indices in this set.
 
-* `operator[](int j) -> Index&`
+*  `operator()(int j) -> Index&`
 
-   Access the jth index in the set, starting from 0.
+   `operator[](int j) -> Index&`
+
+   Access the jth index in the set. `operator()` is 1-indexed,
+   and `operator[]` is 0-indexed.
 
    <div class="example_clicker">Click to Show Example</div>
 
-      auto s1 = Index("s1",2,"Site");
-      auto l = Index("l",10);
-      auto a = Index("a",1);
+      auto s = Index(2,"s");
+      auto l = Index(10,"l");
+      auto a = Index(1,"a");
 
-      auto inds = IndexSet(s1,a,l);
+      auto inds = IndexSet(s,a,l);
 
       //Access indices
-      Print(inds[0]); //prints: (2,"Site")
-      Print(inds[1]); //prints: (1,"Link")
-      Print(inds[2]); //prints: (10,"Link")
+      Print(inds(1)); //prints: (2|id=321|s)
+      Print(inds(2)); //prints: (1|id=231|a)
+      Print(inds(3)); //prints: (10|id=943|l)
 
       //Modify an Index
       auto i = Index(3);
-      inds[0] = i;
-      Print(inds[0]); //prints: (3,"Link")
-
-* `.index(int j) -> Index&`
-
-  `index(IndexSet I, int j) -> Index`
-
-   Access the jth index in the set, starting from 1.
+      inds(1) = i;
+      Print(inds(1)); //prints: (3|id=542)
+      Print(inds[0]); //prints: (3|id=542)
 
 <a name="tag_methods"></a>
-## Index Tag Methods
+## Index Tag Methods ##
+
+Note: all of the following functions listed of the form:
+
+  `.f(TagSet, ...)`
+
+  `.f(TagSet, TagSet, ...)`
+
+  `.f(int, ...)`
+
+perform an in-place modification of the IndexSet. `...` stands for 
+optional arguments to specify a subset of indices of the IndexSet
+to apply the operation `.f()`.
+
+ - If no optional arguments are specified, `.f()` is applied to all
+   indices of the input IndexSet.
+
+ - If `...` is a list of indices, an IndexSet, or a collection of indices 
+   convertible to IndexSet, `.f()` is applied to only the specified indices.
+
+ - If `...` is a TagSet, `.f()` is only applied to the indices in the IndexSet 
+   containing all tags in the TagSet.
+
+Functions of the form:
+
+  `f(IndexSet, TagSet, ...) -> IndexSet`
+
+  `f(IndexSet, TagSet, TagSet, ...) -> IndexSet`
+
+  `f(IndexSet, int, ...) -> IndexSet`
+
+perform the same operation as the above in-place operations and accept the
+same optional arguments, but do not modify the input IndexSet and instead 
+return a new, modified IndexSet.
 
 * `.setTags(TagSet tsnew, ...)`
   
@@ -126,8 +154,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   Set the tags of the indices in this IndexSet to be exactly those in the TagSet `tsnew`.
 
-  Optionally, only set the tags of the listed indices, or indices
-  with the matching tags.
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 * `.noTags(...)`
 
@@ -135,8 +163,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   Remove all tags of the indices in this IndexSet.
 
-  Optionally, only remove the tags of the listed indices, or indices
-  with the matching tags.
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 * `.addTags(TagSet tsadd, ...)`
 
@@ -145,10 +173,16 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
   Add the tags in TagSet `tsadd` to the existing tags of 
   the indices in this IndexSet.
 
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
 * `.removeTags(TagSet tsremove, ...)`
 
   Remove the tags in TagSet `tsremove` from the existing tags of 
   the indices in this IndexSet
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 * `.replaceTags(TagSet tsold, TagSet tsnew, ...)`
   
@@ -157,8 +191,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
   For any index containing all of the tags in `tsold`, replace
   these tags with those in `tsnew`. 
 
-  Optionally, only replace the tags of the listed indices, or indices
-  with the matching tags.
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 * `.swapTags(TagSet ts1, TagSet ts2, ...)`
   
@@ -167,8 +201,8 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
   For any index containing all of the tags in `ts1`, replace
   these tags with those in `ts2` and vice versa.
 
-  Optionally, only swap th tags of the listed indices, or indices
-  with the matching tags.
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 * `.prime(int inc = 1, ...)`
 
@@ -176,18 +210,28 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   Increment prime level of all indices by 1, or by the optional amount "inc".
 
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
   <div class="example_clicker">Click to Show Example</div>
 
-      auto l1 = Index(2,"l1");
-      auto s2 = Index(2,"s2");
-      auto s3 = Index(2,"s3");
-      auto l3 = Index(2,"l3");
+      auto i1 = Index(2,"i,n=1");
+      auto i2 = Index(2,"i,n=2");
+      auto i3 = Index(2,"i,n=3");
 
-      auto inds = IndexSet(l1,s2,s3,l3);
-      Print(inds[1]); //prints: (2|id=456|l1)
+      auto is = IndexSet(i1,i2,i3);
 
-      prime(inds,2);
-      Print(inds[1]); //prints: (2|id=456|l1)''
+      auto isp = prime(is);
+
+      Print(hasIndex(isp,prime(i1))); //prints: true
+      Print(hasIndex(isp,prime(i2))); //prints: true
+      Print(hasIndex(isp,prime(i3))); //prints: true
+
+      is.prime(2,"n=2");
+
+      Print(hasIndex(is,i1)); //prints: true
+      Print(hasIndex(is,prime(i2,2))); //prints: true
+      Print(hasIndex(is,i3)); //prints: true
 
 *  `.setPrime(int plnew, ...)`
 
@@ -196,11 +240,17 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
   Set the prime level of all indices to plnew. Optionally, only set the 
   prime levels of indices containing tags tsmatch
 
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
 *  `.noPrime(...)`
 
    `noPrime(IndexSet is, ...) -> IndexSet`
 
   Set the prime level of all Index objects in the IndexSet to zero.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 ## Set Operations
 
@@ -240,7 +290,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
   
   `unionInds(IndexSet is, Index i) -> IndexSet`
 
-   Return the set union of IndexSets.
+   Return the set union of IndexSets, respecting the current order.
 
 * `uniqueInds(IndexSet is1, IndexSet is2) -> IndexSet`
 
@@ -252,7 +302,13 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   Return all indices not shared by `is1` and `is2` (the symmetric set difference).
 
-## Other IndexSet Functions
+## Other IndexSet Methods and Features
+
+* `.dag()`
+
+  `dag(IndexSet I) -> IndexSet`
+
+  Call the dag() operation (which flips Index arrows) on each index in the set.
 
 *  `sim(IndexSet is, ...) -> IndexSet`
 
@@ -269,14 +325,6 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
    Return the minimum dimension of all indices in the IndexSet.
 
-## Other Methods and Features
-
-* `.dag()`
-
-  `dag(IndexSet I) -> IndexSet`
-
-  Call the dag() operation (which flips Index arrows) on each index in the set.
-
 * `.swap(IndexSet & other)`
 
   Efficiently swap the contents of this IndexSet with another.
@@ -291,7 +339,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 * IndexSets can be printed.
 
-## Advanced Methods
+## Range Methods
 
 * `.extent(size_type i) -> long`
 
@@ -313,8 +361,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 * `.range() -> parent const&`
 
-   Reference to this IndexSet as its parent type, namely `RangeT<index_type>`
-   where `index_type` is Index for IndexSet or IQIndex for IQIndexSet.
+   Reference to this IndexSet as its parent type, namely `RangeT<Index>`.
 
 <br/>
 _This page current as of version 3.0.0_
