@@ -43,7 +43,7 @@
 
 * [Non-local String Order Parameter in the S=1/2 Kitaev-Heisenberg Ladder](https://arxiv.org/abs/1812.04003), Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1812.04003
 
-* [Quantum phase transitions in the dimerized extended Bose-Hubbard model](https://arxiv.org/abs/1812.03489), Koudai Sugimoto, Satoshi Ejima, Florian Lange, Holger Fehske, arxiv:1812.03489
+* [Quantum phase transitions in the dimerized extended Bose-Hubbard model](https://doi.org/10.1103/PhysRevA.99.012122), Koudai Sugimoto, Satoshi Ejima, Florian Lange, Holger Fehske, PhysRev[A,99,012122] [arxiv:1812.03489]
 
 * [Statistics-tuned phases of pseudofermions in one dimension](https://arxiv.org/abs/1811.11776), Adhip Agarwala, Gaurav Kumar Gupta, Vijay B. Shenoy, Subhro Bhattacharjee, arxiv:1811.11776
 
@@ -57,14 +57,14 @@
 
 * [Out-of-equilibrium transport in the interacting resonant level model and comparison with the boundary sine-Gordon model](https://arxiv.org/abs/1810.11058), Kemal Bidzhiev, Grégoire Misguich, Hubert Saleur, arxiv:1810.11058
 
-* [Reconstructing quantum states with generative models](https://arxiv.org/abs/1810.10584), Juan Carrasquilla, Giacomo Torlai, Roger G. Melko, Leandro Aolita, arxiv:1810.10584
+* [Reconstructing quantum states with generative models](http://dx.doi.org/10.1038/s42256-019-0028-1), Juan Carrasquilla, Giacomo Torlai, Roger G. Melko, Leandro Aolita, <i style="color:#CC0000">Nature Machine Intelligence</i> <b>1</b>, <a href="http://dx.doi.org/10.1038/s42256-019-0028-1">155</a> (2018) [arxiv:1810.10584]
 
 * [Model of spin liquids with and without time-reversal symmetry](https://arxiv.org/abs/1810.09858), Jyong-Hao Chen, Christopher Mudry, Claudio Chamon, A. M. Tsvelik, arxiv:1810.09858
 
 * [Algebraic Localization from Power-Law Interactions in Disordered Quantum Wires
 ](https://arxiv.org/abs/1810.09779), Thomas Botzung, Davide Vodola, Piero Naldesi, Markus Müller, Elisa Ercolessi, Guido Pupillo, arxiv:1810.09779
 
-* [Exotic criticality in the dimerized spin-1 XXZ chain with single-ion anisotropy](https://arxiv.org/abs/1810.02195), Satoshi Ejima, Tomoki Yamaguchi, Fabian H. L. Essler, Florian Lange, Yukinori Ohta, Holger Fehske, arxiv:1810.02195
+* [Exotic criticality in the dimerized spin-1 XXZ chain with single-ion anisotropy](http://dx.doi.org/10.21468/SciPostPhys.5.6.059), Satoshi Ejima, Tomoki Yamaguchi, Fabian H. L. Essler, Florian Lange, Yukinori Ohta, Holger Fehske, <i style="color:#CC0000">SciPost Phys.</i> <b>5</b>, <a href="http://dx.doi.org/10.21468/SciPostPhys.5.6.059">059</a> (2018) [arxiv:1810.02195]
 
 * [Frustrated plane-polarized dipoles in one dimension](https://arxiv.org/abs/1810.00646), Niraj R. Ghimire, Susanne F. Yelin, arxiv:1810.00646
 
