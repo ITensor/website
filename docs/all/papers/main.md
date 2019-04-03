@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Evidence of pair-density wave in spin-valley locked systems](http://advances.sciencemag.org/content/5/3/eaat4698/tab-pdf), Jordan Venderley and Eun-Ah Kim, <i style="color:#CC0000">Science Advances</i>, <b>29</b>, <a href="http://dx.doi.org/10.1126/sciadv.aat4698" target="_blank">4698</a> (2019)
+
 * [Vanishing Hall Response of Charged Fermions in a Transverse Magnetic Field](https://arxiv.org/abs/1903.02000), Michele Filippone, Charles-Edouard Bardyn, Sebastian Greschner, Thierry Giamarchi, arxiv:1903.02000
 
 * [Dynamically enhanced unconventional superconducting correlations in a Hubbard ladder](https://arxiv.org/abs/1902.07947), Ameneh Sheikhan, Corinna Kollath, arxiv:1902.07947
