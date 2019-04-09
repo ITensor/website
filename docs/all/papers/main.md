@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Novel families of AKLT states with arbitrary self-conjugate edge states](https://arxiv.org/abs/1904.01822), Samuel Gozel, Didier Poilblanc, Ian Affleck, Frédéric Mila, arxiv:1904.01822
+
 * [Evidence of pair-density wave in spin-valley locked systems](http://advances.sciencemag.org/content/5/3/eaat4698/tab-pdf), Jordan Venderley and Eun-Ah Kim, <i style="color:#CC0000">Science Advances</i>, <b>29</b>, <a href="http://dx.doi.org/10.1126/sciadv.aat4698" target="_blank">4698</a> (2019)
 
 * [Vanishing Hall Response of Charged Fermions in a Transverse Magnetic Field](https://arxiv.org/abs/1903.02000), Michele Filippone, Charles-Edouard Bardyn, Sebastian Greschner, Thierry Giamarchi, arxiv:1903.02000
