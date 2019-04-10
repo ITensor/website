@@ -69,6 +69,8 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[DMRG|classes/dmrg]]. Interface for running DMRG calculations.
 
+* [[Time Evolution of MPS|classes/tevol]]. Methods for time evolving MPS.
+
 <!--
 
 * [[Spectrum|classes/spectrum]]. Class for storing & analyzing density matrix eigenvalue spectrum.
