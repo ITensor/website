@@ -20,18 +20,15 @@ to evolve matrix product states (MPS) in real and imaginary time.
              Args args = Args::global()) -> Real
    ```
 
-   Time evolve an MPS or IQMPS by applying a set of Trotter "gates". A gate is 
+   Time evolve an MPS or IQMPS by applying a set of Trotter "gates". A gate is conceptually
    a two-site operator which <i style="color:red;">must act on two consecutive sites</i>
    where consecutive means following the ordering of the MPS.
 
    To apply a gate which acts on non-consecutive sites, you should insert appropriate
    "swap" gates into the gate list. For assistance in creating time-evolution and
-   swap gates, see the [[BondGate|classes/bondgate]] helper class. You can also
-   make gates yourself using ITensor or IQTensors.
-
-   The gate list argument can be any type of container of gates, and the gates can
-   be any object which is convertible to an ITensor or IQTensor (including just a
-   plain ITensor or IQTensor).
+   swap gates, see the [[BondGate|classes/bondgate]] helper class. 
+   The gate list argument can be any type of container of gates, 
+   such as a <a href="https://en.cppreference.com/w/cpp/container/vector" target="_blank">std::vector</a>.
 
    The argument `tstep` tells the gateTEvol function how large a time step one application
    of all the gates in `gatelist` corresponds to. (It is up to you to ensure that this
