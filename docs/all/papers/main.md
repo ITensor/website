@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Emergence of dxy-wave superconductivity in a doped two-leg diagonal ladder](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.094510), Jie Hou, Ting-Kuo Lee, Jie Lou, Yan Chen, PhysRev[B,99,094510] 
+
 * [Novel families of AKLT states with arbitrary self-conjugate edge states](https://arxiv.org/abs/1904.01822), Samuel Gozel, Didier Poilblanc, Ian Affleck, Frédéric Mila, arxiv:1904.01822
 
 * [Evidence of pair-density wave in spin-valley locked systems](http://advances.sciencemag.org/content/5/3/eaat4698/tab-pdf), Jordan Venderley and Eun-Ah Kim, <i style="color:#CC0000">Science Advances</i>, <b>29</b>, <a href="http://dx.doi.org/10.1126/sciadv.aat4698" target="_blank">4698</a> (2019)
