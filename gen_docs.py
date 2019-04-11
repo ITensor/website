@@ -202,8 +202,10 @@ def generate():
 
     # If file or folder not found in given
     # version, look in 'all' folder as a fallback
+    inall = False
     if not mdfile:
         all_docpath = reldocpath + "/all/"
+        inall = True
         mdfile = openMDFile(all_docpath,page)
 
     #
@@ -254,7 +256,7 @@ def generate():
     print nav
     print vinfo
     print "".join(postnav_header_file.readlines())
-    if vers == "cppv3":
+    if vers == "cppv3" and (not inall):
         print "<span style='color:red;'>ITensor version 3 has not been released yet. \
                This documentation is a preview only.</span><br/><br/>" 
     print bodyhtml
