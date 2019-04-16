@@ -203,6 +203,26 @@ Index is defined in "itensor/index.h".
 
       Print(hasTags(i,"Site")); //prints: false
 
+* `.replaceTags(TagSet oldtags, TagSet newtags)`
+
+  `replaceTags(Index I, TagSet oldtags, TagSet newtags) -> Index`
+
+   Modify the TagSet of the Index, removing the tags `oldtags` and adding
+   the tags `newtags`.
+
+   Note that an integer tag must be replaced by another integer tag. If no
+   integer tag is specified, it is not modified.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      // Create an Index of dimension 2
+      auto is = Index(2,"i,Site");
+
+      auto il = replaceTags(i,"Site","Link");
+
+      Print(hasTags(il,"i,Link")); //prints: true
+      Print(tags(il)=="i,Link,0")); //prints: true
+
 * `.setTags(TagSet tags)`
 
   `setTags(Index I, TagSet tags) -> Index`
@@ -215,11 +235,13 @@ Index is defined in "itensor/index.h".
   <div class="example_clicker">Click to Show Example</div>
 
       // Create an Index of dimension 2
-      auto i = Index(2,"i");
+      auto i = Index(2,"i,1");
 
-      auto ia = addTags(i,"a");
+      Print(tags(i) == "i,1"); //prints: true
 
-      Print(setTags(i,"i,a") == ia); //prints: true
+      auto a = setTags(i,"a");
+
+      Print(tags(a) == "a,0"); //prints: true
 
 * `.noTags()`
 
@@ -242,16 +264,6 @@ Index is defined in "itensor/index.h".
 
       Print(noTags(xp) == i); //prints: true
       Print(noTags(xp) == j); //prints: false
-
-* `.replaceTags(TagSet oldtags, TagSet newtags)`
-
-  `replaceTags(Index I, TagSet oldtags, TagSet newtags) -> Index`
-
-   Modify the TagSet of the Index, removing the tags `oldtags` and adding
-   the tags `newtags`.
-
-   Note that an integer tag must be replaced by another integer tag. If no
-   integer tag is specified, it is not modified.
 
 * `.prime(int inc = 1)`
 
@@ -284,6 +296,11 @@ Index is defined in "itensor/index.h".
   `dag(Index I) -> Index`
 
   Change the arrow direction of the Index. 
+  Only relevant for [[Indices with QN data|classes/index_qn]].
+
+* `.setDir(Arrow)`
+
+  Set the arrow direction of the Index. 
   Only relevant for [[Indices with QN data|classes/index_qn]].
 
 * `dir(Index) -> Arrow` 
