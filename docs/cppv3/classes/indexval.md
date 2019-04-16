@@ -7,6 +7,9 @@ an integer "`val`" representing a particular value the Index can take.
 The value is 1-indexed and must be in the range [1,m] where m is the size
 of the Index.
 
+IndexVals are primarily used for getting and setting elements of 
+an [[ITensor|classes/itensor]].
+
 IndexVal is defined in "itensor/index.h".
 
 ## Synopsis
@@ -14,14 +17,14 @@ IndexVal is defined in "itensor/index.h".
     auto s1 = Index(4);
     auto iva = IndexVal(s1,3),
     auto ivb = IndexVal(s1,1);
-    Print(iva.val); //prints: iva.val = 3
-    Print(ivb.val); //prints: ivb.val = 1
+    Print(val(iva)); //prints: val(iva) = 3
+    Print(val(ivb)); //prints: val(ivb) = 1
 
     //Can make an IndexVal by "plugging" an
     //integer into an Index
     auto ivc = s1=4; // Same as: auto ivc = s1(4);
-    Print(ivc.val); //prints: ivc.val = 4
-    Print(ivc.index); //prints: (4)
+    Print(val(ivc)); //prints: val(ivc) = 4
+    Print(index(ivc)); //prints: (4|id=490|s1)
 
 ## Public Data Members ##
 
@@ -43,6 +46,19 @@ IndexVal is defined in "itensor/index.h".
   An IndexVal can also be constructed from an Index with the operators 
   `operator=(int val) -> IndexVal` and `operator()(int val) -> IndexVal`.
 
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto i = Index(4,"i");
+
+      // These are all ways to make an IndexVal
+      auto iva = IndexVal(i,2); // IndexVal constructor
+      auto ivb = i=2; // Call the operator= method of Index i
+      auto ivc = i(2);  // This creates the same IndexVal
+
+      Print(iva == ivb); //prints: true
+      Print(iva == ivc); //prints: true
+      Print(index(ivb) == i); //prints: true
+
 * `dim(IndexVal iv) -> long` 
 
   Return the dimension of `index`.
@@ -51,9 +67,9 @@ IndexVal is defined in "itensor/index.h".
 
   Returns true if the Index of the IndexVal has QN information.
 
-* `dag(IndexVal iv) -> IndexVal`
+* `.dag()`
 
-  `.dag()`
+  `dag(IndexVal iv) -> IndexVal`
 
   Reverse the Arrow direction of the Index stored within this IndexVal.
 
@@ -72,68 +88,23 @@ IndexVal is defined in "itensor/index.h".
 
 ## Tag Functions
 
-* `addTags(IndexVal iv, TagSet tags) -> IndexVal`
+  IndexVals have the same tagging/priming functions as Index objects.
+  Tags of the `index` of the IndexVal are modified, and the `val` is left
+  unchanged.
+  Please see the __Tag Functions__ section of the [[Index documentation|classes/index]]
+  for more information.
 
-  `.addTags(TagSet tags)`
+  <div class="example_clicker">Click to Show Example</div>
 
-   Modify the TagSet of `index`, adding the specified tags.
+      // Create an Index of dimension 2
+      auto i = Index(2,"i");
 
-   Note that every Index has one and only one integer tag, so an Integer
-   tag cannot be added.
+      // Create an IndexVal
+      auto iv = i(1);
 
-* `removeTags(IndexVal iv, TagSet tags) -> IndexVal`
+      auto iva = addTags(iv,"a");
 
-  `.removeTags(TagSet tags)`
-
-   Modify the TagSet of `index`, removing the specified tags.
-
-   Note that every Index has one and only one integer tag, so an Integer
-   tag cannot be removed.
-
-* `setTags(IndexVal iv, TagSet tags) -> IndexVal`
-
-  `.setTags(TagSet tags)`
-
-   Modify the TagSet of `index`, removing all of the tags and setting
-   them to the specified tags.
-
-   If no integer tag is specified, the integer tag is set to 0.
-
-* `noTags(IndexVal iv) -> IndexVal`
-
-  `.noTags()`
-
-   Remove all tags from an Index and set the integer tag to 0.
-
-   `noTags(iv)` is the same as `setTags(iv,"")` or `setTags(iv,"0")`.
-
-* `replaceTags(IndexVal iv, TagSet oldtags, TagSet newtags) -> IndexVal`
-
-  `.replaceTags(TagSet oldtags, TagSet newtags)`
-
-   Modify the TagSet of `index`, removing the tags `oldtags` and adding
-   the tags `newtags`.
-
-   Note that an integer tag must be replaced by another integer tag. If not
-   integer tag is specified, it is not modified.
-
-* `prime(IndexVal iv, int inc = 1) -> IndexVal`
-
-  `.prime(int inc = 1)`
-
-  Convenience function to increment the integer tag of the Index by 1. (Optionally, increment by amount `inc`.)
-
-* `setPrime(IndexVal iv, int `plev`) -> IndexVal`
-
-  `.setPrime(int plev)`
-
-  Convenience function to set the integer tag of `index` to `plev`.
-
-* `noPrime(IndexVal iv) -> IndexVal`
-
-  `.noPrime()`
-
-  Convenience function to set the integer tag of `index` to zero. `noPrime(iv)` is the same as `setPrime(iv,0)`.
+      Print(index(iva) == addTags(i,"a")); //prints: true
 
 ## Other Operations With IndexVals
 
