@@ -147,7 +147,7 @@
 
 ## 2017
 
-* [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://doi.org/10.1103/PhysRevB.97.115156), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, PhysRev[B,97,115156] [arxiv:1712.08055]
+1. [Dynamical Mean-Field Theory on the Real-Frequency Axis: p-d Hybridizations and Atomic Physics in SrMnO@@_3@@](https://doi.org/10.1103/PhysRevB.97.115156), Daniel&nbsp;Bauernfeind, Robert&nbsp;Triebl, Manuel&nbsp;Zingl, Markus&nbsp;Aichhorn, Hans&nbsp;Gerd&nbsp;Evertz, PhysRev[B,97,115156] [arxiv:1712.08055]
 
 * [Lattice supersymmetry and order-disorder coexistence in the tricritical Ising model](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.206403), Edward&nbsp;O'Brien, Paul&nbsp;Fendley, PhysRev[Lett,120,206403] [arxiv:1712.06662]
 
@@ -373,3 +373,16 @@
 
 * [Minimally Entangled Typical Quantum States at Finite Temperature](http://link.aps.org/doi/10.1103/PhysRevLett.102.190601), Steven&nbsp;R.&nbsp;White, <i style="color:#CC0000">Phys.&nbsp;Rev.&nbsp;Lett.</i> <b>102</b>, <a href="http://link.aps.org/doi/10.1103/PhysRevLett.102.190601" target="_blank">190601</a> (2009) [arxiv:0902.4475]
 
+
+<!--
+51 papers in 2018
+46 papers in 2017
+29 in 2016
+16 in 2015
+6 in 2014
+4 in 2013
+2 in 2012
+3 in 2009-2011
+--------------
+157 total
+-->

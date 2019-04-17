@@ -1,13 +1,14 @@
 # Index Objects
+r
 
 The most basic element of ITensor is not actually a tensor: it is a tensor index, 
 an object of type&nbsp;`Index`. (By tensor index we mean i,j, or k in an expression
 like @@T_{ijk}@@.) 
 
 ITensors are "intelligent tensors" because they "know" what indices they have. 
-This is possible since an Index carries extra information beyond its size.
+This is possible since an Index carries extra information beyond its dimension.
 
-The simplest way to construct an Index is to give its size:
+The simplest way to construct an Index is to give its dimension:
 
     auto i = Index(3);
 
@@ -21,10 +22,10 @@ if they are copies of the same original index:
 
 (Also two indices must have the same tags and prime level to compare equal; see below).
 
-To access the size of an Index, use the `dim` function
+To access the dimension, or size of an Index, use the `dim` function
 
-    println("The size of index i is ",dim(i));
-    //prints: The size of index i is 3
+    println("The dimension of index i is ",dim(i));
+    //prints: The dimension of index i is 3
 
 <div class="example_clicker">Click here to view a full working example</div>
 
@@ -34,11 +35,11 @@ To access the size of an Index, use the `dim` function
     int main() 
     {
     auto i = Index(3);
-    println("The size of index i is ",dim(i));
+    println("The dimension of index i is ",dim(i));
     return 0;
     }
 
-Certain properties of an Index cannot be changed, such as its size and ID
+Certain properties of an Index cannot be changed, such as its dimension and ID
 number. However, a new Index can be created to replace an old one.
 The philosophy of ITensor is that indices have a meaning given at the 
 time they are created.
@@ -117,10 +118,10 @@ Printing an Index shows useful information about it:
     println(i);
     //prints: (3|id=587|"Link,index i")
 
-The output shows the size and tags of i.
-The printout also contains part of the ID number of the Index. 
+The output shows the dimension, id, and tags of i.
 The ID numbers are random 64 bit integers which vary each time 
 you construct a new index (even if it has the same dimension and tags each time).
+For reasons of space and readability, only a portion of the ID is shown.
  
 The prime level is displayed at the end:
 
@@ -133,8 +134,8 @@ The prime level is displayed at the end:
 ### Summary 
 
 The indices of an ITensor are Index objects.
-An Index has a fixed size and an ID number that are set when it is
-constructed; copies of that Index will always have the same size and ID.
+An Index has a fixed dimension and an ID number that are set when it is
+constructed; copies of that Index will always have the same dimension and ID.
 
 Index objects can also carry tags and a prime level.
 Tags and prime levels can be useful in various situations, such as retrieving an
