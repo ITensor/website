@@ -71,9 +71,9 @@ has exactly the same outcome as the call
 
     T.set(i=2,j=1,k=3, 4.56);
 
-We can retrieve an element by calling the `.elt` method:
+We can retrieve an element by using the `elt` function:
 
-    auto x = T.elt(k=3,i=2,j=1);
+    auto x = elt(T,k=3,i=2,j=1);
     println("x = ",x);
     //prints: x = 4.56
 
@@ -81,14 +81,14 @@ We can also set elements of ITensors to be complex numbers:
 
     T.set(i=2,k=3,j=1, 7+8_i);
 
-Now we must call the `.eltC` method to retrieve this element as a 
-complex data type; calling `.elt` would throw an exception:
+Now we must use the `eltC` function to retrieve this element as a 
+complex data type; calling `elt` would throw an exception:
 
-    auto z = T.eltC(i=2,k=3,j=1);
+    auto z = eltC(T,i=2,k=3,j=1);
     println("z = ",z);
     //prints: z = (7,8)
 
-Calling `.eltC` always succeeds even if the tensor has only real elements.
+The `eltC` function always succeeds even if the tensor has only real elements.
 
 ### Printing ITensors 
 
