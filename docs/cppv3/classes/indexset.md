@@ -302,13 +302,13 @@ return a new, modified IndexSet.
 
    For set equality, use `hasSameInds(IndexSet is1, IndexSet is2) -> bool`.
 
-  <div class="example_clicker">Click to Show Example</div>
+   <div class="example_clicker">Click to Show Example</div>
 
-      auto i1 = Index(2,"i1");
-      auto i2 = Index(2,"i2");
+       auto i1 = Index(2,"i1");
+       auto i2 = Index(2,"i2");
 
-      Print(equals({i1,i2},{i1,i2})); //prints: true
-      Print(equals({i1,i2},{i2,i1})); //prints: false
+       Print(equals({i1,i2},{i1,i2})); //prints: true
+       Print(equals({i1,i2},{i2,i1})); //prints: false
 
 *  `findInds(IndexSet is, TagSet tsmatch) -> IndexSet`
 
