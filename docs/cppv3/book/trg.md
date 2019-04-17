@@ -217,7 +217,7 @@ as discussed above:
         auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
                 +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
         auto P = exp(-(E-E0)/T);
-        A.set(x0(s1),y1(s2),x1(s3),y0(s4),P);
+        A.set(l=s1,d=s2,r=s3,u=s4, P);
         }
 
 The first line creates the "A" tensor with indices l,r,u,d and all elements set to zero.

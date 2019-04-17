@@ -1,5 +1,4 @@
 # Index Objects
-r
 
 The most basic element of ITensor is not actually a tensor: it is a tensor index, 
 an object of type&nbsp;`Index`. (By tensor index we mean i,j, or k in an expression
@@ -94,9 +93,9 @@ The `prime` function accepts an optional increment amount:
     println(primeLevel(i3));
     //prints: 3
 
-Calling `noprime` resets the prime level to zero.
+Calling `noPrime` resets the prime level to zero.
 
-    auto i0 = noprime(i3);
+    auto i0 = noPrime(i3);
 
     println(primeLevel(i0));
     //prints: 0

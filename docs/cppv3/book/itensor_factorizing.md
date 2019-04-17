@@ -98,7 +98,7 @@ the following accuracy parameters:
 
 * `"MaxDim"` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
 
-* `"Minm"` &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
+* `"MinDim"` &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
 
 Let us revisit the example above, but also provide some of these accuracy parameters
 

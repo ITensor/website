@@ -17,9 +17,6 @@ To confirm this is an order 3 tensor (a tensor with 3 indices), call `order(T)`:
     println("The order of T is ",order(T));
     //prints: The order of T is 3
 
-Alternatively you can call `T.order()`, or `ord(T)` and `T.ord()` if you prefer to
-type fewer characters.
-
 <div class="example_clicker">Click here to view a full working example</div>
 
     #include "itensor/all.h"
@@ -37,10 +34,6 @@ type fewer characters.
 
     return 0;
     }
-
-In the physics tensor network literature, the number of 
-indices is often called the _rank of a tensor. Therefore we also provide
-`rank(T)` and `T.r()` as aliases for `order(T)`.
 
 <a name="elements"></a>
 ### Accessing ITensor Elements
