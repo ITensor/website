@@ -4,72 +4,91 @@ using namespace itensor;
 
 int main()
 {
-Real T = 3.;
-int maxm = 20;
-int topscale = 6;
+Real T = 3.0;
+int maxdim = 20;
+int topscale = 8;
 
-auto m0 = 2;
-auto x = Index("x0",m0,Xtype);
-auto y = Index("y0",m0,Ytype);
-auto x2 = prime(x,2);
-auto y2 = prime(y,2);
+auto dim0 = 2;
 
-auto A = ITensor(x,y2,x2,y);
+// Define an initial Index making up
+// the Ising partition function
+auto s = Index(dim0,"scale=0");
 
+// Define the indices of the scale-0
+// Boltzmann weight tensor "A"
+auto l = addTags(s,"left");
+auto r = addTags(s,"right");
+auto u = addTags(s,"up");
+auto d = addTags(s,"down");
+
+auto A = ITensor(l,r,u,d);
+
+// Fill the A tensor with correct Boltzmann weights:
 auto Sig = [](int s) { return 1.-2.*(s-1); };
-
 auto E0 = -4.;
-
-for(auto s1 : range1(m0))
-for(auto s2 : range1(m0))
-for(auto s3 : range1(m0))
-for(auto s4 : range1(m0))
+for(auto sl : range1(dim0))
+for(auto sd : range1(dim0))
+for(auto sr : range1(dim0))
+for(auto su : range1(dim0))
     {
-    auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
-            +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
+    auto E = Sig(sl)*Sig(sd)+Sig(sd)*Sig(sr)
+            +Sig(sr)*Sig(su)+Sig(su)*Sig(sl);
     auto val = exp(-(E-E0)/T);
-    A.set(x(s1),y2(s2),x2(s3),y(s4),val);
+    A.set(l(sl),r(sr),u(su),d(sd),val);
     }
 
-for(auto scale : range(topscale))
+// Keep track of partition function per site, z = Z^(1/N)
+Real z = 1.0;
+
+for(auto scale : range1(topscale))
     {
-    printfln("\n---------- Scale %d -> %d  ----------",scale,1+scale);
+    printfln("\n---------- Scale %d -> %d  ----------",scale-1,scale);
 
-    auto y = noprime(findtype(A,Ytype));
-    auto y2 = prime(y,2);
-    auto x = noprime(findtype(A,Xtype));
-    auto x2 = prime(x,2);
+    // Get the upper-left and lower-right tensors
+    auto [Fl,Fr,l_new] = factor(A,{r,d},{l,u},{"MaxDim=",maxdim,
+                                               "Tags=","left,scale="+str(scale),
+                                               "ShowEigs=",true});
 
-    auto F1 = ITensor(x2,y);
-    auto F3 = ITensor(x,y2);
-    auto xname = format("x%d",scale+1);
-    factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
-                    "IndexType=",Xtype,"IndexName=",xname});
+    // Get the upper-right and lower-left tensors
+    auto [Fu,Fd,u_new] = factor(A,{l,d},{u,r},{"MaxDim=",maxdim,
+                                               "Tags=","up,scale="+str(scale),
+                                               "ShowEigs=",true});
 
-    auto F2 = ITensor(x,y);
-    auto F4 = ITensor(y2,x2);
-    auto yname = format("y%d",scale+1);
-    factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
-                    "IndexType=",Ytype,"IndexName=",yname});
+    // Make the new index of Fl distinct
+    // from the new index of Fr by changing
+    // the tag from "left" to "right"
+    auto r_new = replaceTags(l_new,"left","right");
+    Fr *= delta(l_new,r_new);
 
-    auto l13 = commonIndex(F1,F3);
-    A = F1 * noprime(F4) * prime(F2,2) * prime(F3,l13,2);
+    // Make the new index of Fd distinct
+    // from the new index of Fu by changing the tag
+    // from "up" to "down"
+    auto d_new = replaceTags(u_new,"up","down");
+    Fd *= delta(u_new,d_new);
+
+    Fl *= delta(r,l);
+    Fu *= delta(d,u);
+    Fr *= delta(l,r);
+    Fd *= delta(u,d);
+    A = Fl * Fu * Fr * Fd;
+
+    Print(A);
+
+    // Update the indices
+    l = l_new;
+    r = r_new;
+    u = u_new;
+    d = d_new;
+
+    // Normalize the current tensor and keep track of
+    // the total normalization
+    Real TrA = elt(A*delta(l,r)*delta(u,d));
+    A /= TrA;
+    z *= pow(TrA,1./pow(2,1+scale));
     }
 
-println("\n---------- Calculating at Scale ",topscale," ----------");
+printfln("log(Z)/N = %.12f",log(z));
 
-auto xt = noprime(findtype(A,Xtype));
-auto yt = noprime(findtype(A,Ytype));
-auto xt2 = prime(xt,2);
-auto yt2 = prime(yt,2);
-
-auto Trx = delta(xt,xt2);
-auto Try = delta(yt,yt2);
-auto Z = (Trx*A*Try).real();
-
-Real Ns = pow(2,1+topscale);
-
-printfln("log(Z)/Ns = %.12f",log(Z)/Ns);
 
 return 0;
 }

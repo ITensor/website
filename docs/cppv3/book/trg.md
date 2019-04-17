@@ -82,10 +82,10 @@ The total energy @@E@@ of each configuration is the sum of all of these local en
 
 
 Interestingly, it is again possible to rewrite the partition function sum
-@@Z@@ as a network of contracted tensors. Define the tensor @@A^{\sigma\_t \sigma\_r \sigma\_b \sigma\_l}@@
+@@Z@@ as a network of contracted tensors. Define the tensor @@A^{\sigma\_u \sigma\_r \sigma\_d \sigma\_l}@@
 to be 
 $$
-A^{\sigma\_t \sigma\_r \sigma\_b \sigma\_l} = e^{-(\sigma\_t \sigma\_r + \sigma\_r \sigma\_b + \sigma\_b \sigma\_l + \sigma\_l \sigma\_t)/T}
+A^{\sigma\_u \sigma\_r \sigma\_d \sigma\_l} = e^{-(\sigma\_u \sigma\_r + \sigma\_r \sigma\_d + \sigma\_d \sigma\_l + \sigma\_l \sigma\_u)/T}
 $$
 
 <img class="diagram" width="15%" src="docs/VERSION/book/images/TRG_Atensor.png"/>
@@ -118,10 +118,10 @@ TRG is to factorize the @@A\_0@@ tensor in two different ways:
 
 Both factorizations can be computed using the [[singular value decomposition (SVD)|book/itensor_factorizing]].
 For example, to compute the first factorization, view @@A\_0@@ as a matrix with a collective "row"
-index @@\sigma\_l@@ and @@\sigma\_t@@ and collective "column" index @@\sigma\_b@@ and @@\sigma\_r@@. 
+index @@\sigma\_l@@ and @@\sigma\_u@@ and collective "column" index @@\sigma\_d@@ and @@\sigma\_r@@. 
 After performing an SVD of @@A\_0@@ in this way, further factorize the singular value matrix @@S@@ as @@S = \sqrt{S} \sqrt{S}@@ and 
 absorb each @@\sqrt{S}@@ factor into 
-U and V to create the factors @@F\_1@@ and @@F\_2@@. Pictorially:
+U and V to create the factors @@F\_r@@ and @@F\_l@@. Pictorially:
 
 <img class="diagram" width="100%" src="docs/VERSION/book/images/TRG_factorizing.png"/>
 
@@ -130,7 +130,7 @@ values and discarding the columns of U and V corresponding to the smaller singul
 This truncation is crucial for keeping the cost of the TRG algorithm under control.
 
 Making the above substitutions, either
-@@A\_0=F\_1 F\_3@@ or @@A\_0=F\_2 F\_4@@ on alternating lattice sites, transforms the
+@@A\_0=F\_r F\_l@@ or @@A\_0=F\_u F\_d@@ on alternating lattice sites, transforms the
 original tensor network into the following network:
 
 <img class="diagram" width="90%" src="docs/VERSION/book/images/TRG_network1.png"/>
@@ -175,44 +175,44 @@ To get started, start with the following empty application:
     }
 
 First define some basic parameters of the calculation, such as the temperature "T"; the
-maximum number  of singular values "maxm"; and the top-most scale we want to reach
+maximum number of singular values "maxdim"; and the top-most scale we want to reach
 with TRG:
 
     Real T = 3.0;
-    int maxm = 20;
+    int maxdim = 20;
     int topscale = 6;
 
 Next define the indices which will go on the initial "A"
 tensor:
 
-    auto m0 = 2;
-    auto x0 = Index(m0,"x=0,scale=0");
-    auto y0 = Index(m0,"y=0,scale=0");
-    auto x1 = replaceTags(x,"x=0","x=1");
-    auto y1 = replaceTags(y,"y=0","y=1");
+    auto dim0 = 2;
+    auto s = Index(dim0,"scale=0");
+    auto l = addTags(s,"left");
+    auto r = addTags(s,"right");
+    auto u = addTags(s,"up");
+    auto d = addTags(s,"down");
 
-Here it is good practice to save the index dimension @@m\_0=2@@ into its own variable
-to prevent "magic numbers" from appearing later in the code. The strings "x=0,scale=0"
-and "y=0,scale=0" denote a `TagSet`, a set of tags that denote properties of an Index.
-`x=0` denotes that it is the left horizontal bond, and `scale=0` denotes that we have
-not renormalized the network yet.
+Here it is good practice to save the index dimension @@dim0=2@@ into its own variable
+to prevent "magic numbers" from appearing later in the code.
 Copies of the same Index with different tags are considered to be distinct.
-Therefore, when we create the Index `x1` by replacing that tag "x=0" with "x=1",
-it will not automatically contract with the Index `x0`.
+Therefore, we create the Index `l` by adding the tag "left", `r` by adding "right"
+etc. to get distinct indices for the Boltzmann weight tensor `A`. Later as 
+the calculation runs, the "scale=0" tag will be replaced with "scale=1", "scale=2",
+so that indices at different scales will be distinct too.
 
-Now let's create the "A" tensor defining the partition function and set its values as discussed
-in the previous section:
+Now let's create the "A" tensor defining the partition function and set its values 
+as discussed above:
 
-    auto A = ITensor(x0,y1,x1,y0);
+    auto A = ITensor(l,r,u,d);
 
     auto Sig = [](int s) { return 1.-2.*(s-1); };
 
 	auto E0 = -4.0;
 
-    for(auto s1 : range1(m0))
-    for(auto s2 : range1(m0))
-    for(auto s3 : range1(m0))
-    for(auto s4 : range1(m0))
+    for(auto s1 : range1(dim0))
+    for(auto s2 : range1(dim0))
+    for(auto s3 : range1(dim0))
+    for(auto s4 : range1(dim0))
         {
         auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
                 +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
@@ -220,7 +220,7 @@ in the previous section:
         A.set(x0(s1),y1(s2),x1(s3),y0(s4),P);
         }
 
-The first line creates the "A" tensor with indices x0,y1,x1,y0 and all elements set to zero.
+The first line creates the "A" tensor with indices l,r,u,d and all elements set to zero.
 The next line defines a "lambda" function bound to the variable name Sig which converts integers
 1 and 2 into Ising spin values +1.0 and -1.0. To set the elements of A, we loop over integers
 s1,s2,s3,s4. The function `range1(d)` returns an object that can be used in a `for` loop to
@@ -249,97 +249,89 @@ Although on the first pass these are just the same indices we defined before,
 new indices will arise as A refers to tensors at higher scales.
 
 Now it's time to decompose the current A tensor as discussed
-in the previous section. First the `A=F1*F3` factorization:
+in the previous section. First the `A=Fl*Fr` factorization:
 
-	auto F1 = ITensor(x0,y1);
-	auto F3 = ITensor(x1,y0);
+    auto [Fl,Fr,l_new] = factor(A,{r,d},{l,u},{"MaxDim=",maxdim,
+                                               "Tags=","left,scale="+str(scale),
+                                               "ShowEigs=",true});
 
-    auto xtags = format("x=0,scale=%d",scale+1);
-    factor(A,F1,F3,{"Maxm=",maxm,"ShowEigs=",true,
-                    "Tags=",xtags});
-    F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale+1));
 
-We create the ITensors F1 and F3 with the indices of A we
-want them to have after the factorization. This tells the `factor` routine how
-to group the indices of A. Along with the tensors, we pass some [[named arguments|tutorials/args]].
-The argument "Maxm" puts a limit on how many singular values are kept in the SVD. Setting "ShowEigs"
-to `true` shows helpful information about the truncation of singular values (actually the squares
-of the singular values which are called "density matrix eigenvalues"). Also we pass a set of tags
-that will be put on the new index which will be created to connect F1 and F3.
-The line `auto xtags = format("x=0,scale=%d",scale+1);` is a string formatting operation; if for example `scale == 2`
-then xtags will be `"x=0,scale=3"`.
+When performing the factorization, we pass the tags we want the newly created Index
+linking Fl to Fr to have ("left" and "scale=n"). 
+The argument "MaxDim" puts a limit on how many singular values are kept in the SVD. 
+Setting "ShowEigs" to `true` shows helpful information about the truncation of singular values 
+(actually the squares of the singular values which are called "density matrix eigenvalues").
 
-The last step is to make sure that the new renormalized index introduced on Fx1, which we find
-because we know it has the tag `format("scale=%d",scale+1)`, has the proper tag `"x=1"`.
+We can write very similar code to do the `A=Fu*Fd` factorization:
 
-We can write very similar code to do the `A=F2*F4` factorization, the main difference being
-which indices of A we request to end up on F2 versus F4:
+    // Get the upper-right and lower-left tensors
+    auto [Fu,Fd,u_new] = factor(A,{l,d},{u,r},{"MaxDim=",maxdim,
+                                               "Tags=","up,scale="+str(scale),
+                                               "ShowEigs=",true});
 
-    auto F2 = ITensor(x1,y1);
-    auto F4 = ITensor(x0,y0);
-    auto ytags = format("y=0,scale=%d",scale+1);
-    factor(A,F2,F4,{"Maxm=",maxm,"ShowEigs=",true,
-                    "Tags=",ytags});
-    F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale+1));
+Before contracting the F tensors back together to form the tensor definining the next
+scale, we need to make their shared indices distinct:
+
+    auto r_new = replaceTags(l_new,"left","right");
+    Fr *= delta(l_new,r_new);
+
+    auto d_new = replaceTags(u_new,"up","down");
+    Fd *= delta(u_new,d_new);
+
+In the first line above, we create an Index `r_new` which is like `l_new` but has
+the tag "right" instead of "left", so that it will no longer be contracted with `l_new`,
+and similarly for `u_new` and `d_new`.
+
+Having created these two new indices, we use a `delta` ITensor to replace `l_new` with
+`r_new` on the ITensor `Fr`, and similar for `Fd`.
 
 For the last step of the TRG algorithm we combine the factors of the A tensor at the current
 scale to create a "renormalized" A tensor at the next scale:
 
-    F1 = replaceTags(F1,"x=0","x=1",format("scale=%d",scale));
-    F2 = replaceTags(F2,"y=1","y=0",format("scale=%d",scale));
-    F3 = replaceTags(F3,"x=1","x=0",format("scale=%d",scale));
-    F4 = replaceTags(F4,"y=0","y=1",format("scale=%d",scale));
+    Fl *= delta(r,l);
+    Fu *= delta(d,u);
+    Fr *= delta(l,r);
+    Fd *= delta(u,d);
 
-    A = F1 * F2 * F3 * F4;
+    A = Fl * Fu * Fr * Fd;
 
-The `replaceTags` functions wrapping the F tensors adjust the tags of various indices 
-so that the indices we want contracted with match while the indices we don't want 
-contracted will have unique tags. Try drawing the tensor diagram showing the contraction 
-of the F tensors to convince yourself that the tagging works out correctly.
+The `delta` ITensors here are used to replace one Index by another, for example
+the line `Fl *= delta(r,l)` replaces the r Index of Fl with the Index l.
+Try drawing the tensor diagram showing the contraction 
+of the F tensors to convince yourself that the indexing works out correctly.
 
-Finally, we use `findIndex` to get the new indices that were introduced in our
-renormalized network:
+Before the next iteration begins, we update the variables l,r,u,d to ensure
+they are available for the next step:
 
-	x0 = findIndex(A,"x=0");
-	x1 = findIndex(A,"x=1");  // x1==replaceTags(x0,"x=0","x=1")
-	y0 = findIndex(A,"y=0");
-	y1 = findIndex(A,"y=1");  // y1==replaceTags(y0,"y=0","y=1")
+    l = l_new;
+    r = r_new;
+    u = u_new;
+    d = d_new;
 
-The function `findIndex(T,tags)` searches through the indices of a tensor and returns
-the first index that contains all of the specified tags. 
-Note that x1 (y1) is the same index as x0 (y0), under the appropriate change of tags.
 
-Last but not least, after we have proceeded through each scale
-we want to take the last A tensor at the "top scale" specified and 
-compute observables from it. Though this tensor contains a wealth of information,
-we will look at the simplest case of computing the partition function @@Z@@.
-
-To obtain @@Z@@ from the top tensor, all we have to do is trace both the x indices with each
-other and trace the y indices with each other, which results in a scalar tensor whose
-value is @@Z@@:
+To obtain @@Z@@ from the tensor at a given scale, 
+all we have to do is trace the l and r indices with each
+other and trace the u and dindices with each other, 
+which results in a scalar tensor whose value is @@Z@@:
 
 <img class="diagram" width="20%" src="docs/VERSION/book/images/TRG_top.png"/>
 
-In ITensor, you can compute a trace by creating a special type of sparse ITensor 
-called a `delta`. A `delta` tensor has only diagonal elements, all equal to 1.0.
+In ITensor, you can compute a trace by again using a `delta` ITensor
+A `delta` tensor has only diagonal elements, all equal to 1.0.
 Pictorially, you can view the delta tensors as the dashed lines in the above diagram.
 
-We use the indices we found at the latest scale of the network to create delta tensors:
+Here is how the tracing of A works in our sample code:
 
-    auto Trx = delta(x0,x1);
-    auto Try = delta(y0,y1);
+    Real TrA = elt(A*delta(l,r)*delta(u,d));
 
-Finally we contract these tensors with "A" and convert the result to a real
-number to obtain @@Z@@:
+With this trace computed, we can normalize A at each step (`A /= TrA`) to
+prevent the algorithm from encountering excessively large numbers
+and we can update the partition function per site `z`:
 
-    auto Z = (Trx*A*Try).real();
+    z *= pow(TrA,1./pow(2,1+scale));
 
-An interesting quantity to print out is @@\ln(Z)/N\_s@@ where @@N\_s = 2^{1+N}@@ 
-is the number of sites "contained" in the top tensor at scale @@N@@:
-
-    Real Ns = pow(2,1+topscale);
-    printfln("log(Z)/Ns = %.12f",log(Z)/Ns);
-
+An interesting quantity to compute is @@\ln(Z)/N\_s = \ln(z)@@ where @@N\_s = 2^{1+N}@@ 
+is the number of sites "contained" in the top tensor at scale @@N@@.
 With the conventions for the probability weights we have chosen, we can check
 @@\ln(Z)/N\_s@@ against the following exact result (for an infinite-sized system):
 $$
@@ -348,7 +340,7 @@ $$
 where the constant @@k=1/\sinh(2\beta)^2@@ and recall @@\beta=1/T@@.
 
 Click the link just below to view a complete, working sample code you can compile yourself. Compare the value of
-@@\ln(Z)/N\_s@@ you get to the exact result. How does adjusting `maxm` and `topscale` affect your result?
+@@\ln(Z)/N\_s@@ you get to the exact result. How does adjusting `maxdim` and `topscale` affect your result?
 
 <div class="example_clicker">Click here to view the full example code</div>
 
