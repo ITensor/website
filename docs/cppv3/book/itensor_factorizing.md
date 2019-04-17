@@ -2,7 +2,8 @@
 
 The real power of tensor algorithms comes from tensor factorization,
 which can achieve huge compression of high-dimensional data.
-For example, a matrix product state (a.k.a. tensor train) can be viewed as
+For example, a [matrix product state](https://tensornetwork.org/mps/) 
+(a.k.a. tensor train) can be viewed as
 the successive factorization of a very high rank tensor.
 
 The ITensor approach to tensor factorizations emphasizes the structure
@@ -40,25 +41,23 @@ Say we have an ITensor with indices i,j, and k
 
 and we want to treat i and k as the "row" indices for the purpose of the SVD.
 
-We create ITensors U,S, and V to hold the results of the SVD. ITensors S and V can be 
-blank, but we will give U the indices i and k to tell the SVD algorithm these
-are the "row" indices
+To perform this SVD, we can call the function `svd` as follows:
 
-    ITensor U(i,k),S,V;
-    svd(T,U,S,V);
+    auto [U,S,V,u,v] = svd(T,{i,k});
 
-The call to `svd` function computes the SVD of T and overwrites U,S,V with the results.
-Diagrammatically this looks like:
+The notation `auto [U,S,V,u,v]` is a convenient C++17 feature that captures multiple return 
+values from a function and defines the variables U, S, V, u, and v all in one line.
+U, S, and V are ITensors, and u and v are Index objects linking U to S and S to V, 
+respectively.
+
+Diagrammatically the SVD operation above looks like:
 
 <img class="diagram" width="95%" src="docs/VERSION/book/images/SVD_Ex1.png"/>
 
-Note that after the SVD, ITensor U still has indices i and k, but also a new index
-shared with S. ITensor V gets the index j from T and has the other index of S.
-Because of this index structure, the ITensor product `U*S*V` gives us back
-an ITensor identical to T:
+The guarantee of the `svd` function is that the ITensor 
+product `U*S*V` gives us back an ITensor identical to T:
 
     Print(norm(U*S*V - T)); //typical output: norm(U*S*V-T) = 1E-13
-
 
 <div class="example_clicker">Click here to view a full working example</div>
 
@@ -67,26 +66,18 @@ an ITensor identical to T:
 
     int main() 
     {
-    auto i = Index("index i",3);
-    auto j = Index("index j",4);
-    auto k = Index("index k",5);
+    auto i = Index(3,"i");
+    auto j = Index(4,"j");
+    auto k = Index(5,"k");
 
-    //Make a random ITensor with indices i,j,k
-    auto T = randomTensor(i,j,k);
+    auto T = randomITensor(i,j,k);
 
-    ITensor U(i,k),S,V;
-    svd(T,U,S,V);
+    auto [U,S,V,u,v] = svd(T,{i,k});
 
     Print(norm(U*S*V-T));
 
     return 0;
     }
-
-The precise details of the indices of S are not usually important.
-However, if needed one can obtain these indices by calling `commonIndex`:
-
-    auto ui = commonIndex(S,U); //get the index S shares with U
-    auto vi = commonIndex(S,V); //get the index S shares with V
 
 ### Truncating the SVD spectrum
 
@@ -105,16 +96,14 @@ the following accuracy parameters:
   Using a cutoff allows the SVD algorithm to truncate as many states as possible while still
   ensuring a certain accuracy.
 
-* `"Maxm"` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
+* `"MaxDim"` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
 
 * `"Minm"` &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
 
 Let us revisit the example above, but also provide some of these accuracy parameters
 
-    //make an ITensor with indices i,j,k and random elements
-    auto T = randomTensor(i,j,k);
-    ITensor U(i,k),S,V;
-    svd(T,U,S,V,{"Cutoff=",1E-2,"Maxm=",50});
+    auto T = randomITensor(i,j,k);
+    auto [U,S,V,u,v] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",50});
 
 In the code above, we specified that a cutoff of @@\epsilon=10^{-2}@@ be used and that at
 most 50 singular values should be kept. We can check that the resulting factorization is now approximate
@@ -133,15 +122,13 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 
     int main() 
     {
-    auto i = Index(30,"index i");
-    auto j = Index(40,"index j");
-    auto k = Index(50,"index k");
+    auto i = Index(30,"i");
+    auto j = Index(40,"j");
+    auto k = Index(50,"k");
 
-    //Make a random ITensor with indices i,j,k
     auto T = randomITensor(i,j,k);
 
-    ITensor U(i,k),S,V;
-    svd(T,U,S,V,{"Cutoff=",1E-2,"Maxm=",500});
+    auto [U,S,V,u,v] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",500});
 
     auto truncerr = sqr(norm(U*S*V-T)/norm(T));
     Print(truncerr);
