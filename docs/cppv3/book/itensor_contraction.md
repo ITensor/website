@@ -1,6 +1,6 @@
 # Contracting ITensors
 
-Tensor contraction is usually the most expensive
+Tensor contraction is often the most costly
 step of tensor algorithms.
 Code for contracting tensors can be 
 fragile and error-prone when the tensor interface depends
