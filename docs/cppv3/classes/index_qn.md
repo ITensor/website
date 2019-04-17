@@ -12,18 +12,19 @@ In addition to the QN structure, a set of tags and an Arrow direction (In,Out) c
                    QN({"Sz", 0}),8,
                    QN({"Sz",-2}),4);
 
-    // Provide additional tags and Arrow direction
+    // Provide Arrow direction and tags
     auto J = Index(QN({"T", 1}),3,
                    QN({"T",-1}),3,
-                   "J,Link",In);
+                   In,"J,Link");
 
-    // Make an IQIndex with five blocks
+    // Make an Index with five blocks
     // and total size 4+8+10+8+4=34
-    auto I = IQIndex("I",Index("I+2",4),QN(+2),
-                         Index("I+1",8),QN(+1),
-                         Index("I_0",10),QN(0),
-                         Index("I-1",8),QN(-1),
-                         Index("I-2",4),QN(-2));
+    auto I = Index(QN(+2),4,
+                   QN(+1),8,
+                   QN( 0),10,
+                   QN(-1),8,
+                   QN(-2),4,
+                   "I");
 
     Print(dim(I)); //prints: dim(I) = 16
 
