@@ -199,7 +199,7 @@ Index is defined in "itensor/index.h".
       // Create an Index of dimension 2
       auto is = Index(2,"i,Site");
 
-      auto i = removeTags(i,"Site");
+      auto i = removeTags(is,"Site");
 
       Print(hasTags(i,"Site")); //prints: false
 
