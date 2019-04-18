@@ -10,15 +10,35 @@ SpinHalf and SpinHalfSite are defined in the file "itensor/mps/sites/spinhalf.h"
 
 ## Synopsis
 
+    //Make a spinhalf site with no QNs
+    auto s = SpinHalfSite({"ConserveQNs=",false});
+
+    //Make an Sz operator
+    auto Sz = op(s,"Sz");
+
+    //Get the Index of the site
+    auto i = index(s);
+
+    Print(hasInds(Sz,{i,prime(i)}));
+
+    //Make a set of SpinHalfSites
     auto sites = SpinHalf(100);
 
-    auto Sz3 = sites.op("Sz",3);
+    auto Sz3 = op(sites,"Sz",3);
 
-    auto Sp4 = sites.op("S+",4);
+    auto Sp4 = op(sites,"S+",4);
 
-    //Use IQIndexVals to get the +,+ element of the Sz operator
-    auto Szpp = Sz3.real(sites(3,"Up"),prime(sites(3,"Up")));
+    //Use IndexVals to get the +,+ element of the Sz operator
+    auto Szpp = elt(Sz3,sites(3,"Up"),prime(sites(3,"Up")));
 
+
+## Args of a SpinHalfSite
+
+* `"ConserveQNs"` &mdash; sets if the site has QN information or not. Defaults to true.
+
+* `"ConserveSz"` &mdash; sets if the site has QN information or not. Defaults to true.
+
+* `"SiteNumber"` &mdash; integer n. If specified, add a tag `"n="+str(n)` to the Index of the SpinHalfSite.
 
 ## States of a SpinHalfSite
 

@@ -17,14 +17,14 @@ SpinOne and SpinOneSite are defined in the file "itensor/mps/sites/spinone.h"
 
     auto sites = SpinOne(100);
 
-    auto Sz_3 = sites.op("Sz",3);
+    auto Sz_3 = op(sites,"Sz",3);
 
-    auto Sx2_4 = sites.op("Sx2",4);
+    auto Sx2_4 = op(sites,"Sx2",4);
 
-    auto Sp_5 = sites.op("S+",5);
+    auto Sp_5 = op(sites,"S+",5);
 
-    //Use IQIndexVals to get the 0,+ element of the S+ operator
-    auto Spzp = Sp_5.real(sites(5,"Z0"),prime(sites(5,"Up")));
+    //Use IndexVals to get the 0,+ element of the S+ operator
+    auto Spzp = elt(Sp_5,sites(5,"Z0"),prime(sites(5,"Up")));
 
 ## States of a SpinOneSite
 

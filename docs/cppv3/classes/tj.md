@@ -14,9 +14,9 @@ tJ and tJSite are defined in the file "itensor/mps/sites/tj.h"
 
     auto sites = tJ(100);
 
-    auto Ntot_3 = sites.op("Ntot",3);
+    auto Ntot_3 = op(sites,"Ntot",3);
 
-    auto Cup_4 = sites.op("Cup",4);
+    auto Cup_4 = op(sites,"Cup",4);
 
 ## States of a tJSite
 

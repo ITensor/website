@@ -22,9 +22,9 @@ Electron and ElectronSite are defined in the file "itensor/mps/sites/electron.h"
 
     auto sites = Electron(100);
 
-    auto Ntot_3 = sites.op("Ntot",3);
+    auto Ntot_3 = op(sites,"Ntot",3);
 
-    auto Cup_4 = sites.op("Cup",4);
+    auto Cup_4 = op(sites,"Cup",4);
 
     //Make a Electron site set which only conserves parity
     auto psites = Electron(100,{"ConserveNf",false});

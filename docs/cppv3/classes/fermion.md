@@ -18,9 +18,9 @@ Fermion and FermionSite are defined in the file "itensor/mps/sites/fermion.h"
 
     auto sites = Fermion(100);
 
-    auto N_3 = sites.op("N",3);
+    auto N_3 = op(sites,"N",3);
 
-    auto A_4 = sites.op("A",4);
+    auto A_4 = op(sites,"A",4);
 
     //Make a Fermion site set which only conserves parity
     auto psites = Fermion(100,{"ConserveNf",false});
