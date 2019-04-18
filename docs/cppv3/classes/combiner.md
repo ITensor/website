@@ -19,7 +19,7 @@ the resulting ITensor with combined indices as efficiently as possible.
 
     auto T = randomITensor(i,j,k,l);
 
-    auto C = combiner(i,k);
+    auto [C,c] = combiner(i,k);
 
     //
     // Combine
@@ -30,13 +30,13 @@ the resulting ITensor with combined indices as efficiently as possible.
     Print(hasindex(cT,j)); //prints: true
     Print(hasindex(cT,k)); //prints: false
     Print(hasindex(cT,l)); //prints: true
+    Print(hasindex(cT,c)); //prints: true
 
-    Print(rank(cT)); //prints: 3
+    Print(order(cT)); //prints: 3
 
-    //Get the new Index which replaced i and k
-    auto ci = commonIndex(C,cT);
+    Print(c == commonIndex(C,cT)); //prints: true
 
-    Print(ci.m()); //prints 21 = 7*3
+    Print(dim(c)); //prints 21 = 7*3
 
     //
     // Uncombine
@@ -48,28 +48,19 @@ the resulting ITensor with combined indices as efficiently as possible.
 
 ## Specification
 
-* `combiner(Index i1, Index i2, ...) -> ITensor`
+* `combiner(IndexSet is, Args args = Args::global()) -> std::tuple<ITensor,Index>`
 
-  Given one or more indices, return a combiner ITensor which can be used to combine these indices
-  into a single, new Index `c`.
+  `combiner(Index i1, Index i2, ...) -> std::tuple<ITensor,Index>`
 
-  The resulting ITensor will have all of the indices provided, plus one new Index `c` whose
-  size is the product of sizes `i1.m() * i2.m() * ...`.
-
-* `combiner(IndexSet inds, Args args = Args::global()) -> ITensor`
-  `combiner(std::initializer_list<Index> inds, Args args = Args::global()) -> ITensor`
-  `combiner(std::array<Index,N> inds, Args args = Args::global()) -> ITensor`
-  `combiner(std::vector<Index> inds, Args args = Args::global()) -> ITensor`
-
-  Given a container of Index objects, return a combiner ITensor which combines these indices
-  into a single new index.
+  Given an IndexSet, a container convertible to IndexSet, or a list of one or more indices, 
+  return a combiner ITensor which can be used to combine these indices into a single, 
+  new Index `c`, as well as the new Index `c`, in a tuple.
 
   The resulting ITensor will have all of the indices provided, plus one new Index `c` whose
-  size is the product of sizes `i1.m() * i2.m() * ...`.
+  size is the product of sizes `dim(is(1)) * dim(is(2)) * ...`.
 
-  These functions also recognizes the following optional named arguments:
+  The first version also recognizes the following optional named arguments:
 
-  * "IndexName" (default: "cmb") &mdash; provide a string to use for the name of the new, combined Index
   * "Tags" (default: "Link,CMB") &mdash; set the tags of the new, combined Index
 
 ## Related functions

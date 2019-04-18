@@ -12,9 +12,9 @@ It has exactly one non-zero element, which can be any element.
     auto i = Index(4);
     auto j = Index(3);
 
-    auto T = randomTensor(i,j);
+    auto T = randomITensor(i,j);
 
-    auto S = setElt(i(2));
+    auto S = setElt(i=2);
 
     //Multiplying by S in this case will "quench"
     //the i Index of T to its second value:
@@ -32,12 +32,12 @@ except the element corresponding to the IndexVals which is set to 1.0.
      auto s = Index(3);
      auto l = Index(10);
 
-     auto T = setElt(s(2),l(4));
+     auto T = setElt(s=2,l=4);
 
-     Print(T.real(s(1),l(1))); //prints: 0.0
-     Print(T.real(s(2),l(1))); //prints: 0.0
+     Print(elt(T,s=1,l=1)); //prints: 0.0
+     Print(elt(T,s=2,l=1)); //prints: 0.0
      //...
-     Print(T.real(s(2),l(4))); //prints: 1.0
+     Print(elt(T,s=2,l=4)); //prints: 1.0
 
 <br/>
 _This page current as of version 3.0.0_
