@@ -279,8 +279,8 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 ## Tag Methods
 
 ITensors have all of the same tagging methods that are defined for
-[[IndexSets|classes/indexset]]. See the _Tag Methods_ section of 
-the IndexSet documentation for a complete list of methods.
+IndexSets. See the __Tag Methods__ section of the 
+[[IndexSet documentation|classes/indexset]] for a complete list of methods.
 
   <div class="example_clicker">Click to Show Example</div>
 

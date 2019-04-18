@@ -18,7 +18,7 @@ functions:
   with different elements along the diagonal.
 
 
-The functions `delta` and `diagTensor` are defined in "itensor/itensor.h"; also
+The functions `delta` and `diagITensor` are defined in "itensor/itensor.h"; also
 see "itensor/itensor_impl.h".
 
 ## Synopsis
@@ -53,7 +53,7 @@ see "itensor/itensor_impl.h".
 
   `delta(Index i1, Index i2, ...) -> ITensor`
 
-  Given an IndexSet, a container convertible to an IndexSet, or two or more indices, 
+  Given an IndexSet, a container of Indices convertible to an IndexSet, or two or more indices, 
   returns an ITensor having these indices and diagonal storage. 
   All diagonal elements have the value 1.0.
 

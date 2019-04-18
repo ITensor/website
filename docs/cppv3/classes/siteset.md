@@ -14,95 +14,109 @@ without losing information about the underlying site type.
 
 ## Synopsis
 
-    SiteSet sites = SpinHalf(100);
+    auto sites = SpinHalf(100);
 
-    Print(sites.N()); //prints: sites.N() = 100
+    Print(length(sites)); //prints: length(sites) = 100
 
-    sites(3); //retrieve the IQIndex defining site number 3
+    auto s3 = sites(3); //retrieve the Index defining site number 3
 
-    sites(3,"Up"); //obtain the IQIndexVal defining the "Up" state at site number 3
+    auto s3up = sites(3,"Up"); //obtain the IndexVal defining the "Up" state at site number 3
 
-    sites.op("Sz",3); //obtain the "Sz" operator at site number 3
+    auto sz3 = op(sites,"Sz",3); //obtain the "Sz" operator at site number 3
 
 
 ## General SiteSet Interface
 
 This part of the interface is common to all site set objects.
 
-* `N() -> int`
+* `length(SiteSet sites) -> int`
 
-  Returns the number of sites of this SiteSet.
+  Returns the number of sites of the SiteSet `sites`.
 
-* `operator()(int i) -> IQIndex`
+* `operator()(int i) -> Index`
 
-  Return the `IQIndex` representing site i. 
-
-  This is also useful even when not using quantum numbers
-  because an `IQIndex` can automatically convert to an `Index`.
+  Return the `Index` representing site i. 
 
   <div class="example_clicker">Show Example</div>
 
-        auto sites = SpinHalf(100);
+      auto sites = SpinHalf(100);
 
-        Index s4 = sites(4);
+      auto s4 = sites(4);
 
-        Index l("left",5),
-              r("right",4);
+      auto l = Index(5,"left"),
+      auto r = Index(4,"right");
 
-        ITensor T(l,sites(3),r);
+      auto T = ITensor(l,sites(3),r);
 
-* `operator()(int i, string state) -> IQIndexVal`
+* `operator()(int i, string state) -> IndexVal`
 
-  Return the `IQIndexVal` representing a specific state of site i in the diagonal basis. 
+  Return the `IndexVal` representing a specific state of site i in the diagonal basis. 
   
   For example, the state string could be
   `"Up"` or `"Dn"` for the case of the [[SpinHalf|classes/spinhalf]] SiteSet,
-  or `"Emp"`,`"Up"`,`"Dn"`, or `"UpDn"` in the case of the [[Hubbard|classes/hubbard]] SiteSet.
+  or `"Emp"`,`"Up"`,`"Dn"`, or `"UpDn"` in the case of the [[Electron|classes/electron]] SiteSet.
 
   <div class="example_clicker">Show Example</div>
 
         auto sites = SpinOne(100);
 
-        //Create an IQTensor with all entries zero except
+        //Create an ITensor with all entries zero except
         //the one corresponding to site 5 in the "Up" state
         auto up5 = setElt(sites(5,"Up"));
 
 * ```
-  op(string opname, 
+  op(SiteSet sites,
+     string opname, 
      int i, 
-     Args args = Args::global()) -> IQTensor
+     Args args = Args::global()) -> ITensor
   ```
 
-  Return a single-site operator acting on site i. 
+  Return a single-site operator acting on site i using the corresponding index and site type
+  of the SiteSet `sites`.
   
   For a list of operators available for a certain type of site, see the documentation
   on that particular type. For example, opname could be `"Sz"` for a S=1/2 site.
 
   Some of the site types accept optional named arguments (Args).
 
-  Although the return type is IQTensor, the `op` method can be used with ITensors as well.
-  Just convert the returned IQTensor to an ITensor (this will happen automatically if
-  the returned tensor is contracted with or added to an ITensor).
-
   <div class="example_clicker">Show Example</div>
 
-        auto sites = Hubbard(40);
+      auto sites = Electron(40);
 
-        IQTensor ndn5 = sites.op("Ndn",5);
+      // Create a random MPS of all up spins
+      auto initstate = InitState(sites,"Up");
+      auto psi = randomMPS(initstate);
 
-        Real dens = (dag(prime(psi.A(8),Site)) * sites.op("Ntot",8) * psi.A(8)).toReal();
+      auto ndn5 = op(sites,"Ndn",5);
+
+      auto dens = elt(dag(prime(psi(8),"Site")) * op(sites,"Ntot",8) * psi(8));
 
   A convenient feature of the `op` method is obtaining a product of two 
-  operators by joining their names with an asterisk `*`.
-  For example, if opname is `"Nup*Ndn"`, the operator return is the 
+  operators by joining their names with an asterisk `\*`.
+  For example, if opname is `"Nup\*Ndn"`, the operator return is the 
   product (in the usual sense of a product of single-site operators
   written from left to right) of the operators `"Nup"` and `"Ndn"`.
 
   <div class="example_clicker">Show Example</div>
 
-        auto sites = Hubbard(40);
+      // Continued from the example above
+      auto itcn = elt(dag(prime(psi(8),"Site")) * op(sites,"Nup*Ndn",8) * psi(8));
 
-        Real itcn = (dag(prime(psi.A(8),Site)) * sites.op("Nup*Ndn",8) * psi.A(8)).toReal();
+* `inds(SiteSet sites) -> IndexSet`
+
+  Return an IndexSet of the indices of the SiteSet (the SiteSet without the site
+  type information).
+
+  <div class="example_clicker">Show Example</div>
+
+      auto sites = SpinHalf(4);
+
+      auto is = inds(sites);
+
+      Print(is(3) == sites(3)); //prints: true
+
+      // Make an ITensor with the indices
+      auto T = ITensor(is);
 
 ## Operators Defined Automatically for all site types
 
@@ -115,7 +129,7 @@ as described from the `.op` method.
    Example:
 
        auto sites = SpinHalf(N);
-       auto id3 = sites.op("Id",3);
+       auto id3 = op(sites,"Id",3);
 
 * `"Proj"` &mdash; diagonal projection operator
   Requires additional named argument "State" specifying
@@ -123,25 +137,41 @@ as described from the `.op` method.
 
   Example:
 
-       auto sites = SpinHalf(N);
-       //Projects site 3 onto state 2 (i.e. the down state)
-       auto P3_2 = sites.op("Proj",3,{"State",2});
+      auto sites = SpinHalf(N);
+      //Projects site 3 onto state 2 (i.e. the down state)
+      auto P3_2 = op(sites,"Proj",3,{"State",2});
 
 ## Generic SiteSet class
 
 You can also use the SiteSet class itself as a generic collection of site
 indices which defines only the minimal set of operators discussed above
-above. A generic SiteSet can still be very useful for keeping track
+above (for example "Id" and "Proj"). 
+A generic SiteSet can still be very useful for keeping track
 of Hilbert spaces not necessarily equipped with specific local site
 operators.
 
-* `SiteSet(int N)`
+* `SiteSet(int N, int d)`
 
-  Construct a generic SiteSet object with N sites.
+  Construct a generic SiteSet object with N sites and local dimension size d.
 
-* `SiteSet(vector<IQIndex> inds)`
+  The site indices created with this constructor have no QN information.
 
-  Construct a generic SiteSet with indices provided in a
-  std::vector<IQIndex>. The std::vector will be treated as
-  zero-indexed so the resulting SiteSet will have as many
-  sites as the size of the std::vector.
+* `SiteSet(IndexSet is)`
+
+  Construct a SiteSet with the indices provided in the IndexSet
+  (or any container of indices convertible to an IndexSet).
+
+  <div class="example_clicker">Show Example</div>
+
+      auto sites = SpinHalf(10);
+
+      // Make an IndexSet of the indices 
+      // of the SpinHalf siteset
+      auto is = inds(sites);
+
+      // Make a new SpinHalf site set from the indices
+      // grabbed from the original one
+      auto sites2 = SpinHalf(is);
+
+      Print(norm(op(sites,"Sz",1)-op(sites2,"Sz",1))); //prints: 0.0
+

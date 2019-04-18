@@ -1,37 +1,37 @@
-# Spinless and SpinlessSite
+# Fermion and FermionSite
 
-The Spinless class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites to be of type SpinlessSite, representing a spinless particle with maximum 
+The Fermion class is a specialization of [[SiteSet|classes/siteset]] which initializes
+its sites to be of type FermionSite, representing a spinless particle with maximum 
 site occupancy of one (a fermion or "hard-core" boson).
 
-The SpinlessSite class can also be used to create custom SiteSets which mix SpinlessSites 
+The FermionSite class can also be used to create custom SiteSets which mix FermionSites 
 with other types of sites.
 
-A Spinless site set (and SpinlessSite) accepts the optional named argument "ConserveNf"
-which is true by default and will make the quantum numbers carried by a SpinlessSite include
+A Fermion site set (and FermionSite) accepts the optional named argument "ConserveNf"
+which is true by default and will make the quantum numbers carried by a FermionSite include
 the particle number. If set to false, the quantum numbers will only reflect the particle 
 number modulo 2 (the "parity").
 
-Spinless and SpinlessSite are defined in the file "itensor/mps/sites/spinless.h"
+Fermion and FermionSite are defined in the file "itensor/mps/sites/fermion.h"
 
 ## Synopsis
 
-    auto sites = Spinless(100);
+    auto sites = Fermion(100);
 
     auto N_3 = sites.op("N",3);
 
     auto A_4 = sites.op("A",4);
 
-    //Make a Spinless site set which only conserves parity
-    auto psites = Spinless(100,{"ConserveNf",false});
+    //Make a Fermion site set which only conserves parity
+    auto psites = Fermion(100,{"ConserveNf",false});
 
-## States of a SpinlessSite
+## States of a FermionSite
 
 * `"Emp"` &mdash; the vacuum (empty) state
 
 * `"Occ"` &mdash; the occupied state (one particle)
 
-## Operators Provided by SpinlessSite
+## Operators Provided by FermionSite
 
 * `"N"` &mdash; the density operator @@\hat{n}@@
 
