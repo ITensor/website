@@ -6,7 +6,7 @@ A class for initializing matrix product states.
 
 An InitState is constructed by providing (at minimum) an object derived from [[SiteSet|classes/siteset]]. 
 In the documentation below, the allowed "state" strings depend on the SiteSet class used. For example, 
-for the SpinOne siteset allowed state strings are "Up","Z0", and "Dn". For the Hubbard SiteSet they are 
+for the SpinOne siteset allowed state strings are "Up","Z0", and "Dn". For the Electron SiteSet they are 
 "Emp","Up","Dn", and "UpDn". See the documentation for each SiteSet class for further details.
 
 One an InitState object is constructed and all sites are set, it can be used in an MPS or IQMPS 

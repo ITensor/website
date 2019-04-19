@@ -163,7 +163,7 @@ Index is defined in "itensor/index.h".
 
       Print(i == j) // False, since their ids are different
 
-## Tag functions ##
+## Tag Methods ##
 
 * `.addTags(TagSet tags)`
 

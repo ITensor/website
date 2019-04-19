@@ -1,36 +1,35 @@
-# Hubbard and HubbardSite
+# Electron and ElectronSite
 
-The Hubbard class is a specialization of [[SiteSet|classes/siteset]] which initializes
-its sites to be of type HubbardSite, representing a particle with spin 1/2 (either
-a fermion or a spinful boson) occupying a 
-single local orbital (meaning that the maximum occupancy of the site is two particles:
-one with spin up and one with spin down).
+The Electron class is a specialization of [[SiteSet|classes/siteset]] which initializes
+its sites to be of type ElectronSite, representing a fermion (or hardcore boson) with spin 
+1/2 occupying a single local orbital (meaning that the maximum occupancy of the site is 
+two particles: one with spin up and one with spin down).
 
-The HubbardSite class can also be used to create custom SiteSets which mix HubbardSites
+The ElectronSite class can also be used to create custom SiteSets which mix ElectronSites
 with other types of sites.
 
-A Hubbard site set (and HubbardSite) accepts the following optional named arguments: 
-- "ConserveNf" &mdash; (default is true) make the quantum numbers carried by a HubbardSite include
+A Electron site set (and ElectronSite) accepts the following optional named arguments: 
+- "ConserveNf" &mdash; (default is true) make the quantum numbers carried by a ElectronSite include
   the particle number. If set to false, the quantum numbers will only reflect the particle 
   number modulo 2 (the "parity").
-- "ConserveSz" &mdash; (default is true) make the quantum numbers carried by a HubbardSite include
+- "ConserveSz" &mdash; (default is true) make the quantum numbers carried by a ElectronSite include
   the spin. If set to false, the quantum numbers will only charge or parity, depending on 
   the value of "ConserveNf"
 
-Hubbard and HubbardSite are defined in the file "itensor/mps/sites/hubbard.h"
+Electron and ElectronSite are defined in the file "itensor/mps/sites/electron.h"
 
 ## Synopsis
 
-    auto sites = Hubbard(100);
+    auto sites = Electron(100);
 
-    auto Ntot_3 = sites.op("Ntot",3);
+    auto Ntot_3 = op(sites,"Ntot",3);
 
-    auto Cup_4 = sites.op("Cup",4);
+    auto Cup_4 = op(sites,"Cup",4);
 
-    //Make a Hubbard site set which only conserves parity
-    auto psites = Hubbard(100,{"ConserveNf",false});
+    //Make a Electron site set which only conserves parity
+    auto psites = Electron(100,{"ConserveNf",false});
 
-## States of a HubbardSite
+## States of a ElectronSite
 
 * `"Emp"` &mdash; the vacuum (empty) state (alternate name `"0"`)
 
@@ -40,7 +39,7 @@ Hubbard and HubbardSite are defined in the file "itensor/mps/sites/hubbard.h"
 
 * `"UpDn"` &mdash; site occupied by two particles, one of each spin (alternate name `"S"` for singlet)
 
-## Operators Provided by HubbardSite
+## Operators Provided by ElectronSite
 
 * `"Nup"` &mdash; density of up-spin particles @@\hat{n}\_\uparrow@@
 

@@ -17,9 +17,9 @@ Here is a definition of `Dense<V>` which is equivalent to the one used in ITenso
 
 Say we have the following ITensor
 
-    auto i = Index("i",2);
-    auto j = Index("j",3);
-    auto k = Index("k",4);
+    auto i = Index(2,"i");
+    auto j = Index(3,"j");
+    auto k = Index(4,"k");
 
     auto T = ITensor(i,j,k);
     randomize(T);

@@ -28,7 +28,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 * `IndexSet()` 
 
-   Default constructor. For a default-constructed IndexSet "inds", `order(inds) == 0`.
+  Default constructor. For a default-constructed IndexSet "inds", `order(inds) == 0`.
 
 * `IndexSet(Index i1, Index i2, Index i3, ...)`
  
@@ -40,12 +40,12 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   `IndexSet(IndxContainer C)` 
 
-   Constructors accepting either lists of Index objects or various containers of indices.
+  Constructors accepting either lists of Index objects or various containers of indices.
 
-   Note that functions defined to accept an input `IndexSet` will also accept
-   `std::vector<Index>`, `std::array<Index,N>`, and `std::initializer_list<Index>`.
+  Note that functions defined to accept an input `IndexSet` will also accept
+  `std::vector<Index>`, `std::array<Index,N>`, and `std::initializer_list<Index>`.
 
-   <div class="example_clicker">Click to Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto s1 = Index(2,"Site,s=1"), 
       auto s2 = Index(2,"Site,s=2");
@@ -67,11 +67,11 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   `IndexSet(IndexSet is, Index i)`
 
-   Construct an IndexSet from two IndexSets, keeping the ordering of the
-   original IndexSets. Alternatively, create an IndexSet be appending or
-   prepending a single Index.
+  Construct an IndexSet from two IndexSets, keeping the ordering of the
+  original IndexSets. Alternatively, create an IndexSet be appending or
+  prepending a single Index.
 
-   <div class="example_clicker">Click to Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto i1 = Index(2,"i1"),
       auto i2 = Index(2,"i2");
@@ -85,15 +85,15 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
 * `IndexSet(storage_type && store)` 
 
-   Constructor which "moves" indices from an IndexSet storage container.
-   This is the most efficient way to construct an IndexSet other than
-   explicitly providing all of the indices in a single constructor call.
-   Useful when you want to build an IndexSet in a loop.
+  Constructor which "moves" indices from an IndexSet storage container.
+  This is the most efficient way to construct an IndexSet other than
+  explicitly providing all of the indices in a single constructor call.
+  Useful when you want to build an IndexSet in a loop.
 
-   The type `storage_type` is guaranteed to have the same interface
-   as a std::vector.
+  The type `storage_type` is guaranteed to have the same interface
+  as a std::vector.
 
-   <div class="example_clicker">Click to Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto s1 = Index(2,"Site,s=1");
       auto s2 = Index(2,"Site,s=2");
@@ -109,16 +109,16 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
 
   `length(IndexSet is) -> long`
 
-   Return number of indices in the IndexSet.
+  Return the number of indices in the IndexSet.
 
-*  `operator()(int j) -> Index&`
+* `operator()(int j) -> Index&`
 
-   `operator[](int j) -> Index&`
+  `operator[](int j) -> Index&`
 
-   Access the jth index in the IndexSet. `operator()` is 1-indexed,
-   and `operator[]` is 0-indexed.
+  Access the jth index in the IndexSet. `operator()` is 1-indexed,
+  and `operator[]` is 0-indexed.
 
-   <div class="example_clicker">Click to Show Example</div>
+  <div class="example_clicker">Click to Show Example</div>
 
       auto s = Index(2,"s");
       auto l = Index(10,"l");
@@ -275,9 +275,9 @@ return a new, modified IndexSet.
       Print(hasIndex(is,prime(i2,2))); //prints: true
       Print(hasIndex(is,i3)); //prints: true
 
-*  `.setPrime(int plnew, ...)`
+* `.setPrime(int plnew, ...)`
 
-   `setPrime(IndexSet is, int plnew, ...) -> IndexSet`
+  `setPrime(IndexSet is, int plnew, ...) -> IndexSet`
 
   Set the prime level of all indices to plnew. Optionally, only set the 
   prime levels of indices containing tags tsmatch
@@ -285,9 +285,9 @@ return a new, modified IndexSet.
   Optionally, only modify the tags of the listed indices, or indices
   with the matching tags, as described at the top of the section.
 
-*  `.noPrime(...)`
+* `.noPrime(...)`
 
-   `noPrime(IndexSet is, ...) -> IndexSet`
+  `noPrime(IndexSet is, ...) -> IndexSet`
 
   Set the prime level of all Index objects in the IndexSet to zero.
 
@@ -296,11 +296,11 @@ return a new, modified IndexSet.
 
 ## Comparison and Set Operations
 
-*  `equals(IndexSet is1, IndexSet is2) -> bool`
+* `equals(IndexSet is1, IndexSet is2) -> bool`
 
-   Return true if the IndexSets have the same indices in the same order.
+  Return true if the IndexSets have the same indices in the same order.
 
-   For set equality, use `hasSameInds(IndexSet is1, IndexSet is2) -> bool`.
+  For set equality, use `hasSameInds(IndexSet is1, IndexSet is2) -> bool`.
 
    <div class="example_clicker">Click to Show Example</div>
 
@@ -310,9 +310,9 @@ return a new, modified IndexSet.
        Print(equals({i1,i2},{i1,i2})); //prints: true
        Print(equals({i1,i2},{i2,i1})); //prints: false
 
-*  `findInds(IndexSet is, TagSet tsmatch) -> IndexSet`
+* `findInds(IndexSet is, TagSet tsmatch) -> IndexSet`
 
-   Find all indices containing tags in the specified TagSet.
+  Find all indices containing tags in the specified TagSet.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -325,33 +325,33 @@ return a new, modified IndexSet.
 
       Print(hasSameInds(findInds(is,"bra"),{i1b,i2b})); //prints: true
 
-*  `findIndsExcept(IndexSet is, TagSet tsmatch) -> IndexSet`
+* `findIndsExcept(IndexSet is, TagSet tsmatch) -> IndexSet`
 
-   Find all indices not containing tags in the specified TagSet.
+  Find all indices not containing tags in the specified TagSet.
 
-*  `findIndex(IndexSet is, TagSet tsmatch) -> Index`
+* `findIndex(IndexSet is, TagSet tsmatch) -> Index`
 
-   Find the Index containing tags in the specified TagSet.
+  Find the Index containing tags in the specified TagSet.
 
-   If multiple indices are found, throw an error.
-   If none are found, return a default Index (evaluates to false).
+  If multiple indices are found, throw an error.
+  If none are found, return a default Index (evaluates to false).
 
-*  `hasInds(IndexSet is, IndexSet ismatch) -> bool`
+* `hasInds(IndexSet is, IndexSet ismatch) -> bool`
 
-   Return true if the IndexSet has all of the provided indices (if
-   `ismatch` is a subset of `is`).
+  Return true if the IndexSet has all of the provided indices (if
+  `ismatch` is a subset of `is`).
 
-*  `hasIndex(IndexSet is, Index imatch) -> bool`
+* `hasIndex(IndexSet is, Index imatch) -> bool`
 
-   Return true if the IndexSet has the provided Index `imatch`.
+  Return true if the IndexSet has the provided Index `imatch`.
 
-*  `hasSameInds(IndexSet is1, IndexSet is2) -> bool`
+* `hasSameInds(IndexSet is1, IndexSet is2) -> bool`
 
-   Return true if the IndexSets are the same (have all of the same
-   indices, i.e. are equal sets).
+  Return true if the IndexSets are the same (have all of the same
+  indices, i.e. are equal sets).
 
-   For equality that also checks the indices are in the same order,
-   use `equals(IndexSet is1, IndexSet is2) -> bool`.
+  For equality that also checks the indices are in the same order,
+  use `equals(IndexSet is1, IndexSet is2) -> bool`.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -362,7 +362,7 @@ return a new, modified IndexSet.
 
 * `commonInds(IndexSet is1, IndexSet is2) -> IndexSet`
 
-   Return the intersection of the two IndexSets.
+  Return the intersection of the two IndexSets.
 
 * `unionInds(IndexSet is1, IndexSet is2) -> IndexSet`
 
@@ -372,7 +372,7 @@ return a new, modified IndexSet.
   
   `unionInds(IndexSet is, Index i) -> IndexSet`
 
-   Return the set union of IndexSets, respecting the current order.
+  Return the set union of IndexSets, respecting the current order.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -386,7 +386,7 @@ return a new, modified IndexSet.
 
   `uniqueInds(IndexSet is1, std::vector<IndexSet> is2) -> IndexSet`
 
-   Return the indices that are in `is1` but not in `is2` (the set difference).
+  Return the indices that are in `is1` but not in `is2` (the set difference).
 
 * `noncommonInds(IndexSet is1, IndexSet is2) -> IndexSet`
 
@@ -400,32 +400,30 @@ return a new, modified IndexSet.
 
   Call the dag() operation (which flips Index arrows) on each index in the set.
 
-*  `sim(IndexSet is) -> IndexSet`
+* `sim(IndexSet is) -> IndexSet`
 
-   `sim(IndexSet is, IndexSet ismatch) -> IndexSet`
+  `sim(IndexSet is, IndexSet ismatch) -> IndexSet`
 
-   `sim(IndexSet is, TagSet tsmatch) -> IndexSet`
+  `sim(IndexSet is, TagSet tsmatch) -> IndexSet`
 
-   Replace all indices by "similar" indices (same tags and dimensions but different id numbers).
+  Replace all indices by "similar" indices (same tags and dimensions but different id numbers).
 
-   Optionally, provide an IndexSet or a TagSet to specify
-   a subset of the IndexSet to replace with similar indices.
+  Optionally, provide an IndexSet or a TagSet to specify
+  a subset of the IndexSet to replace with similar indices.
 
-*  `maxDim(IndexSet is) -> long`
+* `maxDim(IndexSet is) -> long`
 
-   Return the maximum dimension of all indices in the IndexSet.
+  Return the maximum dimension of all indices in the IndexSet.
 
-*  `minDim(IndexSet is) -> long`
+* `minDim(IndexSet is) -> long`
 
-   Return the minimum dimension of all indices in the IndexSet.
+  Return the minimum dimension of all indices in the IndexSet.
 
 * `.swap(IndexSet & other)`
 
   Efficiently swap the contents of this IndexSet with another.
 
-* One can iterate over an IndexSet in a range-based for loop
-
-  Example:
+* One can iterate over an IndexSet in a range-based for loop, for example:
   
       auto inds = IndexSet(s1,a,l);
       //Iterate over and print each index in the set
@@ -437,25 +435,25 @@ return a new, modified IndexSet.
 
 * `.extent(size_type i) -> long`
 
-   Return the extent (size, or dimension) of the ith index; the argument i is 0-indexed.
+  Return the extent (size, or dimension) of the ith index; the argument i is 0-indexed.
 
 * `.stride(size_type i) -> size_type`
 
-   Return the stride of the ith index; the argument i is 0-indexed.<br/>
-   For a "normal" (unpermuted) IndexSet, the stride of an index is the product
-   of the extents of all previous indices.
+  Return the stride of the ith index; the argument i is 0-indexed.<br/>
+  For a "normal" (unpermuted) IndexSet, the stride of an index is the product
+  of the extents of all previous indices.
 
 * `.front() -> Index const&`
 
-   Return the first index in the set.
+  Return the first index in the set.
 
 * `.back() -> Index const&`
 
-   Return the last index in the set.
+  Return the last index in the set.
 
 * `.range() -> parent const&`
 
-   Reference to this IndexSet as its parent type, namely `RangeT<Index>`.
+  Reference to this IndexSet as its parent type, namely `RangeT<Index>`.
 
 <br/>
 _This page current as of version 3.0.0_

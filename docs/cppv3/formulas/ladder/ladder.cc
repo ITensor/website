@@ -29,7 +29,7 @@ main()
         ampo += Jy/2,"S+",j,"S-",j+1;
         ampo += Jy/2,"S-",j,"S+",j+1;
         }
-    auto H = MPO(ampo);
+    auto H = toMPO(ampo);
 
     auto state = InitState(sites);
     for(int i = 1; i <= N; ++i) 
@@ -40,7 +40,7 @@ main()
     auto psi = MPS(state);
 
     auto sweeps = Sweeps(10);
-    sweeps.maxm() = 50,100,200,300,400;
+    sweeps.maxdim() = 50,100,200,300,400;
     sweeps.cutoff() = 1E-10;
     println(sweeps);
 

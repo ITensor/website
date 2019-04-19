@@ -13,7 +13,7 @@ main()
     //
     // Initialize the site degrees of freedom.
     //
-    auto sites = SpinHalf(N);
+    auto sites = SpinHalf(N,{"ConserveQNs=",true});
 
     //
     // Use the AutoMPO feature to create the 
@@ -29,13 +29,13 @@ main()
         ampo += 0.5,"S-",bnd.s1,"S+",bnd.s2;
         ampo +=     "Sz",bnd.s1,"Sz",bnd.s2;
         }
-    auto H = IQMPO(ampo);
+    auto H = toMPO(ampo);
 
     // Set the initial wavefunction matrix product state
     // to be a Neel state.
     //
     // This choice implicitly sets the global Sz quantum number
-    // of the wavefunction to zero. Since it is an IQMPS
+    // of the wavefunction to zero. Since it is an MPS
     // it will remain in this quantum number sector.
     //
     auto state = InitState(sites);
@@ -47,7 +47,7 @@ main()
             state.set(i,"Dn");
         }
 
-    auto psi = IQMPS(state);
+    auto psi = MPS(state);
 
     //
     // overlap calculates matrix elements of MPO's with respect to MPS's
@@ -62,7 +62,7 @@ main()
     // so all remaining sweeps will use the last one given (= 1E-10).
     //
     auto sweeps = Sweeps(5);
-    sweeps.maxm() = 10,20,100,100,200;
+    sweeps.maxdim() = 10,20,100,100,200;
     sweeps.cutoff() = 1E-10;
     sweeps.niter() = 2;
     sweeps.noise() = 1E-7,1E-8,0.0;

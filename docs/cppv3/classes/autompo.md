@@ -52,7 +52,7 @@ and "itensor/mps/autompo.cc".
     //
     // Create the 1D Hubbard model
     //
-    auto sites = Hubbard(N);
+    auto sites = Electron(N);
     auto ampo = AutoMPO(sites);
     for(int i = 1; i <= N; ++i)
         {

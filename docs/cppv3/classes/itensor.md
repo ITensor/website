@@ -276,11 +276,11 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       Print(elt(T,j=1,i=2,k=3) == -1.24); //prints "true"
 
 <a name="tag_methods"></a>
-## Tag Methods
+## ITensor Tag Methods
 
 ITensors have all of the same tagging methods that are defined for
-[[IndexSets|classes/indexset]]. See the _Tag Methods_ section of 
-the IndexSet documentation for a complete list of methods.
+IndexSets. See the __Tag Methods__ section of the 
+[[IndexSet documentation|classes/indexset]] for a complete list of methods.
 
   <div class="example_clicker">Click to Show Example</div>
 

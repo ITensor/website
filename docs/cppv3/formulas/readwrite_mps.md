@@ -1,6 +1,6 @@
 # Reading and Writing MPS or MPO To/From Disk #
 
-The following formula is for an MPS, but works the same for an IQMPS, MPO, or IQMPO.
+The following formula is for an MPS, but works the same for an MPO.
 
 ## Writing an MPS to a File ##
 
@@ -21,7 +21,7 @@ You can choose any file names you want.
 
 ## Reading an MPS from a File ##
 
-Reading an MPS (or IQMPS, MPO, IQMPO) from disk requires three steps: (1) restoring the SiteSet class originally used to construct the MPS; (2) using it to construct a new MPS; (3) reading the MPS data from disk.
+Reading an MPS (or MPO) from disk requires three steps: (1) restoring the SiteSet class originally used to construct the MPS; (2) using it to construct a new MPS; (3) reading the MPS data from disk.
 This is easier than it sounds. Continuing with the above example:
 
     SpinHalf sites;

@@ -86,12 +86,12 @@ IndexVal is defined in "itensor/index.h".
   Return the quantum number QN object associated with the block, or sector, of 
   the Index that the value of this IndexVal falls within.
 
-## Tag Functions
+## Tag Methods
 
   IndexVals have the same tagging/priming functions as Index objects.
   Tags of the `index` of the IndexVal are modified, and the `val` is left
   unchanged.
-  Please see the __Tag Functions__ section of the [[Index documentation|classes/index]]
+  Please see the __Tag Methods__ section of the [[Index documentation|classes/index]]
   for more information.
 
   <div class="example_clicker">Click to Show Example</div>

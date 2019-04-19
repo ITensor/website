@@ -24,19 +24,19 @@ for fixed i and j.
     psi.position(i); 
 
     //index linking i to i+1:
-    auto ir = commonIndex(psi.A(i),psi.A(i+1));
+    auto ir = commonIndex(psi(i),psi(i+1));
 
-    auto rho = psi.A(i)*dag(prime(psi.A(i),Site,ir));
+    auto rho = psi(i)*dag(prime(psi(i),Site,ir));
     for(int k = i+1; k < j; ++k)
         {
-        rho *= psi.A(k);
-        rho *= dag(prime(psi.A(k),Link));
+        rho *= psi(k);
+        rho *= dag(prime(psi(k),Link));
         }
-    rho *= psi.A(j);
-    rho *= dag(prime(psi.A(j)));
+    rho *= psi(j);
+    rho *= dag(prime(psi(j)));
     for(int k = j+1; k <= psi.N(); ++k)
         {
-        rho *= psi.A(k);
-        rho *= dag(prime(psi.A(k),Link));
+        rho *= psi(k);
+        rho *= dag(prime(psi(k),Link));
         }
 

@@ -31,14 +31,14 @@ main()
         {
         ampo += -2*h,"Sx",j;
         }
-    auto H = MPO(ampo);
+    auto H = toMPO(ampo);
 
     //
     // Set the parameters controlling the accuracy of the DMRG
     // calculation for each DMRG sweep. 
     //
     auto sweeps = Sweeps(30);
-    sweeps.maxm() = 10,20,100,100,200;
+    sweeps.maxdim() = 10,20,100,100,200;
     sweeps.cutoff() = 1E-10;
     sweeps.niter() = 2;
     sweeps.noise() = 1E-7,1E-8,0.0;
