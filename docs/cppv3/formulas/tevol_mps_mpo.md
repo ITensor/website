@@ -6,7 +6,7 @@ a product state using the InitState helper class:
     #include "itensor/all.h"
     //...
     int N = 100;
-    auto sites = SpinHalf(N);
+    auto sites = SpinHalf(N,{"ConserveQNs=",true});
     auto state = InitState(sites);
     for(int i = 1; i <= N; ++i)
         {
@@ -28,14 +28,14 @@ Hamiltonian:
         }
     auto H = toMPO(ampo);
     auto tau = 0.1;
-    auto expH = toExpH<ITensor>(ampo,tau);
+    auto expH = toExpH(ampo,tau);
 
 In the above example, expH will be approximately equal to @@exp(-\tau H)@@ up to terms of order @@\tau^2@@.
 For more details on this construction, see the following article: <a href="http://journals.aps.org/prb/abstract/10.1103/PhysRevB.91.165112" target="_blank">Phys. Rev. B 91, 165112</a>. (Alternatively arxiv:1407.1832.) As mentioned in the article, you can also combine two complex time steps to further reduce the scaling of the errors with @@\tau@@.
 
 To do real-time evolution instead, change the time step to be imaginary:
 
-    auto expH = toExpH<ITensor>(ampo,tau*Cplx_i);
+    auto expH = toExpH(ampo,tau*Cplx_i);
 
 which gives @@exp(-i\tau H)@@. Fully complex time steps @@\tau=a+ib@@ are fine too.
 
