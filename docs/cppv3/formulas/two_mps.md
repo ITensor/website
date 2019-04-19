@@ -10,7 +10,7 @@ local operators @@O_i@@ and @@O_j@@. We can do this as follows:
     auto op_i = sites.op("Sz",i);
     auto op_j = sites.op("Sz",j);
 
-    auto M = psi(1)*dag(prime(phi(1),Link));
+    auto M = psi(1)*dag(prime(phi(1),"Link"));
     for(auto n : range1(2,N))
         {
         M *= psi(n);
@@ -24,12 +24,12 @@ local operators @@O_i@@ and @@O_j@@. We can do this as follows:
             }
         else
             {
-            M *= dag(prime(phi(n),Link));
+            M *= dag(prime(phi(n),"Link"));
             }
         }
     auto result = elt(M);
 
 Note: if @@i@@ or @@j@@ are equal to 1, one must modify the line in the
 code above where @@M@@ is first defined.
-Note: if a complex valued result is expected, change the last line to use `M.cplx();`.
+Note: if a complex valued result is expected, change the last line to use `eltC(M);`.
 
