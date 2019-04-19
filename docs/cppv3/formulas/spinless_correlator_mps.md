@@ -26,7 +26,7 @@ see [[the tutorial on fermions|tutorials/fermions]].
     psi.position(i); 
     
     //index linking i to i+1:
-    auto ir = commonIndex(psi(i),psi(i+1),Link);
+    auto ir = commonIndex(psi(i),psi(i+1));
     auto Corr = psi(i)*Adag_i*dag(prime(psi(i),Site,ir));
     
     for(int k = i+1; k < j; ++k)
@@ -39,8 +39,8 @@ see [[the tutorial on fermions|tutorials/fermions]].
     Corr *= A_j;
     
     //index linking j to j-1:
-    auto jl = commonIndex(psi(j),psi(j-1),Link);
-    Corr *= dag(prime(psi(j),jl,Site));
+    auto jl = commonIndex(psi(j),psi(j-1));
+    Corr *= dag(prime(prime(psi(j),jl),"Site"));
     
     auto result = elt(Corr); //or eltC(Corr) if expecting complex
 
