@@ -26,17 +26,17 @@ for fixed i and j.
     //index linking i to i+1:
     auto ir = commonIndex(psi(i),psi(i+1));
 
-    auto rho = psi(i)*dag(prime(psi(i),Site,ir));
+    auto rho = psi(i)*dag(prime(prime(psi(i),"Site"),ir));
     for(int k = i+1; k < j; ++k)
         {
         rho *= psi(k);
-        rho *= dag(prime(psi(k),Link));
+        rho *= dag(prime(psi(k),"Link"));
         }
     rho *= psi(j);
     rho *= dag(prime(psi(j)));
     for(int k = j+1; k <= psi.N(); ++k)
         {
         rho *= psi(k);
-        rho *= dag(prime(psi(k),Link));
+        rho *= dag(prime(psi(k),"Link"));
         }
 
