@@ -19,7 +19,3 @@ Internally, creating a two-index delta tensor does not allocate any
 storage in memory and contracting it with another tensor uses an
 efficient algorithm that just substitutes one index for another.
 
-
-
-
-

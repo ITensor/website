@@ -28,7 +28,7 @@ site j.
 
 Getting the needed MPS site tensor is very simple:
 
-    ITensor ket = psi.A(j);
+    ITensor ket = psi(j);
 
 Here we have copied this tensor to a variable called ket to suggest its role as
 a Dirac ket in the expectation value we will compute.
@@ -43,10 +43,10 @@ row index of our operator, which will be an index with a prime level of 1), and 
 The argument `Site` passed to prime tells it
 to prime Site-type (physical) indices only.
 
-Now we are ready to measure the expectation value of Sz by contracting the bra, operator, and ket. The 
-call to `.real()` below converts the resulting scalar tensor tensor into a plain real number:
+Now we are ready to measure the expectation value of Sz by contracting the bra, operator, and ket. 
+The call to `elt(...)` below converts the resulting scalar tensor tensor into a plain real number:
 
-    auto szj = (bra*Szjop*ket).real();
+    auto szj = elt(bra*Szjop*ket);
 
 <br/>
 <br/>
@@ -64,7 +64,7 @@ For example, one of the operators we'll need is
 
 To represent the wavefunction for two sites, we simply contract together two site tensors:
 
-    ITensor bondket = psi.A(j)*psi.A(j+1);
+    ITensor bondket = psi(j)*psi(j+1);
 
 The `bondbra` is made similarly to the `bra` from earlier:
 
@@ -72,7 +72,7 @@ The `bondbra` is made similarly to the `bra` from earlier:
 
 And expectation values are computed in the same way:
 
-    Real spm = (bondbra*spm*bondket).real();
+    Real spm = elt(bondbra*spm*bondket);
 
 Below is a complete code for measuring properties of the MPS wavefunction.  
 The code prints out the measured values of

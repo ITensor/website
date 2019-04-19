@@ -24,7 +24,7 @@ Next, contract the gate tensor G with the MPS tensors for sites 3 and 4
 
 <img class="diagram" width="60%" src="docs/VERSION/formulas/gate_contract.png"/>
 
-    auto wf = psi.A(3)*psi.A(4);
+    auto wf = psi(3)*psi(4);
     wf *= G;
     wf.noprime();
 
@@ -35,11 +35,11 @@ Assign these two tensors back into the MPS to update it.
 <img class="diagram" width="60%" src="docs/VERSION/formulas/gate_svd.png"/>
 
     ITensor S,V;
-    ITensor U = psi.A(3); //use psi.A(3) as a 'template' for U
+    ITensor U = psi(3); //use psi(3) as a 'template' for U
                           //U will be overwritten by the svd function
     svd(wf,U,S,V,{"Cutoff=",1E-8});
-    psi.setA(3,U);
-    psi.setA(4,S*V);
+    psi.set(3,U);
+    psi.set(4,S*V);
 
 Note that in the SVD above, we set a truncation error cutoff to truncate 
 the smallest singular values and control the size of the resulting MPS.
@@ -55,14 +55,14 @@ Complete code example:
 
     psi.position(3);
     
-    auto wf = psi.A(3)*psi.A(4);
+    auto wf = psi(3)*psi(4);
     wf *= G;
     wf.noprime();
 
     ITensor S,V;
-    ITensor U = psi.A(3);
+    ITensor U = psi(3);
     svd(wf,U,S,V,{"Cutoff=",1E-8});
-    psi.setA(3,U);
-    psi.setA(4,S*V);
+    psi.set(3,U);
+    psi.set(4,S*V);
     
 

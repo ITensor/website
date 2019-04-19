@@ -1,9 +1,5 @@
 # Time Evolving an MPS with an MPO
 
-(Throughout this formula I will use the ITensor, MPS, and MPO classes. To take advantage
-of quantum numbers automatically for symmetric Hamiltonians, 
-use the IQTensor, IQMPS, and IQMPO classes instead but otherwise leave the code the same.)
-
 First set up the MPS you would like to time evolve. An easy way to do this is to make
 a product state using the InitState helper class:
 
@@ -30,7 +26,7 @@ Hamiltonian:
         ampo += 0.5,"S-",b,"S+",b+1;
         ampo +=     "Sz",b,"Sz",b+1;
         }
-    auto H = MPO(ampo);
+    auto H = toMPO(ampo);
     auto tau = 0.1;
     auto expH = toExpH<ITensor>(ampo,tau);
 

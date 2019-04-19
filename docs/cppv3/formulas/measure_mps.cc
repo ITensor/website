@@ -16,10 +16,10 @@ main()
         ampo += 0.5,"S-",j,"S+",j+1;
         ampo +=     "Sz",j,"Sz",j+1;
         }
-    auto H = MPO(ampo);
+    auto H = toMPO(ampo);
 
     auto sweeps = Sweeps(5); //number of sweeps is 5
-    sweeps.maxm() = 10,20,100,100,200;
+    sweeps.maxdim() = 10,20,100,100,200;
     sweeps.cutoff() = 1E-10;
 
     auto psi = MPS(sites);
@@ -36,13 +36,13 @@ main()
         //re-gauge psi to get ready to measure at position j
         psi.position(j);
 
-        ITensor ket = psi.A(j);
+        ITensor ket = psi(j);
         ITensor bra = dag(prime(ket,Site));
 
         ITensor Szjop = sites.op("Sz",j);
 
         //take an inner product 
-        auto szj = (bra*Szjop*ket).real();
+        auto szj = elt(bra*Szjop*ket);
         printfln("%d %.12f",j,szj);
         }
 
@@ -59,16 +59,16 @@ main()
         { 
         psi.position(b);
 
-        ITensor bondket = psi.A(b)*psi.A(b+1);
+        ITensor bondket = psi(b)*psi(b+1);
         ITensor bondbra = dag(prime(bondket,Site)); 
 
         ITensor zzop = sites.op("Sz",b)*sites.op("Sz",b+1); 
         ITensor pmop = 0.5*sites.op("S+",b)*sites.op("S-",b+1); 
         ITensor mpop = 0.5*sites.op("S-",b)*sites.op("S+",b+1); 
 
-        auto zz = (bondbra*zzop*bondket).real();
-        auto pm = (bondbra*pmop*bondket).real();
-        auto mp = (bondbra*mpop*bondket).real();
+        auto zz = elt(bondbra*zzop*bondket);
+        auto pm = elt(bondbra*pmop*bondket);
+        auto mp = elt(bondbra*mpop*bondket);
 
         printfln("%d %.12f",b,zz+pm+mp);
         totalSdS += zz+pm+mp;

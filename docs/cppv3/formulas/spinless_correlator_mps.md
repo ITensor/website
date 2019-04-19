@@ -7,7 +7,7 @@ see [[the tutorial on fermions|tutorials/fermions]].
 
 ### Sample code:
 
-    // Given an MPS or IQMPS called "psi",
+    // Given an MPS called "psi",
     // constructed from a Spinless SiteSet "sites"
     
     // Consider a pair of fermionic operators,
@@ -26,23 +26,23 @@ see [[the tutorial on fermions|tutorials/fermions]].
     psi.position(i); 
     
     //index linking i to i+1:
-    auto ir = commonIndex(psi.A(i),psi.A(i+1),Link);
-    auto Corr = psi.A(i)*Adag_i*dag(prime(psi.A(i),Site,ir));
+    auto ir = commonIndex(psi(i),psi(i+1),Link);
+    auto Corr = psi(i)*Adag_i*dag(prime(psi(i),Site,ir));
     
     for(int k = i+1; k < j; ++k)
         {
-        Corr *= psi.A(k);
+        Corr *= psi(k);
         Corr *= sites.op("F",k); //Jordan-Wigner string
-        Corr *= dag(prime(psi.A(k)));
+        Corr *= dag(prime(psi(k)));
         }
-    Corr *= psi.A(j);
+    Corr *= psi(j);
     Corr *= A_j;
     
     //index linking j to j-1:
-    auto jl = commonIndex(psi.A(j),psi.A(j-1),Link);
-    Corr *= dag(prime(psi.A(j),jl,Site));
+    auto jl = commonIndex(psi(j),psi(j-1),Link);
+    Corr *= dag(prime(psi(j),jl,Site));
     
-    auto result = Corr.real(); //or C.cplx() if expecting complex
+    auto result = elt(Corr); //or eltC(Corr) if expecting complex
 
 
 ### Notes:

@@ -1,6 +1,6 @@
 # Evaluate a Function on Each Element of a Tensor
 
-ITensors (and IQTensors) provide a method `.visit(f)`. When you 
+ITensors provide a method `.visit(f)`. When you 
 provide a function f, the visit method will loop over 
 the tensor data and plug each element of the tensor into f.
 

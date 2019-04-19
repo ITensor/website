@@ -21,7 +21,7 @@ to pencil-and-paper notation:
         ampo += 0.5,"S-",j,"S+",j+1;
         ampo +=     "Sz",j,"Sz",j+1;
         }
-    auto H = MPO(ampo);
+    auto H = toMPO(ampo);
 
 In the last line above we convert the AutoMPO helper object to an actual MPO.
 
@@ -30,7 +30,7 @@ what schedule we would like for the parameters controlling the accuracy.
 These parameters are stored within a sweeps object:
 
     auto sweeps = Sweeps(5); //number of sweeps is 5
-    sweeps.maxm() = 10,20,100,100,200; //gradually increase states kept
+    sweeps.maxdim() = 10,20,100,100,200; //gradually increase states kept
     sweeps.cutoff() = 1E-10; //desired truncation error
 
 The wavefunction must be defined in the same Hilbert space
@@ -69,10 +69,10 @@ along with the headers you need to include to obtain all of the necessary librar
             ampo += 0.5,"S-",j,"S+",j+1;
             ampo +=     "Sz",j,"Sz",j+1;
             }
-        auto H = MPO(ampo);
+        auto H = toMPO(ampo);
 
         auto sweeps = Sweeps(5); //number of sweeps is 5
-        sweeps.maxm() = 10,20,100,100,200;
+        sweeps.maxdim() = 10,20,100,100,200;
         sweeps.cutoff() = 1E-10;
 
         auto psi = MPS(sites);
