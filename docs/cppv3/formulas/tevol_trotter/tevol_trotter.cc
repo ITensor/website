@@ -13,7 +13,7 @@ Real cutoff = 1E-8; //truncation error cutoff when restoring MPS form
 //Define a site set object "sites" which lets us
 //easily obtain Site indices defining our Hilbert space
 //and S=1/2 single-site operators
-auto sites = SpinHalf(N);
+auto sites = SpinHalf(N,{"ConserveQNs=",true});
 
 //Make initial MPS psi to be in the Neel state
 auto state = InitState(sites);
@@ -23,12 +23,9 @@ for(auto j : range1(N))
     }
 auto psi = MPS(state);
 
-//Define the type "Gate" as a shorthand for BondGate<ITensor>
-using Gate = BondGate<ITensor>;
-
 //Create a std::vector (dynamically sizeable array)
 //to hold the Trotter gates
-auto gates = vector<Gate>();
+auto gates = vector<BondGate>();
 
 //Create the gates exp(-i*tstep/2*hterm)
 //and add them to gates
@@ -38,7 +35,7 @@ for(int b = 1; b <= N-1; ++b)
     hterm += 0.5*sites.op("S+",b)*sites.op("S-",b+1);
     hterm += 0.5*sites.op("S-",b)*sites.op("S+",b+1);
 
-    auto g = Gate(sites,b,b+1,Gate::tReal,tstep/2.,hterm);
+    auto g = BondGate(sites,b,b+1,BondGate::tReal,tstep/2.,hterm);
     gates.push_back(g);
     }
 //Create the gates exp(-i*tstep/2*hterm) in reverse
@@ -50,7 +47,7 @@ for(int b = N-1; b >= 1; --b)
     hterm += 0.5*sites.op("S+",b)*sites.op("S-",b+1);
     hterm += 0.5*sites.op("S-",b)*sites.op("S+",b+1);
 
-    auto g = Gate(sites,b,b+1,Gate::tReal,tstep/2.,hterm);
+    auto g = BondGate(sites,b,b+1,BondGate::tReal,tstep/2.,hterm);
     gates.push_back(g);
     }
 
