@@ -37,7 +37,7 @@ main()
         psi.position(j);
 
         ITensor ket = psi(j);
-        ITensor bra = dag(prime(ket,Site));
+        ITensor bra = dag(prime(ket,"Site"));
 
         ITensor Szjop = sites.op("Sz",j);
 
@@ -60,7 +60,7 @@ main()
         psi.position(b);
 
         ITensor bondket = psi(b)*psi(b+1);
-        ITensor bondbra = dag(prime(bondket,Site)); 
+        ITensor bondbra = dag(prime(bondket,"Site")); 
 
         ITensor zzop = sites.op("Sz",b)*sites.op("Sz",b+1); 
         ITensor pmop = 0.5*sites.op("S+",b)*sites.op("S-",b+1); 

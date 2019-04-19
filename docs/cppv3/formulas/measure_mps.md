@@ -36,12 +36,12 @@ a Dirac ket in the expectation value we will compute.
 To get the bra part of the Dirac bra-ket, we turn ket into a row vector and conjugate
 its entries.  The way we do this is simple:
 
-    ITensor bra = dag(prime(ket,Site));
+    ITensor bra = dag(prime(ket,"Site"));
 
 The `prime` function is what turns the ket into a row vector (because it will contract with the 
 row index of our operator, which will be an index with a prime level of 1), and `dag` does the hermitian conjugation. 
-The argument `Site` passed to prime tells it
-to prime Site-type (physical) indices only.
+The argument "Site" passed to prime tells it
+to prime only indices with the "Site" tag (physical indices).
 
 Now we are ready to measure the expectation value of Sz by contracting the bra, operator, and ket. 
 The call to `elt(...)` below converts the resulting scalar tensor tensor into a plain real number:
@@ -68,7 +68,7 @@ To represent the wavefunction for two sites, we simply contract together two sit
 
 The `bondbra` is made similarly to the `bra` from earlier:
 
-    ITensor bondbra = dag(prime(bondket,Site));
+    ITensor bondbra = dag(prime(bondket,"Site"));
 
 And expectation values are computed in the same way:
 
