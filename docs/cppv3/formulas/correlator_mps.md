@@ -21,18 +21,18 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
     //psi.ref(1) *= psi(0); //Uncomment if doing iDMRG calculation
 
     //index linking i to i+1:
-    auto ir = commonIndex(psi(i),psi(i+1),Link);
+    auto ir = commonIndex(psi(i),psi(i+1));
 
-    auto C = psi(i)*op_i*dag(prime(psi(i),Site,ir));
+    auto C = psi(i)*op_i*dag(prime(prime(psi(i),"Site"),ir));
     for(int k = i+1; k < j; ++k)
         {
         C *= psi(k);
-        C *= dag(prime(psi(k),Link));
+        C *= dag(prime(psi(k),"Link"));
         }
     C *= psi(j);
     C *= op_j;
     //index linking j to j-1:
-    auto jl = commonIndex(psi(j),psi(j-1),Link);
+    auto jl = commonIndex(psi(j),psi(j-1));
     C *= dag(prime(psi(j),jl,Site));
 
     auto result = elt(C); //or eltC(C) if expecting complex
