@@ -10,7 +10,7 @@ main()
     auto Jx = 1.0;
     auto Jy = 1.0;
 
-    auto sites = SpinHalf(N);
+    auto sites = SpinHalf(N,{"ConserveQNs=",true});
 
     auto ampo = AutoMPO(sites);
     for(int j = 1; j <= N-3; j += 2)
