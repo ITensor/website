@@ -11,11 +11,16 @@ and "itensor/mps/autompo.cc".
 # Synopsis
 
 
+    // Make a chain of N spin 1/2's with QN information
+    auto Nx = 12, Ny = 6;
+    auto N = Nx*Ny;
+    auto sites = SpinHalf(N,{"ConserveQNs=",true});
+
     //
     // Use AutoMPO to create the 
     // next-neighbor Heisenberg model
     //
-    auto sites = SpinHalf(N); //make a chain of N spin 1/2's
+
     auto ampo = AutoMPO(sites);
     for(int j = 1; j < N; ++j)
         {
@@ -24,65 +29,61 @@ and "itensor/mps/autompo.cc".
         ampo +=     "Sz",j,"Sz",j+1;
         }
 
-	//Convert the AutoMPO object to an MPO
-    auto H = MPO(ampo);
+	  //Convert the AutoMPO object to an MPO
+    auto H = toMPO(ampo);
 
-	//Or convert the AutoMPO object to a IQMPO
-    auto qH = IQMPO(ampo);
-
-	//....
+	  //....
 
     //
     // Create a model with further-range interactions
-	// capturing a 2D lattice (with a 1D ordering of sites)
+	  // capturing a 2D lattice (with a 1D ordering of sites)
     //
-    int Nx = 12, Ny = 6;
-    auto ampo = AutoMPO(sites);
+    auto ampo2D = AutoMPO(sites);
     auto lattice = squareLattice(Nx,Ny);
     for(auto b : lattice)
         {
-        ampo += 0.5,"S+",b.s1,"S-",b.s2;
-        ampo += 0.5,"S-",b.s1,"S+",b.s2;
-        ampo +=     "Sz",b.s1,"Sz",b.s2;
+        ampo2D += 0.5,"S+",b.s1,"S-",b.s2;
+        ampo2D += 0.5,"S-",b.s1,"S+",b.s2;
+        ampo2D +=     "Sz",b.s1,"Sz",b.s2;
         }
-    auto H = IQMPO(ampo);
+    auto H2D = toMPO(ampo2D);
 
-	//....
+	  //....
 
     //
     // Create the 1D Hubbard model
     //
-    auto sites = Electron(N);
-    auto ampo = AutoMPO(sites);
+    auto sitesElec = Electron(N);
+    auto ampoHub = AutoMPO(sitesElec);
     for(int i = 1; i <= N; ++i)
         {
-        ampo += U,"Nupdn",i;
+        ampoHub += U,"Nupdn",i;
         }
     for(int b = 1; b < N; ++b)
         {
-        ampo += -t,"Cdagup",b,"Cup",b+1;
-        ampo += -t,"Cdagup",b+1,"Cup",b;
-        ampo += -t,"Cdagdn",b,"Cdn",b+1;
-        ampo += -t,"Cdagdn",b+1,"Cdn",b;
+        ampoHub += -t,"Cdagup",b,"Cup",b+1;
+        ampoHub += -t,"Cdagup",b+1,"Cup",b;
+        ampoHub += -t,"Cdagdn",b,"Cdn",b+1;
+        ampoHub += -t,"Cdagdn",b+1,"Cdn",b;
         }
-    auto H = IQMPO(ampo);
+    auto H = toMPO(ampoHub);
 
     //....
 
     //
     // Create a spin model with four-site terms
     //
-    auto ampo = AutoMPO(sites);
+    auto ampo4 = AutoMPO(sites);
     for(auto i : range1(N-4))
         {
-        ampo += "Sz",i,"Sz",i+1,"Sz",i+2,"Sz",i+4;
+        ampo4 += "Sz",i,"Sz",i+1,"Sz",i+2,"Sz",i+4;
         }
     for(auto i : range1(N-1))
         {
-        ampo += 0.5,"S+",i,"S-",i+1;
-        ampo += 0.5,"S-",i,"S+",i+1;
+        ampo4 += 0.5,"S+",i,"S-",i+1;
+        ampo4 += 0.5,"S-",i,"S+",i+1;
         }
-    auto H = IQMPO(ampo);
+    auto H4 = toMPO(ampo4);
 
 ## AutoMPO Interface
 
@@ -121,36 +122,19 @@ and "itensor/mps/autompo.cc".
 
   Retrieve the SiteSet used to construct the AutoMPO.
 
-## Converting an AutoMPO to an MPO or IQMPO
+## Converting an AutoMPO to an MPO
 
-### 1. Automatic cast method:
+### toMPO function
 
-  An AutoMPO object can be directly cast into either an MPO
-  or an IQMPO, at which point the terms stored in the AutoMPO
-  will be used to produce actual tensors used to define
-  the resulting MPO or IQMPO.
-
-  For example:
-
-    auto ampo = AutoMPO(sites);
-    ...
-    auto H = MPO(ampo);
-    auto qH = IQMPO(ampo);
-
-### 2. toMPO function
-
-  Calling the `toMPO` function lets you have greater
-  control over how an AutoMPO is turned into an MPO (or IQMPO).
+  Call the `toMPO` function to create an MPO from an AutoMPO.
   You can pass various named arguments to control which backend
   is used to process the AutoMPO and to control the accuracy of
   this process.
 
   Examples:
 
-    auto H = toMPO<ITensor>(ampo);
-    auto qH = toMPO<IQTensor>(ampo);
-    ...
-    auto H = toMPO<ITensor>(ampo,{"Exact=",true});
+    auto H1 = toMPO(ampo);
+    auto H2 = toMPO(ampo,{"Exact=",true});
 
   Named arguments recognized:
 
@@ -165,7 +149,7 @@ and "itensor/mps/autompo.cc".
      limited to at most two-site operators and can sometimes result
      in larger MPO bond dimensions than the approximate backend.
 
-   * "Maxm" &mdash; integer (default: 5000). Set the maximum
+   * "MaxDim" &mdash; integer (default: 5000). Set the maximum
      bond dimension of the resulting MPO when using the approximate
      backend. If Exact=true, this has no effect.
 
@@ -174,10 +158,10 @@ and "itensor/mps/autompo.cc".
      no effect.
 
 
-### 3. toExpH function
+### toExpH function
     
   The toExpH function converts an AutoMPO representing a sum of operators
-  @@H@@ into an MPO (or IQMPO) which approximates the operator @@e^{-t H}@@
+  @@H@@ into an MPO which approximates the operator @@e^{-t H}@@
   for a small time step t, making an error of order @@t^2@@ _per time step_.
   The time step t can be real or complex.
 
@@ -192,12 +176,10 @@ and "itensor/mps/autompo.cc".
     ...
     Real tau = 0.1;
     //Real time evolution
-    auto expH = toExpH<ITensor>(ampo,tau*Cplx_i);
-    auto qexpH = toExpH<IQTensor>(ampo,tau*Cplx_i);
-    ...
+    auto expiH = toExpH(ampo,tau*Cplx_i);
+    //...
     //Imaginary time evolution
-    auto expH = toExpH<ITensor>(ampo,tau);
-    auto qexpH = toExpH<IQTensor>(ampo,tau);
+    auto expH = toExpH(ampo,tau);
 
 
 <br/>
