@@ -30,10 +30,10 @@ ITensor also offers DMRG routines for more general optimization tasks, including
         ampo += 0.5,"S+",j,"S-",j+1;
         ampo += 0.5,"S-",j,"S+",j+1;
         }
-    auto H = MPO(ampo);
+    auto H = toMPO(ampo);
 
     auto sweeps = Sweeps(5);
-    sweeps.maxm() = 10,40,100,200,200;
+    sweeps.maxdim() = 10,40,100,200,200;
     sweeps.cutoff() = 1E-8;
 
     auto energy = dmrg(psi,H,sweeps,{"Quiet",true});
@@ -52,13 +52,6 @@ ITensor also offers DMRG routines for more general optimization tasks, including
        Args args = Args::global()) -> Real
   ```
 
-  ```
-  dmrg(IQMPS & psi,
-       IQMPO H,
-       Sweeps sweeps,
-       Args args = Args::global()) -> Real
-  ```
-
   Run a DMRG calculation to find the ground state of the Hamiltonian (MPO or IQMPO) H 
   using the initial state given by the MPS or IQMPS psi. The variable psi is
   overwritten to hold the final wavefunction upon return.
@@ -71,9 +64,9 @@ ITensor also offers DMRG routines for more general optimization tasks, including
   The `dmrg` function also accepts the following optional named arguments:
 
   - "Quiet" &mdash; suppress most output except a short summary of the result of each DMRG sweep
-  - "WriteM" &mdash; if WriteM is defined, upon beginning a sweep number n such that sweeps.maxm(n) value 
-    exceeds WriteM, the MPS and MPO will be set to "write-to-disk" mode such that all but a few "core"
-    tensors will remain on the hard drive to save on RAM
+  - "WriteDim" &mdash; if WriteDim is defined, upon beginning a sweep number n such that 
+    sweeps.maxdim(n) value exceeds WriteDim, the MPS and MPO will be set to "write-to-disk" 
+    mode such that all but a few "core" tensors will remain on the hard drive to save on RAM
   - "DebugLevel" &mdash; non-negative integer telling the internal Davidson eigensolver how
     much extra information to print out
 
@@ -87,32 +80,17 @@ ITensor also offers DMRG routines for more general optimization tasks, including
        Args args = Args::global()) -> Real
   ```
 
-  ```
-  dmrg(IQMPS & psi,
-       std::vector<IQMPO> H,
-       Sweeps sweeps,
-       Args args = Args::global()) -> Real
-  ```
-
   Run a DMRG calculation using a collection of MPOs provided in a std::vector object (0-indexed).
 
   The MPOs will be treated as if they are summed. That is, the Hamiltonian is defined as the sum of 
-  the MPOs provided. However, no actual sum of the MPOs will be performed, such that the cost of the algorithm
-  is the sum of the costs of using each MPO individually.
+  the MPOs provided. However, no actual sum of the MPOs will be performed, such that the cost of 
+  the algorithm is the sum of the costs of using each MPO individually.
 
 
 * ```
   dmrg(MPS & psi,
        MPO H,
        std::vector<MPS> wfs,
-       Sweeps sweeps,
-       Args args = Args::global()) -> Real
-  ```
-
-  ```
-  dmrg(IQMPS & psi,
-       IQMPO H,
-       std::vector<IQMPS> wfs,
        Sweeps sweeps,
        Args args = Args::global()) -> Real
   ```
@@ -136,15 +114,6 @@ ITensor also offers DMRG routines for more general optimization tasks, including
        MPO H,
        ITensor LH,
        ITensor RH
-       Sweeps sweeps,
-       Args args = Args::global()) -> Real
-  ```
-
-  ```
-  dmrg(IQMPS & psi,
-       IQMPO H,
-       IQTensor LH,
-       IQTensor RH
        Sweeps sweeps,
        Args args = Args::global()) -> Real
   ```
