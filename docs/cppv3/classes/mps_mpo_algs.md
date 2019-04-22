@@ -3,23 +3,24 @@
 
 ## Summing MPS
 
-* `sum(MPS psi1, MPS psi2, Args args = Args::global()) -> MPS` <br/>
-  `sum(IQMPS psi1, IQMPS psi2, Args args = Args::global()) -> IQMPS`
+* `sum(MPS A1, MPS A2, Args args = Args::global()) -> MPS` <br/>
 
-  Return the sum of the MPS psi1 and ps2. The returned MPS will have 
+  Return the sum of the MPS `A1` and `A2`. The returned MPS will have 
   an orthogonality center on site 1. Before being returned, the MPS 
   representing the sum will be compressed using truncation parameters
   provided in the named arguments `args`.
 
+  The input MPS must have the same site indices. The link indices of
+  the output MPS will have the same tags as the first input MPS.
+
   <div class="example_clicker">Show Example</div>
 
-      auto psi3 = sum(psi1,psi2,{"Maxm",500,"Cutoff",1E-8});
+      auto A3 = sum(A1,A2,{"MaxDim",500,"Cutoff",1E-8});
   
-* `sum(vector<MPS> terms, Args args = Args::global()) -> MPS` <br/>
-  `sum(vector<IQMPS> terms, Args args = Args::global()) -> IQMPS`
+* `sum(vector<MPS> terms, Args args = Args::global()) -> MPS`
 
   Returns the sum of all the MPS provided in the vector `terms` as a single MPS,
-  using the truncation accuracy parameters (such as "Cutoff" or "Maxm")
+  using the truncation accuracy parameters (such as "Cutoff" or "MaxDim")
   provided in the named arguments `args` to control the accuracy of the sum.
 
   This function uses a hierarchical, tree-like algorithm which first sums pairs of MPS, 
@@ -31,88 +32,129 @@
   <div class="example_clicker">Show Example</div>
 
       auto terms = vector<MPS>(4);
-      terms.at(0) = psi0;
-      terms.at(1) = psi1;
-      terms.at(2) = psi2;
-      terms.at(3) = psi3;
+      terms.at(0) = A0;
+      terms.at(1) = A1;
+      terms.at(2) = A2;
+      terms.at(3) = A3;
 
       auto res = sum(terms,{"Cutoff",1E-8});
 
 
-## Overlaps, Matrix Elements, and Expectation Values
+## Inner Products and Expectation Values
 
-* `overlap(MPS psi1, MPS psi2) -> Real` <br/>
-  `overlap(IQMPS psi1, IQMPS psi2) -> Real` <br/>
-  <br/>
-  `overlapC(MPS psi1, MPS psi2) -> Cplx` <br/>
-  `overlapC(IQMPS psi1, IQMPS psi2) -> Cplx` <br/>
+* `inner(MPS y, MPS x) -> Real` <br/>
+  `innerC(MPS y, MPS x) -> Cplx`
 
-  Compute the exact overlap @@\langle \psi\_1|\psi\_2 \rangle@@ of two
-  MPS or IQMPS. If the overlap value is expected to be a complex number
-  use `overlapC`. 
+  Compute the exact inner product @@\langle y|x \rangle@@ of two
+  MPS (the tensors of `y` will get conjugated). 
+  If the inner product is expected to be a complex number
+  use `innerC`. 
 
-  The algorithm used scales as @@m^3 d@@ where @@m@@ is typical bond
+  The algorithm used scales as @@m^3 d@@ where @@m@@ is a typical link
   dimension of the MPS and @@d@@ is the site dimension.
 
-  (In ITensor version 1.x this function was called `psiphi`. This name is still supported
-  for backwards compatibility.)
+  Note that if `x` and `y` don't have the same site indices,
+  this function will attempt to make them match.
 
-* `overlap(MPS psi1, MPO W, MPS psi2) -> Real` <br/>
-  `overlap(IQMPS psi1, IQMPO W, IQMPS psi2) -> Real` <br/>
-  <br/>
-  `overlapC(MPS psi1, MPO W, MPS psi2) -> Cplx` <br/>
-  `overlapC(IQMPS psi1, IQMPO W, IQMPS psi2) -> Cplx` <br/>
+* `inner(MPS y, MPO A, MPS x) -> Real` <br/>
+  `innerC(MPS y, MPO A, MPS x) -> Cplx`
 
-  Compute the exact overlap (or matrix element) @@\langle \psi\_1|W|\psi\_2 \rangle@@
-  of two MPS psi1 and psi2 with respect to an MPO W.
+  Compute the exact inner product @@\langle y|A|x \rangle@@
+  of two MPS `y` and `x` with respect to an MPO `A` (the tensors
+  of `y` will get conjugated).
 
-  The algorithm used scales as @@m^3\, k\,d + m^2\, k^2\, d^2@@ where @@m@@ is typical bond
+  The algorithm used scales as @@m^3\, k\,d + m^2\, k^2\, d^2@@ where @@m@@ is typical link
   dimension of the MPS, @@k@@ is the typical MPO dimension, and @@d@@ is the site dimension.
 
-  (In ITensor version 1.x this function was called `psiHphi`. This name is still supported
-  for backwards compatibility.)
+  Note that `A` and `x` must share a set of site indices. If the remaining site indices of `A` are
+  not shared with `y`, this function will attempt to match them (i.e. it has the same behavior
+  as `inner(y,Ax)` if `Ax` was the exact application of MPO `A` to MPS `x`).
 
-* `overlap(MPS psi1, MPO W1, MPO W2, MPS psi2) -> Real` <br/>
-  `overlap(IQMPS psi1, IQMPO W1, IQMPO W2, IQMPS psi2) -> Real` <br/>
-  <br/>
-  `overlapC(MPS psi1, MPO W1, MPO W2, MPS psi2) -> Cplx` <br/>
-  `overlapC(IQMPS psi1, IQMPO W1, IQMPO W2, IQMPS psi2) -> Cplx`
+* `inner(MPS y, MPO B, MPO A, MPS x) -> Real` <br/>
+  `innerC(MPS y, MPO B, MPO A, MPS x) -> Cplx`
 
-  Compute the exact overlap (or matrix element) @@\langle \psi\_1|W\_1 W\_2 |\psi\_2 \rangle@@
-  of two MPS psi1 and psi2 with respect to two MPOs W1 and W2.
+  Compute the exact inner product @@\langle y|BA|x \rangle@@
+  of two MPS `y` and `x` with respect to two MPOs `B` and `A` (MPS `y` will get conjugated).
+
+  MPO `A` must share a set of site indices with MPS `x`, and the other set of site indices with
+  MPO `B`. If the remaining set of site indices of `B` are not shared with `y`, with function
+  will attempt to make them match.
 
   The algorithm used scales as @@m^3\, k^2\,d + m^2\, k^3\, d^2@@ where @@m@@ is typical bond
   dimension of the MPS, @@k@@ is the typical MPO dimension, and @@d@@ is the site dimension.
 
-  (In ITensor version 1.x this function was called `psiHKphi`. This name is still supported
-  for backwards compatibility.)
+* `inner(MPO B, MPS y, MPO A, MPS x) -> Real` <br/>
+  `innerC(MPO B, MPS y, MPO A, MPS x) -> Cplx`
+
+  Compute the exact inner product @@\langle By|A|x \rangle@@ (i.e. the inner product of
+  of @@B|y \rangle@@ and @@A|x \rangle@@). MPO `B` and MPS `y` will get conjugated.
+
+  MPO `A` must share a set of site indices with MPS `x`, and MPO `B` must share a set of site indices
+  with MPS `y`. If the remaining site indices of `A` and `B` do not match with each other,
+  the function will attempt to make them match.
+
+  The algorithm used scales as @@m^3\, k^2\,d + m^2\, k^3\, d^2@@ where @@m@@ is typical bond
+  dimension of the MPS, @@k@@ is the typical MPO dimension, and @@d@@ is the site dimension.
+
+## Tracing an MPO
+
+* `trace(MPO A) -> Real`
+
+  `traceC(MPO A) -> Cplx`
+
+  Trace over the site indices of the MPO.
+
+* `trace(MPO A, MPO B) -> Real`
+
+  `traceC(MPO A, MPO B) -> Cplx`
+
+  Return the trace of the operator that would result from performing the exact contraction of MPO `A`
+  with MPO `B`. For each `j`, `A(j)` and `B(j)` must share one or two site indices.
+
+  Note that neither `A` or `B` will get conjugated by this function.
 
 ## Multiplying MPOs
 
-* `nmultMPO(MPO A, MPO B, MPO & C, Args args = Args::global())` <br/>
-  `nmultMPO(IQMPO A, IQMPO B, IQMPO & C, Args args = Args::global())`
+* `nmultMPO(MPO A, MPO B, Args args = Args::global()) -> MPO`
 
-  Multiply MPOs A and B. On return, the result is stored in C. 
+  Multiply MPOs `A` and `B`, returning the results MPO.
   MPO tensors are multiplied one at 
   a time from left to right and the resulting tensors are compressed using
-  the truncation parameters (such as "Cutoff" and "Maxm") provided through
+  the truncation parameters (such as "Cutoff" and "MaxDim") provided through
   the named arguments `args`.
 
-  <div class="example_clicker">Show Example</div>
+  For each `j`, MPO tensors `A(j)` and `B(j)` must share a single site index.
+  MPO `C` will contain the site indices not shared by MPOs `A` and `B`.
+  In addition, the link indices of MPO `C` will have the same tags as the link
+  indices of the MPO `A`.
 
-      MPO C;
-      nmultMPO(A,B,C,{"Maxm",500,"Cutoff",1E-8});
+  <div class="example_clicker">Show Example</div>
+      
+      auto sites = SiteSet(10,2);
+
+      // Make trivial MPOs
+      auto A = MPO(sites);
+      auto B = MPO(sites);
+
+      // Prime MPO A to ensure only one set of site indices are shared
+      auto C = nmultMPO(prime(A),B,{"MaxDim",500,"Cutoff",1E-8});
+
+      auto s3 = sites(3);
+      Print(hasInds(C(3),{s3,prime(s3,2)})); //print: true
 
 
 ## Applying MPO to MPS
 
-* `applyMPO(MPO K, MPS psi, Args args = Args::global()) -> MPS` <br/>
-  `applyMPO(IQMPO K, IQMPS psi, Args args = Args::global()) -> IQMPS`
+* `applyMPO(MPO A, MPS x, Args args = Args::global()) -> MPS`
 
-  Apply an MPO K to an MPS psi, resulting in an approximation to the MPS phi:  
-  @@|\phi\rangle = K |\psi\rangle@@. <br/>
+  Apply an MPO `A` to an MPS `x`, resulting in an approximation to the MPS `y`:  
+  @@|y\rangle = A |x\rangle@@. <br/>
   The resulting MPS is returned. The algorithm used is chosen with the parameter "Method" 
   in the named arguments `args`.
+
+  MPO `A` and MPS `x` must share a set of site indices.
+  The links of the output MPS will have the same tags as the links of the input MPS `x`. The site indices
+  of the output MPS will be the site indices of `A` that are not shared with `x`.
 
   The default algorithm used is the <a href="https://tensornetwork.org/mps/algorithms/denmat_mpo_mps">"density matrix" algorithm</a>,
   chosen by setting the parameter "Method" to "DensityMatrix".
@@ -124,7 +166,7 @@
 
   An alternative algorithm can be chosen by setting the parameter "Method" to "Fit". 
   This is a sweeping algorithm that iteratively optimizes the resulting MPS 
-  @@|\phi\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond 
+  @@|y\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond 
   dimension @@k@@ compared to the "DensityMatrix" method, but is not guaranteed to converge 
   (depending on the input MPO and MPS). The number of sweeps can be chosen with the parameter "Nsweep".
 
@@ -139,7 +181,7 @@
 
   * `"Cutoff"` &mdash; (default: 1E-13) truncation error cutoff for compressing resulting MPS
 
-  * `"Maxm"` &mdash; maximum bond dimension of resulting compressed MPS
+  * `"MaxDim"` &mdash; maximum bond dimension of resulting compressed MPS
 
   * `"Verbose"` &mdash; (default: false) if true, prints extra output
   
@@ -150,46 +192,63 @@
   <div class="example_clicker">Show Example</div>
 
       //Use the method "DensityMatrix"
-      auto phi = applyMPO(K,psi,{"Method=","DensityMatrix","Maxm=",100,"Cutoff=",1E-8});
+      auto y1 = applyMPO(A,x,{"Method=","DensityMatrix","MaxDim=",100,"Cutoff=",1E-8});
 
       //Use the method "Fit" with 5 sweeps
-      auto phi2 = applyMPO(K,psi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Nsweep=",5});
+      auto y2 = applyMPO(A,x,{"Method=","Fit","MaxDim=",100,"Cutoff=",1E-8,"Nsweep=",5});
 
-* `applyMPO(MPO K, MPS psi, MPS phi, Args args = Args::global()) -> MPS` <br/>
-  `applyMPO(IQMPO K, IQMPS psi, IQMPS phi, Args args = Args::global()) -> IQMPS`
+* `applyMPO(MPO A, MPS x, MPS x0, Args args = Args::global()) -> MPS` <br/>
 
-  Similar to `applyMPO` above, but accepts a guess for the output wavefunction (the guess wavefunction `phi` 
+  Similar to `applyMPO` above, but accepts a guess for the output wavefunction (the guess wavefunction `x0` 
   is not overwritten).
 
+  MPO `A` and MPS `x` must share a set of site indices. The site indices of `x0` will be made to match
+  the site indices of `A` that are not shared by `x`.
+  The links of the output MPS will have the same tags as the links of the guess MPS `x0`.
+
   Currently, this version of `applyMPO` only accepts "Fit" for the parameter "Method". Choosing a good guess 
-  state `phi` can improve the convergence of the "Fit" method.
+  state `x0` can improve the convergence of the "Fit" method.
 
   <div class="example_clicker">Show Example</div>
 
-      //Use the method "Fit" with 5 sweeps and a guess state phi
-      auto Kpsi = applyMPO(K,psi,phi,{"Method=","Fit","Maxm=",100,"Cutoff=",1E-8,"Nsweep=",2});
+      auto sites = SiteSet(10,2);
 
-* `checkMPOProd(MPS psi2, MPO K, MPS psi1) -> Real` <br/>
-  `checkMPOProd(IQMPS psi2, IQMPO K, IQMPS psi1) -> Real`
+      // Make trivial MPO and random MPS
+      auto A = MPO(sites);
+      auto x = randomMPS(sites);
 
-  Computes, without approximation, the difference @@||\, |\psi\_2\rangle - K |\psi\_1\rangle ||^2@@,
-  where K is an arbitrary MPO.
+      // Some other random starting state
+      auto x0 = randomMPS(sites);
+
+      //Use the method "Fit" with 5 sweeps and a guess state x0
+      auto y = applyMPO(A,x,x0,{"Method=","Fit","MaxDim=",100,"Cutoff=",1E-8,"Nsweep=",2});
+
+* `errorMPOProd(MPS y, MPO A, MPS x) -> Real`
+
+  Computes, without approximation, the difference @@||\, |y\rangle - A |x\rangle ||^2@@,
+  where `A` is an MPO that shares a set of site indices with MPS `x`.
   This is especially useful for testing methods for applying an MPO to an MPS.
 
+  `A` and `x` need to share a set of site indices. The function will attempt to match
+  the remaining site indices of `A` with the site indices of `y`.
+
   <div class="example_clicker">Show Example</div>
 
-      //Approximate K*psi
-      auto phi = applyMPO(K,psi,{"Maxm=",200,"Cutoff=",1E-12});
+      auto sites = SiteSet(10,2);
+
+      // Make trivial MPO and random MPS
+      auto A = MPO(sites);
+      auto x = randomMPS(sites);
+
+      //Approximate A|x>
+      auto y = applyMPO(A,x,{"MaxDim=",200,"Cutoff=",1E-12});
 
       //Check 
-      Print(checkMPOProd(phi,K,psi)); //should be close to zero
+      Print(errorMPOProd(y,A,x)); //should be close to zero
 
 <!--
 
 To do:
-
-* overlap functions taking boundary tensors
-* psiHKphi where you pass re and im by reference
 
 * exactApplyMPO
 * fitApplyMPO

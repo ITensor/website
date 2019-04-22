@@ -71,20 +71,5 @@ to MPOs.
 
   For each site `j`, swap the site indices of the MPO tensor `K(j)`.
 
-## Tracing an MPO
-
-* `trace(MPO K) -> Real`
-
-  `traceC(MPO K) -> Cplx`
-
-  Trace over the site indices of the MPO.
-
-* `trace(MPO K, MPO L) -> Real`
-  
-  `traceC(MPO K, MPO L) -> Cplx`
-
-  Return the trace of the operator that would result from performing the contraction `K*L`. For each
-  `j`, `K(j)` and `L(j)` must share one or two site indices.
-
 <br/>
 _This page current as of version 3.0.0_
