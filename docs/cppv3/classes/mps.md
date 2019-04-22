@@ -127,6 +127,11 @@ an [[InitState|classes/initstate]].
 
   Returns true if, for all sites `j`, `siteIndex(A,j)==is(j)`.
 
+* `linkInds(MPS A) -> IndexSet`
+
+  Return an IndexSet containing the link indices of the MPS `A`. For an MPS with `N` sites, this returns
+  `N-1` indices (for now, this function assumes open boundary conditions).
+
 * `leftLinkIndex(MPS A, int j) -> Index`
 
   Return the left link index of the `j`th tensor of MPS `A` (the index on MPS tensor `A(j)` shared
