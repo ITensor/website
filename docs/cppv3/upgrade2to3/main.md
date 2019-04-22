@@ -10,7 +10,8 @@ may have, like setting up a DMRG calculation.
 * **C++17 is required to compile the ITensor Library.** Switching to C++17
   allows us to make significant interface improvements, such as using 
   multiple return values, and also make internal, developer-level code
-  easier to read and maintain.
+  easier to read and maintain. The only change you should need to make
+  to your compiler flags is switching `-std=c++11` to `-std=c++17`.
 
 * **When constructing  Index objects,** you only have to provide the dimension.
   You can optionally provide a string which is a comma-separated list of "tags".
