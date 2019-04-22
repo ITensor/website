@@ -22,6 +22,8 @@
 
 <img src="docs/all/papers/icon.png" class="icon">   [[Papers Using ITensor|papers]]
 
+<img src="docs/VERSION/upgrade2to3/icon.png" class="icon">   [[Version 2 to 3 Upgrade Guide|upgrade2to3]]
+
 <br/>
 Search the ITensor website: <div><gcse:search></gcse:search></div>
 
