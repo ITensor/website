@@ -181,14 +181,14 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
   The "factor" decomposition is based on the SVD,
   but factorizes a tensor T into only two
-  tensors `T==A\*B` (up to truncation errors) where 
+  tensors `T==A*B` (up to truncation errors) where 
   A and B share a single common index.
   The function returns `A` and `B` as ITensors, as well
   as `l`, the common index of `A` and `B`.
   
-  If the SVD of T is `T==U\*S\*V` where S is a diagonal
+  If the SVD of T is `T==U*S*V` where S is a diagonal
   matrix of singular values, then A and B
-  are schematically `A==U\*sqrt(S)` and `B==sqrt(S)\*V`.
+  are schematically `A==U*sqrt(S)` and `B==sqrt(S)*V`.
 
   An IndexSet `Ais` is input along with `T` to specify 
   which Indices of `T` end up on the `A` tensor of the 
@@ -222,15 +222,15 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
                Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
   ```
 
-   Factorize a tensor T into products A and B such that `T==A\*B` (up to truncation errors). 
+   Factorize a tensor T into products A and B such that `T==A*B` (up to truncation errors). 
 
    If `dir==Fromleft` the tensor A will be "left orthogonal" in the sense that A times the 
    conjugate of A summed over all indices not in common with B will produce an identity 
    (Kronecker delta) tensor. If `dir==Fromright` B will be unitary ("right orthogonal"). 
    
    If `dir==Fromleft`, the result of this method is equivalent to computing an SVD of T 
-   such that `T==U\*D\*V` then setting `A=U` and `B=D\*V`. 
-   (If `dir==Fromright` it would be equivalent to setting `A=U\*D` and `B=V`.) 
+   such that `T==U*D*V` then setting `A=U` and `B=D*V`. 
+   (If `dir==Fromright` it would be equivalent to setting `A=U*D` and `B=V`.) 
 
    An IndexSet `Ais` is input along with `T` to specify
    which Indices of `T` end up on the `A` tensor of the
@@ -362,7 +362,7 @@ compatibility and internal usage.
 
   These are alternative interfaces for the decompositions listed above.
   For example, `svd(T,U,S,V,args)` computes the singular value decomposition of a tensor T.
-  The arguments U, S, and V are overwritten, and the product `U\*S\*V` equals T.
+  The arguments U, S, and V are overwritten, and the product `U*S*V` equals T.
 
   *Returns*: [[Spectrum|classes/spectrum]] object containing information about truncation 
   and singular values/eigenspectrum.
