@@ -21,8 +21,6 @@ ITensor also offers DMRG routines for more general optimization tasks, including
     int N = 100;
     auto sites = SpinOne(N);
 
-    auto psi = MPS(sites);
-
     auto ampo = AutoMPO(sites);
     for(int j = 1; j < N; ++j)
         {
@@ -36,9 +34,16 @@ ITensor also offers DMRG routines for more general optimization tasks, including
     sweeps.maxdim() = 10,40,100,200,200;
     sweeps.cutoff() = 1E-8;
 
-    auto energy = dmrg(psi,H,sweeps,{"Quiet",true});
-    //                  ^ psi passed by reference,
-    //                    can measure properties afterwards
+    // Create a random starting state
+    auto state = InitState(sites);
+    for(auto i : range1(N))
+        {
+        if(i%2 == 1) state.set(i,"Up");
+        else         state.set(i,"Dn");
+        }
+    auto psi0 = randomMPS(state);
+
+    auto [energy,psi] = dmrg(H,psi0,sweeps,{"Quiet",true});
 
     printfln("Ground state energy = %.20f",energy);
 
@@ -46,15 +51,16 @@ ITensor also offers DMRG routines for more general optimization tasks, including
 ## Basic DMRG interface
 
 * ```
-  dmrg(MPS & psi,
-       MPO H,
+  dmrg(MPO H,
+       MPS psi0,
        Sweeps sweeps,
-       Args args = Args::global()) -> Real
+       Args args = Args::global()) -> std::tuple<Real,MPS>
   ```
 
-  Run a DMRG calculation to find the ground state of the Hamiltonian (MPO or IQMPO) H 
-  using the initial state given by the MPS or IQMPS psi. The variable psi is
-  overwritten to hold the final wavefunction upon return.
+  Run a DMRG calculation to find the ground state of the Hamiltonian (MPO) H 
+  using the initial state given by the MPS psi0. 
+  A tuple of the final ground state energy and the optimized MPS ground state approximation
+  is returned.
 
   The number of sweeps and DMRG accuracy parameters are controlled by a [[Sweeps|classes/sweeps]]
   object.
@@ -74,10 +80,10 @@ ITensor also offers DMRG routines for more general optimization tasks, including
 ## Generalized DMRG interfaces
 
 * ```
-  dmrg(MPS & psi,
-       std::vector<MPO> H,
+  dmrg(std::vector<MPO> H,
+       MPS psi0,
        Sweeps sweeps,
-       Args args = Args::global()) -> Real
+       Args args = Args::global()) -> std::tuple<Real,MPS>
   ```
 
   Run a DMRG calculation using a collection of MPOs provided in a std::vector object (0-indexed).
@@ -88,11 +94,11 @@ ITensor also offers DMRG routines for more general optimization tasks, including
 
 
 * ```
-  dmrg(MPS & psi,
-       MPO H,
+  dmrg(MPO H,
        std::vector<MPS> wfs,
+       MPS psi0,
        Sweeps sweeps,
-       Args args = Args::global()) -> Real
+       Args args = Args::global()) -> std::tuple<Real,MPS>
   ```
 
   Run a DMRG calculation to find the lowest energy eigenstate of the Hamiltonian H,
@@ -110,22 +116,22 @@ ITensor also offers DMRG routines for more general optimization tasks, including
 
 
 * ```
-  dmrg(MPS & psi,
-       MPO H,
+  dmrg(MPO H,
        ITensor LH,
        ITensor RH
+       MPS psi0,
        Sweeps sweeps,
-       Args args = Args::global()) -> Real
+       Args args = Args::global()) -> std::tuple<Real,MPS>
   ```
 
   Run a DMRG calculation to find the ground state of the Hamiltonian H using the initial
-  state psi, using a "boundary environment" defined by the tensors LH and RH.
+  state psi0, using a "boundary environment" defined by the tensors LH and RH.
 
   The boundary environments LH and RH (e.g. representing the projection of a Hamiltonian for a larger
   system into a fixed "MPS basis") should be tensors with three indices. One index connects
   to the bond index of the Hamiltonian MPO H at the left and right edge. The other two indices
   are i and dag(i') where i is the virtual (bond) index of the MPS psi at the left or right edge
-  (and dag(i') is i with prime level 1 and reversed arrow in the case of an IQIndex).
+  (and dag(i') is i with prime level 1 and reversed arrow in the case of an Index).
 
 
 
