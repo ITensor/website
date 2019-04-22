@@ -8,8 +8,8 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
 
     auto sweeps = Sweeps(5); //do 5 sweeps
 
-    //set max "m" or bond dimension for each sweep
-    sweeps.maxm() = 10,20,40,80,160;
+    //set max bond/link dimension for each sweep
+    sweeps.maxdim() = 10,20,40,80,160;
     //set truncation error cutoff for each sweep
     sweeps.cutoff() = 1E-5,1E-8,1E-10;
 
@@ -19,10 +19,10 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
 
 ## Names and meaning of "accuracy parameters"
 
-* `maxm` &mdash; the bond dimension of any bond of the MPS cannot exceed the maxm value.
+* `maxdim` &mdash; the bond dimension of any bond of the MPS cannot exceed the maxdim value.
 
-* `minm` &mdash; the bond dimension of any bond of the MPS will be at least 
-  as large as minm, however singular values that are exactly zero will still be truncated.
+* `mindim` &mdash; the bond dimension of any bond of the MPS will be at least 
+  as large as mindim, however singular values that are exactly zero will still be truncated.
 
 * `cutoff` &mdash; the truncation error cutoff to use when computing SVD or density matrix
   diagonalizations. For more information on how the cutoff is defined, see the page
@@ -41,14 +41,14 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
 
 * ```
   Sweeps(int nsweeps,
-         int minm = 1,
-         int maxm = 500,
+         int mindim = 1,
+         int maxdim = 500,
          Real cutoff = 1E-8,
          Real noise = 0.)
   ```
   Construct a Sweeps object specifying the number of sweeps (nsweeps).
 
-  You can optionally provide fixed values of minm, maxm, cutoff to use 
+  You can optionally provide fixed values of mindim, maxdim, cutoff to use 
   on every sweep (these can be changed later).
 
 * ```
@@ -84,12 +84,12 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
 
       table_name
            {
-           maxm   minm  cutoff  niter  noise
-           20     20    1E-8    4      1E-8
-           40     20    1E-8    3      1E-9
-           80     20    1E-10   2      1E-10
-           160    20    1E-12   2      0
-           240    20    1E-12   2      0
+           maxdim  mindim  cutoff  niter  noise
+           20      20      1E-8    4      1E-8
+           40      20      1E-8    3      1E-9
+           80      20      1E-10   2      1E-10
+           160     20      1E-12   2      0
+           240     20      1E-12   2      0
            }
 
       ...
@@ -113,13 +113,13 @@ to the associated Sweeps object.
 If fewer values are provided than the number of sweeps, the last
 value will be used for all remaining sweeps.
 
-* `.maxm() -> SweepSetter<int>` 
+* `.maxdim() -> SweepSetter<int>` 
 
-  Set the maxm value used for each sweep from a comma-separated list.
+  Set the maxdim value used for each sweep from a comma-separated list.
 
   <div class="example_clicker">Show Example</div>
 
-      sweeps.maxm() = 10,40,80,160,160,800;
+      sweeps.maxdim() = 10,40,80,160,160,800;
 
 * `.cutoff() -> SweepSetter<Real>` 
 
@@ -129,9 +129,9 @@ value will be used for all remaining sweeps.
 
       sweeps.cutoff() = 1E-8,1E-10;
 
-* `.minm() -> SweepSetter<int>` 
+* `.mindim() -> SweepSetter<int>` 
 
-  Set the minm value used for each sweep from a comma-separated list.
+  Set the mindim value used for each sweep from a comma-separated list.
 
 * `.niter() -> SweepSetter<int>` 
 
@@ -149,13 +149,13 @@ value will be used for all remaining sweeps.
 
   Retrieve the number of sweeps represented by this Sweeps object.
 
-* `.minm(int sw) -> int`
+* `.mindim(int sw) -> int`
 
-  Retrieve the minm value set for sweep number `sw`.
+  Retrieve the mindim value set for sweep number `sw`.
 
-* `.maxm(int sw) -> int`
+* `.maxdim(int sw) -> int`
 
-  Retrieve the maxm value set for sweep number `sw`.
+  Retrieve the maxdim value set for sweep number `sw`.
 
 * `.cutoff(int sw) -> Real`
 
@@ -169,13 +169,13 @@ value will be used for all remaining sweeps.
 
   Retrieve the niter value set for sweep number `sw`.
 
-* `.setminm(int sw, int newminm)`
+* `.setmindim(int sw, int newmindim)`
 
-  Set a new minm value for sweep number `sw`.
+  Set a new mindim value for sweep number `sw`.
 
-* `.setmaxm(int sw, int newmaxm)`
+* `.setmaxdim(int sw, int newmaxdim)`
 
-  Set a new maxm value for sweep number `sw`.
+  Set a new maxdim value for sweep number `sw`.
 
 * `.setcutoff(int sw, Real newcutoff)`
 

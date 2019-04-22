@@ -5,10 +5,10 @@ represent operators. Thus each MPO tensor, one for each site of the system, has 
 convention in ITensor is that these two site indices have prime level zero and one, respectively,
 similar to the ITensor convention for single-site operators.
 
-MPO are actually derived from MPS, so have nearly the same interface for
+The MPO class is actually derived from the MPS class, so MPOs have nearly the same interface for
 most purposes. For example, to obtain the tensor for an MPO K on site j, one calls `K(j)`.
 
-Beyond those inherited from MPS, MPO currently offer few additional algorithms.
+Beyond those inherited from MPS, MPO currently offer a few additional algorithms.
 Their main purpose is to serve as containers for MPO site tensors, for example, those generated
 by the AutoMPO helper class.
 
@@ -16,7 +16,11 @@ For algorithms that take MPOs as input or which manipulate MPOs, see [[MPS and M
 
 Below we list methods that are unique to MPOs, for other methods refer to the [[MPS documentations|classes/mps]].
 
-## MPO Functions
+## Index Methods
+
+MPOs generally have the same Index functions as MPSs (see the __Index Methods__ section of the 
+[[MPS documentations|classes/mps]] for more details). Here we list Index methods that are unique
+to MPOs.
 
 * `siteInds(MPO K, int j) -> IndexSet`
 
@@ -52,7 +56,7 @@ Below we list methods that are unique to MPOs, for other methods refer to the [[
 
 * `hasSiteInds(MPO A, IndexSet is) -> bool`
 
-  Returns true if, for all sites `j`, `hasIndex(siteIndex(A,j),is(j))` is true.
+  Returns true if, for all sites `j`, `hasIndex(siteInds(A,j),is(j))` is true.
 
 * * `.replaceSiteInds(IndexSet is_old, IndexSet is_new)`
 
@@ -66,18 +70,6 @@ Below we list methods that are unique to MPOs, for other methods refer to the [[
   `swapSiteInds(MPO K) -> MPO`
 
   For each site `j`, swap the site indices of the MPO tensor `K(j)`.
-
-* `trace(MPO K) -> Real`
-
-  `traceC(MPO K) -> Cplx`
-
-  Trace over the site indices of the MPO.
-
-* `trace(MPO K, MPO L) -> Real`
-  
-  `traceC(MPO K, MPO L) -> Cplx`
-
-  Return the trace of the operator that would result from performing the contraction `K*L`.
 
 <br/>
 _This page current as of version 3.0.0_
