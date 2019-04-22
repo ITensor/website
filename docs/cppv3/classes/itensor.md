@@ -309,14 +309,14 @@ IndexSets. See the __Tag Methods__ section of the
 ## Operators Supported By ITensors ##
 
 In this section, expressions like `ITensor * ITensor -> ITensor` are pseudocode
-indicating that two ITensors can be multiplied using the `\*` operator,
+indicating that two ITensors can be multiplied using the `*` operator,
 and that the result will be an ITensor.
 
-* `ITensor \* ITensor -> ITensor` <br/>
-  `ITensor \*= ITensor`
+* `ITensor * ITensor -> ITensor` <br/>
+  `ITensor *= ITensor`
 
   Contracting product. `A * B` contracts (sums) over all indices common to A and B. 
-  The `\*=` version overwrites the ITensor on the left afterward.
+  The `*=` version overwrites the ITensor on the left afterward.
 
   <div class="example_clicker">Show Example</div>
 

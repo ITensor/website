@@ -92,8 +92,8 @@ This part of the interface is common to all site set objects.
       auto dens = elt(dag(prime(psi(8),"Site")) * op(sites,"Ntot",8) * psi(8));
 
   A convenient feature of the `op` method is obtaining a product of two 
-  operators by joining their names with an asterisk `\*`.
-  For example, if opname is `"Nup\*Ndn"`, the operator return is the 
+  operators by joining their names with an asterisk `*`.
+  For example, if opname is `"Nup*Ndn"`, the operator return is the 
   product (in the usual sense of a product of single-site operators
   written from left to right) of the operators `"Nup"` and `"Ndn"`.
 
