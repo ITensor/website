@@ -58,19 +58,19 @@ truncation error cutoff to use for each sweep by providing the cutoffs in a comm
 
   Required arguments:
   - "Nsweep" &mdash; number of sweeps
-  - "Maxm" &mdash; maximum bond dimension of MPS
+  - "MaxDim" &mdash; maximum bond dimension of MPS
   - "Cutoff" &mdash; truncation error threshold used for density matrix truncation
 
   Optional arguments:
 
-  - "Minm" &mdash; maximum bond dimension of MPS
+  - "MinDim" &mdash; maximum bond dimension of MPS
   - "Noise" &mdash; coefficient of density matrix noise term
   - "Niter" &mdash; maximum number of Davidson iterations
 
   <div class="example_clicker">Show Example</div>
 
       auto sweeps = Sweeps({"Nsweep=",5,
-                            "Maxm=",100,
+                            "MaxDim=",100,
                             "Cutoff=",1E-8});
 
 * `Sweeps(int nsweeps, InputGroup & sweep_table)`
