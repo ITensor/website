@@ -11,7 +11,7 @@ may have, like setting up a DMRG calculation.
   allows us to make significant interface improvements, such as using 
   multiple return values, and also make internal, developer-level code
   easier to read and maintain. To upgrade, change your
-  compiler flags from `-std=c++11` to `-std=c++17`.
+  compiler flags <br/>from `-std=c++11` to `-std=c++17`.
 
 * **When constructing  Index objects,** you only have to provide the dimension.
   You can optionally provide a string which is a comma-separated list of "tags".
