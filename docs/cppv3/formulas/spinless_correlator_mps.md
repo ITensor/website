@@ -57,7 +57,7 @@ see [[the tutorial on fermions|tutorials/fermions]].
         Cij *= sites.op("F",k); //Jordan-Wigner string
         Cij *= psidag(k);
         }
-    //index linking j to j-1:
+    //index linking j to j+1:
     auto lj = rightLinkIndex(psi,j);
     Cij *= prime(psi(j),lj);
     Cij *= A_j;
