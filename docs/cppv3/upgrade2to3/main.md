@@ -73,8 +73,60 @@ may have, such as a DMRG calculation.
       Print(hasQNs(T));
       //print: hasQNs(T) = true
 
+* **Physics-specific Site Sets Carry QNs by Default**. If you use
+  a site set such as `SpinHalf` or `Electron` (formerly called "Hubbard"),
+  the indices and operators produced from these will be QN-block-sparse.
+  If you wish to omit or not have the QN sparsity, pass a named argument
+  `{"ConserveQNs=",false}` to the site set constructor, for example <br/>
+  `auto sites = SpinHalf(N,{"ConserveQNs=",false});`.
+
 * **Quantum number QN objects use strings to label each of their values.** 
+  Each sector of a QN object is specified by a string and an integer value.
+  You can optionally specify a "mod factor" N if the sector follows a @@\mathbb{Z}_N@@
+  addition rule. For efficiency, the name string of the sector must be seven characters
+  or less. Sectors are sorted by their name and you must use the name to access the value.
+  Having strings in QN objects allows sensible addition between QNs which do not all
+  carry the same sectors; a missing sector is treated as having the value zero.
+  For more information see the [[QN docs|classes/qn]].
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto q1 = QN({"Sz",+1});
+      Print(q1.val("Sz"));
+      //prints: q1.val("Sz") = 1
+
+      auto q2 = QN({"N",3},{"T",-2});
+      Print(q2.val("T"));
+      //prints: q2.val("T") = -2
+      Print(q2.val("N"));
+      //prints: q2.val("N") = 3
+
+      //Make a QN with a Z2 addition rule:
+      auto q3 = QN({"P",1,2});
+      Print(q3.val("P"));
+      //prints: q3.val("P") = 1
+      Print(q3.mod("P"));
+      //prints: q3.mod("P") = 2
+      Print(q3+q3);
+      //prints: q3+q3 = QN({"P",0});
 
 ## Task-Specific Upgrades
 
 * **Upgrading a DMRG Calculation**
+  The following steps should be sufficient for upgrading an existing DMRG code
+  from version 2. Also we suggest you look at the sample DMRG codes in the sample/
+  folder distributed with the ITensor source.
+
+  - if using AutoMPO to construct your Hamiltonian MPO, replace the line
+    `auto H = MPO(ampo);` with `auto H = toMPO(ampo);`
+  - if using IQMPO and IQMPS, just replace these with `MPO` and `MPS` instead
+    and make sure the indices or site set you use to construct these 
+    carry QN block structure (you can print out these objects to see the QNs
+    and ITensor storage type)
+  - make sure to initialize the MPS you pass as an initial state to the `dmrg`
+    function. In version 2, a non-QN MPS would be randomly initialized, but
+    now you must initialize all MPS. See the sample/dmrg.cc code for an example
+    of initializing an MPS to a particular product state.
+  - when constructing a Sweeps object, replace the line `sweeps.maxm() = 10,20,40;`
+    with `sweeps.maxdim() = 10,20,40;`
+  - prefer to call dmrg as `auto [energy,psi] = dmrg(H,psi0,sweeps,"Quiet");`
