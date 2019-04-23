@@ -8,47 +8,68 @@ see [[the tutorial on fermions|tutorials/fermions]].
 ### Sample code:
 
     // Given an MPS called "psi",
-    // constructed from a Spinless SiteSet "sites"
-    
+    // constructed from a Fermion SiteSet "sites"
+
     // Consider a pair of fermionic operators,
     // Cdag and C, for spinless fermions.
     // If Cdag(i) and C(j) operate at sites separated by some arbitrary
     // distance, so that i < j, then in order to represent them
-    // as bosonic operators Adag(i) and A(j), we need to include 
+    // as bosonic operators Adag(i) and A(j), we need to include
     // a chain of "string" (F) operators that preserves the commutation
     // relation for Cdag and C.
-    
+
+    int N = 20;
+    auto sites = Fermion(N);
+    auto t = 0.5;
+    auto ampo = AutoMPO(sites);
+    for( auto n : range1(N-1) )
+        {
+        ampo += -t,"Cdag",n,"C",n+1;
+        ampo += -t,"Cdag",n+1,"C",n;
+        }
+    auto H = toMPO(ampo);
+    auto state = InitState(sites,"Emp");
+    for( auto n : range1(N) ) if( n%2==0 ) state.set(n,"Occ");
+    auto sweeps = Sweeps(5); //number of sweeps is 5
+    sweeps.maxdim() = 10,20,100,100,200;
+    sweeps.cutoff() = 1E-10;
+    auto [energy,psi] = dmrg(H,randomMPS(state),sweeps,"Silent");
+
+    auto i = 5;
+    auto j = 10;
+
     auto Adag_i = sites.op("Adag",i);
     auto A_j = sites.op("A",j);
-    
+
     //'gauge' the MPS to site i
     //any 'position' between i and j, inclusive, would work here
-    psi.position(i); 
-    
-    //index linking i to i+1:
-    auto ir = commonIndex(psi(i),psi(i+1));
-    auto Corr = psi(i)*Adag_i*dag(prime(psi(i),Site,ir));
-    
+    psi.position(i);
+
+    auto psidag = dag(psi);
+    psidag.prime();
+
+    //index linking i to i-1:
+    auto li_1 = leftLinkIndex(psi,i);
+    auto Cij = prime(psi(i),li_1)*Adag_i*psidag(i);
     for(int k = i+1; k < j; ++k)
         {
-        Corr *= psi(k);
-        Corr *= sites.op("F",k); //Jordan-Wigner string
-        Corr *= dag(prime(psi(k)));
+        Cij *= psi(k);
+        Cij *= sites.op("F",k); //Jordan-Wigner string
+        Cij *= psidag(k);
         }
-    Corr *= psi(j);
-    Corr *= A_j;
-    
     //index linking j to j-1:
-    auto jl = commonIndex(psi(j),psi(j-1));
-    Corr *= dag(prime(prime(psi(j),jl),"Site"));
-    
-    auto result = elt(Corr); //or eltC(Corr) if expecting complex
+    auto lj = rightLinkIndex(psi,j);
+    Cij *= prime(psi(j),lj);
+    Cij *= A_j;
+    Cij *= psidag(j);
+
+    auto result = elt(Cij); //or eltC(Cij) if expecting complex
 
 
 ### Notes:
-* `auto` is a C++11 keyword that tells the compiler to automatically deduce the correct type from the expression on the right-hand side
-* `Corr` is the tensor holding our partial result for the correlator
-* The for loop builds into Corr the MPS tensors making up the MPS "transfer matrices" which carry correlations from i to j
+* `auto` is a C++17 keyword that tells the compiler to automatically deduce the correct type from the expression on the right-hand side
+* `Cij` is the tensor holding our partial result for the correlator
+* The for loop builds into Cij the MPS tensors making up the MPS "transfer matrices" which carry correlations from i to j
 * Since the operators are fermionic, we need to include Jordan-Wigner "string" (F) operators in between them.
 
 
