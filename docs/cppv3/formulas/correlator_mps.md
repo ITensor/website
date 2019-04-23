@@ -4,41 +4,56 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
 
 ### Sample code:
 
-    //Given an MPS called "psi",
-    //constructed from a SiteSet "sites"
-    
-    //Replace "Op1" and "Op2" with the actual names
-    //of the operators you want to measure
-    auto op_i = sites.op("Op1",i);
-    auto op_j = sites.op("Op2",j);
+    //Number of sites
+    auto N = 100;
 
-    //below we will assume j > i
+    //Measure a correlation function
+    //at sites i and j
+    auto i = 45;
+    auto j = 55;
+
+    auto sites = SpinHalf(N);
+
+    //Make a random MPS for testing
+    auto state = InitState(sites,"Up");
+    auto psi = randomMPS(state);
+    
+    //Make the operators you want to measure
+    auto op_i = sites.op("Sx",i);
+    auto op_j = sites.op("Sz",j);
+
+    //Below we will assume N > j > i > 1
 
     //'gauge' the MPS to site i
     //any 'position' between i and j, inclusive, would work here
     psi.position(i); 
 
-    //psi.ref(1) *= psi(0); //Uncomment if doing iDMRG calculation
+    //Create the bra/dual version of the MPS psi
+    auto psidag = dag(psi);
 
-    //index linking i to i+1:
-    auto ir = commonIndex(psi(i),psi(i+1));
+    //Prime the link indices to make them distinct from
+    //the original ket links
+    psidag.prime("Link");
 
-    auto C = psi(i)*op_i*dag(prime(prime(psi(i),"Site"),ir));
+    //index linking i-1 to i:
+    auto li_1 = leftLinkIndex(psi,i);
+
+    auto C = prime(psi(i),li_1)*op_i*prime(psidag(i),"Site");
     for(int k = i+1; k < j; ++k)
         {
         C *= psi(k);
-        C *= dag(prime(psi(k),"Link"));
+        C *= psidag(k);
         }
-    C *= psi(j);
+    //index linking j to j+1:
+    auto lj = rightLinkIndex(psi,j);
+    C *= prime(psi(j),lj);
     C *= op_j;
-    //index linking j to j-1:
-    auto jl = commonIndex(psi(j),psi(j-1));
-    C *= dag(prime(psi(j),jl,Site));
+    C *= prime(psidag(j),"Site");
 
     auto result = elt(C); //or eltC(C) if expecting complex
 
 ### Notes:
-* `auto` is a C++11 keyword that tells the compiler to automatically deduce the correct type from the expression on the right-hand side
+* `auto` is a C++17 keyword that tells the compiler to automatically deduce the correct type from the expression on the right-hand side
 * `C` is the tensor holding our partial result for the correlator
 * The for loop builds into C the MPS tensors making up the MPS "transfer matrices" which carry correlations from i to j
 
