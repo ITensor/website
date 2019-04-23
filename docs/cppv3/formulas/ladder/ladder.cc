@@ -10,7 +10,10 @@ main()
     auto Jx = 1.0;
     auto Jy = 1.0;
 
-    auto sites = SpinHalf(N,{"ConserveQNs=",true});
+    // QNs are conserved by default. Use
+    // the arg {"ConserveQNs=",false} to not
+    // conserve QNs
+    auto sites = SpinHalf(N);
 
     auto ampo = AutoMPO(sites);
     for(int j = 1; j <= N-3; j += 2)
@@ -37,14 +40,14 @@ main()
         if(i%2 == 1) state.set(i,"Up");
         else         state.set(i,"Dn");
         }
-    auto psi = MPS(state);
+    auto psi0 = MPS(state);
 
     auto sweeps = Sweeps(10);
     sweeps.maxdim() = 50,100,200,300,400;
     sweeps.cutoff() = 1E-10;
     println(sweeps);
 
-    auto energy = dmrg(psi,H,sweeps,{"Quiet",true});
+    auto [energy,psi] = dmrg(H,psi0,sweeps,{"Quiet",true});
 
     return 0;
     }

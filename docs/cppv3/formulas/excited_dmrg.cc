@@ -10,7 +10,7 @@ main()
     //
     // Initialize the site degrees of freedom.
     //
-    auto sites = SpinHalf(N); //make a chain of N spin 1/2's
+    auto sites = SpinHalf(N,{"ConserveQNs=",false}); //make a chain of N spin 1/2's
 
     //Transverse field
     Real h = 4.0;
@@ -44,13 +44,11 @@ main()
     sweeps.noise() = 1E-7,1E-8,0.0;
     println(sweeps);
 
-    auto psi0 = MPS(sites);
-
     //
     // Begin the DMRG calculation
     // for the ground state
     //
-    auto en0 = dmrg(psi0,H,sweeps,{"Quiet=",true});
+    auto [en0,psi0] = dmrg(H,randomMPS(sites),sweeps,{"Quiet=",true});
 
     println("\n----------------------\n");
 
@@ -62,13 +60,11 @@ main()
     auto wfs = std::vector<MPS>(1);
     wfs.at(0) = psi0;
 
-    auto psi1 = MPS(sites);
-
     //
     // Here the Weight option sets the energy penalty for
     // psi1 having any overlap with psi0
     //
-    auto en1 = dmrg(psi1,H,wfs,sweeps,{"Quiet=",true,"Weight=",20.0});
+    auto [en1,psi1] = dmrg(H,wfs,randomMPS(sites),sweeps,{"Quiet=",true,"Weight=",20.0});
 
     //
     // Print the final energies reported by DMRG
@@ -88,7 +84,7 @@ main()
     //
     // The overlap <psi0|psi1> should be very close to zero
     //
-    printfln("\nOverlap <psi0|psi1> = %.2E",overlap(psi0,psi1));
+    printfln("\nOverlap <psi0|psi1> = %.2E",inner(psi0,psi1));
 
     return 0;
     }
