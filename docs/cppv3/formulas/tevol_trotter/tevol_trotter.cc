@@ -13,7 +13,7 @@ Real cutoff = 1E-8; //truncation error cutoff when restoring MPS form
 //Define a site set object "sites" which lets us
 //easily obtain Site indices defining our Hilbert space
 //and S=1/2 single-site operators
-auto sites = SpinHalf(N,{"ConserveQNs=",true});
+auto sites = SpinHalf(N);
 
 //Make initial MPS psi to be in the Neel state
 auto state = InitState(sites);
@@ -57,11 +57,11 @@ auto psi0 = psi;
 //Time evolve, overwriting psi when done
 gateTEvol(gates,ttotal,tstep,psi,{"Cutoff=",cutoff,"Verbose=",true});
 
-printfln("Maximum MPS bond dimension after time evolution is %d",maxM(psi));
+printfln("Maximum MPS bond dimension after time evolution is %d",maxLinkDim(psi));
 
 //Print overlap of final state with initial state
-//(Will be complex so using overlapC which can return complex);
-Print(overlapC(psi,psi0));
+//(Will be complex so using innerC which can return complex);
+Print(innerC(psi,psi0));
 
 return 0;
 }
