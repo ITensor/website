@@ -56,7 +56,7 @@ Here is some sample time evolution code using `applyMPO`:
     for(int n = 1; n <= nt; ++n)
         {
         psi = applyMPO(expH,psi,args);
-        psi.normalize();
+        psi.noPrime().normalize();
         }
 
 
