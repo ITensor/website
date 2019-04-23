@@ -39,7 +39,7 @@ main()
         auto ket = psi(j);
         auto bra = dag(prime(ket,"Site"));
 
-        auto Szjop = sites.op("Sz",j);
+        auto Szjop = op(sites,"Sz",j);
 
         //take an inner product 
         auto szj = elt(bra*Szjop*ket);
@@ -62,9 +62,9 @@ main()
         auto bondket = psi(b)*psi(b+1);
         auto bondbra = dag(prime(bondket,"Site")); 
 
-        auto zzop = sites.op("Sz",b)*sites.op("Sz",b+1); 
-        auto pmop = 0.5*sites.op("S+",b)*sites.op("S-",b+1); 
-        auto mpop = 0.5*sites.op("S-",b)*sites.op("S+",b+1); 
+        auto zzop = op(sites,"Sz",b)*op(sites,"Sz",b+1); 
+        auto pmop = 0.5*op(sites,"S+",b)*op(sites,"S-",b+1); 
+        auto mpop = 0.5*op(sites,"S-",b)*op(sites,"S+",b+1); 
 
         auto zz = elt(bondbra*zzop*bondket);
         auto pm = elt(bondbra*pmop*bondket);

@@ -11,10 +11,10 @@ the spin on some site `j` in the Heisenberg chain.
 This operator can be retrieved from the `sites` object 
 that we defined last time, and can be saved as an ITensor:
 
-    ITensor Szjop = sites.op("Sz",j);
+    auto Szjop = op(sites,"Sz",j);
 
 Likewise we can obtain operators for the site `j` spin raising (S+) and lowering operators (S-),
-by calling `sites.op("Sp",j)` and `sites.op("Sm",j)` respectively.
+by calling `op(sites,"Sp",j)` and `op(sites,"Sm",j)` respectively.
 There is an efficient way to take the inner product of these local operators with the MPS
 wavefunction. To do this, we must first call the function
 
@@ -28,7 +28,7 @@ site j.
 
 Getting the needed MPS site tensor is very simple:
 
-    ITensor ket = psi(j);
+    auto ket = psi(j);
 
 Here we have copied this tensor to a variable called ket to suggest its role as
 a Dirac ket in the expectation value we will compute.
@@ -36,7 +36,7 @@ a Dirac ket in the expectation value we will compute.
 To get the bra part of the Dirac bra-ket, we turn ket into a row vector and conjugate
 its entries.  The way we do this is simple:
 
-    ITensor bra = dag(prime(ket,"Site"));
+    auto bra = dag(prime(ket,"Site"));
 
 The `prime` function is what turns the ket into a row vector (because it will contract with the 
 row index of our operator, which will be an index with a prime level of 1), and `dag` does the hermitian conjugation. 
@@ -60,15 +60,15 @@ $$
 $$
 For example, one of the operators we'll need is
 
-    ITensor spm = 0.5*sites.op("S+",j)*sites.op("S-",j+1);
+    auto spm = 0.5*op(sites,"S+",j)*op(sites,"S-",j+1);
 
 To represent the wavefunction for two sites, we simply contract together two site tensors:
 
-    ITensor bondket = psi(j)*psi(j+1);
+    auto bondket = psi(j)*psi(j+1);
 
 The `bondbra` is made similarly to the `bra` from earlier:
 
-    ITensor bondbra = dag(prime(bondket,"Site"));
+    auto bondbra = dag(prime(bondket,"Site"));
 
 And expectation values are computed in the same way:
 

@@ -13,8 +13,8 @@ local operators @@O_i@@ and @@O_j@@. We can do this as follows:
 
     int i = 4;
     int j = 10;
-    auto op_i = sites.op("Sz",i);
-    auto op_j = sites.op("Sz",j);
+    auto op_i = op(sites,"Sz",i);
+    auto op_j = op(sites,"Sz",j);
 
     auto phidag = dag(phi);
 

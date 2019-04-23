@@ -16,17 +16,17 @@ for(auto j : range1(N))
     }
 auto mps = MPS(state);
 
-auto psi = mps.A(1);
-for(auto j : range1(2,N)) psi *= mps.A(j);
+auto psi = mps(1);
+for(auto j : range1(2,N)) psi *= mps(j);
 
 ITensor H;
 for(auto b : range1(N-1))
     {
-    auto term = sites.op("Sz",b)*sites.op("Sz",b+1);
-    term += 0.5*sites.op("S+",b)*sites.op("S-",b+1);
-    term += 0.5*sites.op("S-",b)*sites.op("S+",b+1);
-    for(auto j : range1(b-1)) term *= sites.op("Id",j);
-    for(auto j : range1(b+2,N)) term *= sites.op("Id",j);
+    auto term = op(sites,"Sz",b)*op(sites,"Sz",b+1);
+    term += 0.5*op(sites,"S+",b)*op(sites,"S-",b+1);
+    term += 0.5*op(sites,"S-",b)*op(sites,"S+",b+1);
+    for(auto j : range1(b-1)) term *= op(sites,"Id",j);
+    for(auto j : range1(b+2,N)) term *= op(sites,"Id",j);
     H += term;
     }
 
@@ -34,7 +34,7 @@ auto eH = expHermitian(H,-1_i*ttotal);
 
 auto phi = eH*psi;
 Print(phi);
-phi.noprime();
+phi.noPrime();
 
 PrintData(dag(phi)*psi);
 

@@ -38,8 +38,8 @@ see [[the tutorial on fermions|tutorials/fermions]].
     auto i = 5;
     auto j = 10;
 
-    auto Adag_i = sites.op("Adag",i);
-    auto A_j = sites.op("A",j);
+    auto Adag_i = op(sites,"Adag",i);
+    auto A_j = op(sites,"A",j);
 
     //'gauge' the MPS to site i
     //any 'position' between i and j, inclusive, would work here
@@ -54,7 +54,7 @@ see [[the tutorial on fermions|tutorials/fermions]].
     for(int k = i+1; k < j; ++k)
         {
         Cij *= psi(k);
-        Cij *= sites.op("F",k); //Jordan-Wigner string
+        Cij *= op(sites,"F",k); //Jordan-Wigner string
         Cij *= psidag(k);
         }
     //index linking j to j+1:

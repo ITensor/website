@@ -31,9 +31,9 @@ auto gates = vector<BondGate>();
 //and add them to gates
 for(int b = 1; b <= N-1; ++b)
     {
-    auto hterm = sites.op("Sz",b)*sites.op("Sz",b+1);
-    hterm += 0.5*sites.op("S+",b)*sites.op("S-",b+1);
-    hterm += 0.5*sites.op("S-",b)*sites.op("S+",b+1);
+    auto hterm = op(sites,"Sz",b)*op(sites,"Sz",b+1);
+    hterm += 0.5*op(sites,"S+",b)*op(sites,"S-",b+1);
+    hterm += 0.5*op(sites,"S-",b)*op(sites,"S+",b+1);
 
     auto g = BondGate(sites,b,b+1,BondGate::tReal,tstep/2.,hterm);
     gates.push_back(g);
@@ -43,9 +43,9 @@ for(int b = 1; b <= N-1; ++b)
 //does a time step of "tstep") and add them to gates
 for(int b = N-1; b >= 1; --b)
     {
-    auto hterm = sites.op("Sz",b)*sites.op("Sz",b+1);
-    hterm += 0.5*sites.op("S+",b)*sites.op("S-",b+1);
-    hterm += 0.5*sites.op("S-",b)*sites.op("S+",b+1);
+    auto hterm = op(sites,"Sz",b)*op(sites,"Sz",b+1);
+    hterm += 0.5*op(sites,"S+",b)*op(sites,"S-",b+1);
+    hterm += 0.5*op(sites,"S-",b)*op(sites,"S+",b+1);
 
     auto g = BondGate(sites,b,b+1,BondGate::tReal,tstep/2.,hterm);
     gates.push_back(g);

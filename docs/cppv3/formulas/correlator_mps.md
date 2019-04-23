@@ -20,8 +20,8 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
     auto psi = randomMPS(state);
     
     //Make the operators you want to measure
-    auto op_i = sites.op("Sx",i);
-    auto op_j = sites.op("Sz",j);
+    auto op_i = op(sites,"Sx",i);
+    auto op_j = op(sites,"Sz",j);
 
     //'gauge' the MPS to site i
     //any 'position' between i and j, inclusive, would work here
