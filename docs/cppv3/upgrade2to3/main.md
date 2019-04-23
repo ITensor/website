@@ -12,6 +12,8 @@ may have, such as a DMRG calculation.
   multiple return values, and also make internal, developer-level code
   easier to read and maintain. To upgrade, change your
   compiler flags <br/>from `-std=c++11` to `-std=c++17`.
+  (For C++ aficionados, here is a [website](https://github.com/AnthonyCalandra/modern-cpp-features) 
+   with the new C++17 features.)
 
 * **Changes to Index objects:** 
   - only the dimension is required to construct an Index (no name string)
