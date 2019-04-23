@@ -31,7 +31,7 @@ main()
     //
 
     println("\nj Sz = ");
-    for(int j=1; j <= N; ++j) 
+    for( auto j : range1(N) ) 
         {
         //re-gauge psi to get ready to measure at position j
         psi.position(j);
@@ -55,7 +55,7 @@ main()
     Real totalSdS = 0.;
 
     println("\nj S.S = ");
-    for(int b = 1; b < N; ++b) 
+    for( auto b : range1(N-1) ) 
         { 
         psi.position(b);
 

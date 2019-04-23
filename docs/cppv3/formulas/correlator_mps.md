@@ -9,6 +9,7 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
 
     //Measure a correlation function
     //at sites i and j
+    //Below we will assume j > i
     auto i = 45;
     auto j = 55;
 
@@ -21,8 +22,6 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
     //Make the operators you want to measure
     auto op_i = sites.op("Sx",i);
     auto op_j = sites.op("Sz",j);
-
-    //Below we will assume N > j > i > 1
 
     //'gauge' the MPS to site i
     //any 'position' between i and j, inclusive, would work here
@@ -38,7 +37,8 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
     //index linking i-1 to i:
     auto li_1 = leftLinkIndex(psi,i);
 
-    auto C = prime(psi(i),li_1)*op_i*prime(psidag(i),"Site");
+    auto C = prime(psi(i),li_1)*op_i;
+    C *= prime(psidag(i),"Site");
     for(int k = i+1; k < j; ++k)
         {
         C *= psi(k);
@@ -46,8 +46,8 @@ See this in a diagrammatic form [[here|tutorials/correlations]].
         }
     //index linking j to j+1:
     auto lj = rightLinkIndex(psi,j);
-    C *= prime(psi(j),lj);
-    C *= op_j;
+
+    C *= prime(psi(j),lj)*op_j;
     C *= prime(psidag(j),"Site");
 
     auto result = elt(C); //or eltC(C) if expecting complex
