@@ -49,7 +49,7 @@ $$
 where @@\text{Tr}@@ means "trace" and the transfer matrix @@M@@ is a 2x2 matrix with elements
 
 $$
-M\_{\sigma^{\\!} \sigma^\prime} = e^{-(\sigma^{\\!} \sigma^\prime)/T} \ .
+M\_{\sigma_i \sigma_j} = e^{-(\sigma_i \sigma_j)/T} \ .
 $$
 
 Pictorially, we can view @@\text{Tr}\left(M^N\right)@@ as a chain of tensor contractions around a
@@ -207,29 +207,22 @@ as discussed above:
 
     auto Sig = [](int s) { return 1.-2.*(s-1); };
 
-	auto E0 = -4.0;
-
-    for(auto s1 : range1(dim0))
-    for(auto s2 : range1(dim0))
-    for(auto s3 : range1(dim0))
-    for(auto s4 : range1(dim0))
+    for(auto sl : range1(dim0))
+    for(auto sd : range1(dim0))
+    for(auto sr : range1(dim0))
+    for(auto su : range1(dim0))
         {
-        auto E = Sig(s1)*Sig(s2)+Sig(s2)*Sig(s3)
-                +Sig(s3)*Sig(s4)+Sig(s4)*Sig(s1);
-        auto P = exp(-(E-E0)/T);
-        A.set(l=s1,d=s2,r=s3,u=s4, P);
+        auto E = Sig(sl)*Sig(sd)+Sig(sd)*Sig(sr)
+                +Sig(sr)*Sig(su)+Sig(su)*Sig(sl);
+        auto P = exp(-E/T);
+        A.set(l=sl,d=sd,r=sr,u=su, P);
         }
 
 The first line creates the "A" tensor with indices l,r,u,d and all elements set to zero.
 The next line defines a "lambda" function bound to the variable name Sig which converts integers
 1 and 2 into Ising spin values +1.0 and -1.0. To set the elements of A, we loop over integers
-s1,s2,s3,s4. The function `range1(d)` returns an object that can be used in a `for` loop to
-iterate over the integers 1,2,3,...,d.
-
-One slight difference with the convention of the previous section is that here 
-the Boltzmann probability weight P has an energy shift of `E0 = -4.0` in the exponent. This 
-will keep the norm of the rescaled A tensors from growing too quickly later. Though it changes
-@@Z@@, it does so in a way that is easy to account for.
+sl,sd,sr,su. The function `range1(dim)` returns an object that can be used in a `for` loop to
+iterate over the integers 1,2,3,...,dim.
 
 Finally we are ready to dive into the main TRG algorithm loop. To reach scale @@N@@ we need to
 do @@N-1@@ steps, so we will write a loop that does this number of steps:
@@ -364,14 +357,6 @@ Click the link just below to view a complete, working sample code you can compil
    measures the magnetization of a single Ising spin, and compare your results
    at various temperatures to the [exact solution](https://en.wikipedia.org/wiki/Square-lattice_Ising_model).
 
-
-*Pro Tip*: for tasks 2 and 3 above, it is a good idea to modify the TRG code such that A gets 
-normalized after each step, for example by adding a line `A /= norm(A);`. 
-The exact normalization is not so important (trace norm versus Frobenius norm); the idea is to 
-prevent A from getting too big, which will definitely occur after too many iterations.
-When computing observables such as the magnetization, it is sufficient to use the "effective" 
-partition function @@Z\_\text{eff}@@ obtained by double-tracing the top-scale A, regardless
-of how it is normalized.
 
 ### References
 

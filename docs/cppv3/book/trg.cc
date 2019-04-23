@@ -25,7 +25,6 @@ auto A = ITensor(l,r,u,d);
 
 // Fill the A tensor with correct Boltzmann weights:
 auto Sig = [](int s) { return 1.-2.*(s-1); };
-auto E0 = -4.;
 for(auto sl : range1(dim0))
 for(auto sd : range1(dim0))
 for(auto sr : range1(dim0))
@@ -33,8 +32,8 @@ for(auto su : range1(dim0))
     {
     auto E = Sig(sl)*Sig(sd)+Sig(sd)*Sig(sr)
             +Sig(sr)*Sig(su)+Sig(su)*Sig(sl);
-    auto val = exp(-(E-E0)/T);
-    A.set(l(sl),r(sr),u(su),d(sd),val);
+    auto P = exp(-E/T);
+    A.set(l(sl),r(sr),u(su),d(sd),P);
     }
 
 // Keep track of partition function per site, z = Z^(1/N)
@@ -71,7 +70,7 @@ for(auto scale : range1(topscale))
     Fr *= delta(l,r);
     Fd *= delta(u,d);
     A = Fl * Fu * Fr * Fd;
-
+    
     Print(A);
 
     // Update the indices
@@ -85,6 +84,7 @@ for(auto scale : range1(topscale))
     Real TrA = elt(A*delta(l,r)*delta(u,d));
     A /= TrA;
     z *= pow(TrA,1./pow(2,1+scale));
+
     }
 
 printfln("log(Z)/N = %.12f",log(z));
