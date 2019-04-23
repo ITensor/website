@@ -7,7 +7,7 @@ main()
     {
     int N = 100;
 
-    auto sites = SpinOne(N);
+    auto sites = SpinOne(N,{"ConserveQNs=",false});
 
     auto ampo = AutoMPO(sites);
     for(int j = 1; j < N; ++j)
@@ -22,9 +22,9 @@ main()
     sweeps.maxdim() = 10,20,100,100,200;
     sweeps.cutoff() = 1E-10;
 
-    auto psi = MPS(sites);
+    auto psi0 = randomMPS(sites);
 
-    auto energy = dmrg(psi,H,sweeps,{"Quiet=",true});
+    auto [energy,psi] = dmrg(H,psi0,sweeps,{"Quiet=",true});
 
     //
     // Measuring Sz
@@ -36,10 +36,10 @@ main()
         //re-gauge psi to get ready to measure at position j
         psi.position(j);
 
-        ITensor ket = psi(j);
-        ITensor bra = dag(prime(ket,"Site"));
+        auto ket = psi(j);
+        auto bra = dag(prime(ket,"Site"));
 
-        ITensor Szjop = sites.op("Sz",j);
+        auto Szjop = sites.op("Sz",j);
 
         //take an inner product 
         auto szj = elt(bra*Szjop*ket);
@@ -59,12 +59,12 @@ main()
         { 
         psi.position(b);
 
-        ITensor bondket = psi(b)*psi(b+1);
-        ITensor bondbra = dag(prime(bondket,"Site")); 
+        auto bondket = psi(b)*psi(b+1);
+        auto bondbra = dag(prime(bondket,"Site")); 
 
-        ITensor zzop = sites.op("Sz",b)*sites.op("Sz",b+1); 
-        ITensor pmop = 0.5*sites.op("S+",b)*sites.op("S-",b+1); 
-        ITensor mpop = 0.5*sites.op("S-",b)*sites.op("S+",b+1); 
+        auto zzop = sites.op("Sz",b)*sites.op("Sz",b+1); 
+        auto pmop = 0.5*sites.op("S+",b)*sites.op("S-",b+1); 
+        auto mpop = 0.5*sites.op("S-",b)*sites.op("S+",b+1); 
 
         auto zz = elt(bondbra*zzop*bondket);
         auto pm = elt(bondbra*pmop*bondket);
