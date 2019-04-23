@@ -10,6 +10,9 @@ features may become candidates for inclusion in ITensor at a later date.
 shown next to each code. Please contact them directly if you have any issues 
 with or questions about the codes.)
 
+_If you would like help upgrading your code to version 3 of ITensor,
+please <a href="about.html">contact us</a>._
+
 <br/>
 <br/>
 
