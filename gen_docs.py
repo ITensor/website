@@ -249,20 +249,8 @@ def generate():
         n += 1
     vinfo += "</span></br>"
 
-    prenav_header_file = open(prenav_header_fname)
-    postnav_header_file = open(postnav_header_fname)
-    footer_file = open(footer_fname)
-    print "".join(prenav_header_file.readlines())
-    print nav
-    print vinfo
-    print "".join(postnav_header_file.readlines())
-    if vers == "cppv3" and (not inall):
-        print "<span style='color:red;'>ITensor version 3 has not been released yet. \
-               This documentation is a preview only.</span><br/><br/>" 
-    print bodyhtml
-
     #
-    # Auto-generate back links
+    # Generate Back-Links
     #
     backlinks = []
     full_dirname = ""
@@ -275,6 +263,27 @@ def generate():
         backlinks.append( "<br/>%s<a href=\"%s?page=%s&vers=%s\">%s</a>"%(iconimg,this_fname,full_dirname,vers,text) )
         full_dirname += "/"
     backlinks.reverse()
+
+    #
+    # Special handling of "codes" docs file
+    # to make top link for Codes be colored white
+    #
+    prenav_fname_to_use = prenav_header_fname
+    if full_dirname+page_name == "codes":
+        prenav_fname_to_use = "docs_header_codes_prenav.html"
+
+    prenav_header_file = open(prenav_fname_to_use)
+    postnav_header_file = open(postnav_header_fname)
+    footer_file = open(footer_fname)
+    print "".join(prenav_header_file.readlines())
+    print nav
+    print vinfo
+    print "".join(postnav_header_file.readlines())
+    if vers == "cppv3" and (not inall):
+        print "<span style='color:red;'>ITensor version 3 has not been released yet. \
+               This documentation is a preview only.</span><br/><br/>" 
+    print bodyhtml
+
     for bl in backlinks: print bl
 
     if not (len(dirlist)==0 and page_name == "main"):
