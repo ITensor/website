@@ -7,7 +7,7 @@ main()
     {
     int Nx = 8;
     int Ny = 8;
-    int N = Nx*Ny;
+    auto N = Nx*Ny;
     auto yperiodic = false;
 
     //
@@ -47,13 +47,13 @@ main()
             state.set(i,"Dn");
         }
 
-    auto psi = MPS(state);
+    auto psi0 = MPS(state);
 
     //
     // overlap calculates matrix elements of MPO's with respect to MPS's
-    // overlap(psi,H,psi) = <psi|H|psi>
+    // inner(psi0,H,psi0) = <psi0|H|psi0>
     //
-    printfln("Initial energy = %.5f", overlap(psi,H,psi) );
+    printfln("Initial energy = %.5f", inner(psi0,H,psi0) );
 
     //
     // Set the parameters controlling the accuracy of the DMRG
@@ -71,13 +71,13 @@ main()
     //
     // Begin the DMRG calculation
     //
-    auto energy = dmrg(psi,H,sweeps,"Quiet");
+    auto [energy,psi] = dmrg(H,psi0,sweeps,"Quiet");
 
     //
     // Print the final energy reported by DMRG
     //
     printfln("\nGround State Energy = %.10f",energy);
-    printfln("\nUsing overlap = %.10f", overlap(psi,H,psi) );
+    printfln("\nUsing overlap = %.10f", inner(psi,H,psi) );
 
     println("\nTotal QN of Ground State = ",totalQN(psi));
 
