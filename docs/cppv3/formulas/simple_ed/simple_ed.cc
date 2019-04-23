@@ -1,7 +1,6 @@
 #include "itensor/all.h"
 
 using namespace itensor;
-using std::vector;
 
 int main()
 {
@@ -11,46 +10,50 @@ int Npass = 4;
 
 auto sites = SpinHalf(N);
 
-//Make initial wavefunction psi a random state
-auto indices = vector<Index>();
-for(auto j : range1(N)) indices.push_back(sites(j));
+//inds(SiteSet) -> IndexSet is a convenient function
+//for extracting the indices of a SiteSet
+auto indices = inds(sites);
+
+//Make a random initial wavefunction psi with 0 magnetization
 //psi is an ITensor with all of the site indices in "sites";
-auto psi = ITensor(indices);
-//randomize the elements of psi
-randomize(psi);
+auto psi = randomITensor(QN({"Sz",0}),indices);
 
-//Make the Hamiltonian as a single ITensor
-ITensor H;
-for(auto b : range1(N-1))
+//Make the Hamiltonian as an MPO
+auto ampo = AutoMPO(sites);
+for( auto j : range1(N-1) )
     {
-    auto term = sites.op("Sz",b)*sites.op("Sz",b+1);
-    term += 0.5*sites.op("S+",b)*sites.op("S-",b+1);
-    term += 0.5*sites.op("S-",b)*sites.op("S+",b+1);
-    for(auto j : range1(b-1)) term *= sites.op("Id",j);
-    for(auto j : range1(b+2,N)) term *= sites.op("Id",j);
-    H += term;
+    ampo += 0.5,"S+",j,"S-",j+1;
+    ampo += 0.5,"S-",j,"S+",j+1;
+    ampo +=     "Sz",j,"Sz",j+1;
     }
+auto Hmpo = toMPO(ampo);
 
-//Create eH = exp(-tau*H)
-auto eH = expHermitian(H,-tau);
+//Make a single ITensor out of the MPO
+auto H = Hmpo(1);
+for( auto j : range1(2,N) )
+    H *= Hmpo(j);
 
-//Apply eH to psi a few times to project into ground state
+//Create expH = exp(-tau*H)
+auto expH = expHermitian(H,-tau);
+
+//Apply expH to psi a few times to project into ground state
 auto gs = psi; //initialize to psi
 for(int n = 1; n <= Npass; ++n)
     {
-    gs = (eH*gs).noprime();
+    gs *= expH;
+    gs.noPrime();
     gs /= norm(gs);
     }
 Print(gs);
 
 //Compute the ground state energy
-auto E0 = (prime(gs)*H*gs).real();
+auto E0 = elt(prime(dag(gs))*H*gs);
 Print(E0);
 
 //Compute the variance to check that gs is
 //an eigenstate. The result "var" should be very small.
 auto H2 = multSiteOps(H,H);
-auto var = (prime(gs)*H2*gs).real()-E0*E0;
+auto var = elt(prime(dag(gs))*H2*gs)-E0*E0;
 Print(var);
 
 return 0;

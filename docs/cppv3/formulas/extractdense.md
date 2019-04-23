@@ -22,7 +22,7 @@ Say we have the following ITensor
     auto k = Index(4,"k");
 
     auto T = ITensor(i,j,k);
-    randomize(T);
+    T.randomize();
 
 and we want to extract its data, which is stored internally in a `Dense<Real>` object.
 There are two ways to do this:

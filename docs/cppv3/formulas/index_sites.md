@@ -3,22 +3,26 @@
 To begin most calculations you need a set of lattice sites to define your Hilbert space.
 Although the ITensor library defines a set of [[SiteSet|classes/siteset]] classes which automate
 this for you, there could be a lot of reasons why you would want to do it yourself.
-Below is a simple pattern you can use to create a set of site Indices and save them in a vector.
+Below is a simple pattern you can use to create a set of site Indices and save them in an IndexSet,
+a container for a set of indices used throughout ITensor.
 
-    int N = 100; //number of sites
-    int d = 2; //dimension of local Hilbert space of each site
-    auto site = vector<Index>(N+1); //convenient for these to be 1-indexed
-    for(int j = 1; j <= N; ++j)
-        {
-        site.at(j) = Index(d,"Site,n="+str(j));
-        }
+    auto N = 100; //number of sites
+    auto d = 2; //dimension of local Hilbert space of each site
+    auto sites = IndexSet(N);
+    for( auto n : range1(N) )
+        sites(n) = Index(d,"Site,n="+str(n));
 
     //Now we can use these sites, for example, to make tensors
     //such as operators
 
-    auto sz3 = ITensor(site[3],prime(site[3]));
-    sz.set(site[3]=1,prime(site[3]=1, 0.5);
-    sz.set(site[3]=2,prime(site[3]=2,-0.5);
+    //For convenience, save the third index and its primed
+    //version
+    auto s3 = sites(3);
+    auto s3P = prime(s3);
+
+    auto sz3 = ITensor(s3,s3P);
+    sz3.set(s3=1,s3P=1, 0.5);
+    sz3.set(s3=2,s3P=2,-0.5);
 
 
 Complete sample code:
@@ -26,22 +30,20 @@ Complete sample code:
     #include "itensor/all.h"
 
     using namespace itensor;
-    using std::vector;
 
     int main()
         {
-        int N = 100; //number of sites
-        int d = 2; //dimension of local Hilbert space of each site
-        auto site = vector<Index>(N+1); //convenient for these to be 1-indexed
-        for(int j = 1; j <= N; ++j)
-            {
-            site.at(j) = Index(d,"Site,n="+str(j));
-            }
+        auto N = 100; //number of sites
+        auto d = 2; //dimension of local Hilbert space of each site
+        auto sites = IndexSet(N);
+        for( auto n : range1(N) )
+            sites(n) = Index(d,"Site,n="+str(n));
 
-        auto sz3 = ITensor(site[3],prime(site[3]));
-        sz.set(site[3]=1,prime(site[3]=1, 0.5);
-        sz.set(site[3]=2,prime(site[3]=2,-0.5);
-        PrintData(sz3);
+        auto s3 = sites(3);
+        auto s3P = prime(s3);
+        auto sz3 = ITensor(s3,s3P);
+        sz3.set(s3=1,s3P=1, 0.5);
+        sz3.set(s3=2,s3P=2,-0.5);
 
         return 0;
         }

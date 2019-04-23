@@ -11,7 +11,7 @@ Or we could obtain s from a set of Site indices already created earlier (see the
 
 Once we have this site index, we can make various operators as follows:
 
-    Index sP = prime(s); //convenient to save this as a different variable
+    auto sP = prime(s); //convenient to save this as a different variable
 
     auto sz = ITensor(s,sP);
     sz.set(s=1,sP=1,+0.5);
@@ -26,7 +26,7 @@ We can even get fancy and create a 'factory' function which takes our site and a
     ITensor
     myOp(Index s, string name)
         {
-        Index sP = prime(s);
+        auto sP = prime(s);
         auto res = ITensor(s,sP); //res is short for result
 
         if(name == "Sz")
@@ -67,7 +67,7 @@ Complete sample code:
     ITensor
     myOp(Index s, string name)
         {
-        Index sP = prime(s);
+        auto sP = prime(s);
         ITensor res(s,sP); //res is short for result
 
         if(name == "Sz")
@@ -98,9 +98,9 @@ Complete sample code:
         auto s1 = Index(d,"Site,s1");
         auto s2 = Index(d,"Site,s2");
 
-        ITensor sz1 = myOp(s1,"Sz");
-        ITensor sz2 = myOp(s2,"Sz");
-        ITensor sx1 = myOp(s1,"Sx");
+        auto sz1 = myOp(s1,"Sz");
+        auto sz2 = myOp(s2,"Sz");
+        auto sx1 = myOp(s1,"Sx");
 
         PrintData(sz1);
         PrintData(sz2);

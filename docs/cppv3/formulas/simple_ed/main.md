@@ -9,4 +9,5 @@ single ITensor, then applies @@e^{-\tau\, H}@@ a few times
 to this ITensor wavefunction to obtain the ground state.
 
 
-    include:docs/formulas/simple_ed/simple_ed.cc
+    include:docs/cppv3/formulas/simple_ed/simple_ed.cc
+

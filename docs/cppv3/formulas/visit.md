@@ -19,7 +19,7 @@ Here are some examples:
 ## Computing the Max Element of a Tensor
 
     auto T = ITensor(i,j,k);
-    randomize(T);
+    T.randomize();
 
     Real maxEl = -1E12;
     //getMax is a lambda function with a "capture"
