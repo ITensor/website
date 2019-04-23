@@ -1,5 +1,5 @@
 
-# ITensor Codes 
+# ITensor Codes (version 3 compatible)
 
 Open-source codes based on ITensor for a variety projects and tasks.
 If you have a high-quality code you'd like listed here, please
