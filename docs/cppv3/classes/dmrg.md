@@ -75,6 +75,7 @@ ITensor also offers DMRG routines for more general optimization tasks, including
     mode such that all but a few "core" tensors will remain on the hard drive to save on RAM
   - "DebugLevel" &mdash; non-negative integer telling the internal Davidson eigensolver how
     much extra information to print out
+  - "Silent" &mdash; suppress all output of DMRG and perform no measurements
 
 
 ## Generalized DMRG interfaces
