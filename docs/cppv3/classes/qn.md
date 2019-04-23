@@ -105,12 +105,12 @@ QN is defined in the header "itensor/qn.h".
 
 * `.val(QName name) -> int`
 
-  Retrive the value of the quantum number with the given name. If the 
-  QN has no quantum number with this name, returns 0.
+  Retrive the value of the quantum number with the given name (a string). 
+  If the QN has no quantum number with this name, returns 0.
 
 * `.mod(QName name) -> int`
 
-  Retrive the modulus of the quantum number with the given name. If the 
+  Retrive the modulus of the quantum number with the given name (a string). If the 
   QN has no quantum number with this name, returns 0.
 
 * `.num(QName name) -> QNum`
