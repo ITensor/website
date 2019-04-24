@@ -5,7 +5,7 @@ when switching from ITensor version 2 to version 3.
 We also discuss some upgrades for specific tasks you 
 may have, such as a DMRG calculation.
 
-## Major Changes
+## Major or Required Changes
 
 * **C++17 is required to compile the ITensor Library.** Switching to C++17
   allows us to make significant interface improvements, such as using 
@@ -32,26 +32,6 @@ may have, such as a DMRG calculation.
       println("j has the tags ",tags(j));
       //prints: j has the tags j,Top,Site
 
-* **Tensor decompositions provide multiple return values.** The new, preferred
-  interfaces for tensor decompositions such as `svd` and `diagHermitian` no
-  longer takes the factored results by reference, but returns them using the
-  new "structured binding" or multiple-return-value feature of C++17.
-  For more details, see the [[tensor decomposition docs|classes/decomp]].
-
-  <div class="example_clicker">Click to Show Example</div>
-
-      auto l1 = Index(8,"l1");
-      auto l2 = Index(4,"l2");
-      auto s = Index(2,"s1");
-
-      auto T = randomITensor(l1,s,l2);
-
-      auto [U,S,V,u,v] = svd(T,{l1,s});
-
-* **To access individual MPS tensors**, say of an MPS object `psi`, just
-  call `psi(j)`. To replace the tensor at site j with a tensor `T`, call
-  `psi.set(j,T)`. Or to modify the tensor in-place, do `psi.ref(j) = T`.
-
 * **The `IQTensor`, `IQIndex`, `IQMPS`, and `IQMPO` types have been removed.**
   An IQIndex is now just an Index which carries extra quantum number (QN) information.
   An IQTensor is now just an ITensor with block-sparse storage internally and whose
@@ -74,13 +54,6 @@ may have, such as a DMRG calculation.
 
       Print(hasQNs(T));
       //print: hasQNs(T) = true
-
-* **Physics-specific Site Sets Carry QNs by Default**. If you use
-  a site set such as `SpinHalf` or `Electron` (formerly called "Hubbard"),
-  the indices and operators produced from these will be QN-block-sparse.
-  If you wish to omit or not have the QN sparsity, pass a named argument
-  `{"ConserveQNs=",false}` to the site set constructor, for example <br/>
-  `auto sites = SpinHalf(N,{"ConserveQNs=",false});`.
 
 * **Quantum number QN objects use strings to label each of their values.** 
   Each sector of a QN object is specified by a string and an integer value.
@@ -111,6 +84,51 @@ may have, such as a DMRG calculation.
       //prints: q3.mod("P") = 2
       Print(q3+q3);
       //prints: q3+q3 = QN({"P",0});
+
+## Optional, Recommended Changes
+
+These are changes we recommend to follow the standards of version 3, or to avoid
+using now-deprecated features, but which are not required to make your code compile:
+
+* **To retrieve elements of tensors** use the free function `elt` if 
+  the ITensor is real, or `eltC` if the ITensor could be complex.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto T = randomITensor(i,j,k);
+
+      auto x = elt(T,i=1,j=1,k=1);
+
+      auto V = randomITensorC(m,n);
+
+      auto z = eltC(V,n=2,m=3);
+
+* **Physics-specific Site Sets Carry QNs by Default**. If you use
+  a site set such as `SpinHalf` or `Electron` (formerly called "Hubbard"),
+  the indices and operators produced from these will be QN-block-sparse.
+  If you wish to omit or not have the QN sparsity, pass a named argument
+  `{"ConserveQNs=",false}` to the site set constructor, for example <br/>
+  `auto sites = SpinHalf(N,{"ConserveQNs=",false});`.
+
+* **Tensor decompositions provide multiple return values.** The new, preferred
+  interfaces for tensor decompositions such as `svd` and `diagHermitian` no
+  longer takes the factored results by reference, but returns them using the
+  new "structured binding" or multiple-return-value feature of C++17.
+  For more details, see the [[tensor decomposition docs|classes/decomp]].
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto l1 = Index(8,"l1");
+      auto l2 = Index(4,"l2");
+      auto s = Index(2,"s1");
+
+      auto T = randomITensor(l1,s,l2);
+
+      auto [U,S,V,u,v] = svd(T,{l1,s});
+
+* **To access individual MPS tensors**, say of an MPS object `psi`, just
+  call `psi(j)`. To replace the tensor at site j with a tensor `T`, call
+  `psi.set(j,T)`. Or to modify the tensor in-place, do `psi.ref(j) = T`.
 
 ## Task-Specific Upgrades
 
