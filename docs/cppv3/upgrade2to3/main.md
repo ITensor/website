@@ -85,7 +85,7 @@ may have, such as a DMRG calculation.
       Print(q3+q3);
       //prints: q3+q3 = QN({"P",0});
 
-## Optional, Recommended Changes
+## Recommended, Optional Changes
 
 These are changes we recommend to follow the standards of version 3, or to avoid
 using now-deprecated features, but which are not required to make your code compile:
