@@ -44,6 +44,7 @@ its actual signature is `f(ITensor const& T)`.
 * [[SiteSet|classes/siteset]]. Collection of site objects, defining a Hilbert space and local operators. <br/>
   - [[SpinHalf and SpinHalfSite|classes/spinhalf]]. S=1/2 spin sites. <br/>
   - [[SpinOne and SpinOneSite|classes/spinone]]. S=1 spin sites. <br/>
+  - [[Boson and BosonSite|classes/boson]]. Spinless boson sites with adjustable max occupancy. <br/>
   - [[Fermion and FermionSite|classes/fermion]]. Spinless fermion sites. <br/>
   - [[Electron and ElectronSite|classes/electron]]. Spinful fermion sites. <br/>
   - [[tJ and tJSite|classes/tj]]. t-J model sites. <br/>
