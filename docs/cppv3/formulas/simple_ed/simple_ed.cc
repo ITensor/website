@@ -30,8 +30,7 @@ auto Hmpo = toMPO(ampo);
 
 //Make a single ITensor out of the MPO
 auto H = Hmpo(1);
-for( auto j : range1(2,N) )
-    H *= Hmpo(j);
+for(auto j : range1(2,N)) H *= Hmpo(j);
 
 //Create expH = exp(-tau*H)
 auto expH = expHermitian(H,-tau);
@@ -50,10 +49,10 @@ Print(gs);
 auto E0 = elt(prime(dag(gs))*H*gs);
 Print(E0);
 
-//Compute the variance to check that gs is
+//Compute the variance <H^2>-<H>^2 to check that gs is
 //an eigenstate. The result "var" should be very small.
 auto H2 = multSiteOps(H,H);
-auto var = elt(prime(dag(gs))*H2*gs)-E0*E0;
+auto var = elt(prime(dag(gs))*H2*gs)-(E0*E0);
 Print(var);
 
 return 0;
