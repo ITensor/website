@@ -39,12 +39,12 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
     //with prime level 0 and 1
     //
 
-    auto rho = randomITensorC(s1,s2,prime(s1),prime(s2));
-    rho = 0.5*(rho+dag(swapTags(rho,"0","1")));
+    auto H = randomITensorC(s1,s2,prime(s1),prime(s2));
+    H = 0.5*(H+dag(swapTags(H,"0","1")));
 
-    auto [Q,D,q] = diagHermitian(rho);
+    auto [Q,D,q] = diagHermitian(H);
 
-    Print(norm(rho-prime(Q)*D*dag(Q))); //On the order of 1E-15
+    Print(norm(H-prime(Q)*D*dag(Q))); //On the order of 1E-15
 
 
 ## Singular Value Decomposition
@@ -95,6 +95,9 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   
   * "RightTags" &mdash; set just the tags of the index connecting S to V.
      
+  * "TruncateDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
+    Default is `false`.
+
   <div class="example_clicker">Click to Show Example</div>
   
       auto s1 = Index(4,"Site");
@@ -151,8 +154,23 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
       Print(hasInds(D,{u,prime(u)})); //prints: true
       Print(norm(H-dag(U)*D*prime(U))); //prints on the order of 1E-15
 
-   The diagHermitian function recognizes the following optional named arguments:
+   The `diagHermitian` function recognizes the following optional named arguments:
    
+   * "Tags" &mdash; TagSet. Specify the tags of the index shared by U and D.
+
+* ```
+  diagPosSemiDef(ITensor H,
+                 Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
+  ```
+
+  The same as `diagHermitian` above, but assumes the input ITensor is positive
+  semi-definite and allows truncation according the the eigenvalues.
+
+  If truncation is performed, negative eigenvalues will be set to zero.
+
+  Along with the named arguments of `diagHermitian`, `diagPosSemiDef` accepts the following
+  arguments:
+
    * "MaxDim" &mdash; integer M. If there are more than M eigenvalues, only the largest M are kept.
 
    * "Cutoff" &mdash; real number @@\epsilon@@. Discard the smallest eigenvalues
@@ -164,11 +182,12 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
    * "MinDim" &mdash; integer m. At least m eigenvalues will be kept, even if the cutoff criterion would discard more.
 
-   * "Tags" &mdash; TagSet. Specify the tags of the index shared by U and D.
-
    * "ShowEigs" &mdash; if `true`, print lots of extra information about the truncation of singular values.
 
    * "Truncate" &mdash; if set to `false`, no truncation occurs. Otherwise truncation parameters ("Cutoff","MaxDim", "MinDim") will be used to perform a truncation of singular values.
+
+  * "TruncateDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
+    Default is `false`.
 
    <br/>
 
@@ -271,6 +290,9 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   * "ShowEigs" &mdash; if `true`, print lots of extra information about the truncation of singular values.
     Default is `false`.
 
+  * "TruncateDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
+    Default is `false`.
+
   <div class="example_clicker">Click to Show Example</div>
 
       auto T = randomITensor(l1,s1,s2,l2);
@@ -343,6 +365,10 @@ compatibility and internal usage.
   ```
   diagHermitian(ITensor H, ITensor & U, ITensor & D,
                 Args args = Args::global()) -> Spectrum
+  ```
+  ```
+  diagPosSemiDef(ITensor H, ITensor & U, ITensor & D,
+                 Args args = Args::global()) -> Spectrum
   ```
   ```
   factor(ITensor T, ITensor & A, ITensor & B,
