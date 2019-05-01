@@ -138,7 +138,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   For example, T could have indices {i,i',j,j'}. 
   Saying that T is Hermitian means that `T == swapTags(dag(T),"0","1")`.
 
-   The `diagHermitian` function recognizes the following optional named arguments:
+  The `diagHermitian` function recognizes the following optional named arguments:
    
    * "Tags" &mdash; TagSet. Specify the tags of the index shared by U and D.
 
@@ -163,9 +163,10 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
                  Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
   ```
 
-  The same as `diagHermitian` above, but assumes the input ITensor is positive
-  semi-definite and allows truncation according the the eigenvalues.
+  Same as `diagHermitian` above, but allows truncation according to the eigenvalues.
 
+  Truncation is performed assuming the ITensor, reinterpreted as a matrix, is approximately 
+  positive semi-definite (i.e. the eigenvalues are approximately non-negative).
   If truncation is performed, negative eigenvalues will be set to zero.
 
   Along with the named arguments of `diagHermitian`, `diagPosSemiDef` accepts the following
