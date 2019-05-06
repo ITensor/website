@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Charge density wave in a doped Kondo chain](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.195109), Yixuan Huang, D. N. Sheng, and C. S. Ting, PhysRev[B,99,195109] (2019)
+
 * [Machine learning phase diagram in the half-filled one-dimensional extended Hubbard model](https://arxiv.org/abs/1904.06032), Kazuya Shinjo, Kakeru Sasaki, Satoru Hase, Shigetoshi Sota, Satoshi Ejima, Seiji Yunoki, Takami Tohyama, arxiv:1904.06032
 
 * [Emergence of dxy-wave superconductivity in a doped two-leg diagonal ladder](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.094510), Jie Hou, Ting-Kuo Lee, Jie Lou, Yan Chen, PhysRev[B,99,094510] 
