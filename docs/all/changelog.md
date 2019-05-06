@@ -1,5 +1,294 @@
 # Change Log #
 
+<a name="v3.0.0"></a>
+## [Version 3.0.0](https://github.com/ITensor/ITensor/tree/v2.1.1) (To be released May, 2019) ##
+
+This major update to ITensor features a number of changes to the design.
+
+Index objects now carry up to four "tag" strings instead of a name or
+IndexType as in version 2. These tags are useful for many tasks, including
+selecting a particular Index from a set, or preventing two Index objects
+with the same ID from being contracted.
+
+The IQIndex and IQTensor classes have been removed, and are now just
+Index or ITensor objects which carry extra quantum number block information.
+Similarly IQMPS and IQMPO have been removed, and one can use just MPS and MPO
+instead. This change streamlines much of the design, letting us turn many
+template functions into regular functions. Importantly, it fixes a number
+of issues and awkward design aspects of site set objects.
+
+QN objects now carry small strings naming each of their sectors, allowing
+QNs with different sectors to still be sensibly combined. This allows
+one to define different QNs locally and still use them together globally
+within the same algorithm or code.
+
+Finally, the move to version 3.0.0 brings a raft of many other small redesigns,
+such as deprecating many class methods in favor of free functions; better
+and more general names for various functions; more consistent interfaces across similar functions;
+improvements to MPO and MPS algorithms to make them work for a broader range of inputs;
+and many other similar improvements.
+
+For help upgrading an existing code to version 3, see the [[upgrade guide|upgrade2to3]].
+
+## Major Breaking Changes
+
+- C++17 is required to compile ITensor version 3. To upgrade your options.mk file, either
+  create a new one from options.mk.sample, or replace `-std=c++11` with `-std=c++17`.
+
+- Index objects now only require a dimension to be constructed. They optionally accept
+  up to four "tag" strings. Two Index objects must have the same tags (regardless of ordering)
+  to compare equal.
+
+- The IQIndex, IQTensor, IQMPS, and IMPO types have been removed, in favor of adding
+  the same functionality as special storage types of Index, ITensor, MPS, and MPO.
+
+- QN objects now store string labels, or names, for each of their sectors. A missing
+  or undefined sector is treated as having a value of zero for the purpose of combining
+  two QNs with different sector definitions.
+
+- Getting a tensor element as a real number immediately throws an error if the tensor
+  has complex storage, even if that element has zero imaginary part.
+
+# General changes
+
+- Changed license to Apache 2.0 per Flatiron Institute policy
+
+- In general, the user interface is more consistant that member functions called with `A.f(...)`
+modify `A` in-place and free functions do not perform modifications of the inputs
+
+- `str(int) -> string` helper function added to make it easier to make tags, i.e. `"n="+str(n)` to make the tag `"n=2"` if `int n = 2`
+
+# Changes to Index
+
+- Changes to Index constructors:
+    - `Index(2)` for Index of size 2
+    - `Index(2,"Site,n=2")` for Index of size 2 and tags "Site" and "n=2"
+    - `Index(QN({"Sz",0}),2,QN({"Sz",1"}),3)` for Index with QNs
+
+- New QN design:
+    - No seperate IQIndex class. Instead, Index either has or does not have QN data.
+    - Store a smallstring along with QN value and mod fac. Storage is an array (fixed-size) of triples name-val-modfac.
+    - `removeQNs(i)` to remove the QNs from Index `i`
+
+- In general, `dim` is now preferred to `m` to refer to the dimension of the Index
+
+- New tagging and priming functions:
+    - `setTags`, `noTags`, `addTags`, `removeTags`, `replaceTags`, `prime`, `setPrime`, `noPrime`
+        - V2 method `i.noprime()` is replaced by `i.noPrime()`
+        - V2 method `i.mapprime(0,1)` is replaced by `i.replaceTags("0","1")`
+        - V2 method `i.noprimeEquals(j)` is replaced by `noPrime(i)==noPrime(j)`
+    - All functions have in-place versions and free versions:
+        - `i.addTags("a")` adds the Tag "a" in-place
+        - `addTags(i,"a")` creates a copy of `i` with the Tag "a" added
+    - The same tagging and priming functions also work on IndexVal, IndexSet, ITensor, MPS and MPO
+
+- `sim(i)` creates a new Index with the same properties as `i` except with a new `id` (in V2, it set the prime level to zero)
+
+- New accessor methods for properties of an Index:
+    - `dim(i)` to get dimension of Index `i` (instead of `i.m()` in V2)
+    - `tags(i)` to get the TagSet of Index `i` (supercedes the IndexType and Index name of V2)
+    - `primeLevel(i)` for prime level of an Index `i` (instead of `i.primeLevel()` in V2)
+        - NOTE: the prime level is included in the TagSet as a special "integer tag"
+    - `id(i)` to get the id (instead of `i.id()` in V2)
+    - `dir(i)` to get the arrow directions (instead of `i.dir()` in V2)
+    - `hasTags(i,"a,b")` checks if Index `i` has the tags "a" and "b"
+    - `nblock(i)` to get the number of QN blocks of Index `i` (previously `i.nblock()` in V2)
+    - `qn(i,b)` to get the QN of block `b` of Index `i` (previously `i.qn(b)`)
+    - `blocksize(i,b)` to get the size of block `b` of Index `i` (previously `i.blocksize(b)` in V2)
+
+- New arrow manipulation functions:
+    - `i.dag()` and `dag(i)` to reverse the arrow direction, either in-place or by making a copy
+    - `i.setDir(In)` to set the direction of an Index `i` to `In`
+
+# Changes to IndexSet
+
+- Added `order(is)` and `length(is)` as preferred methods for getting the number if Indices in IndexSet `is` (previously `is.r()` in V2)
+
+- Add conversion of the following to IndexSet:
+    - `std::initializer_list<Index>`
+    - `std::array<Index,N>`
+    - `std::vector<Index>`
+    - `IndexSet`,`IndexSet`
+    - `Index`,`IndexSet`
+    - `IndexSet`,`Index`
+    - Functions accepting `IndexSet` as an input will accept the above as well. Functions accepting lists of indices (such as special ITensor constructors) are more consistent about accepting IndexSets.
+
+- Add `sim(IndexSet)`, `sim(IndexSet,IndexSet)`, `sim(IndexSet,TagSet)` to create a new IndexSet with indices replaced by similar indices (or optionally, only the specified indices)
+
+- IndexSet set operations:
+    - Add `hasSameInds(is1,is2)` for set equality of IndexSet `is1` and `is2`
+    - Add `hasInds(is1,is2)` to check if IndexSet `is2` is a subset of IndexSet `is1`
+    - Add `unionInds(IndexSet,IndexSet)->IndexSet` and `unionInds({IndexSet,IndexSet,...})` to get set union
+    - Add `uniqueInds(IndexSet,IndexSet)` and `uniqueInds(IndexSet,{IndexSet,...})` to get set difference
+    - Add `commonInds(IndexSet,IndexSet)` to get set intersection
+    - Add `noncommonInds(IndexSet,IndexSet)` to get set symmetric difference
+    - These functions respect the ordering of the input Indices
+
+- Finding Indices in an IndexSet:
+    - Add `findInds(IndexSet,TagSet)` to get a subset containing tags in the tagset
+    - Add `findIndsExcept(IndexSet,TagSet)` to get a subset not containing tags in the tagset
+    - `findIndex(IndexSet,TagSet)` finds the Index containing the tags of the specified TagSet. Returns a null Index `Index()` of none are found, and errors if more than one are found (this replaces `findType` in V2, where the first Index found was returned).
+    - `findIndex(IndexSet,Arrow)` of V2 removed
+
+- Added `equals(IndexSet,IndexSet)` to check if IndexSets are exactly equal (same indices in the same order)
+
+- IndexSet tagging and priming functions:
+  - Removed `mapPrime(1,2,...)`, use `replaceTags("1","2",...)` instead
+  - Prime level can be accessed through TagSet, i.e. `findIndex(A,"Site,1")` means Index with tag "Site" and prime level 1
+
+- IndexSet properties:
+    - `maxDim(is)` and `minDim(is)` to get the maximum and minimum Index dimensions in the IndexSet (replaces `maxM(is)` and `minM(is)`)
+
+# Changes to ITensor
+
+- Accessing values of an ITensor:
+    - Make `elt(T,i=1,j=2)` for complex storage throw an error, require using `eltC(T,i=1,j=2)` (use `real(eltC(T,i=1,j=2))` to get the old behavior).
+    - Replace `T.real(i=2,j=2) and `T.cplx(i=2,j=2)` to `elt(T,i=2,j=2)` and `eltC(T,i=2,j=2)` (kept .real and .cplx just for backwards compatibility).
+    - Added `elt(T,vector<IndexVal>)` and `eltC(T,vector<IndexVal>)`
+    - Added `elt(T,vector<int>)` and `eltC(T,vector<int>)`
+
+- Changes to ITensor constructors:
+    - Deprecate `randomTensor`, `matrixTensor`, `diagTensor` in favor of `randomITensor`, `matrixITensor`, `diagITensor` (deprecation warnings)
+    - All ITensor constructors like `ITensor(...)`, `randomITensor(...)`, `diagITensor(...)`, etc. now accept Index collections convertible to IndexSet (see IndexSet changes).
+
+- Changes to ITensor decompositions:
+    - `diagHermitian` now does no truncation, use `diagPosSemiDef` if the ITensor is approximately positive semi-definite to perform truncations
+    - Add versions of ITensor decompositions that return tuples of outputs:
+       - `svd(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,Index,Index>`
+       - `factor(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,Index>`
+       - `denmatDecomp(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,Index>`
+       - `diagPosSemiDef(ITensor) -> tuple<ITensor,ITensor,Index>`
+       - `diagHermitian(ITensor) -> tuple<ITensor,ITensor,Index>`
+       - `eigen(ITensor) -> tuple<ITensor,ITensor,Index>`
+    - Deprecate "Maxm", "Minm" args in favor of "MaxDim", "MinDim" in svd(), diagPosSemiDef(), factorize(), dmrg(), idmrg(), etc.
+    - Add "TruncateDegenerate" arg to `svd()` and `diagPosSemiDef()` function to switch on and off whether degenerate subspaces will be truncated. False by default. Defaults to true for MPS functions.
+
+- Replacing Indices in ITensors:
+    - Optimize `A*delta(i,j)` contraction so that if `A` has Index `i` or `j` (but not both), no contraction occurs and the Index is just replaced in the IndexSet
+    - Deprecate reindex(ITensor,Index,Index,...), replace with replaceInds(ITensor,IndexSet,IndexSet) that does not ignore prime levels and internally calls delta() (deprecation error)
+    - Add `swapInds(A,{i,j,k},{a,b,c})` to swap the Indices i<->a, j<->b, etc. a certain tag constraint
+
+- More Index operations:
+    - `findIndex(ITensor,TagSet)` to get the index that has tags in a TagSet (throws error if there are more than one)
+    - `findInds(ITensor,TagSet)` to get all indices that have the tags in a TagSet
+    - `hasInds(ITensor,IndexSet)` to see if the ITensor has the specified Indices
+    - Added `uniqueInds(A,{B,C})` and `uniqueIndex(A,{B,C}[,ts])` notation for getting the unique indices/index under
+    - Add `inds(ITensor)` as preferred alternative to `ITensor.inds()`
+    - Add `index(ITensor,int)` as preferred alternative to `ITensor.index(int)`
+    - `indexPosition(ITensor,Index) -> int` to get the position of the Index in the IndexSet of the ITensor (in V2, was `findIndex(ITensor,Index) -> int`)
+
+- Tagging and priming functions:
+    - Same as tagging functions of IndexSet
+    - Allow tag and prime functions to accept multiple indices for matching, also allow IndexSet for matching
+    - Add deprecation warning for prime(ITensor,Index,int) pointing towards prime(ITensor,int,Index)
+
+- Add `maxDim(ITensor)` and `minDim(ITensor)`
+
+- `permute(A,{i,j,k})` to fix the ordering of the Indices and permute the data of an ITensor (in V2, was called `order(A,i,j,k)`)
+
+- Deprecate `randomize(ITensor& T)` in favor of `T.randomize()`
+
+# Changes to MPS and MPO functions
+
+- Change default behavior of `MPS(sites,m)` constructor to be uninitialized MPS of size m
+    - m>1 only allowed with no QNs
+
+- New `randomMPS(SiteSet)` and `randomMPS(InitState)` constructor
+
+- New functions for getting inner products of MPS/MPO:
+    - Deprecate overlap(MPS x, MPS y) in favor of `inner(MPS x, MPS y)` (overlap is deprecated with a warning)
+        - `inner(MPS x, MPS y)` conjugates x and then matches the indices of `dag(x)` and `y`
+    - Deprecate `overlap(MPO A, MPO B)` in favor of `trace(MPO A, MPO B)` (overlap is deprecated with a warning)
+        - The MPOs must share one or two sets of indices. Neither of them get conjugated.
+    - Added `trace(A)` to get the trace of an MPO
+    - Deprecate `overlap(MPS x, MPO A[, MPO B], MPS y)` in favor of `inner(x,A[,B],y)` (overlap is deprecated with a warning)
+        - inner(x,A,y) = <x|A|y>, where the site indices of A|y> are matched to the site indices of <x|
+        - inner(x,A,B,y) = <x|AB|y>, where the site indices of AB|y> are matched to the site indices of <x|
+    - Also added `inner(MPO A, MPS x, MPO B, MPS y)` which does <Ax|By> (this helps to get the norm of A|x> with sqrt(inner(A,x,A,x))
+
+- New accessor methods for MPS/MPO:
+    - psi.A(i) -> psi(i)
+    - psi.Aref(i) -> psi.ref(i)
+    - psi.setA(i,T) -> psi.set(i,T)
+    - psi.N() -> length(psi)
+
+- New methods for getting indices of MPS/MPO:
+    - Remove SiteSet from MPS class (no more `psi.site()`), use `siteInds(MPS)` to get the indices of an MPS as an IndexSet and `SiteSet(siteInds(MPS))` to get the siteset
+    - Add `siteInds(MPS) -> IndexSet` to get an ordered IndexSet of the site indices
+    - Add `linkInds(MPS) -> IndexSet` to get an ordered IndexSet of the link indices
+    - Add `linkInds(MPS/MPO,int) -> IndexSet` to get the link indices of an MPS/MPO tensor
+    - Add `leftLinkIndex(MPS/MPO,int) -> Index` and `rightLinkIndex(MPS/MPO,int)` to get the left/right link index of an MPS/MPO
+        - Add `linkIndex(MPS/MPO,int) -> Index` is a shorthand for `rightLinkIndex`
+    - `siteIndex(MPS,int)` to get the site index of an MPS
+    - `siteIndex(MPO,int[,TagSet])` to get a site index of an MPO
+        - Since there are two site indices, one can use a TagSet like "0" or "1" to decide which site index to grab, by default it is "0"
+
+- New methods for replacing indices of MPS/MPO:
+    - Add `replaceSiteInds(MPS,IndexSet) -> MPS` to make a new MPS with site indices replaces by those in the IndexSet
+    - Add `replaceLinkInds(MPS,IndexSet) -> MPS` to make a new MPS with link indices replaces by those in the IndexSet
+    - Add `replaceSiteInds(MPO,IndexSet,IndexSet) -> MPO` to make a new MPO with specified site indices replaces by those in the IndexSet
+    - Add `swapSiteInds(MPO) -> MPO` to "transpose" an MPO (swap the site indices, site by site)
+
+- Tagging/priming methods for MPS/MPO:
+    - Added `addTags(MPS/MPO,...)`, `replaceTags(MPS/MPO,...)`, `prime(MPS/MPO,...)`, etc. (all the same functions as for IndexSet and ITensor)
+    - `.position(int)`, `.orthogonalize()`, and `.svdBond()` accept inputs with any tag convention and keep the proper tags of the input MPS/MPO
+    - Deprecate `MPO.primeall()` in favor of `MPO.prime()`
+
+- Replace maxM(MPS) and averageM(MPS) with maxLinkDim(MPS) and averageLinkDim(MPS)
+
+- Deprecate normalize(MPS& psi) in favor of psi.normalize()
+
+- Deprecate "Maxm", "Minm" args in favor of "MaxDim", "MinDim" in dmrg(), idmrg(), etc.
+
+- Site and link indices now have a tag convention:
+    - Sites have tags "Site,n=1" and then a tag for the SiteSet
+        - For MPOs, sites have tags "Site,n=1,0" and "Site,n=1,1"
+    - Links have tags "Link,l=1"
+    - Site and Link IndexTypes removed in favor of tags
+
+- `toMPO(AutoMPO)` is the preferred way to construct an MPO from an AutoMPO
+
+- Add `hasQNs(MPS/MPO)` to check if an MPS/MPO has QNs conserved
+
+# Changes to applyMPO, nmultMPO and DMRG
+
+- Add "Silent" arg in DMRG to suppress all output
+
+- Make DMRG return the optimized MPS: `auto [E,psi] = dmrg(H,psi0,args)`
+
+- Changes to applyMPO:
+    - `applyMPO(A,x) -> y`, y now has the exact site indices of A|x> and the link tags of x (to allow more general tag conventions)
+    - Remove support for zipUpApplyMPO, exactApplyMPO, fitApplyMPO interfaces
+
+- Added `errMPOProd(MPS y, MPO A, MPS x)` to measure the error ||y> - A|x>|
+    - Deprecated `checkMPOProd`
+
+- Changes to nmultMPO:
+    - nmultMPO(A,B) -> C, C now has the exact site indices of AB and the link tags of A (to allow more general tag conventions)
+
+- DMRG operations:
+    - `idmrg()` function moved to it's own repo (https://github.com/ITensor/iDMRG)
+    - Deprecate "Maxm", "Minm" args in favor of "MaxDim", "MinDim" in dmrg()
+    - In Sweeps object, added deprecation warning for .maxm() and .minm(), saying to use .maxdim() and .mindim()
+
+# Changes to SiteType and SiteSets
+
+- SiteType changes:
+    - Default constructors `SpinHalfSite()`, `SpinOneSite()`, etc. now make a site, but without an `"n="+str(n)` tag (before made an empty Index)
+    - Specify the site number with `{"SiteNumber=",n}` arg, instead of `SpinHalf(int n, Args args)` (old version kept for backwards compatibility)
+    - `index(SiteType) -> Index`, `op(SiteType,string) -> ITensor, `state(SiteType,string) -> IndexVal` now have free function versions (in V2, they were only member functions)
+
+- SiteSet changes:
+    - Use `Electron(10,{"ConserveQNs=",false})` to get spinful electrons with no QNs
+        - SiteSets except the default one default to `{"ConserveQNs=",true}`
+    - New `Boson` SiteType and `BosonSite` SiteSet
+    - Rename `HubbardSite` -> `ElectronSite` (deprecated with a typedef)
+    - Rename `SpinlessSite` -> `FermionSite` (deprecated with a typedef)
+    - Make `op(sites,i,"Up")` a free function
+    - Add `SiteSet(IndexSet)` constructor
+    - Add `inds(SiteSet) -> IndexSet` function to get the indices of a SiteSet as an IndexSet
+
+
 <a name="v2.1.1"></a>
 ## [Version 2.1.1](https://github.com/ITensor/ITensor/tree/v2.1.1) (Aug 8, 2017) ##
 
