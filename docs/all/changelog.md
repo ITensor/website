@@ -150,6 +150,7 @@ modify `A` in-place and free functions do not perform modifications of the input
 - Changes to ITensor constructors:
     - Deprecate `randomTensor`, `matrixTensor`, `diagTensor` in favor of `randomITensor`, `matrixITensor`, `diagITensor` (deprecation warnings)
     - All ITensor constructors like `ITensor(...)`, `randomITensor(...)`, `diagITensor(...)`, etc. now accept Index collections convertible to IndexSet (see IndexSet changes).
+    - `Combiner(IndexSet) -> tuple<ITensor,Index>` now returns a tuple of the combiner ITensor and the new combined Index.
 
 - `removeQNs(ITensor A) -> ITensor` makes a new ITensor with QNs removed.
 
@@ -282,7 +283,7 @@ modify `A` in-place and free functions do not perform modifications of the input
 
 - SiteSet changes:
     - Use `Electron(10,{"ConserveQNs=",false})` to get spinful electrons with no QNs
-        - SiteSets except the default one default to `{"ConserveQNs=",true}`
+        - SiteSets except for the default one default to `{"ConserveQNs=",true}`
     - New `Boson` SiteType and `BosonSite` SiteSet
     - Rename `HubbardSite` -> `ElectronSite` (deprecated with a typedef)
     - Rename `SpinlessSite` -> `FermionSite` (deprecated with a typedef)
