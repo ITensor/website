@@ -49,7 +49,7 @@ For help upgrading an existing code to version 3, see the [[upgrade guide|upgrad
 - Getting a tensor element as a real number immediately throws an error if the tensor
   has complex storage, even if that element has zero imaginary part.
 
-# General changes
+### General changes
 
 - Changed license to Apache 2.0 per Flatiron Institute policy
 
@@ -58,7 +58,7 @@ modify `A` in-place and free functions do not perform modifications of the input
 
 - `str(int) -> string` helper function added to make it easier to make tags, i.e. `"n="+str(n)` to make the tag `"n=2"` if `int n = 2`
 
-# Changes to Index
+### Changes to Index class
 
 - Changes to Index constructors:
     - `Index(2)` for Index of size 2
@@ -100,7 +100,7 @@ modify `A` in-place and free functions do not perform modifications of the input
     - `i.dag()` and `dag(i)` to reverse the arrow direction, either in-place or by making a copy
     - `i.setDir(In)` to set the direction of an Index `i` to `In`
 
-# Changes to IndexSet
+### Changes to IndexSet class
 
 - Added `order(is)` and `length(is)` as preferred methods for getting the number if Indices in IndexSet `is` (previously `is.r()` in V2)
 
@@ -139,7 +139,7 @@ modify `A` in-place and free functions do not perform modifications of the input
 - IndexSet properties:
     - `maxDim(is)` and `minDim(is)` to get the maximum and minimum Index dimensions in the IndexSet (replaces `maxM(is)` and `minM(is)`)
 
-# Changes to ITensor
+### Changes to ITensor functions
 
 - Accessing values of an ITensor:
     - Make `elt(T,i=1,j=2)` for complex storage throw an error, require using `eltC(T,i=1,j=2)` (use `real(eltC(T,i=1,j=2))` to get the old behavior).
@@ -150,6 +150,8 @@ modify `A` in-place and free functions do not perform modifications of the input
 - Changes to ITensor constructors:
     - Deprecate `randomTensor`, `matrixTensor`, `diagTensor` in favor of `randomITensor`, `matrixITensor`, `diagITensor` (deprecation warnings)
     - All ITensor constructors like `ITensor(...)`, `randomITensor(...)`, `diagITensor(...)`, etc. now accept Index collections convertible to IndexSet (see IndexSet changes).
+
+- `removeQNs(ITensor A) -> ITensor` makes a new ITensor with QNs removed.
 
 - Changes to ITensor decompositions:
     - `diagHermitian` now does no truncation, use `diagPosSemiDef` if the ITensor is approximately positive semi-definite to perform truncations
@@ -188,7 +190,7 @@ modify `A` in-place and free functions do not perform modifications of the input
 
 - Deprecate `randomize(ITensor& T)` in favor of `T.randomize()`
 
-# Changes to MPS and MPO functions
+### Changes to MPS and MPO functions
 
 - Change default behavior of `MPS(sites,m)` constructor to be uninitialized MPS of size m
     - m>1 only allowed with no QNs
@@ -202,15 +204,15 @@ modify `A` in-place and free functions do not perform modifications of the input
         - The MPOs must share one or two sets of indices. Neither of them get conjugated.
     - Added `trace(A)` to get the trace of an MPO
     - Deprecate `overlap(MPS x, MPO A[, MPO B], MPS y)` in favor of `inner(x,A[,B],y)` (overlap is deprecated with a warning)
-        - inner(x,A,y) = <x|A|y>, where the site indices of A|y> are matched to the site indices of <x|
-        - inner(x,A,B,y) = <x|AB|y>, where the site indices of AB|y> are matched to the site indices of <x|
+        - `inner(x,A,y)` = <x|A|y>, where the site indices of A|y> are matched to the site indices of <x|
+        - `inner(x,A,B,y)` = <x|AB|y>, where the site indices of AB|y> are matched to the site indices of <x|
     - Also added `inner(MPO A, MPS x, MPO B, MPS y)` which does <Ax|By> (this helps to get the norm of A|x> with sqrt(inner(A,x,A,x))
 
 - New accessor methods for MPS/MPO:
-    - psi.A(i) -> psi(i)
-    - psi.Aref(i) -> psi.ref(i)
-    - psi.setA(i,T) -> psi.set(i,T)
-    - psi.N() -> length(psi)
+    - `psi.A(i) -> psi(i)`
+    - `psi.Aref(i) -> psi.ref(i)`
+    - `psi.setA(i,T) -> psi.set(i,T)`
+    - `psi.N() -> length(psi)`
 
 - New methods for getting indices of MPS/MPO:
     - Remove SiteSet from MPS class (no more `psi.site()`), use `siteInds(MPS)` to get the indices of an MPS as an IndexSet and `SiteSet(siteInds(MPS))` to get the siteset
@@ -234,23 +236,23 @@ modify `A` in-place and free functions do not perform modifications of the input
     - `.position(int)`, `.orthogonalize()`, and `.svdBond()` accept inputs with any tag convention and keep the proper tags of the input MPS/MPO
     - Deprecate `MPO.primeall()` in favor of `MPO.prime()`
 
-- Replace maxM(MPS) and averageM(MPS) with maxLinkDim(MPS) and averageLinkDim(MPS)
+- Replace `maxM(MPS)` and `averageM(MPS)` with `maxLinkDim(MPS)` and `averageLinkDim(MPS)`
 
-- Deprecate normalize(MPS& psi) in favor of psi.normalize()
+- Deprecate `normalize(MPS& psi)` in favor of `psi.normalize()`
 
 - Deprecate "Maxm", "Minm" args in favor of "MaxDim", "MinDim" in dmrg(), idmrg(), etc.
 
 - Site and link indices now have a tag convention:
-    - Sites have tags "Site,n=1" and then a tag for the SiteSet
+    - Site indices have tags "Site,n=1" and then a tag for the SiteSet
         - For MPOs, sites have tags "Site,n=1,0" and "Site,n=1,1"
-    - Links have tags "Link,l=1"
+    - Link indices have tags "Link,l=1"
     - Site and Link IndexTypes removed in favor of tags
 
 - `toMPO(AutoMPO)` is the preferred way to construct an MPO from an AutoMPO
 
 - Add `hasQNs(MPS/MPO)` to check if an MPS/MPO has QNs conserved
 
-# Changes to applyMPO, nmultMPO and DMRG
+### Changes to applyMPO, nmultMPO and DMRG
 
 - Add "Silent" arg in DMRG to suppress all output
 
@@ -258,20 +260,20 @@ modify `A` in-place and free functions do not perform modifications of the input
 
 - Changes to applyMPO:
     - `applyMPO(A,x) -> y`, y now has the exact site indices of A|x> and the link tags of x (to allow more general tag conventions)
-    - Remove support for zipUpApplyMPO, exactApplyMPO, fitApplyMPO interfaces
+    - Remove support for `zipUpApplyMPO`, `exactApplyMPO`, `fitApplyMPO` interfaces
 
 - Added `errMPOProd(MPS y, MPO A, MPS x)` to measure the error ||y> - A|x>|
     - Deprecated `checkMPOProd`
 
 - Changes to nmultMPO:
-    - nmultMPO(A,B) -> C, C now has the exact site indices of AB and the link tags of A (to allow more general tag conventions)
+    - `nmultMPO(A,B) -> C`, C now has the exact site indices of AB and the link tags of A (to allow more general tag conventions)
 
 - DMRG operations:
     - `idmrg()` function moved to it's own repo (https://github.com/ITensor/iDMRG)
     - Deprecate "Maxm", "Minm" args in favor of "MaxDim", "MinDim" in dmrg()
     - In Sweeps object, added deprecation warning for .maxm() and .minm(), saying to use .maxdim() and .mindim()
 
-# Changes to SiteType and SiteSets
+### Changes to SiteType and SiteSets
 
 - SiteType changes:
     - Default constructors `SpinHalfSite()`, `SpinOneSite()`, etc. now make a site, but without an `"n="+str(n)` tag (before made an empty Index)
