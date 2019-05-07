@@ -74,6 +74,8 @@ modify `A` in-place and free functions do not perform modifications of the input
 
 - New tagging and priming functions:
     - `setTags`, `noTags`, `addTags`, `removeTags`, `replaceTags`, `prime`, `setPrime`, `noPrime`
+        - See the [[IndexSet docs|https://www.itensor.org/docs.cgi?vers=cppv3&page=classes/indexset]] for more details.
+        - NOTE: the `prime` function, when using Indices for matching, now match the exact Index without ignoring the prime level. For example: `auto i = Index(i,"i"); auto is = IndexSet(i,prime(i),prime(i,2)); prime(is,3,i);` only primes Index `i` in the IndexSet. To prime all of the indices, use `prime(is,"i")`.
         - V2 method `i.noprime()` is replaced by `i.noPrime()`
         - V2 method `i.mapprime(0,1)` is replaced by `i.replaceTags("0","1")`
         - V2 method `i.noprimeEquals(j)` is replaced by `noPrime(i)==noPrime(j)`
@@ -181,7 +183,7 @@ modify `A` in-place and free functions do not perform modifications of the input
     - `indexPosition(ITensor,Index) -> int` to get the position of the Index in the IndexSet of the ITensor (in V2, was `findIndex(ITensor,Index) -> int`)
 
 - Tagging and priming functions:
-    - Same as tagging functions of IndexSet
+    - Same as tagging/priming functions of IndexSet
     - Allow tag and prime functions to accept multiple indices for matching, also allow IndexSet for matching
     - Add deprecation warning for prime(ITensor,Index,int) pointing towards prime(ITensor,int,Index)
 
@@ -233,7 +235,7 @@ modify `A` in-place and free functions do not perform modifications of the input
     - Add `swapSiteInds(MPO) -> MPO` to "transpose" an MPO (swap the site indices, site by site)
 
 - Tagging/priming methods for MPS/MPO:
-    - Added `addTags(MPS/MPO,...)`, `replaceTags(MPS/MPO,...)`, `prime(MPS/MPO,...)`, etc. (all the same functions as for IndexSet and ITensor)
+    - Added `addTags(MPS/MPO,...)`, `replaceTags(MPS/MPO,...)`, `prime(MPS/MPO,...)`, etc. (all the same functions as for IndexSet and ITensor, applied to every tensor in the MPS/MPO)
     - `.position(int)`, `.orthogonalize()`, and `.svdBond()` accept inputs with any tag convention and keep the proper tags of the input MPS/MPO
     - Deprecate `MPO.primeall()` in favor of `MPO.prime()`
 
