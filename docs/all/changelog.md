@@ -74,8 +74,8 @@ modify `A` in-place and free functions do not perform modifications of the input
 
 - New tagging and priming functions:
     - `setTags`, `noTags`, `addTags`, `removeTags`, `replaceTags`, `prime`, `setPrime`, `noPrime`
-        - See the [[IndexSet docs|https://www.itensor.org/docs.cgi?vers=cppv3&page=classes/indexset]] for more details.
-        - NOTE: the `prime` function, when using Indices for matching, now match the exact Index without ignoring the prime level. For example: `auto i = Index(i,"i"); auto is = IndexSet(i,prime(i),prime(i,2)); prime(is,3,i);` only primes Index `i` in the IndexSet. To prime all of the indices, use `prime(is,"i")`.
+        - See the C++v3 version of the [[IndexSet docs|classes/indexset]] for more details.
+        - NOTE: the `prime` function, when using Indices for matching, now match the exact Index without ignoring the prime level. For example: `auto i = Index(2,"i"); auto is = IndexSet(i,prime(i),prime(i,2)); prime(is,3,i);` only primes Index `i` in the IndexSet. To prime all of the indices, use `prime(is,3,"i")`.
         - V2 method `i.noprime()` is replaced by `i.noPrime()`
         - V2 method `i.mapprime(0,1)` is replaced by `i.replaceTags("0","1")`
         - V2 method `i.noprimeEquals(j)` is replaced by `noPrime(i)==noPrime(j)`
