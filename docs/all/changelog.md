@@ -30,7 +30,7 @@ and many other similar improvements.
 
 For help upgrading an existing code to version 3, see the [[upgrade guide|upgrade2to3]].
 
-## Major Breaking Changes
+### Major Breaking Changes
 
 - C++17 is required to compile ITensor version 3. To upgrade your options.mk file, either
   create a new one from options.mk.sample, or replace `-std=c++11` with `-std=c++17`.
