@@ -33,8 +33,6 @@ Search the ITensor website: <div><gcse:search></gcse:search></div>
 
 * [[Contributing Documentation|contributing_docs]]
 
-* [[Version 1.x to 2.0 Transition Guide|v2transition_guide]]
-
 * [[Change Log|changelog]]
 
 * [[Helpful Reading|reading]]
