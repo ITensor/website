@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Ferromagnetism and Spin-Valley liquid states in Moiré Correlated Insulators](https://arxiv.org/abs/1905.00033), Xiao-Chuan Wu, Anna Keselman, Chao-Ming Jian, Kelly Ann Pawlak, Cenke Xu, arxiv:1905.00033
+
 * [Charge density wave in a doped Kondo chain](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.195109), Yixuan Huang, D. N. Sheng, and C. S. Ting, PhysRev[B,99,195109] (2019)
 
 * [Machine learning phase diagram in the half-filled one-dimensional extended Hubbard model](https://arxiv.org/abs/1904.06032), Kazuya Shinjo, Kakeru Sasaki, Satoru Hase, Shigetoshi Sota, Satoshi Ejima, Seiji Yunoki, Takami Tohyama, arxiv:1904.06032
