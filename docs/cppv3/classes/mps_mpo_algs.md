@@ -1,4 +1,4 @@
-# Algorithms for MPS and MPO (also IQMPS and IQMPO)
+# Algorithms for MPS and MPO
 
 
 ## Summing MPS

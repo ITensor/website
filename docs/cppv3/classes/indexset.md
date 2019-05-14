@@ -138,7 +138,7 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
       Print(inds[0]); //prints: (3|id=542)
 
 <a name="tag_methods"></a>
-## Tag Methods ##
+## Tag and Prime Methods ##
 
 Note: all of the following functions listed of the form:
 

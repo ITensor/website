@@ -16,6 +16,14 @@ For algorithms that take MPOs as input or which manipulate MPOs, see [[MPS and M
 
 Below we list methods that are unique to MPOs, for other methods refer to the [[MPS documentations|classes/mps]].
 
+## MPO Tag and Prime Methods
+
+MPO have the same tag and prime methods that are defined for
+ITensors, MPS and IndexSets. See the __Tag and Prime Methods__ section of the
+[[IndexSet documentation|classes/indexset]] for a complete list of methods.
+
+When applied to an MPO, the method is applied to every MPO tensor.
+
 ## Index Methods
 
 MPOs generally have the same Index functions as MPSs (see the __Index Methods__ section of the 

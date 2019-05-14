@@ -252,10 +252,10 @@ an [[InitState|classes/initstate]].
   Efficiently replace all tensors of this MPS with the corresponding tensors
   of another MPS `phi`, which must have the same number of sites.
 
-## MPS Tag Methods
+## MPS Tag and Prime Methods
 
-MPS have the same tagging methods that are defined for
-ITensors and IndexSets. See the __Tag Methods__ section of the
+MPS have the same tag and prime methods that are defined for
+ITensors and IndexSets. See the __Tag and Prime Methods__ section of the
 [[IndexSet documentation|classes/indexset]] for a complete list of methods.
 
 When applied to an MPS, the method is applied to every MPS tensor.

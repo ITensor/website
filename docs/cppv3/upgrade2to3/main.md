@@ -150,3 +150,38 @@ using now-deprecated features, but which are not required to make your code comp
   - when constructing a Sweeps object, replace the line `sweeps.maxm() = 10,20,40;`
     with `sweeps.maxdim() = 10,20,40;`
   - prefer to call dmrg as `auto [energy,psi] = dmrg(H,psi0,sweeps,"Quiet");`
+
+* **Changes to priming functions**
+  To accommodate the new tags interface, some priming functions have been superceded by tag
+  functions (since the prime level can be accessed through the new tag interface). Please see
+  the __Tag and Prime Methods__ section of the [[IndexSet docs|classes/indexset]] for more 
+  details on the new interface. This interface works for ITensor, MPS and MPO objects. For example:
+
+  - instead of `mapprime(T,0,1)`, use `replaceTags(T,"0","1")` (note that tags that are just 
+    integer numbers are interpreted as prime levels).
+  - instead of `swapPrime(T,0,1)`, use `swapTags(T,"0","1")`.
+  - for all tagging and priming methods, optional matching tags and indices are the last
+    input of the function (for example, use `prime(T,2,i)` to increase the prime level of 
+    Index `i` of ITensor `T` by two).
+  - indices used for matching are now always matched exactly, without ignoring the prime level. 
+    For example, if ITensor `auto T = ITensor(i,prime(i),j)` where Index `i` is 
+    `auto i = Index(2,"i")` and Index `j` is `Index(3,"j")`, to prime indices `i` and 
+    `prime(i)` use either `prime(T,{i,prime(i)})` or `prime(T,"i")` since `prime(T,i)` 
+    will only prime Index `i`).
+
+* **Changes to MPS and MPO Functions**
+  Some conventions and names have changed for common MPS and MPO functions, such as `applyMPO`
+  and `nmultMPO`. For more details, please see the [[MPS and MPO docs|classes/mps_mpo_algs]].
+
+  - the interfaces `exactApplyMPO` and `fitApplyMPO` have been removed in favor
+    of the single `applyMPO` function.
+  - when calling `auto y = applyMPO(A,x)`, for MPS `x` with unprimed site indices and MPO `A` with
+    pairs of prime and unprimed site indices, the resulting MPS `y` will have primed indices 
+    (or in general, the site indices that are not shared by MPO `A` and `x`). 
+    Use `y.replaceTags("1","0")` or `y.noPrime()` to get back an MPS with unprimed site indices.
+  - for MPOs `A` and `B` with pairs of primed and unprimed site indices, contract them together
+    with `auto C = nmultMPO(prime(A),B)`. The inputs must share one site index per tensor, and
+    the output MPO `C` will have the remaining unshared site indices (so one unprimed site index
+    and one site index of prime level 2). One can use `C.setPrime(1,"2")` or 
+    `C.replaceTags("2","1")` to get an MPO `C` with pairs of unprimed and single-primed indices.
+
