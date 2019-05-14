@@ -159,14 +159,14 @@ modify `A` in-place and free functions do not perform modifications of the input
 - Changes to ITensor decompositions:
     - `diagHermitian` now does no truncation, use `diagPosSemiDef` if the ITensor is approximately positive semi-definite to perform truncations
     - Add versions of ITensor decompositions that return tuples of outputs:
-       - `svd(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,Index,Index>`
-       - `factor(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,Index>`
-       - `denmatDecomp(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,Index>`
-       - `diagPosSemiDef(ITensor) -> tuple<ITensor,ITensor,Index>`
-       - `diagHermitian(ITensor) -> tuple<ITensor,ITensor,Index>`
-       - `eigen(ITensor) -> tuple<ITensor,ITensor,Index>`
+       - `svd(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor,ITensor>`
+       - `factor(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor>`
+       - `denmatDecomp(ITensor,IndexSet[,IndexSet]) -> tuple<ITensor,ITensor>`
+       - `diagPosSemiDef(ITensor) -> tuple<ITensor,ITensor>`
+       - `diagHermitian(ITensor) -> tuple<ITensor,ITensor>`
+       - `eigen(ITensor) -> tuple<ITensor,ITensor>`
     - Deprecate "Maxm", "Minm" args in favor of "MaxDim", "MinDim" in svd(), diagPosSemiDef(), factorize(), dmrg(), idmrg(), etc.
-    - Add "TruncateDegenerate" arg to `svd()` and `diagPosSemiDef()` function to switch on and off whether degenerate subspaces will be truncated. False by default. Defaults to true for MPS functions.
+    - Add "RespectDegenerate" arg to `svd()` and `diagPosSemiDef()` function to switch on and off whether degenerate subspaces will be truncated. False by default. Defaults to true for MPS functions.
 
 - Replacing Indices in ITensors:
     - Optimize `A*delta(i,j)` contraction so that if `A` has Index `i` or `j` (but not both), no contraction occurs and the Index is just replaced in the IndexSet

@@ -23,11 +23,11 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
     //of the decomposition and the new
     //indices created in the decomposition
 
-    auto [U,S,V,u,v] = svd(T,{l1,s1});
+    auto [U,S,V] = svd(T,{l1,s1});
 
     Print(norm(T-U*S*V)); //On the order of 1E-15
 
-    std::tie(U,S,V,u,v) = svd(T,{l1,s1},{"Cutoff",1E-4});
+    std::tie(U,S,V) = svd(T,{l1,s1},{"Cutoff",1E-4});
 
     Print(sqr(norm(T-U*S*V)/norm(T))); //On the order of 1E-4
 
@@ -42,7 +42,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
     auto H = randomITensorC(s1,s2,prime(s1),prime(s2));
     H = 0.5*(H+dag(swapTags(H,"0","1")));
 
-    auto [Q,D,q] = diagHermitian(H);
+    auto [Q,D] = diagHermitian(H);
 
     Print(norm(H-prime(Q)*D*dag(Q))); //On the order of 1E-15
 
@@ -51,13 +51,15 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
 * ```
   svd(ITensor T, IndexSet Uis[, IndexSet Vis],
-      Args args = Args::global()) -> std::tuple<ITensor,ITensor,ITensor,Index,Index>
+      Args args = Args::global()) -> std::tuple<ITensor,ITensor,ITensor>
   ```
 
   Compute the singular value decomposition of an ITensor `T`. A tuple of the `U`, `S` and `V` 
-  tensors of the decomposition, as well as the newly introduced indices u and v, is returned.
-  The product `U*S*V` is equal to T (up to truncation errors), and u (v) is the common index 
-  between U (V) and S.
+  tensors of the decomposition.
+  The product `U*S*V` is equal to T (up to truncation errors).
+
+  To get the newly introduced indices, you can use and `auto u = commonIndex(U,S)` and
+  `auto v= commonIndex(S,V)`.
   
   An IndexSet `Uis` is input along with `T` to specify which Indices of `T` end up
   on the `U` tensor of the decomposition, and the rest of the indices end up on the
@@ -109,14 +111,12 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   
       //Compute SVD without truncation
       //Specify we want l1, s1 to end up on U
-      auto [U,S,V,u,v] = svd(T,{l1,s1});
+      auto [U,S,V] = svd(T,{l1,s1});
   
-      Print(u == commonIndex(U,S)); //prints: true
-      Print(v == commonIndex(V,S)); //prints: true
       Print(norm(T-U*S*V)); //prints on order of 1E-15
   
       //compute approximate SVD
-      std::tie(U,S,V,u,v) = svd(T,{l1,s1},{"Cutoff",1E-4});
+      std::tie(U,S,V) = svd(T,{l1,s1},{"Cutoff",1E-4});
   
       Print(sqr(norm(T-U*S*V)/norm(T))); //prints on order of 1E-4
 
@@ -124,14 +124,16 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
 * ```
   diagHermitian(ITensor H,
-                Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
+                Args args = Args::global()) -> std::tuple<ITensor,ITensor>
   ```
 
   Diagonalize an ITensor T the can be interpreted as a Hermitian matrix under appropriate
   grouping of indices.
   Results in an ITensor `U` of orthonormal eigenvectors and diagonal ITensor `D` of real
-  eigenvalues such that `T==dag(U)*D*prime(U)`. Also return the Index `u` shared by `U`
-  and `D`. `D` contains indices `u` and `prime(u)`.
+  eigenvalues such that `T==dag(U)*D*prime(U)`.
+
+  To get the newly introduced index, you can use `auto u = commonIndex(U,D)`.
+  `D` contains indices `u` and `prime(u)`.
 
   The method assumes that the indices of T come in pairs, one index with prime level 0 and a 
   the same index but with prime level 1 (reflecting the Hermitian nature of T). 
@@ -152,19 +154,18 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
       //Make Hermitian tensor out of T
       auto H = T + swapTags(dag(T),"0","1");
 
-      auto [U,D,u] = diagHermitian(H); 
+      auto [U,D] = diagHermitian(H); 
+      auto u = commonIndex(U,D);
 
-      Print(u == commonIndex(U,D)); //prints: true
       Print(hasInds(D,{u,prime(u)})); //prints: true
       Print(norm(H-dag(U)*D*prime(U))); //prints on the order of 1E-15
 
 * ```
   diagPosSemiDef(ITensor H,
-                 Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
+                 Args args = Args::global()) -> std::tuple<ITensor,ITensor>
   ```
 
   Same as `diagHermitian` above, but allows truncation according to the eigenvalues.
-
   Truncation is performed assuming the ITensor, reinterpreted as a matrix, is approximately 
   positive semi-definite (i.e. the eigenvalues are approximately non-negative).
   If truncation is performed, negative eigenvalues will be set to zero.
@@ -196,15 +197,16 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
 * ```
   factor(ITensor T, IndexSet Ais[, IndexSet Bis],
-         Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
+         Args args = Args::global()) -> std::tuple<ITensor,ITensor>
   ```
 
   The "factor" decomposition is based on the SVD,
   but factorizes a tensor T into only two
   tensors `T==A*B` (up to truncation errors) where 
   A and B share a single common index.
-  The function returns `A` and `B` as ITensors, as well
-  as `l`, the common index of `A` and `B`.
+  The function returns `A` and `B` as ITensors.
+  The newly introduced index can be obtained with
+  `auto l = commonIndex(A,B)`.
   
   If the SVD of T is `T==U*S*V` where S is a diagonal
   matrix of singular values, then A and B
@@ -230,16 +232,15 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
       auto T = randomITensor(i,j,k,l);
 
       //Put i,k on A
-      auto [A,B,l] = factor(T,{i,k});
+      auto [A,B] = factor(T,{i,k});
 
-      Print(l == commonIndex(A,B)); //prints: true
       Print(norm(T-A*B)); //prints on the order of 1E-15
 
 
 * ```
   denmatDecomp(ITensor T, IndexSet Ais[, IndexSet Bis],
                Direction dir,
-               Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
+               Args args = Args::global()) -> std::tuple<ITensor,ITensor>
   ```
 
    Factorize a tensor T into products A and B such that `T==A*B` (up to truncation errors). 
@@ -310,7 +311,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   denmatDecomp(ITensor T, IndexSet Ais[, IndexSet Bis],
                Direction dir, 
                BigMatrixT PH,
-               Args args = Args::global()) -> std::tuple<ITensor,ITensor,Index>
+               Args args = Args::global()) -> std::tuple<ITensor,ITensor>
   ```
 
   Identical to denmatDecomp function described above, except before the decomposition the density matrix

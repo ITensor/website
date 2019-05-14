@@ -43,12 +43,11 @@ and we want to treat i and k as the "row" indices for the purpose of the SVD.
 
 To perform this SVD, we can call the function `svd` as follows:
 
-    auto [U,S,V,u,v] = svd(T,{i,k});
+    auto [U,S,V] = svd(T,{i,k});
 
-The notation `auto [U,S,V,u,v]` is a convenient C++17 feature that captures multiple return 
-values from a function and defines the variables U, S, V, u, and v all in one line.
-U, S, and V are ITensors, and u and v are Index objects linking U to S and S to V, 
-respectively.
+The notation `auto [U,S,V]` is a convenient C++17 feature that captures multiple return 
+values from a function and defines the variables `U`, `S`, and `V` all in one line.
+`U`, `S`, and `V` are ITensors.
 
 Diagrammatically the SVD operation above looks like:
 
@@ -72,7 +71,7 @@ product `U*S*V` gives us back an ITensor identical to T:
 
     auto T = randomITensor(i,j,k);
 
-    auto [U,S,V,u,v] = svd(T,{i,k});
+    auto [U,S,V] = svd(T,{i,k});
 
     Print(norm(U*S*V-T));
 
@@ -103,7 +102,7 @@ the following accuracy parameters:
 Let us revisit the example above, but also provide some of these accuracy parameters
 
     auto T = randomITensor(i,j,k);
-    auto [U,S,V,u,v] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",50});
+    auto [U,S,V] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",50});
 
 In the code above, we specified that a cutoff of @@\epsilon=10^{-2}@@ be used and that at
 most 50 singular values should be kept. We can check that the resulting factorization is now approximate
@@ -128,7 +127,7 @@ Note how the computed error is below the @@\epsilon@@ we requested.
 
     auto T = randomITensor(i,j,k);
 
-    auto [U,S,V,u,v] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",500});
+    auto [U,S,V] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",500});
 
     auto truncerr = sqr(norm(U*S*V-T)/norm(T));
     Print(truncerr);

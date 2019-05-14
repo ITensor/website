@@ -124,7 +124,7 @@ using now-deprecated features, but which are not required to make your code comp
 
       auto T = randomITensor(l1,s,l2);
 
-      auto [U,S,V,u,v] = svd(T,{l1,s});
+      auto [U,S,V] = svd(T,{l1,s});
 
 * **To access individual MPS tensors**, say of an MPS object `psi`, just
   call `psi(j)`. To replace the tensor at site j with a tensor `T`, call
