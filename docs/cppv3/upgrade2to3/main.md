@@ -142,7 +142,7 @@ using now-deprecated features, but which are not required to make your code comp
   - if using IQMPO and IQMPS, just replace these with `MPO` and `MPS` instead
     and make sure the indices or site set you use to construct these 
     carry QN block structure (you can print out these objects to see the QNs
-    and ITensor storage type)
+    and ITensor storage type). 
   - make sure to initialize the MPS you pass as an initial state to the `dmrg`
     function. In version 2, a non-QN MPS would be randomly initialized, but
     now you must initialize all MPS. See the sample/dmrg.cc code for an example
@@ -173,6 +173,12 @@ using now-deprecated features, but which are not required to make your code comp
   Some conventions and names have changed for common MPS and MPO functions, such as `applyMPO`
   and `nmultMPO`. For more details, please see the [[MPS and MPO docs|classes/mps_mpo_algs]].
 
+  - Use `removeQNs` to remove the QNs of an MPS or MPO, instead of converting from IQMPS to MPS 
+    or IQMPO to MPO.
+  - use `inner` and `innerC` instead of `overlap` and `overlapC` to get inner products of MPSs 
+    (and inner products of MPSs contracted with MPOs).
+  - use `trace` and `traceC` to get the trace of an MPO or the trace of the product of two
+    MPOs (superceding some use cases of `overlap`).
   - the interfaces `exactApplyMPO` and `fitApplyMPO` have been removed in favor
     of the single `applyMPO` function.
   - when calling `auto y = applyMPO(A,x)`, for MPS `x` with unprimed site indices and MPO `A` with
