@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Operationally accessible entanglement of one dimensional spinless fermions](https://arxiv.org/abs/1905.03312), Hatem Barghathi, Emanuel Casiano-Diaz, Adrian Del Maestro, arxiv:1905.03312
+
+* [Spectral response of Josephson junctions with low-energy quasiparticles](https://arxiv.org/abs/1905.03275), Anna Keselman, Chaitanya Murthy, Bernard van Heck, Bela Bauer, arxiv:1905.03275
+
 * [Optimization of infinite projected entangled pair states: the role of multiplets and their breaking](https://arxiv.org/abs/1905.02164), J. Hasik, F. Becca, arxiv:1905.02164
 
 * [Ferromagnetism and Spin-Valley liquid states in Moiré Correlated Insulators](https://arxiv.org/abs/1905.00033), Xiao-Chuan Wu, Anna Keselman, Chao-Ming Jian, Kelly Ann Pawlak, Cenke Xu, arxiv:1905.00033
