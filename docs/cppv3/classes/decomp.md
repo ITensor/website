@@ -95,7 +95,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   
   * "RightTags" &mdash; set just the tags of the index connecting S to V.
      
-  * "TruncateDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
+  * "RespectDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
     Default is `false`.
 
   <div class="example_clicker">Click to Show Example</div>
@@ -187,7 +187,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
 
    * "Truncate" &mdash; if set to `false`, no truncation occurs. Otherwise truncation parameters ("Cutoff","MaxDim", "MinDim") will be used to perform a truncation of singular values.
 
-  * "TruncateDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
+  * "RespectDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
     Default is `false`.
 
    <br/>
@@ -291,7 +291,7 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   * "ShowEigs" &mdash; if `true`, print lots of extra information about the truncation of singular values.
     Default is `false`.
 
-  * "TruncateDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
+  * "RespectDegenerate" &mdash; if `true`, degenerate subspaces will be respected (i.e., if the the truncation lies within a set of degenerate singular values based on a numerical threshold, the degenerate subspace will either be entirely truncated or kept, depending on the other argument options).
     Default is `false`.
 
   <div class="example_clicker">Click to Show Example</div>
