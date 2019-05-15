@@ -188,4 +188,4 @@ and "itensor/mps/autompo.cc".
 
 
 <br/>
-_This page current as of version 2.1.0_
+_This page current as of version 3.0.0_

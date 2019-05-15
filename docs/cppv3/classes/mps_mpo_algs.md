@@ -257,4 +257,4 @@ To do:
 -->
 
 <br/>
-_This page current as of version 2.0.7_
+_This page current as of version 3.0.0_
