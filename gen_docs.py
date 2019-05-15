@@ -22,10 +22,10 @@ import cgitb; cgitb.enable()
 
 #################################
 
-versions = {"cppv2" : "C++v2", 
-            "cppv3" : "C++v3"}
-            #"julia" : "Julia"}
-default_version = "cppv2"
+versions = [["cppv3","C++v3"], 
+            ["cppv2","C++v2"]]
+            #["julia","Julia"]
+default_version = "cppv3"
 
 reldocpath = "docs/"
 prenav_header_fname = "docs_header_prenav.html"
@@ -240,7 +240,7 @@ def generate():
     # Create version information line
     vinfo = "<span class='versions' style='float:right;'>"
     n = 0
-    for (v,vname) in versions.iteritems():
+    for (v,vname) in versions:
         if n > 0: vinfo += "&nbsp;|&nbsp;"
         if v == vers:
             vinfo += "<span style='outline:solid 1px;font-weight:bold;'>%s</span>"%(vname)
@@ -279,9 +279,9 @@ def generate():
     print nav
     print vinfo
     print "".join(postnav_header_file.readlines())
-    if vers == "cppv3" and (not inall):
-        print "<span style='color:red;'>ITensor version 3 has not been released yet. \
-               This documentation is a preview only.</span><br/><br/>" 
+    #if vers == "cppv3" and (not inall):
+    #    print "<span style='color:red;'>ITensor version 3 has not been released yet. \
+    #           This documentation is a preview only.</span><br/><br/>" 
     print bodyhtml
 
     for bl in backlinks: print bl
