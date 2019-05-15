@@ -5,6 +5,8 @@
 The preferred method is to "clone" ITensor version 2 using the following command:
 <div class="commandline"><pre>
 git clone https://github.com/ITensor/ITensor itensor
+cd itensor
+git checkout v2
 </pre></div>
 from within the folder where you would like the itensor/ folder to be located (the location is up to you).
 
