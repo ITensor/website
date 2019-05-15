@@ -98,7 +98,7 @@
     <p>
     <b>Installing ITensor:</b>
     <ol>
-    <li>Make sure you have an up-to-date C++11 compiler and LAPACK installed. On UNIX systems, use your
+    <li>Make sure you have an up-to-date C++17 compiler and LAPACK installed. On UNIX systems, use your
     package manager; on Mac OS install the free Xcode app from the app store;
     for Windows install <a href="https://www.cygwin.com" target="_blank">cygwin</a>.</li>
     <li>Clone the latest version of ITensor: <pre><code>git clone https://github.com/ITensor/ITensor itensor</code></pre>
@@ -116,9 +116,8 @@
         as a starting point for making your own code.</li>
     </ol>
     <p>
-    For more details, read the full <a href="docs.cgi?page=install&vers=cppv2">installation</a> instructions.</br>
-    For a walkthrough of a simple ITensor program, read the <a href="docs.cgi?page=tutorials/quickstart">ITensor basics quick start</a> tutorial.</br>
-    Browse the <a href="docs.cgi">documentation pages</a> to learn more about ITensor.
+    For more details, read the full <a href="docs.cgi?page=install&vers=cppv3">installation</a> instructions.</br>
+    Browse the <a href="docs.cgi?page=main&vers=cppv3">documentation pages</a> to learn more about ITensor.
     </p>
     
 
@@ -179,9 +178,9 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
     <span style="color:#5081AA">//Make site j the MPS "orthogonality center"</span>
     psi.position(j);
     <span style="color:#5081AA">//Measure magnetization</span>
-    Real Szj = elt(psi.A(j)
+    Real Szj = elt(psi(j)
                * op(sites,"Sz",j)
-               * dag(prime(psi.A(j),"Site")));
+               * dag(prime(psi(j),"Site")));
     println("Sz_",j," = ",Szj);
     }
 </pre>
