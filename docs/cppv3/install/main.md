@@ -2,18 +2,12 @@
 
 ## Downloading the Library
 
-You can preview the unreleased ITensor version 3 by using the following commands:
+You can download ITensor version 3 by using the following commands:
 <div class="commandline"><pre>
 git clone https://github.com/ITensor/ITensor itensor
 cd itensor
-git checkout rc3
 </pre></div>
-
-WARNING: right now, version 3 is very actively developed, and daily breaking changes can be expected.
-If you are using version 3, for now check the commit log before pulling to check what recent changes 
-might break your code.
-We will update the Github page and this page with further instructions once ITensor version 3 is officially
-released.
+You can issue these commands within any folder you like on your computer.
 
 If you do not have git on your computer, you can obtain it through your package manager or from the
 <a href="http://git-scm.com/" target="blank_">git website</a>.
@@ -78,7 +72,7 @@ to keep the original sample codes as a reference (and experiment on the copy).
 
 To build the sample apps, simply 'cd' into the "sample" folder and type 'make'.
 To build an individual app type 'make app_name' where app_name could be
-`dmrg`, `iqdmrg`, `exthubbard`, etc.
+`dmrg`, `dmrg_table`,  `exthubbard`, etc.
 
 
 ## Linking your own applications to the libraries
