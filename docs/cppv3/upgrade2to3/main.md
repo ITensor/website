@@ -5,6 +5,8 @@ when switching from ITensor version 2 to version 3.
 We also discuss some upgrades for specific tasks you 
 may have, such as a DMRG calculation.
 
+For much more detailed info about the changes made in version 3, see the [[changelog|changelog]].
+
 ## Major or Required Changes
 
 * **C++17 is required to compile the ITensor Library.** Switching to C++17
