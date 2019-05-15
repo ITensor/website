@@ -5,6 +5,7 @@
 
 This major update to ITensor features a number of changes to the design.
 
+
 Index objects now carry up to four "tag" strings instead of a name or
 IndexType as in version 2. These tags are useful for many tasks, including
 selecting a particular Index from a set, or preventing two Index objects
@@ -29,6 +30,11 @@ improvements to MPO and MPS algorithms to make them work for a broader range of 
 and many other similar improvements.
 
 For help upgrading an existing code to version 3, see the [[upgrade guide|upgrade2to3]].
+
+To move to version 3 if you have already cloned ITensor, 
+you have to switch to the `v3` branch. To do so, use the commands<br/>
+`git pull`<br/>
+`git checkout v3`<br/>
 
 ### Major Breaking Changes
 

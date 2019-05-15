@@ -7,6 +7,11 @@ may have, such as a DMRG calculation.
 
 For much more detailed info about the changes made in version 3, see the [[changelog|changelog]].
 
+To move to version 3 if you have already cloned ITensor, 
+you have to switch to the `v3` branch. To do so, use the commands<br/>
+`git pull`<br/>
+`git checkout v3`<br/>
+
 ## Major or Required Changes
 
 * **C++17 is required to compile the ITensor Library.** Switching to C++17
