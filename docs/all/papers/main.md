@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Quench dynamics of two component dipolar Fermions in a Quasiperiodic potential](https://arxiv.org/abs/1905.06677), Bradraj Pandey, Swapan K. Pati, arxiv:1905.06677
+
+* [Dynamic response of spin-2 bosons in one-dimensional optical lattices](https://arxiv.org/abs/1905.06587), Florian Lange, Satoshi Ejima, Holger Fehske, arxiv:1905.06587
+
 * [Operationally accessible entanglement of one dimensional spinless fermions](https://arxiv.org/abs/1905.03312), Hatem Barghathi, Emanuel Casiano-Diaz, Adrian Del Maestro, arxiv:1905.03312
 
 * [Spectral response of Josephson junctions with low-energy quasiparticles](https://arxiv.org/abs/1905.03275), Anna Keselman, Chaitanya Murthy, Bernard van Heck, Bela Bauer, arxiv:1905.03275
