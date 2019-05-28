@@ -8,6 +8,14 @@
  
 ## 2019
 
+* [Domain wall problem in the quantum XXZ chain and semiclassical behavior close to the isotropic point](https://arxiv.org/abs/1905.08756), Grégoire Misguich, Nicolas Pavloff, Vincent Pasquier, arxiv:1905.08756
+
+* [Interaction distance in the extended XXZ model](https://arxiv.org/abs/1905.07239), Kristian Patrick, Vincent Caudrelier, Zlatko Papic, Jiannis K. Pachos, arxiv:1905.07239
+
+* [Some ground-state expectation values for the free parafermion Z(N) spin chain](https://arxiv.org/abs/1905.08384), Zi-Zhong Liu, Robert A. Henry, Murray T. Batchelor, Huan-Qiang Zhou, arxiv:1905.08384
+
+* [The isolated Heisenberg magnet as a quantum time crystal](https://arxiv.org/abs/1905.08266), Marko Medenjak, Berislav Buca, Dieter Jaksch, arxiv:1905.08266
+
 * [Quench dynamics of two component dipolar Fermions in a Quasiperiodic potential](https://arxiv.org/abs/1905.06677), Bradraj Pandey, Swapan K. Pati, arxiv:1905.06677
 
 * [Dynamic response of spin-2 bosons in one-dimensional optical lattices](https://arxiv.org/abs/1905.06587), Florian Lange, Satoshi Ejima, Holger Fehske, arxiv:1905.06587
