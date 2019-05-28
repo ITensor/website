@@ -34,10 +34,11 @@ If you do not have git on your computer, you can obtain it through your package 
    and follow the remaining instructions.
 
 3. Within the options.mk file, choose which compiler to use by setting the `CCCOM` 
-   variable. Make sure whichever compiler you select supports C++11, the latest version of the
-   C++ standard (this is true for Clang v3.0; and G++ v4.8 and after) as well as the C++11 
-   standard libraries and make sure to set the flag -std=c++11 or similar to enable C++11
-   language support.
+   variable. Make sure whichever compiler you select supports C++17, the latest version of the
+   C++ standard (this is true for [Clang v4.0 and after](https://clang.llvm.org/cxx_status.html)
+   and [G++ v7 and after](https://www.gnu.org/software/gcc/projects/cxx-status.html#cxx17)) as 
+   well as the C++17 standard libraries and make sure to set the flag -std=c++17 or similar 
+   to enable C++17 language support.
    
 5. Within the options.mk file, edit `PLATFORM`, `BLAS_LAPACK_INCLUDEFLAGS` and `BLAS_LAPACK_LIBFLAGS` to reflect the
    type and location of your BLAS/LAPACK libraries. The list of currently
