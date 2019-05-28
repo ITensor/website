@@ -1,6 +1,6 @@
 # <img src="docs/all/papers/icon.png" class="largeicon"> Papers Using the ITensor Library
 
-<i style="font-size:90%; color:#999999">Please send any papers not listed here to mstoudenmire -at- flatironinstitute.org</i>
+<i style="font-size:90%; color:#999999">Please send any papers not listed here to support -at- itensor.org</i>
 
 <!--
 * [](), , arxiv:
