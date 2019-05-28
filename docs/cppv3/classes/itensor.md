@@ -273,7 +273,7 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       T = permute(T,j,i,k);
       //Set an element to a real number
       T.set(1,2,3,-1.24); 
-      Print(elt(T,j=1,i=2,k=3) == -1.24); //prints "true"
+      Print(elt(T,j=1,i=2,k=3) == -1.24); //prints: true
 
 <a name="tag_methods"></a>
 ## ITensor Tag and Prime Methods
@@ -705,7 +705,7 @@ and that the result will be an ITensor.
 
   Returns `true` if ITensor T has an Index exactly matching `i` (including its tags).
 
-*  `findInds(ITensor T, TagSet tsmatch) -> IndexSet`
+* `findInds(ITensor T, TagSet tsmatch) -> IndexSet`
 
   Find all indices of the ITensor containing tags in the specified TagSet.
 
@@ -729,14 +729,39 @@ and that the result will be an ITensor.
        auto y = findIndex(T,"x");
        if(!y) println("T does not have an Index with tag x");
 
+* `commonInds(ITensor A, ITensor B[, TagSet tags]) -> IndexSet`
+
+  Return the indices found on both ITensors A and B. If A and B
+  have no Index in common, returns a default constructed IndexSet
+  (one with no Indices).
+
+  If the optional TagSet `tags` is provided, only common
+  Indices with the specified tags will be returned.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto i = Index(2,"i");
+      auto j = Index(2,"j");
+      auto k = Index(2,"k");
+      auto l = Index(2,"l");
+
+      auto A = ITensor(i,j,k);
+      auto B = ITensor(j,k,l);
+
+      auto c = commonInds(A,B);
+      Print(hasSameInds(c,{i,j})); //prints: true
+
 * `commonIndex(ITensor A, ITensor B[, TagSet tags]) -> Index`
 
-  Return the first Index found on both A and B. If A and B
+  Return the Index found on both A and B. If A and B
   have no Index in common, returns a default constructed Index
   (which will evaluate to `false` in a boolean context).
+  Throws an error if more than one index is found (if A and B may
+  have more than one common Index, consider using the function
+  `commonInds`).
 
-  If the optional TagSet `tags` is provided, only a common
-  Index of with the specified tags will be returned if found.
+  If the optional TagSet `tags` is provided, only the common
+  Index with the specified tags will be returned if found.
 
   <div class="example_clicker">Click to Show Example</div>
 
@@ -745,26 +770,6 @@ and that the result will be an ITensor.
 
       auto c = commonIndex(A,B);
       if(c) println("Common Index of A and B is ",c);
-
-* `uniqueIndex(ITensor A, ITensor B[, TagSet tags]) -> Index`
-
-  Return the first Index of A found NOT to be on B.
-
-  If all of A's indices are also present on B, returns a 
-  default constructed Index
-  (which will evaluate to `false` in a boolean context).
-
-  If the optional string `tags` is provided, only a unique
-  Index containing the specified tags will be returned if found.
-
-  <div class="example_clicker">Click to Show Example</div>
-
-      auto A = ITensor(i,j);
-      auto B = ITensor(k,j);
-
-      auto u = uniqueIndex(A,B);
-
-      Print(u == i); //prints "true"
 
 * `uniqueInds(ITensor A, ITensor B) -> IndexSet`
 
