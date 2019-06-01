@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Multistability of Driven-Dissipative Quantum Spins](https://arxiv.org/abs/1905.10349), Haggai Landa, Marco Schiró, Grégoire Misguich, arxiv:1905.10349
+
 * [Domain wall problem in the quantum XXZ chain and semiclassical behavior close to the isotropic point](https://arxiv.org/abs/1905.08756), Grégoire Misguich, Nicolas Pavloff, Vincent Pasquier, arxiv:1905.08756
 
 * [Interaction distance in the extended XXZ model](https://arxiv.org/abs/1905.07239), Kristian Patrick, Vincent Caudrelier, Zlatko Papic, Jiannis K. Pachos, arxiv:1905.07239
