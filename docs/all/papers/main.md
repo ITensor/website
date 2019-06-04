@@ -73,17 +73,17 @@
 
 * [Quantum Scrambling and State Dependence of the Butterfly Velocity](https://arxiv.org/abs/1812.07598), Xizhi Han, Sean A. Hartnoll, arxiv:1812.07598
 
-* [Non-local String Order Parameter in the S=1/2 Kitaev-Heisenberg Ladder](https://arxiv.org/abs/1812.04003), Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1812.04003
+* [Non-local String Order Parameter in the S=1/2 Kitaev-Heisenberg Ladder](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.195112), Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, PhysRev[B,99,195112] [arxiv:1812.04003]
 
 * [Quantum phase transitions in the dimerized extended Bose-Hubbard model](https://doi.org/10.1103/PhysRevA.99.012122), Koudai Sugimoto, Satoshi Ejima, Florian Lange, Holger Fehske, PhysRev[A,99,012122] [arxiv:1812.03489]
 
-* [Statistics-tuned phases of pseudofermions in one dimension](https://arxiv.org/abs/1811.11776), Adhip Agarwala, Gaurav Kumar Gupta, Vijay B. Shenoy, Subhro Bhattacharjee, arxiv:1811.11776
+* [Statistics-tuned phases of pseudofermions in one dimension](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.165125), Adhip Agarwala, Gaurav Kumar Gupta, Vijay B. Shenoy, Subhro Bhattacharjee, PhysRev[B,99,165125] [arxiv:1811.11776]
 
-* [Cavity-induced spin-orbit coupling in an interacting bosonic wire](https://arxiv.org/abs/1811.11045), Catalin-Mihai Halati, Ameneh Sheikhan, Corinna Kollath, arxiv:1811.11045
+* [Cavity-induced spin-orbit coupling in an interacting bosonic wire](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.033604), Catalin-Mihai Halati, Ameneh Sheikhan, Corinna Kollath, PhysRev[A,99,033604] [arxiv:1811.11045]
 
 * [Quantum purification spectroscopy](https://journals.aps.org/pra/pdf/10.1103/PhysRevA.98.050103), Bradraj Pandey, Kirill Plekhanov, and Guillaume Roux, PhysRev[A,98,050103]
 
-* [Pair Density Wave in the doped t-J model with ring exchange on a triangular lattice](https://arxiv.org/abs/1811.06538), Xiao Yan Xu, K. T. Law, Patrick A. Lee, arxiv:1811.06538
+* [Pair Density Wave in the doped t-J model with ring exchange on a triangular lattice](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.167001), Xiao Yan Xu, K. T. Law, Patrick A. Lee, PhysRev[Lett,122,167001] [arxiv:1811.06538]
 
 * [Driving XXZ spin chains: magnetic-field and boundary effects](https://arxiv.org/abs/1810.11807), Florian Lange, Satoshi Ejima, Holger Fehske, arxiv:1810.11807
 
@@ -100,17 +100,17 @@
 
 * [Frustrated plane-polarized dipoles in one dimension](https://arxiv.org/abs/1810.00646), Niraj R. Ghimire, Susanne F. Yelin, arxiv:1810.00646
 
-* [Cavity-induced superconducting and 4kF charge-density-wave states](https://arxiv.org/abs/1809.09884), Ameneh Sheikhan, Corinna Kollath, arxiv:1809.09884
+* [Cavity-induced superconducting and 4kF charge-density-wave states](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.053611), Ameneh Sheikhan, Corinna Kollath, PhysRev[A,99,053611] [arxiv:1809.09884]
 
 * [Evolution of two-time correlations in dissipative quantum spin systems: aging and hierarchical dynamics](https://arxiv.org/abs/1809.10464), Stefan Wolff, Jean-Sebastien Bernier, Dario Poletti, Ameneh Sheikhan, Corinna Kollath, arxiv:1809.10464
 
-* [Multi-sliced Gausslet Basis Sets for Electronic Structure](https://arxiv.org/abs/1809.10258), Steven R. White, E. Miles Stoudenmire, arxiv:1809.10258
+* [Multisliced Gausslet Basis Sets for Electronic Structure](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.081110), Steven R. White, E. Miles Stoudenmire, PhysRev[B,99,081110](R) [arxiv:1809.10258]
 
-* [Density Matrix Renormalization Group Study of a One Dimensional Diatomic Molecule beyond the Born-Oppenheimer Approximation](https://arxiv.org/abs/1809.05808), Mingru Yang, Steven R. White, arxiv:1809.05808
+* [Density Matrix Renormalization Group Study of a One Dimensional Diatomic Molecule beyond the Born-Oppenheimer Approximation](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.99.022509), Mingru Yang, Steven R. White, PhysRev[A,99,022509] [arxiv:1809.05808]
 
 * [Quantum Simulation and Optimization in Hot Quantum Networks](https://arxiv.org/abs/1809.03794), Martin J. A. Schuetz, Benoît Vermersch, Gerhard Kirchmair, Lieven M. K. Vandersypen, J. Ignacio Cirac, Mikhail D. Lukin, Peter Zoller, arxiv:1809.03794
 
-* [Photoinduced η-pairing in the Hubbard Model](https://arxiv.org/abs/1809.01865), Tatsuya Kaneko, Tomonori Shirakawa, Sandro Sorella, Seiji Yunoki, arxiv:1809.01865
+* [Photoinduced η-pairing in the Hubbard Model](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.077002), Tatsuya Kaneko, Tomonori Shirakawa, Sandro Sorella, Seiji Yunoki, PhysRev[Lett,122,077022] [arxiv:1809.01865]
 
 * [Performance of the time-dependent variational principle for matrix product states in long time evolution of a pure state](https://arxiv.org/abs/1809.01400), Shimpei Goto, Ippei Danshita, arxiv:1809.01400
 
@@ -137,7 +137,7 @@
 
 * [Towards a Generalized Hydrodynamics description of Rényi entropies in integrable systems](https://arxiv.org/abs/1807.01800), Vincenzo&nbsp;Alba, arxiv:1807.01800
 
-* [Many-body localization as a large family of localized groundstates](https://arxiv.org/abs/1807.01313), Maxime&nbsp;Dupont, Nicolas&nbsp;Laflorencie, arxiv:1807.01313
+* [Many-body localization as a large family of localized groundstates](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.020202), Maxime&nbsp;Dupont, Nicolas&nbsp;Laflorencie, PhysRev[B,99,020202] [arxiv:1807.01313]
 
 * [Probing entanglement entropy via randomized measurements](https://arxiv.org/abs/1806.05747), Tiff&nbsp;Brydges, Andreas&nbsp;Elben, Petar&nbsp;Jurcevic, Benoît&nbsp;Vermersch, Christine&nbsp;Maier, Ben&nbsp;P.&nbsp;Lanyon, Peter&nbsp;Zoller, Rainer&nbsp;Blatt, Christian&nbsp;F.&nbsp;Roos, arxiv:1806.05747
 
