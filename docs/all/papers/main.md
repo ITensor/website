@@ -58,7 +58,7 @@
 
 * [Theory of the field-revealed Kitaev spin liquid](https://arxiv.org/abs/1901.09943), Jacob S. Gordon, Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1901.09943
 
-* [Critical Entanglement for the Half-Filled Extended Hubbard Model](https://arxiv.org/abs/1901.09151), Jon Spalding, Shan-Wen Tsai, David K Campbell, arxiv:1901.09151
+* [Critical Entanglement for the Half-Filled Extended Hubbard Model](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.195445), Jon Spalding, Shan-Wen Tsai, David K Campbell, PhysRev[B,99,195445] [arxiv:1901.09151]
 
 * [Valence bond fluctuations in the Kitaev spin model](https://arxiv.org/abs/1901.03973), Fan Yang, Kirill Plekhanov, Karyn Le Hur, arxiv:1901.03973
 
