@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [NMR relaxation in the spin-1 Heisenberg chain](https://arxiv.org/abs/1905.12697), Sylvain Capponi, Maxime Dupont, Anders W. Sandvik, Pinaki Sengupta, arxiv:1905.12697
+
 * [Multistability of Driven-Dissipative Quantum Spins](https://arxiv.org/abs/1905.10349), Haggai Landa, Marco Schiró, Grégoire Misguich, arxiv:1905.10349
 
 * [Domain wall problem in the quantum XXZ chain and semiclassical behavior close to the isotropic point](https://arxiv.org/abs/1905.08756), Grégoire Misguich, Nicolas Pavloff, Vincent Pasquier, arxiv:1905.08756
