@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Generalized hydrodynamics with space-time inhomogeneous interactions](https://arxiv.org/abs/1906.01654), Alvise Bastianello, Vincenzo Alba, Jean Sébastien Caux, arxiv:1906.01654
+
 * [NMR relaxation in the spin-1 Heisenberg chain](https://arxiv.org/abs/1905.12697), Sylvain Capponi, Maxime Dupont, Anders W. Sandvik, Pinaki Sengupta, arxiv:1905.12697
 
 * [Multistability of Driven-Dissipative Quantum Spins](https://arxiv.org/abs/1905.10349), Haggai Landa, Marco Schiró, Grégoire Misguich, arxiv:1905.10349
