@@ -10,7 +10,7 @@ where @@h\_{j,j+1}@@ only acts non-trivially on sites j and (j+1).
 
 Part of a Trotter decomposition may look like:
 $$
-e^{\tau H} \approx e^{h\_{1,2} \tau} e^{h\_{2,3} \tau} \cdots e^{h\_{N-1,N} \tau}
+e^{-\tau H} \approx e^{-\tau h\_{1,2}} e^{-\tau h\_{2,3}} \cdots e^{-\tau h\_{N-1,N}}
 $$
 
 We can turn this into an MPO with the following code:
