@@ -45,3 +45,5 @@ Formulas involving matrix product states and DMRG.
 
 * <h3>Other</h3>
     - [[Applying a two-site 'gate' to an MPS|formulas/gate]]
+    - [[Turning a set of gates into an MPO|formulas/gates_to_mpo]]
+
