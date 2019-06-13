@@ -164,9 +164,8 @@ using now-deprecated features, but which are not required to make your code comp
   the __Tag and Prime Methods__ section of the [[IndexSet docs|classes/indexset]] for more 
   details on the new interface. This interface works for ITensor, MPS and MPO objects. For example:
 
-  - instead of `mapprime(T,0,1)`, use `replaceTags(T,"0","1")` (note that tags that are just 
-    integer numbers are interpreted as prime levels).
-  - instead of `swapPrime(T,0,1)`, use `swapTags(T,"0","1")`.
+  - instead of `mapprime(T,0,1)`, use `mapPrime(T,0,1)` or `replaceTags(T,"0","1")` (note that 
+    tags that are just integer numbers are interpreted as prime levels).
   - for all tagging and priming methods, optional matching tags and indices are the last
     input of the function (for example, use `prime(T,2,i)` to increase the prime level of 
     Index `i` of ITensor `T` by two).
@@ -191,10 +190,12 @@ using now-deprecated features, but which are not required to make your code comp
   - when calling `auto y = applyMPO(A,x)`, for MPS `x` with unprimed site indices and MPO `A` with
     pairs of prime and unprimed site indices, the resulting MPS `y` will have primed indices 
     (or in general, the site indices that are not shared by MPO `A` and `x`). 
-    Use `y.replaceTags("1","0")` or `y.noPrime()` to get back an MPS with unprimed site indices.
+    Use `y.mapPrime(1,0,"Site")`, `y.replaceTags("Site,1","Site,0")` or `y.noPrime("Site")` to 
+    get back an MPS with unprimed site indices (assuming the site indices have the tag "Site").
   - for MPOs `A` and `B` with pairs of primed and unprimed site indices, contract them together
     with `auto C = nmultMPO(prime(A),B)`. The inputs must share one site index per tensor, and
     the output MPO `C` will have the remaining unshared site indices (so one unprimed site index
-    and one site index of prime level 2). One can use `C.setPrime(1,"2")` or 
-    `C.replaceTags("2","1")` to get an MPO `C` with pairs of unprimed and single-primed indices.
+    and one site index of prime level 2). One can use `C.mapPrime(2,1,"Site")` or 
+    `C.replaceTags("Site,2","Site,1")` to get an MPO `C` with pairs of unprimed and single-primed 
+    indices (assuming the site indices of the MPO have tags "Site").
 

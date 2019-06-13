@@ -173,6 +173,78 @@ perform the same operation as the above in-place operations and accept the
 same optional arguments, but do not modify the input IndexSet and instead 
 return a new, modified IndexSet.
 
+* `.prime(int inc = 1, ...)`
+
+  `prime(IndexSet is, int inc = 1, ...) -> IndexSet`
+
+  Increment prime level of all indices by 1, or by the optional amount "inc".
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto i1 = Index(2,"i,n=1");
+      auto i2 = Index(2,"i,n=2");
+      auto i3 = Index(2,"i,n=3");
+
+      auto is = IndexSet(i1,i2,i3);
+
+      auto isp = prime(is);
+
+      Print(hasIndex(isp,prime(i1))); //prints: true
+      Print(hasIndex(isp,prime(i2))); //prints: true
+      Print(hasIndex(isp,prime(i3))); //prints: true
+
+      is.prime(2,"n=2");
+
+      Print(hasIndex(is,i1)); //prints: true
+      Print(hasIndex(is,prime(i2,2))); //prints: true
+      Print(hasIndex(is,i3)); //prints: true
+
+* `.setPrime(int plnew, ...)`
+
+  `setPrime(IndexSet is, int plnew, ...) -> IndexSet`
+
+  Set the prime level of all indices to plnew. Optionally, only set the
+  prime levels of indices containing tags tsmatch
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.noPrime(...)`
+
+  `noPrime(IndexSet is, ...) -> IndexSet`
+
+  Set the prime level of all Index objects in the IndexSet to zero.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.mapPrime(int plold, int plnew, ...)`
+
+  `mapPrime(IndexSet is, int plold, int plnew, ...) -> IndexSet`
+
+  Set the prime level of all indices with `plold` to `plnew`. 
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section
+  (note that if the tagset used for matching contains an integer tag
+  different from `plold`, this function won't do anything).
+
+* `.swapPrime(int pl1, int pl2, ...)`
+
+  `swapPrime(IndexSet is, int pl1, int pl1, ...) -> IndexSet`
+  
+  Swap the input prime levels, such that all indices with prime level 
+  `pl1` have prime level `pl2` and vice versa.
+  
+  Optionally, only swap the prime levels of the listed indices, or indices
+  with the matching tags, as described at the top of the section
+  (note that if the tagset used for matching contains an integer tag
+  different from one of the given prime levels, indices with those prime
+  levels won't be modified).
+
 * `.addTags(TagSet tsadd, ...)`
 
   `addTags(IndexSet is, TagSet tsadd, ...) -> IndexSet`
@@ -242,54 +314,6 @@ return a new, modified IndexSet.
   `noTags(TagSet tsnew, ...) -> IndexSet`
 
   Remove all tags of the indices in this IndexSet.
-
-  Optionally, only modify the tags of the listed indices, or indices
-  with the matching tags, as described at the top of the section.
-
-* `.prime(int inc = 1, ...)`
-
-  `prime(IndexSet is, int inc = 1, ...) -> IndexSet`
-
-  Increment prime level of all indices by 1, or by the optional amount "inc".
-
-  Optionally, only modify the tags of the listed indices, or indices
-  with the matching tags, as described at the top of the section.
-
-  <div class="example_clicker">Click to Show Example</div>
-
-      auto i1 = Index(2,"i,n=1");
-      auto i2 = Index(2,"i,n=2");
-      auto i3 = Index(2,"i,n=3");
-
-      auto is = IndexSet(i1,i2,i3);
-
-      auto isp = prime(is);
-
-      Print(hasIndex(isp,prime(i1))); //prints: true
-      Print(hasIndex(isp,prime(i2))); //prints: true
-      Print(hasIndex(isp,prime(i3))); //prints: true
-
-      is.prime(2,"n=2");
-
-      Print(hasIndex(is,i1)); //prints: true
-      Print(hasIndex(is,prime(i2,2))); //prints: true
-      Print(hasIndex(is,i3)); //prints: true
-
-* `.setPrime(int plnew, ...)`
-
-  `setPrime(IndexSet is, int plnew, ...) -> IndexSet`
-
-  Set the prime level of all indices to plnew. Optionally, only set the 
-  prime levels of indices containing tags tsmatch
-
-  Optionally, only modify the tags of the listed indices, or indices
-  with the matching tags, as described at the top of the section.
-
-* `.noPrime(...)`
-
-  `noPrime(IndexSet is, ...) -> IndexSet`
-
-  Set the prime level of all Index objects in the IndexSet to zero.
 
   Optionally, only modify the tags of the listed indices, or indices
   with the matching tags, as described at the top of the section.
