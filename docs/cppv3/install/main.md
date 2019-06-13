@@ -35,7 +35,7 @@ If you do not have git on your computer, you can obtain it through your package 
 
 3. Within the options.mk file, choose which compiler to use by setting the `CCCOM` 
    variable. Make sure whichever compiler you select supports C++17, the latest version of the
-   C++ standard (this is true for [Clang v4.0 and after](https://clang.llvm.org/cxx_status.html)
+   C++ standard (this is true for [Clang v5 and after](https://clang.llvm.org/cxx_status.html)
    and [G++ v7 and after](https://www.gnu.org/software/gcc/projects/cxx-status.html#cxx17)) as 
    well as the C++17 standard libraries and make sure to set the flag -std=c++17 or similar 
    to enable C++17 language support.
