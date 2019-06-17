@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Wavefunction positivization via automatic differentiation](https://arxiv.org/abs/1906.04654), Giacomo Torlai, Juan Carrasquilla, Matthew T. Fishman, Roger G. Melko, Matthew P. A. Fisher, arxiv:1906.04654
+
 * [Generalized hydrodynamics with space-time inhomogeneous interactions](https://arxiv.org/abs/1906.01654), Alvise Bastianello, Vincenzo Alba, Jean Sébastien Caux, arxiv:1906.01654
 
 * [NMR relaxation in the spin-1 Heisenberg chain](https://arxiv.org/abs/1905.12697), Sylvain Capponi, Maxime Dupont, Anders W. Sandvik, Pinaki Sengupta, arxiv:1905.12697
