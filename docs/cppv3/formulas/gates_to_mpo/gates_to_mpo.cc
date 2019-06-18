@@ -85,7 +85,7 @@ main()
 
   PrintData(inner(Mpsi,Mpsi));
   PrintData(inner(Gpsi,Gpsi));
-  PrintData(inner(Gpsi,Gpsi));
+  PrintData(inner(Gpsi,Mpsi));
 
   return 0;
   }
