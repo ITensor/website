@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Out-of-time-order correlators at infinite temperature: Scrambling, Order and Topological Phase Transitions](https://arxiv.org/abs/1906.05241), Ceren B. Dağ, L.-M. Duan, Kai Sun, arxiv:1906.05241
+
+* [Many-body topological invariants from randomized measurements](https://arxiv.org/abs/1906.05011), Andreas Elben, Jinlong Yu, Guanyu Zhu, Mohammad Hafezi, Frank Pollmann, Peter Zoller, Benoît Vermersch, arxiv:1906.05011
+
 * [Wavefunction positivization via automatic differentiation](https://arxiv.org/abs/1906.04654), Giacomo Torlai, Juan Carrasquilla, Matthew T. Fishman, Roger G. Melko, Matthew P. A. Fisher, arxiv:1906.04654
 
 * [Generalized hydrodynamics with space-time inhomogeneous interactions](https://arxiv.org/abs/1906.01654), Alvise Bastianello, Vincenzo Alba, Jean Sébastien Caux, arxiv:1906.01654
