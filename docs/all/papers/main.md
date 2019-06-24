@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Topological spin excitations in Harper-Heisenberg spin chains](https://arxiv.org/abs/1906.07090), J. L. Lado, Oded Zilberberg, arxiv:1906.07090
+
 * [Out-of-time-order correlators at infinite temperature: Scrambling, Order and Topological Phase Transitions](https://arxiv.org/abs/1906.05241), Ceren B. Dağ, L.-M. Duan, Kai Sun, arxiv:1906.05241
 
 * [Many-body topological invariants from randomized measurements](https://arxiv.org/abs/1906.05011), Andreas Elben, Jinlong Yu, Guanyu Zhu, Mohammad Hafezi, Frank Pollmann, Peter Zoller, Benoît Vermersch, arxiv:1906.05011
