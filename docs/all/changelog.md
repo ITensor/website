@@ -1,7 +1,7 @@
 # Change Log #
 
 <a name="v3.0.0"></a>
-## [Version 3.0.0](https://github.com/ITensor/ITensor/tree/rc3) (May 15, 2019) ##
+## [Version 3.0.0](https://github.com/ITensor/ITensor/tree/v3) (May 15, 2019) ##
 
 This major update to ITensor features a number of changes to the design.
 
