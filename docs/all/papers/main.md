@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Physics of Integer-Spin Antiferromagnetic Chains: Haldane Gaps and Edge States](https://www.sciencedirect.com/science/article/pii/S1631074819300943), T.Jolicoeur, O. Golinelli, <i style="color:#CC0000">Comptes Rendus Chemie</i>, <a href="https://doi.org/10.1016/j.crci.2019.05.005" target="_blank">doi:10.1016/j.crci.2019.05.005</a> (2019)
+
 * [Topological spin excitations in Harper-Heisenberg spin chains](https://arxiv.org/abs/1906.07090), J. L. Lado, Oded Zilberberg, arxiv:1906.07090
 
 * [Out-of-time-order correlators at infinite temperature: Scrambling, Order and Topological Phase Transitions](https://arxiv.org/abs/1906.05241), Ceren B. Dağ, L.-M. Duan, Kai Sun, arxiv:1906.05241
