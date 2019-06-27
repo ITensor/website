@@ -140,7 +140,7 @@
 
 * [Validating Quantum-Classical Programming Models with Tensor Network Simulations](https://arxiv.org/abs/1807.07914), Alexander&nbsp;McCaskey, Eugene&nbsp;Dumitrescu, Mengsu&nbsp;Chen, Dmitry&nbsp;Lyakh, Travis&nbsp;S.&nbsp;Humble, arxiv:1807.07914
 
-* [Combined tensor network/cluster expansion method using logic gates: Illustrated for (bi-)excitons by a single layer MoS2 model system](https://arxiv.org/abs/1807.09036), Sandra&nbsp;Kuhn, Marten&nbsp;Richter, arxiv:1807.09036
+* [Combined tensor network/cluster expansion method using logic gates: Illustrated for (bi-)excitons by a single layer MoS2 model system](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.241301), Sandra&nbsp;Kuhn, Marten&nbsp;Richter, PhysRev[B,99,241301](R) [arxiv:1807.09036]
 
 * [Non-Abelian chiral spin liquid in a quantum antiferromagnet revealed by an iPEPS study
 ](https://arxiv.org/abs/1807.04385), Ji-Yao&nbsp;Chen, Laurens&nbsp;Vanderstraeten, Sylvain&nbsp;Capponi, Didier&nbsp;Poilblanc, arxiv:1807.04385
