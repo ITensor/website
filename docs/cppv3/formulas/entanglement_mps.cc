@@ -29,14 +29,15 @@ psi.position(b);
 auto l = leftLinkIndex(psi,b);
 auto s = siteIndex(psi,b);
 auto [U,S,V] = svd(psi(b),{l,s});
+auto u = commonIndex(U,S);
 
 //Apply von Neumann formula
 //to the squares of the singular values
 Real SvN = 0.;
-for(auto i : dim(u))
+for(auto n : range1(dim(u)))
     {
-    auto Sii = elt(S,u=i,v=i);
-    auto p = Sii*Sii;
+    auto Sn = elt(S,n,n);
+    auto p = sqr(Sn);
     if(p > 1E-12) SvN += -p*log(p);
     }
 printfln("Across bond b=%d, SvN = %.10f",b,SvN);
