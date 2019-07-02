@@ -28,7 +28,7 @@ psi.position(b);
 //of density-matrix eigenvalues
 auto l = leftLinkIndex(psi,b);
 auto s = siteIndex(psi,b);
-auto [U,S,V,u,v] = svd(psi(b),{l,s});
+auto [U,S,V] = svd(psi(b),{l,s});
 
 //Apply von Neumann formula
 //to the squares of the singular values
