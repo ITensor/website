@@ -44,6 +44,7 @@ Formulas involving matrix product states and DMRG.
     - [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
 
 * <h3>Other</h3>
+    - [[Applying a one-site operator to an MPS|formulas/mps_onesite_op]]
     - [[Applying a two-site 'gate' to an MPS|formulas/gate]]
     - [[Turning a set of gates into an MPO|formulas/gates_to_mpo]]
 
