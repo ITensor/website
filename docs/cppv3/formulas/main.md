@@ -30,6 +30,7 @@ Formulas involving matrix product states and DMRG.
     - [[Compute excited states using DMRG|formulas/excited_dmrg]]
     - [[Read and write an MPS or MPO to and from disk|formulas/readwrite_mps]]
     - [[Stopping a DMRG Run "Gracefully"|formulas/stopping_dmrg]]
+    - [[Using a Mixed Site Set (Holstein Polaron Example)|formulas/gs_holst_polaron]]
 
 * <h3>Measuring MPS</h3>
     - [[Measure local properties of an MPS wavefunction|formulas/measure_mps]]
