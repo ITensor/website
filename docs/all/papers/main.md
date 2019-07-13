@@ -78,7 +78,7 @@
 
 * [Open XXZ chain and boundary modes at zero temperature](https://arxiv.org/abs/1901.10932), Sebastian Grijalva, Jacopo De Nardis, Veronique Terras, arxiv:1901.10932
 
-* [Theory of the field-revealed Kitaev spin liquid](https://arxiv.org/abs/1901.09943), Jacob S. Gordon, Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, arxiv:1901.09943
+* [Theory of the field-revealed Kitaev spin liquid](https://arxiv.org/abs/1901.09943), Jacob S. Gordon, Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, <i style="color:#CC0000">Nature Communications</i> <b>10</b>, <a href="http://dx.doi.org/10.1038/s41467-019-10405-8">2470</a> (2019) [arxiv:1901.09943]
 
 * [Critical Entanglement for the Half-Filled Extended Hubbard Model](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.195445), Jon Spalding, Shan-Wen Tsai, David K Campbell, PhysRev[B,99,195445] [arxiv:1901.09151]
 
