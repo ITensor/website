@@ -8,6 +8,12 @@
  
 ## 2019
 
+* [Probing many-body localization phase transition with superconducting circuits](https://arxiv.org/abs/1907.04043), Tuure Orell, Alexios A. Michailidis, Maksym Serbyn, Matti Silveri, arxiv:1907.04043
+
+* [Emerging 2D Gauge theories in Rydberg configurable arrays](https://arxiv.org/abs/1907.03311), A.Celi, B. Vermersch, O. Viyuela, H. Pichler, M.D. Lukin, P. Zoller, arxiv:1907.03311
+
+* [Competing spin liquid phases in the S=1/2 Heisenberg model on the Kagome lattice](https://scipost.org/10.21468/SciPostPhys.7.1.006), Shenghan Jiang, Panjin Kim, Jung Hoon Han, Ying Ran, <i style="color:#CC0000">SciPost Phys.</i> <b>7</b>, <a href="http://dx.doi.org/10.21468/SciPostPhys.5.6.006">006</a> (2019) 
+
 * [Correlations and entanglement spreading in nested spin chains](https://arxiv.org/abs/1906.09238), Ranjan Modak, Lorenzo Piroli, Pasquale Calabrese, arxiv:1906.09238
 
 * [Quasi-Exact Kondo Dynamics of Fermionic Alkaline-Earth-Like Atoms at Finite Temperatures](https://arxiv.org/abs/1906.08932), Shimpei Goto, Ippei Danshita, arxiv:1906.08932
