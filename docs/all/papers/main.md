@@ -68,9 +68,9 @@
 
 * [Dynamically enhanced unconventional superconducting correlations in a Hubbard ladder](https://arxiv.org/abs/1902.07947), Ameneh Sheikhan, Corinna Kollath, arxiv:1902.07947
 
-* [Numerical study of the temperature dependence of the NMR relaxation rate across the superfluid-Bose glass transition in one dimension](https://arxiv.org/abs/1902.07361), Maxime Dupont, arxiv:1902.07361
+* [Numerical study of the temperature dependence of the NMR relaxation rate across the superfluid-Bose glass transition in one dimension](https://arxiv.org/abs/1902.07361), Maxime Dupont, PhysRev[B,99,205147] (2019) [arxiv:1902.07361]
 
-* [Magnetization and entanglement after a geometric quench in the XXZ chain](https://arxiv.org/abs/1902.05834), Matthias Gruber, Viktor Eisler, arxiv:1902.05834
+* [Magnetization and entanglement after a geometric quench in the XXZ chain](https://arxiv.org/abs/1902.05834), Matthias Gruber, Viktor Eisler, PhysRev[B,99,174403] (2019) [arxiv:1902.05834]
 
 * [Stabilizing a Discrete Time Crystal Against Dissipation](https://arxiv.org/abs/1902.04986), Leon Droenner, Regina Finsterholzl, Alexander Carmele, Markus Heyl, arxiv:1902.04986
 
