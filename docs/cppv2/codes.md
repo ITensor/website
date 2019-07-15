@@ -38,7 +38,7 @@ Name
 <a href="https://sites.google.com/site/joseluislado/home" target="_blank">Jose Lado</a>
 </td>
 <td class="descrip">
-DMRGPy is a Python library to compute quasi-one-dimensional spin chains and fermionic systems using matrix product states with DMRG as implemented in ITensor. Most of the camputations can be performed both with DMRG and exact diagonalization for small systems, which allows to benchmark the results.
+DMRGPy is a Python library to compute quasi-one-dimensional spin chains and fermionic systems using matrix product states with DMRG as implemented in ITensor. Most of the computations can be performed both with DMRG and exact diagonalization for small systems, which allows one to benchmark the results.
 </td>
 </tr>
 
