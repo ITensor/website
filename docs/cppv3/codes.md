@@ -42,6 +42,9 @@ with example driver codes.
 </td>
 </tr>
 
+</table>
+
+
 # ITensor Codes (version 2 compatible)
 
 (Codes listed here are maintained separately from ITensor by the maintainers
@@ -138,4 +141,3 @@ the weights of the model, and a DMRG-like algorithm to optimize.
 
 </table>
 
-</table>
