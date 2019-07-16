@@ -18,11 +18,11 @@ Here is our program `hello_itensor.cc`.
 
     int main()
     {
-    auto i = Index("index i",4);
-    auto j = Index("index j",6);
+    auto i = Index(4,"index i");
+    auto j = Index(6,"index j");
     auto T = ITensor(i,j);
 
-    T.set(i(3),j(2),3.14159);
+    T.set(i=3,j=2,3.14159);
 
     PrintData(T);
 
@@ -34,16 +34,15 @@ To understand what this program does, let us start at the top. The line
 
     #include "itensor/all.h"
 
-pulls in _all_ of the ITensor library. You could just include specific parts of
-ITensor instead; for more information
-on which headers define each feature see the [[detailed documentation|classes]].
+pulls in _all_ of the ITensor library's classes and functions.
 
 The next line of the program 
 
     using namespace itensor;
 
-says to pull in every function and object type defined in
-the `itensor` namespace. Otherwise you would have to type things like `itensor::Index` instead of
+says to not require explicitly writing the itensor namespace in front 
+of function and type names.
+Otherwise you would have to type things like `itensor::Index` instead of
 just `Index`.
 
 
@@ -63,8 +62,8 @@ to run when your program is executed
 Now let us look at the body of the code. 
 First we define tensor indices i and j, of type `Index`.
 
-    auto i = Index("index i",4);
-    auto j = Index("index j",6);
+    auto i = Index(4,"index i");
+    auto j = Index(6,"index j");
 
 Each Index has a name and a size. Using these indices, we can define
 an ITensor
@@ -74,7 +73,7 @@ an ITensor
 which starts out with all elements zero. To change an element, we
 can call
 
-    T.set(i(3),j(2),3.14159);
+    T.set(i=3,j=2,3.14159);
 
 which sets the i=3, j=2 element to the value 3.14159. 
 

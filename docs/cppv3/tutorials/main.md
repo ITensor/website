@@ -14,22 +14,26 @@
 
 ### Tensor Network Fundamentals
 
+<!--
 * [[Understanding Tensor Diagrams|tutorials/diagrams]]
 
   Tensor network diagrams are a powerful way to express 
   contractions of many tensors.
   Learn to understand tensor diagrams and translate them 
   into ITensor code.
+  -->
 
 * [[Estimating the Cost of Evaluating a Tensor Network|tutorials/cost]]
 
   We discuss how to determine the cost of evaluating a tensor network and best practices for 
   computing properties of matrix product states.
 
+<!--
 * [[Singular Value Decomposition|tutorials/SVD]]
   
   The singular value decomposition (SVD) provides a way to separate large degrees 
   of freedom from irrelevant ones.  ITensors allows for the easy SVD of tensors.
+  -->
 
 * [[Fermions and Jordan-Wigner String|tutorials/fermions]]
 
@@ -38,12 +42,12 @@
 
 ### ITensor Library Tutorials
 
+<!-- Commented out for the time being
 * [[Priming Indices in ITensor|tutorials/primes]]
 
   ITensor uses a flexible priming system to prevent indices from automatically 
   contracting.  We discuss best practices and give examples.
 
-<!-- Commented out for the time being
 * [[The Matrix Product State (MPS)|tutorials/MPS]]
 
   ITensor includes a full-featured matrix product state class that can be used
@@ -55,18 +59,22 @@
   Learn how to choose optimal parameters (number of sweeps; cutoff; etc)
   for DMRG calculations of ground states.
 
+<!--
 * [[Matrix Product States (MPS)|tutorials/MPS]]
 
   A matrix product state (MPS) is a tensor network often used to
   represent ground states and low-lying excited states of one-dimensional
   quantum systems. Learn about some basics of using MPS with ITensor.
+-->
 
 
+<!--
 * [[Matrix Product Operators (MPO)|tutorials/MPO]]
 
   Hamiltonians and other sums of local operators can be represented as a tensor 
   network called an MPO. This tutorial introduces the idea of an MPO with an 
   example, and gives a taste of some advanced concepts.
+-->
 
 
 * [[Introduction to AutoMPO|tutorials/AutoMPO]]

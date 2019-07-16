@@ -77,16 +77,3 @@ $$=\sum_{\gamma\delta\eta\mu} A^{\alpha\beta\gamma\delta\eta\mu}B^{\gamma\delta\
     ITensor A(a,b,c,d,e,f),B(c,d,e,f,g,h);
     ITensor C = A*B;
 
-## MPSs and MPOs
-
-Returning to our example at the top of the page.  One tensor in a [[matrix product state|tutorials/MPS]] (purple or red block) has two or three indices.  The vertical lines (superscripts) have a different meaning from the horizontal lines (sub-indices).  In ITensor, they are defined as a rank two or three tensor:  one Site (or physical) index and one or two link indices.
-
-One tensor in a [[matrix product operator|tutorials/MPO]] (gray boxes) has two physical indices and one or two link indices. So, it is a rank three or four tensor. The tensors on the edge of the network (sites 1 and 5) have a different form from those in the bulk (sites 2-4).  One can see this by the different numbers of indices on the edges.  That is why there is one less link index on each of the MPS and the MPO.  
-
-### IQMPS
-
-To keep things simple, we've left off arrows in our diagrams.  We'll discuss the role of these when we discuss the quantum block structure for [[IQTensors|articles/IQTensor]].
-
-### @@\Lambda\Gamma@@ notation
-
-We have used here the AB notation of left and right normalized tensors.  There is also a notation with @@\Lambda@@ and @@\Gamma@@ matrices that is useful for discussing [[iDMRG|]].
