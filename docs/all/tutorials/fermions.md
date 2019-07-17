@@ -10,7 +10,7 @@ system with multiple sites unless we enforce the right behavior.
 
 (Note that AutoMPO does automatically give the correct behavior&mdash;<a href="#autompo">more on this below</a>.)
 
-So in ITensor (up to and including version 2.x) the way we deal with fermionic systems
+So in ITensor (up to and including version 3.x) the way we deal with fermionic systems
 is to actually work with bosonic operators plus non-local "string" operators, first
 discussed by Jordan and Wigner. We always refer to these string operators using
 the letter "F".
