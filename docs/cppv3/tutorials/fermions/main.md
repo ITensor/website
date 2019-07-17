@@ -67,7 +67,7 @@ to bosons since it is simpler for computers to deal with bosons.
 The Jordan-Wigner mapping is defined as follows:
 \begin{align}
 c\_j & = F\_1 F\_2 \cdots F\_{j-1} \,a\_j \\
-c^\dagger\_j & = F\_1 F\_2 \cdots F\_{j-1} \, a^\dagger\_j
+c^\dagger\_j & = a^\dagger\_j \, F\_{j-1} \cdots F\_2 F\_1
 \end{align}
 Here @@a\_j@@ and @@a^\dagger\_j@@ are the annihilation and creation operators for the bosons
 (defined identically to the fermion creation/annihilation operators except @@a\_i@@ and @@a^\dagger\_j@@
