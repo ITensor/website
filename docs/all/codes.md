@@ -126,6 +126,18 @@ boundary tensors across nodes.
 
 <tr>
 <td class="name">
+<a href="https://github.com/jurajHasik/pi-peps" target="_blank">Pi-PEPS</a>
+</td>
+<td class="contrib">
+<a href="https://cm.sissa.it/people/members.php?ID=236" target="_blank">Juraj Hasik</a>
+</td>
+<td class="descrip">
+C++ library built on top of ITensor for running iPEPS simulations of two dimensional spin systems. Wavefunctions are optimized through Simple Update or Full Update. Expectation values and environments are computed by directional CTMRG algorithm.
+</td>
+</tr>
+
+<tr>
+<td class="name">
 <a href="https://github.com/emstoudenmire/TNML" target="_blank">
 Tensor Network Machine Learning
 </a>
