@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Ion-induced interactions in a Tomonaga-Luttinger liquid](https://arxiv.org/abs/1907.07090), Andreas Bock Michelsen, Manuel Valiente, Nikolaj Zinner, Antonio Negretti, arxiv:1907.07090
+
+* [Probing magnon dynamics and interactions in a ferromagnetic spin-1 chain](https://arxiv.org/abs/1907.06542), Prashant Chauhan, Fahad Mahmood, Hitesh J. Changlani, S. M. Koohpayeh, N. P. Armitage, arxiv:1907.06542
+
 * [Probing many-body localization phase transition with superconducting circuits](https://arxiv.org/abs/1907.04043), Tuure Orell, Alexios A. Michailidis, Maksym Serbyn, Matti Silveri, arxiv:1907.04043
 
 * [Emerging 2D Gauge theories in Rydberg configurable arrays](https://arxiv.org/abs/1907.03311), A.Celi, B. Vermersch, O. Viyuela, H. Pichler, M.D. Lukin, P. Zoller, arxiv:1907.03311
