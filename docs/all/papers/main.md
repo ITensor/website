@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Universal Spin Dynamics in Infinite-Temperature One-Dimensional Quantum Magnets](https://arxiv.org/abs/1907.12115), Maxime Dupont, Joel E. Moore, arxiv:1907.12115
+
 * [Ion-induced interactions in a Tomonaga-Luttinger liquid](https://arxiv.org/abs/1907.07090), Andreas Bock Michelsen, Manuel Valiente, Nikolaj Zinner, Antonio Negretti, arxiv:1907.07090
 
 * [Probing magnon dynamics and interactions in a ferromagnetic spin-1 chain](https://arxiv.org/abs/1907.06542), Prashant Chauhan, Fahad Mahmood, Hitesh J. Changlani, S. M. Koohpayeh, N. P. Armitage, arxiv:1907.06542
