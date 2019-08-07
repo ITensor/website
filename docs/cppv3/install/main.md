@@ -1,5 +1,8 @@
 # <img src="docs/VERSION/install/icon.png" class="largeicon"> Installing ITensor
 
+The source code for ITensor is hosted on Github at:
+[https://github.com/ITensor/ITensor](https://github.com/ITensor/ITensor)
+
 ## Downloading the Library
 
 You can download ITensor version 3 by using the following commands:
@@ -7,7 +10,7 @@ You can download ITensor version 3 by using the following commands:
 git clone https://github.com/ITensor/ITensor itensor
 cd itensor
 </pre></div>
-You can issue these commands within any folder you like on your computer.
+You can issue these commands within any folder you like on your computer. Also the folder name in the above command does not have to be `itensor`.
 
 If you do not have git on your computer, you can obtain it through your package manager or from the
 <a href="http://git-scm.com/" target="blank_">git website</a>.
