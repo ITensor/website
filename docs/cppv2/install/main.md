@@ -1,5 +1,8 @@
 # <img src="docs/VERSION/install/icon.png" class="largeicon"> Installing ITensor
 
+The source code for ITensor is hosted on Github at:
+[https://github.com/ITensor/ITensor](https://github.com/ITensor/ITensor)
+
 ## Downloading the Library
 
 The preferred method is to "clone" ITensor version 2 using the following command:
