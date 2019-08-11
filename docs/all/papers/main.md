@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Information measures for a local quantum phase transition:Lattice bosons in a one-dimensional harmonic trap](https://arxiv.org/abs/1908.01824), Yicheng Zhang, Lev Vidmar, Marcos Rigol, arxiv:1908.01824
+
 * [Universal Spin Dynamics in Infinite-Temperature One-Dimensional Quantum Magnets](https://arxiv.org/abs/1907.12115), Maxime Dupont, Joel E. Moore, arxiv:1907.12115
 
 * [Ion-induced interactions in a Tomonaga-Luttinger liquid](https://arxiv.org/abs/1907.07090), Andreas Bock Michelsen, Manuel Valiente, Nikolaj Zinner, Antonio Negretti, arxiv:1907.07090
