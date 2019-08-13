@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [The "not-A", SPT and Potts phases in an S3-invariant chain](https://arxiv.org/abs/1908.02767), Edward O'Brien, Eric Vernier, Paul Fendley, arxiv:1908.02767
+
 * [Information measures for a local quantum phase transition:Lattice bosons in a one-dimensional harmonic trap](https://arxiv.org/abs/1908.01824), Yicheng Zhang, Lev Vidmar, Marcos Rigol, arxiv:1908.01824
 
 * [Universal Spin Dynamics in Infinite-Temperature One-Dimensional Quantum Magnets](https://arxiv.org/abs/1907.12115), Maxime Dupont, Joel E. Moore, arxiv:1907.12115
