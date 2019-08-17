@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Many-body dynamical localization in the kicked Bose-Hubbard chain](https://arxiv.org/abs/1908.03399), Michele Fava, Rosario Fazio, Angelo Russomanno, arxiv:1908.03399
+
 * [The "not-A", SPT and Potts phases in an S3-invariant chain](https://arxiv.org/abs/1908.02767), Edward O'Brien, Eric Vernier, Paul Fendley, arxiv:1908.02767
 
 * [Information measures for a local quantum phase transition:Lattice bosons in a one-dimensional harmonic trap](https://arxiv.org/abs/1908.01824), Yicheng Zhang, Lev Vidmar, Marcos Rigol, arxiv:1908.01824
