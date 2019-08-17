@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Spectrum and Coherence Properties of the Current-Mirror Qubit](https://arxiv.org/abs/1908.04615), D. K. Weiss, Andy C. Y. Li, D. G. Ferguson, Jens Koch, arxiv:1908.04615
+
 * [Many-body dynamical localization in the kicked Bose-Hubbard chain](https://arxiv.org/abs/1908.03399), Michele Fava, Rosario Fazio, Angelo Russomanno, arxiv:1908.03399
 
 * [The "not-A", SPT and Potts phases in an S3-invariant chain](https://arxiv.org/abs/1908.02767), Edward O'Brien, Eric Vernier, Paul Fendley, arxiv:1908.02767
