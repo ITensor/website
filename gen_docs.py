@@ -18,7 +18,7 @@ from pygments.formatters import HtmlFormatter
 from functools import partial
 # Turn on cgitb to get nice debugging output.
 # Remember to turn off when done debugging, otherwise not secure.
-import cgitb; cgitb.enable()
+#import cgitb; cgitb.enable()
 
 #################################
 
