@@ -10,6 +10,8 @@
 
 * [The learnability scaling of quantum states: restricted Boltzmann machines](https://arxiv.org/abs/1908.07532), Dan Sehayek, Anna Golubeva, Michael S. Albergo, Bohdan Kulchytskyy, Giacomo Torlai, Roger G. Melko, arxiv:1908.07532
 
+* [Time dynamics with matrix product states: Many-body localization transition of large systems revisited](https://arxiv.org/abs/1908.06524), Titas Chanda, Piotr Sierant, Jakub Zakrzewski, arxiv:1908.06524
+
 * [Spectrum and Coherence Properties of the Current-Mirror Qubit](https://arxiv.org/abs/1908.04615), D. K. Weiss, Andy C. Y. Li, D. G. Ferguson, Jens Koch, arxiv:1908.04615
 
 * [Many-body dynamical localization in the kicked Bose-Hubbard chain](https://arxiv.org/abs/1908.03399), Michele Fava, Rosario Fazio, Angelo Russomanno, arxiv:1908.03399
