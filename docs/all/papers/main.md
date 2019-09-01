@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [DMRG Approach to Optimizing Two-Dimensional Tensor Networks](https://arxiv.org/abs/1908.08833), Katharine Hyatt, E.M. Stoudenmire, arxiv:1908.08833
+
 * [The learnability scaling of quantum states: restricted Boltzmann machines](https://arxiv.org/abs/1908.07532), Dan Sehayek, Anna Golubeva, Michael S. Albergo, Bohdan Kulchytskyy, Giacomo Torlai, Roger G. Melko, arxiv:1908.07532
 
 * [Time dynamics with matrix product states: Many-body localization transition of large systems revisited](https://arxiv.org/abs/1908.06524), Titas Chanda, Piotr Sierant, Jakub Zakrzewski, arxiv:1908.06524
