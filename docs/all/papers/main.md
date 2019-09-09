@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Emergent quantum matter in graphene nanoribbons](https://arxiv.org/abs/1909.00258), J. L. Lado, R. Ortiz, J. Fernandez-Rossier, arxiv:1909.00258
+
+* [High-temperature spin dynamics in the Heisenberg chain: Magnon propagation and emerging KPZ-scaling in the zero magnetization limit](https://arxiv.org/abs/1908.11432), Felix Weiner, Peter Schmitteckert, Soumya Bera, Ferdinand Evers, arxiv:1908.11432
+
 * [DMRG Approach to Optimizing Two-Dimensional Tensor Networks](https://arxiv.org/abs/1908.08833), Katharine Hyatt, E.M. Stoudenmire, arxiv:1908.08833
 
 * [The learnability scaling of quantum states: restricted Boltzmann machines](https://arxiv.org/abs/1908.07532), Dan Sehayek, Anna Golubeva, Michael S. Albergo, Bohdan Kulchytskyy, Giacomo Torlai, Roger G. Melko, arxiv:1908.07532
