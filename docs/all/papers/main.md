@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Spin--lattice coupling and the emergence of the trimerized phase in the S=1 Kagome antiferromagnet Na2Ti3Cl8](https://arxiv.org/abs/1909.02020), Arpita Paul, Chia-Min Chung, Turan Birol, Hitesh J. Changlani, arxiv:1909.02020
+
 * [Emergent quantum matter in graphene nanoribbons](https://arxiv.org/abs/1909.00258), J. L. Lado, R. Ortiz, J. Fernandez-Rossier, arxiv:1909.00258
 
 * [High-temperature spin dynamics in the Heisenberg chain: Magnon propagation and emerging KPZ-scaling in the zero magnetization limit](https://arxiv.org/abs/1908.11432), Felix Weiner, Peter Schmitteckert, Soumya Bera, Ferdinand Evers, arxiv:1908.11432
