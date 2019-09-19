@@ -104,9 +104,9 @@
 
 * [Stabilizing a Discrete Time Crystal Against Dissipation](https://arxiv.org/abs/1902.04986), Leon Droenner, Regina Finsterholzl, Alexander Carmele, Markus Heyl, arxiv:1902.04986
 
-* [A DMRG Study of Superconductivity in the Triangular Lattice Hubbard Model](https://arxiv.org/abs/1901.11034), Jordan Venderley, E. A. Kim, arxiv:1901.11034
+* [A DMRG Study of Superconductivity in the Triangular Lattice Hubbard Model](https://arxiv.org/abs/1901.11034), Jordan Venderley, E. A. Kim, PhysRev[B,100,060506] [arxiv:1901.11034]
 
-* [Open XXZ chain and boundary modes at zero temperature](https://arxiv.org/abs/1901.10932), Sebastian Grijalva, Jacopo De Nardis, Veronique Terras, arxiv:1901.10932
+* [Open XXZ chain and boundary modes at zero temperature](https://arxiv.org/abs/1901.10932), Sebastian Grijalva, Jacopo De Nardis, Veronique Terras, <i style="color:#CC0000">SciPost Phys.</i> <b>7</b>, <a href="http://dx.doi.org/	10.21468/SciPostPhys.7.2.023">023</a> (2019)  [arxiv:1901.10932]
 
 * [Theory of the field-revealed Kitaev spin liquid](https://arxiv.org/abs/1901.09943), Jacob S. Gordon, Andrei Catuneanu, Erik S. Sørensen, Hae-Young Kee, <i style="color:#CC0000">Nature Communications</i> <b>10</b>, <a href="http://dx.doi.org/10.1038/s41467-019-10405-8">2470</a> (2019) [arxiv:1901.09943]
 
@@ -114,7 +114,7 @@
 
 * [Valence bond fluctuations in the Kitaev spin model](https://arxiv.org/abs/1901.03973), Fan Yang, Kirill Plekhanov, Karyn Le Hur, arxiv:1901.03973
 
-* [Free fermions at the edge of interacting systems](https://arxiv.org/abs/1901.02770), Jean-Marie Stéphan, arxiv:1901.02770
+* [Free fermions at the edge of interacting systems](https://arxiv.org/abs/1901.02770), Jean-Marie Stéphan,  <i style="color:#CC0000">SciPost Phys.</i> <b>6</b>, <a href="http://dx.doi.org/10.21468/SciPostPhys.6.5.057">057</a> (2019) [arxiv:1901.02770]
 
 * [Finite Size Scaling at the Topological Transition: Bilinear-Biquadratic Spin-1 Chain](https://arxiv.org/abs/1901.02107), Yuting Wang, Alex Kamenev, arxiv:1901.02107
 
