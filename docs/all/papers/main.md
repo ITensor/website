@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Critical Dynamics of Transverse-field Quantum Ising Model using Finite-Size Scaling and Matrix Product States](https://doi.org/10.1007/s10773-019-04279-1), S. Y. PangEmail authorS. V. MuniandyM. Z. M. Kamali, <i style="color:#CC0000">Int. J. Theor. Phys.</i>, <a href="https://doi.org/10.1007/s10773-019-04279-1">https://doi.org/10.1007/s10773-019-04279-1</a> (2019)
+
 * [Front dynamics in the XY chain after local excitations](https://arxiv.org/abs/1909.02841), Viktor Eisler, Florian Maislinger, arxiv:1909.02841
 
 * [Spin--lattice coupling and the emergence of the trimerized phase in the S=1 Kagome antiferromagnet Na2Ti3Cl8](https://arxiv.org/abs/1909.02020), Arpita Paul, Chia-Min Chung, Turan Birol, Hitesh J. Changlani, arxiv:1909.02020
