@@ -244,9 +244,9 @@ new indices will arise as A refers to tensors at higher scales.
 Now it's time to decompose the current A tensor as discussed
 in the previous section. First the `A=Fl*Fr` factorization:
 
-    auto [Fl,Fr,l_new] = factor(A,{r,d},{l,u},{"MaxDim=",maxdim,
-                                               "Tags=","left,scale="+str(scale),
-                                               "ShowEigs=",true});
+    auto [Fl,Fr] = factor(A,{r,d},{l,u},{"MaxDim=",maxdim,
+                                         "Tags=","left,scale="+str(scale),
+                                         "ShowEigs=",true});
 
 
 When performing the factorization, we pass the tags we want the newly created Index
@@ -258,21 +258,24 @@ Setting "ShowEigs" to `true` shows helpful information about the truncation of s
 We can write very similar code to do the `A=Fu*Fd` factorization:
 
     // Get the upper-right and lower-left tensors
-    auto [Fu,Fd,u_new] = factor(A,{l,d},{u,r},{"MaxDim=",maxdim,
-                                               "Tags=","up,scale="+str(scale),
-                                               "ShowEigs=",true});
+    auto [Fu,Fd] = factor(A,{l,d},{u,r},{"MaxDim=",maxdim,
+                                         "Tags=","up,scale="+str(scale),
+                                         "ShowEigs=",true});
 
 Before contracting the F tensors back together to form the tensor definining the next
 scale, we need to make their shared indices distinct:
 
+    auto l_new = commonIndex(Fl,Fr);
     auto r_new = replaceTags(l_new,"left","right");
     Fr *= delta(l_new,r_new);
 
+    auto u_new = commonIndex(Fu,Fd);
     auto d_new = replaceTags(u_new,"up","down");
     Fd *= delta(u_new,d_new);
 
-In the first line above, we create an Index `r_new` which is like `l_new` but has
-the tag "right" instead of "left", so that it will no longer be contracted with `l_new`,
+In the first line above, we grab the index connecting the `Fl` and `Fr` factor tensors. 
+Then we create an Index `r_new` which is like `l_new` but has
+the tag "right" instead of "left", so that it will no longer be automatically contracted with `l_new`,
 and similarly for `u_new` and `d_new`.
 
 Having created these two new indices, we use a `delta` ITensor to replace `l_new` with

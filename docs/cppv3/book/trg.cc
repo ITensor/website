@@ -45,16 +45,16 @@ for(auto scale : range1(topscale))
 
     // Get the upper-left and lower-right tensors
     auto [Fl,Fr] = factor(A,{r,d},{l,u},{"MaxDim=",maxdim,
-                                               "Tags=","left,scale="+str(scale),
-                                               "ShowEigs=",true});
+                                         "Tags=","left,scale="+str(scale),
+                                         "ShowEigs=",true});
 
     // Grab the new left Index
     auto l_new = commonIndex(Fl,Fr);
 
     // Get the upper-right and lower-left tensors
     auto [Fu,Fd] = factor(A,{l,d},{u,r},{"MaxDim=",maxdim,
-                                               "Tags=","up,scale="+str(scale),
-                                               "ShowEigs=",true});
+                                         "Tags=","up,scale="+str(scale),
+                                         "ShowEigs=",true});
 
     // Grab the new up Index
     auto u_new = commonIndex(Fu,Fd);
