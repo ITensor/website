@@ -277,7 +277,7 @@
 
 * [Out-of-equilibrium dynamics in a quantum impurity model: numerics for particle transport and entanglement entropy](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.96.195117), Kemal&nbsp;Bidzhiev, Grégoire&nbsp;Misguich, PhysRev[B,96,195117] [arxiv:1707.06111]
 
-* [Quantum Simulation and Spectroscopy of Entanglement Hamiltonians](https://arxiv.org/abs/1707.04455), Marcello&nbsp;Dalmonte, Benoît&nbsp;Vermersch, Peter&nbsp;Zoller, arxiv:1707.04455
+* [Quantum Simulation and Spectroscopy of Entanglement Hamiltonians](https://arxiv.org/abs/1707.04455), Marcello&nbsp;Dalmonte, Benoît&nbsp;Vermersch, Peter&nbsp;Zoller, <i style="color:#CC0000">Nature Physics</i>&nbsp;<b>14</b> <a href="https://www.nature.com/articles/s41567-018-0151-7">827–831</a> (2018) [arxiv:1707.04455]
 
 * [Towards quantum simulation with circular Rydberg atoms](https://arxiv.org/abs/1707.04397), Thanh&nbsp;Long&nbsp;Nguyen, Jean-Michel&nbsp;Raimond, Clément&nbsp;Sayrin, Rodrigo&nbsp;Cortinas, Tigrane&nbsp;Cantat-Moltrecht, Fédéric&nbsp;Assemat, Igor&nbsp;Dotsenko, Sébastien&nbsp;Gleyzes, Serge&nbsp;Haroche, Guillaume&nbsp;Roux, Thierry&nbsp;Jolicoeur, Michel&nbsp;Brune, PhysRev[X,8,011032] [arxiv:1707.04397]
 
@@ -335,7 +335,7 @@
 
 * [An energy-resolved atomic scanning probe](http://arxiv.org/abs/1610.01903), Daniel&nbsp;Gruss, Chih-Chun&nbsp;Chien, Massimiliano&nbsp;Di&nbsp;Ventra, Michael&nbsp;Zwolak, <i style="color:#CC0000">New J. Phys.</i>&nbsp;&nbsp;<b>20</b> <a href="https://doi.org/10.1088/1367-2630/aaedcf">115005</a> (2018) [arxiv:1610.01903]
 
-* [Competing Spin Liquid Phases in the S=1/2 Heisenberg Model on the Kagome Lattice](http://arxiv.org/abs/1610.02024), Shenghan&nbsp;Jiang, Panjin&nbsp;Kim, Jung&nbsp;Hoon&nbsp;Han, Ying&nbsp;Ran, arxiv:1610.02024
+* [Competing Spin Liquid Phases in the S=1/2 Heisenberg Model on the Kagome Lattice](http://arxiv.org/abs/1610.02024), Shenghan&nbsp;Jiang, Panjin&nbsp;Kim, Jung&nbsp;Hoon&nbsp;Han, Ying&nbsp;Ran,  <i style="color:#CC0000">SciPost Phys.</i>&nbsp;&nbsp;<b>7</b> <a href="https://scipost.org/10.21468/SciPostPhys.7.1.006">006</a> (2019) [arxiv:1610.02024]
 
 * [Universal front propagation in the quantum Ising chain with domain-wall initial states](https://scipost.org/10.21468/SciPostPhys.1.2.014), Viktor&nbsp;Eisler, Florian&nbsp;Maislinger, Hans&nbsp;Gerd&nbsp;Evertz, <i style="color:#CC0000">SciPost Phys.</i>&nbsp;&nbsp;<b>1</b> <a href="https://scipost.org/10.21468/SciPostPhys.1.2.014">014</a> [arxiv:1610.01540]
 
