@@ -331,7 +331,7 @@ is the number of sites "contained" in the top tensor at scale @@N@@.
 With the conventions for the probability weights we have chosen, we can check
 @@\ln(Z)/N\_s@@ against the following exact result (for an infinite-sized system):
 $$
-\ln(Z)/N\_s = -2\beta + \frac{1}{2} \ln(2) + \frac{1}{2\pi} \int\_0^\pi\, d\theta \ln{\Big[ \cosh(2\beta)^2 + \frac{1}{k} \sqrt{1+k^2-2k\cos(2\theta)}\,\Big]}
+\ln(Z)/N\_s = \frac{1}{2} \ln(2) + \frac{1}{2\pi} \int\_0^\pi\, d\theta \ln{\Big[ \cosh(2\beta)^2 + \frac{1}{k} \sqrt{1+k^2-2k\cos(2\theta)}\,\Big]}
 $$
 where the constant @@k=1/\sinh(2\beta)^2@@ and recall @@\beta=1/T@@.
 
