@@ -166,9 +166,13 @@
 
   An alternative algorithm can be chosen by setting the parameter "Method" to "Fit". 
   This is a sweeping algorithm that iteratively optimizes the resulting MPS 
-  @@|y\rangle@@ (analogous to DMRG). This algorithm has better scaling in the MPO bond 
+  @@|y\rangle@@ (analogous to DMRG). The scaling of the "Fit" method is @@m^3 k + m^2 k^2@@ where @@m@@ is the typical MPS bond dimension and @@k@@ is the typical MPO bond dimension. 
+  Thus this algorithm has better scaling in the MPO bond 
   dimension @@k@@ compared to the "DensityMatrix" method, but is not guaranteed to converge 
-  (depending on the input MPO and MPS). The number of sweeps can be chosen with the parameter "Nsweep".
+  (depending on the input MPO and MPS). To ensure convergence it is helpful to use an initial guess
+  for the result MPS that is close to the actual one. Also it can be helpful (if appropriate) if the
+  MPO is close to the identity, such as when time evolving using a small time step. 
+  The number of sweeps can be chosen with the parameter "Nsweep".
 
   It is recommended to try the default "DensityMatrix" first because it is more reliable. 
   Then, the "Fit" method can be tried if higher performance is required.
