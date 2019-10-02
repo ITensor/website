@@ -20,10 +20,12 @@ e^{-i \tau H} \approx e^{-i h\_{1,2} \tau/2} e^{-i h\_{2,3} \tau/2} \cdots e^{-i
 e^{-i h\_{N-1,N} \tau/2} e^{-i h\_{N-2,N-1} \tau/2} \cdots e^{-i h\_{1,2} \tau/2} + O(\tau^2)
 $$
 Note the factors of two in each exponential.
-The error in the above decomposition is of order @@\tau^2@@, so this will be the error
+The error in the above decomposition is of order @@\tau^3@@, so this will be the error
 accumulated _per time step_. Because of the time-step error, one takes @@\tau@@ to be
 small and then applies the above set of operators to an MPS as a single sweep, then
-does a number @@(t/\tau)@@ of sweeps to evolve for a total time @@t@@.
+does a number @@(t/\tau)@@ of sweeps to evolve for a total time @@t@@. The total error
+will therefore scale as @@\tau^2@@ with this scheme, though other sources of error may 
+dominate for long times, or very small @@\tau@@, such as truncation errors.
 
 The same decomposition can be used for imaginary time evolution just by replacing
 @@i \tau \rightarrow \tau@@.
