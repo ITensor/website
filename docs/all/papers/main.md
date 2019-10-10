@@ -8,6 +8,14 @@
  
 ## 2019
 
+* [Anomalies and unnatural stability of multi-component Luttinger liquids in ℤn×ℤn spin chains](https://arxiv.org/abs/1910.00589), Yahya Alavirad, Maissam Barkeshli, arxiv:1910.00589
+
+* [Symmetry-protected topological phases in two-leg SU(N) spin ladder with unequal spins](https://arxiv.org/abs/1909.13553), Sylvain Capponi, Pierre Fromholz, Philippe Lecheminant, Keisuke Totsuka, arxiv:1909.13553
+
+* [Tensor network strategies for calculating biexcitons and trions in monolayer 2D materials beyond the ground state](https://arxiv.org/abs/1909.13741), Sandra C. Kuhn, Marten Richter, arxiv:1909.13741
+
+* [Confinement and lack of thermalization after quenches in the bosonic Schwinger model](https://arxiv.org/abs/1909.12657), Titas Chanda, Jakub Zakrzewski, Maciej Lewenstein, Luca Tagliacozzo, arxiv:1909.12657
+
 * [One-dimensional extended Hubbard model with soft-core potential](https://arxiv.org/abs/1909.12168), Thomas Botzung, Guido Pupillo, Pascal Simon, Roberta Citro, Elisa Ercolessi, arxiv:1909.12168
 
 * [Effects of energy extensivity on the quantum phases of long-range interacting systems](https://arxiv.org/abs/1909.12105), Thomas Botzung, David Hagenmüller, Guido Masella, Jérôme Dubail, Nicolò Defenu, Andrea Trombettoni, Guido Pupillo, arxiv:1909.12105
