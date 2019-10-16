@@ -8,6 +8,9 @@
  
 ## 2019
 
+* [Magnon Bose-Einstein Condensation and Superconductivity in a Frustrated Kondo Lattice](https://arxiv.org/abs/1910.03589), 
+Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
+
 * [Anomalies and unnatural stability of multi-component Luttinger liquids in ℤn×ℤn spin chains](https://arxiv.org/abs/1910.00589), Yahya Alavirad, Maissam Barkeshli, arxiv:1910.00589
 
 * [Symmetry-protected topological phases in two-leg SU(N) spin ladder with unequal spins](https://arxiv.org/abs/1909.13553), Sylvain Capponi, Pierre Fromholz, Philippe Lecheminant, Keisuke Totsuka, arxiv:1909.13553
