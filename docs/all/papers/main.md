@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Simulating bosonic Chern insulators in one-dimensional optical superlattices](https://arxiv.org/abs/1910.05943), Yu-Lian Chen, Guo-Qing Zhang, Dan-Wei Zhang, Shi-Liang Zhu, arxiv:1910.05943
+
 * [Magnon Bose-Einstein Condensation and Superconductivity in a Frustrated Kondo Lattice](https://arxiv.org/abs/1910.03589), 
 Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
