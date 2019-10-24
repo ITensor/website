@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Modeling Sequences with Quantum States: A Look Under the Hood](https://arxiv.org/abs/1910.07425), Tai-Danae Bradley, E. Miles Stoudenmire, John Terilla, arxiv:1910.07425
+
 * [Simulating bosonic Chern insulators in one-dimensional optical superlattices](https://arxiv.org/abs/1910.05943), Yu-Lian Chen, Guo-Qing Zhang, Dan-Wei Zhang, Shi-Liang Zhu, arxiv:1910.05943
 
 * [Magnon Bose-Einstein Condensation and Superconductivity in a Frustrated Kondo Lattice](https://arxiv.org/abs/1910.03589), 
