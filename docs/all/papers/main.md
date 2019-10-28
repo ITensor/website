@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Entanglement entropies of inhomogeneous Luttinger liquids](https://arxiv.org/abs/1910.09967), Alvise Bastianello, Jérôme Dubail, Jean-Marie Stéphan, arxiv:1910.09967
+
+* [Complex density wave orders and quantum phase transitions in square-lattice Rydberg atom arrays](https://arxiv.org/abs/1910.09548), Rhine Samajdar, Wen Wei Ho, Hannes Pichler, Mikhail D. Lukin, Subir Sachdev, arxiv:1910.09548
+
 * [Modeling Sequences with Quantum States: A Look Under the Hood](https://arxiv.org/abs/1910.07425), Tai-Danae Bradley, E. Miles Stoudenmire, John Terilla, arxiv:1910.07425
 
 * [Simulating bosonic Chern insulators in one-dimensional optical superlattices](https://arxiv.org/abs/1910.05943), Yu-Lian Chen, Guo-Qing Zhang, Dan-Wei Zhang, Shi-Liang Zhu, arxiv:1910.05943
