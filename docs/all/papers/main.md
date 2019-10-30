@@ -8,6 +8,9 @@
  
 ## 2019
 
+* [Domain wall melting in spin-1 chains](https://arxiv.org/abs/1910.11255), 
+Marko Medenjak, Jacopo De Nardis, arxiv:1910.11255
+
 * [Entanglement entropies of inhomogeneous Luttinger liquids](https://arxiv.org/abs/1910.09967), Alvise Bastianello, Jérôme Dubail, Jean-Marie Stéphan, arxiv:1910.09967
 
 * [Complex density wave orders and quantum phase transitions in square-lattice Rydberg atom arrays](https://arxiv.org/abs/1910.09548), Rhine Samajdar, Wen Wei Ho, Hannes Pichler, Mikhail D. Lukin, Subir Sachdev, arxiv:1910.09548
