@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Retardation-induced anomalous population trapping in a multiply-excited, multiple-emitter waveguide-QED system](https://arxiv.org/abs/1910.13414), Alexander Carmele, Nikolett Nemet, Victor Canela, Scott Parkins, arxiv:1910.13414
+
 * [Domain wall melting in spin-1 chains](https://arxiv.org/abs/1910.11255), 
 Marko Medenjak, Jacopo De Nardis, arxiv:1910.11255
 
