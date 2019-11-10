@@ -96,7 +96,7 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [Generalized hydrodynamics with space-time inhomogeneous interactions](https://arxiv.org/abs/1906.01654), Alvise Bastianello, Vincenzo Alba, Jean Sébastien Caux, arxiv:1906.01654
 
-* [NMR relaxation in the spin-1 Heisenberg chain](https://arxiv.org/abs/1905.12697), Sylvain Capponi, Maxime Dupont, Anders W. Sandvik, Pinaki Sengupta, arxiv:1905.12697
+* [NMR relaxation in the spin-1 Heisenberg chain](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.094411), Sylvain Capponi, Maxime Dupont, Anders W. Sandvik, Pinaki Sengupta, PhysRev[B,100,094411] (2019) [arxiv:1905.12697]
 
 * [Multistability of Driven-Dissipative Quantum Spins](https://arxiv.org/abs/1905.10349), Haggai Landa, Marco Schiró, Grégoire Misguich, arxiv:1905.10349
 
@@ -110,15 +110,15 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [Quench dynamics of two component dipolar Fermions in a Quasiperiodic potential](https://arxiv.org/abs/1905.06677), Bradraj Pandey, Swapan K. Pati, arxiv:1905.06677
 
-* [Dynamic response of spin-2 bosons in one-dimensional optical lattices](https://arxiv.org/abs/1905.06587), Florian Lange, Satoshi Ejima, Holger Fehske, arxiv:1905.06587
+* [Dynamic response of spin-2 bosons in one-dimensional optical lattices](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.023623), Florian Lange, Satoshi Ejima, Holger Fehske, PhysRev[A,100,023623] [arxiv:1905.06587]
 
-* [Operationally accessible entanglement of one dimensional spinless fermions](https://arxiv.org/abs/1905.03312), Hatem Barghathi, Emanuel Casiano-Diaz, Adrian Del Maestro, arxiv:1905.03312
+* [Operationally accessible entanglement of one dimensional spinless fermions](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.022324), Hatem Barghathi, Emanuel Casiano-Diaz, Adrian Del Maestro, PhysRev[A,100,022324] (2019) [arxiv:1905.03312]
 
 * [Spectral response of Josephson junctions with low-energy quasiparticles](https://arxiv.org/abs/1905.03275), Anna Keselman, Chaitanya Murthy, Bernard van Heck, Bela Bauer, arxiv:1905.03275
 
-* [Optimization of infinite projected entangled pair states: the role of multiplets and their breaking](https://arxiv.org/abs/1905.02164), J. Hasik, F. Becca, arxiv:1905.02164
+* [Optimization of infinite projected entangled pair states: the role of multiplets and their breaking](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.054429), J. Hasik, F. Becca, PhysRev[B,100,054429] (2019) [arxiv:1905.02164]
 
-* [Ferromagnetism and Spin-Valley liquid states in Moiré Correlated Insulators](https://arxiv.org/abs/1905.00033), Xiao-Chuan Wu, Anna Keselman, Chao-Ming Jian, Kelly Ann Pawlak, Cenke Xu, arxiv:1905.00033
+* [Ferromagnetism and Spin-Valley liquid states in Moiré Correlated Insulators](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.024421), Xiao-Chuan Wu, Anna Keselman, Chao-Ming Jian, Kelly Ann Pawlak, Cenke Xu, PhysRev[B,100,024421] (2019) [arxiv:1905.00033]
 
 * [Charge density wave in a doped Kondo chain](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.99.195109), Yixuan Huang, D. N. Sheng, and C. S. Ting, PhysRev[B,99,195109] (2019)
 
