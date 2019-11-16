@@ -8,6 +8,12 @@
  
 ## 2019
 
+* [Inter-layer modified d_{y^2-z^2}-wave superconductivity in an effectively doped spin-1 ladder](https://iopscience.iop.org/article/10.1088/1367-2630/ab5603), Jie Hou, Ting-Kuo Lee, Yaowu Guo, Jie Lou and Yan Chen, <i style="color:#CC0000">New Journal of Physics</i>
+
+* [Dimer description of the SU(4) antiferromagnet on the triangular lattice](https://arxiv.org/abs/1911.03492), Anna Keselman, Lucile Savary, Leon Balents, arxiv:1911.03492
+
+* [Probing Genuine Multipartite Entanglement in Large Systems](https://arxiv.org/abs/1911.04649), Lucas B. Vieira, Diego L. Braga Ferreira, Thiago O. Maciel, Reinaldo O. Vianna, arxiv:1911.04649
+
 * [Retardation-induced anomalous population trapping in a multiply-excited, multiple-emitter waveguide-QED system](https://arxiv.org/abs/1910.13414), Alexander Carmele, Nikolett Nemet, Victor Canela, Scott Parkins, arxiv:1910.13414
 
 * [Domain wall melting in spin-1 chains](https://arxiv.org/abs/1910.11255), 
