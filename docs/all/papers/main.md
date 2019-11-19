@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [A variety of order by disorder in the asymmetric J1-J2 zigzag ladder: From delta chain to J1-J2 chain](https://arxiv.org/abs/1911.05270), Tomoki Yamaguchi, Stefan-Ludwig Drechsler, Yukinori Ohta, Satoshi Nishimoto, arxiv:1911.05270
+
 * [Inter-layer modified d_{y^2-z^2}-wave superconductivity in an effectively doped spin-1 ladder](https://iopscience.iop.org/article/10.1088/1367-2630/ab5603), Jie Hou, Ting-Kuo Lee, Yaowu Guo, Jie Lou and Yan Chen, <i style="color:#CC0000">New Journal of Physics</i>
 
 * [Dimer description of the SU(4) antiferromagnet on the triangular lattice](https://arxiv.org/abs/1911.03492), Anna Keselman, Lucile Savary, Leon Balents, arxiv:1911.03492
