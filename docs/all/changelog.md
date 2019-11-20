@@ -3,9 +3,10 @@
 <a name="v3.1.0"></a>
 ## [Version 3.1.0](https://github.com/ITensor/ITensor/tree/v3.1.0) (Nov 20, 2019) ##
 
-This update to ITensor speeds up calculations involve block sparse ITensors 
+This update to ITensor speeds up calculations involving block sparse ITensors 
 by a considerable amount, especially when the number of different blocks is large
 (or equivalently the block sizes are small compared to the over index dimensions).
+
 This version also introduces an optimization where ITensor data is not initialized
 to all zero when it is about to be immediately overwritten, say as the result of
 a contraction operation.
