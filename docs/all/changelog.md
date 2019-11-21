@@ -11,6 +11,14 @@ This version also introduces an optimization where ITensor data is not initializ
 to all zero when it is about to be immediately overwritten, say as the result of
 a contraction operation.
 
+New features added since v3.0.0:
+- itertools for range-based iteration (e.g. enumerate)
+- arnoldi function for finding dominant eigenvector of a large matrix
+- applyExp function (Krylov method for applying the exponential of a matrix/operator)
+- polar decomposition
+- directSum: partial direct sum of ITensors
+
+
 <a name="v3.0.0"></a>
 ## [Version 3.0.0](https://github.com/ITensor/ITensor/tree/v3.0.0) (May 15, 2019) ##
 
