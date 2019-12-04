@@ -161,7 +161,7 @@ CTMRG
 Tatsuto Yamamoto
 </td>
 <td class="descrip">
-The corner transfer matrix renormalization group (CTMRG) algorithm of Nishino and Okunishi for contraction fully symmetric infinite 2D tensor networks.
+The corner transfer matrix renormalization group (CTMRG) algorithm of Nishino and Okunishi for contracting fully symmetric infinite 2D tensor networks.
 </td>
 </tr>
 
