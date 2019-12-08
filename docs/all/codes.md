@@ -42,6 +42,20 @@ with example driver codes.
 </td>
 </tr>
 
+<tr>
+<td class="name">
+<a href="https://github.com/Tatsuto-Yamamoto/CTMRG-by-ITensor" target="_blank">
+CTMRG
+</a>
+</td>
+<td class="contrib">
+Tatsuto Yamamoto
+</td>
+<td class="descrip">
+The corner transfer matrix renormalization group (CTMRG) algorithm of Nishino and Okunishi for contracting fully symmetric infinite 2D tensor networks.
+</td>
+</tr>
+
 </table>
 
 
