@@ -8,6 +8,10 @@
  
 ## 2019
 
+* [Emergent Fermi surface in a triangular-lattice SU(4) quantum antiferromagnet](https://arxiv.org/abs/1912.01025), Anna Keselman, Bela Bauer, Cenke Xu, Chao-Ming Jian, arxiv:1912.01025
+
+* [Effect of Fluctuation in the Coupling Strength on Critical Dynamics of 1D Transverse Field Quantum Ising Model](https://link.springer.com/article/10.1007/s10773-019-04320-3), S. Y. Pang, S. V. Muniandy, M. Z. M. Kamali, <i style="color:#CC0000">Int. J. Theor. Phys.</i>, <a href="https://doi.org/10.1007/s10773-019-04320-3">https://doi.org/10.1007/s10773-019-04320-3</a> (2019)
+
 * [A variety of order by disorder in the asymmetric J1-J2 zigzag ladder: From delta chain to J1-J2 chain](https://arxiv.org/abs/1911.05270), Tomoki Yamaguchi, Stefan-Ludwig Drechsler, Yukinori Ohta, Satoshi Nishimoto, arxiv:1911.05270
 
 * [Inter-layer modified d_{y^2-z^2}-wave superconductivity in an effectively doped spin-1 ladder](https://iopscience.iop.org/article/10.1088/1367-2630/ab5603), Jie Hou, Ting-Kuo Lee, Yaowu Guo, Jie Lou and Yan Chen, <i style="color:#CC0000">New Journal of Physics</i>
@@ -52,7 +56,7 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [Spontaneous time-reversal symmetry breaking without magnetism in a S=1 chain](https://arxiv.org/abs/1909.06461), Shun-Chiao Chang, Pavan Hosur, arxiv:1909.06461
 
-* [Critical Dynamics of Transverse-field Quantum Ising Model using Finite-Size Scaling and Matrix Product States](https://doi.org/10.1007/s10773-019-04279-1), S. Y. PangEmail authorS. V. MuniandyM. Z. M. Kamali, <i style="color:#CC0000">Int. J. Theor. Phys.</i>, <a href="https://doi.org/10.1007/s10773-019-04279-1">https://doi.org/10.1007/s10773-019-04279-1</a> (2019)
+* [Critical Dynamics of Transverse-field Quantum Ising Model using Finite-Size Scaling and Matrix Product States](https://doi.org/10.1007/s10773-019-04279-1), S. Y. Pang, S. V. Muniandy, M. Z. M. Kamali, <i style="color:#CC0000">Int. J. Theor. Phys.</i>, <a href="https://doi.org/10.1007/s10773-019-04279-1">https://doi.org/10.1007/s10773-019-04279-1</a> (2019)
 
 * [Front dynamics in the XY chain after local excitations](https://arxiv.org/abs/1909.02841), Viktor Eisler, Florian Maislinger, arxiv:1909.02841
 
