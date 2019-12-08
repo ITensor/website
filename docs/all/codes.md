@@ -31,19 +31,6 @@ Name
 
 <tr>
 <td class="name">
-<a href="https://github.com/ITensor/iDMRG" target="_blank">iDMRG</a>
-</td>
-<td class="contrib">
-ITensor
-</td>
-<td class="descrip">
-A single header file for idmrg calculations based on the ITensor library,
-with example driver codes.
-</td>
-</tr>
-
-<tr>
-<td class="name">
 <a href="https://github.com/Tatsuto-Yamamoto/CTMRG-by-ITensor" target="_blank">
 CTMRG
 </a>
@@ -53,6 +40,34 @@ Tatsuto Yamamoto
 </td>
 <td class="descrip">
 The corner transfer matrix renormalization group (CTMRG) algorithm of Nishino and Okunishi for contracting fully symmetric infinite 2D tensor networks.
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/ITensor/iDMRG" target="_blank">iDMRG</a>
+</td>
+<td class="contrib">
+Miles Stoudenmire
+</td>
+<td class="descrip">
+A single header file for idmrg calculations based on the ITensor library,
+with example driver codes.
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/ITensor/TDVP" target="_blank">TDVP</a>
+</td>
+<td class="contrib">
+<a href="https://github.com/mingruyang">Mingru Yang</a>
+</td>
+<td class="descrip">
+Implementation of the time-dependent variational principle (TDVP) 
+method for time evolving MPS for any Hamiltonian which can
+be represented as an MPO. Supports both the 1-site and 2-site
+algorithms.
 </td>
 </tr>
 
