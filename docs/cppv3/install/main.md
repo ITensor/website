@@ -67,6 +67,10 @@ Note: sometimes ITensor has issues compiling if the make "-j" flag is used
 disabling it (e.g. explicitly type `make -j 1`) if you have compilation 
 errors.
 
+Also, the ITensor build process doesn't work if there are spaces in the path
+where you are compiling ITensor. You can avoid this issue by moving the
+ITensor source code to a location where the path has no spaces, or make 
+a symbolic link to a location where the path has no spaces.
 
 ## Building the sample codes
 
