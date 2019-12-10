@@ -48,6 +48,7 @@ its actual signature is `f(ITensor const& T)`.
   - [[Fermion and FermionSite|classes/fermion]]. Spinless fermion sites. <br/>
   - [[Electron and ElectronSite|classes/electron]]. Spinful fermion sites. <br/>
   - [[tJ and tJSite|classes/tj]]. t-J model sites. <br/>
+  - [[CustomSpin and CustomSpinSite|classes/customspin]]. Spin sites with custom spin S size. <br/>
 
 * [[MPS|classes/mps]]. Matrix product state class. <br/>
 
