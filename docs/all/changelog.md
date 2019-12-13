@@ -1,5 +1,12 @@
 # Change Log #
 
+<a name="v3.1.1"></a>
+## [Version 3.1.1](https://github.com/ITensor/ITensor/tree/v3.1.1) (Dec 13, 2019) ##
+
+- Fixes a bug in the removeQNs(ITensor) function
+- svd no longer truncates by default
+- better handling of singular values which are exactly zero when setting Cutoff=0
+
 <a name="v3.1.0"></a>
 ## [Version 3.1.0](https://github.com/ITensor/ITensor/tree/v3.1.0) (Nov 20, 2019) ##
 
