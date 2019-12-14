@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Non-equilibrium Renormalization Group Fixed-Points of Quantum Spin Chains in Critical Dynamical Quantum Phase Transitions](https://arxiv.org/abs/1912.04181), Yantao Wu, arxiv:1912.04181
+
 * [Emergent Fermi surface in a triangular-lattice SU(4) quantum antiferromagnet](https://arxiv.org/abs/1912.01025), Anna Keselman, Bela Bauer, Cenke Xu, Chao-Ming Jian, arxiv:1912.01025
 
 * [Effect of Fluctuation in the Coupling Strength on Critical Dynamics of 1D Transverse Field Quantum Ising Model](https://link.springer.com/article/10.1007/s10773-019-04320-3), S. Y. Pang, S. V. Muniandy, M. Z. M. Kamali, <i style="color:#CC0000">Int. J. Theor. Phys.</i>, <a href="https://doi.org/10.1007/s10773-019-04320-3">https://doi.org/10.1007/s10773-019-04320-3</a> (2019)
