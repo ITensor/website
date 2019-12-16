@@ -166,7 +166,7 @@ and "itensor/mps/autompo.cc".
   The time step t can be real or complex.
 
   The method used to do the approximate exponentiation is based on the following article:
-  <a href="http://journals.aps.org/prb/abstract/10.1103/PhysRevB.91.165112" target="_blank">Phys. Rev. B 91, 165112</a> (arxiv:1407.1832) using the $W^{I}$ method, and has the advantage that unlike
+  <a href="http://journals.aps.org/prb/abstract/10.1103/PhysRevB.91.165112" target="_blank">Phys. Rev. B 91, 165112</a> (arxiv:1407.1832) using the @@W^{I}@@ method, and has the advantage that unlike
   naive approaches for exponentiating an MPO, the time-step error per site is independent of system size.
 
   Note that the true amount of error per step, or the quality of the results can depend
