@@ -8,6 +8,8 @@
  
 ## 2019
 
+* [Strongly interacting spin-orbit coupled Bose-Einstein condensates in one dimension](https://arxiv.org/abs/1912.06142), Siddhartha Saha, E. J. König, Junhyun Lee, J. H. Pixley, arxiv:1912.06142
+
 * [Non-equilibrium Renormalization Group Fixed-Points of Quantum Spin Chains in Critical Dynamical Quantum Phase Transitions](https://arxiv.org/abs/1912.04181), Yantao Wu, arxiv:1912.04181
 
 * [Emergent Fermi surface in a triangular-lattice SU(4) quantum antiferromagnet](https://arxiv.org/abs/1912.01025), Anna Keselman, Bela Bauer, Cenke Xu, Chao-Ming Jian, arxiv:1912.01025
