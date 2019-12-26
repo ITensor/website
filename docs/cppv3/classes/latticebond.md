@@ -21,7 +21,7 @@ about these functions see [[Functions for Making Lattices|classes/lattice_functi
         {
         printfln("Bond from site %d -> %d",bnd.s1,bnd.s2);
         printfln("  Connecting points (%s,%s) -> (%s,%s)",bnd.x1,bnd.y1,bnd.x2,bnd.y2);
-        printfln("  This bond is of type %s",bnd.type)
+        printfln("  This bond is of type \"%s\"",bnd.type);
         }
 
 ## LatticeBond Data Members
@@ -32,4 +32,5 @@ about these functions see [[Functions for Making Lattices|classes/lattice_functi
 - `y1` (Real) &mdash; y coordinate of the first site
 - `x2` (Real) &mdash; x coordinate of the second site
 - `y2` (Real) &mdash; y coordinate of the second site
+- `type` (string) &mdash; string labeling the type of the bond - see [[Functions for Making Lattices|classes/lattice_functions]] for more information of the LatticeBond types returned by each function
 
