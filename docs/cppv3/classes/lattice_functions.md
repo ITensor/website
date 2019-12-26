@@ -15,6 +15,19 @@ or triangular lattice.
         printfln("Bond from site %d -> %d",bnd.s1,bnd.s2);
         }
 
+    auto square_latt_nn = squareNextNeighbor(Nx,Ny,{"YPeriodic=",true});
+    for(auto& bnd : square_latt_nn)
+        {
+        if(bnd.type == "1")
+            {
+            printfln("First-neighbor bond from site %d -> %d",bnd.s1,bnd.s2);
+            }
+        else if(bnd.type == "2")
+            {
+            printfln("Second-neighbor bond from site %d -> %d",bnd.s1,bnd.s2);
+            }
+        }
+
     //Make a Hamiltonian on the triangular lattice using AutoMPO
     auto sites = SpinHalf(Nx*Ny);
     auto ampo = AutoMPO(sites);
