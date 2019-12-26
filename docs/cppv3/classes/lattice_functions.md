@@ -49,6 +49,20 @@ or triangular lattice.
   next-nearest-neighbor (second-nearest-neighbor) bonds of
   the two-dimensional square lattice of dimension Nx by Ny.
 
+  First-neighbor bonds in the returned lattice have the type `"1"` 
+  while second-neighbor bonds have the type `"2"`.
+
+  This function recognizes the following optional named arguments:
+  
+  * "YPeriodic" &mdash; (default=false). If true, includes next-neighbor periodic bonds wrapping around the y-direction.
+
+* ```
+  triangularLattice(int Nx, int Ny, Args args = Args::global()) -> Lattice
+  ```
+  
+  Return a Lattice (vector<LatticeBond>) of nearest-neighbor
+  bonds of the two-dimensional triangular lattice of dimension Nx by Ny.
+
   This function recognizes the following optional named arguments:
   
   * "YPeriodic" &mdash; (default=false). If true, includes next-neighbor periodic bonds wrapping around the y-direction.
