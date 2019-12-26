@@ -4,6 +4,12 @@ ITensor provides functions which return a vector of [[LatticeBond|classes/lattic
 objects for conveniently working with various lattices such as the square lattice
 or triangular lattice.
 
+The source code for these functions can be found in the folder `itensor/mps/lattice`
+and are meant to be written in a straightforward style that can be used to develop
+similar functions for other lattices. If you would like to contribute a lattice
+function (such as kagome, or next-neighbor triangular) which is currently missing,
+we would be happy to receive a pull request from you.
+
 ## Synopsis
 
     int Nx = 10;
