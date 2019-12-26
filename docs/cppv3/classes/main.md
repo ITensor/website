@@ -12,6 +12,10 @@ its actual signature is `f(ITensor const& T)`.
 
 * [[Support for MPI (Message Passing Interface) Parallelism|classes/parallel]]
 
+* Support for working with lattices:
+  - [[LatticeBond Objects|classes/latticebond]]
+  - [[Functions for Making Lattices|classes/lattice_functions]]
+
 ## Index
 
 * [[Index|classes/index]]. Tensor index.
