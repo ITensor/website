@@ -8,6 +8,20 @@
  
 ## 2019
 
+* [SU(3)1 Chiral Spin Liquid on the Square Lattice: a View from Symmetric PEPS](https://arxiv.org/abs/1912.13393), Ji-Yao Chen, Sylvain Capponi, Alexander Wietek, Matthieu Mambrini, Norbert Schuch, Didier Poilblanc, arxiv:1912.13393
+
+* [Scaling of Loschmidt echo in boundary driven critical Z3 Potts model](https://arxiv.org/abs/1912.13015), Naveen Nishad, G J Sreejith, arxiv:1912.13015
+
+* [Global phase diagram and chiral spin liquids in the extended spin-1/2 honeycomb XY model](https://arxiv.org/abs/1912.11156), Yixuan Huang, Xiao-yu Dong, D. N. Sheng, C. S. Ting, arxiv:1912.11156
+
+* [Ground-state properties of the one-dimensional Hubbard model with pairing potential](https://arxiv.org/abs/1912.10203), Myung-Hoon Chung, Sylvain Capponi, Didier Poilblanc, arxiv:1912.10203
+
+* [Magnetic phase transitions in quantum spin-orbital liquids](https://arxiv.org/abs/1912.09516), Shi Feng, Niravkumar D. Patel, Panjin Kim, Jung Hoon Han, Nandini Trivedi, arxiv:1912.09516
+
+* [Fluctuations and Non-Hermiticity in the Stochastic Approach to Quantum Spins](https://arxiv.org/abs/1912.10551), S. E. Begg, A. G. Green, M. J. Bhaseen , arxiv:1912.10551
+
+* [Self-dual S3-invariant quantum chains](https://arxiv.org/abs/1912.09464), Edward O'Brien, Paul Fendley, arxiv:1912.09464
+
 * [Strongly interacting spin-orbit coupled Bose-Einstein condensates in one dimension](https://arxiv.org/abs/1912.06142), Siddhartha Saha, E. J. König, Junhyun Lee, J. H. Pixley, arxiv:1912.06142
 
 * [Non-equilibrium Renormalization Group Fixed-Points of Quantum Spin Chains in Critical Dynamical Quantum Phase Transitions](https://arxiv.org/abs/1912.04181), Yantao Wu, arxiv:1912.04181
