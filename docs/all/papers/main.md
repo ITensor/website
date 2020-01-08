@@ -6,6 +6,10 @@
 * [](), , arxiv:
 -->
  
+## 2020
+
+* [Topological end states in a one-dimensional spatially modulated interaction spinless fermion model](https://arxiv.org/abs/2001.01080), Zheng-Wei Zuo, Da-wei Kang, Liben Li, arxiv:2001.01080
+ 
 ## 2019
 
 * [SU(3)1 Chiral Spin Liquid on the Square Lattice: a View from Symmetric PEPS](https://arxiv.org/abs/1912.13393), Ji-Yao Chen, Sylvain Capponi, Alexander Wietek, Matthieu Mambrini, Norbert Schuch, Didier Poilblanc, arxiv:1912.13393
