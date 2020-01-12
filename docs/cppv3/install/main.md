@@ -53,7 +53,7 @@ If you do not have git on your computer, you can obtain it through your package 
    vendor-specific BLAS/LAPACK fortran calls into C.
 
 6. [Optional] Edit any optional options.mk variables you wish. These include:
-   - [[Support for HDF5|install_with_hdf5]]
+   - [[Support for HDF5|install/install_with_hdf5]]
    - Optimizations and debug flags (extra flags used to set the optimization level and level of compiler warning and debug output)
    For more detailed instructions about optional dependencies, see the next section below.;
 
@@ -85,7 +85,7 @@ ITensor has additional optional features listed below which involve
 extra dependencies. To enable these features, see the following
 documentation pages:
 
-- [[Enabling HDF5|install_with_hdf5]]
+- [[Enabling HDF5|install/install_with_hdf5]]
 
 
 ## Building the sample codes
