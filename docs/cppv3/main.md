@@ -1,6 +1,9 @@
 
 <img src="docs/VERSION/install/icon.png" class="icon">  [[Installing ITensor|install]]
 
+  - [[Basic Installation|install]]
+  - [[Compiling ITensor with HDF5 Support|install_with_hdf5]]
+
 <img src="docs/VERSION/book/icon.png" class="icon">   [[The ITensor Book|book]]. A comprehensive introduction to ITensor.
 
 <img src="docs/VERSION/classes/icon.png" class="icon">   [[In-depth Documentation|classes]]. Detailed interfaces of ITensor classes and functions.
