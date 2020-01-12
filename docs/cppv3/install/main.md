@@ -52,12 +52,17 @@ If you do not have git on your computer, you can obtain it through your package 
    selects which function signature definitions will be used to wrap 
    vendor-specific BLAS/LAPACK fortran calls into C.
 
-6. Finally, at the top level of the library (same directory as the options.mk file),
+6. [Optional] Edit any optional options.mk variables you wish. These include:
+   - [[Support for HDF5|install_with_hdf5]]
+   - Optimizations and debug flags (extra flags used to set the optimization level and level of compiler warning and debug output)
+   For more detailed instructions about optional dependencies, see the next section below.;
+
+7. Finally, at the top level of the library (same directory as the options.mk file),
    run the commmand "make" on the command line.
    If all goes well, the built library files should appear in the LIBDIR
    folder specified in options.mk.
 
-7. The resulting compiled library files remain inside the ITensor source
+8. The resulting compiled library files remain inside the ITensor source
    folder and are not put anywhere else on your machine. To create a 
    program using ITensor, use the files in `tutorial/project_template` as a 
    starting point for making your own code.
@@ -71,6 +76,17 @@ Also, the ITensor build process doesn't work if there are spaces in the path
 where you are compiling ITensor. You can avoid this issue by moving the
 ITensor source code to a location where the path has no spaces, or make 
 a symbolic link to a location where the path has no spaces.
+
+## Enabling Optional Dependencies
+
+By default, the only dependency of ITensor is BLAS and LAPACK (usually
+these are bundled together in libraries such as Intel MKL). However,
+ITensor has additional optional features listed below which involve
+extra dependencies. To enable these features, see the following
+documentation pages:
+
+- [[Enabling HDF5|install_with_hdf5]]
+
 
 ## Building the sample codes
 
