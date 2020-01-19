@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Critical properties of the many-particle (interacting) Aubry-André model ground-state localization-delocalization transition](https://arxiv.org/abs/2001.04954), Taylor Cookmeyer, Johannes Motruk, Joel E. Moore, arxiv:2001.04954
+
+* [Measurement-Induced Transitions of the Entanglement Scaling Law in Ultracold Gases with Controllable Dissipation](https://arxiv.org/abs/2001.03400), Shimpei Goto, Ippei Danshita, arxiv:2001.03400
+
 * [Block-Lanczos density-matrix renormalization-group approach to spin transport in Heisenberg chains coupled to leads](https://arxiv.org/abs/2001.02926), F. Lange, S. Ejima, T. Shirakawa, S. Yunoki, H. Fehske, arxiv:2001.02926
 
 * [Correlation-Assisted Quantized Charge Pumping](https://arxiv.org/abs/2001.01696), Jacob Marks, Michael Schüler, Jan C. Budich, Thomas P. Devereaux, arxiv:2001.01696
