@@ -144,7 +144,7 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [Domain wall problem in the quantum XXZ chain and semiclassical behavior close to the isotropic point](https://arxiv.org/abs/1905.08756), Grégoire Misguich, Nicolas Pavloff, Vincent Pasquier, arxiv:1905.08756
 
-* [Interaction distance in the extended XXZ model](https://arxiv.org/abs/1905.07239), Kristian Patrick, Vincent Caudrelier, Zlatko Papic, Jiannis K. Pachos, arxiv:1905.07239
+* [Interaction distance in the extended XXZ model](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.235128), Kristian Patrick, Vincent Caudrelier, Zlatko Papic, Jiannis K. Pachos, PhysRev[B,100,235128] [arxiv:1905.07239]
 
 * [Some ground-state expectation values for the free parafermion Z(N) spin chain](https://arxiv.org/abs/1905.08384), Zi-Zhong Liu, Robert A. Henry, Murray T. Batchelor, Huan-Qiang Zhou, arxiv:1905.08384
 
