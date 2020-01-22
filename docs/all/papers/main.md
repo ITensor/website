@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Characterizing spin-one Kitaev quantum spin liquids](https://arxiv.org/abs/2001.06000), Ilia Khait, P. Peter Stavropoulos, Hae-Young Kee, Yong Baek Kim, arxiv:2001.06000
+
+* [Correlation-induced steady states and limit cycles in driven dissipative quantum systems](https://arxiv.org/abs/2001.05474), Haggai Landa, Marco Schiró, Grégoire Misguich, arxiv:2001.05474
+
 * [Critical properties of the many-particle (interacting) Aubry-André model ground-state localization-delocalization transition](https://arxiv.org/abs/2001.04954), Taylor Cookmeyer, Johannes Motruk, Joel E. Moore, arxiv:2001.04954
 
 * [Measurement-Induced Transitions of the Entanglement Scaling Law in Ultracold Gases with Controllable Dissipation](https://arxiv.org/abs/2001.03400), Shimpei Goto, Ippei Danshita, arxiv:2001.03400
