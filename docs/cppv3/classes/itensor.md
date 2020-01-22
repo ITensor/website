@@ -276,35 +276,189 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       Print(elt(T,j=1,i=2,k=3) == -1.24); //prints: true
 
 <a name="tag_methods"></a>
-## ITensor Tag and Prime Methods
+## ITensor Prime and Tag Methods
 
 ITensors have all of the same tagging and priming methods that are defined for
-IndexSets. See the __Tag and Prime Methods__ section of the 
-[[IndexSet documentation|classes/indexset]] for a complete list of methods.
+IndexSets. 
+
+Note: all of the following functions listed of the form:
+
+  `.f(TagSet, ...)`
+
+  `.f(TagSet, TagSet, ...)`
+
+  `.f(int, ...)`
+
+perform an in-place modification of the ITensor. `...` stands for
+optional arguments to specify a subset of indices of the ITensor
+to apply the operation `.f()`.
+
+ - If no optional arguments are specified, `.f()` is applied to all
+   indices of the input ITensor.
+
+ - If `...` is a list of indices, an IndexSet, or a collection of indices
+   convertible to an IndexSet, `.f()` is applied to only the specified indices.
+
+ - If `...` is a TagSet, `.f()` is only applied to the indices in the IndexSet
+   containing all tags in the TagSet.
+
+Functions of the form:
+
+  `f(ITensor, TagSet, ...) -> ITensor`
+
+  `f(ITensor, TagSet, TagSet, ...) -> ITensor`
+
+  `f(ITensor, int, ...) -> ITensor`
+
+perform the same operation as the above in-place operations and accept the
+same optional arguments, but do not modify the input ITensor and instead
+return a new, modified ITensor.
+
+* `.prime(int inc = 1, ...)`
+
+  `prime(ITensor is, int inc = 1, ...) -> ITensor`
+
+  Increment prime level of all indices by 1, or by the optional amount "inc".
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
   <div class="example_clicker">Click to Show Example</div>
 
-      auto i1 = Index(2,"i1");
-      auto i2 = Index(2,"i2");
-      auto i3 = Index(2,"i3");
+      auto i1 = Index(2,"i,n=1");
+      auto i2 = Index(2,"i,n=2");
+      auto i3 = Index(2,"i,n=3");
 
-      auto T = randomITensor(i1,i2,i3);
+      auto A = randomITensor(i1,i2,i3);
 
-      auto Tp = prime(T,i1);  // Make a new ITensor Tp with index i1 primed
+      auto Ap = prime(A);
 
-      Print(hasIndex(Tp,i1)); //prints: false
-      Print(hasIndex(Tp,prime(i1))); //prints: true
-      Print(hasIndex(Tp,i2)); //prints: true
-      Print(hasIndex(Tp,i3)); //prints: true
+      Print(hasIndex(Ap,i1)); //prints: false
+      Print(hasIndex(Ap,prime(i1))); //prints: true
+      Print(hasIndex(Ap,prime(i2))); //prints: true
+      Print(hasIndex(Ap,prime(i3))); //prints: true
 
-      // Add the tag "x" to indices with integer tag (prime level) 1
-      auto Tx = addTags(Tp,"x","1");
+      A.prime(2,"n=2");
 
-      Print(hasIndex(Tx,i1)); //prints: false
-      Print(hasIndex(Tx,prime(i1))); //prints: false
-      Print(hasIndex(Tx,prime(addTags(i1,"x")))); //prints: false
-      Print(hasIndex(Tx,i2)); //prints: true
-      Print(hasIndex(Tx,i3)); //prints: true
+      Print(hasIndex(A,i1)); //prints: true
+      Print(hasIndex(A,prime(i2,2))); //prints: true
+      Print(hasIndex(A,i3)); //prints: true
+
+* `.setPrime(int plnew, ...)`
+
+  `setPrime(ITensor A, int plnew, ...) -> ITensor`
+
+  Set the prime level of all indices to plnew. Optionally, only set the
+  prime levels of indices containing tags tsmatch
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.noPrime(...)`
+
+  `noPrime(ITensor is, ...) -> ITensor`
+
+  Set the prime level of all Index objects in the ITenssor to zero.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.mapPrime(int plold, int plnew, ...)`
+
+  `mapPrime(ITensor is, int plold, int plnew, ...) -> ITensor`
+
+  Set the prime level of all indices with `plold` to `plnew`.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section
+  (note that if the tagset used for matching contains an integer tag
+  different from `plold`, this function won't do anything).
+
+* `.swapPrime(int pl1, int pl2, ...)`
+
+  `swapPrime(ITensor is, int pl1, int pl1, ...) -> ITensor`
+
+  Swap the input prime levels, such that all indices with prime level
+  `pl1` have prime level `pl2` and vice versa.
+
+  Optionally, only swap the prime levels of the listed indices, or indices
+  with the matching tags, as described at the top of the section
+  (note that if the tagset used for matching contains an integer tag
+  different from one of the given prime levels, indices with those prime
+  levels won't be modified).
+
+* `.addTags(TagSet tsadd, ...)`
+
+  `addTags(ITensor is, TagSet tsadd, ...) -> ITensor`
+
+  Add the tags in TagSet `tsadd` to the existing tags of
+  the indices in this ITensor.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+  <div class="example_clicker">Click to Show Example</div>
+
+      auto i1 = Index(2,"i,n=1");
+      auto i2 = Index(2,"i,n=2");
+      auto i3 = Index(2,"i,n=3");
+
+      auto A = randomITensor(i1,i2,i3);
+
+      auto isx = addTags(A,"x","n=1");
+
+      Print(hasIndex(Ax,i1)); //prints: false
+      Print(hasIndex(Ax,addTags(i1,"x"))); //prints: false
+      Print(hasIndex(Ax,i2)); //prints: true
+      Print(hasIndex(Ax,i3)); //prints: true
+
+* `.removeTags(TagSet tsremove, ...)`
+
+  `removeTags(ITensor is, TagSet tsremove, ...) -> ITensor`
+
+  Remove the tags in TagSet `tsremove` from the existing tags of
+  the indices in this ITensor.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.replaceTags(TagSet tsold, TagSet tsnew, ...)`
+
+  `replaceTags(ITensor is, TagSet tsold, TagSet tsnew, ...) -> ITensor`
+
+  For any index containing all of the tags in `tsold`, replace
+  these tags with those in `tsnew`.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.swapTags(TagSet ts1, TagSet ts2, ...)`
+
+  `swapTags(ITensor is, TagSet ts1, TagSet ts2, ...) -> ITensor`
+
+  For any index containing all of the tags in `ts1`, replace
+  these tags with those in `ts2` and vice versa.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.setTags(TagSet tsnew, ...)`
+
+  `setTags(ITensor A, TagSet tsnew, ...) -> ITensor`
+
+  Set the tags of the indices in this ITensor to be exactly those in the TagSet `tsnew`.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
+
+* `.noTags(...)`
+
+  `noTags(ITensor A, TagSet tsnew, ...) -> ITensor`
+
+  Remove all tags of the indices in this ITensor.
+
+  Optionally, only modify the tags of the listed indices, or indices
+  with the matching tags, as described at the top of the section.
 
 ## Operators Supported By ITensors ##
 
