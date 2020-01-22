@@ -138,7 +138,10 @@ An IndexSet is a subclass of Range which is defined in "itensor/tensor/range.h".
       Print(inds[0]); //prints: (3|id=542)
 
 <a name="tag_methods"></a>
-## Tag and Prime Methods ##
+## IndexSet Prime and Tag Methods ##
+
+IndexSets have all of the same tagging and priming methods that are defined for
+ITensors.
 
 Note: all of the following functions listed of the form:
 
@@ -311,7 +314,7 @@ return a new, modified IndexSet.
 
 * `.noTags(...)`
 
-  `noTags(TagSet tsnew, ...) -> IndexSet`
+  `noTags(IndexSet is, TagSet tsnew, ...) -> IndexSet`
 
   Remove all tags of the indices in this IndexSet.
 
