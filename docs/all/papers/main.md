@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Time evolution of entanglement negativity across a defect](https://arxiv.org/abs/2001.06274), Matthias Gruber, Viktor Eisler, arxiv:2001.06274
+
 * [Characterizing spin-one Kitaev quantum spin liquids](https://arxiv.org/abs/2001.06000), Ilia Khait, P. Peter Stavropoulos, Hae-Young Kee, Yong Baek Kim, arxiv:2001.06000
 
 * [Correlation-induced steady states and limit cycles in driven dissipative quantum systems](https://arxiv.org/abs/2001.05474), Haggai Landa, Marco Schiró, Grégoire Misguich, arxiv:2001.05474
