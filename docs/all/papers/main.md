@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Skin Superfluid, Topological Mott Insulators, and Asymmetric Dynamics in Interacting Non-Hermitian Aubry-Andre-Harper Models](https://arxiv.org/abs/2001.07088), Dan-Wei Zhang, Yu-Lian Chen, Guo-Qing Zhang, Li-Jun Lang, Zhi Li, Shi-Liang Zhu, arxiv:2001.07088
+
+* [Variational-Correlations Approach to Quantum Many-body Problems](https://arxiv.org/abs/2001.06510), Arbel Haim, Richard Kueng, Gil Refael, arxiv:2001.06510
+
+* [High order magnon bound states in the quasi-one-dimensional antiferromagnet α-NaMnO2](https://arxiv.org/abs/2001.07300), Rebecca L. Dally, Alvin J. R. Heng, Anna Keselman, Mitchell M. Bordelon, Matthew B. Stone, Leon Balents, Stephen D. Wilson, arxiv:2001.07300
+
 * [Time evolution of entanglement negativity across a defect](https://arxiv.org/abs/2001.06274), Matthias Gruber, Viktor Eisler, arxiv:2001.06274
 
 * [Characterizing spin-one Kitaev quantum spin liquids](https://arxiv.org/abs/2001.06000), Ilia Khait, P. Peter Stavropoulos, Hae-Young Kee, Yong Baek Kim, arxiv:2001.06000
