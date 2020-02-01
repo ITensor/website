@@ -242,7 +242,8 @@ for(<span style="color:green">int</span> j = 1; j < N; ++j)
     }
 <span style="color:green">auto</span> H = toMPO(ampo);
 
-<span style="color:#5081AA">//Set up initial wavefunction to be Mz=0 product state</span>
+<span style="color:#5081AA">//Choose initial wavefunction</span>
+<span style="color:#5081AA">//to be a product state</span>
 <span style="color:green">auto</span> psi0 = MPS(InitState(sites,"Z0"));
 
 <span style="color:#5081AA">//Perform 5 sweeps of DMRG</span>
