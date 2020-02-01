@@ -75,17 +75,17 @@
     tensor network calculations. See the <a href="docs.cgi?page=papers">list of recent papers using ITensor</a>.
     <br/>Features include:
     <ul id="features">
-    <li>Index ordering is handled automatically</li>
-    <li>Full-featured matrix product state and <a href="http://itensor.org/docs.cgi?page=reading#DMRG">DMRG</a> layer</li>
+    <li>Ordering of tensor indices is handled automatically</li>
+    <li>Full-featured <a href="https://tensornetwork.org/mps/">matrix product state / tensor train</a> and <a href="https://tensornetwork.org/mps/algorithms/dmrg/">DMRG</a> layer</li>
     <li>Quantum number conserving (block-sparse) tensors; same interface as dense tensors</li>
-    <li>Complex numbers handled lazily: no efficiency loss if real</li>
+    <li>Complex numbers handled automatically and efficiently</li>
     <li>Easy to <a href="docs.cgi?page=install">install</a>; only dependencies are BLAS/LAPACK and C++17
     <li>Interface uses friendly, productive subset of the C++ language</li>
     </ul>
     </p>
 
     <p>
-    ITensors have an <a href="https://en.wikipedia.org/wiki/Einstein_notation" target="_blank">Einstein summation</a> interface making them nearly as easy to multiply as 
+    ITensors have an interface resembling <a href="https://tensornetwork.org/diagrams/" target="_blank">tensor diagram notation</a>, making them nearly as easy to multiply as 
     scalars: tensors indices have unique identities
     and matching indices automatically contract when two ITensors are multiplied. 
     This type of interface makes it simple to transcribe tensor network diagrams into correct, efficient code.
@@ -151,7 +151,7 @@
 <span style="color:green">auto</span> b = Index(2), 
 <span style="color:green">auto</span> c = Index(2);
 
-<span style="color:green">auto</span>Z = ITensor(a,b), 
+<span style="color:green">auto</span> Z = ITensor(a,b), 
 <span style="color:green">auto</span> X = ITensor(c,b);
 
 Z.set(a=1,b=1, +1.0);
@@ -167,7 +167,10 @@ X.set(b=2,c=1, +1.0);
 ITensor R = Z * X;
 
 Print( elt(R,a=2,c=1) ); 
-//output: elt(R,a=2,c=1) = -1
+<div style="color:#5081AA">
+//output:
+// elt(R,a=2,c=1) = -1
+</div>
 </pre>
 </div>
 
@@ -196,6 +199,29 @@ PrintData(C);
 <span style="color:green">auto</span> D = randomITensor(k,j,i);
 
 <span style="color:green">auto</span> R = A + D;
+</pre>
+</div>
+
+<div class="full screenshot">
+<img src="SVDDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Factorize an ITensor (Using SVD)</h2>
+<pre>
+
+<span style="color:green">auto</span> i = Index(3,"i");
+<span style="color:green">auto</span> j = Index(7,"j");
+<span style="color:green">auto</span> k = Index(2,"k");
+<span style="color:green">auto</span> l = Index(4,"l");
+
+<span style="color:green">auto</span> T = randomITensor(i,j,k,l);
+
+<span style="color:green">auto</span> [U,S,V] = svd(T,i,k);
+
+Print(norm(T - U*S*V));
+<div style="color:#5081AA">
+//output: 
+// norm(T - U*S*V) = 4.7458E-14
+</div>
+
 </pre>
 </div>
 
