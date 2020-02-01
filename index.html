@@ -142,6 +142,63 @@
 
 <div class="full section rounded"> <h2>Code Samples</h2> </div>
 
+
+<div class="full screenshot">
+<img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Contract Two Matrix-Like ITensors</h2>
+<pre>
+<span style="color:green">auto</span> a = Index(2), 
+<span style="color:green">auto</span> b = Index(2), 
+<span style="color:green">auto</span> c = Index(2);
+
+<span style="color:green">auto</span>Z = ITensor(a,b), 
+<span style="color:green">auto</span> X = ITensor(c,b);
+
+Z.set(a=1,b=1, +1.0);
+Z.set(a=2,b=2, -1.0);
+
+X.set(b=1,c=2, +1.0);
+X.set(b=2,c=1, +1.0);
+<div style="color:#5081AA">
+//the * operator finds and
+//contracts common index 'b'
+//regardless of index order:
+</div>
+ITensor R = Z * X;
+
+Print( elt(R,a=2,c=1) ); 
+//output: elt(R,a=2,c=1) = -1
+</pre>
+</div>
+
+<div class="full screenshot">
+<img src="TensorDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Contract and Add ITensors</h2>
+<pre>
+<span style="color:green">auto</span> i = Index(3);
+<span style="color:green">auto</span> j = Index(5);
+<span style="color:green">auto</span> k = Index(2);
+<span style="color:green">auto</span> l = Index(7);
+
+<span style="color:green">auto</span> A = ITensor(i,j,k);
+<span style="color:green">auto</span> B = ITensor(l,j);
+
+A.set(i=1,j=1,k=1, 11.1);
+A.set(i=2,j=1,k=2, -21.2);
+A.set(k=1,i=3,j=1, 31.1);
+A.set(k=1,i=1,j=2, 11.2);
+
+B.set(j=2,l=4, 2.+4._i);
+
+<span style="color:green">auto</span> C = A * B;
+PrintData(C);
+
+<span style="color:green">auto</span> D = randomITensor(k,j,i);
+
+<span style="color:green">auto</span> R = A + D;
+</pre>
+</div>
+
 <div class="full screenshot">
 <h2>Perform a DMRG Calculation</h2>
 <pre>
@@ -183,33 +240,6 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
                * dag(prime(psi(j),"Site")));
     println("Sz_",j," = ",Szj);
     }
-</pre>
-</div>
-
-<div class="full screenshot">
-<img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
-<h2>Contract Two ITensors</h2>
-<pre>
-Index a(2,"a"), 
-      b(2,"b"), 
-      c(2,"c");
-ITensor Z(a,b), 
-        X(c,b);
-
-Z.set(a=1,b=1, +1.0);
-Z.set(a=2,b=2, -1.0);
-
-X.set(b=1,c=2, +1.0);
-X.set(b=2,c=1, +1.0);
-<div style="color:#5081AA">
-//the * operator finds and
-//contracts common index 'b'
-//regardless of index order:
-</div>
-ITensor R = Z * X;
-
-Print( elt(R,a=2,c=1) ); 
-//output: elt(R,a=2,c=1) = -1
 </pre>
 </div>
 
