@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [A Multi-Scale Tensor Network Architecture for Classification and Regression](https://arxiv.org/abs/2001.08286), Justin Reyes, Miles Stoudenmire, arxiv:2001.08286
+
 * [Skin Superfluid, Topological Mott Insulators, and Asymmetric Dynamics in Interacting Non-Hermitian Aubry-Andre-Harper Models](https://arxiv.org/abs/2001.07088), Dan-Wei Zhang, Yu-Lian Chen, Guo-Qing Zhang, Li-Jun Lang, Zhi Li, Shi-Liang Zhu, arxiv:2001.07088
 
 * [Variational-Correlations Approach to Quantum Many-body Problems](https://arxiv.org/abs/2001.06510), Arbel Haim, Richard Kueng, Gil Refael, arxiv:2001.06510
