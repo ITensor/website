@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Superfluid phases induced by the dipolar interactions](https://arxiv.org/abs/2002.02142), Rebecca Kraus, Krzysztof Biedroń, Jakub Zakrzewski, Giovanna Morigi, arxiv:2002.02142
+
+* [Solvable lattice model for (2+1)D bosonic topological insulator](https://arxiv.org/abs/2002.01639),  Yusuke Horinouchi, arxiv:2002.01639
+
+* [Topology and the one-dimensional Kondo-Heisenberg model](https://arxiv.org/abs/2002.01483), Julian May-Mann, Ryan Levy, Rodrigo Soto-Garrido, Gil Young Cho, Bryan K. Clark, Eduardo Fradkin, arxiv:2002.01483
+
 * [A Multi-Scale Tensor Network Architecture for Classification and Regression](https://arxiv.org/abs/2001.08286), Justin Reyes, Miles Stoudenmire, arxiv:2001.08286
 
 * [Skin Superfluid, Topological Mott Insulators, and Asymmetric Dynamics in Interacting Non-Hermitian Aubry-Andre-Harper Models](https://arxiv.org/abs/2001.07088), Dan-Wei Zhang, Yu-Lian Chen, Guo-Qing Zhang, Li-Jun Lang, Zhi Li, Shi-Liang Zhu, arxiv:2001.07088
