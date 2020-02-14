@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Selected Configuration Interaction in a Basis of Cluster State Tensor Products](https://arxiv.org/abs/2002.03107), Vibin Abraham, Nicholas J. Mayhall, arxiv:2002.03107
+
 * [Superfluid phases induced by the dipolar interactions](https://arxiv.org/abs/2002.02142), Rebecca Kraus, Krzysztof Biedroń, Jakub Zakrzewski, Giovanna Morigi, arxiv:2002.02142
 
 * [Solvable lattice model for (2+1)D bosonic topological insulator](https://arxiv.org/abs/2002.01639),  Yusuke Horinouchi, arxiv:2002.01639
