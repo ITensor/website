@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Pseudogap Anderson impurity model out of equilibrium: A master equation tensor network approach](https://arxiv.org/abs/2002.04656), Delia M. Fugger, Daniel Bauernfeind, Max E. Sorantin, Enrico Arrigoni, arxiv:2002.04656
+
 * [Selected Configuration Interaction in a Basis of Cluster State Tensor Products](https://arxiv.org/abs/2002.03107), Vibin Abraham, Nicholas J. Mayhall, arxiv:2002.03107
 
 * [Superfluid phases induced by the dipolar interactions](https://arxiv.org/abs/2002.02142), Rebecca Kraus, Krzysztof Biedroń, Jakub Zakrzewski, Giovanna Morigi, arxiv:2002.02142
