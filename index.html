@@ -227,6 +227,18 @@ Print(norm(T - U*S*V));
 
 <div class="full screenshot">
 <h2>Perform a DMRG Calculation</h2>
+<p>
+DMRG is a powerful algorithm for finding dominant eigenvectors
+of exponentially large matrices (such as quantum Hamiltonians) in matrix product 
+state (MPS) form. It is adaptive and converges very quickly and to high precision.
+</p>
+<p>
+In addition to state-of-the-art DMRG codes, ITensor features the AutoMPO system,
+which is a powerful domain-specific language for creating matrix product operator (MPO)
+tensor networks as a sum of local terms, which is especially useful for quantum mechanics
+applications.
+</p>
+<br/>
 <pre>
 <span style="color:#5081AA">//Define Hilbert space of N spin-one sites</span>
 <span style="color:green">int</span> N = 100;
