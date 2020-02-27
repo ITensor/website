@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [How low can the fractional quantum Hall effect go?](https://arxiv.org/abs/2002.09356), Zheng-Wei Zuo, Ajit C. Balram, Songyang Pu, Jianyun Zhao, A. Wójs, J. K. Jain, arxiv:2002.09356
+
 * [Quantum spin liquid phases in the bilinear-biquadratic two-SU(4)-fermion Hamiltonian on the square lattice](https://arxiv.org/abs/2002.05572), Olivier Gauthé, Sylvain Capponi, Matthieu Mambrini, Didier Poilblanc, arxiv:2002.05572
 
 * [Solitonic in-gap modes in a superconductor-quantum antiferromagnet interface](https://arxiv.org/abs/2002.05495), J. L. Lado, M. Sigrist, arxiv:2002.05495
