@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [On fermionic minimal models](https://arxiv.org/abs/2002.12283), Chang-Tse Hsieh, Yu Nakayama, Yuji Tachikawa, arxiv:2002.12283
+
+* [Entanglement between Distant Regions in Disordered Quantum Wires](https://onlinelibrary.wiley.com/doi/abs/10.1002/qute.201900113), Yishai Schreiber, Richard Berkovits, <i>Advanced Quantum Technologies</i> <b>1900113</b> (2020)
+
 * [How low can the fractional quantum Hall effect go?](https://arxiv.org/abs/2002.09356), Zheng-Wei Zuo, Ajit C. Balram, Songyang Pu, Jianyun Zhao, A. Wójs, J. K. Jain, arxiv:2002.09356
 
 * [What limits the simulation of quantum computers?](https://arxiv.org/abs/2002.07730), Yiqing Zhou, E. Miles Stoudenmire, Xavier Waintal, arxiv:2002.07730
