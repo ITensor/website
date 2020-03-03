@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Adiabatic ground state preparation in an expanding lattice](https://arxiv.org/abs/2002.09592), CT Olund, M Block, S Gazit, J McGreevy, NY Yao, arxiv:2002.09592
+
+* [Non-Abelian Dirac node braiding and near-degeneracy of correlated phases at odd integer filling in magic angle twisted bilayer graphene](https://arxiv.org/abs/2002.10360), J Kang, O Vafek, arxiv:2002.10360
+
 * [On fermionic minimal models](https://arxiv.org/abs/2002.12283), Chang-Tse Hsieh, Yu Nakayama, Yuji Tachikawa, arxiv:2002.12283
 
 * [Entanglement between Distant Regions in Disordered Quantum Wires](https://onlinelibrary.wiley.com/doi/abs/10.1002/qute.201900113), Yishai Schreiber, Richard Berkovits, <i>Advanced Quantum Technologies</i> <b>1900113</b> (2020)
