@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Generalised hydrodynamics with dephasing noise](https://arxiv.org/abs/2003.01702), Alvise Bastianello, Jacopo De Nardis, Andrea De Luca, arxiv:2003.01702
+
+* [Rigorous bounds on dynamical response functions and time-translation symmetry breaking](https://arxiv.org/abs/2003.01035), Marko Medenjak, Tomaz Prosen, Lenart Zadnik, arxiv:2003.01035
+
+* [Pronounced non-Markovian features in multiply excited, multiple emitter waveguide QED: Retardation induced anomalous population trapping](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.013238), Alexander Carmele, Nikolett Nemet, Victor Canela, and Scott Parkins, PhysRev[Research,2,013238]
+
 * [Adiabatic ground state preparation in an expanding lattice](https://arxiv.org/abs/2002.09592), CT Olund, M Block, S Gazit, J McGreevy, NY Yao, arxiv:2002.09592
 
 * [Non-Abelian Dirac node braiding and near-degeneracy of correlated phases at odd integer filling in magic angle twisted bilayer graphene](https://arxiv.org/abs/2002.10360), J Kang, O Vafek, arxiv:2002.10360
