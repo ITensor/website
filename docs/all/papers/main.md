@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Competing long-range interactions and spin vector chirality in spin-chains](https://arxiv.org/abs/2003.03322), E. Vernek, O. Ávalos-Ovando, S. E. Ulloa, arxiv:2003.03322
+
 * [Generalised hydrodynamics with dephasing noise](https://arxiv.org/abs/2003.01702), Alvise Bastianello, Jacopo De Nardis, Andrea De Luca, arxiv:2003.01702
 
 * [Rigorous bounds on dynamical response functions and time-translation symmetry breaking](https://arxiv.org/abs/2003.01035), Marko Medenjak, Tomaz Prosen, Lenart Zadnik, arxiv:2003.01035
