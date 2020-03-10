@@ -158,15 +158,15 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [The "not-A", SPT and Potts phases in an S3-invariant chain](https://arxiv.org/abs/1908.02767), Edward O'Brien, Eric Vernier, Paul Fendley, arxiv:1908.02767
 
-* [Information measures for a local quantum phase transition:Lattice bosons in a one-dimensional harmonic trap](https://arxiv.org/abs/1908.01824), Yicheng Zhang, Lev Vidmar, Marcos Rigol, arxiv:1908.01824
+* [Information measures for a local quantum phase transition:Lattice bosons in a one-dimensional harmonic trap](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.053611), Yicheng Zhang, Lev Vidmar, Marcos Rigol, PhysRev[A,100,053611] (2019) [arxiv:1908.01824]
 
 * [Universal Spin Dynamics in Infinite-Temperature One-Dimensional Quantum Magnets](https://arxiv.org/abs/1907.12115), Maxime Dupont, Joel E. Moore, arxiv:1907.12115
 
-* [Ion-induced interactions in a Tomonaga-Luttinger liquid](https://arxiv.org/abs/1907.07090), Andreas Bock Michelsen, Manuel Valiente, Nikolaj Zinner, Antonio Negretti, arxiv:1907.07090
+* [Ion-induced interactions in a Tomonaga-Luttinger liquid](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.205427), Andreas Bock Michelsen, Manuel Valiente, Nikolaj Zinner, Antonio Negretti, PhysRev[B,100,205427] (2019) [arxiv:1907.07090]
 
-* [Probing magnon dynamics and interactions in a ferromagnetic spin-1 chain](https://arxiv.org/abs/1907.06542), Prashant Chauhan, Fahad Mahmood, Hitesh J. Changlani, S. M. Koohpayeh, N. P. Armitage, arxiv:1907.06542
+* [Probing magnon dynamics and interactions in a ferromagnetic spin-1 chain](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.037203), Prashant Chauhan, Fahad Mahmood, Hitesh J. Changlani, S. M. Koohpayeh, N. P. Armitage, PhysRev[Lett,124,037203] (2020) [arxiv:1907.06542]
 
-* [Probing many-body localization phase transition with superconducting circuits](https://arxiv.org/abs/1907.04043), Tuure Orell, Alexios A. Michailidis, Maksym Serbyn, Matti Silveri, arxiv:1907.04043
+* [Probing many-body localization phase transition with superconducting circuits](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.100.134504), Tuure Orell, Alexios A. Michailidis, Maksym Serbyn, Matti Silveri, PhysRev[B,100,134504] (2019) [arxiv:1907.04043]
 
 * [Emerging 2D Gauge theories in Rydberg configurable arrays](https://arxiv.org/abs/1907.03311), A.Celi, B. Vermersch, O. Viyuela, H. Pichler, M.D. Lukin, P. Zoller, arxiv:1907.03311
 
