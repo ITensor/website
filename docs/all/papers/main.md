@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Competing long-range interactions and spin vector chirality in spin-chains](https://arxiv.org/abs/2003.03322), E. Vernek, O. Ávalos-Ovando, S. E. Ulloa, arxiv:2003.03322
+
+* [Block-Lanczos Density-Matrix Renormalization-Group Approach to Spin Transport in Heisenberg Chains Coupled to Leads](https://journals.jps.jp/doi/full/10.7566/JPSJ.89.044601), F. Lange, S. Ejima, T. Shirakawa, S. Yunoki, H. Fehske, <i style="color:#CC0000">JPSJ</i>, <b>89</b> <a href="https://journals.jps.jp/doi/full/10.7566/JPSJ.89.044601">044601</a> (2020) [arxiv:2001.02926]
+
 * [Entanglement and correlations in a one-dimensional quantum spin-1/2 chain with anisotropic power-law long-range interactions](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.101.094410), Jie Ren, Wen-Long You, and Xiaoqun Wang, PhysRev[B,101,094410] [arxiv:2003.04472]
 
 * [Competing long-range interactions and spin vector chirality in spin-chains](https://arxiv.org/abs/2003.03322), E. Vernek, O. Ávalos-Ovando, S. E. Ulloa, arxiv:2003.03322
