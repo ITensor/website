@@ -100,11 +100,11 @@ not be a well-defined QN ITensor.
 <br/>
 
 <span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
-[[IQTensor Overview|book/iqtensor_overview]]
+[[QN ITensor Overview|book/iqtensor_overview]]
 </span>
 
 <span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
-[[IQIndex|book/iqindex]]
+[[QN Index|book/iqindex]]
 </span>
 
 <br/>

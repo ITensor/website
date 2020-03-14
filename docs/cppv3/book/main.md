@@ -42,7 +42,7 @@ customizing higher-level parts of the library.
 - [[QN Index|book/qnindex]]
 
 <!--
-- [[IQTensor Basics|book/iqtensor_basics]]
+- [[QN ITensor Basics|book/qnitensor_basics]]
 -->
 
 ### Matrix Product States and DMRG
