@@ -63,7 +63,7 @@ The values that J can take (the index values of J) range from 1 up to 18 (=2+4+6
 
 The above example can be summarized in a chart:
 
-<img class="diagram" width="75%" src="docs/VERSION/book/images/iqindex_chart.png"/>
+<img class="diagram" width="75%" src="docs/VERSION/book/images/qnindex_chart.png"/>
 
 ## Relationship to regular Index objects
 
