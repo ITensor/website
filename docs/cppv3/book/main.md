@@ -35,13 +35,11 @@ customizing higher-level parts of the library.
 - [[Sparse ITensors (combiners, diagonal,...)|book/itensor_sparse]]
 -->
 
-<!--
-### IQTensor: Block-Sparse, Quantum Number Conserving Tensors
+### QN ITensors: Block-Sparse, Quantum Number Conserving Tensors
 
-- [[IQTensor Overview|book/iqtensor_overview]]
+- [[QN ITensor Overview|book/qnitensor_overview]]
 - [[Block-Sparse Tensors|book/block_sparse]]
-- [[IQIndex|book/iqindex]]
--->
+- [[QN Index|book/qnindex]]
 
 <!--
 - [[IQTensor Basics|book/iqtensor_basics]]
