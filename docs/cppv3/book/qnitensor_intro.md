@@ -2,11 +2,11 @@
 
 Physical systems often respect certain symmetries which can make computing 
 their properties more efficient numerically.
-Key examples are spin-rotation symmetry and particle number conservation (@@U(1)@@ symmetry).
+Key examples are spin-rotation symmetry and particle number conservation (U(1) symmetry).
 
 Here we consider global symmetries associated with conserved "quantum numbers". 
 We only consider the case of Abelian symmetries. Though tensor networks can in principle
-respect non-Abelian symmetries too, these are not supported by ITensor.
+respect non-Abelian symmetries too, these are not yet supported by ITensor.
 
 From a computational perspective, conservation of quantum numbers allows 
 tensors to be block-sparse, with non-zero elements only for certain index ranges.
