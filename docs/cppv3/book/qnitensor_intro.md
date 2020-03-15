@@ -1,19 +1,19 @@
 # QN ITensor Introduction
 
-Physical systems often have symmetries which make computing their properties easier.
-Spin-rotation symmetry and particle number conservation (U(1) symmetry) are some key examples.
+Physical systems often respect certain symmetries which can make computing 
+their properties more efficient numerically.
+Key examples are spin-rotation symmetry and particle number conservation (@@U(1)@@ symmetry).
 
-Here we consider global Abelian symmetries
-associated with conserved "quantum numbers". 
-Though tensor networks can also respect non-Abelian symmetries, as well
-as spatial symmetries, these require additional techniques beyond the scope of our discussion.
+Here we consider global symmetries associated with conserved "quantum numbers". 
+We only consider the case of Abelian symmetries. Though tensor networks can in principle
+respect non-Abelian symmetries too, these are not supported by ITensor.
 
-Conserving quantum numbers allows tensors to be
-block-sparse, with non-zero elements only for certain index ranges.
-Many elements will be strictly zero, so we neither have to store these elements in memory or 
-iterate over them during computations.
+From a computational perspective, conservation of quantum numbers allows 
+tensors to be block-sparse, with non-zero elements only for certain index ranges.
+Many elements will be strictly zero, so we neither have to store these 
+elements in memory or iterate over them during computations.
 
-Of course, conserving quantum numbers is important for physics reasons too.
+Of course, conserving quantum numbers is quite important for physical reasons.
 Experiments involving trapped atoms often (ideally) conserve particle number, for example.
 And using quantum numbers can make it easier to compute excited state properties.
 
