@@ -37,9 +37,10 @@ customizing higher-level parts of the library.
 
 ### QN ITensors: Block-Sparse, Quantum Number Conserving Tensors
 
-- [[QN ITensor Overview|book/qnitensor_overview]]
+- [[QN ITensor Introduction|book/qnitensor_intro]]
 - [[Block-Sparse Tensors|book/block_sparse]]
 - [[QN Index|book/qnindex]]
+- [[Quantum Number (QN) Objects|book/qn]]
 
 <!--
 - [[QN ITensor Basics|book/qnitensor_basics]]

@@ -1,4 +1,4 @@
-# QN ITensor Overview
+# QN ITensor Introduction
 
 Physical systems often have symmetries which make computing their properties easier.
 Spin-rotation symmetry and particle number conservation (U(1) symmetry) are some key examples.

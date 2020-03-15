@@ -18,7 +18,7 @@ quantum number sector.
 ## Constructing a Simple QN Index
 
 Continuing with the above example, let us construct a tensor index with quantum-number sectors:
-an QN Index.
+a QN Index.
 
     auto I = Index(QN(0),1,
                    QN(1),1,
@@ -77,5 +77,8 @@ To check whether an Index `I` carries QN information, you can call `hasQNs(I)`.
 [[Block-Sparse Tensors|book/block_sparse]]
 </span>
 
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
+[[Quantum Number (QN) Objects|book/qn]]
+</span>
 <br/>
 
