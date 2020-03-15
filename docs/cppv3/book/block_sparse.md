@@ -100,7 +100,7 @@ not be a well-defined QN ITensor.
 <br/>
 
 <span style="float:left;"><img src="docs/VERSION/arrowleft.png" class="icon">
-[[QN ITensor Overview|book/qnitensor_overview]]
+[[QN ITensor Introduction|book/qnitensor_intro]]
 </span>
 
 <span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">

@@ -388,4 +388,8 @@ Click the link just below to view a complete, working sample code you can compil
 [[Factorizing ITensors|book/itensor_factorizing]]
 </span>
 
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
+[[QN ITensor Introduction|book/qnitensor_intro]]
+</span>
+
 <br/>
