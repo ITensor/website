@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Iterative Retraining of Quantum Spin Models Using Recurrent Neural Networks](https://arxiv.org/abs/2003.06228), Christopher Roth, arxiv:2003.06228
+
 * [Effective triangular ladders with staggered flux from spin-orbit coupling in 1D optical lattices](https://arxiv.org/abs/2003.04154), Josep Cabedo, Joan Claramunt, Jordi Mompart, Verònica Ahufinger, Alessio Celi, arxiv:2003.04154
 
 * [Competing long-range interactions and spin vector chirality in spin-chains](https://arxiv.org/abs/2003.03322), E. Vernek, O. Ávalos-Ovando, S. E. Ulloa, arxiv:2003.03322
