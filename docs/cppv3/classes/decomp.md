@@ -87,10 +87,19 @@ These methods are defined in "itensor/decomp.h" and "itensor/decomp.cc".
   
   * "ShowEigs" &mdash; if `true`, print lots of extra information about the truncation of singular values.
     Default is `false`.
+
+  * "SVDMethod" &mdash; string, equal to either "ITensor", "gesdd", or "gesvd".
+    The "SVDMethod" argument controls which implementation of the SVD is used.
+    "ITensor" is the most reliable and is therefore the default. The "gesdd"
+    algorithm is typically much faster and more accurate than the "ITensor"
+    algorithm, but occasionally has been observed to crash depending on the 
+    LAPACK implementation used. The "gesvd" is an alternative LAPACK algorithm.
   
-  * "SVDThreshold" &mdash; real number less than 1.0; default is 1e-3. If the ratio of any singular values to the largest
-    value fall below this number, the SVD algorithm will be recursively applied to the part of the matrix 
-    containing these small values to achieve better accuracy. Setting this number larger can make the SVD more accurate
+  * "SVDThreshold" &mdash; real number less than 1.0; default is 1e-3. 
+    If the ratio of any singular values to the largest
+    value fall below this number, the SVD algorithm will be recursively applied 
+    to the part of the matrix containing these small values to achieve better accuracy. 
+    Setting this number larger can make the SVD more accurate
     if the singular values decrease very rapidly.
   
   * "LeftTags" &mdash; set just the tags of the index connecting S to U.
