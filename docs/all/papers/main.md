@@ -8,7 +8,7 @@
  
 ## 2020
 
-* [](https://journals.jps.jp/doi/abs/10.7566/JPSCP.30.011184), Satoshi Ejima, Tatsuya Kaneko, Florian Lange, Seiji Yunoki, and Holger Fehske, <i style="color:#CC0000">JPSCP</i>, <b>30</b> <a href="https://journals.jps.jp/doi/abs/10.7566/JPSCP.30.011184">011184</a> (2020)
+* [Photoinduced η-pairing in One-dimensional Mott Insulators](https://journals.jps.jp/doi/abs/10.7566/JPSCP.30.011184), Satoshi Ejima, Tatsuya Kaneko, Florian Lange, Seiji Yunoki, and Holger Fehske, <i style="color:#CC0000">JPSCP</i>, <b>30</b> <a href="https://journals.jps.jp/doi/abs/10.7566/JPSCP.30.011184">011184</a> (2020)
 
 * [Signatures of topology in quantum quench dynamics and their interrelation](https://arxiv.org/abs/2003.07874), Lorenzo Pastori, Simone Barbarino, Jan Carl Budich, arxiv:2003.07874
 
