@@ -213,8 +213,10 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
 
   `eltC(ITensor T, int i1, int i2, ...) -> Cplx`
 
-  Shorthand notation for `elt(ITensor, IndexVal, ...)` (or `eltC(...)`) when the ordering 
-  of the indices of the ITensor are known.
+  Simplified version of `elt(ITensor, IndexVal, ...)` (or `eltC(...)`) when the ordering 
+  of the indices of the ITensor are known. In such a case, integers can be provided instead
+  of IndexVal objects.
+
   For example, for ITensor T with indices ordered as j,i,k, `elt(T,1,2,4)` is equivalent to
   `elt(T,j=1,i=2,k=4)`.
 
@@ -234,6 +236,18 @@ The `ITensor` class is defined in the header "itensor/itensor.h"
       //Get one of its elements
       auto rt = elt(T,2,1,4);
       Print(rt==elt(T,i=1,j=4,k=2)); //prints: true
+
+* `elt(ITensor T, std::vector<int> v) -> Real`
+
+  `eltC(ITensor T, std::vector<int> v) -> Cplx`
+
+  Version of `elt(ITensor, IndexVal, ...)` (or `eltC(...)`) taking a `std::vector<int>`
+  when the ordering of the indices of the ITensor are known. 
+  In such a case, integers can be provided instead of IndexVal objects, and in this
+  overload of `elt` and `eltC` the integers can be passed in a vector (dynamically sized array).
+
+  Note that the ordering of the indices of an ITensor can be set using the 
+  `permute(ITensor,IndexSet)` function.
 
 * `.set(IndexVal iv1, IndexVal iv2, ... , Cplx z)`
 
