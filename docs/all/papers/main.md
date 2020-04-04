@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Superdiffusion from emergent classical solitons in quantum spin chains](https://arxiv.org/abs/2003.13708), Jacopo De Nardis, Sarang Gopalakrishnan, Enej Ilievski, Romain Vasseur, arxiv:2003.13708
+
 * [Enabling Pulse-level Programming, Compilation, and Execution in XACC](https://arxiv.org/abs/2003.11971), Thien Nguyen, Alexander McCaskey, arxiv:2003.11971
 
 * [Photoinduced η-pairing in One-dimensional Mott Insulators](https://journals.jps.jp/doi/abs/10.7566/JPSCP.30.011184), Satoshi Ejima, Tatsuya Kaneko, Florian Lange, Seiji Yunoki, and Holger Fehske, <i style="color:#CC0000">JPSCP</i>, <b>30</b> <a href="https://journals.jps.jp/doi/abs/10.7566/JPSCP.30.011184">011184</a> (2020)
