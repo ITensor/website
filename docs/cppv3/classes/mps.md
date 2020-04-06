@@ -20,25 +20,24 @@ Some ITensor library functions accepting MPS objects assume the convention that 
 connecting neighboring tensors have the tag "Link" and physical indices carry the "Site" tag,
 for example the `dmrg` function (but these requirements may be lifted in the future).
 
-MPS objects can be constructed from either a [[SiteSet|classes/siteset]] or 
-an [[InitState|classes/initstate]].
+MPS objects can be constructed by specifying the number of tensors, from a 
+[[SiteSet|classes/siteset]], or from an [[InitState|classes/initstate]].
 
 ## Synopsis ##
 
-    int N = 100;
-    auto sites = SpinHalf(N);
+    int N = 10;
+    auto sites = SpinHalf(N,{"ConserveQNs=",false});
 
-    auto A = MPS(sites); //create random product MPS
+    auto A = randomMPS(sites); //create random product MPS
 
     // Shift MPS gauge such that site 1 is
     // the orthogonality center
     A.position(1);
-    //Shift orthogonality center to site k
-    auto k = 10;
-    A.position(k);
+    //Shift orthogonality center to site j
+    auto j = 5;
+    A.position(j);
 
     // Read-only access of tensor at site j
-    auto j = 15;
     auto Aj = A(j);
 
     // Replace tensor at site j with
@@ -58,7 +57,7 @@ an [[InitState|classes/initstate]].
         }
     auto B = MPS(state);
 
-## Constructors ##
+## Constructors and Constructor Functions
 
 * `MPS()`
 
@@ -69,14 +68,28 @@ an [[InitState|classes/initstate]].
       auto A = MPS();
       if(!A) println("A is default constructed");
 
+* `MPS(int N)`
+
+  Construct an MPS with N tensors. The tensors are themselves 
+  unitialized (default-constructed ITensors).
+
 * `MPS(SiteSet sites)`
 
-  Construct an `MPS` with physical sites given by a [[SiteSet|classes/siteset]]. The `MPS` will be initialized to a random product state with real entries.
+  Construct an `MPS` with physical sites given by a [[SiteSet|classes/siteset]]. 
+  The MPS tensors are initialized to be zero.
 
 * `MPS(InitState state)` <br/>
 
   Construct an `MPS` and set its site tensors to be in the product state 
   specified by an [[InitState|classes/initstate]] object.
+
+* `randomMPS(SiteSet sites) -> MPS` <br/>
+
+  Construct an MPS with physical sites given by the [[SiteSet|classes/siteset]]
+  provided, and initialize each MPS tensor with random entries.
+  Currently the only option for the bond, or link indices is dimension 1
+  (product-state MPS), but in the future we plan to offer larger bond-dimension
+  random MPS.
 
 ## Retrieving Basic Information about MPS
 
