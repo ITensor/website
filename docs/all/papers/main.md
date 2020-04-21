@@ -10,6 +10,8 @@
 
 * [Glide symmetry breaking and Ising criticality in the quasi-1D magnet CoNb2O](https://arxiv.org/abs/2004.04169), Michele Fava, Radu Coldea, S. A. Parameswaran, arxiv:2004.04169
 
+* [Coexistence of localized and extended phases: Many-body localization in a harmonic trap](https://arxiv.org/abs/2004.00954), Titas Chanda, Ruixiao Yao, Jakub Zakrzewski, arxiv:2004.00954
+
 * [Superdiffusion from emergent classical solitons in quantum spin chains](https://arxiv.org/abs/2003.13708), Jacopo De Nardis, Sarang Gopalakrishnan, Enej Ilievski, Romain Vasseur, arxiv:2003.13708
 
 * [Enabling Pulse-level Programming, Compilation, and Execution in XACC](https://arxiv.org/abs/2003.11971), Thien Nguyen, Alexander McCaskey, arxiv:2003.11971
