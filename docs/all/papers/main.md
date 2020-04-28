@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Improved hybrid parallel strategy for density matrix renormalization group method](https://doi.org/10.1088/1674-1056/ab8a42), Fu-Zhou Chen, Chen Cheng, and Hong-Gang Luo, <i style="color:#CC0000">Chinese Physics B</i> (2020)
+
+* [Deconstructing Magic-angle Physics in Twisted Bilayer Graphene with a Two-leg Ladder Model](https://arxiv.org/abs/2004.10325), Yixuan Huang, Pavan Hosur, Hridis K. Pal, arxiv:2004.10325
+
 * [Ground state properties of one-dimensional and two-dimensional Hubbard model from Gutzwiller conjugate gradient minimization theory](https://arxiv.org/abs/2004.09652), Zhuo Ye, Feng Zhang, Yong-Xin Yao, Cai-Zhuang Wang, Kai-Ming Ho, arxiv:2004.09652
 
 * [Glide symmetry breaking and Ising criticality in the quasi-1D magnet CoNb2O](https://arxiv.org/abs/2004.04169), Michele Fava, Radu Coldea, S. A. Parameswaran, arxiv:2004.04169
