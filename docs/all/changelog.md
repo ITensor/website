@@ -1,5 +1,24 @@
 # Change Log #
 
+<a name="v3.1.2"></a>
+## [Version 3.1.2](https://github.com/ITensor/ITensor/tree/v3.1.2) (Apr 28, 2020) ##
+
+New features:
+- randomMPS now allows bond dimension > 1 (without QNs) (PR #339)
+- LAPACK SVD routines now supported (thanks Jack Kemp) (PR #333)
+- OpenMP multi-core paralellism for QN ITensor contractions (PR #325)
+- QR factorization for ITensors (thanks Jack Kemp) (PR #285)
+
+Bug fixes and improvements:
+- fix bug in QN version of excited-state DMRG (PR #341)
+- improvements to nmultMPO (PR #347)
+- generalize setElt to allow a value other than 1 (PR #344)
+- update finite T tutorial codes for v3 and improvements to them (PR #343)
+- ITensor default SVD now uses QR to get V (PR #334)
+- QN combiner can now be printed
+- optimizations related to not initializing data with zeros (PR #323 and others)
+- printing Index objects puts "dim=" in front of the dimension
+
 <a name="v3.1.1"></a>
 ## [Version 3.1.1](https://github.com/ITensor/ITensor/tree/v3.1.1) (Dec 13, 2019) ##
 
