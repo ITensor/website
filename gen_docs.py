@@ -23,8 +23,8 @@ from functools import partial
 #################################
 
 versions = [["cppv3","C++v3"], 
-            ["cppv2","C++v2"]]
-            #["julia","Julia"]
+            ["cppv2","C++v2"],
+            ["julia","Julia"]]
 default_version = "cppv3"
 
 reldocpath = "docs/"
