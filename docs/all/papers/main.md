@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Dynamical scaling laws revealed by parametric temporal cutoffs](https://arxiv.org/abs/2004.12287), Ceren B. Dağ, Kai Sun, arxiv:2004.12287
+
 * [Theoretical methods to treat a single dissipative bosonic mode coupled globally to an interacting many body system](https://arxiv.org/abs/2004.11807), C.M. Halati, A. Sheikhan, C. Kollath, arxiv:2004.11807
 
 * [Improved hybrid parallel strategy for density matrix renormalization group method](https://doi.org/10.1088/1674-1056/ab8a42), Fu-Zhou Chen, Chen Cheng, and Hong-Gang Luo, <i style="color:#CC0000">Chinese Physics B</i> (2020)
