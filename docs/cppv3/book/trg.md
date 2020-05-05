@@ -163,6 +163,7 @@ but let's look at each piece step by step.
 To get started, start with the following empty application:
 
     #include "itensor/all.h"
+    #include "itensor/util/print_macro.h"
 
     using namespace itensor;
 
