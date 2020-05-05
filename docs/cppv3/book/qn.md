@@ -72,7 +72,7 @@ Another example would be `QN({"Sz",1},{"T",2,3})` which defines a quantum number
 "Sz" with value 1 obeying usual integer arithmetic, whereas the quantum number named
 "T" has value 2 and obeys a @@Z_3@@ addition rule.
 
-## Advanced, Experimental Features
+## Advanced / Experimental Features
 
 Currently we are exploring a feature which would allow QN Indices to anticommute
 to give QN ITensors fermionic behavior, without requiring users to do any 

@@ -61,6 +61,7 @@ product `U*S*V` gives us back an ITensor identical to T:
 <div class="example_clicker">Click here to view a full working example</div>
 
     #include "itensor/all.h"
+    #include "itensor/util/print_macro.h"
     using namespace itensor;
 
     int main() 
