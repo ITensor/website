@@ -25,8 +25,10 @@ import cgitb; cgitb.enable()
 
 # version name, display name, associated language
 versions = [["cppv3","C++v3","C++"], 
-            ["cppv2","C++v2","C++"],
-            ["julia","Julia","Julia"]]
+            ["cppv2","C++v2","C++"]]
+#versions = [["cppv3","C++v3","C++"], 
+#            ["cppv2","C++v2","C++"],
+#            ["julia","Julia","Julia"]]
 default_version = "cppv3"
 
 reldocpath = "docs/"
