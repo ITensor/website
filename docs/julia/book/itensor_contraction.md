@@ -23,12 +23,12 @@ second example below.
 Given three distinct Index objects i,j, and k, say 
 we make the following ITensors:
 
-    auto A = ITensor(i,j);
-    auto B = ITensor(k,j);
+    A = ITensor(i,j)
+    B = ITensor(k,j)
 
 Then the following code contracts over the index j
 
-    auto C = A * B;
+    C = A * B
 
 In traditional notation this means performing the sum
 $$
@@ -51,7 +51,7 @@ cases where tensors have three or more indices.
 
 Say we have an ITensor with indices i,s, and j
      
-    auto W = ITensor(i,s,j);
+    W = ITensor(i,s,j)
 
 and want to contract W with itself, summing over indices i and j,
 but leaving s uncontracted.
@@ -75,7 +75,7 @@ Both notations indicate our contraction strategy should be to
 prime the Index s on one copy of W. Calling `prime(W,s)` returns
 a copy of W with s replaced by s'. Then multiplying
 
-    auto D = W * prime(W,s);
+    D = W * prime(W,s)
 
 automatically contracts i and j, but not s and s' since these
 no longer compare equal. Printing the result D confirms that it
