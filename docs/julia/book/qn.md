@@ -2,7 +2,7 @@
 
 As shown in examples on the previous pages, subspaces of
 a QN Index are labeled by QN objects, such as `QN("Sz",1)`
-or `QN({"N",2},{"Sz",0})`. This page goes into more detail
+or `QN(("N",2),("Sz",0))`. This page goes into more detail
 about how these QN objects work, what mathematical rules
 they obey, and how to construct them.
 
@@ -22,7 +22,7 @@ to seven characters and the value is an integer.
 For example, a QN constructed as `QN("N",2)` contains one quantum number
 named "N" with the value 2.
 
-A QN constructed as `QN({"Nb",1},{"Sz",2})` contains two quantum numbers:
+A QN constructed as `QN(("Nb",1),("Sz",2))` contains two quantum numbers:
 one named "Nb" with the value 1, the other named "Sz" of value 2.
 
 QN objects can be added, subtracted, and compared to each other.
@@ -33,9 +33,9 @@ such a case is treated as if the other QN did have that quantum number
 but with the value equal to zero. This rule about missing quantum numbers
 being treated as zero applies to addition, subtraction, and comparison.
 
-For example: `QN({"N",3}) + QN({"Sz",2},{"N",1}) == QN({"Sz",2},{"N",4})`.
+For example: `QN(("N",3)) + QN(("Sz",2),("N",1)) == QN(("Sz",2),("N",4))`.
 
-As another example, `QN({"N",3}) == QN({"Sz",0},{"N",3})` compares `true`.
+As another example, `QN(("N",3)) == QN(("Sz",0),("N",3))` compares `true`.
 
 The quantum numbers within a QN are not ordered, from a user perspective. 
 Internally they are sorted by name, but you may provide them in any order 
@@ -52,7 +52,7 @@ it is allowed to omit the curly braces: `QN("Sz",2)`.
 Also, at most one of the quantum numbers in a QN can be unnamed, which is equivalent
 to letting the name be the empty string `""`. This is for convenience
 when no name is obvious. For example, `QN(0)` and `QN(1)` are
-valid QNs and equivalent to `QN({"",0})` and `QN({"",1})`.
+valid QNs and equivalent to `QN(("",0))` and `QN(("",1))`.
 
 ## Modular Arithmetic
 
@@ -68,7 +68,7 @@ For example, `QN("P",0,2)` and `QN("P",1,2)` defines a quantum number named "P"
 1 in the respective QNs constructed.
 Thus `QN("P",1,2)+QN("P",1,2) == QN("P",0,2)`.
 
-Another example would be `QN({"Sz",1},{"T",2,3})` which defines a quantum number named
+Another example would be `QN(("Sz",1),("T",2,3))` which defines a quantum number named
 "Sz" with value 1 obeying usual integer arithmetic, whereas the quantum number named
 "T" has value 2 and obeys a @@Z_3@@ addition rule.
 

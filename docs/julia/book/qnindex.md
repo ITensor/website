@@ -20,9 +20,7 @@ quantum number subspace.
 Continuing with the above example, let us construct a tensor index with quantum-number subspaces:
 a QN Index.
 
-    auto I = Index(QN(0),1,
-                   QN(1),1,
-                   Out,"I");
+    I = Index(QN(0)=>1,QN(1)=>1,tags="I")
 
 An QN Index contains an ordered collection of QN-integer pairs. Each 
 QN labels the quantum number of a subspace of the Index, and the integer defines the 
@@ -42,12 +40,11 @@ Now lets construct an QN Index whose subspaces correspond to multiple index valu
 This can be done by making subspaces whose sizes are
 greater than 1.
 
-    auto J = Index(QN(-2),2,
-                   QN(-1),4,
-                   QN( 0),6,
-                   QN(+1),4,
-                   QN(+2),2,
-                   Out,"J");
+    J = Index(QN(-2)=>2,
+              QN(-1)=>4,
+              QN( 0)=>6,
+              QN(+1)=>4,
+              QN(+2)=>2,tags="J")
 
 This Index has five subspaces, labeled by five QN-integer pairs.
 
@@ -69,7 +66,7 @@ The above example can be summarized in a chart:
 
 A QN Index is of type Index just like a regular Index used for dense ITensors. 
 But internally, it carries extra information about its subspaces (direct-sum subspaces).
-To check whether an Index `I` carries QN information, you can call `hasQNs(I)`.
+To check whether an Index `I` carries QN information, you can call `hasqns(I)`.
 
 <br/>
 
