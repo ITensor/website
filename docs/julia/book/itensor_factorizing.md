@@ -28,8 +28,6 @@ values, which are typically ordered from largest to smallest.
 The SVD is well-defined for any matrix, including rectangular matrices. It also
 leads to a controlled approximation, where the error due to discarding columns of U and V
 is small if the corresponding singular values discarded are small.
-For more background reading on the SVD, see our [[SVD article|tutorials/SVD]].
-
 
 To compute the SVD of an ITensor, you only need to specify which indices are (collectively) 
 the "row" indices (thinking of the ITensor as a matrix), with the rest assumed to be the "column" 
@@ -37,17 +35,13 @@ indices.
 
 Say we have an ITensor with indices i,j, and k
 
-    auto T = ITensor(i,j,k);
+    T = ITensor(i,j,k)
 
 and we want to treat i and k as the "row" indices for the purpose of the SVD.
 
 To perform this SVD, we can call the function `svd` as follows:
 
-    auto [U,S,V] = svd(T,{i,k});
-
-The notation `auto [U,S,V]` is a convenient C++17 feature that captures multiple return 
-values from a function and defines the variables `U`, `S`, and `V` all in one line.
-`U`, `S`, and `V` are ITensors.
+    U,S,V = svd(T,(i,k))
 
 Diagrammatically the SVD operation above looks like:
 
@@ -56,27 +50,25 @@ Diagrammatically the SVD operation above looks like:
 The guarantee of the `svd` function is that the ITensor 
 product `U*S*V` gives us back an ITensor identical to T:
 
-    Print(norm(U*S*V - T)); //typical output: norm(U*S*V-T) = 1E-13
+    @show norm(U*S*V - T) # typical output: norm(U*S*V-T) = 1E-14
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/all.h"
-    using namespace itensor;
+    using ITensors
 
-    int main() 
-    {
-    auto i = Index(3,"i");
-    auto j = Index(4,"j");
-    auto k = Index(5,"k");
+    let
+      i = Index(3,"i")
+      j = Index(4,"j")
+      k = Index(5,"k")
 
-    auto T = randomITensor(i,j,k);
+      T = randomITensor(i,j,k)
 
-    auto [U,S,V] = svd(T,{i,k});
+      U,S,V = svd(T,(i,k))
 
-    Print(norm(U*S*V-T));
+      @show norm(U*S*V-T)
 
-    return 0;
-    }
+      return
+    end
 
 ### Truncating the SVD spectrum
 
@@ -85,9 +77,9 @@ by a product of lower-rank tensors whose indices range over only
 a modest set of values.
 
 To obtain an approximate SVD in ITensor, pass one or more of
-the following accuracy parameters:
+the following accuracy parameters as named arguments:
 
-* `"Cutoff"` &mdash; real number @@\epsilon@@. Discard the smallest singular values
+* `cutoff` &mdash; real number @@\epsilon@@. Discard the smallest singular values
   @@\lambda\_n@@ such that the <i>truncation error</i> is less than @@\epsilon@@:
   $$
   \frac{\sum\_{n\in\text{discarded}} \lambda^2\_n}{\sum\_{n} \lambda^2\_n} < \epsilon \:.
@@ -95,45 +87,46 @@ the following accuracy parameters:
   Using a cutoff allows the SVD algorithm to truncate as many states as possible while still
   ensuring a certain accuracy.
 
-* `"MaxDim"` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
+* `maxdim` &mdash; integer M. If the number of singular values exceeds M, only the largest M will be retained.
 
-* `"MinDim"` &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
+* `mindim` &mdash; integer m. At least m singular values will be retained, even if some fall below the cutoff
 
 Let us revisit the example above, but also provide some of these accuracy parameters
 
-    auto T = randomITensor(i,j,k);
-    auto [U,S,V] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",50});
+    i = Index(10,"i")
+    j = Index(40,"j")
+    k = Index(20,"k")
+    T = randomITensor(i,j,k)
 
-In the code above, we specified that a cutoff of @@\epsilon=10^{-2}@@ be used and that at
-most 50 singular values should be kept. We can check that the resulting factorization is now approximate
-by computing the squared relative error:
+    U,S,V = svd(T,(i,k),cutoff=1E-2)
 
-    auto truncerr = sqr(norm(U*S*V - T)/norm(T));
-    Print(truncerr);
-    //typical output: truncerr = 9.24E-03
+Note that we have also made the indices larger so that the truncation performed will be
+non-trivial.
+In the code above, we specified that a cutoff of @@\epsilon=10^{-2}@@ be used. We can check that the resulting factorization is now approximate by computing the squared relative error:
 
-Note how the computed error is below the @@\epsilon@@ we requested.
+    truncerr = (norm(U*S*V - T)/norm(T))^2
+    @show truncerr
+    # typical output: truncerr = 8.24E-03
+
+Note how the computed error is below the cutoff @@\epsilon@@ we requested.
 
 <div class="example_clicker">Click here to view a full working example</div>
 
-    #include "itensor/all.h"
-    using namespace itensor;
+    using ITensors
 
-    int main() 
-    {
-    auto i = Index(30,"i");
-    auto j = Index(40,"j");
-    auto k = Index(50,"k");
-
-    auto T = randomITensor(i,j,k);
-
-    auto [U,S,V] = svd(T,{i,k},{"Cutoff=",1E-2,"MaxDim=",500});
-
-    auto truncerr = sqr(norm(U*S*V-T)/norm(T));
-    Print(truncerr);
-
-    return 0;
-    }
+    let
+      i = Index(10,"i");
+      j = Index(40,"j");
+      k = Index(20,"k");
+ 
+      T = randomITensor(i,j,k)
+ 
+      U,S,V = svd(T,(i,k),cutoff=1E-2)
+   
+      @show norm(U*S*V-T)
+      @show (norm(U*S*V - T)/norm(T))^2
+      return
+    end
 
 <br/>
 
