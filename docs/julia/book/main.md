@@ -29,7 +29,9 @@ customizing higher-level parts of the library.
 
 - [[Factorizing ITensors (SVD Example)|book/itensor_factorizing]]
 
+<!--
 - [[Case Study: TRG Algorithm|book/trg]]
+-->
 
 <!--
 - [[Sparse ITensors (combiners, diagonal,...)|book/itensor_sparse]]

@@ -136,7 +136,12 @@ Note how the computed error is below the cutoff @@\epsilon@@ we requested.
 </span>
 
 <span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
+[[QN ITensor Introduction|book/qnitensor_intro]]
+</span>
+<!--
+<span style="float:right;"><img src="docs/VERSION/arrowright.png" class="icon">
 [[Case Study: TRG Algorithm|book/trg]]
 </span>
+-->
 
 <br/>
