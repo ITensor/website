@@ -3,7 +3,7 @@
 
 <img src="docs/VERSION/book/icon.png" class="icon">   [[The ITensor Book|book]]. A comprehensive introduction to ITensor.
 
-<img src="docs/VERSION/classes/icon.png" class="icon">   [In-Depth Documentation](https://itensor.github.io/ITensors.jl/dev/). Detailed interfaces of ITensor classes and functions.
+<img src="docs/VERSION/classes/icon.png" class="icon">   <a href="https://itensor.github.io/ITensors.jl/dev/" target="_blank">In-Depth Documentation</a>. Detailed interfaces of ITensor classes and functions.
 
 <img src="docs/VERSION/formulas/icon.png" class="icon"> [[Code Formulas|formulas]]. Example codes for common tasks.
 
