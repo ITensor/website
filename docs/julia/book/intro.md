@@ -55,7 +55,7 @@ leaving C to have indices i and k.
 In a standard matrix library, one would need to remember that <code style="border:none;">j</code> is
 the second index of B and write something like 
 
-    C = A * transpose(B) //not actual ITensor code!!
+    C = A * transpose(B) # not actual ITensor code!!
 
 to get the correct result. ITensor handles this transposition automatically, 
 making user code simple and robust. If B were to be redefined

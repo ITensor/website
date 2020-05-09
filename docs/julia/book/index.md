@@ -16,14 +16,14 @@ of the Index to recognize each other. Typically you do not need to look at these
 ID numbers; it is enough to know that indices match (compare equal)
 if they are copies of the same original index:
 
-    j = copy(i)  //make a copy of i
-    @show j==i   //prints: j==i = true
+    j = copy(i)  # make a copy of i
+    @show j==i   # prints: j==i = true
 
 (Also two indices must have the same tags and prime level to compare equal; see below).
 
 To access the dimension, or size of an Index, use the `dim` function
 
-    @show dim(i)  //prints: dim(i) = 3
+    @show dim(i)  # prints: dim(i) = 3
 
 <div class="example_clicker">Click here to view a full working example</div>
 
@@ -77,31 +77,30 @@ it will no longer compare equal to `i`.
 
     i1 = prime(i)
 
-    @show plev(i)  //prints: plev(i) = 0
-    @show plev(i1) //prints: plev(i1) = 1
+    @show plev(i)  # prints: plev(i) = 0
+    @show plev(i1) # prints: plev(i1) = 1
 
-    @show i1 == i  //prints: i1==i is false
+    @show i1 == i  # prints: i1==i is false
 
 There are many convenient ways to manipulate Index prime levels.
 The `'` operator in Julia can be used to add primes to Indices:
 
     i1 = i'
-    @show plev(i1)   //prints: plev(i1) = 1
+    @show plev(i1)   # prints: plev(i1) = 1
 
-    @show plev(i''') //prints: plev(i''') = 3
+    @show plev(i''') # prints: plev(i''') = 3
 
 The `prime` function accepts an optional increment amount:
 
-    i3 = prime(i,3);
+    i3 = prime(i,3)
 
-    @show plev(i3) //prints: plev(i3) = 3
+    @show plev(i3) # prints: plev(i3) = 3
 
-Calling `noPrime` resets the prime level to zero.
+Calling `noprime` makes a copy with the prime level reset to zero:
+ 
+    i0 = noprime(i3);
 
-    auto i0 = noPrime(i3);
-
-    println(primeLevel(i0));
-    //prints: 0
+    @show plev(i0) # prints: plev(i0) = 0
 
 Note that the above names (`i3`, `i0`, etc.) are just 
 to make the code easier to read&mdash;you can use any variable names 
@@ -115,10 +114,10 @@ on [[Modifying Indices|modify_index]].
 
 Printing an Index shows useful information about it:
 
-    auto i = Index(3,"index i,Link");
+    i = Index(3,"i,Link")
 
-    println(i);
-    //prints: (3|id=587|"Link,index i")
+    println(i)
+    # prints: (dim=3|id=67|"Link,i")
 
 The output shows the dimension, id, and tags of i.
 The ID numbers are random 64 bit integers which vary each time 
@@ -127,11 +126,11 @@ For reasons of space and readability, only a portion of the ID is shown.
  
 The prime level is displayed at the end:
 
-    println(prime(i,2));
-    //prints: (3|id=587|"Link,index i")''
+    println(prime(i,2))
+    # prints: (dim=3|id=67|"Link,i")''
 
-    println(prime(i,10));
-    //prints: (3|id=587|"Link,index i")'10
+    println(prime(i,10))
+    # prints: (dim=3|id=67|"Link,i")'10
 
 ### Summary 
 
@@ -143,10 +142,6 @@ Index objects can also carry tags and a prime level.
 Tags and prime levels can be useful in various situations, such as retrieving an
 Index from an ITensor.
 The tags and prime level of an Index can be modified.
-
-<br/>
-<i>For a complete listing of all of the methods of class Index, view the
-[[detailed documentation|classes/index]].</i>
 
 <br/>
 
