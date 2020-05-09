@@ -13,18 +13,20 @@ import os
 import mistune #Markdown renderer
 from pygments import highlight
 from pygments.lexers import CppLexer
+from pygments.lexers import JuliaLexer
 from pygments.formatters import HtmlFormatter
 
 from functools import partial
 # Turn on cgitb to get nice debugging output.
 # Remember to turn off when done debugging, otherwise not secure.
-#import cgitb; cgitb.enable()
+import cgitb; cgitb.enable()
 
 #################################
 
-versions = [["cppv3","C++v3"], 
-            ["cppv2","C++v2"]]
-            #["julia","Julia"]
+# version name, display name, associated language
+versions = [["cppv3","C++v3","C++"], 
+            ["cppv2","C++v2","C++"],
+            ["julia","Julia","Julia"]]
 default_version = "cppv3"
 
 reldocpath = "docs/"
@@ -39,8 +41,14 @@ nav_delimiter = "&nbsp;/&nbsp;"
 sys.path.append("/opt/itensor.org/")
 
 class MyRenderer(mistune.Renderer):
+    mylang = "C++"
     def block_code(self, code, lang):
         lexer = CppLexer()
+        if self.mylang == "C++":
+            lexer = CppLexer()
+        elif self.mylang == "Julia":
+            lexer = JuliaLexer()
+
         formatter = HtmlFormatter()
         return highlight(code, lexer, formatter)
 
@@ -64,7 +72,7 @@ def openFile(fname):
         return None
 
 def printContentType(vers):
-    print "Content-Type: text/html"
+    print("Content-Type: text/html")
     #if vers != None:
     expiration = datetime.datetime.now() + datetime.timedelta(days=30)
     cookie = Cookie.SimpleCookie()
@@ -115,7 +123,7 @@ def openMDFile(vdocpath,page):
 
     return mdfile
 
-def convert(string,vers):
+def convert(string,vers,lang):
     #Convert SciPost[Vol,Issue,PageNum]tags
     string = re.sub(r"SciPost\[(\d+),(\d+),(\d+)\]",r"<i style='color:#CC0000'>SciPost Phys.</i>&nbsp;&nbsp;<b>\1</b> <a href='https://scipost.org/10.21468/SciPostPhys.\1.\2.\3'>\3</a>",string)
 
@@ -172,6 +180,7 @@ def convert(string,vers):
     ## Mistune Markdown Renderer
     ##
     renderer = MyRenderer()
+    renderer.mylang = lang
     md = mistune.Markdown(renderer=renderer)
     htmlstring = md.render(mdstring)
 
@@ -183,6 +192,9 @@ def convert(string,vers):
 def generate():
     page = form.getvalue("page")
     vers = form.getvalue("vers")
+    lang = "C++"
+    for v in versions:
+        if v[0]==vers: lang = v[2]
 
     cookie_val = ""
     try:
@@ -215,7 +227,7 @@ def generate():
 
     bodyhtml = ""
     if mdfile:
-        bodyhtml = convert("".join(mdfile.readlines()),vers)
+        bodyhtml = convert("".join(mdfile.readlines()),vers,lang)
         mdfile.close()
     else:
         bodyhtml = "<p>(Documentation file not found)</p>"
@@ -240,10 +252,13 @@ def generate():
     # Create version information line
     vinfo = "<span class='versions' style='float:right;'>"
     n = 0
-    for (v,vname) in versions:
+
+    lang = "C++"
+    for (v,vname,vlang) in versions:
         if n > 0: vinfo += "&nbsp;|&nbsp;"
         if v == vers:
             vinfo += "<span style='outline:solid 1px;font-weight:bold;'>%s</span>"%(vname)
+            lang = vlang
         else:
             vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page,v,vname)
         n += 1
