@@ -1,5 +1,14 @@
 # Change Log #
 
+<a name="v3.1.3"></a>
+## [Version 3.1.3](https://github.com/ITensor/ITensor/tree/v3.1.3) (May 11, 2020) ##
+
+Bug fixes and improvements:
+- Remove util/print_macro.h from all.h (PR #352)
+- Fix faulty QN MPS error check (PR #349)
+- Improve LocalOp operator bool (PRs #351, #354 )
+- Fix totalQN function to always succeed if lims set (PR #355)
+
 <a name="v3.1.2"></a>
 ## [Version 3.1.2](https://github.com/ITensor/ITensor/tree/v3.1.2) (Apr 28, 2020) ##
 
