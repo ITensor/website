@@ -1,9 +1,12 @@
 # BondGate
 
 BondGate objects represent a quantum "gate" acting on a nearest-neighbor
-bond of a 1D system. Currently, the associated gateTEvol function of
+bond of a 1D system. Currently, the associated `gateTEvol` function of
 ITensor assumes that sites of a BondGate are neighbors along a 1D ordering
 of the sites of a system, so please only make BondGates which have this property.
+
+For an example of using BondGate in conjunction with the `gateTEvol` function,
+please see [[this code formula page|formulas/tevol_trotter]].
 
 ## Examples
 
