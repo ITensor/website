@@ -77,14 +77,12 @@ its actual signature is `f(ITensor const& T)`.
 * [[InitState|classes/initstate]]. Class for initializing matrix product states.
 
 To Do:
+- gateTEvol function
 - STOP_DMRG file feature of DMRG codes
-- AutoMPO
 - InitState
 - Spectrum
 - idmrg
 - Args
-- BondGate
-- HamBuilder
 - LocalOp, LocalMPO, etc.
 - Observer / DMRGObserver
 - DMRGObserver related dmrg functions?
