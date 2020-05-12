@@ -16,6 +16,8 @@ its actual signature is `f(ITensor const& T)`.
   - [[LatticeBond Objects|classes/latticebond]]
   - [[Functions for Making Lattices|classes/lattice_functions]]
 
+* [[BondGate|classes/bondgate]] - type for making quantum circuits or time-evolution gates
+
 ## Index
 
 * [[Index|classes/index]]. Tensor index.
