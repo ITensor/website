@@ -43,16 +43,20 @@
 
     <div id="download" class="rounded">
         <h4>
-        Latest version is <a href="docs.cgi?page=changelog#v3.1.3">v3.1.3</a>
+        Latest Julia version is <a href="docs.cgi?vers=julia&page=changelog#v3.1.3">v0.1.0</a>
+        </h4>
+        <h4>View source on <a target="_blank" href="https://github.com/ITensor/ITensors.jl">github</a></h4>
+        <br/>
+
+        <h4>
+        Latest C++ version is <a href="docs.cgi?page=changelog#v3.1.3">v3.1.3</a>
         </h4>
         <h4>Clone from <a href="http://www.itensor.org/docs.cgi?page=install&vers=cppv3">github</a> (preferred)</h4>
         <h4>Download: <a href="https://github.com/ITensor/ITensor/tarball/v3.1.3">tar.gz</a> or
                      <a href="https://github.com/ITensor/ITensor/zipball/v3.1.3">zip</a> </h4>
-        <table style="padding:0;margin:0">
-        <tr><td>Report bugs:&nbsp;</td><td><a href="https://github.com/ITensor/ITensor/issues" target="_blank">code</a><td></tr>
-        <tr><td></td><td><a href="https://github.com/ITensor/website/issues" target="_blank">website</a><td></tr>
-        </table>
-        <h4>Follow: <a href="https://twitter.com/ITensorLib" target="_blank">@ITensorLib</a></h4>
+        <br/>
+        
+        <h4>On Twitter<img width="30px" style="vertical-align:middle;" src="Twitter_Logo_Blue.png"/> <a href="https://twitter.com/ITensorLib" target="_blank">@ITensorLib</a></h4>
         <h4><a href="email.html">Sign up</a> for email newsletters</h4>
     </div>
 
@@ -71,7 +75,7 @@
     </div> <!-- rightbar -->
 
     <p>
-    ITensor&mdash;Intelligent Tensor&mdash;is a C++ library for implementing 
+    ITensor&mdash;Intelligent Tensor&mdash;is a library for implementing 
     tensor network calculations. See the <a href="docs.cgi?page=papers">list of recent papers using ITensor</a>.
     <br/>Features include:
     <ul id="features">
@@ -79,8 +83,7 @@
     <li>Full-featured <a href="https://tensornetwork.org/mps/">matrix product state / tensor train</a> and <a href="https://tensornetwork.org/mps/algorithms/dmrg/">DMRG</a> layer</li>
     <li>Quantum number conserving (block-sparse) tensors; same interface as dense tensors</li>
     <li>Complex numbers handled automatically and efficiently</li>
-    <li>Easy to <a href="docs.cgi?page=install">install</a>; only dependencies are BLAS/LAPACK and C++17
-    <li>Interface uses friendly, productive subset of the C++ language</li>
+    <li>Easy to install, with a friendly and productive interface</li>
     </ul>
     </p>
 
@@ -96,14 +99,24 @@
     </p>
     <img class="diagram" style="margin-left:100px;" width="400px" src="Diagram.png"/></br>
     <p>
-    <b>Installing ITensor:</b>
+    <b>Installing ITensor (Julia Version):</b>
+    <ol>
+        <li>Install the <a href="https://julialang.org/downloads" target="_blank">Julia language</a></li>
+        <li>Enter the command <code>julia</code> to start an interactive Julia session</li>
+        <li>Inside this session, type <code>]</code> to enter the package manager</li>
+        <li>Enter the command <code>add ITensors</code></li>
+        <li>For more details, see our <a href="docs.cgi?vers=julia&page=install">installation guide</a></li>
+    </ol>
+    </p>
+    <p>
+    <b>Installing ITensor (C++ version):</b>
     <ol>
     <li>Make sure you have an up-to-date C++17 compiler and LAPACK installed. On UNIX systems, use your
     package manager; on Mac OS install the free Xcode app from the app store;
     for Windows install <a href="https://www.cygwin.com" target="_blank">cygwin</a>.</li>
     <li>Clone the latest version of ITensor: <pre><code>git clone https://github.com/ITensor/ITensor itensor</code></pre>
         (Or <a href="https://github.com/ITensor/ITensor/archive/v3.zip" target="_blank">download</a> the zip file if you do not have git.)<br/>
-        Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?page=tutorials/git">git quick start</a> guide.
+        Cloning with <a href="http://git-scm.com" target="_blank">git</a> allows you to track changes to ITensor and is the preferred method; for more see our <a href="docs.cgi?vers=cppv3&page=tutorials/git">git quick start</a> guide.
 
     </li>
     <li>Create the options.mk file: <code>cp options.mk.sample options.mk</code>.
@@ -115,6 +128,7 @@
         ITensor, use the files in the "tutorial/project_template" folder 
         as a starting point for making your own code.</li>
     </ol>
+    </p>
     <p>
     For more details, read the full <a href="docs.cgi?page=install&vers=cppv3">installation</a> instructions.</br>
     Browse the <a href="docs.cgi?page=main&vers=cppv3">documentation pages</a> to learn more about ITensor.
