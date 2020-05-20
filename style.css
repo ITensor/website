@@ -295,25 +295,26 @@ padding: 1px;
 }
 .docs h1 
 { 
-font-size: 140%; 
+font-size: 200%; 
 font-weight: bold; 
 margin-top: 20px; 
 margin-bottom: 8px; 
 }
-.docs h1 a { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
+.docs h1 a { font-size: 200%; font-weight: bold; margin-bottom: 20px; }
 
 .docs h2 
 { 
-font-size: 110%; 
+font-size: 140%; 
 font-weight: bold; 
 margin-top: 10px; 
 margin-bottom: 8px; 
 }
-.docs h2 a { font-size: 110%; font-weight: bold; margin-bottom: 20px; }
+.docs h2 a { font-size: 140%; font-weight: bold; margin-bottom: 20px; }
   
 .docs h3 
   { 
   font-weight: bold; 
+  font-style: italic;
   margin-top: 8pt; 
   margin-bottom: 8pt; 
   }
