@@ -1,7 +1,7 @@
 # Installing & Running ITensor
 
-Installing the Julia version of ITensor is easy, if you
-already have Julia installed. For more information about
+Installing the Julia version of ITensor is easy once you
+have the Julia language installed. For more information about
 installing Julia, please see <a href="https://julialang.org/downloads/">this link</a>
 and the Tips About Installing Julia below.
 

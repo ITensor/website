@@ -1,5 +1,5 @@
 
-# ITensor Codes (version 3 compatible)
+# ITensor Codes (C++ version 3 compatible)
 
 Open-source codes based on ITensor for a variety projects and tasks.
 If you have a high-quality code you'd like listed here, please
@@ -74,7 +74,7 @@ algorithms.
 </table>
 
 
-# ITensor Codes (version 2 compatible)
+# ITensor Codes (C++ version 2 compatible)
 
 (Codes listed here are maintained separately from ITensor by the maintainers
 shown next to each code. Please contact them directly if you have any issues 
