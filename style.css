@@ -481,7 +481,7 @@ border-color: #ddd;
 .newsitem h2 { font-family: sans-serif; padding: 0px 0px 0px 0px; margin: 0px;}
 .newsitem img { float: left; padding: 10px; }
 .newsitem ul { margin-left: 30px;}
-.newsitem ul li { list-style-type: disc; margin-bottom: 4px; }
+.newsitem ul li { list-style-type: square; margin-bottom: 4px; }
 .newsitem p { padding: 10px; text-indent: 0px; }
 .newsitem a { color: #900; }
 
