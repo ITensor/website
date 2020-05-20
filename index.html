@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">$(document).ready(function(){});</script>
     <script type="text/javascript" src="scripts/jquery.corner.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 
     <style type="text/css">
     </style>
@@ -101,7 +102,7 @@
     <p>
     <b>Installing ITensor (Julia Version):</b>
     <ol>
-        <li>Install the <a href="https://julialang.org/downloads" target="_blank">Julia language</a></li>
+        <li><a href="https://julialang.org/downloads" target="_blank">Install the Julia language</a>&nbsp;&nbsp;<i style="color:#336699;" class="fa fa-external-link" aria-hidden="true"></i></li>
         <li>Enter the command <code>julia</code> to start an interactive Julia session</li>
         <li>Inside this session, type <code>]</code> to enter the package manager</li>
         <li>Enter the command <code>add ITensors</code></li>
@@ -155,7 +156,6 @@
 </div>
 
 <div class="full section rounded"> <h2>Code Samples</h2> </div>
-
 
 <div class="full screenshot">
 <img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
@@ -306,7 +306,9 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
 
 </div> <!--id="main"-->
 
-<script type="text/javascript">$(function() {$('.rounded').corner("7px");});</script>
+<script type="text/javascript">
+    $(function() {$('.rounded').corner("7px");});
+</script>
 
 </body>
 </html>
