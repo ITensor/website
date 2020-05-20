@@ -28,7 +28,8 @@ To install and configure Julia to use MKL, just do the following steps:
 Note that after entering this command, the MKL library will be compiled from source on your
 machine, which can take quite a long time but only happens once. To check that it worked,
 you can enter the Julia commands `using LinearAlgebra; BLAS.vendor()` which should return
-`:mkl` if MKL was successfully installed.
+`:mkl` if MKL was successfully installed. (You may need to restart Julia for this change
+to take effect.)
 
 For more information, see the <a target="_blank" href="https://github.com/JuliaComputing/MKL.jl">MKL.jl</a> Github repo.
 
