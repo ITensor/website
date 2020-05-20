@@ -2,15 +2,16 @@
 
 Installing the Julia version of ITensor is easy once you
 have the Julia language installed. For more information about
-installing Julia, please see <a href="https://julialang.org/downloads/">this link</a>
-and the Tips About Installing Julia below.
+installing Julia, please see <a href="https://julialang.org/downloads/">the Julia language downloads page</a>.
 
 ## Installing ITensor
 
+Once you have installed Julia on your machine,
+
 1. launch an interactive Julia session by typing `julia` (a.k.a. the Julia "REPL")
-2. type `]` to enter the package manager
+2. type `]` to enter the package manager (`pkg>` prompt should now show)
 3. enter the command `add ITensors`
-4. after installation completes, press backspace to return to the normal julia> prompt or Ctrl-D to exit the REPL
+4. after installation completes, press backspace to return to the normal `julia>` prompt
 
 For extra tips about installing Julia on a cluster machine, <a href="#cluster">see below</a>.
 
@@ -22,7 +23,7 @@ true for machines using Intel CPUs.
 
 To install and configure Julia to use MKL, just do the following steps:
 1. type `julia` to enter an interactive Julia session
-2. type `]` to enter the package manager (`pkg>` prompt)
+2. type `]` to enter the package manager (`pkg>` prompt should now show)
 3. enter the command `add https://github.com/JuliaComputing/MKL.jl`
 
 Note that after entering this command, the MKL library will be compiled from source on your
@@ -40,7 +41,12 @@ The basic outline of a code which uses the ITensor library is as follows
     using ITensors
 
     let
-    # ... your code goes here ...
+      # ... your own code goes here ...
+      # For example:
+      i = Index(2,"i")
+      j = Index(3,"j")
+      T = randomITensor(i,j)
+      @show T
     end
 
 The reason we recommend the `let...end` block is that global scope in Julia
@@ -52,7 +58,7 @@ avoids these issues.
 Now say you put the above code into a file named `code.jl`. Then you can run
 this code on the command line as follows
 
-    > julia code.jl
+    $ julia code.jl
 
 This script-like mode of running Julia is convenient for running longer jobs,
 such as on a cluster.
@@ -62,8 +68,8 @@ such as on a cluster.
 However, sometimes you want to do rapid development when first writing and 
 testing a code. For this kind of work, the long startup and compilation times
 currently incurred by the 1.x versions of Julia can be a nuisance. Fortunately
-there is a nice solution: repeatedly load your code into a running Julia session
-(a.k.a the REPL, which is Julia jargon for Julia's interactive mode).
+there is a nice solution: repeatedly load your code into a running Julia session.
+
 
 To set up this kind of session, take the following steps:
 
@@ -72,11 +78,15 @@ command line. You will now be in the Julia "REPL" (read-eval-print loop) with th
 prompt `julia>` on the left of your screen.
 2. To run a code such as the `code.jl` file discussed above, input the command
 
-        include("code.jl")
+        julia> include("code.jl")
 
   Note that you must be in the same folder as `code.jl` for this to work; otherwise
 input the entire path to the `code.jl` file. The code will run and you will see its output in the REPL.
-3. Now say you want to modify and re-run the code. To do this, leave your interactive Julia session running and just edit the file in another terminal window or shell session. Now run the command `include("code.jl")` again and your updated code will run, but this time skipping any of the precompilation overhead incurred on previous steps.
+3. Now say you want to modify and re-run the code. To do this, just edit the file in another terminal window or shell session, without closing your Julia session. Now run the command 
+
+        julia> include("code.jl")
+
+   again and your updated code will run, but this time skipping any of the precompilation overhead incurred on previous steps.
 
 The above steps to running a code interactively has a big advantage that you only have to pay the startup time of compiling ITensor and other libraries you are using once. Further changes to your code only incur very small extra compilation times, facilitating rapid development.
 
@@ -108,9 +118,9 @@ of the uncompressed Julia folder you just created.
 For example, the set of commands might look like this (where these commands
 are assumed to be executed in your home directory):
 
-    > cd
-    > mkdir -p bin
-    > wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz
-    > tar xvzf julia-1.4.1-linux-x86_64.tar.gz
-    > ln -s julia-1.4.1/bin/julia bin/julia
+    $ cd
+    $ mkdir -p bin
+    $ wget https://julialang-s3.julialang.org/bin/linux/x64/1.4/julia-1.4.1-linux-x86_64.tar.gz
+    $ tar xvzf julia-1.4.1-linux-x86_64.tar.gz
+    $ ln -s julia-1.4.1/bin/julia  bin/julia
 
