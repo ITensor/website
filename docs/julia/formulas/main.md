@@ -15,3 +15,10 @@ Formulas involving matrix product states and DMRG.
 
 * <h3>Running DMRG</h3>
     - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
+
+<!-- Formulas to add:
+* Making a custom TagType and siteinds (example of S=3/2?)
+* Excited-state DMRG
+* Getting the blocks of an QNITensor
+...
+-->
