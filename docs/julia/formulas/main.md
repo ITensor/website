@@ -2,7 +2,8 @@
 
 Below are code "formulas" for common tasks that come up when using ITensor. 
 Please <a href="/about.html">email us</a> to suggest a formula you would
-like to see.
+like to see, or contribute one by submitting a pull request to our
+<a href="https://github.com/ITensor/website" target="_blank">website Github repo</a>.
 
 ## ITensor Formulas
 
