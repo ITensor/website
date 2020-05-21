@@ -7,6 +7,7 @@ like to see.
 ## ITensor Formulas
 
 * [[Print only the indices of an ITensor|formulas/print_inds]]
+* [[Write and Read an ITensor to Disk with HDF5|formulas/itensor_hdf5]]
 
 ## MPS and DMRG Formulas
 Formulas involving matrix product states and DMRG.
