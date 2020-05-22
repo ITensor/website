@@ -1,5 +1,15 @@
 # Change Log (Julia)
 
+<a name="v0.1.2"></a>
+## [Version 0.1.2](https://github.com/ITensor/ITensors.jl/tree/v0.1.2) (May 21, 2020) ##
+
+New features:
+- Add norm, lognorm, loginner for MPS/MPO (PR #384)
+
+Bug fixes and improvements:
+- Add docs for Array conversion. Add installation instructions. Reorganize DMRG/ProjMPO docs. (PR #385)
+- Remove pre-release install languge from docs/index.md (PR #383)
+
 <a name="v0.1.1"></a>
 ## [Version 0.1.1](https://github.com/ITensor/ITensors.jl/tree/v0.1.1) (May 20, 2020) ##
 
