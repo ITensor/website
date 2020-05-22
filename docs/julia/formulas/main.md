@@ -1,4 +1,4 @@
-# <img src="docs/VERSION/formulas/icon.png" class="largeicon">  Code Formulas #
+# <img src="docs/VERSION/formulas/icon.png" class="largeicon">  Code Formulas
 
 Below are code "formulas" for common tasks that come up when using ITensor. 
 Please <a href="/about.html">email us</a> to suggest a formula you would
@@ -13,8 +13,12 @@ like to see, or contribute one by submitting a pull request to our
 ## MPS and DMRG Formulas
 Formulas involving matrix product states and DMRG.
 
-* <h3>Running DMRG</h3>
-    - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
+- [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
+
+## Physics Formulas
+Formulas involving physics-specific features of ITensor.
+
+* [[Custom site type / degree-of-freedom type|formulas/site_type]]
 
 <!-- Formulas to add:
 * Making a custom TagType and siteinds (example of S=3/2?)
