@@ -73,11 +73,11 @@ But because this is kind of awkward to write, we have created an alias
 for this type: `SpinThreeHalfSite`. It is just another way of writing the same type.
 
 What is the purpose of a `TagType`? It is somewhat technical in detail, but at 
-a simple level it allows ITensor to deduced which of a set of overloaded 
+a simple level it allows ITensor to deduce which of a set of overloaded 
 functions to call based on what tag or tags a particular Index has. So if the
 code encounters an Index such as `Index(4,"S=3/2")` it can call functions
 which are specialized for indices carrying the `"S=3/2"` tag. This can happen
-even though Index tags are known only at run time.
+even though Index tags are known only at run time. (If an Index has more than one specially recognized tags, an error is raised.)
 
 ### The siteinds Function
 
@@ -91,7 +91,7 @@ The function `siteinds` is defined for our new custom
 
 All this function does is make an array, or vector of Index objects.
 The important thing is that the Index objects in the returned array
-carry the `"S=3/2"` tag. However, it's also customary and useful to put the `"Site"`tag which is ITensor's convention for site indices of MPS and MPO objects, as well as the tag `"n=$n"` which labels each Index as "n=1", "n=2", etc.
+carry the `"S=3/2"` tag. However, it's also customary and useful to put the `"Site"`tag which is ITensor's convention for site indices of MPS and MPO objects, as well as the tag `"n=$n"` which labels each Index as `"n=1"`, `"n=2"`, etc.
 
 The `siteinds` function is not strictly necessary for working with special
 degrees of freedom and `TagType`s. But it's convenient to have for 
@@ -210,11 +210,7 @@ QN structure as follows:
               QN("Sz",-3)=>1;
               tags="S=3/2")
 
-We can check that this Index has a dimension of four like in our simpler example
-above by calling `dim(s)` and seeing that `dim(s)==4`. This follows from the 
-fact that there are four subspaces of dimension 1: `QN("Sz",+3)=>1`, `QN("Sz",+1)=>1`,
-etc. Note that the @@S^z@@ values are given in units of 1/2; this is the convention
-used by ITensor so that we can store all quantum numbers as integers.
+We can check that this Index has a dimension of four like in our simpler example above by calling `dim(s)` and seeing that `dim(s)==4`. This follows from the  fact that there are four subspaces of dimension 1: `QN("Sz",+3)=>1`, `QN("Sz",+1)=>1`, etc. Recalling that `x=>y` in Julia creates a `Pair(x,y)` object, each `QN=>Int` pair represents a subspace, with the integer specifying the subspace's dimension. Note also that the @@S^z@@ values are given in units of 1/2 (so -3 instead of -3/2); this is the convention used by ITensor so that we can store all quantum numbers as integers.
 
 ### QN-conserving siteinds Function
 
