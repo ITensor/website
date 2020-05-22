@@ -297,7 +297,7 @@ padding: 1px;
 { 
 font-size: 160%; 
 font-weight: bold; 
-margin-top: 20px; 
+margin-top: 30px; 
 margin-bottom: 8px; 
 }
 .docs h1 a { font-size: 160%; font-weight: bold; margin-bottom: 20px; }
@@ -306,7 +306,7 @@ margin-bottom: 8px;
 { 
 font-size: 120%; 
 font-weight: bold; 
-margin-top: 10px; 
+margin-top: 30px; 
 margin-bottom: 8px; 
 }
 .docs h2 a { font-size: 120%; font-weight: bold; margin-bottom: 20px; }
