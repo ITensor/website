@@ -9,16 +9,16 @@ function siteinds(::SpinThreeHalfSite,N::Int; kwargs...)
               QN("Sz",+1)=>1,
               QN("Sz",-1)=>1,
               QN("Sz",-3)=>1)
-    return [sim(s;tags="Site,S=3/2,n=$n") for n=1:N]
+    return [sim(s;tags="S=3/2,Site,n=$n") for n=1:N]
   end
-  return [Index(4,"Site,S=3/2,n=$n") for n=1:N]
+  return [Index(4,"S=3/2,Site,n=$n") for n=1:N]
 end
 
 function op(::SpinThreeHalfSite,
             s::Index,
             opname::AbstractString; kwargs...)
 
-  Op = emptyITensor(s',dag(s))
+  Op = ITensor(s',dag(s))
 
   if opname == "Sz"
     Op[s'(1), s(1)] = +3/2

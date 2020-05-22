@@ -86,17 +86,17 @@ The function `siteinds` is defined for our new custom
 
     function siteinds(::SpinThreeHalfSite,
                       N::Int; kwargs...)
-      return [Index(4,"Site,S=3/2,n=$n") for n=1:N]
+      return [Index(4,"S=3/2,Site,n=$n") for n=1:N]
     end
 
 All this function does is make an array, or vector of Index objects.
 The important thing is that the Index objects in the returned array
-carry the `"S=3/2"` tag; also it's customary and useful to put the `"Site"` 
-tag which is ITensor's convention for site indices of MPS and MPO objects.
+carry the `"S=3/2"` tag. However, it's also customary and useful to put the `"Site"`tag which is ITensor's convention for site indices of MPS and MPO objects, as well as the tag `"n=$n"` which labels each Index as "n=1", "n=2", etc.
 
 The `siteinds` function is not strictly necessary for working with special
 degrees of freedom and `TagType`s. But it's convenient to have for 
-constructing MPOs, MPS, and using AutoMPO. 
+constructing MPOs, MPS, and using AutoMPO, each of which asks for arrays
+of Index objects as input when making new MPOs or MPS. 
 
 After defining this `siteinds` function, you can just write code like:
 
@@ -105,7 +105,9 @@ After defining this `siteinds` function, you can just write code like:
 
 The special `TagType` system in ITensor will automatically handle the
 conversion of the argument `"S=3/2"`, which is just a string, into a type
-so that the specialization above actually gets called.
+so that the specialization above actually gets called. Try running this 
+code and printing out the `sites` object: you will see that it's just
+a regular Julia array of Index objects.
 
 ### The op Function
 
@@ -122,7 +124,7 @@ In our example above, we defined this function as:
                 s::Index,
                 opname::AbstractString; kwargs...)
     
-      Op = emptyITensor(s',dag(s))
+      Op = ITensor(s',dag(s))
     
       if opname == "Sz"
         Op[s'(1), s(1)] = +3/2
@@ -145,10 +147,7 @@ In our example above, we defined this function as:
 
 As you can see, the function is passed an Index `s` and an operator name `opname`.
 Then it constructs an empty ITensor which is ready to have its elements set.
-Finally the function inspects `opname` to see if it is one of the recognized operator
-names, and if so, sets its elements appropriately to the values defining that operator
-and returns it. To make more operators, all you have to do is to define more
-branches of the `if...elseif...end` statement to include more recognized operator names.
+Finally the function inspects `opname` to see if it is one of the recognized operator names, and if so, sets its elements appropriately to the values defining that operator and returns it. To make more operators, all you have to do is to define more branches of the `if...elseif...end` statement to include more recognized operator names.
 
 Once this function is defined, and if you have an Index such as
 
