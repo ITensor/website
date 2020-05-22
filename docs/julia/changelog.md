@@ -1,5 +1,14 @@
 # Change Log (Julia)
 
+<a name="v0.1.3"></a>
+## [Version 0.1.3](https://github.com/ITensor/ITensors.jl/tree/v0.1.3) (May 22, 2020) 
+
+Use NDTensors v0.1.3
+
+Bug fixes:
+- fix issue with propagation of type in complex SVD (inside NDTensors) and add unit tests (PR #388)
+
+
 <a name="v0.1.2"></a>
 ## [Version 0.1.2](https://github.com/ITensor/ITensors.jl/tree/v0.1.2) (May 21, 2020) ##
 
