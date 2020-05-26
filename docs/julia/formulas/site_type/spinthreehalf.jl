@@ -1,8 +1,7 @@
-using ITensors: TagType, siteinds, op
+using ITensors
 
-const SpinThreeHalfSite = TagType"S=3/2"
-
-function siteinds(::SpinThreeHalfSite,N::Int; kwargs...)
+function ITensors.siteinds(::TagType"S=3/2",
+                           N::Int; kwargs...)
   conserve_qns = get(kwargs,:conserve_qns,false)
   if conserve_qns
     s = Index(QN("Sz",+3)=>1,
@@ -14,9 +13,9 @@ function siteinds(::SpinThreeHalfSite,N::Int; kwargs...)
   return [Index(4,"S=3/2,Site,n=$n") for n=1:N]
 end
 
-function op(::SpinThreeHalfSite,
-            s::Index,
-            opname::AbstractString; kwargs...)
+function ITensors.op(::TagType"S=3/2",
+                     s::Index,
+                     opname::AbstractString; kwargs...)
 
   Op = ITensor(s',dag(s))
 
@@ -34,7 +33,7 @@ function op(::SpinThreeHalfSite,
     Op[s'(3), s(2)] = 2
     Op[s'(4), s(3)] = sqrt(3)
   else
-    throw(ArgumentError("Operator name '$opname' not recognized for SpinThreeHalfSite"))
+    throw(ArgumentError("Operator name '$opname' not recognized for the \"S=3/2\" tag"))
   end
   return Op
 end

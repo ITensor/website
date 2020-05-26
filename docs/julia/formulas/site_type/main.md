@@ -1,19 +1,19 @@
 # Making a Custom Site Type / Physical Degree of Freedom
 
-ITensor provides support for a range of common site types, or physical 
-degrees of freedom, such as S=1/2 and S=1 spins; spinless and spinful
+ITensor provides support for a range of common local Hilbert space types, 
+or physical degrees of freedom, such as S=1/2 and S=1 spins; spinless and spinful
 fermions; and more.
 
-However, there can be many cases where you need to customize your 
-degrees of freedom or "site types" (referring to sites of a lattice model).
-You might be working with an
+However, there can be many cases where you need to make custom
+degrees of freedom. You might be working with an
 exotic system, such as @@Z_N@@ parafermions for example, or need
 to customize other defaults provided by ITensor.
 
+In ITensor, such a customization is done by overloading functions
+on specially designated Index tags. 
 Below we give an brief introduction by example of how to make
-custom site Index types in ITensor,
-followed by more examples adding extra details such as support for 
-quantum number (QN) conservation.
+such custom Index tag types in ITensor, followed by more examples adding extra 
+details such as support for  quantum number (QN) conservation.
 
 Throughout we will focus on the example of @@S=3/2@@ spins. These
 are spins taking the @@S^z@@ values of @@+3/2,+1/2,-1/2,-3/2@@.
@@ -62,36 +62,40 @@ Now let's look at each part of the code above.
 
 ### The Tag Type
 
-The first part of the code defines a special type, known as a `TagType`
-which is basically a type (such as Int or Float64) but made from a 
-string. After writing the line:
+The most important aspect of this code is a special type, known as a `TagType`,
+which is a type made from a string. The string of interest here will be an Index
+tag. In the code above, the `TagType` we are using is
 
-    const SpinThreeHalfSite = TagType"S=3/2"
+    TagType"S=3/2"
 
-there is now a new type in the Julia type system which is `TagType"S=3/2"`.
-But because this is kind of awkward to write, we have created an alias 
-for this type: `SpinThreeHalfSite`. It is just another way of writing the same type.
-
-What is the purpose of a `TagType`? It is somewhat technical in detail, but at 
-a simple level it allows ITensor to deduce which of a set of overloaded 
-functions to call based on what tag or tags a particular Index has. So if the
-code encounters an Index such as `Index(4,"S=3/2")` it can call functions
-which are specialized for indices carrying the `"S=3/2"` tag. This can happen
-even though Index tags are known only at run time. (If an Index has more than one specially recognized tags, an error is raised.)
+What is the purpose of a `TagType`? The answer is that we would like to be 
+able to select different functions to call on an ITensor Index based on what tags
+it has, but that is not directly possible in Julia. However, if we can map a tag
+to a type in the Julia type system, we can create function overloads for that type.
+ITensor does this for certain functions for you, and we will discuss a few of these
+functions below. So if the code encounters an Index such as `Index(4,"S=3/2")` it can 
+call these functions which are specialized for indices carrying the `"S=3/2"` tag. 
 
 ### The siteinds Function
 
-The function `siteinds` is defined for our new custom
-`SpinThreeHalfSite` type as follows:
+One of the overloadable `TagType` functions is `siteinds`, whose only job is to make
+an array of Index objects appropriate for the tag we are customizing around.
+The function `siteinds` is defined for our new `"S=3/2"` tag as follows:
 
-    function siteinds(::SpinThreeHalfSite,
-                      N::Int; kwargs...)
+    function ITensors.siteinds(::TagType"S=3/2",
+                               N::Int; kwargs...)
       return [Index(4,"S=3/2,Site,n=$n") for n=1:N]
     end
 
-All this function does is make an array, or vector of Index objects.
+Note that the function name is prepended with `ITensors.` before `siteinds`.
+This prefix makes sure the function is overloading other versions of the `siteinds`
+in the `ITensors` module.
+
+All the `siteinds` function does is make an array, or vector of Index objects.
 The important thing is that the Index objects in the returned array
-carry the `"S=3/2"` tag. However, it's also customary and useful to put the `"Site"`tag which is ITensor's convention for site indices of MPS and MPO objects, as well as the tag `"n=$n"` which labels each Index as `"n=1"`, `"n=2"`, etc.
+carry the `"S=3/2"` tag. However, it's also customary and useful to put 
+the `"Site"` tag which is ITensor's convention for site indices of MPS and 
+MPO objects, as well as the tag `"n=$n"` which labels each Index as `"n=1"`, `"n=2"`, etc.
 
 The `siteinds` function is not strictly necessary for working with special
 degrees of freedom and `TagType`s. But it's convenient to have for 
@@ -120,9 +124,9 @@ such as `"Sz"` or `"S+"` into ITensors so that it can make an actual MPO.
 
 In our example above, we defined this function as:
 
-    function op(::SpinThreeHalfSite,
-                s::Index,
-                opname::AbstractString; kwargs...)
+    function ITensors.op(::TagType"S=3/2",
+                         s::Index,
+                         opname::AbstractString; kwargs...)
     
       Op = ITensor(s',dag(s))
     
@@ -140,7 +144,7 @@ In our example above, we defined this function as:
         Op[s'(3), s(2)] = 2
         Op[s'(4), s(3)] = sqrt(3)
       else
-        throw(ArgumentError("Operator name '$opname' not recognized for SpinThreeHalfSite"))
+        throw(ArgumentError("Operator name '$opname' not recognized for the \"S=3/2\" tag"))
       end
       return Op
     end
@@ -218,8 +222,8 @@ After this rather long technical background, actually making your custom
 site or `TagType` definition offer QN conservation is rather simple. Just
 replace the `siteinds` function by the following definition:
 
-    function siteinds(::SpinThreeHalfSite,
-                      N::Int; kwargs...)
+    function ITensors.siteinds(::TagType"S=3/2",
+                               N::Int; kwargs...)
       s = Index(QN("Sz",+3)=>1,
                 QN("Sz",+1)=>1,
                 QN("Sz",-1)=>1,
@@ -240,8 +244,8 @@ the QN-conserving case or the regular, non-QN-conserving case through a set
 of keyword arguments. This is optional, but if you are interested the 
 defintion of `siteinds` with this capability looks like:
 
-    function siteinds(::SpinThreeHalfSite,
-                      N::Int; kwargs...)
+    function ITensors.siteinds(::TagType"S=3/2",
+                               N::Int; kwargs...)
       conserve_qns = get(kwargs,:conserve_qns,false)
       if conserve_qns
         s = Index(QN("Sz",+3)=>1,QN("Sz",+1)=>1,QN("Sz",-1)=>1,QN("Sz",-3)=>1)
