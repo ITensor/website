@@ -14,6 +14,7 @@ like to see, or contribute one by submitting a pull request to our
 Formulas involving matrix product states and DMRG.
 
 - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
+- [[Measure local properties of an MPS|formulas/measure_mps]]
 
 ## Physics Formulas
 Formulas involving physics-specific features of ITensor.
