@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Minimally entangled typical thermal states algorithm with Trotter gates](https://arxiv.org/abs/2005.09455), Shimpei Goto, Ippei Danshita, arxiv:2005.09455
+
 * [Time Dependent Variational Principle with Ancillary Krylov Subspace](https://arxiv.org/abs/2005.06104), Mingru Yang, Steven R. White, arxiv:2005.06104
 
 * [Particle density mobility edge](https://arxiv.org/abs/2005.02999), Pietro Brighi, Dmitry Abanin, Maksym Serbyn, arxiv:2005.02999

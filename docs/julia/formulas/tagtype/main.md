@@ -96,6 +96,7 @@ The important thing is that the Index objects in the returned array
 carry the `"S=3/2"` tag. However, it's also customary and useful to put 
 the `"Site"` tag which is ITensor's convention for site indices of MPS and 
 MPO objects, as well as the tag `"n=$n"` which labels each Index as `"n=1"`, `"n=2"`, etc.
+(The `"n=$n"` string substitution is not an ITensor feature, but a Julia language feature which replaces a substring like `$n` with the actual value of the variable `n`.)
 
 The `siteinds` function is not strictly necessary for working with special
 degrees of freedom and `TagType`s. But it's convenient to have for 
