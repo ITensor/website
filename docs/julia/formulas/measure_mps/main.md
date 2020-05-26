@@ -25,9 +25,9 @@ The line `s = siteind(psi,j)` retrieves the site, or physical index of the jth M
 
 The line
 
-    szj = scalar(psi[j]*op(s,"Sz")*dag(prime(psi[j],s)))
+    val = scalar(psi[j]*op(s,"Sz")*dag(prime(psi[j],s)))
 
-actually performs the computation of the expected value of the operator "Sz". The call to `op(s,"Sz")` makes the ITensor for the "Sz" operator, where here we are assuming that the Index `s` carries a physical tag type such that "Sz" is defined for this Index. (Examples include the tag "S=1/2" or "Fermion".) The returned operator has two indices: `s` and `s'`. Contracting the operator with `psi[j]` contracts over the Index `s`. Then contracting with `dag(prime(psi[j],s))` contracts over `s'` and the two bond indices of the MPS conecting to the jth MPS tensor. Finally, the call to scalar converts the resulting scalar-valued ITensor into a number (either Float64 or ComplexF64).
+actually performs the computation of the expected value of the operator "Sz". The call to `op(s,"Sz")` makes the ITensor for the "Sz" operator, where here we are assuming that the Index `s` carries a physical tag type such that "Sz" is defined for this Index. (Examples could include the tag "S=1/2" or the tag "Fermion".) The returned operator has two indices: `s` and `s'`. Contracting the operator with `psi[j]` contracts over the Index `s`. Then contracting with `dag(prime(psi[j],s))` contracts over `s'` and the two bond indices of the MPS conecting to the jth MPS tensor. Finally, the call to scalar converts the resulting scalar-valued ITensor into a number which is stored into the variable `val` (either Float64 or ComplexF64).
 
 Finally, the line `println("$j $val")` just prints the site number and the variable `val`.
 
