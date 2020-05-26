@@ -54,7 +54,7 @@ First let's see the minimal code needed to define and use this new
 @@S=3/2@@ site type, then we will discuss what each part of
 the code is doing.
 
-    include:docs/VERSION/formulas/site_type/minimal_spinthreehalf.jl
+    include:docs/VERSION/formulas/tagtype/minimal_spinthreehalf.jl
 
 <img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/site_type/minimal_spinthreehalf.jl">Download this example code</a>
 
@@ -269,7 +269,7 @@ out to it through the information in each Index object.
 So when we combine the above pieces together, we get the following QN-conserving
 (or not) code:
 
-    include:docs/VERSION/formulas/site_type/spinthreehalf.jl
+    include:docs/VERSION/formulas/tagtype/spinthreehalf.jl
 
 <img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/site_type/spinthreehalf.jl">Download this example code</a>
 
