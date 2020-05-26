@@ -18,9 +18,10 @@ Formulas involving matrix product states and DMRG.
 ## Physics Formulas
 Formulas involving physics-specific features of ITensor.
 
-* [[Custom local Hilbert space / degree-of-freedom type|formulas/site_type]]
+* [[Custom local Hilbert space / degree-of-freedom|formulas/tagtype]]
 
 <!-- Formulas to add:
+* Local measurements of MPS
 * Excited-state DMRG
 * Getting the blocks of an QNITensor
 ...

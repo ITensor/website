@@ -1,4 +1,4 @@
-# Making a Custom Local Hilbert Space / Physical Degree of Freedom
+# Make a Custom Local Hilbert Space / Physical Degree of Freedom
 
 ITensor provides support for a range of common local Hilbert space types, 
 or physical degrees of freedom, such as S=1/2 and S=1 spins; spinless and spinful
