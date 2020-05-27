@@ -15,6 +15,7 @@ Formulas involving matrix product states and DMRG.
 
 - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
 - [[Measure local properties of an MPS|formulas/measure_mps]]
+- [[DMRG calculation with mixed local Hilbert spaces|formulas/mixed_sites_dmrg]]
 
 ## Physics Formulas
 Formulas involving physics-specific features of ITensor.
