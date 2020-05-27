@@ -27,7 +27,7 @@ import cgitb; cgitb.enable()
 versions = [["cppv3","C++v3","C++"], 
             ["cppv2","C++v2","C++"],
             ["julia","Julia","Julia"]]
-default_version = "cppv3"
+default_version = "julia"
 
 reldocpath = "docs/"
 prenav_header_fname = "docs_header_prenav.html"
