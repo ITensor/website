@@ -27,7 +27,7 @@ function ITensors.op(::TagType"S=3/2",
   elseif opname == "S+"
     Op[s'(1),s(2)] = sqrt(3)
     Op[s'(2),s(3)] = 2
-    Op[s'(2),s(3)] = sqrt(3)
+    Op[s'(3),s(4)] = sqrt(3)
   elseif opname == "S-"
     Op[s'(2), s(1)] = sqrt(3) 
     Op[s'(3), s(2)] = 2
