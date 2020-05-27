@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Exact Gradients and Hessians for Quantum Optimal Control and Applications in Many-Body Matrix Product States](https://arxiv.org/abs/2005.09943), Jesper Hasseriis Mohr Jensen, Frederik Skovbo Møller, Jens Jakob Sørensen, Jacob Friis Sherson, arxiv:2005.09943
+
 * [Minimally entangled typical thermal states algorithm with Trotter gates](https://arxiv.org/abs/2005.09455), Shimpei Goto, Ippei Danshita, arxiv:2005.09455
 
 * [Time Dependent Variational Principle with Ancillary Krylov Subspace](https://arxiv.org/abs/2005.06104), Mingru Yang, Steven R. White, arxiv:2005.06104
