@@ -1,5 +1,13 @@
 # Change Log (Julia)
 
+<a name="v0.1.4"></a>
+## [Version 0.1.4](https://github.com/ITensor/ITensors.jl/tree/v0.1.4) (May 27, 2020) 
+
+* Add note to docs about requiring Julia 1.4 currently
+* Improve error message for non-scalar input to `scalar` (PR #396)
+* Export @TagType_str macro (PR #393)
+* Fix `productMPS` for complex element type (PR #392)
+
 <a name="v0.1.3"></a>
 ## [Version 0.1.3](https://github.com/ITensor/ITensors.jl/tree/v0.1.3) (May 22, 2020) 
 
