@@ -1,5 +1,13 @@
 # Change Log (Julia)
 
+
+<a name="v0.1.5"></a>
+## [Version 0.1.5](https://github.com/ITensor/ITensors.jl/tree/v0.1.5) (May 28, 2020) 
+
+
+- Fix bug with combiner (uncombining step) when combined Index is not the first one (PR #401)
+- Add check to ProjMPO to ensure result of product is same order as input tensor (PR #390)
+
 <a name="v0.1.4"></a>
 ## [Version 0.1.4](https://github.com/ITensor/ITensors.jl/tree/v0.1.4) (May 27, 2020) 
 
