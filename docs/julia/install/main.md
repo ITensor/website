@@ -96,6 +96,10 @@ The ITensors.jl library should be runnable through any type of setting that runs
 Julia code, such as Jupyter notebooks. If you encounter a mode
 of running ITensor that doesn't work, please contact us by emailing <i>support -at- itensor.org</i>.
 
+### Why Are There Pauses?
+
+You may often notice that your Julia code will run very quickly through one section, then take a long time to run a certain function. For example, while running an ITensor DMRG calculation, the first sweep is often reported as taking 10 or more seconds while the second and third sweeps take only a second. The reason for this is that Julia is a _just in time (JIT) compiled_ language. So instead of compiling at the beginning like a C++ code, the compilation happens at the very last minute when you call a function for the first time. As of Julia version 1.4, the JIT time for Julia can be quite long, but it is expected to get much better with future releases of Julia. Also we are working on various precompilation strategies with ITensors.jl to make it so that more code only has to be compiled once, until you upgrade ITensors.jl again. 
+
 
 <a name="cluster"></a>
 ## Installing Julia on a Cluster
