@@ -23,6 +23,10 @@ Formulas about working with ITensors, Index, etc.
 ## MPS and DMRG Formulas
 Formulas involving matrix product states and DMRG.
 
+* <h3>MPS Basics & Updating MPS</h3>
+    - [[Applying a one-site operator to an MPS|formulas/mps_onesite_op]]
+    - [[Applying a two-site 'gate' to an MPS|formulas/gate]]
+
 * <h3>Running DMRG</h3>
     - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
     - [[Make a Ladder Hamiltonian for DMRG|formulas/ladder]]
@@ -40,12 +44,8 @@ Formulas involving matrix product states and DMRG.
     - [[Compute a two-site reduced density matrix from an MPS|formulas/mps_two_rdm]]
     - [[Operator matrix elements involving two MPS|formulas/two_mps]]
 
-* <h3>Time Evolution</h3>
+* <h3>Time Evolution & Quantum Circuits</h3>
     - [[Time-evolving an MPS with Trotter Gates|formulas/tevol_trotter]]
     - [[Time-evolving an MPS with an MPO (matrix product operator)|formulas/tevol_mps_mpo]]
-
-* <h3>Other</h3>
-    - [[Applying a one-site operator to an MPS|formulas/mps_onesite_op]]
-    - [[Applying a two-site 'gate' to an MPS|formulas/gate]]
     - [[Turning a set of gates into an MPO|formulas/gates_to_mpo]]
 
