@@ -13,6 +13,7 @@ like to see, or contribute one by submitting a pull request to our
 ## MPS and DMRG Formulas
 Formulas involving matrix product states and DMRG.
 
+- [[Apply a one-site operator to an MPS|formulas/mps_onesite_op]]
 - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
 - [[Measure local properties of an MPS|formulas/measure_mps]]
 - [[DMRG calculation with mixed local Hilbert spaces|formulas/mixed_sites_dmrg]]
