@@ -23,6 +23,7 @@ Finally, put the new tensor back into the MPS to update the third MPS tensor:
 
     psi.set(3,newA);
 
+Or alternatively `psi.ref(3) = newA;`.
 Afterward, we can visualize the modified MPS as:
 
 <img class="diagram" width="60%" src="docs/VERSION/formulas/updated_mps.png"/>
