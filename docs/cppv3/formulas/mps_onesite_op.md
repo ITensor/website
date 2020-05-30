@@ -6,12 +6,12 @@ only on a single site. This is actually a very straightforward
 operation and this formula shows you how to do it in ITensor.
 
 Say we have an operator @@G^{s'_3}_{s_3}@@ which
-which acts non-trivially on site 3 of our MPS
+which acts non-trivially on site 3 of our MPS `psi`
 as in the following diagram:
 
 <img class="diagram" width="60%" src="docs/VERSION/formulas/operator_app_mps.png"/>
 
-To carry out this operation, contract the operator G with the MPS tensor for sites 3
+To carry out this operation, contract the operator G with the MPS tensor for site 3,
 removing the prime from the @@s'_3@@ index afterward:
 
 <img class="diagram" width="60%" src="docs/VERSION/formulas/operator_contract.png"/>
