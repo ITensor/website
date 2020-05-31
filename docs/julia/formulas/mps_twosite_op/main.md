@@ -26,8 +26,7 @@ Next, contract the gate tensor G with the MPS tensors for sites 3 and 4
 
 <img class="diagram" width="85%" src="docs/VERSION/formulas/mps_twosite_op/gate_contract.png"/>
 
-    wf = psi[3] * psi[4]
-    wf *= G
+    wf = (psi[3] * psi[4]) * G
     noprime!(wf)
 
 Finally, use the singular value decomposition (SVD) to factorize the
@@ -52,8 +51,7 @@ as well as limits on the maximum bond dimension (`maxdim` keyword argument).
 
     orthogonalize!(psi,3)
     
-    wf = psi[3] * psi[4]
-    wf *= G
+    wf = (psi[3] * psi[4]) * G
     noprime!(wf)
 
     U,S,V = svd(wf,inds(psi[3]),cutoff=1E-8)
