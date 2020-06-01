@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Dynamical signatures of quasiparticle interactions in quantum spin chains](https://arxiv.org/abs/2005.12399), Anna Keselman, Leon Balents, Oleg A. Starykh, arxiv:2005.12399
+
+* [Construction of Variational Matrix Product States for the Heisenberg Spin-1 Chain](https://arxiv.org/abs/2005.10980), Jintae Kim, Minsoo Kim, Naoki Kawashima, Jung Hoon Han, Hyun-Yong Lee, arxiv:2005.10980
+
 * [Exact Gradients and Hessians for Quantum Optimal Control and Applications in Many-Body Matrix Product States](https://arxiv.org/abs/2005.09943), Jesper Hasseriis Mohr Jensen, Frederik Skovbo Møller, Jens Jakob Sørensen, Jacob Friis Sherson, arxiv:2005.09943
 
 * [Minimally entangled typical thermal states algorithm with Trotter gates](https://arxiv.org/abs/2005.09455), Shimpei Goto, Ippei Danshita, arxiv:2005.09455
