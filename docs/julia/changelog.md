@@ -1,5 +1,12 @@
 # Change Log (Julia)
 
+<a name="v0.1.6"></a>
+## [Version 0.1.6](https://github.com/ITensor/ITensors.jl/tree/v0.1.6) (June 4, 2020) 
+
+* Allow user to control Arrow direction of combined Index in combiner (PR #417)
+* Fix eigen for case when left/right indices had mixed Arrow directions (PR #417)
+* Add exp for QN ITensor (PR #402)
+* Add Advanced Usage Guide to docs (PR #387)
 
 <a name="v0.1.5"></a>
 ## [Version 0.1.5](https://github.com/ITensor/ITensors.jl/tree/v0.1.5) (May 28, 2020) 
