@@ -1,5 +1,14 @@
 # Change Log (Julia)
 
+<a name="v0.1.7"></a>
+## [Version 0.1.7](https://github.com/ITensor/ITensors.jl/tree/v0.1.7) (June 10, 2020) 
+
+* Add Unicode support for SmallStrings/Tags (PR #413)
+* Speed up small ITensor contractions (PR #423)
+* Add swapsites keyword argument to `replacebond` (PR #420)
+* Change `flux(::AbstractMPS)` to return nothing in non-QN case (PR #419)
+
+
 <a name="v0.1.6"></a>
 ## [Version 0.1.6](https://github.com/ITensor/ITensors.jl/tree/v0.1.6) (June 4, 2020) 
 
