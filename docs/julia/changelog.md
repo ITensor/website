@@ -1,5 +1,11 @@
 # Change Log (Julia)
 
+<a name="v0.1.9"></a>
+## [Version 0.1.9](https://github.com/ITensor/ITensors.jl/tree/v0.1.9) (June 12, 2020) 
+
+* Fix bug with AutoMPO dimension in certain cases (PR #426)
+
+
 <a name="v0.1.8"></a>
 ## [Version 0.1.8](https://github.com/ITensor/ITensors.jl/tree/v0.1.8) (June 11, 2020) 
 
