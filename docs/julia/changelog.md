@@ -9,7 +9,7 @@
 <a name="v0.1.8"></a>
 ## [Version 0.1.8](https://github.com/ITensor/ITensors.jl/tree/v0.1.8) (June 11, 2020) 
 
-* Fix a bug in broadcast and in-place contraction (#425)
+* Fix a bug in broadcast and in-place contraction (PR #425)
 
 <a name="v0.1.7"></a>
 ## [Version 0.1.7](https://github.com/ITensor/ITensors.jl/tree/v0.1.7) (June 10, 2020) 
