@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Many-body localization transition in large quantum spin chains: The mobility edge](https://arxiv.org/abs/2006.02860), Titas Chanda, Piotr Sierant, Jakub Zakrzewski, arxiv:2006.02860
+
+* [Diffusion and operator entanglement spreading](https://arxiv.org/abs/2006.02788), Vincenzo Alba, arxiv:2006.02788
+
 * [Dynamical signatures of quasiparticle interactions in quantum spin chains](https://arxiv.org/abs/2005.12399), Anna Keselman, Leon Balents, Oleg A. Starykh, arxiv:2005.12399
 
 * [Construction of Variational Matrix Product States for the Heisenberg Spin-1 Chain](https://arxiv.org/abs/2005.10980), Jintae Kim, Minsoo Kim, Naoki Kawashima, Jung Hoon Han, Hyun-Yong Lee, arxiv:2005.10980
