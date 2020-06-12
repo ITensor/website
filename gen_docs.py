@@ -140,10 +140,18 @@ def convert(string,vers,lang):
     string = re.sub(r"github:(\w{5})\w*",r"<a class='github' target='_blank' href='https://github.com/ITensor/ITensor/commit/\1'>\1</a>",string)
 
     #Convert #nn github issue links
-    string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
-    string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
-    string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
-    string = re.sub(r"pull #(\d+)",r"pull <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+    if lang=="Julia":
+        string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
+        string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
+        string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
+        string = re.sub(r"pull #(\d+)",r"pull <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
+        string = re.sub(r"PR #(\d+)",r"PR <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
+    else:
+        string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+        string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+        string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+        string = re.sub(r"pull #(\d+)",r"pull <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
+        string = re.sub(r"PR #(\d+)",r"PR <a target='_blank' href='https://github.com/ITensor/ITensor/pull/\1'>#\1</a>",string)
 
     #Convert VERSION token
     string = re.sub(r"VERSION",vers,string)
