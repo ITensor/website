@@ -1,5 +1,12 @@
 # Change Log (Julia)
 
+<a name="v0.1.10"></a>
+## [Version 0.1.10](https://github.com/ITensor/ITensors.jl/tree/v0.1.10) (June 17, 2020) 
+
+* Fix missing return statement in QNVal constructor (PR #431)
+
+* Fix bug with AutoMPO dimension in certain cases (PR #426)
+
 <a name="v0.1.9"></a>
 ## [Version 0.1.9](https://github.com/ITensor/ITensors.jl/tree/v0.1.9) (June 12, 2020) 
 
