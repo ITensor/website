@@ -2,9 +2,9 @@
 
 ## Installing ITensor and Basic Usage
 
-* [[Install ITensor (the ITensors.jl Julia Library)|install/installing]]
+* [[Install ITensor (the Julia library ITensors.jl)|install/installing]]
 * [[Running Codes Based on ITensor|install/running]]
-* [[Avoiding Compilation Overhead|install/compilation]]
+* [[Reducing Compilation Overhead (Code Pauses)|install/compilation]]
 * [[Tips for Installing Julia on a Cluster|install/cluster]]
 
 ## Getting Started Tutorials
