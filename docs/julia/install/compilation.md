@@ -37,5 +37,5 @@ Sample terminal session showing the above approach:
     $ julia packagecompile.jl
     $ julia --sysimage ~/.julia/sysimages/sys_itensors.so
 
-Or do `julia --sysimage ~/.julia/sysimages/sys_itensors.so code_to_run.jl` to use the system image when running an ITensor code in the file `code_to_run.jl`.
+Or do `julia --sysimage ~/.julia/sysimages/sys_itensors.so code_to_run.jl` to use the system image when running an ITensor code in the file `code_to_run.jl`. If you followed the step of making a shell alias above, you can just do `julia_itensors` for an interactive session or `julia_itensors code_to_run.jl` to run a script.
 
