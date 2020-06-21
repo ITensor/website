@@ -1,10 +1,15 @@
 # Change Log (Julia)
 
+<a name="v0.1.12"></a>
+## [Version 0.1.12](https://github.com/ITensor/ITensors.jl/tree/v0.1.12) (June 21, 2020) 
+
+* HDF5 Support for QNITensors, QNIndex (PR #433) 
+* Add ProjMPO_MPS to exports
+
 <a name="v0.1.11"></a>
 ## [Version 0.1.11](https://github.com/ITensor/ITensors.jl/tree/v0.1.11) (June 18, 2020) 
 
 * Add tests for contraction bug. Add tests for extended Spectrum definition (PR #432)
-* Add ProjMPO_MPS to exports
 
 <a name="v0.1.10"></a>
 ## [Version 0.1.10](https://github.com/ITensor/ITensors.jl/tree/v0.1.10) (June 17, 2020) 
