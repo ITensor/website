@@ -1,5 +1,13 @@
 # Change Log (Julia)
 
+<a name="v0.1.13"></a>
+## [Version 0.1.13](https://github.com/ITensor/ITensors.jl/tree/v0.1.13) (June 24, 2020) 
+
+* New ITensors.compile() routine (PR #436, PR #439)
+* Propagate keyword args through orthogonalize! (PR #438)
+* Speed improvement to op (PR #435)
+* Major improvements to op function system (PR #406)
+
 <a name="v0.1.12"></a>
 ## [Version 0.1.12](https://github.com/ITensor/ITensors.jl/tree/v0.1.12) (June 21, 2020) 
 
