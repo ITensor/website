@@ -1,5 +1,12 @@
 # Change Log (Julia)
 
+<a name="v0.1.14"></a>
+## [Version 0.1.14](https://github.com/ITensor/ITensors.jl/tree/v0.1.14) (June 27, 2020) 
+
+* Fix AutoMPO issue #440 (PR #445)
+* Have ITensors.compile() compile QN DMRG (PR #442)
+* Make linkind return nothing for all links outside the boundary of the MPS (PR #441)
+
 <a name="v0.1.13"></a>
 ## [Version 0.1.13](https://github.com/ITensor/ITensors.jl/tree/v0.1.13) (June 24, 2020) 
 
