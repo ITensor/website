@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Pairing in spin chains and spinless fermions with next-nearest neighbour interactions](https://arxiv.org/abs/2006.07128), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, arxiv:2006.07128
+
+* [Correlations in Perturbed Dual-Unitary Circuits: Efficient Path-Integral Formula](https://arxiv.org/abs/2006.07304), Pavel Kos, Bruno Bertini, Tomaž Prosen, arxiv:2006.07304
+
 * [Many-body localization transition in large quantum spin chains: The mobility edge](https://arxiv.org/abs/2006.02860), Titas Chanda, Piotr Sierant, Jakub Zakrzewski, arxiv:2006.02860
 
 * [Diffusion and operator entanglement spreading](https://arxiv.org/abs/2006.02788), Vincenzo Alba, arxiv:2006.02788
