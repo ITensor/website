@@ -1,5 +1,5 @@
 
-<img src="docs/VERSION/install/icon.png" class="icon">  [[Installing & Running ITensor|install]]
+<img src="docs/VERSION/getting_started/icon.png" class="icon">  [[Getting Started with ITensor|getting_started]] &nbsp; Installing ITensor and tutorials for getting started.
 
 <img src="docs/VERSION/book/icon.png" class="icon">   [[The ITensor Book|book]] &nbsp; A step-by-step introduction to ITensor.
 
@@ -14,7 +14,7 @@ Search the ITensor website: <div><gcse:search></gcse:search></div>
 
 ## Additional information
 
-<!-- * <img src="docs/install/icon.png" class="icon"> [[Simons 2016 Summer School|simons]] -->
+<!-- * <img src="docs/getting_started/icon.png" class="icon"> [[Simons 2016 Summer School|simons]] -->
 
 * [[Change Log|changelog]]
 

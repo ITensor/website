@@ -12,8 +12,8 @@ Once you have installed Julia on your machine,
 4. after installation completes, press backspace to return to the normal `julia>` prompt
 
 Sample screenshot:
-<img width="700px" src="docs/VERSION/install/installing/install_screenshot.png"/>
+<img width="700px" src="docs/VERSION/getting_started/installing/install_screenshot.png"/>
 
-For extra tips about installing Julia on a cluster machine, [[see this page|install/cluster]].
-To enhance the performance of ITensor, we recommend [[installing the MKL library|install/mkl]].
+For extra tips about installing Julia on a cluster machine, [[see this page|getting_started/cluster]].
+To enhance the performance of ITensor, we recommend [[installing the MKL library|getting_started/mkl]].
 

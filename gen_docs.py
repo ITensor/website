@@ -278,7 +278,8 @@ def generate():
     backlinks = []
     full_dirname = ""
     for dirname in dirlist:
-        text = "Back to " + dirname.capitalize()
+        nice_dirname = re.sub(r"_",r" ",dirname).title()
+        text = "Back to " + nice_dirname
         full_dirname += dirname
         iconfname = "docs/"+vers+"/"+full_dirname+"/icon.png"
         iconimg = "<!-- " + iconfname + " -->"
