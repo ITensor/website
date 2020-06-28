@@ -55,4 +55,4 @@ Below you can find a complete working code that includes all of these steps:
 
     include:docs/VERSION/formulas/basic_dmrg.jl
 
-<img class="icon" src="docs/VERSION/install/icon.png"/>&nbsp;<a href="docs/VERSION/formulas/basic_dmrg.jl">Download the full example code</a>
+<img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/basic_dmrg.jl">Download the full example code</a>
