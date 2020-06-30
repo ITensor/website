@@ -13,19 +13,19 @@ let
 
   ampo = AutoMPO()
   for j=1:N-1
-    ampo += (0.5*Jho,"S+",j,"S-",j+1)
-    ampo += (0.5*Jho,"S-",j,"S+",j+1)
-    ampo += (Jho,"Sz",j,"Sz",j+1)
+    ampo += 0.5*Jho,"S+",j,"S-",j+1
+    ampo += 0.5*Jho,"S-",j,"S+",j+1
+    ampo += Jho,"Sz",j,"Sz",j+1
   end
   for j=1:2:N-2
-    ampo += (0.5*Jhh,"S+",j,"S-",j+2)
-    ampo += (0.5*Jhh,"S-",j,"S+",j+2)
-    ampo += (Jhh,"Sz",j,"Sz",j+2)
+    ampo += 0.5*Jhh,"S+",j,"S-",j+2
+    ampo += 0.5*Jhh,"S-",j,"S+",j+2
+    ampo += Jhh,"Sz",j,"Sz",j+2
   end
   for j=2:2:N-2
-    ampo += (0.5*Joo,"S+",j,"S-",j+2)
-    ampo += (0.5*Joo,"S-",j,"S+",j+2)
-    ampo += (Joo,"Sz",j,"Sz",j+2)
+    ampo += 0.5*Joo,"S+",j,"S-",j+2
+    ampo += 0.5*Joo,"S-",j,"S+",j+2
+    ampo += Joo,"Sz",j,"Sz",j+2
   end
   H = MPO(ampo,sites)
 
