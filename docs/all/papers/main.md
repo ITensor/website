@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Ballistic-to-diffusive transition in spin chains with broken integrability](https://arxiv.org/abs/2006.13891), João S. Ferreira, Michele Filippone, arxiv:2006.13891
+
+* [Random Phase Product Sate for Canonical Ensemble](https://arxiv.org/abs/2006.14459), Toshiaki Iitaka, arxiv:2006.14459
+
 * [Pairing in spin chains and spinless fermions with next-nearest neighbour interactions](https://arxiv.org/abs/2006.07128), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, arxiv:2006.07128
 
 * [Correlations in Perturbed Dual-Unitary Circuits: Efficient Path-Integral Formula](https://arxiv.org/abs/2006.07304), Pavel Kos, Bruno Bertini, Tomaž Prosen, arxiv:2006.07304
