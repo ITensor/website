@@ -371,6 +371,13 @@ When applied to an MPS, the method is applied to every MPS tensor.
   normalize is linear in the system size. If the MPS does have a well-defined ortho center
   the cost of normalize is only proportional to the bond dimension m.
 
+* `removeQNs(MPS psi) -> MPS`
+
+  For an MPS consisting of QN block-sparse ITensors, return an equivalent MPS but 
+  with all ITensors having regular, dense storage. Elements which are zero in the
+  block-sparse format are replaced by actual zeros in the dense storage, and all
+  QN information is removed from the Index's on the ITensors. Otherwise the returned
+  MPS will have exactly the same properties as the input MPS.
 
 ## Developer / Advanced Methods
 
