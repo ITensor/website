@@ -1,5 +1,13 @@
 # Change Log (Julia)
 
+<a name="v0.1.15"></a>
+## [Version 0.1.15](https://github.com/ITensor/ITensors.jl/tree/v0.1.15) (July 7, 2020) 
+
+* Add multi-site op support (PR #444)
+* Update state system to be user-extensible using StateName (PR #449)
+* Update siteinds system to be more easily extensible using `space` and `siteind` functions (PR #446)
+* Remove parenthesis from AutoMPO syntax from tests and examples (PR #448)
+
 <a name="v0.1.14"></a>
 ## [Version 0.1.14](https://github.com/ITensor/ITensors.jl/tree/v0.1.14) (June 27, 2020) 
 
