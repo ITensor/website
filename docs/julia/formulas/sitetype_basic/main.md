@@ -57,7 +57,7 @@ First let's see the minimal code needed to define and use this new
 @@S=3/2@@ site type, then we will discuss what each part of
 the code is doing.
 
-    include:docs/VERSION/formulas/tagtype/minimal_spinthreehalf.jl
+    include:docs/VERSION/formulas/sitetype_basic/minimal_spinthreehalf.jl
 
 <img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/formulas/site_type/minimal_spinthreehalf.jl">Download this example code</a>
 
@@ -175,5 +175,12 @@ operator names into AutoMPO and it will know how to use these operators.
 
 ## Further Steps
 
-  - Add QN conservation to a custom local Hilbert space
+  - [[Add QN conservation to a custom local Hilbert space|formulas/sitetype_qns]]
+  - [[Extending an existing local Hilbert space|formulas/sitetype_extending]]
+  - See how the built-in site types are defined inside the ITensor library:
+    * [S=1/2 sites](https://github.com/ITensor/ITensors.jl/blob/master/src/physics/site_types/spinhalf.jl)
+    * [S=1 sites](https://github.com/ITensor/ITensors.jl/blob/master/src/physics/site_types/spinone.jl)
+    * [Fermion sites](https://github.com/ITensor/ITensors.jl/blob/master/src/physics/site_types/fermion.jl)
+    * [Electron sites](https://github.com/ITensor/ITensors.jl/blob/master/src/physics/site_types/electron.jl)
+    * [tJ sites](https://github.com/ITensor/ITensors.jl/blob/master/src/physics/site_types/tj.jl)
 
