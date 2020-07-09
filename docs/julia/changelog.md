@@ -1,5 +1,11 @@
 # Change Log (Julia)
 
+<a name="v0.1.16"></a>
+## [Version 0.1.16](https://github.com/ITensor/ITensors.jl/tree/v0.1.16) (July 9, 2020) 
+
+* Update physics site definitions to user newer overload style (PR #453)
+* Fix some issues with precompile_itensors.jl code and automatically test it (PR #452)
+
 <a name="v0.1.15"></a>
 ## [Version 0.1.15](https://github.com/ITensor/ITensors.jl/tree/v0.1.15) (July 7, 2020) 
 
