@@ -27,7 +27,7 @@ and algorithms such as DMRG.
 ## Physics Formulas
 Formulas involving physics-specific features of ITensor.
 
-* [[Custom local Hilbert space / degree-of-freedom|formulas/tagtype]]
+* [[Custom local Hilbert space (basic)|formulas/tagtype]]
 
 <!-- Formulas to add:
 * Excited-state DMRG
