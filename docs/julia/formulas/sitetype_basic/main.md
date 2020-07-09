@@ -153,7 +153,7 @@ and print it out by doing:
     Sz = op("Sz",s)
     @show Sz
 
-Again, through the magic of the `TagType`
+Again, through the magic of the `SiteType`
 system, the ITensor library takes your Index, reads off its tags, 
 notices that one of them is `"S=3/2"`, and converts this into the type 
 `SiteType"S=3/2"` in order to call the specialized function `ITensors.op!` defined above.
