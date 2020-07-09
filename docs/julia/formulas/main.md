@@ -28,7 +28,7 @@ and algorithms such as DMRG.
 Formulas involving physics-specific features of ITensor.
 
 * [[Custom local Hilbert space|formulas/sitetype_basic]]
-* [[Custom local Hilbert space with QNs|formulas/sitetype_qn]]
+* [[Custom local Hilbert space with QNs|formulas/sitetype_qns]]
 * [[Extending existing Hilbert space definitions|formulas/sitetype_extending]]
 
 <!-- Formulas to add:
