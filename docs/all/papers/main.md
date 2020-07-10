@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Conformal field theories are magical](https://arxiv.org/abs/2007.01303), Christopher David White, ChunJun Cao, and Brian Swingle, arxiv:2007.01303
+
 * [Ballistic-to-diffusive transition in spin chains with broken integrability](https://arxiv.org/abs/2006.13891), João S. Ferreira, Michele Filippone, arxiv:2006.13891
 
 * [Random Phase Product Sate for Canonical Ensemble](https://arxiv.org/abs/2006.14459), Toshiaki Iitaka, arxiv:2006.14459
