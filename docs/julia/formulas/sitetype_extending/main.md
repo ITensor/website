@@ -20,7 +20,7 @@ are the various `op` or `op!` function overloads which allow code like
 
 to automatically create the @@S^z@@ operator for an Index `s` based on the 
 `"S=1/2"` tag it carries. A major reason to define such `op` overloads
-is to allow the AutoMPO system to recognize various operator names, as
+is to allow the AutoMPO system to recognize new operator names, as
 discussed more below.
 
 Let's see how to introduce a new operator name into the ITensor `SiteType`
@@ -48,7 +48,7 @@ code
 
     function ITensors.op!(Op::ITensor,
                           ::OpName"Pup",
-                          ::SiteType"S=1/2"
+                          ::SiteType"S=1/2",
                           s::Index)
       Op[s'=>1,s=>1] = 1.0
     end
@@ -69,10 +69,25 @@ thing for an array of site indices:
     Pup1 = op("Pup",s[1])
     Pup3 = op("Pup",s[3])
 
+## Using Custom Operators in AutoMPO
+
 A key use of these `op` system extensions is allowing additional operator names to
 be recognized by the AutoMPO system for constructing matrix product operator (MPO)
 tensor networks. With the code above defining the `"Pup"` operator, we are now 
 allowed to use this operator name in any AutoMPO code involving `"S=1/2"` site 
 indices.
+
+For example, we could now make an AutoMPO such as:
+
+    N = 100
+    sites = siteinds("S=1/2",N)
+    ampo = AutoMPO()
+    for n=1:N
+      ampo += "Pup",n
+    end
+    P = MPO(ampo,sites)
+
+This code makes an MPO `P` which is just the sum of a spin-up projection operator
+acting on every site.
 
 
