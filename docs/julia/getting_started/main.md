@@ -17,6 +17,7 @@
 
 * [From zero to Julia!](https://techytok.com/from-zero-to-julia/)
 * [Think Julia](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html#_preface)
+* [Official Julia Language Manual](https://docs.julialang.org/en) 
 * [List of Resources at julialang.org](https://julialang.org/learning/)
 
 
