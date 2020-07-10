@@ -12,3 +12,11 @@
 * Getting Started with DMRG (coming soon)
 <!-- * [[Getting Started with DMRG|getting_started/dmrg]] -->
 
+
+## General Julia Tutorials and Resources
+
+* [From zero to Julia!](https://techytok.com/from-zero-to-julia/)
+* [Think Julia](https://benlauwens.github.io/ThinkJulia.jl/latest/book.html#_preface)
+* [List of Resources at julialang.org](https://julialang.org/learning/)
+
+
