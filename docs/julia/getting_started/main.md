@@ -1,4 +1,4 @@
-# <img src="docs/VERSION/getting_started/icon.png" class="largeicon">  Installing & Running ITensor
+# <img src="docs/VERSION/getting_started/icon.png" class="largeicon">  Getting Started with ITensor
 
 ## Installing ITensor and Basic Usage
 
