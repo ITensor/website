@@ -1,5 +1,11 @@
 # Change Log (Julia)
 
+<a name="v0.1.18"></a>
+## [Version 0.1.18](https://github.com/ITensor/ITensors.jl/tree/v0.1.18) (July 14, 2020) 
+
+* Add functions for controlling warn itensor order (PR #458)
+* Add pair syntax to mapprime, replacetags, and replaceinds (PR #459)
+
 <a name="v0.1.17"></a>
 ## [Version 0.1.17](https://github.com/ITensor/ITensors.jl/tree/v0.1.17) (July 13, 2020) 
 
