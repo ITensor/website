@@ -1,7 +1,15 @@
 # Change Log (Julia)
 
+<a name="v0.1.20"></a>
+## [version 0.1.20](https://github.com/itensor/itensors.jl/tree/v0.1.20) (July 16, 2020) 
+
+* Make ITensors compatible with Julia v1.3 (#468)
+* New function filterinds, alias for inds (#466)
+* Add QN ITensor from Array constructor (#464)
+
+
 <a name="v0.1.19"></a>
-## [Version 0.1.19](https://github.com/ITensor/ITensors.jl/tree/v0.1.19) (July 14, 2020) 
+## [version 0.1.19](https://github.com/itensor/itensors.jl/tree/v0.1.19) (July 14, 2020) 
 
 * Add setindex!(::MPS, _, ::Colon) (PR #463)
   * Set new limits to limits of input MPS
