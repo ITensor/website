@@ -2,8 +2,12 @@ using ITensors
 
 let
   N = 100
-  sites = [isodd(n) ? Index(2,"S=1/2,Site,n=$n") : Index(3,"S=1,Site,n=$n")
-           for n=1:N]
+
+  # Make an array of N Index objects with alternating
+  # "S=1/2" and "S=1" tags on odd versus even sites
+  # (The first argument n->isodd(n) ... is an 
+  # on-the-fly function mapping integers to strings)
+  sites = siteinds(n->isodd(n) ? "S=1/2" : "S=1",N)
 
   # Couplings between spin-half and
   # spin-one sites:
