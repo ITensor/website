@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Many-body localization of bosons in optical lattice: Dynamics in disorder-free potentials](https://arxiv.org/abs/2007.04745), Ruixiao Yao, Jakub Zakrzewski, arxiv:2007.04745
+
+* [Photoinduced η-pairing at finite temperatures](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.032008), Satoshi Ejima, Tatsuya Kaneko, Florian Lange, Seiji Yunoki, and Holger Fehske, PhysRev[Research,2,032008]
+
+* [Transport and dynamics in the frustrated two-bath spin-boson model](https://arxiv.org/abs/2007.03690), Ron Belyansky, Seth Whitsitt, Rex Lundgren, Yidan Wang, Andrei Vrajitoarea, Andrew A. Houck, Alexey V. Gorshkov, arxiv:2007.03690
+
 * [Conformal field theories are magical](https://arxiv.org/abs/2007.01303), Christopher David White, ChunJun Cao, and Brian Swingle, arxiv:2007.01303
 
 * [Ballistic-to-diffusive transition in spin chains with broken integrability](https://arxiv.org/abs/2006.13891), João S. Ferreira, Michele Filippone, arxiv:2006.13891
