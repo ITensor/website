@@ -54,6 +54,7 @@ If you do not have git on your computer, you can obtain it through your package 
 
 6. [Optional] Edit any optional options.mk variables you wish. These include:
    - [[Support for HDF5|install/install_with_hdf5]]
+   - [[OpenMP multithreading of block sparse operations|install/install_with_openmp]]
    - Optimizations and debug flags (extra flags used to set the optimization level and level of compiler warning and debug output)
    For more detailed instructions about optional dependencies, see the next section below.;
 
