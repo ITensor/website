@@ -41,19 +41,19 @@ or by calling your executable as follows:
 
     OMP_NUM_THREADS=8 ./myappname
 
-We also recommend turning of BLAS/LAPACK multithreading, since 
+We also recommend turning off BLAS/LAPACK multithreading, since 
 it may compete with ITensor's native multithreading.
 
-If you are compiling ITensor with Intel MKL you can set the
-environment variable:
+To turn off BLAS multithreading if you are compiling 
+ITensor with Intel MKL you can set the environment variable:
 
     export MKL_NUM_THREADS=1
 
 or directly link to MKL's sequential library (see the BLAS/LAPACK
 section of options.mk.sample for an example of how to do that).
 
-If you are compiling ITensor with OpenBLAS, you can set the following
-environment variable:
+To turn off BLAS multithreading if you are compiling ITensor with OpenBLAS, 
+you can set the following environment variable:
 
     export OPENBLAS_NUM_THREADS=1
 
