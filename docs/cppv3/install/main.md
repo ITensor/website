@@ -87,6 +87,7 @@ extra dependencies. To enable these features, see the following
 documentation pages:
 
 - [[Enabling HDF5|install/install_with_hdf5]]
+- [[Enabling OpenMP multithreading of block sparse operations|install/install_with_openmp]]
 
 
 ## Building the sample codes
