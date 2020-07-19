@@ -8,6 +8,11 @@
  
 ## 2020
 
+* [Engineering entanglement Hamiltonians with strongly interacting cold atoms in optical traps](https://arxiv.org/abs/2007.05241), R. E. Barfknecht, T. Mendes-Santos, L. Fallani, arxiv:2007.05241
+
+* [Distributed-Memory DMRG via Sparse and Dense Parallel Tensor Contractions](https://arxiv.org/abs/2007.05540), Ryan Levy, Edgar Solomonik, Bryan K. Clark, arxiv:2007.05540
+
+
 * [Many-body localization of bosons in optical lattice: Dynamics in disorder-free potentials](https://arxiv.org/abs/2007.04745), Ruixiao Yao, Jakub Zakrzewski, arxiv:2007.04745
 
 * [Photoinduced η-pairing at finite temperatures](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.032008), Satoshi Ejima, Tatsuya Kaneko, Florian Lange, Seiji Yunoki, and Holger Fehske, PhysRev[Research,2,032008]
