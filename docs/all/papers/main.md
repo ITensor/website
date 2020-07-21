@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [The Heart of Entanglement: Chiral, Nematic, and Incommensurate Phases in the Kitaev-Gamma Ladder in a Field](https://arxiv.org/abs/2007.07259), Erik S. Sørensen, Andrei Catuneanu, Jacob Gordon, Hae-Young Kee, arxiv:2007.07259
+
 * [Many-body localization of bosons in optical lattice: Dynamics in disorder-free potentials](https://arxiv.org/abs/2007.04745), Ruixiao Yao, Jakub Zakrzewski, arxiv:2007.04745
 
 * [Photoinduced η-pairing at finite temperatures](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.032008), Satoshi Ejima, Tatsuya Kaneko, Florian Lange, Seiji Yunoki, and Holger Fehske, PhysRev[Research,2,032008]
