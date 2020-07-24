@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Engineering entanglement Hamiltonians with strongly interacting cold atoms in optical traps](https://arxiv.org/abs/2007.05241), R. E. Barfknecht, T. Mendes-Santos, L. Fallani, arxiv:2007.05241
+
+* [Distributed-Memory DMRG via Sparse and Dense Parallel Tensor Contractions](https://arxiv.org/abs/2007.05540), Ryan Levy, Edgar Solomonik, Bryan K. Clark, arxiv:2007.05540
+
 * [The Heart of Entanglement: Chiral, Nematic, and Incommensurate Phases in the Kitaev-Gamma Ladder in a Field](https://arxiv.org/abs/2007.07259), Erik S. Sørensen, Andrei Catuneanu, Jacob Gordon, Hae-Young Kee, arxiv:2007.07259
 
 * [Many-body localization of bosons in optical lattice: Dynamics in disorder-free potentials](https://arxiv.org/abs/2007.04745), Ruixiao Yao, Jakub Zakrzewski, arxiv:2007.04745
