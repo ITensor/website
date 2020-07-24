@@ -1,7 +1,7 @@
 # Change Log (Julia)
 
 <a name="v0.1.21"></a>
-## [version 0.1.21](https://github.com/itensor/itensors.jl/tree/v0.1.21) (July 23, 2020) 
+## [Version 0.1.21](https://github.com/itensor/itensors.jl/tree/v0.1.21) (July 23, 2020) 
 
 * Add parity conservation to S=1/2 sitetype (PR #467)
   * Add "ProjUp" and "ProjDn" operator definitions to S=1/2 site type.
@@ -15,7 +15,7 @@
   * Add examples of using ITensors with input files and ArgParse.jl and argsdict().
 
 <a name="v0.1.20"></a>
-## [version 0.1.20](https://github.com/itensor/itensors.jl/tree/v0.1.20) (July 16, 2020) 
+## [Version 0.1.20](https://github.com/itensor/itensors.jl/tree/v0.1.20) (July 16, 2020) 
 
 * Make ITensors compatible with Julia v1.3 (#468)
 * New function filterinds, alias for inds (#466)
@@ -23,7 +23,7 @@
 
 
 <a name="v0.1.19"></a>
-## [version 0.1.19](https://github.com/itensor/itensors.jl/tree/v0.1.19) (July 14, 2020) 
+## [Version 0.1.19](https://github.com/itensor/itensors.jl/tree/v0.1.19) (July 14, 2020) 
 
 * Add setindex!(::MPS, _, ::Colon) (PR #463)
   * Set new limits to limits of input MPS
