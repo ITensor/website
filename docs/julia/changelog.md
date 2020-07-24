@@ -1,5 +1,19 @@
 # Change Log (Julia)
 
+<a name="v0.1.21"></a>
+## [version 0.1.21](https://github.com/itensor/itensors.jl/tree/v0.1.21) (July 23, 2020) 
+
+* Add parity conservation to S=1/2 sitetype (PR #467)
+  * Add "ProjUp" and "ProjDn" operator definitions to S=1/2 site type.
+  * Change QN name "Pf" to "NfParity"
+  * Add keyword arguments to choose the QN names when making siteinds.
+* Add ! as not syntax (PR #471)
+  * Add @ts_str macro for TagSet construction
+* Add Sweeps constructor from matrix of parameters (PR #472)
+* Add examples of input files (PR #473)
+  * Add native ITensors argument parsing with the argsdict() function.
+  * Add examples of using ITensors with input files and ArgParse.jl and argsdict().
+
 <a name="v0.1.20"></a>
 ## [version 0.1.20](https://github.com/itensor/itensors.jl/tree/v0.1.20) (July 16, 2020) 
 
