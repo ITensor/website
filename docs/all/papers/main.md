@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Finite-temperature density-matrix renormalization group method for electron-phonon systems: Thermodynamics and Holstein-polaron spectral functions](https://arxiv.org/abs/2007.11343), David Jansen, Janez Bonča, Fabian Heidrich-Meisner, arxiv:2007.11343
+
 * [Engineering entanglement Hamiltonians with strongly interacting cold atoms in optical traps](https://arxiv.org/abs/2007.05241), R. E. Barfknecht, T. Mendes-Santos, L. Fallani, arxiv:2007.05241
 
 * [Distributed-Memory DMRG via Sparse and Dense Parallel Tensor Contractions](https://arxiv.org/abs/2007.05540), Ryan Levy, Edgar Solomonik, Bryan K. Clark, arxiv:2007.05540
