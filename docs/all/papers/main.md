@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Gapless state of interacting Majorana fermions in a strain-induced Landau level](https://arxiv.org/abs/2007.13785), Adhip Agarwala, Subhro Bhattacharjee, Johannes Knolle, Roderich Moessner, arxiv:2007.13785
+
 * [Finite-temperature density-matrix renormalization group method for electron-phonon systems: Thermodynamics and Holstein-polaron spectral functions](https://arxiv.org/abs/2007.11343), David Jansen, Janez Bonča, Fabian Heidrich-Meisner, arxiv:2007.11343
 
 * [Engineering entanglement Hamiltonians with strongly interacting cold atoms in optical traps](https://arxiv.org/abs/2007.05241), R. E. Barfknecht, T. Mendes-Santos, L. Fallani, arxiv:2007.05241
