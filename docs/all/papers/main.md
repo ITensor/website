@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Topological and symmetry-enriched random quantum critical points](https://arxiv.org/abs/2008.02285), Carlos M. Duque, Hong-Ye Hu, Yi-Zhuang You, Ruben Verresen, Romain Vasseur, arxiv:2008.02285
+
 * [Time-dependent variational principle of mixed matrix product states in the thermodynamic limit](https://arxiv.org/abs/2007.15035), Yantao Wu, arxiv:2007.15035
 
 * [Gapless state of interacting Majorana fermions in a strain-induced Landau level](https://arxiv.org/abs/2007.13785), Adhip Agarwala, Subhro Bhattacharjee, Johannes Knolle, Roderich Moessner, arxiv:2007.13785
