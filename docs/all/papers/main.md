@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Entanglement entropy scaling transition under competing monitoring protocols](https://arxiv.org/abs/2008.08619), Mathias Van Regemortel, Ze-Pei Cian, Alireza Seif, Hossein Dehghani, Mohammad Hafezi, arxiv:2008.08619
+
 * [Mutual information-assisted Adaptive Variational Quantum Eigensolver Ansatz Construction](https://arxiv.org/abs/2008.07553), Zi-Jian Zhang, Thi Ha Kyaw, Jakob S. Kottmann, Matthias Degroote, Alan Aspuru-Guzik, arxiv:2008.07553
 
 * [Driving High-Fidelity Many-Body Matrix Product State Dynamics with Exact Gradient Quantum Optimal Control](https://arxiv.org/abs/2008.06076), Jesper Hasseriis Mohr Jensen, Frederik Skovbo Møller, Jens Jakob Sørensen, Jacob Friis Sherson, arxiv:2008.06076
