@@ -14,6 +14,8 @@
 
 * [Coulomb-Engineered Topology](https://arxiv.org/abs/2008.07990), Malte Rösner, Jose L. Lado, arxiv:2008.07990
 
+* [Coupled wire construction of a topological phase with chiral tricritical Ising edge modes](https://arxiv.org/abs/2008.04438), Chengshu Li, Hiromi Ebisu, Sharmistha Sahoo, Yuval Oreg, Marcel Franz, arxiv:2008.04438
+
 * [Topological and symmetry-enriched random quantum critical points](https://arxiv.org/abs/2008.02285), Carlos M. Duque, Hong-Ye Hu, Yi-Zhuang You, Ruben Verresen, Romain Vasseur, arxiv:2008.02285
 
 * [Time-dependent variational principle of mixed matrix product states in the thermodynamic limit](https://arxiv.org/abs/2007.15035), Yantao Wu, arxiv:2007.15035
