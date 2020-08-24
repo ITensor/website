@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Mutual information-assisted Adaptive Variational Quantum Eigensolver Ansatz Construction](https://arxiv.org/abs/2008.07553), Zi-Jian Zhang, Thi Ha Kyaw, Jakob S. Kottmann, Matthias Degroote, Alan Aspuru-Guzik, arxiv:2008.07553
+
+* [Driving High-Fidelity Many-Body Matrix Product State Dynamics with Exact Gradient Quantum Optimal Control](https://arxiv.org/abs/2008.06076), Jesper Hasseriis Mohr Jensen, Frederik Skovbo Møller, Jens Jakob Sørensen, Jacob Friis Sherson, arxiv:2008.06076
+
+* [Coulomb-Engineered Topology](https://arxiv.org/abs/2008.07990), Malte Rösner, Jose L. Lado, arxiv:2008.07990
+
 * [Topological and symmetry-enriched random quantum critical points](https://arxiv.org/abs/2008.02285), Carlos M. Duque, Hong-Ye Hu, Yi-Zhuang You, Ruben Verresen, Romain Vasseur, arxiv:2008.02285
 
 * [Time-dependent variational principle of mixed matrix product states in the thermodynamic limit](https://arxiv.org/abs/2007.15035), Yantao Wu, arxiv:2007.15035
