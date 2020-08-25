@@ -1,17 +1,20 @@
 # Citing the ITensor Library
 
-Though there is currently no published paper officially associated 
-with the ITensor Library, you can cite the software and the ITensor
-website itself. 
+If you publish work showing results obtained with ITensor, we ask
+that you cite the paper:
 
-In the text of your paper, or in your acknowledgements, we suggest
-you write something like
-`"Calculations were performed using the ITensor Library\cite{ITensor}."`
+<i>"The ITensor Software Library for Tensor Network Calculations"</i>,
+Matthew Fishman, Steven R. White, E. Miles Stoudenmire, arxiv:2007.14822
 
-Then in your BibTeX file define the following citation:
+You may use the following BibTex entry to cite this paper in LaTeX documents:
 
-    @article{ITensor,
-    Journal = {\mbox{ITensor Library} (version 2.0.11) http://itensor.org},
-    }
+```
+@misc{itensor,
+    title={The ITensor Software Library for Tensor Network Calculations},
+    author={Matthew Fishman and Steven R. White and E. Miles Stoudenmire},
+    year={2020},
+    eprint={2007.14822},
+    archivePrefix={arXiv}
+}
+```
 
-where you should replace the version number with the version you used.
