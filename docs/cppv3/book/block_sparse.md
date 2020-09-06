@@ -90,7 +90,7 @@ The operators @@a@@, @@a^\dagger@@, and @@n@@ above are all QN ITensors.
 We can confirm this for @@a^\dagger@@ and @@n@@ by checking that their
 non-zero elements are only in blocks of the same flux:
 
-<img class="diagram" width="40%" src="docs/VERSION/book/images/n_adag_ops.jpg"/>
+<img class="diagram" width="40%" src="docs/VERSION/book/images/n_adag_ops.png"/>
 
 Test your knowledge: what are the fluxes of the @@n@@ and @@a^\dagger@@ operators?
 
