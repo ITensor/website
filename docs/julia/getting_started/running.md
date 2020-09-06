@@ -1,6 +1,10 @@
 
 # Running ITensor Codes
 
+After [[installing the ITensor library|getting_started/installing]] the
+next step is creating and running codes.
+We will look at a minimal Julia code based on ITensor and various ways to run it.
+
 ## Basic Code Outline
 
 The basic outline of a code which uses the ITensor library is as follows
