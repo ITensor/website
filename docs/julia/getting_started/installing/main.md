@@ -6,7 +6,7 @@ installing Julia, please see <a href="https://julialang.org/downloads/">the Juli
 
 Once you have installed Julia on your machine,
 
-1. launch an interactive Julia session by typing `julia` (a.k.a. the Julia "REPL")
+1. enter the command `julia` to launch an interactive Julia session (a.k.a. the Julia "[REPL](https://docs.julialang.org/en/v1/stdlib/REPL/)")
 2. type `]` to enter the package manager (`pkg>` prompt should now show)
 3. enter the command `add ITensors`
 4. after installation completes, press backspace to return to the normal `julia>` prompt
