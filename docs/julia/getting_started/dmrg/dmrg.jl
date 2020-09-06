@@ -2,8 +2,6 @@ using ITensors
 let
   N = 100
   sites = siteinds("S=1",N)
-  @show sites[1]
-  @show sites[2]
 
   ampo = AutoMPO()
   for j=1:N-1
