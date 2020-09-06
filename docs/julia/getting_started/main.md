@@ -9,8 +9,7 @@
 
 ## Getting Started Tutorials
 
-* Getting Started with DMRG (coming soon)
-<!-- * [[Getting Started with DMRG|getting_started/dmrg]] -->
+* [[Getting Started with DMRG|getting_started/dmrg]]
 
 
 ## Julia Language Tutorials and Resources
