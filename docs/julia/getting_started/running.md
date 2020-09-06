@@ -16,8 +16,8 @@ The basic outline of a code which uses the ITensor library is as follows
       @show T
     end
 
-The reason we recommend the `let...end` block is that global scope in Julia
-can have some surprising behaviors, at least through Julia version 1.4. 
+The reason we recommend the `let...end` block is that global scope 
+ in Julia can have some surprising behaviors, at least through Julia version 1.4. 
 Putting your code into a `let` block avoids these issues.
 
 ## Running a Script
@@ -49,7 +49,7 @@ prompt `julia>` on the left of your screen.
 
   Note that you must be in the same folder as `code.jl` for this to work; otherwise
 input the entire path to the `code.jl` file. The code will run and you will see its output in the REPL.
-3. Now say you want to modify and re-run the code. To do this, just edit the file in another terminal window or shell session, without closing your Julia session. Now run the command 
+3. Now say you want to modify and re-run the code. To do this, just edit the file in another terminal window or editor program, without closing your Julia session. Now run the command 
 
         julia> include("code.jl")
 
