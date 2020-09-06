@@ -20,7 +20,8 @@ the case of @@N=100@@ and plan to do five sweeps of DMRG (five passes over the s
 ## ITensor DMRG Code
 
 Let's look at an entire, working ITensor code that will do this calculation then
-discuss the main steps:
+discuss the main steps. (If you need help running the code below, see the getting
+started page on [[running ITensor codes|getting_started/running]].)
 
     include:docs/VERSION/getting_started/dmrg/dmrg.jl
 
