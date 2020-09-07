@@ -1,10 +1,11 @@
 # Measure Local Properties of an MPS
 
 For matrix product states (MPS) representing the wavefunction of a quantum
-system, a common task is to measure expected values of local observables acting on each site or physical degree of freedom. To see how to do this in ITensor,
+system, a common task is to measure expected values of local observables acting on each 
+site or physical degree of freedom. This might be done, for example, after a DMRG
+calculation or at each step of a time-evolution code. To see how to do this in ITensor,
 let's start from the following example of measuring the `"Sz"` operator
 for each site of an MPS `psi`:
-
 
     for j=1:length(psi)
       orthogonalize!(psi,j)
