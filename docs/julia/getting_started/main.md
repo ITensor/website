@@ -10,6 +10,9 @@
 ## Getting Started Tutorials
 
 * [[Getting Started with DMRG|getting_started/dmrg]]
+  - Conserving Quantum Numbers in DMRG
+* Getting Started with MPS time evolution (coming soon)
+* Getting Started with Quantum Circuits (coming soon)
 
 
 ## Julia Language Tutorials and Resources
