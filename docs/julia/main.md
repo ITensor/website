@@ -1,5 +1,5 @@
 
-<img src="docs/VERSION/getting_started/icon.png" class="icon">  [[Getting Started with ITensor|getting_started]] &nbsp; Installing and running ITensor code, and tutorials
+<img src="docs/VERSION/getting_started/icon.png" class="icon">  [[Getting Started with ITensor|getting_started]] &nbsp; Installing and running ITensor and tutorials
 
 <img src="docs/VERSION/book/icon.png" class="icon">   [[The ITensor Book|book]] &nbsp; A bottum-up introduction to ITensor
 
