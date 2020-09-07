@@ -10,7 +10,7 @@
 ## Getting Started Tutorials
 
 * [[Getting Started with DMRG|getting_started/dmrg]]
-  - Conserving Quantum Numbers in DMRG
+  - [[Conserving Quantum Numbers in DMRG|getting_started/qn_dmrg]]
   - [[Measure Local Properties of an MPS|formulas/measure_mps]]
 * Getting Started with MPS time evolution (coming soon)
 * Getting Started with Quantum Circuits (coming soon)
