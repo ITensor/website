@@ -11,7 +11,7 @@ Let's see how to set up and run a DMRG calculation using the ITensor library.
 We will be interested in finding the ground state of the quantum Hamiltonian
 @@H@@ given by:
 $$
-H = \sum_{j=1}^N \mathbf{S}_{j} \cdot \mathbf{S}_{j+1} = \sum_{j=1}^N S^z_{j} S^z_{j+1} + \frac{1}{2} S^+_{j} S^-_{j+1} + \frac{1}{2} S^-_{j} S^+_{j+1}
+H = \sum_{j=1}^{N-1} \mathbf{S}_{j} \cdot \mathbf{S}_{j+1} = \sum_{j=1}^{N-1} S^z_{j} S^z_{j+1} + \frac{1}{2} S^+_{j} S^-_{j+1} + \frac{1}{2} S^-_{j} S^+_{j+1}
 $$ 
 This Hamiltonian is known as the one-dimensional Heisenberg model and we will
 take the spins to be @@S=1@@ spins (spin-one spins). We will consider
