@@ -65,7 +65,7 @@ The line
     psi0 = randomMPS(sites,10)
 
 constructs an MPS `psi0` which has the physical indices `sites` and a bond dimension of 10.
-It is made by a random quantum circuit, so that it will have generic and unbiased properties.
+It is made by a random quantum circuit that is reshaped into an MPS, so that it will have as generic and unbiased properties as an MPS of that size can have.
 This choice can help prevent the DMRG calculation from getting stuck in a local minimum.
 
 The lines
@@ -86,6 +86,8 @@ Finally the call
 runs the DMRG algorithm included in ITensor, using `psi0` as an
 initial guess for the ground state wavefunction. The optimized MPS `psi` and
 its eigenvalue `energy` are returned.
+
+After the `dmrg` function returns, you can take the returned MPS `psi` and do further calculations with it, such as [[measuring local operators|formulas/measure_mps]].
 
 
 
