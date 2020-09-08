@@ -6,19 +6,15 @@ Say that we have obtained an MPS `psi` of length N and we wish to compute the en
 
 Then the following code formula can be used to accomplish this task:
 
-    
     orthogonalize!(psi, b)
     U,S,V = svd(psi[b], (linkind(psi, b-1), siteind(psi,b)))
     SvN = 0.0
-    for n in dim(S, 1)
+    for n=1:dim(S, 1)
       p = S[n,n]^2
       SvN -= p * log(p)
     end
     
-As a brief explanation of the code above, the line
-
-    orthogonalize!(psi,b)
-    
+As a brief explanation of the code above, the call to `orthogonalize!(psi,b)`
 shifts the orthogonality center to site `b` of the MPS. 
 
 The call to the `svd` routine says to treat the link (virtual or bond) Index connecting the b'th MPS tensor `psi[b]` and the b'th physical Index as "row" indices for the purposes of the SVD (these indices will end up on `U`, along with the Index connecting `U` to `S`).
