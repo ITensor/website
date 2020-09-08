@@ -87,7 +87,7 @@ runs the DMRG algorithm included in ITensor, using `psi0` as an
 initial guess for the ground state wavefunction. The optimized MPS `psi` and
 its eigenvalue `energy` are returned.
 
-After the `dmrg` function returns, you can take the returned MPS `psi` and do further calculations with it, such as [[measuring local operators|formulas/measure_mps]].
+After the `dmrg` function returns, you can take the returned MPS `psi` and do further calculations with it, such as [[measuring local operators|formulas/measure_mps]] or [[computing entanglement entropy|formulas/entanglement]].
 
 
 
