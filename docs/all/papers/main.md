@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Using Matrix-Product States for Open Quantum Many-Body Systems: Efficient Algorithms for Markovian and Non-Markovian Time-Evolution](https://doi.org/10.3390/e22090984), Regina Finsterhölzl, Manuel Katzer, Andreas Knorr and Alexander Carmele, <i style="color:#CC0000">Entropy</i>, <a href="https://doi.org/10.3390/e22090984" target="_blank">22, 984</a> (2020)
+
+* [Quantum half-orphans in kagome antiferromagnets](https://arxiv.org/abs/2009.01711), Pranay Patil, Fabien Alet, Sylvain Capponi, Kedar Damle, arxiv:2009.01711
+
 * [Entanglement entropy scaling transition under competing monitoring protocols](https://arxiv.org/abs/2008.08619), Mathias Van Regemortel, Ze-Pei Cian, Alireza Seif, Hossein Dehghani, Mohammad Hafezi, arxiv:2008.08619
 
 * [Mutual information-assisted Adaptive Variational Quantum Eigensolver Ansatz Construction](https://arxiv.org/abs/2008.07553), Zi-Jian Zhang, Thi Ha Kyaw, Jakob S. Kottmann, Matthias Degroote, Alan Aspuru-Guzik, arxiv:2008.07553
