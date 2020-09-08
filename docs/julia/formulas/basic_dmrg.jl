@@ -12,7 +12,6 @@ let
   end
   H = MPO(ampo,sites)
 
-
   sweeps = Sweeps(5) # number of sweeps is 5
   maxdim!(sweeps,10,20,100,100,200) # gradually increase states kept
   cutoff!(sweeps,1E-10) # desired truncation error
