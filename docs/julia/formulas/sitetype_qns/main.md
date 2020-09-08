@@ -59,8 +59,19 @@ to obtain an array of N `"S=3/2"` indices which carry quantum numbers.
 
 Note that the `op!` function overloads are exactly the same as for the
 more basic case of defining an `"S=3/2"` Index type that does not carry
-quantum numbers. There is no need to upgrade any of the `op!` functions
-for the QN-conserving case. The reason is that all QN, block-sparse information
+quantum numbers. There is no need to upgrade any of the `op!` functions 
+for the QN-conserving case. 
+The reason is that all QN, block-sparse information
 about an ITensor is deduced from the indices of the tensor, and setting elements
-of such tensors does not require any other special code.
+of such tensors does not require any other special code. 
+
+However, only operators which have a well-defined QN flux---meaning they always
+change the quantum number of a state they act on by a well-defined amount---can
+be used in practice in the case of QN conservation. Attempting to build an operator, or any ITensor,
+without a well-defined QN flux out of QN-conserving indices will result in a run time error.
+An example of an operator that would lead to such an error would be the "Sx" spin operator
+since it alternately increases @@S^z@@ or decreases @@S^z@@ depending on the state it acts
+on, thus it does not have a well-defined QN flux. But it is perfectly fine to define an
+`op` overload for the "Sx" operator and to make this operator when working with dense, 
+non-QN-conserving ITensors or when @@S^z@@ is not conserved.
 
