@@ -45,11 +45,11 @@ by setting the `conserve_qns` keyword argument to `true`:
     sites = siteinds("S=1",N; conserve_qns=true)
 
 Setting `conserve_qns=true` tells the `siteinds` function to conserve
-the maximum possible different quantum numbers that are associated to the site
+every possible quantum number associated to the site
 type (which is `"S=1"` in this example). For @@S=1@@ spins, this will turn on
 total-@@S^z@@ conservation.
 (For other site types that conserve multiple QNs, there are specific keyword 
-arguments available to track just a subset of these QNs.)
+arguments available to track just a subset of conservable QNs.)
 We can check this by printing out some of the site indices, and seeing that the
 subspaces of each `Index` are labeled by QN values:
 
@@ -58,8 +58,7 @@ subspaces of each `Index` are labeled by QN values:
 
 ### Change 2: initial state
 
-To make change (2), instead of constructing the initial MPS `psi0` to be a random
-state, we will make it a specific state with a well-defined total @@S^z@@. 
+To make change (2), instead of constructing the initial MPS `psi0` to be an arbitrary, random MPS, we will make it a specific state with a well-defined total @@S^z@@. 
 So we will replace the line
 
     psi0 = randomMPS(sites,10)
