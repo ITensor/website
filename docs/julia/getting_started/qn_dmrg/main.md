@@ -34,7 +34,7 @@ Let's see how to make these two changes to the DMRG code from the
 [[Getting Started with DMRG|getting_started/dmrg]] page. At the end,
 we will put together these changes for a complete, working code.
 
-### Change 1: QN site indices
+### Change 1: QN Site Indices
 
 To make change (1), we will change the line
 
@@ -69,7 +69,7 @@ subspaces of each `Index` are labeled by QN values:
 
 In the sample output above, note than in addition to the dimension of these indices being 3, each of the three settings of the Index have a unique QN associated to them. The number after the QN on each line is the dimension of that subspace, which is 1 for each subspace of the Index objects above. Note also that `"Sz"` quantum numbers in ITensor are measured in units of @@1/2@@, so `QN("Sz",2)` corresponds to @@S^z=1@@ in conventional physics units.
 
-### Change 2: initial state
+### Change 2: Initial State
 
 To make change (2), instead of constructing the initial MPS `psi0` to be an arbitrary, random MPS, we will make it a specific state with a well-defined total @@S^z@@. 
 So we will replace the line
