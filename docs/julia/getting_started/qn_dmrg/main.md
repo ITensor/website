@@ -56,6 +56,19 @@ subspaces of each `Index` are labeled by QN values:
     @show sites[1]
     @show sites[2]
 
+    # Sample output:
+    #
+    # sites[1] = (dim=3|id=794|"S=1,Site,n=1") <Out>
+    # 1: QN("Sz",2) => 1
+    # 2: QN("Sz",0) => 1
+    # 3: QN("Sz",-2) => 1
+    # sites[2] = (dim=3|id=806|"S=1,Site,n=2") <Out>
+    # 1: QN("Sz",2) => 1
+    # 2: QN("Sz",0) => 1
+    # 3: QN("Sz",-2) => 1
+
+In the sample output above, note than in addition to the dimension of these indices being 3, each of the three settings of the Index have a unique QN associated to them. The number after the QN on each line is the dimension of that subspace, which is 1 for each subspace of the Index objects above. Note also that `"Sz"` quantum numbers in ITensor are measured in units of @@1/2@@, so `QN("Sz",2)` corresponds to @@S^z=1@@ in conventional physics units.
+
 ### Change 2: initial state
 
 To make change (2), instead of constructing the initial MPS `psi0` to be an arbitrary, random MPS, we will make it a specific state with a well-defined total @@S^z@@. 
