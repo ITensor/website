@@ -1,5 +1,21 @@
 # Change Log (Julia)
 
+<a name="v0.1.22"></a>
+## [Version 0.1.22](https://github.com/itensor/itensors.jl/tree/v0.1.22) (September 11, 2020) 
+
+* Bug fix: Use ! function for not logic (#470)
+* Bug fix: (no)prime not working appropriately with (#484)
+* Add generic version of "F" operator for non-fermion sites in AutoMPO (#469) (@emstoudenmire)
+* Introduce Order value type (#475) (@mtfishman)
+* Add movesites function (#477) (@mtfishman)
+* Add MPS/MPO circuit evolution (#480) (@mtfishman)
+* Add docstrings for siteinds methods (#481) (@orialb)
+* Allow conserving Sz up or down in Fermion type (#482) (@mtfishman)
+* Add dense function for MPS and MPO (#483) (@emstoudenmire)
+* Add MPDO sampling (#486) (@mtfishman)
+* Improve MPS and MPO docs (#488) (@emstoudenmire)
+* Fix logic of outer has_fermion_string function for products of operators (#490) (@emstoudenmire)
+
 <a name="v0.1.21"></a>
 ## [Version 0.1.21](https://github.com/itensor/itensors.jl/tree/v0.1.21) (July 23, 2020) 
 
