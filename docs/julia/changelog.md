@@ -3,8 +3,6 @@
 <a name="v0.1.22"></a>
 ## [Version 0.1.22](https://github.com/itensor/itensors.jl/tree/v0.1.22) (September 11, 2020) 
 
-* Bug fix: Use ! function for not logic (issue #470)
-* Bug fix: (no)prime not working appropriately with (issue #484)
 * Add generic version of "F" operator for non-fermion sites in AutoMPO (PR #469) (@emstoudenmire)
 * Introduce Order value type (PR #475) (@mtfishman)
 * Add movesites function (PR #477) (@mtfishman)
