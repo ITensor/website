@@ -56,4 +56,18 @@ ITensorsGPU extends the ITensor library by allowing ITensors to have GPU storage
 </td>
 </tr>
 
+<tr>
+<td class="name">
+<a href="https://github.com/YiqingZhouKelly/LinQu.jl" target="_blank"> 
+LinQu
+</a> 
+</td>
+<td class="contrib">
+<a href="https://github.com/YiqingZhouKelly">Yiqing Zhou</a>
+</td>
+<td class="descrip">
+Julia library for quantum circuit simulation using tensor networks
+</td>
+</tr>
+
 </table>
