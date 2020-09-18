@@ -170,8 +170,8 @@ Index is defined in "itensor/index.h".
   `addTags(Index I, TagSet tags) -> Index`
 
    Modify the TagSet of the Index, adding the specified tags. The first
+   version modifies the Index in-place. The second
    version creates a new Index, keeping the original Index unmodified.
-   The second version modifies the Index in-place.
 
    Note that every Index has one and only one integer tag, so an Integer 
    tag cannot be added.
