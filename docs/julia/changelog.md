@@ -5,16 +5,16 @@
 
 Pull requests:
 
-* Add tr(::MPO) (#492) (@mtfishman)
-* Fix broadcast bug and add new broadcast operations (#495) (@mtfishman)
+* Add tr(::MPO) (PR #492) (@mtfishman)
+* Fix broadcast bug and add new broadcast operations (PR #495) (@mtfishman)
 
 Issues closed:
 
-* Add tr(::MPO) (#487)
-* Define lastindex(::ITensor) and lastindex(::ITensor,::Int) (#489)
-* Add anyhastags(::ITensor, ::String) and allhastags(::ITensor, ::String) (#491)
-* Add 1 ./ A broadcasting operation for ITensor (#493)
-* Bug in broadcasting ITensors (#494)
+* Add tr(::MPO) (Issue #487)
+* Define lastindex(::ITensor) and lastindex(::ITensor,::Int) (Issue #489)
+* Add anyhastags(::ITensor, ::String) and allhastags(::ITensor, ::String) (Issue #491)
+* Add 1 ./ A broadcasting operation for ITensor (Issue #493)
+* Bug in broadcasting ITensors (Issue #494)
 
 <a name="v0.1.22"></a>
 ## [Version 0.1.22](https://github.com/itensor/itensors.jl/tree/v0.1.22) (September 11, 2020) 

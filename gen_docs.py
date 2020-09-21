@@ -141,6 +141,7 @@ def convert(string,vers,lang):
 
     #Convert #nn github issue links
     if lang=="Julia":
+        string = re.sub(r"Issue #(\d+)",r"Issue <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
         string = re.sub(r"issue #(\d+)",r"issue <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
         string = re.sub(r"bug #(\d+)",r"bug <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
         string = re.sub(r"request #(\d+)",r"request <a target='_blank' href='https://github.com/ITensor/ITensors.jl/pull/\1'>#\1</a>",string)
