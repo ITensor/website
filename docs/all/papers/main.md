@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Scrambling and Lyapunov Exponent in Unitary Networks with Tunable Interactions](https://arxiv.org/abs/2009.10104), Anna Keselman, Laimei Nie, Erez Berg, arxiv:2009.10104
+
+* [Entanglement Hamiltonian Tomography in Quantum Simulation](https://arxiv.org/abs/2009.09000), Christian Kokail, Rick van Bijnen, Andreas Elben, Benoît Vermersch, Peter Zoller, arxiv:2009.09000
+
+* [Kohn-Sham equations as regularizer: building prior knowledge into machine-learned physics](https://arxiv.org/abs/2009.08551), Li Li, Stephan Hoyer, Ryan Pederson, Ruoxi Sun, Ekin D. Cubuk, Patrick Riley, Kieron Burke, arxiv:2009.08551
+
 * [Analysis of a density matrix renormalization group approach for transport in open quantum systems](https://arxiv.org/abs/2009.08200), Heitor P. Casagrande, Dario Poletti, Gabriel T. Landi, arxiv:2009.08200
 
 * [Using Matrix-Product States for Open Quantum Many-Body Systems: Efficient Algorithms for Markovian and Non-Markovian Time-Evolution](https://doi.org/10.3390/e22090984), Regina Finsterhölzl, Manuel Katzer, Andreas Knorr and Alexander Carmele, <i style="color:#CC0000">Entropy</i>, <a href="https://doi.org/10.3390/e22090984" target="_blank">22, 984</a> (2020)
