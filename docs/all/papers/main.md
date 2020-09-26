@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Stripes, Antiferromagnetism, and the Pseudogap in the Doped Hubbard Model at Finite Temperature](https://arxiv.org/abs/2009.10736), Alexander Wietek, Yuan-Yao He, Steven R. White, Antoine Georges, E. Miles Stoudenmire, arxiv:2009.10736
+
 * [Scrambling and Lyapunov Exponent in Unitary Networks with Tunable Interactions](https://arxiv.org/abs/2009.10104), Anna Keselman, Laimei Nie, Erez Berg, arxiv:2009.10104
 
 * [Entanglement Hamiltonian Tomography in Quantum Simulation](https://arxiv.org/abs/2009.09000), Christian Kokail, Rick van Bijnen, Andreas Elben, Benoît Vermersch, Peter Zoller, arxiv:2009.09000
@@ -33,6 +35,8 @@
 * [Topological and symmetry-enriched random quantum critical points](https://arxiv.org/abs/2008.02285), Carlos M. Duque, Hong-Ye Hu, Yi-Zhuang You, Ruben Verresen, Romain Vasseur, arxiv:2008.02285
 
 * [Time-dependent variational principle of mixed matrix product states in the thermodynamic limit](https://arxiv.org/abs/2007.15035), Yantao Wu, arxiv:2007.15035
+
+* [The ITensor Software Library for Tensor Network Calculations](https://arxiv.org/abs/2007.14822), Matthew Fishman, Steven R. White, E. Miles Stoudenmire, arxiv:2007.14822
 
 * [Gapless state of interacting Majorana fermions in a strain-induced Landau level](https://arxiv.org/abs/2007.13785), Adhip Agarwala, Subhro Bhattacharjee, Johannes Knolle, Roderich Moessner, arxiv:2007.13785
 
