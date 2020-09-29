@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Comparative study of the density matrix embedding theory for the Hubbard models](https://arxiv.org/abs/2009.11477), Masataka Kawano, Chisa Hotta, arxiv:2009.11477
+
+* [Entanglement Properties of Disordered Quantum Spin Chains with Long-Range Antiferromagnetic Interactions](https://arxiv.org/abs/2009.11286), Youcef Mohdeb, Javad Vahedi, N. Moure, A. Roshani, Hyun-Yong Lee, Ravindra N. Bhatt, Stefan Kettemann, Stephan Haas, arxiv:2009.11286
+
 * [Stripes, Antiferromagnetism, and the Pseudogap in the Doped Hubbard Model at Finite Temperature](https://arxiv.org/abs/2009.10736), Alexander Wietek, Yuan-Yao He, Steven R. White, Antoine Georges, E. Miles Stoudenmire, arxiv:2009.10736
 
 * [Scrambling and Lyapunov Exponent in Unitary Networks with Tunable Interactions](https://arxiv.org/abs/2009.10104), Anna Keselman, Laimei Nie, Erez Berg, arxiv:2009.10104
