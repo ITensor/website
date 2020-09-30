@@ -77,7 +77,7 @@ PastaQ
 </a> 
 </td>
 <td class="contrib">
-<a href="https://www.simonsfoundation.org/team/giacomo-torlai/">Giacomo Torlai</a>,
+<a href="https://www.simonsfoundation.org/team/giacomo-torlai/">Giacomo Torlai</a><br/>
 <a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
 </td>
 <td class="descrip">
