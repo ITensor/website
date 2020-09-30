@@ -70,6 +70,7 @@ Julia library for quantum circuit simulation using tensor networks
 </td>
 </tr>
 
+<!--
 <tr>
 <td class="name">
 <a href="https://github.com/GTorlai/PastaQ.jl" target="_blank"> 
@@ -84,5 +85,6 @@ PastaQ
 Package for Simulation, Tomography and Analysis of Quantum Computers
 </td>
 </tr>
+-->
 
 </table>
