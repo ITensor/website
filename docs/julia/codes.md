@@ -70,4 +70,19 @@ Julia library for quantum circuit simulation using tensor networks
 </td>
 </tr>
 
+<tr>
+<td class="name">
+<a href="https://github.com/GTorlai/PastaQ.jl" target="_blank"> 
+PastaQ
+</a> 
+</td>
+<td class="contrib">
+<a href="https://www.simonsfoundation.org/team/giacomo-torlai/">Giacomo Torlai</a>,
+<a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
+</td>
+<td class="descrip">
+Package for Simulation, Tomography and Analysis of Quantum Computers
+</td>
+</tr>
+
 </table>
