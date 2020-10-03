@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Coupled dimer and bond-order-wave order in the quarter-filled one-dimensional Kondo lattice model](https://arxiv.org/abs/2009.13089), Yixuan Huang, D. N. Sheng, C. S. Ting, arxiv:2009.13089
+
+* [Duality and domain wall dynamics in a twisted Kitaev chain](https://arxiv.org/abs/2009.14189), C. M. Morris, Nisheeta Desai, J. Viirok, D. Huvonen, U. Nagel, T. Room, J.W. Krizan, R. J. Cava, T. M. McQueen, S. M. Koohpayeh, Ribhu K. Kaul, N. P. Armitage, arxiv:2009.14189
+
 * [Comparative study of the density matrix embedding theory for the Hubbard models](https://arxiv.org/abs/2009.11477), Masataka Kawano, Chisa Hotta, arxiv:2009.11477
 
 * [Entanglement Properties of Disordered Quantum Spin Chains with Long-Range Antiferromagnetic Interactions](https://arxiv.org/abs/2009.11286), Youcef Mohdeb, Javad Vahedi, N. Moure, A. Roshani, Hyun-Yong Lee, Ravindra N. Bhatt, Stefan Kettemann, Stephan Haas, arxiv:2009.11286
