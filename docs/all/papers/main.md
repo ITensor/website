@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Matrix product state recursion methods for strongly correlated quantum systems](https://arxiv.org/abs/2010.00213), Yifan Tian, Steven R. White, arxiv:2010.00213
+
 * [Coupled dimer and bond-order-wave order in the quarter-filled one-dimensional Kondo lattice model](https://arxiv.org/abs/2009.13089), Yixuan Huang, D. N. Sheng, C. S. Ting, arxiv:2009.13089
 
 * [Duality and domain wall dynamics in a twisted Kitaev chain](https://arxiv.org/abs/2009.14189), C. M. Morris, Nisheeta Desai, J. Viirok, D. Huvonen, U. Nagel, T. Room, J.W. Krizan, R. J. Cava, T. M. McQueen, S. M. Koohpayeh, Ribhu K. Kaul, N. P. Armitage, arxiv:2009.14189
