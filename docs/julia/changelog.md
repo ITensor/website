@@ -1,5 +1,14 @@
 # Change Log (Julia)
 
+<a name="v0.1.24"></a>
+## [Version 0.1.24](https://github.com/itensor/itensors.jl/tree/v0.1.24) (October 8, 2020) 
+
+Pull requests:
+
+* Add stacktrace output to warn tensor order (#498) (@mtfishman)
+* Generalize tr(::MPO) (#509) (@mtfishman)
+
+
 <a name="v0.1.23"></a>
 ## [Version 0.1.23](https://github.com/itensor/itensors.jl/tree/v0.1.23) (September 21, 2020) 
 
