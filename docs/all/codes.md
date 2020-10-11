@@ -58,6 +58,19 @@ with example driver codes.
 
 <tr>
 <td class="name">
+<a href="https://github.com/yantaow/iTDVP/tree/master" target="_blank">iTDVP</a>
+</td>
+<td class="contrib">
+<a href="https://github.com/yantaow">Yantao Wu</a>
+</td>
+<td class="descrip">
+A realization of an infinite matrix product state, supporting the infinite time-dependent
+variational principle (iTDVP) algorithm. Includes sample codes.
+</td>
+</tr>
+
+<tr>
+<td class="name">
 <a href="https://github.com/ITensor/TDVP" target="_blank">TDVP</a>
 </td>
 <td class="contrib">
