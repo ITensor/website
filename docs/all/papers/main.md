@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Entanglement spreading after local fermionic excitations in the XXZ chain](https://arxiv.org/abs/2010.02708), Matthias Gruber, Viktor Eisler, arxiv:2010.02708
+
+* [Dissipative dynamics in isolated quantum spin chains after a local quench](https://arxiv.org/abs/2010.00700), Yantao Wu, arxiv:2010.00700
+
 * [Matrix product state recursion methods for strongly correlated quantum systems](https://arxiv.org/abs/2010.00213), Yifan Tian, Steven R. White, arxiv:2010.00213
 
 * [Coupled dimer and bond-order-wave order in the quarter-filled one-dimensional Kondo lattice model](https://arxiv.org/abs/2009.13089), Yixuan Huang, D. N. Sheng, C. S. Ting, arxiv:2009.13089
