@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [The Hubbard model on the Bethe lattice via variational uniform tree states: metal-insulator transition and a Fermi liquid](https://arxiv.org/abs/2010.06543), Peter Lunts, Antoine Georges, E. Miles Stoudenmire, Matthew Fishman, arxiv:2010.06543
+
 * [Entanglement spreading after local fermionic excitations in the XXZ chain](https://arxiv.org/abs/2010.02708), Matthias Gruber, Viktor Eisler, arxiv:2010.02708
 
 * [Dissipative dynamics in isolated quantum spin chains after a local quench](https://arxiv.org/abs/2010.00700), Yantao Wu, arxiv:2010.00700
