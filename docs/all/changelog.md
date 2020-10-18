@@ -1,5 +1,23 @@
 # Change Log (C++)
 
+<a name="v3.1.5"></a>
+## [Version 3.1.5](https://github.com/ITensor/ITensor/tree/v3.1.5) (Oct 17, 2020)
+
+- Add CTMRG sample code.
+- Update lapack wrapper functions to use LAPACK_INT (PR #369)
+- Fix potential integer overflow in getContractedOffsets (PR #368)
+- Reorganize and simplify TRG sample code
+
+<a name="v3.1.4"></a>
+## [Version 3.1.4](https://github.com/ITensor/ITensor/tree/v3.1.4) (Oct 12, 2020)
+
+- Switch headers to use pragma once (PR #356)
+- Fix issue with colliding SVD indices (PR 357)
+- More comprehensive README for sample codes
+- Fix bug where LocalOp constructor errors if optional NumCenter variable left unspecified (PR #359)
+- Fix issue with range function in case start > end (PR #362)
+
+
 <a name="v3.1.3"></a>
 ## [Version 3.1.3](https://github.com/ITensor/ITensor/tree/v3.1.3) (May 11, 2020) ##
 
