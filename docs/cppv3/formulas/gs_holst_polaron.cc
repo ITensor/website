@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
    for(int j=1;j  <= N-2; j+=2)
     {
     ampo += -t0,"Cdag",j,"C",j+2;
-	  ampo+= -t0, "C",j,"Cdag",j+2 ;
+	  ampo+= -t0, "Cdag",j+2,"C",j ;
     }
    for(int j=1;j < N; j += 2)
     {
