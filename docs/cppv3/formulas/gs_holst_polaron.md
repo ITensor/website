@@ -25,7 +25,7 @@ When one implements the Hamiltonian, one has to make sure that the right operato
 for(int j = 1; j <= N-2; j+=2)
    {
   ampo += -t0,"Cdag",j,"C",j+2;
-  ampo+=  -t0,"Cdag",j+2,"Cdag",j ;
+  ampo+=  -t0,"Cdag",j+2,"C",j ;
    }
  for(int j = 1; j < N; j += 2)
    {
