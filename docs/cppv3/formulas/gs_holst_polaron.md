@@ -3,7 +3,7 @@ Itensor also allows you to generate mixed SiteSets so that you can simulate syst
 $$
 H = -t_0 \sum\_i (c^{\dagger}_{i}c_{i+1} + h.c.) + \omega_0 \sum\_i (b^{\dagger}_i b_i) + \gamma \sum_i c^{\dagger}_i c_i (b^{\dagger}_i + b_i)
 $$
-To calculate the ground state of this system one first defines a MixedSiteSet type, which taking the two particle types as template parameters
+To calculate the ground state of this system one first defines a MixedSiteSet type, which takes the two particle types as template parameters
 ```c++
   using Holstein = MixedSiteSet<FermionSite,BosonSite>;
 ```
@@ -25,7 +25,7 @@ When one implements the Hamiltonian, one has to make sure that the right operato
 for(int j = 1; j <= N-2; j+=2)
    {
   ampo += -t0,"Cdag",j,"C",j+2;
-  ampo+=  -t0,"C",j,"Cdag",j+2 ;
+  ampo+=  -t0,"Cdag",j+2,"C",j ;
    }
  for(int j = 1; j < N; j += 2)
    {
