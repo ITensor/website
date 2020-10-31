@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Statistics tuned entanglement of the boundary modes in coupled Su-Schrieffer-Heeger chains](https://arxiv.org/abs/2010.07327), Saikat Santra, Adhip Agarwala, Subhro Bhattacharjee, arxiv:2010.07327
+
 * [Chaos and Ergodicity in Extended Quantum Systems with Noisy Driving](https://arxiv.org/abs/2010.12494), Pavel Kos, Bruno Bertini, Tomaž Prosen, arxiv:2010.12494
 
 * [Absence of Luther-Emery Phase in the Three-Band Model for Cuprate Ladders](https://arxiv.org/abs/2010.10609), Jeong-Pil Song, Sumit Mazumdar, R. Torsten Clay, arxiv:2010.10609
