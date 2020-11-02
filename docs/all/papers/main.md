@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [U(1) symmetric recurrent neural networks for quantum state reconstruction](https://arxiv.org/abs/2010.14514), Stewart Morawetz, Isaac J.S. De Vlugt, Juan Carrasquilla, Roger G. Melko, arxiv:2010.14514
+
 * [Statistics tuned entanglement of the boundary modes in coupled Su-Schrieffer-Heeger chains](https://arxiv.org/abs/2010.07327), Saikat Santra, Adhip Agarwala, Subhro Bhattacharjee, arxiv:2010.07327
 
 * [Chaos and Ergodicity in Extended Quantum Systems with Noisy Driving](https://arxiv.org/abs/2010.12494), Pavel Kos, Bruno Bertini, Tomaž Prosen, arxiv:2010.12494
@@ -108,7 +110,7 @@
 
 * [Improved hybrid parallel strategy for density matrix renormalization group method](https://doi.org/10.1088/1674-1056/ab8a42), Fu-Zhou Chen, Chen Cheng, and Hong-Gang Luo, <i style="color:#CC0000">Chinese Physics B</i> (2020)
 
-* [Deconstructing Magic-angle Physics in Twisted Bilayer Graphene with a Two-leg Ladder Model](https://arxiv.org/abs/2004.10325), Yixuan Huang, Pavan Hosur, Hridis K. Pal, arxiv:2004.10325
+* [Quasi-flat-band physics in a two-leg ladder model and its relation to magic-angle twisted bilayer graphene](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.102.155429), Yixuan Huang, Pavan Hosur, Hridis K. Pal, PhysRev[B,102,155429] [arxiv:2004.10325]
 
 * [Ground state properties of one-dimensional and two-dimensional Hubbard model from Gutzwiller conjugate gradient minimization theory](https://arxiv.org/abs/2004.09652), Zhuo Ye, Feng Zhang, Yong-Xin Yao, Cai-Zhuang Wang, Kai-Ming Ho, arxiv:2004.09652
 
