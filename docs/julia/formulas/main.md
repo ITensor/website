@@ -25,6 +25,7 @@ and algorithms such as DMRG.
 ### DMRG Formulas 
 - [[Perform a basic DMRG calculation|formulas/basic_dmrg]]
 - [[DMRG calculation with mixed local Hilbert spaces|formulas/mixed_sites_dmrg]]
+- [[Make a 2D Hamiltonian for DMRG|formulas/2d_dmrg]]
 
 ## Physics Formulas
 Formulas involving physics-specific features of ITensor.
