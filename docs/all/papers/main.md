@@ -8,6 +8,16 @@
  
 ## 2020
 
+* [The Folded Spin-1/2 XXZ Model: II. Thermodynamics and Hydrodynamics with a Minimal Set of Charges](https://arxiv.org/abs/2011.01159), Lenart Zadnik, Kemal Bidzhiev, Maurizio Fagotti, arxiv:2011.01159
+
+* [Performance of the rigorous renormalization group for first order phase transitions and topological phases](https://arxiv.org/abs/2010.15851), Maxwell Block, Johannes Motruk, Snir Gazit, Michael P. Zaletel, Zeph Landau, Umesh Vazirani, Norman Y. Yao, arxiv:2010.15851
+
+* [Persistent Current of SU(N) Fermions](https://arxiv.org/abs/2011.00916), Wayne J. Chetcuti, Tobias Haug, Leong-Chuan Kwek, Luigi Amico, arxiv:2011.00916
+
+* [Benchmarking adaptive variational quantum eigensolvers](https://arxiv.org/abs/2011.01279), Daniel Claudino, Jerimiah Wright, Alexander J. McCaskey, Travis S. Humble, arxiv:2011.01279
+
+* [Self-organized topological insulator via cavity-mediated correlated tunneling](https://arxiv.org/abs/2011.01687), Titas Chanda, Rebecca Kraus, Giovanna Morigi, Jakub Zakrzewski, arxiv:2011.01687
+
 * [U(1) symmetric recurrent neural networks for quantum state reconstruction](https://arxiv.org/abs/2010.14514), Stewart Morawetz, Isaac J.S. De Vlugt, Juan Carrasquilla, Roger G. Melko, arxiv:2010.14514
 
 * [Statistics tuned entanglement of the boundary modes in coupled Su-Schrieffer-Heeger chains](https://arxiv.org/abs/2010.07327), Saikat Santra, Adhip Agarwala, Subhro Bhattacharjee, arxiv:2010.07327
