@@ -1,5 +1,13 @@
 # Change Log (C++)
 
+<a name="v3.1.6"></a>
+## [Version 3.1.6](https://github.com/ITensor/ITensor/tree/v3.1.6) (Nov 6, 2020)
+
+- Fix issue #311 regarding wrong fermion sign when no QNs conserved (PR #373)
+- Add sample code for 2D Hubbard model with ky conservation
+- Add citation info to README
+
+
 <a name="v3.1.5"></a>
 ## [Version 3.1.5](https://github.com/ITensor/ITensor/tree/v3.1.5) (Oct 17, 2020)
 
