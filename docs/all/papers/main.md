@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Strongly correlated system-reservoir dynamics with quantized pulses: Controlling the atom-photon bound state](https://arxiv.org/abs/2011.03769), Kisa Barkemeyer, Andreas Knorr, Alexander Carmele, arxiv:2011.03769
+
 * [The Folded Spin-1/2 XXZ Model: II. Thermodynamics and Hydrodynamics with a Minimal Set of Charges](https://arxiv.org/abs/2011.01159), Lenart Zadnik, Kemal Bidzhiev, Maurizio Fagotti, arxiv:2011.01159
 
 * [Performance of the rigorous renormalization group for first order phase transitions and topological phases](https://arxiv.org/abs/2010.15851), Maxwell Block, Johannes Motruk, Snir Gazit, Michael P. Zaletel, Zeph Landau, Umesh Vazirani, Norman Y. Yao, arxiv:2010.15851
