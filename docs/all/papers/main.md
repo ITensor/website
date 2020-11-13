@@ -272,7 +272,7 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [Dissipative generation of highly entangled states of light and matter](https://arxiv.org/abs/1909.07335), Catalin-Mihai Halati, Ameneh Sheikhan, Helmut Ritsch, Corinna Kollath, arxiv:1909.07335
 
-* [Spontaneous time-reversal symmetry breaking without magnetism in a S=1 chain](https://arxiv.org/abs/1909.06461), Shun-Chiao Chang, Pavan Hosur, arxiv:1909.06461
+* [Spontaneous time-reversal symmetry breaking without magnetism in a S=1 chain](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.102.174404), Shun-Chiao Chang, Pavan Hosur, PhysRev[B,102,174404] [arxiv:1909.06461]
 
 * [Critical Dynamics of Transverse-field Quantum Ising Model using Finite-Size Scaling and Matrix Product States](https://doi.org/10.1007/s10773-019-04279-1), S. Y. Pang, S. V. Muniandy, M. Z. M. Kamali, <i style="color:#CC0000">Int. J. Theor. Phys.</i>, <a href="https://doi.org/10.1007/s10773-019-04279-1">https://doi.org/10.1007/s10773-019-04279-1</a> (2019)
 
