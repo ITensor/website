@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [ℤN lattice gauge theory in a ladder geometry](https://arxiv.org/abs/2011.06534), Jens Nyhegn, Chia-Min Chung, Michele Burrello, arxiv:2011.06534
+
+* [Many-body Majorana-like zero modes without gauge symmetry breaking](https://arxiv.org/abs/2011.06552), Many-body Majorana-like zero modes without gauge symmetry breaking, arxiv:2011.06552
+
+* [Dynamical topological excitations in parafermion chains](https://arxiv.org/abs/2011.06462), Vilja Kaskela, J. L. Lado, arxiv:2011.06462
+
 * [Strongly correlated system-reservoir dynamics with quantized pulses: Controlling the atom-photon bound state](https://arxiv.org/abs/2011.03769), Kisa Barkemeyer, Andreas Knorr, Alexander Carmele, arxiv:2011.03769
 
 * [The Folded Spin-1/2 XXZ Model: II. Thermodynamics and Hydrodynamics with a Minimal Set of Charges](https://arxiv.org/abs/2011.01159), Lenart Zadnik, Kemal Bidzhiev, Maurizio Fagotti, arxiv:2011.01159
