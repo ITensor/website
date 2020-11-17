@@ -1,4 +1,4 @@
-# Enhacing Performance by Installing MKL
+# Enhancing Performance by Installing MKL
 
 To have the highest-performing possible code, we recommend the use of the Intel MKL library
 which offers state-of-the-art BLAS and LAPACK routines for linear algebra. This is especially
