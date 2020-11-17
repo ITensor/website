@@ -5,6 +5,7 @@
 * [[Install ITensor (the Julia library ITensors.jl)|getting_started/installing]]
 * [[Running Codes Based on ITensor|getting_started/running]]
 * [[Reducing Compilation Overhead (Code Pauses)|getting_started/compilation]]
+* [[Enhancing Performance by Using MKL|getting_started/mkl]]
 * [[Tips for Installing Julia on a Cluster|getting_started/cluster]]
 
 ## Getting Started Tutorials

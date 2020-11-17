@@ -7,7 +7,7 @@ true for machines using Intel CPUs.
 To install and configure Julia to use MKL, just do the following steps:
 1. type `julia` to enter an interactive Julia session
 2. type `]` to enter the package manager (`pkg>` prompt should now show)
-3. enter the command `add https://github.com/JuliaComputing/MKL.jl`
+3. enter the command `add MKL`
 
 Note that after entering this command, the MKL library will be compiled from source on your
 machine, which can take quite a long time but only happens once. To check that it worked,
