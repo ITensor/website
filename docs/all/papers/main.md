@@ -8,6 +8,12 @@
  
 ## 2020
 
+* [Time-Evolving Weiss Fields in the Stochastic Approach to Quantum Spins](https://arxiv.org/abs/2011.07924), S. E. Begg, A. G. Green, M. J. Bhaseen, arxiv:2011.07924
+
+* [Generation of current vortex by spin current in Rashba systems](https://arxiv.org/abs/2011.08574), Florian Lange, Satoshi Ejima, Junji Fujimoto, Tomonori Shirakawa, Holger Fehske, Seiji Yunoki, Sadamichi Maekawa, arxiv:2011.08574
+
+* [Dynamical large deviations of two-dimensional kinetically constrained models using a neural-network state ansatz](https://arxiv.org/abs/2011.08657), Corneel Casert, Tom Vieijra, Stephen Whitelam, Isaac Tamblyn, arxiv:2011.08657
+
 * [ℤN lattice gauge theory in a ladder geometry](https://arxiv.org/abs/2011.06534), Jens Nyhegn, Chia-Min Chung, Michele Burrello, arxiv:2011.06534
 
 * [Many-body Majorana-like zero modes without gauge symmetry breaking](https://arxiv.org/abs/2011.06552), Many-body Majorana-like zero modes without gauge symmetry breaking, arxiv:2011.06552
@@ -148,7 +154,7 @@
 
 * [Effective triangular ladders with staggered flux from spin-orbit coupling in 1D optical lattices](https://arxiv.org/abs/2003.04154), Josep Cabedo, Joan Claramunt, Jordi Mompart, Verònica Ahufinger, Alessio Celi, arxiv:2003.04154
 
-* [Competing long-range interactions and spin vector chirality in spin-chains](https://arxiv.org/abs/2003.03322), E. Vernek, O. Ávalos-Ovando, S. E. Ulloa, arxiv:2003.03322
+* [Competing long-range interactions and spin vector chirality in spin-chains](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.102.174427), E. Vernek, O. Ávalos-Ovando, S. E. Ulloa, PhysRev[B,102,174427] [arxiv:2003.03322]
 
 * [Block-Lanczos Density-Matrix Renormalization-Group Approach to Spin Transport in Heisenberg Chains Coupled to Leads](https://journals.jps.jp/doi/full/10.7566/JPSJ.89.044601), F. Lange, S. Ejima, T. Shirakawa, S. Yunoki, H. Fehske, <i style="color:#CC0000">JPSJ</i>, <b>89</b> <a href="https://journals.jps.jp/doi/full/10.7566/JPSJ.89.044601">044601</a> (2020) [arxiv:2001.02926]
 
