@@ -83,13 +83,19 @@ MPS objects can be constructed by specifying the number of tensors, from a
   Construct an `MPS` and set its site tensors to be in the product state 
   specified by an [[InitState|classes/initstate]] object.
 
-* `randomMPS(SiteSet sites) -> MPS` <br/>
+* `randomMPS(SiteSet sites, int bond_dim = 1) -> MPS` <br/>
 
   Construct an MPS with physical sites given by the [[SiteSet|classes/siteset]]
-  provided, and initialize each MPS tensor with random entries.
-  Currently the only option for the bond, or link indices is dimension 1
+  provided, and initialize each MPS tensor with random entries using a
+  random quantum circuit construction. The circuit is set up so that the resulting
+  MPS has a maximum bond dimension of `bond_dim`. Note that the SiteSet provided must be 
+  currently non-QN-conserving for this function to accept `bond_dim > 1`. You can
+  turn make a SiteSet non-QN-conserving by passing the `{"ConserveQNs=",false}` option.
+
+  For the case of QN conserving site sets (the default setting most site sets), 
+  the only option currently for the bond, or link indices is dimension 1
   (product-state MPS), but in the future we plan to offer larger bond-dimension
-  random MPS.
+  random QN-conserving MPS.
 
 ## Retrieving Basic Information about MPS
 
