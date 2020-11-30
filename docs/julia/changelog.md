@@ -1,12 +1,12 @@
 # Change Log (Julia)
 
 <a name="v0.1.27"></a>
-## [version 0.1.27](https://github.com/itensor/itensors.jl/tree/v0.1.27) (Nov 23, 2020)
+## [Version 0.1.27](https://github.com/itensor/itensors.jl/tree/v0.1.27) (Nov 23, 2020)
 
 * Use LAPACK's gesdd by default in SVD (PR #531).
 
 <a name="v0.1.26"></a>
-## [version 0.1.26](https://github.com/itensor/itensors.jl/tree/v0.1.26) (Nov 20, 2020)
+## [Version 0.1.26](https://github.com/itensor/itensors.jl/tree/v0.1.26) (Nov 20, 2020)
 
 * Introduce a density matrix algorithm for summing arbitrary numbers of MPS/MPO (non-QN and QN) (PR #528).
 * Introduce @preserve_ortho macro, which indicates that a block of code preserves the orthogonality limits of a specified MPS/MPO or set of MPS/MPO (PR #528).
