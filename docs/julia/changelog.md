@@ -1,5 +1,29 @@
 # Change Log (Julia)
 
+<a name="v0.1.27"></a>
+## [version 0.1.27](https://github.com/itensor/itensors.jl/tree/v0.1.27) (Nov 23, 2020)
+
+* Use LAPACK's gesdd by default in SVD (PR #531).
+
+<a name="v0.1.26"></a>
+## [version 0.1.26](https://github.com/itensor/itensors.jl/tree/v0.1.26) (Nov 20, 2020)
+
+* Introduce a density matrix algorithm for summing arbitrary numbers of MPS/MPO (non-QN and QN) (PR #528).
+* Introduce @preserve_ortho macro, which indicates that a block of code preserves the orthogonality limits of a specified MPS/MPO or set of MPS/MPO (PR #528).
+* Introduce the ortho_lims(::MPS/MPO) function, that returns the orthogonality limits as a range (PR #528).
+* Improves the (::Number * ::MPS/MPO) function by ensuring the number scales an MPS/MPO tensor within the orthogonality limits (PR #528).
+* Improve functionality for making an MPO that is a product of operators. In particular, MPO(s, "Id") now works for QN sites, and it adds notation like: MPO(s, n -> isodd(n) ? "S+" : "S-") (PR #528).
+* Add SiteType and op documentation.
+* Add unexported function ITensors.examples_dir to get examples directory.
+
+<a name="v0.1.25"></a>
+## [Version 0.1.25](https://github.com/itensor/itensors.jl/tree/v0.1.25) (Nov 3, 2020)
+
+* Introduce imports.jl to organize import statements (PR #511).
+* Add TRG and isotropic CTMRG examples (PR #511).
+* Add example for 2D Hubbard model with momentum conservation around the cylinder (PR #511).
+* Fix fermion string issue (PR #519)
+
 <a name="v0.1.24"></a>
 ## [Version 0.1.24](https://github.com/itensor/itensors.jl/tree/v0.1.24) (October 8, 2020) 
 
