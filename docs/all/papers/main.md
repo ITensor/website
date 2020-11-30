@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Quantum phases of Rydberg atoms on a kagome lattice](https://arxiv.org/abs/2011.12295), Rhine Samajdar, Wen Wei Ho, Hannes Pichler, Mikhail D. Lukin, Subir Sachdev, arxiv:2011.12295
+
 * [Time-Evolving Weiss Fields in the Stochastic Approach to Quantum Spins](https://arxiv.org/abs/2011.07924), S. E. Begg, A. G. Green, M. J. Bhaseen, arxiv:2011.07924
 
 * [Generation of current vortex by spin current in Rashba systems](https://arxiv.org/abs/2011.08574), Florian Lange, Satoshi Ejima, Junji Fujimoto, Tomonori Shirakawa, Holger Fehske, Seiji Yunoki, Sadamichi Maekawa, arxiv:2011.08574
