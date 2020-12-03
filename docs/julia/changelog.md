@@ -1,5 +1,17 @@
 # Change Log (Julia)
 
+<a name="v0.1.28"></a>
+## [Version 0.1.28](https://github.com/itensor/itensors.jl/tree/v0.1.28) (Dec 3, 2020)
+
+Closed issues:
+
+* Non-Hermitian bug coming from eigsolve with complex MPO (#517)
+
+Merged pull requests:
+
+* Add DMRG and contraction examples of using TBLIS (#533) (@mtfishman)
+* Add support for setting slices of an ITensor (#535) (@mtfishman)
+
 <a name="v0.1.27"></a>
 ## [Version 0.1.27](https://github.com/itensor/itensors.jl/tree/v0.1.27) (Nov 23, 2020)
 
