@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Gapless to gapless phase transitions by mode fractionalization in quantum spin chains](https://arxiv.org/abs/2012.00700), Shi Feng, Gonzalo Alvarez, Nandini Trivedi, arxiv:2012.00700
+
 * [Quantum phases of Rydberg atoms on a kagome lattice](https://arxiv.org/abs/2011.12295), Rhine Samajdar, Wen Wei Ho, Hannes Pichler, Mikhail D. Lukin, Subir Sachdev, arxiv:2011.12295
 
 * [Time-Evolving Weiss Fields in the Stochastic Approach to Quantum Spins](https://arxiv.org/abs/2011.07924), S. E. Begg, A. G. Green, M. J. Bhaseen, arxiv:2011.07924
