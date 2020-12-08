@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Efficient mapping for Anderson impurity problems with matrix product states](https://arxiv.org/abs/2012.01424), Lucas Kohn, Giuseppe E. Santoro, arxiv:2012.01424
+
 * [Gapless to gapless phase transitions by mode fractionalization in quantum spin chains](https://arxiv.org/abs/2012.00700), Shi Feng, Gonzalo Alvarez, Nandini Trivedi, arxiv:2012.00700
 
 * [Quantum phases of Rydberg atoms on a kagome lattice](https://arxiv.org/abs/2011.12295), Rhine Samajdar, Wen Wei Ho, Hannes Pichler, Mikhail D. Lukin, Subir Sachdev, arxiv:2011.12295
