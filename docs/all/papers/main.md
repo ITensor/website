@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [DMRG study of FQHE systems in the open cylinder geometry](https://arxiv.org/abs/2012.03000), G. Misguich, Th. Jolicoeur, arxiv:2012.03000
+
 * [Efficient mapping for Anderson impurity problems with matrix product states](https://arxiv.org/abs/2012.01424), Lucas Kohn, Giuseppe E. Santoro, arxiv:2012.01424
 
 * [Gapless to gapless phase transitions by mode fractionalization in quantum spin chains](https://arxiv.org/abs/2012.00700), Shi Feng, Gonzalo Alvarez, Nandini Trivedi, arxiv:2012.00700
