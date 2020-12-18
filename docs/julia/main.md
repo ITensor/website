@@ -7,6 +7,8 @@
 
 <img src="docs/VERSION/formulas/icon.png" class="icon"> [[Code Formulas|formulas]] &nbsp; Example codes for common tasks
 
+<img src="docs/VERSION/icon.png" class="icon">   <a href="https://arxiv.org/abs/2007.14822" target="_blank">The ITensor Paper</a> <i style="color:#336699;" class="fa fa-external-link" aria-hidden="true"></i> &nbsp; Long-form article introducing ITensor with Julia examples.
+
 <img src="docs/all/papers/icon.png" class="icon">   [[Papers Using ITensor|papers]]
 
 <br/>
