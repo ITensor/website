@@ -8,6 +8,10 @@
  
 ## 2020
 
+* [Colorful points in the XY regime of XXZ quantum magnets](https://arxiv.org/abs/2012.05930), Santanu Pal, Prakash Sharma, Hitesh J. Changlani, Sumiran Pujari, arxiv:2012.05930
+
+* [Quantum Phase Transitions in Long-Range Interacting Hyperuniform Spin Chains in a Transverse Field](https://arxiv.org/abs/2012.06545), Amartya Bose, Salvatore Torquato, arxiv:2012.06545
+
 * [DMRG study of FQHE systems in the open cylinder geometry](https://arxiv.org/abs/2012.03000), G. Misguich, Th. Jolicoeur, arxiv:2012.03000
 
 * [Efficient mapping for Anderson impurity problems with matrix product states](https://arxiv.org/abs/2012.01424), Lucas Kohn, Giuseppe E. Santoro, arxiv:2012.01424
@@ -360,7 +364,7 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 * [The isolated Heisenberg magnet as a quantum time crystal](https://arxiv.org/abs/1905.08266), Marko Medenjak, Berislav Buca, Dieter Jaksch, arxiv:1905.08266
 
-* [Quench dynamics of two component dipolar Fermions in a Quasiperiodic potential](https://arxiv.org/abs/1905.06677), Bradraj Pandey, Swapan K. Pati, arxiv:1905.06677
+* [Quench dynamics of two-component dipolar fermions subject to a quasiperiodic potential](https://link.aps.org/doi/10.1103/PhysRevB.102.214302), Bradraj Pandey, Elbio Dagatto, Swapan K. Pati, PhysRev[B,102,214302] [arxiv:1905.06677]
 
 * [Dynamic response of spin-2 bosons in one-dimensional optical lattices](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.023623), Florian Lange, Satoshi Ejima, Holger Fehske, PhysRev[A,100,023623] [arxiv:1905.06587]
 
