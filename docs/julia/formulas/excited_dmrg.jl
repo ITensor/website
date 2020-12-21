@@ -47,13 +47,21 @@ let
 
   #
   # Compute the first excited state psi1
+  # (Use ground state psi0 as initial state 
+  #  and as a 'penalty state')
   #
-  psi1_init = randomMPS(sites,2)
-  energy1,psi1 = dmrg(H,[psi0],psi1_init,sweeps; weight)
+  energy1,psi1 = dmrg(H,[psi0],psi0,sweeps; weight)
 
   # Check psi1 is orthogonal to psi0
   @show inner(psi1,psi0)
 
+
+  #
+  # The expected gap of the transverse field Ising
+  # model is given by Eg = 2*|h-1|
+  #
+  # (The DMRG gap will have finite-size corrections.)
+  #
   println("\nDMRG energy gap = ",energy1-energy0);
   println("\nTheoretical gap = ",2*abs(h-1));
 
@@ -61,9 +69,11 @@ let
 
   #
   # Compute the second excited state psi2
+  # (Use ground state psi0 as initial state 
+  #  and [psi0,psi1] as 'penalty states')
   #
   psi2_init = randomMPS(sites,2)
-  energy2,psi2 = dmrg(H,[psi0,psi1],psi2_init,sweeps;weight)
+  energy2,psi2 = dmrg(H,[psi0,psi1],psi0,sweeps;weight)
 
   @show inner(psi2,psi0)
   @show inner(psi2,psi1)
