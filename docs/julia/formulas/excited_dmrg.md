@@ -20,6 +20,8 @@ the `dmrg` function when penalizing overlaps to previous states. The
 `weight` parameter is multiplied by the overlap with the previous states,
 so sets the size of the penalty. It should be chosen at least as large
 as the (estimated) gap between the ground and first excited states.
+Otherwise the optimal value of the weight parameter is not so obvious,
+and it is best to try various weights during initial test calculations.
 
 Note that when the system has conserved quantum numbers, a superior way
 to find excited states can be to find ground states of quantum number (or symmetry)

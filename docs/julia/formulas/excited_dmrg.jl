@@ -50,7 +50,8 @@ let
   # (Use ground state psi0 as initial state 
   #  and as a 'penalty state')
   #
-  energy1,psi1 = dmrg(H,[psi0],psi0,sweeps; weight)
+  psi1_init = psi0
+  energy1,psi1 = dmrg(H,[psi0],psi1_init,sweeps; weight)
 
   # Check psi1 is orthogonal to psi0
   @show inner(psi1,psi0)
@@ -72,8 +73,8 @@ let
   # (Use ground state psi0 as initial state 
   #  and [psi0,psi1] as 'penalty states')
   #
-  psi2_init = randomMPS(sites,2)
-  energy2,psi2 = dmrg(H,[psi0,psi1],psi0,sweeps;weight)
+  psi2_init = psi0
+  energy2,psi2 = dmrg(H,[psi0,psi1],psi2_init,sweeps;weight)
 
   @show inner(psi2,psi0)
   @show inner(psi2,psi1)
