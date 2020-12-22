@@ -71,6 +71,20 @@ variational principle (iTDVP) algorithm. Includes sample codes.
 
 <tr>
 <td class="name">
+<a href="https://github.com/emstoudenmire/parallelDMRG" target="_blank">Parallel DMRG</a>
+</td>
+<td class="contrib">
+Miles Stoudenmire
+</td>
+<td class="descrip">
+Real-space parallel DMRG code. Works for both single MPO Hamiltonians and
+Hamiltonians that are a sum of separate MPOs. Uses MPI to communicate DMRG
+boundary tensors across nodes.
+</td>
+</tr>
+
+<tr>
+<td class="name">
 <a href="https://github.com/ITensor/TDVP" target="_blank">TDVP</a>
 </td>
 <td class="contrib">
@@ -154,12 +168,15 @@ with example driver codes.
 
 <tr>
 <td class="name">
-<a href="https://github.com/emstoudenmire/parallelDMRG" target="_blank">Parallel DMRG</a>
+<a href="https://github.com/emstoudenmire/parallelDMRG/tree/v2" target="_blank">Parallel DMRG</a>
 </td>
 <td class="contrib">
 Miles Stoudenmire
 </td>
 <td class="descrip">
+(To get the ITensor version 2 compatible version of this code, use git to 
+check out the "v2" branch.)
+
 Real-space parallel DMRG code. Works for both single MPO Hamiltonians and
 Hamiltonians that are a sum of separate MPOs. Uses MPI to communicate DMRG
 boundary tensors across nodes.
