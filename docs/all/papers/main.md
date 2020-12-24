@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Post quench entropy growth in a chiral clock model](https://arxiv.org/abs/2012.09892), Naveen Nishad, M Santhosh, G J Sreejith, arxiv:2012.09892
+
 * [Colorful points in the XY regime of XXZ quantum magnets](https://arxiv.org/abs/2012.05930), Santanu Pal, Prakash Sharma, Hitesh J. Changlani, Sumiran Pujari, arxiv:2012.05930
 
 * [Quantum Phase Transitions in Long-Range Interacting Hyperuniform Spin Chains in a Transverse Field](https://arxiv.org/abs/2012.06545), Amartya Bose, Salvatore Torquato, arxiv:2012.06545
