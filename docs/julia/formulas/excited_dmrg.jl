@@ -63,8 +63,8 @@ let
   #
   # (The DMRG gap will have finite-size corrections.)
   #
-  println("\nDMRG energy gap = ",energy1-energy0);
-  println("\nTheoretical gap = ",2*abs(h-1));
+  println("DMRG energy gap = ",energy1-energy0);
+  println("Theoretical gap = ",2*abs(h-1));
 
   println()
 
