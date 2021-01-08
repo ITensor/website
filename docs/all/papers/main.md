@@ -8,6 +8,8 @@
  
 ## 2020
 
+* [Quantum Adiabatic Doping for Atomic Fermi-Hubbard Quantum Simulations](https://arxiv.org/abs/2101.01475), Jue Nan, Jian Lin, Yuchen Luo, Bo Zhao, Xiaopeng Li, arxiv:2101.01475
+
 * [Constrained-Path Auxiliary-Field Quantum Monte Carlo for Coupled Electrons and Phonons](https://arxiv.org/abs/2012.13473), Joonho Lee, Shiwei Zhang, David R. Reichman, arxiv:2012.13473
 
 * [Quantum Phases of Matter on a 256-Atom Programmable Quantum Simulator](https://arxiv.org/abs/2012.12281), Sepehr Ebadi, Tout T. Wang, Harry Levine, Alexander Keesling, Giulia Semeghini, Ahmed Omran, Dolev Bluvstein, Rhine Samajdar, Hannes Pichler, Wen Wei Ho, Soonwon Choi, Subir Sachdev, Markus Greiner, Vladan Vuletic, Mikhail D. Lukin, arxiv:2012.12281
