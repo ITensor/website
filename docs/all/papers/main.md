@@ -6,9 +6,11 @@
 * [](), , arxiv:
 -->
  
-## 2020
+## 2021
 
 * [Quantum Adiabatic Doping for Atomic Fermi-Hubbard Quantum Simulations](https://arxiv.org/abs/2101.01475), Jue Nan, Jian Lin, Yuchen Luo, Bo Zhao, Xiaopeng Li, arxiv:2101.01475
+
+## 2020
 
 * [Constrained-Path Auxiliary-Field Quantum Monte Carlo for Coupled Electrons and Phonons](https://arxiv.org/abs/2012.13473), Joonho Lee, Shiwei Zhang, David R. Reichman, arxiv:2012.13473
 
@@ -761,7 +763,7 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 
 
 <!--
-65 202 papers as of Jul 24
+117 papers in 2020
 88 papers in 2019
 51 papers in 2018
 46 papers in 2017
@@ -772,6 +774,5 @@ Pavel A. Volkov, Snir Gazit, J. H. Pixley, arxiv:1910.03589
 2 in 2012
 3 in 2009-2011
 --------------
-(310 through 2019)
-293 total
+362 total (through 2020)
 -->
