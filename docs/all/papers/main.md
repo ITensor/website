@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Finite-temperature photoemission in the extended Falicov-Kimball model: a case study for Ta2NiSe5](https://arxiv.org/abs/2101.02479), Satoshi Ejima, Florian Lange, Holger Fehske, arxiv:2101.02479
+
 * [Quantum Adiabatic Doping for Atomic Fermi-Hubbard Quantum Simulations](https://arxiv.org/abs/2101.01475), Jue Nan, Jian Lin, Yuchen Luo, Bo Zhao, Xiaopeng Li, arxiv:2101.01475
 
 ## 2020
