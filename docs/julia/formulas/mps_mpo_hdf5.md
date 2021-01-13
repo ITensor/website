@@ -24,13 +24,32 @@ To read this ITensor back from the HDF5 file, use the following pattern:
 
     using HDF5
     f = h5open("myfile.h5","r")
-    T = read(f,"psi",MPS)
+    psi = read(f,"psi",MPS)
     close(f)
+
+Many functions which involve MPS, such as the `dmrg` function or the `AutoMPO` system
+require that you use an array of site indices which match the MPS. So when reading in
+an MPS from disk, do not construct a new array of site indices. Instead, you can
+obtain them like this: `sites = siteinds(psi)`.
+
+So for example, to create an MPO from an AutoMPO which has the same site indices
+as your MPS `psi`, do the following:
+
+    ampo = AutoMPO()
+    # Then put operators into ampo...
+
+    sites = siteinds(psi) # Get site indices from your MPS
+    H = MPO(ampo,sites)
+
+    # Compute <psi|H|psi>
+    energy_psi = inner(psi,H,psi)
+
 
 Note the `MPS` argument to the read function, which tells Julia which read function
 to call and how to interpret the data stored in the HDF5 dataset named "psi". In the 
 future we might lift the requirement of providing the type and have it be detected
 automatically from the data stored in the file.
+
 
 ## Writing and Reading MPOs
 
