@@ -1,5 +1,62 @@
 # Change Log (Julia)
 
+<a name="v0.1.36"></a>
+ITensors v0.1.36 Release Notes
+==============================
+- Bump to v0.1.22 of NDTensors which introduces block sparse multithreading. Add documentation and examples for using block sparse multithreading (PR #561) (@mtfishman).
+- Make dmrg set ortho center to 1 before starting (PR #562) (@emstoudenmire).
+
+ITensors v0.1.35 Release Notes
+==============================
+Closed issues:
+
+- Should we define iterate for TagSet? (#542)
+- AutoMPO slower than expected (#555)
+
+Merged pull requests:
+
+- Implement iterate for TagSet (#553) (@tomohiro-soejima)
+- Add check for Index arrows for map! (includes sum and difference etc) (#554) (@emstoudenmire)
+- Optimize AutoMPO (#556) (@mtfishman)
+- Add checks for common site indices in DMRG, dot, and inner (#557) (@mtfishman)
+- Fix and Improve DMRGObserver Constructor (#558) (@emstoudenmire)
+- Update HDF5 to versions 0.14, 0.15 (#559) (@emstoudenmire)
+
+ITensors v0.1.34 Release Notes
+==============================
+* Allow operator names in the `op` system that are longer than 8 characters (PR #551).
+
+ITensors v0.1.33 Release Notes
+==============================
+* Fix bug introduced in v0.1.32 involving inner(::MPS, ::MPS) if the MPS have more than one site Index per tensor (PR #549).
+
+ITensors v0.1.32 Release Notes
+==============================
+* Update to NDTensors v0.1.21, which includes a bug fix for scalar-like tensor contractions involving mixed element types (NDTensors PR #58).
+* Docs for observer system and DMRGObserver (PR #546).
+* Add `ITensors.@debug_check`, `ITensors.enable_debug_checks()`, and `ITensors.disable_debug_checks()` for denoting that a block of code is a debug check, and turning on and off debug checks (off by default). Use to check for repeated indices in IndexSet construction and other checks (PR #547).
+* Add `index_id_rng()`, an RNG specifically for generating Index IDs. Set the seed with `Random.seed!(index_id_rng(), 1234)`. This makes the random stream of number seperate for Index IDs and random elements, and helps avoid Index ID clashes with reading and writing (PR #547).
+* Add back checking for proper QN Index directions in contraction (PR #547).
+
+ITensors v0.1.31 Release Notes
+==============================
+* Update to NDTensors v0.1.20, which includes some more general block sparse slicing operations as well as optimizations for contracting scalar-like (length 1) tensors (NDTensors PR #57).
+* Add flux of IndexVal functionality which returns the QN multiplied by the direction of the Index. Make `qn` consistently return the bare QN. Might be breaking for people who were calling `qn(::IndexVal)` and related functions, since now it consistently returns the QN not modified by the Index direction (PR #543).
+* Introduce `splitblocks` function for Index, ITensor and MPS/MPO. This splits the QNs of the specified indices into blocks of size 1 and drops nonzero blocks, which can make certain tensors more sparse and improve efficiency. This is particularly useful for Hamiltonian MPOs. Thanks to Johannes Hauschild for pointing out this strategy (PR #540).
+* Add Ising YY and ZZ gates to qubits examples (PR #539).
+
+ITensors v0.1.30 Release Notes
+==============================
+* Update to NDTensors v0.1.19, which includes various block sparse optimizations. The primary change is switching the block-offset storage from a sorted vector to a dictionary for O(1) lookup of the offsets. Note this may be a slightly breaking change for users that were doing block operations of block sparse tensors since now blocks have a special type Block that stores a tuple of the block location and the hash (NDTensors PR #54 and ITensors PR #538).
+
+<a name="v0.1.29"></a>
+ITensors v0.1.29 Release Notes
+==============================
+* Add global flag for combining before contracting QN ITensors, control with enable/disable_combine_contract!(). This can speed up the contractions of high order QN ITensors (PR #536).
+* Fix bug when using "end" syntax when indexing ITensors where the Index ordering doesn't match the internal ITensor Index order (PR #537).
+* Increase NDTensors to v0.1.18, which includes a variety of dense and sparse contraction optimizations.
+
+
 <a name="v0.1.28"></a>
 ## [Version 0.1.28](https://github.com/itensor/itensors.jl/tree/v0.1.28) (Dec 3, 2020)
 
