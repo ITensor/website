@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Neural networks in quantum many-body physics: a hands-on tutorial](https://arxiv.org/abs/2101.11099), Juan Carrasquilla, Giacomo Torlai, arxiv:2101.11099
+
 * [Deterministic generation of multi-dimensional photonic cluster states using time-delay feedback](https://arxiv.org/abs/2101.07772), Yu Shi, Edo Waks, arxiv:2101.07772
 
 * [Lattice vibration as a knob on exotic quantum criticality](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.014435), SangEun Han, Junhyun Lee, Eun-Gook Moon, PhysRev[B,103,014435] (2021)
