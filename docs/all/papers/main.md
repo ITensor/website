@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Nonergodic dynamics in disorder-free potentials](https://arxiv.org/abs/2101.11061), Ruixiao Yao, Titas Chanda, Jakub Zakrzewski, arxiv:2101.11061
+
 * [Neural networks in quantum many-body physics: a hands-on tutorial](https://arxiv.org/abs/2101.11099), Juan Carrasquilla, Giacomo Torlai, arxiv:2101.11099
 
 * [Yu-Shiba-Rusinov states in superconducting islands with finite charging energy](https://arxiv.org/abs/2101.10168), Luka Pavešić, Daniel Bauernfeind, Rok Žitko, arxiv:2101.10168
