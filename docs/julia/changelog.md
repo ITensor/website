@@ -1,5 +1,12 @@
 # Change Log (Julia)
 
+<a name="v0.1.37"></a>
+ITensors v0.1.37 Release Notes
+==============================
+
+- Add tests for threaded contraction with no output blocks (PR #565)
+
+
 <a name="v0.1.36"></a>
 ITensors v0.1.36 Release Notes
 ==============================
