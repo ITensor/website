@@ -1,5 +1,22 @@
 # Change Log (Julia)
 
+<a name="v0.1.38"></a>
+ITensors v0.1.38 Release Notes
+==============================
+
+Closed issues:
+
+- MPO-MPO multiplication for chain length N=1,2 not working (Issue #544)
+- Scalar ITensor for QN or BlockSparse Case (Issue #564)
+- Merged pull requests:
+
+- Fix bug in BlockSparse-DiagBlockSparse contraction (PR #567) (@mtfishman)
+- Add tests for printing QN diag ITensor (PR #568) (@mtfishman)
+- Add generic support for scalar ITensor contraction (PR #569) (@mtfishman)
+- Fix MPOMPS, MPOMPO for system sizes 1 and 2 (PR #572) (@mtfishman)
+- Add support for inner(::MPS, ::MPO, ::MPS) with multiple siteinds per tensor (PR #573) (@mtfishman)
+- New MPS/MPO index manipulation interface (PR #575) (@mtfishman)
+
 <a name="v0.1.37"></a>
 ITensors v0.1.37 Release Notes
 ==============================
