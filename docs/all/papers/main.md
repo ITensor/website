@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Dynamical signatures of symmetry protected topology following symmetry breaking](https://arxiv.org/abs/2101.12405), Jacob A. Marks, Michael Schüler, Thomas P. Devereaux, arxiv:2101.12405
+
 * [Nonergodic dynamics in disorder-free potentials](https://arxiv.org/abs/2101.11061), Ruixiao Yao, Titas Chanda, Jakub Zakrzewski, arxiv:2101.11061
 
 * [Neural networks in quantum many-body physics: a hands-on tutorial](https://arxiv.org/abs/2101.11099), Juan Carrasquilla, Giacomo Torlai, arxiv:2101.11099
