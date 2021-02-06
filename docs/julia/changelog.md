@@ -8,7 +8,8 @@ Closed issues:
 
 - MPO-MPO multiplication for chain length N=1,2 not working (Issue #544)
 - Scalar ITensor for QN or BlockSparse Case (Issue #564)
-- Merged pull requests:
+
+Merged pull requests:
 
 - Fix bug in BlockSparse-DiagBlockSparse contraction (PR #567) (@mtfishman)
 - Add tests for printing QN diag ITensor (PR #568) (@mtfishman)
