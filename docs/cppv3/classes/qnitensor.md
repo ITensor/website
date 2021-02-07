@@ -2,7 +2,7 @@
 
 
 An QN ITensor is an ITensor whose indices have subspaces labeled by quantum numbers
-(QN objects) and which as a result will have block-sparse data storage. Most of
+(QN objects) and as a result have block-sparse data storage. Most of
 the interface of an ITensor with these properties is the same as for a regular,
 dense ITensor. So adding, contracting, setting elements, and so on is done the
 same way. However, some operations are a little bit different: for example, 
