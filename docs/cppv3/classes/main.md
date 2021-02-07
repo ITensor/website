@@ -43,7 +43,6 @@ its actual signature is `f(ITensor const& T)`.
     - [[Combiner|classes/combiner]]
     - [[Delta and Diagonal ITensor|classes/diag_itensor]]
 
-
 * [[Tensor Decompositions|classes/decomp]]. Singular value decomposition, density matrix diagonalization, etc.
 
 ## Matrix product states (MPS) and matrix product operators (MPO)
