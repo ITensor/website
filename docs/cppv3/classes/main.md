@@ -38,6 +38,7 @@ its actual signature is `f(ITensor const& T)`.
 
 * Sparse ITensors:
 
+    - [[QN ITensor|classes/qnitensor]]
     - [[Single Element ITensor|classes/single_itensor]]
     - [[Combiner|classes/combiner]]
     - [[Delta and Diagonal ITensor|classes/diag_itensor]]
