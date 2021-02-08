@@ -285,7 +285,7 @@ font-family: sans-serif;
 font-size: 100%; 
 width: 90%; 
 }
-.docs a { color: #336699; }
+.docs a { font-size: 100%; color: #336699; }
 .docs .github 
 { 
 outline: solid 1px;
@@ -300,7 +300,7 @@ font-weight: bold;
 margin-top: 30px; 
 margin-bottom: 8px; 
 }
-.docs h1 a { font-size: 160%; font-weight: bold; margin-bottom: 20px; }
+.docs h1 a { font-size: 100%; font-weight: bold; margin-bottom: 20px; }
 
 .docs h2 
 { 
@@ -309,7 +309,7 @@ font-weight: bold;
 margin-top: 30px; 
 margin-bottom: 8px; 
 }
-.docs h2 a { font-size: 120%; font-weight: bold; margin-bottom: 20px; }
+.docs h2 a { font-size: 100%; font-weight: bold; margin-bottom: 20px; }
   
 .docs h3 
   { 

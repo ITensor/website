@@ -1,12 +1,10 @@
 # Change Log (Julia)
 
-<a href="https://github.com/ITensor/ITensors.jl">Link to latest master branch</a>
+<!-- ## Link to [Development Version](https://github.com/ITensor/ITensors.jl) (master branch) -->
 
 <a name="v0.1.38"></a>
-ITensors v0.1.38 Release Notes
+[ITensors v0.1.38](https://github.com/ITensor/ITensors.jl/tree/v0.1.38) Release Notes
 ==============================
-
-<a href="https://github.com/ITensor/ITensors.jl/tree/v0.1.38">Link to this version</a>
 
 Closed issues:
 
