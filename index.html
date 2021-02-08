@@ -174,6 +174,167 @@
 
 </div>
 
+
+<div class="full section rounded"> <h2>Code Samples &nbsp;&nbsp;(Julia Version)</h2> </div>
+
+<div class="full screenshot">
+<img src="MatrixDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Contract Two Matrix-Like ITensors</h2>
+<pre>
+using ITensors
+
+a = Index(2)
+b = Index(2) 
+c = Index(2)
+
+Z = ITensor(a,b)
+X = ITensor(c,b)
+
+Z[a=>1,b=>1] =  1.0
+Z[a=>2,b=>2] = -1.0
+
+X[b=>1,c=>2] = 1.0
+X[b=>2,c=>1] = 1.0
+
+<div style="color:#5081AA">
+# The * operator finds and
+# contracts common index 'b'
+# regardless of index order:
+</div>
+R = Z * X
+
+@show R[a=>2,c=>1]
+<div style="color:#5081AA"># Output:
+# R[a=>2,c=>1] = -1
+</div>
+</pre>
+</div>
+
+
+
+<div class="full screenshot">
+<img src="TensorDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Contract and Add ITensors</h2>
+<pre>
+i = Index(3)
+j = Index(5)
+k = Index(2)
+l = Index(7)
+
+A = ITensor(i,j,k)
+B = ITensor(l,j)
+
+A[i=>1,j=>1,k=>1] = 11.1
+A[i=>2,j=>1,k=>2] = -21.2
+A[k=>1,i=>3,j=>1] = 31.1
+A[k=>1,i=>1,j=>2] = 11.2
+
+B[j=>2,l=>4] = 2+4im
+
+C = A * B;
+@show C
+
+D = randomITensor(k,j,i)
+
+R = A + D
+</pre>
+</div>
+
+
+
+<div class="full screenshot">
+<img src="SVDDiagram.png" width="400px" style="float: right; margin-top:55px;"/>
+<h2>Factorize an ITensor (Using SVD)</h2>
+<pre>
+
+i = Index(3,"i")
+j = Index(7,"j")
+k = Index(2,"k")
+l = Index(4,"l")
+
+T = randomITensor(i,j,k,l)
+
+U,S,V = svd(T,i,k)
+
+@show norm(T - U*S*V)
+<div style="color:#5081AA">
+# Output: 
+# norm(T - U*S*V) = 4.7458E-14
+</div>
+
+</pre>
+</div>
+
+<div class="full screenshot">
+<h2>Perform a DMRG Calculation</h2>
+<p>
+DMRG is a powerful algorithm for finding dominant eigenvectors
+of exponentially large matrices (such as quantum Hamiltonians) in matrix product 
+state (MPS) form. It is adaptive and converges very quickly and to high precision.
+</p>
+<p>
+In addition to state-of-the-art DMRG codes, ITensor features the AutoMPO system,
+which is a powerful domain-specific language for creating matrix product operator (MPO)
+tensor networks as a sum of local terms, which is especially useful for quantum mechanics
+applications.
+</p>
+<br/>
+<pre>
+<span style="color:#5081AA"># Define Hilbert space of N spin-one sites</span>
+N = 100
+sites = siteinds("S=1",N; conserve_qns=true)
+
+<span style="color:#5081AA"># Create 1d Heisenberg Hamiltonian</span>
+ampo = AutoMPO()
+for j = 1:N-1
+  ampo += 0.5,"S+",j,"S-",j+1
+  ampo += 0.5,"S-",j,"S+",j+1
+  ampo +=     "Sz",j,"Sz",j+1
+end
+
+H = MPO(ampo,sites)
+
+<span style="color:#5081AA"># Choose initial wavefunction</span>
+<span style="color:#5081AA"># to be a product state</span>
+psi0 = MPS(sites,["Z0" for i=1:N])
+
+<span style="color:#5081AA"># Perform 5 sweeps of DMRG</span>
+sweeps = Sweeps(5)
+<span style="color:#5081AA"># Specify max number of states kept each sweep</span>
+maxdim!(sweeps,50,50,100,100,200)
+
+<span style="color:#5081AA"># Run the DMRG algorithm</span>
+energy,psi = dmrg(H,psi0,sweeps)
+
+<span style="color:#5081AA"># Continue to analyze wavefunction afterward </span>
+@show inner(psi,H,psi) <span style="color:#5081AA"># &lt;psi|H|psi&gt;</span>
+
+for j=1:N
+  <span style="color:#5081AA"># Make site j the MPS "orthogonality center"</span>
+  orthogonalize!(psi,j)
+  <span style="color:#5081AA"># Measure magnetization</span>
+  Szj = scalar(psi[j]
+        * op(sites,"Sz",j)
+        * dag(prime(psi[j],"Site")))
+  println("Sz_$j = $Szj")
+end
+
+</pre>
+</div>
+
+
+<!-- End Code Samples (Julia Version) -->
+
+<div class="full">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</div>
+
+<!-- Begin Code Samples (Julia Version) -->
+
 <div class="full section rounded"> <h2>Code Samples &nbsp;&nbsp;(C++ Version)</h2> </div>
 
 <div class="full screenshot">
