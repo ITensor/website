@@ -1,5 +1,13 @@
 # Change Log (C++)
 
+<a name="v3.1.7"></a>
+## [Version 3.1.7](https://github.com/ITensor/ITensor/tree/v3.1.6) (Nov 6, 2020)
+
+- Throw error if requested QN not satisfied in randomITensor (PR #384 @emstoudenmire)
+- Fix subscript out of range in autovector.h (PR #379 @shencebebetterme)
+- Make gesdd the default SVD algorithm (PR #376 @mtfishman)
+- Restore mixed fermionic and non-fermionic AutoMPO support (PR #374 @emstoudenmire)
+
 <a name="v3.1.6"></a>
 ## [Version 3.1.6](https://github.com/ITensor/ITensor/tree/v3.1.6) (Nov 6, 2020)
 
