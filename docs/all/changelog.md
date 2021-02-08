@@ -1,7 +1,7 @@
 # Change Log (C++)
 
 <a name="v3.1.7"></a>
-## [Version 3.1.7](https://github.com/ITensor/ITensor/tree/v3.1.6) (Nov 6, 2020)
+## [Version 3.1.7](https://github.com/ITensor/ITensor/tree/v3.1.7) (Feb 8, 2021)
 
 - Throw error if requested QN not satisfied in randomITensor (PR #384 @emstoudenmire)
 - Fix subscript out of range in autovector.h (PR #379 @shencebebetterme)
