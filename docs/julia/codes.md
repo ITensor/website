@@ -44,6 +44,23 @@ DMRGPy is a Python library to compute quasi-one-dimensional spin chains and ferm
 
 <tr>
 <td class="name">
+<a href="https://github.com/mtfishman/GaussianMatrixProductStates.jl" target="_blank"> 
+Gaussian Matrix Product States
+</a> 
+</td>
+<td class="contrib">
+Matthew Fishman
+</td>
+<td class="descrip">
+A package for creating the matrix product state (MPS) of a free fermion (Gaussian) state.
+This package uses a technique based on PRB 92, 075132 (arxiv:1504.07701)
+which deterministically computes a nearly optimal MPS approximation of a given
+free fermion or Gaussian state.
+</td>
+</tr>
+
+<tr>
+<td class="name">
 <a href="https://github.com/ITensor/ITensorsGPU.jl" target="_blank"> 
 ITensorsGPU
 </a> 
