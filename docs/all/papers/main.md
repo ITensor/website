@@ -146,7 +146,7 @@
 
 * [Random Phase Product Sate for Canonical Ensemble](https://arxiv.org/abs/2006.14459), Toshiaki Iitaka, arxiv:2006.14459
 
-* [Pairing in spin chains and spinless fermions with next-nearest neighbour interactions](https://arxiv.org/abs/2006.07128), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, arxiv:2006.07128
+* [Pairing in spin chains and spinless fermions with next-nearest neighbour interactions](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.3.013114), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, PhysRev[R,3,013114] [arxiv:2006.07128]
 
 * [Correlations in Perturbed Dual-Unitary Circuits: Efficient Path-Integral Formula](https://arxiv.org/abs/2006.07304), Pavel Kos, Bruno Bertini, Tomaž Prosen, arxiv:2006.07304
 
