@@ -1,6 +1,8 @@
 
 # ITensor Codes (C++ version 3 compatible)
 
+[Looking for the Julia codes? [Click here](http://itensor.org/docs.cgi?page=codes&vers=julia).]
+
 Open-source codes based on ITensor for a variety projects and tasks.
 If you have a high-quality code you'd like listed here, please
 <a href="about.html">contact us</a>. Codes extending core ITensor
