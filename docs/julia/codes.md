@@ -78,7 +78,7 @@ ITensorsGPU extends the ITensor library by allowing ITensors to have GPU storage
 <tr>
 <td class="name">
 <a href="https://github.com/ITensor/ITensorsVisualization.jl" target="_blank"> 
-ITensorsVisualization
+ITensors Visualization
 </a> 
 </td>
 <td class="contrib">
