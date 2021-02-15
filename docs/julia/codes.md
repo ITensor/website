@@ -77,6 +77,23 @@ ITensorsGPU extends the ITensor library by allowing ITensors to have GPU storage
 
 <tr>
 <td class="name">
+<a href="https://github.com/ITensor/ITensorsVisualization.jl" target="_blank"> 
+ITensorsVisualization
+</a> 
+</td>
+<td class="contrib">
+Matt Fishman
+</td>
+<td class="descrip">
+Visualize tensor contractions performed with the ITensor library. The visualizations
+are interactive (tensor positions are draggable) and useful information about indices is shown: 
+line widths correspond to
+dimensions and quantum number is shown when applicable.
+</td>
+</tr>
+
+<tr>
+<td class="name">
 <a href="https://github.com/YiqingZhouKelly/LinQu.jl" target="_blank"> 
 LinQu
 </a> 
