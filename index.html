@@ -83,6 +83,9 @@
     <li>Quantum number conserving (block-sparse) tensors; same interface as dense tensors</li>
     <li>Complex numbers handled automatically and efficiently</li>
     <li>Easy to install, with a friendly and productive interface</li>
+    <li>Multi-threaded contraction over sparse tensor blocks</li>
+    <li>Automatically convert sums of local operators to MPOs (AutoMPO)</li>
+    <li>Efficiently apply local operators to MPS (quantum circuits, time evolution)</li>
     </ul>
     </p>
 
@@ -313,7 +316,7 @@ energy,psi = dmrg(H,psi0,sweeps)
 for j=1:N
   <span style="color:#5081AA"># Make site j the MPS "orthogonality center"</span>
   orthogonalize!(psi,j)
-  <span style="color:#5081AA"># Measure magnetization</span>
+  <span style="color:#5081AA"># Measure magnetization on site j</span>
   Szj = scalar(psi[j]
         * op(sites,"Sz",j)
         * dag(prime(psi[j],"Site")))
@@ -468,7 +471,7 @@ for(<span style="color:green">int</span> j = 1; j &lt;= N; ++j)
     {
     <span style="color:#5081AA">//Make site j the MPS "orthogonality center"</span>
     psi.position(j);
-    <span style="color:#5081AA">//Measure magnetization</span>
+    <span style="color:#5081AA">//Measure magnetization on site j</span>
     Real Szj = elt(psi(j)
                * op(sites,"Sz",j)
                * dag(prime(psi(j),"Site")));
