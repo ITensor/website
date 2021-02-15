@@ -51,7 +51,7 @@ Gaussian Matrix Product States
 </a> 
 </td>
 <td class="contrib">
-Matthew Fishman
+<a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
 </td>
 <td class="descrip">
 A package for creating the matrix product state (MPS) of a free fermion (Gaussian) state.
@@ -82,7 +82,7 @@ ITensors Visualization
 </a> 
 </td>
 <td class="contrib">
-Matt Fishman
+<a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
 </td>
 <td class="descrip">
 Visualize tensor contractions performed with the ITensor library. The visualizations
