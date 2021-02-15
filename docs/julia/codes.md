@@ -106,7 +106,6 @@ Julia library for quantum circuit simulation using tensor networks
 </td>
 </tr>
 
-<!--
 <tr>
 <td class="name">
 <a href="https://github.com/GTorlai/PastaQ.jl" target="_blank"> 
@@ -118,9 +117,10 @@ PastaQ
 <a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
 </td>
 <td class="descrip">
-Package for Simulation, Tomography and Analysis of Quantum Computers
+Package for Simulation, Tomography and Analysis of Quantum Computers. Features include
+simulation of quantum circuits, scalable quantum state tomography (pure and mixed), and 
+scalable quantum process tomography.
 </td>
 </tr>
--->
 
 </table>
