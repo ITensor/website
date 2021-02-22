@@ -7,7 +7,7 @@ local version of Julia. A local install will offer the same performance and
 features (package manager, etc.) as a system-wide install, and you can upgrade
 it at your own pace.
 
-Once you set up Julia in your cluster account, you can [[install ITensor|getting_started/install]]
+Once you set up Julia in your cluster account, you can [[install ITensor|getting_started/installing]]
 in the same way as on your personal computer.
 
 To install Julia locally within your cluster account, follow these
