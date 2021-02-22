@@ -13,7 +13,9 @@ in the same way as on your personal computer.
 To install Julia locally within your cluster account, follow these
 basic steps (details may vary slightly depending on your setup):
 1. Download a binary version of Julia <a href="https://julialang.org/downloads/">here</a>. 
-On a remote Unix or Linux cluster, you can use the program "wget" to download remote files.
+On a remote Unix or Linux cluster, you can use the program `wget` to download remote files.
+(Right click on the link on the Julia downloads page to the Generic Linux on x86, 64-bit
+Julia download to copy the link to pass to the `wget` program.)
 2. Use the tar program to uncompress the .tar.gz file you have downloaded.
 3. Create a soft link somewhere in your PATH (such as in the bin/ subfolder of your
 home folder, which you might need to create) pointing to the file "bin/julia" inside
