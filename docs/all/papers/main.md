@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Multiple magnetization plateaus induced by further neighbor interaction in an S=1 two-leg Heisenberg spin ladder](https://arxiv.org/abs/2102.07473), Hidehiko Kohshiro, Ryui Kaneko, Satoshi Morita, Naoki Kawashima, arxiv:2102.07473
+
+* [Enhancement of boson superfluidity in a one-dimensional Bose-Fermi mixture](https://arxiv.org/abs/2102.07101), Chenrong Liu, Yongzheng Wu, Jie Lou, Yan Chen, arxiv:2102.07101
+
 * [Dynamical signatures of symmetry protected topology following symmetry breaking](https://arxiv.org/abs/2101.12405), Jacob A. Marks, Michael Schüler, Thomas P. Devereaux, arxiv:2101.12405
 
 * [Nonergodic dynamics in disorder-free potentials](https://arxiv.org/abs/2101.11061), Ruixiao Yao, Titas Chanda, Jakub Zakrzewski, arxiv:2101.11061
