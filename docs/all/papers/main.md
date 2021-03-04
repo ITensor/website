@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Error-correction properties of an interacting topological insulator](https://arxiv.org/abs/2103.00011), Amit Jamadagni, Hendrik Weimer, arxiv:2103.00011
+
 * [Entanglement and Many-Body effects in Collective Neutrino Oscillations](https://arxiv.org/abs/2102.10188), Alessandro Roggero, arxiv:2102.10188
 
 * [Multiple magnetization plateaus induced by further neighbor interaction in an S=1 two-leg Heisenberg spin ladder](https://arxiv.org/abs/2102.07473), Hidehiko Kohshiro, Ryui Kaneko, Satoshi Morita, Naoki Kawashima, arxiv:2102.07473
