@@ -2,6 +2,14 @@
 
 <!-- ## Link to [Development Version](https://github.com/ITensor/ITensors.jl) (master branch) -->
 
+<a name="v0.1.40"></a>
+[ITensors v0.1.40](https://github.com/ITensor/ITensors.jl/tree/v0.1.40) Release Notes
+==============================
+
+- Remove eigen QN fix code (simplify ITensors eigen code by handling QNs better in NDTensors eigen) (PR #587) (@emstoudenmire).
+- More general polar decomposition that works with QNs (PR #588) (@mtfishman).
+- Bump to v0.1.28 of NDTensors, which includes some bug fixes for BlockDiag storage and makes ArrayInterface setindex compatiblity more general (NDTensors PR #68) (@mtfishman).
+
 <a name="v0.1.39"></a>
 [ITensors v0.1.39](https://github.com/ITensor/ITensors.jl/tree/v0.1.39) Release Notes
 ==============================
