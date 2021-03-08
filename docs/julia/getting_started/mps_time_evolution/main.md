@@ -51,6 +51,10 @@ time evolve it. Then we will break down the steps of the code in more detail.
 
 ## ITensor TEBD Time Evolution Code
 
+Let's look at an entire, working ITensor code that will do this calculation then
+discuss the main steps. (If you need help running the code below, see the getting
+started page on [[running ITensor codes|getting_started/running]].)
+
     include:docs/VERSION/getting_started/mps_time_evolution/mps_time_evolution.jl
 
 <img class="icon" src="docs/VERSION/install.png"/>&nbsp;<a href="docs/VERSION/getting_started/mps_time_evolution/mps_time_evolution.jl">Download this example code</a>
