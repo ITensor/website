@@ -87,11 +87,15 @@ To make the corresponding Trotter gate `Gj` we exponentiate `hj` times
 a factor @@-i \tau/2@@ and then append or push this onto the end of the
 gate array `gates`.
 
+    Gj = exp(-1.0im * tau/2 * hj)
+    push!(gates,Gj)
+
 Having made the gates for bonds (1,2),(2,3),(3,4), etc. we still need
 to append the gates in reverse order to complete the correct Trotter
 formula. Here we can conveniently do that by just calling the Julia
 `append!` function and supply a reversed version of the array of
-gates we have made so far.
+gates we have made so far. This can
+be done in a single line of code `append!(gates,reverse(gates))`.
 
 So that the code produces interesting output, we define a function
 called `measure_Sz` that we will pass our MPS into and which will
@@ -105,15 +109,17 @@ initializes our MPS `psi` as a product state of alternating
 up and down spins. We call `measure_Sz` before starting the
 time evolution.
 
-Finally, to carry out the time evolution we repeatedly call
-the function 
+Finally, to carry out the time evolution we loop over
+the step number `for step=1:Nsteps` and during each
+step call the function 
 
     psi = apply(gates, psi; cutoff)
 
 which applies the array of ITensors called `gates` to our current
 MPS `psi`, truncating the MPS at each step using the truncation
-error threshold supplied as the variable `cutoff`. The 
-`apply` function is smart enough to determine which site indices
+error threshold supplied as the variable `cutoff`. 
+
+The `apply` function is smart enough to determine which site indices
 each gate has, and then figure out where to apply it to our
 MPS. It automatically handles truncating the MPS and can
 even handle non-nearest-neighbor gates, though that 
