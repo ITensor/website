@@ -8,6 +8,16 @@
  
 ## 2021
 
+* [Anomalous fractional quantization in the Kagome-like Heisenberg ladder: Emergence of the effective spin-1 chain](https://arxiv.org/abs/2103.01455), Tomoki Yamaguchi, Yukinori Ohta, Satoshi Nishimoto, arxiv:2103.01455
+
+* [Importance sampling of randomized measurements for probing entanglement](https://arxiv.org/abs/2102.13524), Aniket Rath, Rick van Bijnen, Andreas Elben, Peter Zoller, Benoît Vermersch, arxiv:2102.13524
+
+* [Optimal sampling of dynamical large deviations via matrix product states](https://arxiv.org/abs/2103.01265), Luke Causer, Mari Carmen Bañuls, Juan P. Garrahan, arxiv:2103.01265
+
+* [Error-correction properties of an interacting topological insulator](https://arxiv.org/abs/2103.00011), Amit Jamadagni, Hendrik Weimer, arxiv:2103.00011
+
+* [Real-space parallel density matrix renormalization group with adaptive boundaries](https://doi.org/10.1088/1674-1056/abeb08), Fu-Zhou Chen, Chen Cheng, and Hong-Gang Luo, Chinese Physics B
+
 * [Error-correction properties of an interacting topological insulator](https://arxiv.org/abs/2103.00011), Amit Jamadagni, Hendrik Weimer, arxiv:2103.00011
 
 * [Mott insulating states with competing orders in the triangular lattice Hubbard model](https://arxiv.org/abs/2102.12904), Alexander Wietek, Riccardo Rossi, Fedor Šimkovic IV, Marcel Klett, Philipp Hansmann, Michel Ferrero, E. Miles Stoudenmire, Thomas Schäfer, Antoine Georges, arxiv:2102.12904
