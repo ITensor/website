@@ -36,7 +36,7 @@ Trotter "gate".
 
 We can visualize the resulting circuit that will be applied to the MPS as follows:
 
-<img class="diagram" width="80%" src="docs/VERSION/getting_started/mps_time_evolution/trotter_tevol.png"/>
+<img class="diagram" width="90%" src="docs/VERSION/getting_started/mps_time_evolution/trotter_tevol.png"/>
 
 The error in the above decomposition is of order @@\tau^3@@, so that will be the error
 accumulated _per time step_. Because of the time-step error, one takes @@\tau@@ to be
@@ -95,9 +95,9 @@ gates we have made so far.
 
 So that the code produces interesting output, we define a function
 called `measure_Sz` that we will pass our MPS into and which will
-print the current total time and expected value of @@S^z@@ on
-the center site of the MPS. The details of this function are 
-outside the scope of this tutorial, but are explained in the
+return the expected value of @@S^z@@ on a given site, which
+we will take to be near the center of the MPS. The details of this 
+function are outside the scope of this tutorial, but are explained in the
 example code for [[measuring MPS|formulas/measure_mps]].
 
 The line of code `psi = productMPS(s, n -> isodd(n) ? "Up" : "Dn")`
@@ -112,11 +112,10 @@ the function
 
 which applies the array of ITensors called `gates` to our current
 MPS `psi`, truncating the MPS at each step using the truncation
-error cutoff value supplied as the variable `cutoff`. The 
-`apply` function is smart enough to see which site indices
+error threshold supplied as the variable `cutoff`. The 
+`apply` function is smart enough to determine which site indices
 each gate has, and then figure out where to apply it to our
 MPS. It automatically handles truncating the MPS and can
 even handle non-nearest-neighbor gates, though that 
 feature is not used in this example.
-
 

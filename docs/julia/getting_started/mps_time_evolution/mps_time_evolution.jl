@@ -27,27 +27,31 @@ let
   # (N,N-1),(N-1,N-2),...
   append!(gates,reverse(gates))
 
-  # Function that measures and prints <Sz> on center site c
-  function measure_Sz(psi,t)
-    s = siteinds(psi)
-    c = div(length(psi),2)
-    orthogonalize!(psi,c)
-    Sz = scalar(dag(prime(psi[c],"Site"))*op("Sz",s[c])*psi[c])
-    println("$t $(real(Sz))")
+  # Function that measures <Sz> on site n
+  function measure_Sz(psi,n)
+    psi = orthogonalize(psi,n)
+    sn = siteind(psi,n)
+    Sz = scalar(dag(prime(psi[n],"Site"))*op("Sz",sn)*psi[n])
+    return real(Sz)
   end
 
   # Initialize psi to be a product state (alternating up and down)
   psi = productMPS(s, n -> isodd(n) ? "Up" : "Dn")
 
-  measure_Sz(psi,0.0)
+  c = div(N,2)
+
+  # Compute and print initial <Sz> value
+  t = 0.0
+  Sz = measure_Sz(psi,c)
+  println("$t $Sz")
 
   # Do the time evolution by applying the gates
   # for Nsteps steps
-  t = 0.0
   for step=1:Nsteps
     psi = apply(gates, psi; cutoff)
     t += tau
-    measure_Sz(psi,t)
+    Sz = measure_Sz(psi,c)
+    println("$t $Sz")
   end
 
   return
