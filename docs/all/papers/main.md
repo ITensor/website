@@ -8,6 +8,12 @@
  
 ## 2021
 
+* [Matrix product state approach for a quantum system at finite temperatures using random phases and Trotter gates](https://arxiv.org/abs/2103.04515), Shimpei Goto, Ryui Kaneko, Ippei Danshita, arxiv:2103.04515
+
+* [Strongly entangled system-reservoir dynamics with multiphoton pulses beyond the two-excitation limit: Exciting the atom-photon bound state](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.103.033704), Kisa Barkemeyer, Andreas Knorr, and Alexander Carmele, PhysRev[A,103,033704] 
+
+* [Pair-Density-Wave in the Strong Coupling Limit of the Holstein-Hubbard model](https://arxiv.org/abs/2103.04984), Kevin S. Huang, Zhaoyu Han, Steven A. Kivelson, Hong Yao, arxiv:2103.04984
+
 * [Boosting energy-time entanglement using coherent time-delayed feedback](https://arxiv.org/abs/2103.02689), Kisa Barkemeyer, Marcel Hohn, Stephan Reitzenstein, Alexander Carmele, arxiv:2103.02689
 
 * [Anomalous fractional quantization in the Kagome-like Heisenberg ladder: Emergence of the effective spin-1 chain](https://arxiv.org/abs/2103.01455), Tomoki Yamaguchi, Yukinori Ohta, Satoshi Nishimoto, arxiv:2103.01455
