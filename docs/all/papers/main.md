@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Improving the accuracy and efficiency of quantum connected moments expansions](https://arxiv.org/abs/2103.09124), Daniel Claudino, Bo Peng, Nicholas P. Bauman, Karol Kowalski, Travis S. Humble, arxiv:2103.09124
+
+* [Triangular lattice Majorana-Hubbard model: Mean-field theory and DMRG on a width-4 torus](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.115128), Tarun Tummuru, Alberto Nocera, and Ian Affleck, PhysRev[B,103,115128] (2021)
+
 * [Matrix product state approach for a quantum system at finite temperatures using random phases and Trotter gates](https://arxiv.org/abs/2103.04515), Shimpei Goto, Ryui Kaneko, Ippei Danshita, arxiv:2103.04515
 
 * [Strongly entangled system-reservoir dynamics with multiphoton pulses beyond the two-excitation limit: Exciting the atom-photon bound state](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.103.033704), Kisa Barkemeyer, Andreas Knorr, and Alexander Carmele, PhysRev[A,103,033704] 
@@ -124,7 +128,7 @@
 
 * [Stripes, Antiferromagnetism, and the Pseudogap in the Doped Hubbard Model at Finite Temperature](https://arxiv.org/abs/2009.10736), Alexander Wietek, Yuan-Yao He, Steven R. White, Antoine Georges, E. Miles Stoudenmire, arxiv:2009.10736
 
-* [Scrambling and Lyapunov Exponent in Unitary Networks with Tunable Interactions](https://arxiv.org/abs/2009.10104), Anna Keselman, Laimei Nie, Erez Berg, arxiv:2009.10104
+* [Scrambling and Lyapunov exponent in spatially extended systems](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.L121111), Anna Keselman, Laimei Nie, Erez Berg, PhysRev[B,103,L121111] [arxiv:2009.10104]
 
 * [Entanglement Hamiltonian Tomography in Quantum Simulation](https://arxiv.org/abs/2009.09000), Christian Kokail, Rick van Bijnen, Andreas Elben, Benoît Vermersch, Peter Zoller, arxiv:2009.09000
 
