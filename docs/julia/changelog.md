@@ -6,7 +6,7 @@
 [ITensors v0.1.41](https://github.com/ITensor/ITensors.jl/tree/v0.1.41) Release Notes
 ==============================
 
-- Fixed: doc link is broken (#599)
+- Fixed: doc link is broken (Issue #599)
 - Add documentation for space function for built-in site types (PR #590) (@mtfishman)
 - Remove size type parameter from ITensor and IndexSet [WIP] (PR #591) (@kshyatt)
 - Add Qubit sites and operators (PR #592) (@emstoudenmire)
