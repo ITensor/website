@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Inducing a many-body topological state of matter through Coulomb-engineered local interaction](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.3.013265), M. Rösner and J. L. Lado, PhysRev[Research,3,013265] (2021)
+
 * [Improving the accuracy and efficiency of quantum connected moments expansions](https://arxiv.org/abs/2103.09124), Daniel Claudino, Bo Peng, Nicholas P. Bauman, Karol Kowalski, Travis S. Humble, arxiv:2103.09124
 
 * [Triangular lattice Majorana-Hubbard model: Mean-field theory and DMRG on a width-4 torus](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.115128), Tarun Tummuru, Alberto Nocera, and Ian Affleck, PhysRev[B,103,115128] (2021)
