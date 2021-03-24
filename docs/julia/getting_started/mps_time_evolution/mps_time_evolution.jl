@@ -48,7 +48,7 @@ let
   # Do the time evolution by applying the gates
   # for Nsteps steps
   for step=1:Nsteps
-    psi = apply(gates, psi; cutoff)
+    psi = apply(gates, psi; cutoff=cutoff)
     t += tau
     Sz = measure_Sz(psi,c)
     println("$t $Sz")
