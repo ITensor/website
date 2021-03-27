@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Dynamical Phase Transitions in models of Collective Neutrino Oscillations](https://arxiv.org/abs/2103.11497), Alessandro Roggero, arxiv:2103.11497
+
+* [On Stark Many-body localization perturbed by harmonic potential](https://arxiv.org/abs/2103.11699), Ruixiao Yao, Titas Chanda, Jakub Zakrzewski, arxiv:2103.11699
+
 * [Inducing a many-body topological state of matter through Coulomb-engineered local interaction](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.3.013265), M. Rösner and J. L. Lado, PhysRev[Research,3,013265] (2021)
 
 * [Improving the accuracy and efficiency of quantum connected moments expansions](https://arxiv.org/abs/2103.09124), Daniel Claudino, Bo Peng, Nicholas P. Bauman, Karol Kowalski, Travis S. Humble, arxiv:2103.09124
@@ -118,7 +122,7 @@
 
 * [Dissipative dynamics in isolated quantum spin chains after a local quench](https://arxiv.org/abs/2010.00700), Yantao Wu, arxiv:2010.00700
 
-* [Matrix product state recursion methods for strongly correlated quantum systems](https://arxiv.org/abs/2010.00213), Yifan Tian, Steven R. White, arxiv:2010.00213
+* [Matrix product state recursion methods for strongly correlated quantum systems](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.125142), Yifan Tian, Steven R. White, PhysRev[B,103,125142] [arxiv:2010.00213]
 
 * [Coupled dimer and bond-order-wave order in the quarter-filled one-dimensional Kondo lattice model](https://arxiv.org/abs/2009.13089), Yixuan Huang, D. N. Sheng, C. S. Ting, arxiv:2009.13089
 
