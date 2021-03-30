@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Operator front broadening in chaotic and integrable quantum chains](https://arxiv.org/abs/2103.13414), Javier Lopez-Piqueres, Brayden Ware, Sarang Gopalakrishnan, Romain Vasseur, arxiv:2103.13414
+
 * [Dynamical Phase Transitions in models of Collective Neutrino Oscillations](https://arxiv.org/abs/2103.11497), Alessandro Roggero, arxiv:2103.11497
 
 * [On Stark Many-body localization perturbed by harmonic potential](https://arxiv.org/abs/2103.11699), Ruixiao Yao, Titas Chanda, Jakub Zakrzewski, arxiv:2103.11699
