@@ -16,6 +16,14 @@
 * [[Getting Started with MPS time evolution|getting_started/mps_time_evolution]]
 * Getting Started with quantum circuits (coming soon)
 
+## Next Steps
+
+* Browse the main <a href="https://itensor.github.io/ITensors.jl/stable/">Julia ITensors.jl documentation</a>. Be sure to check out the <a href="https://itensor.github.io/ITensors.jl/stable/AdvancedUsageGuide.html">Advanced Usage Guide</a>
+
+* Browse some [[example codes|formulas]] for common tasks, such as measuring entanglement of an MPS, or setting up two-dimensional DMRG calculations.
+
+* Read the <a href="https://arxiv.org/abs/2007.14822">ITensor Paper</a> for a long-form introduction to the design and main features of the ITensor library.
+
 
 ## Julia Language Tutorials and Resources
 
