@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Quantum Phase Transition of Many Interacting Spins Coupled to a Bosonic Bath: static and dynamical properties](https://arxiv.org/abs/2103.16222), G. De Filippis, A. de Candia, A. S. Mishchenko, L. M. Cangemi, A. Nocera, P. A. Mishchenko, M. Sassetti, R. Fazio, N. Nagaosa, V. Cataudella, arxiv:2103.16222
+
+* [Quantum dots as parafermion detectors](https://arxiv.org/abs/2103.16278), Raphael L. R. C. Teixeira, Luis G. G. V. Dias da Silva, arxiv:2103.16278
+
 * [Operator front broadening in chaotic and integrable quantum chains](https://arxiv.org/abs/2103.13414), Javier Lopez-Piqueres, Brayden Ware, Sarang Gopalakrishnan, Romain Vasseur, arxiv:2103.13414
 
 * [Dynamical Phase Transitions in models of Collective Neutrino Oscillations](https://arxiv.org/abs/2103.11497), Alessandro Roggero, arxiv:2103.11497
