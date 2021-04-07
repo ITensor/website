@@ -37,6 +37,7 @@ let
   # function <c^\dagger_i c_j> using
   # efficient MPS techniques:
   #
+  orthogonalize!(psi,1)
   C = zeros(N,N)
   L = ITensor(1.)
   for i=1:N
