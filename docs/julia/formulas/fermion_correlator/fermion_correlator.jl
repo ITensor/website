@@ -3,7 +3,7 @@
 # function <c^\dagger_i c_j> using
 # efficient MPS techniques:
 #
-M = zeros(N,N)
+C = zeros(N,N)
 L = ITensor(1.)
 for i=1:N
   Li = L*psi[i]*op("Cdag",s,i)*dag(prime(psi[i]))
@@ -13,7 +13,7 @@ for i=1:N
     LiF *= psi[j]
     cij = LiF*op("C",s,j)*dag(prime(prime(psi[j],"Site"),lind))
     C[i,j] = scalar(cij)
-    C[j,i] = M[i,j]
+    C[j,i] = conj(C[i,j])
     LiF *= op("F",s,j)*dag(prime(psi[j]))
   end
   L *= psi[i]*dag(prime(psi[i],"Link"))
