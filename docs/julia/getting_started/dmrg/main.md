@@ -1,7 +1,7 @@
 # Getting Started with DMRG
 
-The density matrix renormalization group (DMRG) is an
-algorithm for computing eigenstates
+The [density matrix renormalization group (DMRG)](https://tensornetwork.org/mps/algorithms/dmrg/)
+is an algorithm for computing eigenstates
 of Hamiltonians (or extremal eigenvectors of large, Hermitian matrices). 
 It computes these eigenstates in the 
 [matrix product state (MPS)](https://tensornetwork.org/mps/) format.
