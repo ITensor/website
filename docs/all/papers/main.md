@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Stripe order in the doped Hubbard model on the honeycomb lattice](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.155110), Xu Yang, Hao Zheng, and Mingpu Qin, PhysRev[B,103,155110] (2021)
+
 * [Universal information of critical quantum spin chains from wavefunction overlaps](https://arxiv.org/abs/2104.00103), Yijian Zou, arxiv:2104.00103
 
 * [Quantum Phase Transition of Many Interacting Spins Coupled to a Bosonic Bath: static and dynamical properties](https://arxiv.org/abs/2103.16222), G. De Filippis, A. de Candia, A. S. Mishchenko, L. M. Cangemi, A. Nocera, P. A. Mishchenko, M. Sassetti, R. Fazio, N. Nagaosa, V. Cataudella, arxiv:2103.16222
