@@ -32,6 +32,8 @@ let
 
   energy,psi = dmrg(H,psi0,sweeps)
 
+  Ci = correlator(psi,"Cdag","C")
+
   # 
   # Compute two-point correlation
   # function <c^\dagger_i c_j> using
@@ -84,6 +86,7 @@ let
     display(Ccheck);println()
 
     @show norm(C-Ccheck)
+    @show norm(Ci-Ccheck)
   end
 
   return

@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Truncation effects in the charge representation of the O(2) model](https://arxiv.org/abs/2104.06342), Jin Zhang, Yannick Meurice, Shan-Wen Tsai, arxiv:2104.06342
+
+* [Quantum criticality in dimerised anisotropic spin-1 chains](https://arxiv.org/abs/2104.06649), Satoshi Ejima, Florian Lange, Holger Fehske, arxiv:2104.06649
+
 * [Stripe order in the doped Hubbard model on the honeycomb lattice](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.103.155110), Xu Yang, Hao Zheng, and Mingpu Qin, PhysRev[B,103,155110] (2021)
 
 * [Universal information of critical quantum spin chains from wavefunction overlaps](https://arxiv.org/abs/2104.00103), Yijian Zou, arxiv:2104.00103
