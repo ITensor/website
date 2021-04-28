@@ -56,6 +56,7 @@ as well as limits on the maximum bond dimension (`maxdim` keyword argument).
     wf = (psi[3] * psi[4]) * G
     noprime!(wf)
 
+    inds3 = uniqueinds(psi[3],psi[4])
     U,S,V = svd(wf,inds(psi[3]),cutoff=1E-8)
     psi[3] = U
     psi[4] = S*V
