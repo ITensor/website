@@ -41,7 +41,7 @@ Assign these two tensors back into the MPS to update it.
     psi[4] = S*V
 
 The call to `uniqueinds(psi[3])` analyzes the indices of `psi[3]` and `psi[4]` 
-and finds any which are unique to just `psi[3]`, returning this collection of indices into `inds3`.
+and finds any which are unique to just `psi[3]`, saving this collection of indices as `inds3`.
 Passing this collection of indices to the `svd` function tells it to treat any indices 
 that are unique to `psi[3]` as the indices which should go onto the `U` tensor afterward.
 We also set a truncation error cutoff of 1E-8 in the call to `svd` to truncate 
