@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Flavour-selective localization in interacting lattice fermions via SU(N) symmetry breaking](https://arxiv.org/abs/2104.13338), Daniele Tusi, Lorenzo Franchi, Lorenzo Francesco Livi, Karla Baumann, Daniel Benedicto Orenes, Lorenzo Del Re, Rafael Emilio Barfknecht, Tianwei Zhou, Massimo Inguscio, Giacomo Cappellini, Massimo Capone, Jacopo Catani, Leonardo Fallani, arxiv:2104.13338
+
 * [Fate of measurement-induced phase transition in long-range interactions](https://arxiv.org/abs/2104.09118), Takaaki Minato, Koudai Sugimoto, Tomotaka Kuwahara, Keiji Saito, arxiv:2104.09118
 
 * [Ground State Phase Diagram of the t-t′-J model](https://arxiv.org/abs/2104.10149), Shengtao Jiang, Douglas J. Scalapino, Steven R. White, arxiv:2104.10149
