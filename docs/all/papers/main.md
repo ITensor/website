@@ -8,6 +8,12 @@
  
 ## 2021
 
+* [Fate of measurement-induced phase transition in long-range interactions](https://arxiv.org/abs/2104.09118), Takaaki Minato, Koudai Sugimoto, Tomotaka Kuwahara, Keiji Saito, arxiv:2104.09118
+
+* [Ground State Phase Diagram of the t-t′-J model](https://arxiv.org/abs/2104.10149), Shengtao Jiang, Douglas J. Scalapino, Steven R. White, arxiv:2104.10149
+
+* [Learning Neural Network Quantum States with the Linear Method](https://arxiv.org/abs/2104.11011), J. Thorben Frank, Michael J. Kastoryano, arxiv:2104.11011
+
 * [Truncation effects in the charge representation of the O(2) model](https://arxiv.org/abs/2104.06342), Jin Zhang, Yannick Meurice, Shan-Wen Tsai, arxiv:2104.06342
 
 * [Quantum criticality in dimerised anisotropic spin-1 chains](https://arxiv.org/abs/2104.06649), Satoshi Ejima, Florian Lange, Holger Fehske, arxiv:2104.06649
