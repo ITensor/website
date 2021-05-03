@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Spatiotemporal crossover between low- and high-temperature dynamical regimes in the quantum Heisenberg magnet](https://arxiv.org/abs/2104.13393), Maxime Dupont, Nicholas E. Sherman, Joel E. Moore, arxiv:2104.13393
+
+* [Stripe versus superconductivity in the doped Hubbard model on the honeycomb lattice](https://arxiv.org/abs/2104.14160), Mingpu Qin, arxiv:2104.14160
+
 * [Flavour-selective localization in interacting lattice fermions via SU(N) symmetry breaking](https://arxiv.org/abs/2104.13338), Daniele Tusi, Lorenzo Franchi, Lorenzo Francesco Livi, Karla Baumann, Daniel Benedicto Orenes, Lorenzo Del Re, Rafael Emilio Barfknecht, Tianwei Zhou, Massimo Inguscio, Giacomo Cappellini, Massimo Capone, Jacopo Catani, Leonardo Fallani, arxiv:2104.13338
 
 * [Fate of measurement-induced phase transition in long-range interactions](https://arxiv.org/abs/2104.09118), Takaaki Minato, Koudai Sugimoto, Tomotaka Kuwahara, Keiji Saito, arxiv:2104.09118
