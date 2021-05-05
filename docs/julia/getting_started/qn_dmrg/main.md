@@ -133,43 +133,6 @@ where "Z0" refers to the @@S^z=0@@ state of a spin-one spin.
 Finally, the same kind of logic as above applies to other
 physical site types, whether "S=1/2", "Electron", "Boson",
 etc.
-## Setting Other Total QN Values
-
-The above example shows the case of setting a total "Sz" quantum
-number of zero, since the initial state alternates between "Up"
-and "Dn" on every site with an even number of sites.
-
-To obtain other total QN values, just set the initial state to
-be one which has the total QN you want. To be concrete
-let's take the example of a system with `N=10` sites of 
-``S=1`` spins.
-
-For example if you want a total "Sz" of +20 (= `QN("Sz",20)`) in ITensor units,
-or ``S^z=10`` in physical units, for a system with 10 sites, 
-use the initial state:
-```julia
-state = ["Up" for n=1:N]
-psi0 = productMPS(sites,state)
-```
-Or to initialize this 10-site system to have a total "Sz" of +16
-in ITensor units (``S^z=8`` in physical units):
-```julia
-state = ["Dn","Up","Up","Up","Up","Up","Up","Up","Up","Up"]
-psi0 = productMPS(sites,state)
-```
-would work (as would any `state` with one "Dn" and nine "Up"'s
-in any order).
-Or you could initialize to a total "Sz" of +18
-in ITensor units (``S^z=9`` in physical units) as
-```julia
-state = ["Z0","Up","Up","Up","Up","Up","Up","Up","Up","Up"]
-psi0 = productMPS(sites,state)
-```
-where "Z0" refers to the ``S^z=0`` state of a spin-one spin.
-
-Finally, the same kind of logic as above applies to other
-physical site types, whether "S=1/2", "Electron", "Boson",
-etc.
 
 ## Putting it All Together
 
