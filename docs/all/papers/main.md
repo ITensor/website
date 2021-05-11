@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Comparison of the multi-layer multi-configuration time-dependent Hartree ML-MCTDH method and the density matrix renormalization group for ground state properties of linear rotor chains](https://doi.org/10.1063/5.0047090),  Samrit Mainali1, Fabien Gatti1, Dmitri Iouchtchenko, Pierre-Nicholas Roy, and Hans-Dieter Meyer, <i style="color:#CC0000">J. Chem. Phys.</i> <b>154</b>, <a href="https://doi.org/10.1063/5.0047090">174106</a> (2021)
+
 * [Spatiotemporal crossover between low- and high-temperature dynamical regimes in the quantum Heisenberg magnet](https://arxiv.org/abs/2104.13393), Maxime Dupont, Nicholas E. Sherman, Joel E. Moore, arxiv:2104.13393
 
 * [Stripe versus superconductivity in the doped Hubbard model on the honeycomb lattice](https://arxiv.org/abs/2104.14160), Mingpu Qin, arxiv:2104.14160
