@@ -289,8 +289,8 @@ sites = siteinds("S=1",N; conserve_qns=true)
 <span style="color:#5081AA"># Create 1d Heisenberg Hamiltonian</span>
 ampo = AutoMPO()
 for j = 1:N-1
-  ampo += 0.5,"S+",j,"S-",j+1
-  ampo += 0.5,"S-",j,"S+",j+1
+  ampo += 1/2,"S+",j,"S-",j+1
+  ampo += 1/2,"S-",j,"S+",j+1
   ampo +=     "Sz",j,"Sz",j+1
 end
 
@@ -298,13 +298,12 @@ H = MPO(ampo,sites)
 
 <span style="color:#5081AA"># Choose initial wavefunction</span>
 <span style="color:#5081AA"># to be a product state</span>
-state = [isodd(n) ? "Up" : "Dn" for n in 1:N]
-psi0 = productMPS(sites,state)
+psi0 = productMPS(sites,n->isodd(n) ? "Up" : "Dn")
 
 <span style="color:#5081AA"># Perform 5 sweeps of DMRG</span>
 sweeps = Sweeps(5)
 <span style="color:#5081AA"># Specify max number of states kept each sweep</span>
-maxdim!(sweeps,50,50,100,100,200)
+setmaxdim!(sweeps,50,50,100,100,200)
 
 <span style="color:#5081AA"># Run the DMRG algorithm</span>
 energy,psi = dmrg(H,psi0,sweeps)
@@ -312,14 +311,9 @@ energy,psi = dmrg(H,psi0,sweeps)
 <span style="color:#5081AA"># Continue to analyze wavefunction afterward </span>
 @show inner(psi,H,psi) <span style="color:#5081AA"># &lt;psi|H|psi&gt;</span>
 
+sz = expect(psi,"Sz")
 for j=1:N
-  <span style="color:#5081AA"># Make site j the MPS "orthogonality center"</span>
-  orthogonalize!(psi,j)
-  <span style="color:#5081AA"># Measure magnetization on site j</span>
-  Szj = scalar(psi[j]
-        * op(sites,"Sz",j)
-        * dag(prime(psi[j],"Site")))
-  println("Sz_$j = $Szj")
+  println("Sz_$j = ",sz[j])
 end
 
 </pre>
