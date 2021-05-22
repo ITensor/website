@@ -311,6 +311,7 @@ energy,psi = dmrg(H,psi0,sweeps)
 <span style="color:#5081AA"># Continue to analyze wavefunction afterward </span>
 @show inner(psi,H,psi) <span style="color:#5081AA"># &lt;psi|H|psi&gt;</span>
 
+<span style="color:#5081AA">//Measure expected value of "Sz" operator on every site </span>
 sz = expect(psi,"Sz")
 for j=1:N
   println("Sz_$j = ",sz[j])
