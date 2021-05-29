@@ -27,9 +27,9 @@ Fermion and FermionSite are defined in the file "itensor/mps/sites/fermion.h"
 
 ## States of a FermionSite
 
-* `"Emp"` &mdash; the vacuum (empty) state
+* `"Emp"` or `"0"` &mdash; the vacuum (empty) state
 
-* `"Occ"` &mdash; the occupied state (one particle)
+* `"Occ"` or `"1"` &mdash; the occupied state (one particle)
 
 ## Operators Provided by FermionSite
 
