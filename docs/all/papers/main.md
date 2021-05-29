@@ -8,6 +8,18 @@
  
 ## 2021
 
+* [Observation of fractional edge excitations in nanographene spin chains](https://arxiv.org/abs/2105.09102), Shantanu Mishra, Goncalo Catarina, Fupeng Wu, Ricardo Ortiz, David Jacob, Kristjan Eimre, Ji Ma, Carlo A. Pignedoli, Xinliang Feng, Pascal Ruffieux, Joaquin Fernandez-Rossier, Roman Fasel, arxiv:2105.09102
+
+* [Holographic dynamics simulations with a trapped ion quantum computer](https://arxiv.org/abs/2105.09324), Eli Chertkov, Justin Bohnet, David Francois, John Gaebler, Dan Gresh, Aaron Hankin, Kenny Lee, Ra'anan Tobey, David Hayes, Brian Neyenhuis, Russell Stutz, Andrew C. Potter, Michael Foss-Feig, arxiv:2105.09324
+
+* [Probing Equilibrium and Dynamical Criticality Through Single-Site Observables](https://arxiv.org/abs/2105.05986), Ceren B. Dağ, Philipp Uhrich, Jad C. Halimeh, arxiv:2105.05986
+
+* [Motif magnetism and quantum many-body scars](https://arxiv.org/abs/2105.04567), Eli Chertkov, Bryan K. Clark, arxiv:2105.04567
+
+* [Multipartite nonlocality in one-dimensional quantum spin chains at finite temperatures](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.103.052205), Zhao-Yu Sun, Meng Li, Long-Hui Sheng, and Bin Guo, PhysRev[A,103,052205]
+
+* [Cluster many-body expansion: a many-body expansion of the electron correlation energy about a cluster mean-field reference](https://arxiv.org/abs/2105.10548), Vibin Abraham, Nicholas Mayhall, arxiv:2105.10548
+
 * [Quantum Phases of Transition Metal Dichalcogenide Moiré Systems](https://arxiv.org/abs/2105.07008), Yiqing Zhou, D. N. Sheng, Eun-Ah Kim, arxiv:2105.07008
 
 * [Comparison of the multi-layer multi-configuration time-dependent Hartree ML-MCTDH method and the density matrix renormalization group for ground state properties of linear rotor chains](https://doi.org/10.1063/5.0047090),  Samrit Mainali1, Fabien Gatti1, Dmitri Iouchtchenko, Pierre-Nicholas Roy, and Hans-Dieter Meyer, <i style="color:#CC0000">J. Chem. Phys.</i> <b>154</b>, <a href="https://doi.org/10.1063/5.0047090">174106</a> (2021)
