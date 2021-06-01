@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Athena: High-Performance Sparse Tensor Contraction Sequence on Heterogeneous Memory](http://pasalabs.org/papers/2021/ICS21_athena.pdf), Jiawen Liu, Dong Li, Roberto Gioiosa, Jiajia Li, In 2021 International Conference on Supercomputing (ICS ’21), June 14–17, 2021, Virtual Event, USA. ACM, New York, NY, USA, 13 pages. https: //doi.org/10.1145/3447818.3460355
+
 * [Observation of fractional edge excitations in nanographene spin chains](https://arxiv.org/abs/2105.09102), Shantanu Mishra, Goncalo Catarina, Fupeng Wu, Ricardo Ortiz, David Jacob, Kristjan Eimre, Ji Ma, Carlo A. Pignedoli, Xinliang Feng, Pascal Ruffieux, Joaquin Fernandez-Rossier, Roman Fasel, arxiv:2105.09102
 
 * [Holographic dynamics simulations with a trapped ion quantum computer](https://arxiv.org/abs/2105.09324), Eli Chertkov, Justin Bohnet, David Francois, John Gaebler, Dan Gresh, Aaron Hankin, Kenny Lee, Ra'anan Tobey, David Hayes, Brian Neyenhuis, Russell Stutz, Andrew C. Potter, Michael Foss-Feig, arxiv:2105.09324
