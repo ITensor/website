@@ -24,6 +24,7 @@ Formulas about working with ITensors, Index, etc.
 Formulas involving matrix product states and DMRG.
 
 * <h3>MPS Basics & Updating MPS</h3>
+    - [[Obtaining Elements or Components of a Tensor Represented as an MPS|formulas/mps_element]]
     - [[Applying a one-site operator to an MPS|formulas/mps_onesite_op]]
     - [[Applying a two-site 'gate' to an MPS|formulas/gate]]
 
