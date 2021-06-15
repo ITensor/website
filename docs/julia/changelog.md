@@ -2,6 +2,14 @@
 
 <!-- ## Link to [Development Version](https://github.com/ITensor/ITensors.jl) (master branch) -->
 
+<a name="v0.2.1"></a>
+[ITensors v0.2.1](https://github.com/ITensor/ITensors.jl/tree/v0.2.1) Release Notes
+==============================
+
+- Fix MPS product state constructor to use new state function system, and fix some incorrect site type overloads (for Fermion and S=1/2) (PR #685)
+- Improve and update documentation in various places
+
+
 <a name="v0.2.0"></a>
 [ITensors v0.2.0](https://github.com/ITensor/ITensors.jl/tree/v0.2.0) Release Notes
 ==============================
