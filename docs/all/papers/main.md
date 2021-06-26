@@ -8,6 +8,14 @@
  
 ## 2021
 
+* [Frustrated mixed-spin ladders: An intermediate phase between rung-singlet and Haldane phases](https://arxiv.org/abs/2106.07940), N. Ahmadi, J. Abouie, R. Haghshenas, arxiv:2106.07940
+
+* [Duality approach to quantum annealing of the 3-XORSAT problem](https://arxiv.org/abs/2106.06344), Raimel Medina, Maksym Serbyn, arxiv:2106.06344
+
+* [Cold atoms meet lattice gauge theory](https://arxiv.org/abs/2106.03063), Monika Aidelsburger, Luca Barbiero, Alejandro Bermudez, Titas Chanda, Alexandre Dauphin, Daniel González-Cuadra, Przemysław R. Grzybowski, Simon Hands, Fred Jendrzejewski, Johannes Jünemann, Gediminas Juzeliunas, Valentin Kasper, Angelo Piga, Shi-Ju Ran, Matteo Rizzi, Gérman Sierra, Luca Tagliacozzo, Emanuele Tirrito, Torsten V. Zache, Jakub Zakrzewski, Erez Zohar, Maciej Lewenstein, arxiv:2106.03063
+
+* [Simulating a measurement-induced phase transition for trapped ion circuits](https://arxiv.org/abs/2106.03769), Stefanie Czischek, Giacomo Torlai, Sayonee Ray, Rajibul Islam, Roger G. Melko, arxiv:2106.03769
+
 * [Athena: High-Performance Sparse Tensor Contraction Sequence on Heterogeneous Memory](http://pasalabs.org/papers/2021/ICS21_athena.pdf), Jiawen Liu, Dong Li, Roberto Gioiosa, Jiajia Li, In 2021 International Conference on Supercomputing (ICS ’21), June 14–17, 2021, Virtual Event, USA. ACM, New York, NY, USA, 13 pages. https: //doi.org/10.1145/3447818.3460355
 
 * [Observation of fractional edge excitations in nanographene spin chains](https://arxiv.org/abs/2105.09102), Shantanu Mishra, Goncalo Catarina, Fupeng Wu, Ricardo Ortiz, David Jacob, Kristjan Eimre, Ji Ma, Carlo A. Pignedoli, Xinliang Feng, Pascal Ruffieux, Joaquin Fernandez-Rossier, Roman Fasel, arxiv:2105.09102
