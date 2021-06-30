@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Provably efficient machine learning for quantum many-body problems](https://arxiv.org/abs/2106.12627), Hsin-Yuan Huang, Richard Kueng, Giacomo Torlai, Victor V. Albert, John Preskill, arxiv:2106.12627
+
+* [A tensor network representation of path integrals: Implementation and analysis](https://arxiv.org/abs/2106.12523), Amartya Bose, Peter L. Walters, arxiv:2106.12523
+
 * [Frustrated mixed-spin ladders: An intermediate phase between rung-singlet and Haldane phases](https://arxiv.org/abs/2106.07940), N. Ahmadi, J. Abouie, R. Haghshenas, arxiv:2106.07940
 
 * [Duality approach to quantum annealing of the 3-XORSAT problem](https://arxiv.org/abs/2106.06344), Raimel Medina, Maksym Serbyn, arxiv:2106.06344
