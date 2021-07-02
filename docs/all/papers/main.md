@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [A Pairwise Connected Tensor Network Representation of Path Integrals](https://arxiv.org/abs/2106.14934), Amartya Bose, arxiv:2106.14934
+
 * [Provably efficient machine learning for quantum many-body problems](https://arxiv.org/abs/2106.12627), Hsin-Yuan Huang, Richard Kueng, Giacomo Torlai, Victor V. Albert, John Preskill, arxiv:2106.12627
 
 * [A tensor network representation of path integrals: Implementation and analysis](https://arxiv.org/abs/2106.12523), Amartya Bose, Peter L. Walters, arxiv:2106.12523
