@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Non-Hermitian many-body topological excitations in interacting quantum dots](https://arxiv.org/abs/2106.15690), Timo Hyart, Jose L. Lado, arxiv:2106.15690
+
 * [A Pairwise Connected Tensor Network Representation of Path Integrals](https://arxiv.org/abs/2106.14934), Amartya Bose, arxiv:2106.14934
 
 * [Provably efficient machine learning for quantum many-body problems](https://arxiv.org/abs/2106.12627), Hsin-Yuan Huang, Richard Kueng, Giacomo Torlai, Victor V. Albert, John Preskill, arxiv:2106.12627
