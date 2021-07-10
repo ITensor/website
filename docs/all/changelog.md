@@ -1,5 +1,14 @@
 # Change Log (C++)
 
+<a name="v3.1.8"></a>
+## [Version 3.1.8](https://github.com/ITensor/ITensor/tree/v3.1.8) (Jul 10, 2021)
+
+- Fix missing return value MPO.svdBond method (thanks to Walter Hahn for recognizing this issue)
+- Remove the make warnings on comparing size_t and int values (PR #385 Mingru Yang)
+- Add syntax highlighting to readme (PR #387)
+- Improvements to SVD backend options (PR #386 Daniel Bauernfeind)
+- Update is_pod trait and improve .gitignore (PR #388 #391 Tanmoy B.)
+
 <a name="v3.1.7"></a>
 ## [Version 3.1.7](https://github.com/ITensor/ITensor/tree/v3.1.7) (Feb 8, 2021)
 
