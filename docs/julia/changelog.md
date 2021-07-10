@@ -2,6 +2,15 @@
 
 <!-- ## Link to [Development Version](https://github.com/ITensor/ITensors.jl) (master branch) -->
 
+<a name="v0.2.3"></a>
+[ITensors v0.2.3](https://github.com/ITensor/ITensors.jl/tree/v0.2.3) Release Notes
+==============================
+
+- Make ITensors evaluate as unequal if they have different indices (#690) (@mtfishman)
+- Update Documenter version to 0.27 (#691) (@emstoudenmire)
+- Update Tutorials.md, correcting typo "Boson SiteType" (#692) (@jtschneider)
+- Add denseblocks to convert from DiagBlockSparse to BlockSparse tensor (#693) (@mtfishman)
+
 <a name="v0.2.2"></a>
 [ITensors v0.2.2](https://github.com/ITensor/ITensors.jl/tree/v0.2.2) Release Notes
 ==============================
