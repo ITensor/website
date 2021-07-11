@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Quenching the Anderson impurity model at finite temperature: Entanglement and bath dynamics using matrix product states](https://arxiv.org/abs/2107.02807), Lucas Kohn, Giuseppe E. Santoro, arxiv:2107.02807
+
 * [Non-Hermitian many-body topological excitations in interacting quantum dots](https://arxiv.org/abs/2106.15690), Timo Hyart, Jose L. Lado, arxiv:2106.15690
 
 * [A Pairwise Connected Tensor Network Representation of Path Integrals](https://arxiv.org/abs/2106.14934), Amartya Bose, arxiv:2106.14934
