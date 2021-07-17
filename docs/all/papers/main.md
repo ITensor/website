@@ -8,6 +8,12 @@
  
 ## 2021
 
+* [Disorder enhanced vibrational entanglement and dynamics in polaritonic chemistry](https://arxiv.org/abs/2107.06053), David Wellnitz, Guido Pupillo, Johannes Schachenmayer, arxiv:2107.06053
+
+* [Repulsive dynamics of strongly attractive one-dimensional quantum gases](https://arxiv.org/abs/2107.05594), Maciej Łebek, Andrzej Syrwid, Piotr T. Grochowski, Kazimierz Rzążewski, arxiv:2107.05594
+
+* [Kondo-lattice-mediated interactions in flat band systems](https://arxiv.org/abs/2107.04550), Pramod Kumar, Guangze Chen, J. L. Lado, arxiv:2107.04550
+
 * [Quenching the Anderson impurity model at finite temperature: Entanglement and bath dynamics using matrix product states](https://arxiv.org/abs/2107.02807), Lucas Kohn, Giuseppe E. Santoro, arxiv:2107.02807
 
 * [Non-Hermitian many-body topological excitations in interacting quantum dots](https://arxiv.org/abs/2106.15690), Timo Hyart, Jose L. Lado, arxiv:2106.15690
