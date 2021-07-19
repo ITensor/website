@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [On evidence for quantum Berezinskii-Kosterlitz-Thouless transition in one-dimensional Bose-Hubbard model from on-site atom number fluctuations](https://arxiv.org/abs/2107.06403), Mateusz Łącki, Bogdan Damski, arxiv:2107.06403
+
+* [Emergence of Gaussianity in the thermodynamic limit of interacting fermions](https://arxiv.org/abs/2107.06906), Gabriel Matos, Andrew Hallam, Aydin Deger, Zlatko Papić, Jiannis Pachos, arxiv:2107.06906
+
 * [Disorder enhanced vibrational entanglement and dynamics in polaritonic chemistry](https://arxiv.org/abs/2107.06053), David Wellnitz, Guido Pupillo, Johannes Schachenmayer, arxiv:2107.06053
 
 * [Repulsive dynamics of strongly attractive one-dimensional quantum gases](https://arxiv.org/abs/2107.05594), Maciej Łebek, Andrzej Syrwid, Piotr T. Grochowski, Kazimierz Rzążewski, arxiv:2107.05594
