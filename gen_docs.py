@@ -234,7 +234,7 @@ def generate():
         bodyhtml = convert("".join(mdfile.readlines()),vers,lang)
         mdfile.close()
     else:
-        bodyhtml = "<p>(Documentation file not found)</p>"
+        bodyhtml = "<p>(Documentation file not found)</p><p>If you are looking for documentation for the Julia version, in-depth documentation can be found <a href="https://itensor.github.io/ITensors.jl/stable/index.html">here</a></p>"
 
     # Generate directory tree hyperlinks
     dirlist = page.split('/')
