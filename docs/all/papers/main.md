@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Multimagnon dynamics and thermalization in the S=1 easy-axis ferromagnetic chain](https://arxiv.org/abs/2107.09105), Prakash Sharma, Kyungmin Lee, Hitesh J. Changlani, arxiv:2107.09105
+
 * [On evidence for quantum Berezinskii-Kosterlitz-Thouless transition in one-dimensional Bose-Hubbard model from on-site atom number fluctuations](https://arxiv.org/abs/2107.06403), Mateusz Łącki, Bogdan Damski, arxiv:2107.06403
 
 * [Emergence of Gaussianity in the thermodynamic limit of interacting fermions](https://arxiv.org/abs/2107.06906), Gabriel Matos, Andrew Hallam, Aydin Deger, Zlatko Papić, Jiannis Pachos, arxiv:2107.06906
