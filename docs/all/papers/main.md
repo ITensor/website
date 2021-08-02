@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Infinite randomness with continuously varying critical exponents in the random XYZ spin chain](https://arxiv.org/abs/2107.12937), Brenden Roberts, Olexei I. Motrunich, arxiv:2107.12937
+
+* [Two-fluid coexistence and phase separation in a one dimensional model with pair hopping and density interactions](https://arxiv.org/abs/2107.11132), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, arxiv:2107.11132
+
 * [Multimagnon dynamics and thermalization in the S=1 easy-axis ferromagnetic chain](https://arxiv.org/abs/2107.09105), Prakash Sharma, Kyungmin Lee, Hitesh J. Changlani, arxiv:2107.09105
 
 * [On evidence for quantum Berezinskii-Kosterlitz-Thouless transition in one-dimensional Bose-Hubbard model from on-site atom number fluctuations](https://arxiv.org/abs/2107.06403), Mateusz Łącki, Bogdan Damski, arxiv:2107.06403
