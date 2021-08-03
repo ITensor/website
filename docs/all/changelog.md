@@ -1,5 +1,17 @@
 # Change Log (C++)
 
+<a name="v3.1.9"></a>
+## [Version 3.1.9](https://github.com/ITensor/ITensor/tree/v3.1.9) (Aug 3, 2021)
+
+This release adds support for writing and reading most ITensor objects to HDF5 files compatibly with the Julia version of ITensor. Complex-valued ITensors are not yet supported but will be soon.
+
+* Add reading of MPS and MPO from HDF5 (#397)
+* Add support for writing MPS and MPO to HDF5 (#396)
+* HDF5 Support for QN Index and (Real) QN ITensor (#395)
+* Add HDF5 support for QN (#394)
+* HDF5 for dense real ITensors (#393)
+* Add Checklists.txt for listing best practices
+
 <a name="v3.1.8"></a>
 ## [Version 3.1.8](https://github.com/ITensor/ITensor/tree/v3.1.8) (Jul 10, 2021)
 
