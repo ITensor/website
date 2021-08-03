@@ -9,6 +9,7 @@ like to see.
 * [[Creating your own "driver" code that builds against ITensor|formulas/driver]]
 * [[Running your program in debug mode|formulas/debug_mode]]
 * [[Reading input from a file|formulas/input]]
+* [[Writing and reading ITensor objects to and from HDF5 files|formulas/hdf5]]
 
 ## ITensor Formulas
 Formulas about working with ITensors, Index, etc.
