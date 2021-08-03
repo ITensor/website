@@ -44,11 +44,12 @@ Note that you must pass the expected type as a template parameter
 (here `<ITensor>`) to the `h5_read` function. To read another type
 such as an `MPS`, you would use `h5_read<MPS>`. 
 
-## Full list of supported types
+## List of supported types
 
 - TagSet
 - QN
 - Index (both regular Index and Index with QN blocks)
+- IndexSet
 - ITensor
   * dense, real storage
   * QN block-sparse, real storage
