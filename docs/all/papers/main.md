@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Entanglement Entropy Transitions with Random Tensor Networks](https://arxiv.org/abs/2108.02225), Ryan Levy, Bryan K. Clark, arxiv:2108.02225
+
 * [Infinite randomness with continuously varying critical exponents in the random XYZ spin chain](https://arxiv.org/abs/2107.12937), Brenden Roberts, Olexei I. Motrunich, arxiv:2107.12937
 
 * [Two-fluid coexistence and phase separation in a one dimensional model with pair hopping and density interactions](https://arxiv.org/abs/2107.11132), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, arxiv:2107.11132
