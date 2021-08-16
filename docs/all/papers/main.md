@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Density-Matrix Renormalization Group for Continuous Quantum Systems](https://arxiv.org/abs/2108.05366), Shovan Dutta, Anton Buyskikh, Andrew J. Daley, Erich J. Mueller, arxiv:Shovan Dutta, Anton Buyskikh, Andrew J. Daley, Erich J. Mueller, arxiv:2108.05366
+
 * [Entanglement Entropy Transitions with Random Tensor Networks](https://arxiv.org/abs/2108.02225), Ryan Levy, Bryan K. Clark, arxiv:2108.02225
 
 * [Infinite randomness with continuously varying critical exponents in the random XYZ spin chain](https://arxiv.org/abs/2107.12937), Brenden Roberts, Olexei I. Motrunich, arxiv:2107.12937
