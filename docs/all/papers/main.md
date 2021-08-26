@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Coexistence of non-Abelian chiral spin liquid and magnetic order in a spin-1 antiferromagnet](https://arxiv.org/abs/2108.06676), Yixuan Huang, W. Zhu, Shou-Shu Gong, Hong-Chen Jiang, D. N. Sheng, arxiv:2108.06676
+
+* [Thermalisation Dynamics and Spectral Statistics of Extended Systems with Thermalising Boundaries](https://arxiv.org/abs/2108.07742), Pavel Kos, Tomaz Prosen, Bruno Bertini, arxiv:2108.07742
+
 * [Density-Matrix Renormalization Group for Continuous Quantum Systems](https://arxiv.org/abs/2108.05366), Shovan Dutta, Anton Buyskikh, Andrew J. Daley, Erich J. Mueller, arxiv:Shovan Dutta, Anton Buyskikh, Andrew J. Daley, Erich J. Mueller, arxiv:2108.05366
 
 * [Entanglement Entropy Transitions with Random Tensor Networks](https://arxiv.org/abs/2108.02225), Ryan Levy, Bryan K. Clark, arxiv:2108.02225
