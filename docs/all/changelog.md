@@ -1,5 +1,11 @@
 # Change Log (C++)
 
+<a name="v3.1.10"></a>
+## [Version 3.1.10](https://github.com/ITensor/ITensor/tree/v3.1.10) (Aug 25, 2021)
+
+- Julia compatible HDF5 Support for Complex Dense and Block Sparse (PR #398)
+- Fixed issue with comparing int to size_t in h5 codes (PR #390)
+
 <a name="v3.1.9"></a>
 ## [Version 3.1.9](https://github.com/ITensor/ITensor/tree/v3.1.9) (Aug 3, 2021)
 
