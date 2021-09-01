@@ -10,6 +10,8 @@
 
 * [Finite time large deviations via matrix product states](https://arxiv.org/abs/2108.11418), Luke Causer, Mari Carmen Bañuls, Juan P. Garrahan, arxiv:2108.11418
 
+* [Fidelity and entanglement entropy for infinite-order phase transitions](https://arxiv.org/abs/2108.09966), Jin Zhang, arxiv:2108.09966
+
 * [Coexistence of non-Abelian chiral spin liquid and magnetic order in a spin-1 antiferromagnet](https://arxiv.org/abs/2108.06676), Yixuan Huang, W. Zhu, Shou-Shu Gong, Hong-Chen Jiang, D. N. Sheng, arxiv:2108.06676
 
 * [Thermalisation Dynamics and Spectral Statistics of Extended Systems with Thermalising Boundaries](https://arxiv.org/abs/2108.07742), Pavel Kos, Tomaz Prosen, Bruno Bertini, arxiv:2108.07742
