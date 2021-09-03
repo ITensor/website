@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Abelian origin of ν=2/3 and 2+2/3 fractional quantum Hall effect](https://arxiv.org/abs/2109.00781), Liangdong Hu, W. Zhu, arxiv:2109.00781
+
+* [Spin-Holstein models in trapped-ion systems](https://arxiv.org/abs/2108.13730), Johannes Knörzer, Tao Shi, Eugene Demler, J. Ignacio Cirac, arxiv:2108.13730
+
 * [Finite time large deviations via matrix product states](https://arxiv.org/abs/2108.11418), Luke Causer, Mari Carmen Bañuls, Juan P. Garrahan, arxiv:2108.11418
 
 * [Fidelity and entanglement entropy for infinite-order phase transitions](https://arxiv.org/abs/2108.09966), Jin Zhang, arxiv:2108.09966
