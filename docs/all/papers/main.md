@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Scrambling under quench](https://arxiv.org/abs/2109.02132), Adith Sai Aramthottil, Diptarka Das, Suchetan Das, Bidyut Dey, arxiv:2109.02132
+
 * [Spin-Holstein models in trapped-ion systems](https://arxiv.org/abs/2108.13730), Johannes Knörzer, Tao Shi, Eugene Demler, J. Ignacio Cirac, arxiv:2108.13730
 
 * [Abelian origin of ν=2/3 and 2+2/3 fractional quantum Hall effect](https://arxiv.org/abs/2109.00781), Liangdong Hu, W. Zhu, arxiv:2109.00781
