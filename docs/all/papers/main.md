@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Melting a Rydberg ice to a topological spin liquid with cavity vacuum fluctuation](https://arxiv.org/abs/2109.03741), H. R. Kong, J. Taylor, Y. Dong, K. S. Choi, arxiv:2109.03741
+
 * [Scrambling under quench](https://arxiv.org/abs/2109.02132), Adith Sai Aramthottil, Diptarka Das, Suchetan Das, Bidyut Dey, arxiv:2109.02132
 
 * [Spin-Holstein models in trapped-ion systems](https://arxiv.org/abs/2108.13730), Johannes Knörzer, Tao Shi, Eugene Demler, J. Ignacio Cirac, arxiv:2108.13730
