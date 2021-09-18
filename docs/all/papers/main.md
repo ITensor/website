@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Fast scrambling dynamics in an all-to-all disordered quantum spin model](https://arxiv.org/abs/2109.05537), Shang-Shu Li, Rui-Zhen Huang, Heng Fan, arxiv:2109.05537
+
+* [Exact hydrodynamic solution of a double domain wall melting in the spin-1/2 XXZ model](https://arxiv.org/abs/2109.05249), Stefano Scopa, Pasquale Calabrese, Jérôme Dubail, arxiv:2109.05249
+
 * [Melting a Rydberg ice to a topological spin liquid with cavity vacuum fluctuation](https://arxiv.org/abs/2109.03741), H. R. Kong, J. Taylor, Y. Dong, K. S. Choi, arxiv:2109.03741
 
 * [Scrambling under quench](https://arxiv.org/abs/2109.02132), Adith Sai Aramthottil, Diptarka Das, Suchetan Das, Bidyut Dey, arxiv:2109.02132
