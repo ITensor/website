@@ -8,6 +8,26 @@
  
 ## 2021
 
+* [Local tensor-network codes](https://arxiv.org/abs/2109.11996), Terry Farrelly, David K. Tuckett, Thomas M. Stace, arxiv:2109.11996
+
+* [Can we observe the many-body localization?](https://arxiv.org/abs/2109.13608), Piotr Sierant, Jakub Zakrzewski, arxiv:2109.13608
+
+* [Subdiffusive hydrodynamics of nearly-integrable anisotropic spin chains](https://arxiv.org/abs/2109.13251), Jacopo De Nardis, Sarang Gopalakrishnan, Romain Vasseur, Brayden Ware, arxiv:2109.13251
+
+* [A Multisite Decomposition of the Tensor Network Path Integrals](https://arxiv.org/abs/2109.09723), Amartya Bose, Peter L. Walters, arxiv:2109.09723
+
+* [Mass imbalance in the ionic Hubbard model: a DRMG study](https://arxiv.org/abs/2109.08716), D. C. Padilla-González, R. Franco, J. Silva-Valencia, arxiv:2109.08716
+
+* [Witnessing quantum criticality and entanglement in the triangular antiferromagnet KYbSe2](https://arxiv.org/abs/2109.11527), A. O. Scheie, E. A. Ghioldi, J. Xing, J. A. M. Paddison, N. E. Sherman, M. Dupont, D.Abernathy, D. M. Pajerowski, Shang-Shun Zhang, L. O. Manuel, A. E. Trumper, C. D. Pemmaraju, A. S. Sefat, D. S. Parker, T. P. Devereaux, J. E. Moore, C. D. Batista, D. A. Tennant, arxiv:2109.11527
+
+* [Quantum Criticality Using a Superconducting Quantum Processor](https://arxiv.org/abs/2109.10909), Maxime Dupont, Joel E. Moore, arxiv:2109.10909
+
+* [Energy transport in Z3 chiral clock model](https://arxiv.org/abs/2109.11230), Naveen Nishad, G J Sreejith, arxiv:2109.11230
+
+* [Charge-density-wave breakdown in a heterostructure with electron-phonon coupling](https://arxiv.org/abs/2109.07197), David Jansen, Christian Jooss, Fabian Heidrich-Meisner, arxiv:2109.07197
+
+* [Propagation of Many-body Localization in an Anderson Insulator](https://arxiv.org/abs/2109.07332), Pietro Brighi, Alexios A. Michailidis, Dmitry A. Abanin, Maksym Serbyn, arxiv:2109.07332
+
 * [Fast scrambling dynamics in an all-to-all disordered quantum spin model](https://arxiv.org/abs/2109.05537), Shang-Shu Li, Rui-Zhen Huang, Heng Fan, arxiv:2109.05537
 
 * [Exact hydrodynamic solution of a double domain wall melting in the spin-1/2 XXZ model](https://arxiv.org/abs/2109.05249), Stefano Scopa, Pasquale Calabrese, Jérôme Dubail, arxiv:2109.05249
