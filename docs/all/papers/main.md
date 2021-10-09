@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Enhanced TEMPO algorithm for quantum path integrals with off-diagonal system-bath coupling: applications to photonic quantum networks](https://arxiv.org/abs/2110.01334), Marten Richter, Stephen Hughes, arxiv:2110.01334
+
 * [Local tensor-network codes](https://arxiv.org/abs/2109.11996), Terry Farrelly, David K. Tuckett, Thomas M. Stace, arxiv:2109.11996
 
 * [Can we observe the many-body localization?](https://arxiv.org/abs/2109.13608), Piotr Sierant, Jakub Zakrzewski, arxiv:2109.13608
