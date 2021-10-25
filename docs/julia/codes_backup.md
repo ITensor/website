@@ -1,7 +1,5 @@
 # ITensor Codes (Julia Language)
 
-[Looking for the C++ codes? [Click here](http://itensor.org/docs.cgi?page=codes&vers=cppv3).]
-
 Open-source codes based on ITensor for a variety projects and tasks.
 If you have a high-quality code you'd like listed here, please
 <a href="about.html">contact us</a>. Codes extending core ITensor

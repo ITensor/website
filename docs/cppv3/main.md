@@ -1,4 +1,14 @@
 
+## Before you Start
+
+<i class="fa fa-desktop" aria-hidden="true"></i> &nbsp; <a href="https://itensor.github.io/ITensors.jl/stable/faq/JuliaAndCpp.html#Should-I-use-the-Julia-or-C-version-of-ITensor?">Which version should I use, Julia or C++?</a> <i style="color:#336699;" class="fa fa-external-link" aria-hidden="true"></i>
+
+## Julia Version of ITensor
+
+<i class="fa fa-list" aria-hidden="true"></i> &nbsp; <a href="https://itensor.github.io/ITensors.jl/stable/" target="_blank">Documentation for the Julia version of ITensor</a> <i style="color:#336699;" class="fa fa-external-link" aria-hidden="true"></i>
+
+## C++ Version of ITensor
+
 <img src="docs/VERSION/install/icon.png" class="icon">  [[Installing ITensor|install]]
 
 <img src="docs/VERSION/book/icon.png" class="icon">   [[The ITensor Book|book]]. A comprehensive introduction to ITensor.

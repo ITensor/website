@@ -1,7 +1,138 @@
 
-# ITensor Codes (C++ version 3 compatible)
+# Sections
 
-[Looking for the Julia codes? [Click here](http://itensor.org/docs.cgi?page=codes&vers=julia).]
+* [Julia ITensor Codes](#julia_codes)
+* [C++ ITensor Version 3 Codes](#cppv3_codes)
+* [C++ ITensor Version 2 Codes](#cppv2_codes)
+
+<a name="julia_codes"></a>
+# Julia ITensor Codes
+
+Open-source codes based on ITensor for a variety projects and tasks.
+If you have a high-quality code you'd like listed here, please
+<a href="about.html">contact us</a>. Codes extending core ITensor
+features may become candidates for inclusion in ITensor at a later date.
+
+(Codes listed as maintained by "ITensor" are officially maintained by the developers
+of the ITensor library and will be tested against and updated along with the ITensor library.
+Other codes are maintained separately from ITensor by the maintainers
+shown next to each code. Please contact them directly if you have any issues 
+with or questions about the codes.)
+
+<br/>
+<br/>
+
+<table id="codes" style="border-collapse: collapse; border-spacing: 10px;">
+
+<tr>
+<td class="name">
+Name
+</td>
+<td class="contrib">
+<b>Maintainers</b>
+</td>
+<td class="descrip">
+<b>Description</b>
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/joselado/dmrgpy" target="_blank"> 
+DMRGPy
+</a> 
+</td>
+<td class="contrib">
+Jose Lado
+</td>
+<td class="descrip">
+DMRGPy is a Python library to compute quasi-one-dimensional spin chains and fermionic systems using matrix product states with DMRG as implemented in ITensor. Most of the computations can be performed both with DMRG and exact diagonalization for small systems, which allows one to benchmark the results.
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/mtfishman/GaussianMatrixProductStates.jl" target="_blank"> 
+Gaussian Matrix Product States
+</a> 
+</td>
+<td class="contrib">
+<a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
+</td>
+<td class="descrip">
+A package for creating the matrix product state (MPS) of a free fermion (Gaussian) state.
+This package uses a technique based on PRB 92, 075132 (arxiv:1504.07701)
+which deterministically computes a nearly optimal MPS approximation of a given
+free fermion or Gaussian state.
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/ITensor/ITensorsGPU.jl" target="_blank"> 
+ITensorsGPU
+</a> 
+</td>
+<td class="contrib">
+Katharine Hyatt
+</td>
+<td class="descrip">
+ITensorsGPU extends the ITensor library by allowing ITensors to have GPU storage. These ITensors are allocated in GPU memory and use fast, parallelized CUDA GPU routines for operations such as tensor contraction and factorization, which can result in very large speedups.
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/ITensor/ITensorsVisualization.jl" target="_blank"> 
+ITensors Visualization
+</a> 
+</td>
+<td class="contrib">
+<a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
+</td>
+<td class="descrip">
+Visualize tensor contractions performed with the ITensor library. The visualizations
+are interactive (tensor positions are draggable) and useful information about indices is shown: 
+line widths correspond to
+dimensions and quantum number is shown when applicable.
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/YiqingZhouKelly/LinQu.jl" target="_blank"> 
+LinQu
+</a> 
+</td>
+<td class="contrib">
+<a href="https://github.com/YiqingZhouKelly">Yiqing Zhou</a>
+</td>
+<td class="descrip">
+Julia library for quantum circuit simulation using tensor networks
+</td>
+</tr>
+
+<tr>
+<td class="name">
+<a href="https://github.com/GTorlai/PastaQ.jl" target="_blank"> 
+PastaQ
+</a> 
+</td>
+<td class="contrib">
+<a href="https://www.simonsfoundation.org/team/giacomo-torlai/">Giacomo Torlai</a><br/>
+<a href="https://www.simonsfoundation.org/team/matthew-fishman/">Matt Fishman</a>
+</td>
+<td class="descrip">
+Package for Simulation, Tomography and Analysis of Quantum Computers. Features include
+simulation of quantum circuits, scalable quantum state tomography (pure and mixed), and 
+scalable quantum process tomography.
+</td>
+</tr>
+
+</table>
+
+<a name="cppv3_codes"></a>
+# ITensor C++ Version 3 Codes
 
 Open-source codes based on ITensor for a variety projects and tasks.
 If you have a high-quality code you'd like listed here, please
@@ -103,7 +234,8 @@ algorithms.
 </table>
 
 
-# ITensor Codes (C++ version 2 compatible)
+<a name="cppv2_codes"></a>
+# ITensor C++ Version 2 Codes
 
 (Codes listed here are maintained separately from ITensor by the maintainers
 shown next to each code. Please contact them directly if you have any issues 

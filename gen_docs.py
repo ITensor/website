@@ -25,11 +25,11 @@ import cgitb; cgitb.enable()
 
 # version name, display name, associated language
 versions = [
-            ["julia","Julia","Julia"],
+            #["julia","Julia","Julia"],
             ["cppv3","C++","C++"], 
             #["cppv2","C++v2","C++"],
             ]
-default_version = "julia"
+default_version = "cppv3"
 
 reldocpath = "docs/"
 prenav_header_fname = "docs_header_prenav.html"
@@ -253,20 +253,19 @@ def generate():
 
     nav = "<span style='float:left;'>" + nav + "</span>"
 
-    # Create version information line
-    vinfo = "<span class='versions' style='float:right;'>"
-    n = 0
-
-    lang = "C++"
-    for (v,vname,vlang) in versions:
-        if n > 0: vinfo += "&nbsp;|&nbsp;"
-        if v == vers:
-            vinfo += "<span style='outline:solid 1px;font-weight:bold;'>%s</span>"%(vname)
-            lang = vlang
-        else:
-            vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page,v,vname)
-        n += 1
-    vinfo += "</span></br>"
+    ## Create version information line
+    #vinfo = "<span class='versions' style='float:right;'>"
+    #n = 0
+    #lang = "C++"
+    #for (v,vname,vlang) in versions:
+    #    if n > 0: vinfo += "&nbsp;|&nbsp;"
+    #    if v == vers:
+    #        vinfo += "<span style='outline:solid 1px;font-weight:bold;'>%s</span>"%(vname)
+    #        lang = vlang
+    #    else:
+    #        vinfo += "<a style='text-decoration:none;' href=\"%s?page=%s&vers=%s\">%s</a>"%(this_fname,page,v,vname)
+    #    n += 1
+    #vinfo += "</span></br>"
 
     #
     # Generate Back-Links
@@ -297,7 +296,7 @@ def generate():
     footer_file = open(footer_fname)
     print "".join(prenav_header_file.readlines())
     print nav
-    print vinfo
+    #print vinfo
     print "".join(postnav_header_file.readlines())
     #if vers == "cppv3" and (not inall):
     #    print "<span style='color:red;'>ITensor version 3 has not been released yet. \
