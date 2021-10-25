@@ -76,11 +76,11 @@ def openFile(fname):
 def printContentType(vers):
     print("Content-Type: text/html")
     #if vers != None:
-    expiration = datetime.datetime.now() + datetime.timedelta(days=30)
-    cookie = Cookie.SimpleCookie()
-    cookie["vers"] = vers
-    cookie["vers"]["expires"] = expiration.strftime("%a, %d-%b-%Y %H:%M:%S PST")
-    print cookie.output()
+    #expiration = datetime.datetime.now() + datetime.timedelta(days=30)
+    #cookie = Cookie.SimpleCookie()
+    #cookie["vers"] = vers
+    #cookie["vers"]["expires"] = expiration.strftime("%a, %d-%b-%Y %H:%M:%S PST")
+    #print cookie.output()
     print "\n"
 
 def processMathJax(matchobj,delimit=""):
@@ -195,19 +195,20 @@ def convert(string,vers,lang):
 
 def generate():
     page = form.getvalue("page")
-    vers = form.getvalue("vers")
+    vers = "cppv3"
+    #vers = form.getvalue("vers")
     lang = "C++"
-    for v in versions:
-        if v[0]==vers: lang = v[2]
+    #for v in versions:
+    #    if v[0]==vers: lang = v[2]
 
-    cookie_val = ""
-    try:
-        cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
-        cookie_val = cookie["vers"].value
-    except (Cookie.CookieError, KeyError): 
-        cookie_val = default_version
+    #Cookie_val = ""
+    #Try:
+    #    cookie = Cookie.SimpleCookie(os.environ["HTTP_COOKIE"])
+    #    cookie_val = cookie["vers"].value
+    #Except (Cookie.CookieError, KeyError): 
+    #    cookie_val = default_version
 
-    if vers == None: vers = cookie_val
+    #If vers == None: vers = cookie_val
 
 
     if page == None: page = "main"
