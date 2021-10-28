@@ -8,6 +8,18 @@
  
 ## 2021
 
+* [A parent Hubbard model for spin-1 Haldane chains](https://arxiv.org/abs/2110.07442),  G. Catarina,  J. Fernández-Rossier, arxiv:2110.07442
+
+* [Numerical evidence for a Haagerup conformal field theory](https://arxiv.org/abs/2110.03008),  Tzu-Chen Huang,  Ying-Hsuan Lin,  Kantaro Ohmori,  Yuji Tachikawa,  Masaki Tezuka, arxiv:2110.03008
+
+* [Pruning a restricted Boltzmann machine for quantum state reconstruction](https://arxiv.org/abs/2110.03676),  Anna Golubeva,  Roger G. Melko, arxiv:2110.03676
+
+* [Detecting quantum phase transitions in nonintegrable and long-range Ising chains using spatially minimal measurements](https://arxiv.org/abs/2110.02995),  Ceren B. Dağ,  Philipp Uhrich,  Ian P. McCulloch,  Jad C. Halimeh, arxiv:2110.02995
+
+* [Robustness of stark many-body localization in the $J_1$-$J_2$ Heisenberg model](https://arxiv.org/abs/2110.08351),  E. Vernek, arxiv:2110.08351
+
+* [Nonequilibrium dynamics in pumped Mott insulators](https://arxiv.org/abs/2110.08574),  Satoshi Ejima,  Florian Lange,  Holger Fehske, arxiv:2110.08574
+
 * [Enhanced TEMPO algorithm for quantum path integrals with off-diagonal system-bath coupling: applications to photonic quantum networks](https://arxiv.org/abs/2110.01334), Marten Richter, Stephen Hughes, arxiv:2110.01334
 
 * [Local tensor-network codes](https://arxiv.org/abs/2109.11996), Terry Farrelly, David K. Tuckett, Thomas M. Stace, arxiv:2109.11996
