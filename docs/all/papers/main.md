@@ -256,7 +256,7 @@
 
 * [Absence of Luther-Emery Phase in the Three-Band Model for Cuprate Ladders](https://arxiv.org/abs/2010.10609), Jeong-Pil Song, Sumit Mazumdar, R. Torsten Clay, arxiv:2010.10609
 
-* [The Hubbard model on the Bethe lattice via variational uniform tree states: metal-insulator transition and a Fermi liquid](https://doi.org/10.1103/PhysRevResearch.3.023054),  Peter Lunts,  Antoine Georges,  E. Miles Stoudenmire,  Matthew Fishman,  <i>Phys. Rev. Research 3, 023054 (2021)</i>, arxiv:2010.06543
+* [The Hubbard model on the Bethe lattice via variational uniform tree states: metal-insulator transition and a Fermi liquid](https://doi.org/10.1103/PhysRevResearch.3.023054),  Peter Lunts,  Antoine Georges,  E. Miles Stoudenmire,  Matthew Fishman,  <span style="text-color:red;">Phys. Rev. Research 3, 023054 (2021)</span>, arxiv:2010.06543
 
 * [Entanglement spreading after local fermionic excitations in the XXZ chain](https://arxiv.org/abs/2010.02708), Matthias Gruber, Viktor Eisler, arxiv:2010.02708
 
