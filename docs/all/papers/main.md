@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Dipolar Bose-Hubbard Model in finite-size real-space cylindrical lattices](https://arxiv.org/abs/2110.13540),  Michael Hughes,  Dieter Jaksch, arxiv:2110.13540
+
 * [A parent Hubbard model for spin-1 Haldane chains](https://arxiv.org/abs/2110.07442),  G. Catarina,  J. Fernández-Rossier, arxiv:2110.07442
 
 * [Numerical evidence for a Haagerup conformal field theory](https://arxiv.org/abs/2110.03008),  Tzu-Chen Huang,  Ying-Hsuan Lin,  Kantaro Ohmori,  Yuji Tachikawa,  Masaki Tezuka, arxiv:2110.03008
