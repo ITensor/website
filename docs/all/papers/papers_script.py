@@ -31,7 +31,7 @@ for line in lines:
     else:
         url = "https://arxiv.org/abs/" + eprint
     if paper.journal_ref != None:
-        print(f"* [{title}]({url}), {authors} <span style=\"text-color:red;\">{paper.journal_ref}</span>, arxiv:{eprint}\n")
+        print(f"* [{title}]({url}), {authors} <i style=\"color:#CC0000;\">{paper.journal_ref}</i>, arxiv:{eprint}\n")
     else:
         print(f"* [{title}](https://arxiv.org/abs/{eprint}), {authors} arxiv:{eprint}\n")
 
