@@ -24,4 +24,14 @@ for line in lines:
     authors = ""
     for a in paper.authors:
         authors += " " + str(a) + ", "
-    print(f"* [{title}](https://arxiv.org/abs/{eprint}), {authors}arxiv:{eprint}\n")
+
+    url = ""
+    if paper.doi != None:
+        url = "https://doi.org/" + paper.doi
+    else:
+        url = "https://arxiv.org/abs/" + eprint
+    if paper.journal_ref != None:
+        print(f"* [{title}]({url}), {authors} <i>{paper.journal_ref}</i>, arxiv:{eprint}\n")
+    else:
+        print(f"* [{title}](https://arxiv.org/abs/{eprint}), {authors} arxiv:{eprint}\n")
+
