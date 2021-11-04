@@ -1,4 +1,4 @@
-#!/usr/local/opt/python/libexec/bin/python
+#!/usr/bin/python3
 import arxiv
 import sys
 from os.path import exists

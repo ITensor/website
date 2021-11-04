@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Qubit based on spin-singlet Yu-Shiba-Rusinov states](https://arxiv.org/abs/2110.13881),  Luka Pavešić,  Rok Žitko,  arxiv:2110.13881
+
 * [Generalizability of density functionals learned from differentiable programming on weakly correlated spin-polarized systems](https://arxiv.org/abs/2110.14846),  Bhupalee Kalita,  Ryan Pederson,  Li Li,  Kieron Burke,  arxiv:2110.14846
 
 * [Growth of a renormalized operator as a probe of chaos](https://arxiv.org/abs/2110.15306),  Xing Huang,  Binchao Zhang,  arxiv:2110.15306
