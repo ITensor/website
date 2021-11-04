@@ -8,6 +8,12 @@
  
 ## 2021
 
+* [Generalizability of density functionals learned from differentiable programming on weakly correlated spin-polarized systems](https://arxiv.org/abs/2110.14846),  Bhupalee Kalita,  Ryan Pederson,  Li Li,  Kieron Burke,  arxiv:2110.14846
+
+* [Growth of a renormalized operator as a probe of chaos](https://arxiv.org/abs/2110.15306),  Xing Huang,  Binchao Zhang,  arxiv:2110.15306
+
+* [Dynamical l-bits in Stark many-body localization](https://arxiv.org/abs/2110.13135),  Thivan Gunawardana,  Berislav Buča,  arxiv:2110.13135
+
 * [Dipolar Bose-Hubbard Model in finite-size real-space cylindrical lattices](https://arxiv.org/abs/2110.13540),  Michael Hughes,  Dieter Jaksch, arxiv:2110.13540
 
 * [A parent Hubbard model for spin-1 Haldane chains](https://arxiv.org/abs/2110.07442),  G. Catarina,  J. Fernández-Rossier, arxiv:2110.07442
