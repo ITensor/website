@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Quantum correlations, entanglement spectrum and coherence of two-particle reduced density matrix in the Extended Hubbard Model](https://arxiv.org/abs/2111.00085),  Diego L. B. Ferreira,  Thiago O. Maciel,  Reinaldo O. Vianna,  Fernando Iemini,  arxiv:2111.00085
+
+* [Detecting phase transitions in- and out-of-equilibrium via single-particle covariance matrices](https://arxiv.org/abs/2111.00811),  Miguel M. Oliveira,  Pedro Ribeiro,  Stefan Kirchner,  arxiv:2111.00811
+
 * [Qubit based on spin-singlet Yu-Shiba-Rusinov states](https://arxiv.org/abs/2110.13881),  Luka Pavešić,  Rok Žitko,  arxiv:2110.13881
 
 * [Generalizability of density functionals learned from differentiable programming on weakly correlated spin-polarized systems](https://arxiv.org/abs/2110.14846),  Bhupalee Kalita,  Ryan Pederson,  Li Li,  Kieron Burke,  arxiv:2110.14846
