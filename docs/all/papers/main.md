@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Double frustration and magneto-electro-elastic excitations in collinear multiferroic materials](https://arxiv.org/abs/2111.04896),  D. C. Cabra,  A. O. Dobry,  C. J. Gazza,  G. L. Rossini,  arxiv:2111.04896
+
 * [Quantum correlations, entanglement spectrum and coherence of two-particle reduced density matrix in the Extended Hubbard Model](https://arxiv.org/abs/2111.00085),  Diego L. B. Ferreira,  Thiago O. Maciel,  Reinaldo O. Vianna,  Fernando Iemini,  arxiv:2111.00085
 
 * [Detecting phase transitions in- and out-of-equilibrium via single-particle covariance matrices](https://arxiv.org/abs/2111.00811),  Miguel M. Oliveira,  Pedro Ribeiro,  Stefan Kirchner,  arxiv:2111.00811
