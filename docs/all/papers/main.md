@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Measurement catastrophe and ballistic spread of charge density with vanishing current](https://arxiv.org/abs/2111.06325),  Lenart Zadnik,  Saverio Bocini,  Kemal Bidzhiev,  Maurizio Fagotti,  arxiv:2111.06325
+
 * [Double frustration and magneto-electro-elastic excitations in collinear multiferroic materials](https://arxiv.org/abs/2111.04896),  D. C. Cabra,  A. O. Dobry,  C. J. Gazza,  G. L. Rossini,  arxiv:2111.04896
 
 * [Quantum correlations, entanglement spectrum and coherence of two-particle reduced density matrix in the Extended Hubbard Model](https://arxiv.org/abs/2111.00085),  Diego L. B. Ferreira,  Thiago O. Maciel,  Reinaldo O. Vianna,  Fernando Iemini,  arxiv:2111.00085
