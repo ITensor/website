@@ -8,6 +8,7 @@
  
 ## 2021
 
+
 * [Measurement catastrophe and ballistic spread of charge density with vanishing current](https://arxiv.org/abs/2111.06325),  Lenart Zadnik,  Saverio Bocini,  Kemal Bidzhiev,  Maurizio Fagotti,  arxiv:2111.06325
 
 * [Double frustration and magneto-electro-elastic excitations in collinear multiferroic materials](https://arxiv.org/abs/2111.04896),  D. C. Cabra,  A. O. Dobry,  C. J. Gazza,  G. L. Rossini,  arxiv:2111.04896
@@ -306,7 +307,7 @@
 
 * [Mutual information-assisted Adaptive Variational Quantum Eigensolver Ansatz Construction](https://arxiv.org/abs/2008.07553), Zi-Jian Zhang, Thi Ha Kyaw, Jakob S. Kottmann, Matthias Degroote, Alan Aspuru-Guzik, arxiv:2008.07553
 
-* [Driving High-Fidelity Many-Body Matrix Product State Dynamics with Exact Gradient Quantum Optimal Control](https://arxiv.org/abs/2008.06076), Jesper Hasseriis Mohr Jensen, Frederik Skovbo Møller, Jens Jakob Sørensen, Jacob Friis Sherson, arxiv:2008.06076
+* [Driving High-Fidelity Many-Body Matrix Product State Dynamics with Exact Gradient Quantum Optimal Control](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.104.052210), Jesper Hasseriis Mohr Jensen, Frederik Skovbo Møller, Jens Jakob Sørensen, Jacob Friis Sherson, PhysRev[A,104,052210] [arxiv:2008.06076]
 
 * [Coulomb-Engineered Topology](https://arxiv.org/abs/2008.07990), Malte Rösner, Jose L. Lado, arxiv:2008.07990
 
