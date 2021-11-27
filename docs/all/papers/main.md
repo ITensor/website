@@ -18,6 +18,8 @@
 
 * [Kinetic formation of trimers in a spinless fermionic chain](https://arxiv.org/abs/2111.10316),  Lorenzo Gotta,  Leonardo Mazza,  Pascal Simon,  Guillaume Roux,  arxiv:2111.10316
 
+* [Dynamical anyon generation in Kitaev honeycomb non-Abelian spin liquids](https://arxiv.org/abs/2111.09325),  Yue Liu,  Kevin Slagle,  Kenneth S. Burch,  Jason Alicea,  arxiv:2111.09325
+
 * [Measurement catastrophe and ballistic spread of charge density with vanishing current](https://arxiv.org/abs/2111.06325),  Lenart Zadnik,  Saverio Bocini,  Kemal Bidzhiev,  Maurizio Fagotti,  arxiv:2111.06325
 
 * [Double frustration and magneto-electro-elastic excitations in collinear multiferroic materials](https://arxiv.org/abs/2111.04896),  D. C. Cabra,  A. O. Dobry,  C. J. Gazza,  G. L. Rossini,  arxiv:2111.04896
