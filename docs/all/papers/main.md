@@ -8,6 +8,15 @@
  
 ## 2021
 
+* [The quantum Gaussian process state: A kernel-inspired state with quantum support data](https://arxiv.org/abs/2111.10353),  Yannic Rath,  George H. Booth,  arxiv:2111.10353
+
+* [Conformal Boundary Conditions of Symmetry-Enriched Quantum Critical Spin Chains](https://arxiv.org/abs/2111.10945),  Xue-Jia Yu,  Rui-Zhen Huang,  Hong-Hao Song,  Limei Xu,  Chengxiang Ding,  Long Zhang,  arxiv:2111.10945
+
+* [Edge $\mathbb{Z}_3$ parafermions in fermionic lattices](https://arxiv.org/abs/2111.10147),  Raphael L. R. C. Teixeira,  Luis G. G. V. Dias da Silva,  arxiv:2111.10147
+
+* [Entanglement dynamics in confining spin chains](https://arxiv.org/abs/2111.11483),  Stefano Scopa,  Pasquale Calabrese,  Alvise Bastianello,  arxiv:2111.11483
+
+* [Kinetic formation of trimers in a spinless fermionic chain](https://arxiv.org/abs/2111.10316),  Lorenzo Gotta,  Leonardo Mazza,  Pascal Simon,  Guillaume Roux,  arxiv:2111.10316
 
 * [Measurement catastrophe and ballistic spread of charge density with vanishing current](https://arxiv.org/abs/2111.06325),  Lenart Zadnik,  Saverio Bocini,  Kemal Bidzhiev,  Maurizio Fagotti,  arxiv:2111.06325
 
