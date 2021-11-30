@@ -234,7 +234,7 @@
 
 * [Constrained-Path Auxiliary-Field Quantum Monte Carlo for Coupled Electrons and Phonons](https://arxiv.org/abs/2012.13473), Joonho Lee, Shiwei Zhang, David R. Reichman, arxiv:2012.13473
 
-* [Quantum Phases of Matter on a 256-Atom Programmable Quantum Simulator](https://arxiv.org/abs/2012.12281), Sepehr Ebadi, Tout T. Wang, Harry Levine, Alexander Keesling, Giulia Semeghini, Ahmed Omran, Dolev Bluvstein, Rhine Samajdar, Hannes Pichler, Wen Wei Ho, Soonwon Choi, Subir Sachdev, Markus Greiner, Vladan Vuletic, Mikhail D. Lukin, arxiv:2012.12281
+* [Quantum Phases of Matter on a 256-Atom Programmable Quantum Simulator](https://doi.org/10.1038/s41586-021-03582-4), Sepehr Ebadi, Tout T. Wang, Harry Levine, Alexander Keesling, Giulia Semeghini, Ahmed Omran, Dolev Bluvstein, Rhine Samajdar, Hannes Pichler, Wen Wei Ho, Soonwon Choi, Subir Sachdev, Markus Greiner, Vladan Vuletic, Mikhail D. Lukin, <i style="color:#CC0000">Nature</i> <b>595</b>, <a href="https://doi.org/10.1038/s41586-021-03582-4">227</a> (2021) [arxiv:2012.12281]
 
 * [Two-fluid coexistence in a spinless fermions chain with pair hopping](https://arxiv.org/abs/2012.12393), Lorenzo Gotta, Leonardo Mazza, Pascal Simon, Guillaume Roux, arxiv:2012.12393
 
