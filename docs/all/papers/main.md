@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Another Exact Ground State of a 2D Quantum Antiferromagnet](https://arxiv.org/abs/2112.05137),  Pratyay Ghosh,  Tobias Müller,  Ronny Thomale,  arxiv:2112.05137
+
 * [The quantum Gaussian process state: A kernel-inspired state with quantum support data](https://arxiv.org/abs/2111.10353),  Yannic Rath,  George H. Booth,  arxiv:2111.10353
 
 * [Conformal Boundary Conditions of Symmetry-Enriched Quantum Critical Spin Chains](https://arxiv.org/abs/2111.10945),  Xue-Jia Yu,  Rui-Zhen Huang,  Hong-Hao Song,  Limei Xu,  Chengxiang Ding,  Long Zhang,  arxiv:2111.10945
