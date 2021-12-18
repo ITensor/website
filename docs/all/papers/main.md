@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Critical region of topological trivial and nontrivial phases in interacting Kitaev chain with spatially varying potentials](https://arxiv.org/abs/2112.06391),  Weijie Huang,  Yao Yao,  arxiv:2112.06391
+
 * [Another Exact Ground State of a 2D Quantum Antiferromagnet](https://arxiv.org/abs/2112.05137),  Pratyay Ghosh,  Tobias Müller,  Ronny Thomale,  arxiv:2112.05137
 
 * [The quantum Gaussian process state: A kernel-inspired state with quantum support data](https://arxiv.org/abs/2111.10353),  Yannic Rath,  George H. Booth,  arxiv:2111.10353
@@ -128,7 +130,7 @@
 
 * [Frustrated mixed-spin ladders: An intermediate phase between rung-singlet and Haldane phases](https://arxiv.org/abs/2106.07940), N. Ahmadi, J. Abouie, R. Haghshenas, arxiv:2106.07940
 
-* [Duality approach to quantum annealing of the 3-XORSAT problem](https://arxiv.org/abs/2106.06344), Raimel Medina, Maksym Serbyn, arxiv:2106.06344
+* [Duality approach to quantum annealing of the 3-XORSAT problem](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.104.062423), Raimel Medina, Maksym Serbyn, PhysRev[A,104,062423] [arxiv:2106.06344]
 
 * [Cold atoms meet lattice gauge theory](https://arxiv.org/abs/2106.03063), Monika Aidelsburger, Luca Barbiero, Alejandro Bermudez, Titas Chanda, Alexandre Dauphin, Daniel González-Cuadra, Przemysław R. Grzybowski, Simon Hands, Fred Jendrzejewski, Johannes Jünemann, Gediminas Juzeliunas, Valentin Kasper, Angelo Piga, Shi-Ju Ran, Matteo Rizzi, Gérman Sierra, Luca Tagliacozzo, Emanuele Tirrito, Torsten V. Zache, Jakub Zakrzewski, Erez Zohar, Maciej Lewenstein, arxiv:2106.03063
 
