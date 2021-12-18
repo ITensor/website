@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Supplementing Recurrent Neural Network Wave Functions with Symmetry and Annealing to Improve Accuracy](https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_92.pdf), Mohamed Hibat-Allah, Roger G. Melko, Juan Carrasquilla
+
 * [Critical region of topological trivial and nontrivial phases in interacting Kitaev chain with spatially varying potentials](https://arxiv.org/abs/2112.06391),  Weijie Huang,  Yao Yao,  arxiv:2112.06391
 
 * [Another Exact Ground State of a 2D Quantum Antiferromagnet](https://arxiv.org/abs/2112.05137),  Pratyay Ghosh,  Tobias Müller,  Ronny Thomale,  arxiv:2112.05137
