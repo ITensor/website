@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Born Machines for Periodic and Open XY Quantum Spin Chains](https://arxiv.org/abs/2112.05326),  Abigail McClain Gomez,  Susanne F. Yelin,  Khadijeh Najafi,  arxiv:2112.05326
+
 * [Supplementing Recurrent Neural Network Wave Functions with Symmetry and Annealing to Improve Accuracy](https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_92.pdf), Mohamed Hibat-Allah, Roger G. Melko, Juan Carrasquilla
 
 * [Critical region of topological trivial and nontrivial phases in interacting Kitaev chain with spatially varying potentials](https://arxiv.org/abs/2112.06391),  Weijie Huang,  Yao Yao,  arxiv:2112.06391
