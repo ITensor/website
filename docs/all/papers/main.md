@@ -8,6 +8,10 @@
  
 ## 2021
 
+* [Kinetically constrained quantum dynamics in a circuit-QED transmon wire](https://arxiv.org/abs/2112.08387),  Riccardo J. Valencia-Tortora,  Nicola Pancotti,  Jamir Marino,  arxiv:2112.08387
+
+* [Quantum entanglement and criticality in a one-dimensional deconfined quantum critical point](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.064121), Sheng Yang and Jing-Bo Xu, PhysRev[E,104,064121]
+
 * [Born Machines for Periodic and Open XY Quantum Spin Chains](https://arxiv.org/abs/2112.05326),  Abigail McClain Gomez,  Susanne F. Yelin,  Khadijeh Najafi,  arxiv:2112.05326
 
 * [Supplementing Recurrent Neural Network Wave Functions with Symmetry and Annealing to Improve Accuracy](https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_92.pdf), Mohamed Hibat-Allah, Roger G. Melko, Juan Carrasquilla
