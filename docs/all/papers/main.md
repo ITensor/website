@@ -8,6 +8,14 @@
  
 ## 2021
 
+* [Many-body localization regime for cavity induced long-range interacting models](https://arxiv.org/abs/2112.09192),  Titas Chanda,  Jakub Zakrzewski,  arxiv:2112.09192
+
+* [Adaptive Density-Matrix Renormalization-Group study of the disordered antiferromagnetic spin-1/2 Heisenberg chain](https://arxiv.org/abs/2112.10420),  Alexander H. O. Wada,  José A. Hoyos,  arxiv:2112.10420
+
+* [Quantum phases of dipolar bosons in one-dimensional optical lattices](https://arxiv.org/abs/2112.10386),  Rebecca Kraus,  Titas Chanda,  Jakub Zakrzewski,  Giovanna Morigi,  arxiv:2112.10386
+
+* [Machine learning discovery of new phases in programmable quantum simulator snapshots](https://arxiv.org/abs/2112.10789),  Cole Miles,  Rhine Samajdar,  Sepehr Ebadi,  Tout T. Wang,  Hannes Pichler,  Subir Sachdev,  Mikhail D. Lukin,  Markus Greiner,  Kilian Q. Weinberger,  Eun-Ah Kim,  arxiv:2112.10789
+
 * [Kinetically constrained quantum dynamics in a circuit-QED transmon wire](https://arxiv.org/abs/2112.08387),  Riccardo J. Valencia-Tortora,  Nicola Pancotti,  Jamir Marino,  arxiv:2112.08387
 
 * [Quantum entanglement and criticality in a one-dimensional deconfined quantum critical point](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.064121), Sheng Yang and Jing-Bo Xu, PhysRev[E,104,064121]
