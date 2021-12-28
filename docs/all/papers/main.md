@@ -8,6 +8,8 @@
  
 ## 2021
 
+* [Quantum Skyrmion Lattices in Heisenberg Ferromagnets](https://arxiv.org/abs/2112.12475),  Andreas Haller,  Solofo Groenendijk,  Alireza Habibi,  Andreas Michels,  Thomas L. Schmidt,  arxiv:2112.12475
+
 * [Many-body localization regime for cavity induced long-range interacting models](https://arxiv.org/abs/2112.09192),  Titas Chanda,  Jakub Zakrzewski,  arxiv:2112.09192
 
 * [Adaptive Density-Matrix Renormalization-Group study of the disordered antiferromagnetic spin-1/2 Heisenberg chain](https://arxiv.org/abs/2112.10420),  Alexander H. O. Wada,  José A. Hoyos,  arxiv:2112.10420
