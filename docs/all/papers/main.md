@@ -5,6 +5,12 @@
 <!--
 * [](), , arxiv:
 -->
+
+## 2022
+
+* [Quantum dynamics of Gaudin magnets](https://arxiv.org/abs/2201.01025),  Wen-Bin He,  Stefano Chesi,  H. -Q. Lin,  Xi-Wen Guan,  arxiv:2201.01025
+
+* [Tensor-Network Approach to Work Statistics for 1D Quantum Lattice Systems](https://arxiv.org/abs/2201.00806),  Jiayin Gu,  Fan Zhang,  H. T. Quan,  arxiv:2201.00806
  
 ## 2021
 
