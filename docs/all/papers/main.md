@@ -8,6 +8,10 @@
 
 ## 2022
 
+* [Quantum Information Scrambling in Quantum Many-body Scarred Systems](https://arxiv.org/abs/2201.01777),  Dong Yuan,  Shun-Yao Zhang,  Yu Wang,  L. -M. Duan,  Dong-Ling Deng,  arxiv:2201.01777
+
+* [Ground state of asymmetric tops with DMRG: water in one dimension](https://aip.scitation.org/doi/abs/10.1063/5.0078770), Tobias Serwatka and Pierre-Nicholas Roy, <i style="color:#CC0000">J. Chem. Phys.</i> 
+
 * [Quantum dynamics of Gaudin magnets](https://arxiv.org/abs/2201.01025),  Wen-Bin He,  Stefano Chesi,  H. -Q. Lin,  Xi-Wen Guan,  arxiv:2201.01025
 
 * [Tensor-Network Approach to Work Statistics for 1D Quantum Lattice Systems](https://arxiv.org/abs/2201.00806),  Jiayin Gu,  Fan Zhang,  H. T. Quan,  arxiv:2201.00806
