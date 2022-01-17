@@ -8,6 +8,8 @@
 
 ## 2022
 
+* [The rise and fall, and slow rise again, of operator entanglement under dephasing](https://arxiv.org/abs/2201.05099),  David Wellnitz,  Guillermo Preisser,  Vincenzo Alba,  Jerome Dubail,  Johannes Schachenmayer,  arxiv:2201.05099
+
 * [Using tensor network states for multi-particle Brownian ratchets](https://arxiv.org/abs/2201.03531),  Nils E. Strand,  Hadrien Vroylandt,  Todd R. Gingrich,  arxiv:2201.03531
 
 * [Computing time-periodic steady-state currents via the time evolution of tensor network states](https://arxiv.org/abs/2201.04107),  Nils E. Strand,  Hadrien Vroylandt,  Todd R. Gingrich,  arxiv:2201.04107
