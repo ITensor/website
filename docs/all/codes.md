@@ -129,6 +129,20 @@ scalable quantum process tomography.
 </td>
 </tr>
 
+<tr>
+<td class="name">
+<a href="https://github.com/orialb/TimeEvoMPS.jl" target="_blank"> 
+TimeEvoMPS
+</a> 
+</td>
+<td class="contrib">
+Ori Alberton
+</td>
+<td class="descrip">
+The goal of this package is to provide implementations of time-evolution algorithms for matrix-product states using ITensors.jl. Algorithms currently implemented include TEBD (with 2nd and 4th order Trotter decomposition) and TDVP (two-site variant).
+</td>
+</tr>
+
 </table>
 
 <a name="cppv3_codes"></a>
