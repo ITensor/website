@@ -8,6 +8,12 @@
 
 ## 2022
 
+* [Absence of Friedel oscillations in the entanglement entropy profile of one-dimensional intrinsically gapless topological phases](https://arxiv.org/abs/2201.07260),  Shun-Chiao Chang,  Pavan Hosur,  arxiv:2201.07260
+
+* [Bond order via cavity-mediated interactions](https://arxiv.org/abs/2201.05466),  Titas Chanda,  Rebecca Kraus,  Jakub Zakrzewski,  Giovanna Morigi,  arxiv:2201.05466
+
+* [Geometric quenches in quasi-disordered lattice system](https://arxiv.org/abs/2201.06813),  Ravi Kumar,  Ranjan Modak,  arxiv:2201.06813
+
 * [The rise and fall, and slow rise again, of operator entanglement under dephasing](https://arxiv.org/abs/2201.05099),  David Wellnitz,  Guillermo Preisser,  Vincenzo Alba,  Jerome Dubail,  Johannes Schachenmayer,  arxiv:2201.05099
 
 * [Using tensor network states for multi-particle Brownian ratchets](https://arxiv.org/abs/2201.03531),  Nils E. Strand,  Hadrien Vroylandt,  Todd R. Gingrich,  arxiv:2201.03531
