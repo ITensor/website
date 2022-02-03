@@ -62,7 +62,7 @@
 
 * [Conformal Boundary Conditions of Symmetry-Enriched Quantum Critical Spin Chains](https://arxiv.org/abs/2111.10945),  Xue-Jia Yu,  Rui-Zhen Huang,  Hong-Hao Song,  Limei Xu,  Chengxiang Ding,  Long Zhang,  arxiv:2111.10945
 
-* [Edge $\mathbb{Z}_3$ parafermions in fermionic lattices](https://arxiv.org/abs/2111.10147),  Raphael L. R. C. Teixeira,  Luis G. G. V. Dias da Silva,  arxiv:2111.10147
+* [Edge Z3 parafermions in fermionic lattices](https://arxiv.org/abs/2111.10147),  Raphael L. R. C. Teixeira,  Luis G. G. V. Dias da Silva,  arxiv:2111.10147
 
 * [Entanglement dynamics in confining spin chains](https://arxiv.org/abs/2111.11483),  Stefano Scopa,  Pasquale Calabrese,  Alvise Bastianello,  arxiv:2111.11483
 
@@ -96,7 +96,7 @@
 
 * [Detecting quantum phase transitions in nonintegrable and long-range Ising chains using spatially minimal measurements](https://arxiv.org/abs/2110.02995),  Ceren B. Dağ,  Philipp Uhrich,  Ian P. McCulloch,  Jad C. Halimeh, arxiv:2110.02995
 
-* [Robustness of stark many-body localization in the $J_1$-$J_2$ Heisenberg model](https://arxiv.org/abs/2110.08351),  E. Vernek, arxiv:2110.08351
+* [Robustness of stark many-body localization in the J1-J2 Heisenberg model](https://arxiv.org/abs/2110.08351),  E. Vernek, arxiv:2110.08351
 
 * [Nonequilibrium dynamics in pumped Mott insulators](https://arxiv.org/abs/2110.08574),  Satoshi Ejima,  Florian Lange,  Holger Fehske, arxiv:2110.08574
 
