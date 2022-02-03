@@ -10,7 +10,7 @@
 
 * [Non-perturbative treatment of giant atoms using chain transformations](https://arxiv.org/abs/2201.11544),  David D. Noachtar,  Johannes Knörzer,  Robert H. Jonsson,  arxiv:2201.11544
 
-* [Hydrodynamics of interacting spinons in the magnetized spin-$1/2$ chain with the uniform Dzyaloshinskii-Moriya interaction](https://arxiv.org/abs/2201.10570),  Ren-Bo Wang,  Anna Keselman,  Oleg A. Starykh,  arxiv:2201.10570
+* [Hydrodynamics of interacting spinons in the magnetized spin-1/2 chain with the uniform Dzyaloshinskii-Moriya interaction](https://arxiv.org/abs/2201.10570),  Ren-Bo Wang,  Anna Keselman,  Oleg A. Starykh,  arxiv:2201.10570
 
 * [Absence of Friedel oscillations in the entanglement entropy profile of one-dimensional intrinsically gapless topological phases](https://arxiv.org/abs/2201.07260),  Shun-Chiao Chang,  Pavan Hosur,  arxiv:2201.07260
 
