@@ -8,6 +8,10 @@
 
 ## 2022
 
+* [Many-body localization in a quantum gas with long-range interaction and linear external potential](https://arxiv.org/abs/2201.13090),  I. V. Lukin,  Yu. V. Slyusarenko,  A. G. Sotnikov,  arxiv:2201.13090
+
+* [Monitoring-induced Entanglement Entropy and Sampling Complexity](https://arxiv.org/abs/2201.12672),  Mathias Van Regemortel,  Oles Shtanko,  Luis Pedro Garcia-Pintos,  Abhinav Deshpande,  Hossein Dehghani,  Alexey V. Gorshkov,  Mohammad Hafezi,  arxiv:2201.12672
+
 * [Non-perturbative treatment of giant atoms using chain transformations](https://arxiv.org/abs/2201.11544),  David D. Noachtar,  Johannes Knörzer,  Robert H. Jonsson,  arxiv:2201.11544
 
 * [Hydrodynamics of interacting spinons in the magnetized spin-1/2 chain with the uniform Dzyaloshinskii-Moriya interaction](https://arxiv.org/abs/2201.10570),  Ren-Bo Wang,  Anna Keselman,  Oleg A. Starykh,  arxiv:2201.10570
