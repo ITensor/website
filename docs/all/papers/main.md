@@ -8,6 +8,12 @@
 
 ## 2022
 
+* [Collective neutrino oscillations with tensor networks using a time-dependent variational principle](https://arxiv.org/abs/2202.01865),  Michael J. Cervia,  Pooja Siwach,  Amol V. Patwardhan,  A. B. Balantekin,  S. N. Coppersmith,  Calvin W. Johnson,  arxiv:2202.01865
+
+* [Parallel Quantum Chemistry on Noisy Intermediate-Scale Quantum Computers](https://arxiv.org/abs/2202.02417),  Robert Schade,  Carsten Bauer,  Konstantin Tamoev,  Lukas Mazur,  Christian Plessl,  Thomas D. Kühne,  arxiv:2202.02417
+
+* [Electric and Magnetic Properties of Higher-Spin Kondo-Heisenberg Models at Strong Coupling](https://arxiv.org/abs/2202.03708),  Riku Masui,  Keisuke Totsuka,  arxiv:2202.03708
+
 * [Many-body localization in a quantum gas with long-range interaction and linear external potential](https://arxiv.org/abs/2201.13090),  I. V. Lukin,  Yu. V. Slyusarenko,  A. G. Sotnikov,  arxiv:2201.13090
 
 * [Monitoring-induced Entanglement Entropy and Sampling Complexity](https://arxiv.org/abs/2201.12672),  Mathias Van Regemortel,  Oles Shtanko,  Luis Pedro Garcia-Pintos,  Abhinav Deshpande,  Hossein Dehghani,  Alexey V. Gorshkov,  Mohammad Hafezi,  arxiv:2201.12672
