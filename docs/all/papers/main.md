@@ -8,6 +8,12 @@
 
 ## 2022
 
+* [A tensor-based entanglement measure for mixed states](https://arxiv.org/abs/2202.07420),  Christian Carisch,  Oded Zilberberg,  arxiv:2202.07420
+
+* [Fragmented Cooper pair condensation in striped superconductors](https://arxiv.org/abs/2202.05850),  Alexander Wietek,  arxiv:2202.05850
+
+* [Slow dynamics and large deviations in classical stochastic Fredkin chains](https://arxiv.org/abs/2202.06989),  Luke Causer,  Juan P. Garrahan,  Austen Lamacraft,  arxiv:2202.06989
+
 * [Collective neutrino oscillations with tensor networks using a time-dependent variational principle](https://arxiv.org/abs/2202.01865),  Michael J. Cervia,  Pooja Siwach,  Amol V. Patwardhan,  A. B. Balantekin,  S. N. Coppersmith,  Calvin W. Johnson,  arxiv:2202.01865
 
 * [Parallel Quantum Chemistry on Noisy Intermediate-Scale Quantum Computers](https://arxiv.org/abs/2202.02417),  Robert Schade,  Carsten Bauer,  Konstantin Tamoev,  Lukas Mazur,  Christian Plessl,  Thomas D. Kühne,  arxiv:2202.02417
